@@ -1,0 +1,4 @@
+loss:
+  grl_lambda_max: 0.3
+train:
+  seed: 42

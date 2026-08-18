@@ -1,0 +1,5 @@
+model:
+  conditioning: concat
+  fusion_conditioning: concat
+train:
+  seed: 1

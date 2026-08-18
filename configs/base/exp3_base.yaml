@@ -1,0 +1,24 @@
+# CAFRL base override file.
+#
+# The authoritative defaults live in `src/config/defaults.py`; this file exists
+# as the canonical override-file example and the base every experiment variant
+# layers on. Keys here must exactly mirror the dataclass tree (dotted by
+# nesting) — unknown keys are a hard error in `load.py` (typo protection), so
+# this doubles as a schema reference.
+#
+# Uncomment and edit to override. Example:
+#
+# data:
+#   frames_per_video: 16        # smaller for quick ablation runs
+#   batch_size: 16
+#
+# model:
+#   invariance_arm: hsic        # A1 bake-off arm: none | grl | hsic | both | contrastive
+#
+# loss:
+#   grl_lambda_max: 0.3
+#
+# train:
+#   seed: 1234
+#
+# Empty body == pristine defaults.

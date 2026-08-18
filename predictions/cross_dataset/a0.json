@@ -1,0 +1,66 @@
+{
+ "schema": "cafrl-negative/predictions/v1",
+ "run": "a0",
+ "eval_set": "cross_dataset",
+ "eval_set_title": "Cross-dataset evaluation (Celeb-DF v2, DFD c23/c40)",
+ "model": "cafrl",
+ "arm": "grl",
+ "protocol": "mq",
+ "augmentation": "flip-only",
+ "seed": 42,
+ "recipe": "shipped",
+ "manuscript_role": "CAFRL exactly as specified (the reference run; called A0 in the internal record).",
+ "manuscript_tables": [
+  "T1",
+  "T4",
+  "T7"
+ ],
+ "per_video_scores": false,
+ "source": {
+  "path": "runs/a0/report.json",
+  "sha256": "295cb6bcfd2c461562c6c9a19972c4b1a210a933285aa1dac26eb01cacaad57f",
+  "bytes": 354022,
+  "mtime_utc": "2026-06-24T14:18:25Z"
+ },
+ "cells": {
+  "celebdf_v2": {
+   "n_frames": 16576,
+   "n_videos": 518,
+   "n_pos": 340,
+   "n_neg": 178,
+   "aggregate": "mean_pool",
+   "video_auc": 0.6978849966953073,
+   "frame_auc": 0.6552659180332947,
+   "frame_bce": 0.9891884370337838,
+   "ci_lo": 0.648372352780047,
+   "ci_hi": 0.7448687202306606,
+   "ci_redraws": 0
+  },
+  "dfd_c23": {
+   "n_frames": 109454,
+   "n_videos": 3431,
+   "n_pos": 3068,
+   "n_neg": 363,
+   "aggregate": "per_identity_max",
+   "video_auc": 0.8199785576519012,
+   "frame_auc": 0.7554076916699372,
+   "frame_bce": 0.8007618578744519,
+   "ci_lo": 0.8001922862766098,
+   "ci_hi": 0.8390706427426026,
+   "ci_redraws": 0
+  },
+  "dfd_c40": {
+   "n_frames": 109454,
+   "n_videos": 3431,
+   "n_pos": 3068,
+   "n_neg": 363,
+   "aggregate": "per_identity_max",
+   "video_auc": 0.6306609415238075,
+   "frame_auc": 0.5992881125223475,
+   "frame_bce": 1.2130362734626003,
+   "ci_lo": 0.6018002429895148,
+   "ci_hi": 0.658880253181499,
+   "ci_redraws": 0
+  }
+ }
+}

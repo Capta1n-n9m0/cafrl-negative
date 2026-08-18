@@ -1,0 +1,94 @@
+$ git show --stat phase5-prereg-a1
+
+tag phase5-prereg-a1
+Tagger: Abbas Aliyev <alievabbas1@gmail.com>
+Date:   Wed Jun 24 14:50:44 2026 +0000
+
+FROZEN A1 win-rule pre-registration (phase5.md Step 5.2, CRUX-3). Paired video-bootstrap on AUC_comp; SYMMETRIC; thresholds pinned before any A1 data. Machinery verified on real A0.
+
+commit 65a8ebb20061238a8a36b8e42c65f6d7d550d551
+Author: Abbas Aliyev <alievabbas1@gmail.com>
+Date:   Wed Jun 24 14:50:44 2026 +0000
+
+    feat(exp3): Phase-5 build session 1 — Step-0 audit + baselines + FROZEN A1 win-rule
+    
+    Step 5.0 (audit): 7/7 contracts VERIFIED vs live code, 0 DRIFTED
+    (runs/phase5_build/step0-audit.md). Param delta confirmed fresh
+    (none/hsic 10,652,643 · grl/both 11,971,561 · Δ=1,318,918 disc block);
+    A0-reuse premise sound (config==defaults field-for-field; val-loss inert).
+    
+    Step 5.1 (baselines): src/baselines/{xception,f3net,freqnet} + train_baseline.py
+    reusing the §6 Evaluator (not the CAFRL Trainer). 18 tests; smokes healthy.
+    F3-Net = documented FAD-only port (anchor check is the fairness guard).
+    
+    Step 5.2 (win-rule machinery — FROZEN, pre-registered before any A1 data):
+    - metrics.{paired_auc_delta,paired_auc_comp_delta,auc_comp,seed_band,pool_by_key}:
+      the paired video-bootstrap. Self-paired Δ(A0,A0)≡0 verified on synthetic AND
+      real A0 c40 preds (CI=[0,0]); antisymmetric (⇒ rule CAN declare GRL the loser);
+      seed band = 4.30·s/√3.
+    - eval_battery.py: per-run report.json (EMA best.pt → sweep[return_preds] +
+      cross_dataset). A0 full §6 battery produced: AUC_comp 0.9477, c23 0.9738,
+      drop Δ 0.0261, c40 0.9224; cross CelebDF 0.698 / DFD-c23 0.820 / DFD-c40 0.631.
+    - aggregate_runs.py: multi-seed aggregator + the 4-criterion WIN/NULL rule
+      (SYMMETRIC; tie→NULL verified). Two prose-ambiguous thresholds PINNED
+      (criterion-3 band, criterion-4 c23-regression), both erring toward NULL.
+    - PREREGISTRATION-A1.md: the verbatim frozen rule (this commit is tagged
+      phase5-prereg-a1 to freeze it before any A1 run completes — non-circular).
+    - configs/phase5/*: 27 launch-only run configs (A1/A2/A3/A6) + MANIFEST.
+    
+    Step 5.3 (partial): DFD-c40 cell wired into Evaluator.cross_dataset (CRUX-3
+    consistency check); return_preds threaded through evaluate/sweep.
+    
+    Tests: targeted regression set 79 passed (metrics+evaluator+trainer+the new
+    machinery+baselines — the full surface my changes touch). Durable campaign
+    ledger + journal under runs/phase5_build/ (force-added past the runs/ gitignore).
+    
+
+ .../exp3-cafrl/configs/phase5/MANIFEST.json        | 169 ++++++++
+ .../exp3-cafrl/configs/phase5/a1_both_s1.yaml      |   4 +
+ .../exp3-cafrl/configs/phase5/a1_both_s2.yaml      |   4 +
+ .../exp3-cafrl/configs/phase5/a1_both_s42.yaml     |   4 +
+ .../exp3-cafrl/configs/phase5/a1_grl_s1.yaml       |   4 +
+ .../exp3-cafrl/configs/phase5/a1_grl_s2.yaml       |   4 +
+ .../exp3-cafrl/configs/phase5/a1_hsic_s1.yaml      |   4 +
+ .../exp3-cafrl/configs/phase5/a1_hsic_s2.yaml      |   4 +
+ .../exp3-cafrl/configs/phase5/a1_hsic_s42.yaml     |   4 +
+ .../exp3-cafrl/configs/phase5/a1_none_s1.yaml      |   4 +
+ .../exp3-cafrl/configs/phase5/a1_none_s2.yaml      |   4 +
+ .../exp3-cafrl/configs/phase5/a1_none_s42.yaml     |   4 +
+ .../exp3-cafrl/configs/phase5/a2a_none_s1.yaml     |   5 +
+ .../exp3-cafrl/configs/phase5/a2a_none_s42.yaml    |   5 +
+ .../configs/phase5/a2b_estimated_s1.yaml           |   5 +
+ .../exp3-cafrl/configs/phase5/a2c_oracle_s1.yaml   |   5 +
+ .../exp3-cafrl/configs/phase5/a2c_oracle_s42.yaml  |   5 +
+ .../exp3-cafrl/configs/phase5/a2d_concat_s1.yaml   |   5 +
+ .../exp3-cafrl/configs/phase5/a2d_concat_s42.yaml  |   5 +
+ .../exp3-cafrl/configs/phase5/a3_concat_s1.yaml    |   5 +
+ .../exp3-cafrl/configs/phase5/a3_concat_s42.yaml   |   5 +
+ .../exp3-cafrl/configs/phase5/a3_sum_s1.yaml       |   5 +
+ .../exp3-cafrl/configs/phase5/a3_sum_s42.yaml      |   5 +
+ .../exp3-cafrl/configs/phase5/a3a_cmam_s1.yaml     |   5 +
+ .../exp3-cafrl/configs/phase5/a6_lam01_s42.yaml    |   4 +
+ .../exp3-cafrl/configs/phase5/a6_lam03_s42.yaml    |   4 +
+ .../exp3-cafrl/configs/phase5/a6_lam07_s42.yaml    |   4 +
+ .../exp3-cafrl/configs/phase5/a6_lam10_s42.yaml    |   4 +
+ .../exp3-cafrl/runs/phase5_build/CAMPAIGN.md       | 157 ++++++++
+ .../runs/phase5_build/PREREGISTRATION-A1.md        |  66 +++
+ .../exp3-cafrl/runs/phase5_build/journal.md        |  67 ++++
+ .../exp3-cafrl/runs/phase5_build/step0-audit.md    |  66 +++
+ experiments/exp3-cafrl/src/baselines/__init__.py   |  44 ++
+ experiments/exp3-cafrl/src/baselines/f3net.py      | 174 ++++++++
+ experiments/exp3-cafrl/src/baselines/freqnet.py    | 158 ++++++++
+ experiments/exp3-cafrl/src/baselines/xception.py   |  68 ++++
+ .../exp3-cafrl/src/evaluation/aggregate_runs.py    | 333 ++++++++++++++++
+ experiments/exp3-cafrl/src/evaluation/evaluator.py |  72 +++-
+ experiments/exp3-cafrl/src/evaluation/metrics.py   | 319 +++++++++++++--
+ experiments/exp3-cafrl/src/scripts/eval_battery.py | 225 +++++++++++
+ .../exp3-cafrl/src/scripts/gen_phase5_configs.py   | 133 +++++++
+ .../exp3-cafrl/src/scripts/train_baseline.py       | 443 +++++++++++++++++++++
+ .../exp3-cafrl/src/tests/test_aggregate_runs.py    |  81 ++++
+ experiments/exp3-cafrl/src/tests/test_baselines.py | 199 +++++++++
+ .../exp3-cafrl/src/tests/test_paired_delta.py      | 162 ++++++++
+ 45 files changed, 3007 insertions(+), 49 deletions(-)
+
+[2 tooling trailer line(s) removed from the quoted commit message by the release build; commit hash, dates, author, subject, body and diffstat are unmodified.]

@@ -1,0 +1,41 @@
+# Phase 5.6 — F1 "fair-none" CONFIRMATION SEED 1. Identical to
+# configs/phase5/f1_none_fair_s42.yaml EXCEPT train.seed: 42 -> 1 (the ONLY diff).
+# Purpose: human-directed, descriptive confirmation seed for the paper's tables
+# (per-arm 3-seed means ± seed band; symmetric 3v3 pooled contrasts vs the b7 pool).
+# The pre-registered 5.3 NEUTRAL verdict stands regardless of outcome.
+#
+# --- f1_none_fair_s42.yaml verbatim below (seed changed) ---
+# Phase 5.3 — F1 "fair-none": the first fair frequency test (audit D1+D3).
+#
+# The full novelty stack (DCT + FFT-phase streams + estimator-conditioned band
+# gate + CMAM fusion) MINUS every compression-invariance mechanism, trained at the
+# plain-backbone (b7) optimization recipe. Deliberately keeps CAFRL's 320->256
+# spatial trunk (the full-1280-d question is 5.4's).
+#
+# Diff vs runs/a0/config.yaml (the intended line-set, nothing else):
+#   model.invariance_arm : grl  -> none
+#   train.curriculum     : (baby_step) -> flat   (all 6 levels/epoch; never freeze)
+#   train.lr_freq        : 1e-4 -> 2e-4           } uniform 2e-4 = b7 recipe (D3)
+#   train.lr_backbone    : 1e-5 -> 2e-4           }  (no disc in the none arm; lr_disc
+#   train.lr_disc        : 1e-4 -> 2e-4           }   set for uniformity, moot)
+#   train.epochs         : 50 -> 30               (match b7)
+#   loss.w_cons          : 0.5 -> 0.0             } zero invariance/geometry pressure
+#   loss.w_phase         : 0.3 -> 0.0             }  (D1: baby_step hardcoded w_cons/
+#   loss.w_circ_rel      : 0.2 -> 0.0             }   w_phase; flat + these zeros =
+#   loss.w_div           : 1.0 -> 0.0             }   pure task-driven frequency)
+# w_crf stays 0.2 (the estimator must train — it feeds the FiLM conditioning);
+# batch stays 32; the data section is untouched. seed 1 (confirmation seed).
+model:
+  invariance_arm: none
+train:
+  curriculum: flat
+  lr_freq: 0.0002
+  lr_backbone: 0.0002
+  lr_disc: 0.0002
+  epochs: 30
+  seed: 1
+loss:
+  w_cons: 0.0
+  w_phase: 0.0
+  w_circ_rel: 0.0
+  w_div: 0.0

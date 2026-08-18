@@ -1,0 +1,9 @@
+model:
+  invariance_arm: grl
+  conditioning: estimated
+  fusion_conditioning: estimated
+  fusion:
+    kind: spatial_residual
+    stream_dim: 256
+train:
+  seed: 42

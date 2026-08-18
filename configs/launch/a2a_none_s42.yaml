@@ -1,0 +1,5 @@
+model:
+  conditioning: none
+  fusion_conditioning: none
+train:
+  seed: 42

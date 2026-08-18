@@ -1,0 +1,212 @@
+{
+  "note": "A0 (runs/a0) is the reused default cell; not regenerated.",
+  "axes": {
+    "A1": {
+      "none": {
+        "42": {
+          "run": "a1_none_s42",
+          "config": "configs/phase5/a1_none_s42.yaml"
+        },
+        "1": {
+          "run": "a1_none_s1",
+          "config": "configs/phase5/a1_none_s1.yaml"
+        },
+        "2": {
+          "run": "a1_none_s2",
+          "config": "configs/phase5/a1_none_s2.yaml"
+        }
+      },
+      "grl": {
+        "42": {
+          "run": "a0",
+          "config": null,
+          "reuse": "runs/a0"
+        },
+        "1": {
+          "run": "a1_grl_s1",
+          "config": "configs/phase5/a1_grl_s1.yaml"
+        },
+        "2": {
+          "run": "a1_grl_s2",
+          "config": "configs/phase5/a1_grl_s2.yaml"
+        }
+      },
+      "hsic": {
+        "42": {
+          "run": "a1_hsic_s42",
+          "config": "configs/phase5/a1_hsic_s42.yaml"
+        },
+        "1": {
+          "run": "a1_hsic_s1",
+          "config": "configs/phase5/a1_hsic_s1.yaml"
+        },
+        "2": {
+          "run": "a1_hsic_s2",
+          "config": "configs/phase5/a1_hsic_s2.yaml"
+        }
+      },
+      "both": {
+        "42": {
+          "run": "a1_both_s42",
+          "config": "configs/phase5/a1_both_s42.yaml"
+        },
+        "1": {
+          "run": "a1_both_s1",
+          "config": "configs/phase5/a1_both_s1.yaml"
+        },
+        "2": {
+          "run": "a1_both_s2",
+          "config": "configs/phase5/a1_both_s2.yaml"
+        }
+      }
+    },
+    "A2": {
+      "a_none": {
+        "42": {
+          "run": "a2a_none_s42",
+          "config": "configs/phase5/a2a_none_s42.yaml"
+        },
+        "1": {
+          "run": "a2a_none_s1",
+          "config": "configs/phase5/a2a_none_s1.yaml"
+        }
+      },
+      "c_oracle": {
+        "42": {
+          "run": "a2c_oracle_s42",
+          "config": "configs/phase5/a2c_oracle_s42.yaml"
+        },
+        "1": {
+          "run": "a2c_oracle_s1",
+          "config": "configs/phase5/a2c_oracle_s1.yaml"
+        }
+      },
+      "d_concat": {
+        "42": {
+          "run": "a2d_concat_s42",
+          "config": "configs/phase5/a2d_concat_s42.yaml"
+        },
+        "1": {
+          "run": "a2d_concat_s1",
+          "config": "configs/phase5/a2d_concat_s1.yaml"
+        }
+      },
+      "b_estimated": {
+        "42": {
+          "run": "a0",
+          "config": null,
+          "reuse": "runs/a0"
+        },
+        "1": {
+          "run": "a2b_estimated_s1",
+          "config": "configs/phase5/a2b_estimated_s1.yaml"
+        }
+      }
+    },
+    "A3": {
+      "sum": {
+        "42": {
+          "run": "a3_sum_s42",
+          "config": "configs/phase5/a3_sum_s42.yaml"
+        },
+        "1": {
+          "run": "a3_sum_s1",
+          "config": "configs/phase5/a3_sum_s1.yaml"
+        }
+      },
+      "concat": {
+        "42": {
+          "run": "a3_concat_s42",
+          "config": "configs/phase5/a3_concat_s42.yaml"
+        },
+        "1": {
+          "run": "a3_concat_s1",
+          "config": "configs/phase5/a3_concat_s1.yaml"
+        }
+      },
+      "cmam": {
+        "42": {
+          "run": "a0",
+          "config": null,
+          "reuse": "runs/a0"
+        },
+        "1": {
+          "run": "a3a_cmam_s1",
+          "config": "configs/phase5/a3a_cmam_s1.yaml"
+        }
+      }
+    },
+    "A6": {
+      "0.5": {
+        "run": "a0",
+        "config": null,
+        "reuse": "runs/a0"
+      },
+      "0.1": {
+        "run": "a6_lam01_s42",
+        "config": "configs/phase5/a6_lam01_s42.yaml"
+      },
+      "0.3": {
+        "run": "a6_lam03_s42",
+        "config": "configs/phase5/a6_lam03_s42.yaml"
+      },
+      "0.7": {
+        "run": "a6_lam07_s42",
+        "config": "configs/phase5/a6_lam07_s42.yaml"
+      },
+      "1.0": {
+        "run": "a6_lam10_s42",
+        "config": "configs/phase5/a6_lam10_s42.yaml"
+      }
+    }
+  },
+  "audit_followups": {
+    "note": "Phase 5.1-5.5 re-tests (docs/23 false-negative audit). NOT part of the frozen A1-A6 pre-registered grid above. Phase 5.6 (2026-07-04) adds the s1/s2 confirmation seeds for F1/F2 (human-ratified, descriptive tightening for the paper's tables; each config = the s42 file verbatim with train.seed 1|2 as the ONLY diff; verified resolved-diff = seed only). The pre-registered 5.3/5.4 NEUTRAL verdicts stand regardless of the seed outcomes.",
+    "F1": {
+      "42": {
+        "run": "f1_none_fair_s42",
+        "config": "configs/phase5/f1_none_fair_s42.yaml",
+        "phase": "5.3",
+        "desc": "the fair frequency test: full novelty stack minus every invariance mechanism (invariance_arm none, w_cons/w_phase/w_circ_rel/w_div = 0), flat curriculum + uniform lr 2e-4 + 30 ep (b7 recipe), 320->256 trunk. Targets audit D1+D3."
+      },
+      "1": {
+        "run": "f1_none_fair_s1",
+        "config": "configs/phase5/f1_none_fair_s1.yaml",
+        "phase": "5.6",
+        "desc": "confirmation seed 1 of F1 (5.3). s42 config verbatim, train.seed 42->1 only."
+      },
+      "2": {
+        "run": "f1_none_fair_s2",
+        "config": "configs/phase5/f1_none_fair_s2.yaml",
+        "phase": "5.6",
+        "desc": "confirmation seed 2 of F1 (5.3). s42 config verbatim, train.seed 42->2 only."
+      }
+    },
+    "F2": {
+      "42": {
+        "run": "f2_spatres_full_s42",
+        "config": "configs/phase5/f2_spatres_full_s42.yaml",
+        "phase": "5.4",
+        "desc": "the full-trunk frequency residual: F1's fair recipe + a FULL-strength spatial path (backbone_full_head=true, spatial logit on GAP(1280) = b7's rep) + a zero-init gamma-residual frequency correction with an aux BCE on freq_logit (w_freq_aux 0.2). Diff vs f1_none_fair_s42 is EXACTLY {fusion.kind spatial_residual_full, backbone_full_head true, w_freq_aux 0.2}. Targets audit D2 (gamma->0 deadlock) + D4 (crippled trunk). Confirmatory close-the-loop (expected NEUTRAL after 5.2 RECIPE-DOMINANT + 5.3 F1 NEUTRAL)."
+      },
+      "1": {
+        "run": "f2_spatres_full_s1",
+        "config": "configs/phase5/f2_spatres_full_s1.yaml",
+        "phase": "5.6",
+        "desc": "confirmation seed 1 of F2 (5.4). s42 config verbatim, train.seed 42->1 only."
+      },
+      "2": {
+        "run": "f2_spatres_full_s2",
+        "config": "configs/phase5/f2_spatres_full_s2.yaml",
+        "phase": "5.6",
+        "desc": "confirmation seed 2 of F2 (5.4). s42 config verbatim, train.seed 42->2 only."
+      }
+    }
+  },
+  "needs_code_or_data": {
+    "A4": "stream-enable + PhaseConfig.repr knobs (Step 5.7)",
+    "A1e": "src/losses/contrastive.py + arm wiring (Step 5.7, code-gated)",
+    "A5": "curriculum-strategy knob (Step 5.7)",
+    "gen_matrix": "train-c0-only / train-c23-only data restriction (Step 5.8)"
+  }
+}

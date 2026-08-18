@@ -1,0 +1,3514 @@
+{
+ "schema": "cafrl-negative/splits/v1",
+ "eval_set": "ffpp_test@c0",
+ "description": "FF++ official test split at compression level c0; 140 pristine reals plus 140 fakes from each of the four training manipulations. Order is the evaluation order and the pairing basis of the paired video bootstrap.",
+ "level": "c0",
+ "n_videos": 700,
+ "n_fake": 560,
+ "n_real": 140,
+ "pooling_key": "(video_id, method)",
+ "keys_sha256": "546d683418bd64331c7a9a2e78ae246ba9e3a2846873cdf3527d318e4cc1dd5c",
+ "derived_from": "runs/b7_effnet_b0_mq_fliponly/report.json (cross-checked against 26 released FF++ runs)",
+ "videos": [
+  {
+   "video_id": "000_003",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "003_000",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "012_026",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "015_919",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "024_073",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "026_012",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "029_048",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "035_036",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "036_035",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "044_945",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "047_862",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "048_029",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "073_024",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "078_955",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "102_114",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "114_102",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "128_896",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "135_880",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "138_142",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "141_161",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "142_138",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "154_386",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "158_379",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "161_141",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "169_227",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "170_186",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "176_190",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "186_170",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "190_176",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "214_255",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "219_220",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "220_219",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "227_169",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "233_995",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "249_280",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "255_214",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "257_420",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "278_306",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "280_249",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "288_321",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "306_278",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "308_388",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "314_347",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "319_352",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "321_288",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "347_314",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "352_319",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "358_380",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "367_371",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "371_367",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "376_381",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "379_158",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "380_358",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "381_376",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "384_932",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "386_154",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "388_308",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "389_480",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "399_488",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "404_429",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "418_507",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "420_257",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "421_423",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "422_695",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "423_421",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "425_485",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "429_404",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "445_494",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "452_550",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "454_527",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "462_467",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "467_462",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "479_706",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "480_389",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "485_425",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "488_399",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "494_445",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "507_418",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "517_521",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "521_517",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "527_454",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "529_633",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "550_452",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "552_851",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "579_701",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "607_683",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "608_675",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "623_630",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "625_650",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "630_623",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "633_529",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "634_660",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "650_625",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "660_634",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "661_670",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "669_682",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "670_661",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "675_608",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "682_669",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "683_607",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "691_732",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "695_422",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "701_579",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "705_707",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "706_479",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "707_705",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "714_842",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "724_725",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "725_724",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "731_741",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "732_691",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "739_865",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "741_731",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "755_759",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "759_755",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "801_855",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "812_821",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "821_812",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "842_714",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "847_906",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "851_552",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "855_801",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "862_047",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "865_739",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "868_949",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "880_135",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "896_128",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "906_847",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "917_924",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "919_015",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "924_917",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "932_384",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "945_044",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "949_868",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "953_974",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "955_078",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "970_973",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "973_970",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "974_953",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "995_233",
+   "method": "Deepfakes",
+   "label": 1
+  },
+  {
+   "video_id": "000_003",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "003_000",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "012_026",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "015_919",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "024_073",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "026_012",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "029_048",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "035_036",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "036_035",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "044_945",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "047_862",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "048_029",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "073_024",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "078_955",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "102_114",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "114_102",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "128_896",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "135_880",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "138_142",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "141_161",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "142_138",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "154_386",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "158_379",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "161_141",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "169_227",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "170_186",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "176_190",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "186_170",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "190_176",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "214_255",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "219_220",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "220_219",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "227_169",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "233_995",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "249_280",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "255_214",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "257_420",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "278_306",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "280_249",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "288_321",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "306_278",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "308_388",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "314_347",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "319_352",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "321_288",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "347_314",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "352_319",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "358_380",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "367_371",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "371_367",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "376_381",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "379_158",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "380_358",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "381_376",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "384_932",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "386_154",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "388_308",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "389_480",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "399_488",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "404_429",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "418_507",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "420_257",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "421_423",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "422_695",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "423_421",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "425_485",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "429_404",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "445_494",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "452_550",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "454_527",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "462_467",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "467_462",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "479_706",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "480_389",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "485_425",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "488_399",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "494_445",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "507_418",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "517_521",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "521_517",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "527_454",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "529_633",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "550_452",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "552_851",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "579_701",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "607_683",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "608_675",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "623_630",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "625_650",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "630_623",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "633_529",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "634_660",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "650_625",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "660_634",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "661_670",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "669_682",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "670_661",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "675_608",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "682_669",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "683_607",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "691_732",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "695_422",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "701_579",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "705_707",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "706_479",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "707_705",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "714_842",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "724_725",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "725_724",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "731_741",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "732_691",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "739_865",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "741_731",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "755_759",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "759_755",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "801_855",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "812_821",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "821_812",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "842_714",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "847_906",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "851_552",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "855_801",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "862_047",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "865_739",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "868_949",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "880_135",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "896_128",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "906_847",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "917_924",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "919_015",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "924_917",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "932_384",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "945_044",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "949_868",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "953_974",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "955_078",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "970_973",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "973_970",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "974_953",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "995_233",
+   "method": "Face2Face",
+   "label": 1
+  },
+  {
+   "video_id": "000_003",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "003_000",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "012_026",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "015_919",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "024_073",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "026_012",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "029_048",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "035_036",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "036_035",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "044_945",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "047_862",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "048_029",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "073_024",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "078_955",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "102_114",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "114_102",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "128_896",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "135_880",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "138_142",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "141_161",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "142_138",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "154_386",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "158_379",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "161_141",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "169_227",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "170_186",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "176_190",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "186_170",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "190_176",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "214_255",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "219_220",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "220_219",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "227_169",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "233_995",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "249_280",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "255_214",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "257_420",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "278_306",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "280_249",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "288_321",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "306_278",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "308_388",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "314_347",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "319_352",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "321_288",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "347_314",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "352_319",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "358_380",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "367_371",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "371_367",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "376_381",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "379_158",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "380_358",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "381_376",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "384_932",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "386_154",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "388_308",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "389_480",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "399_488",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "404_429",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "418_507",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "420_257",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "421_423",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "422_695",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "423_421",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "425_485",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "429_404",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "445_494",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "452_550",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "454_527",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "462_467",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "467_462",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "479_706",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "480_389",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "485_425",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "488_399",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "494_445",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "507_418",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "517_521",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "521_517",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "527_454",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "529_633",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "550_452",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "552_851",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "579_701",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "607_683",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "608_675",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "623_630",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "625_650",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "630_623",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "633_529",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "634_660",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "650_625",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "660_634",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "661_670",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "669_682",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "670_661",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "675_608",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "682_669",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "683_607",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "691_732",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "695_422",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "701_579",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "705_707",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "706_479",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "707_705",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "714_842",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "724_725",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "725_724",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "731_741",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "732_691",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "739_865",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "741_731",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "755_759",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "759_755",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "801_855",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "812_821",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "821_812",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "842_714",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "847_906",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "851_552",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "855_801",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "862_047",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "865_739",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "868_949",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "880_135",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "896_128",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "906_847",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "917_924",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "919_015",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "924_917",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "932_384",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "945_044",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "949_868",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "953_974",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "955_078",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "970_973",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "973_970",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "974_953",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "995_233",
+   "method": "FaceSwap",
+   "label": 1
+  },
+  {
+   "video_id": "000_003",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "003_000",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "012_026",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "015_919",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "024_073",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "026_012",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "029_048",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "035_036",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "036_035",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "044_945",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "047_862",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "048_029",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "073_024",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "078_955",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "102_114",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "114_102",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "128_896",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "135_880",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "138_142",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "141_161",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "142_138",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "154_386",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "158_379",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "161_141",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "169_227",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "170_186",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "176_190",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "186_170",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "190_176",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "214_255",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "219_220",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "220_219",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "227_169",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "233_995",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "249_280",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "255_214",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "257_420",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "278_306",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "280_249",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "288_321",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "306_278",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "308_388",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "314_347",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "319_352",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "321_288",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "347_314",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "352_319",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "358_380",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "367_371",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "371_367",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "376_381",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "379_158",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "380_358",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "381_376",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "384_932",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "386_154",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "388_308",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "389_480",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "399_488",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "404_429",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "418_507",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "420_257",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "421_423",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "422_695",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "423_421",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "425_485",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "429_404",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "445_494",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "452_550",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "454_527",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "462_467",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "467_462",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "479_706",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "480_389",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "485_425",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "488_399",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "494_445",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "507_418",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "517_521",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "521_517",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "527_454",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "529_633",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "550_452",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "552_851",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "579_701",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "607_683",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "608_675",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "623_630",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "625_650",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "630_623",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "633_529",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "634_660",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "650_625",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "660_634",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "661_670",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "669_682",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "670_661",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "675_608",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "682_669",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "683_607",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "691_732",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "695_422",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "701_579",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "705_707",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "706_479",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "707_705",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "714_842",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "724_725",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "725_724",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "731_741",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "732_691",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "739_865",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "741_731",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "755_759",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "759_755",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "801_855",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "812_821",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "821_812",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "842_714",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "847_906",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "851_552",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "855_801",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "862_047",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "865_739",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "868_949",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "880_135",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "896_128",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "906_847",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "917_924",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "919_015",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "924_917",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "932_384",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "945_044",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "949_868",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "953_974",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "955_078",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "970_973",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "973_970",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "974_953",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "995_233",
+   "method": "NeuralTextures",
+   "label": 1
+  },
+  {
+   "video_id": "000",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "003",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "012",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "015",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "024",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "026",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "029",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "035",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "036",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "044",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "047",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "048",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "073",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "078",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "102",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "114",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "128",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "135",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "138",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "141",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "142",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "154",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "158",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "161",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "169",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "170",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "176",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "186",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "190",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "214",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "219",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "220",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "227",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "233",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "249",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "255",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "257",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "278",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "280",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "288",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "306",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "308",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "314",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "319",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "321",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "347",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "352",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "358",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "367",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "371",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "376",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "379",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "380",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "381",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "384",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "386",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "388",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "389",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "399",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "404",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "418",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "420",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "421",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "422",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "423",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "425",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "429",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "445",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "452",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "454",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "462",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "467",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "479",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "480",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "485",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "488",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "494",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "507",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "517",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "521",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "527",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "529",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "550",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "552",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "579",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "607",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "608",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "623",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "625",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "630",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "633",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "634",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "650",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "660",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "661",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "669",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "670",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "675",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "682",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "683",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "691",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "695",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "701",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "705",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "706",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "707",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "714",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "724",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "725",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "731",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "732",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "739",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "741",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "755",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "759",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "801",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "812",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "821",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "842",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "847",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "851",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "855",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "862",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "865",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "868",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "880",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "896",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "906",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "917",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "919",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "924",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "932",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "945",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "949",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "953",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "955",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "970",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "973",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "974",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "995",
+   "method": "",
+   "label": 0
+  }
+ ]
+}

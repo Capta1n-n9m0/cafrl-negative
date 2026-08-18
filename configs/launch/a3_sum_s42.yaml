@@ -1,0 +1,5 @@
+model:
+  fusion:
+    kind: sum
+train:
+  seed: 42

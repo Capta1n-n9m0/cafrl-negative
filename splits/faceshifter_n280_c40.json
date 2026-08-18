@@ -1,0 +1,1414 @@
+{
+ "schema": "cafrl-negative/splits/v1",
+ "eval_set": "faceshifter@c40",
+ "description": "The held-out unseen-manipulation cell: the 140 FF++ test-split reals plus the 140 FaceShifter fakes of the same split. FaceShifter was excluded from training in every run.",
+ "level": "c40",
+ "n_videos": 280,
+ "n_fake": 140,
+ "n_real": 140,
+ "pooling_key": "(video_id, method)",
+ "keys_sha256": "0802701eaba02ff4160a95d7df1362bbf99d8dcb96b3b6806228bb24d5a7e252",
+ "derived_from": "the 9 released faceshifter_preds.json files (identical)",
+ "videos": [
+  {
+   "video_id": "000_003",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "003_000",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "012_026",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "015_919",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "024_073",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "026_012",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "029_048",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "035_036",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "036_035",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "044_945",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "047_862",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "048_029",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "073_024",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "078_955",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "102_114",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "114_102",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "128_896",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "135_880",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "138_142",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "141_161",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "142_138",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "154_386",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "158_379",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "161_141",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "169_227",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "170_186",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "176_190",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "186_170",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "190_176",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "214_255",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "219_220",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "220_219",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "227_169",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "233_995",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "249_280",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "255_214",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "257_420",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "278_306",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "280_249",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "288_321",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "306_278",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "308_388",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "314_347",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "319_352",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "321_288",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "347_314",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "352_319",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "358_380",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "367_371",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "371_367",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "376_381",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "379_158",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "380_358",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "381_376",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "384_932",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "386_154",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "388_308",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "389_480",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "399_488",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "404_429",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "418_507",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "420_257",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "421_423",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "422_695",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "423_421",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "425_485",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "429_404",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "445_494",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "452_550",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "454_527",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "462_467",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "467_462",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "479_706",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "480_389",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "485_425",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "488_399",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "494_445",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "507_418",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "517_521",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "521_517",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "527_454",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "529_633",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "550_452",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "552_851",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "579_701",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "607_683",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "608_675",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "623_630",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "625_650",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "630_623",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "633_529",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "634_660",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "650_625",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "660_634",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "661_670",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "669_682",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "670_661",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "675_608",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "682_669",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "683_607",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "691_732",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "695_422",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "701_579",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "705_707",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "706_479",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "707_705",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "714_842",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "724_725",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "725_724",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "731_741",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "732_691",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "739_865",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "741_731",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "755_759",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "759_755",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "801_855",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "812_821",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "821_812",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "842_714",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "847_906",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "851_552",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "855_801",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "862_047",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "865_739",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "868_949",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "880_135",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "896_128",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "906_847",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "917_924",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "919_015",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "924_917",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "932_384",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "945_044",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "949_868",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "953_974",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "955_078",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "970_973",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "973_970",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "974_953",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "995_233",
+   "method": "FaceShifter",
+   "label": 1
+  },
+  {
+   "video_id": "000",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "003",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "012",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "015",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "024",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "026",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "029",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "035",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "036",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "044",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "047",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "048",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "073",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "078",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "102",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "114",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "128",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "135",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "138",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "141",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "142",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "154",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "158",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "161",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "169",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "170",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "176",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "186",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "190",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "214",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "219",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "220",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "227",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "233",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "249",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "255",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "257",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "278",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "280",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "288",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "306",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "308",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "314",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "319",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "321",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "347",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "352",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "358",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "367",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "371",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "376",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "379",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "380",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "381",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "384",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "386",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "388",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "389",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "399",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "404",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "418",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "420",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "421",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "422",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "423",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "425",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "429",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "445",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "452",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "454",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "462",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "467",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "479",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "480",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "485",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "488",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "494",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "507",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "517",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "521",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "527",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "529",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "550",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "552",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "579",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "607",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "608",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "623",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "625",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "630",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "633",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "634",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "650",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "660",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "661",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "669",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "670",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "675",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "682",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "683",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "691",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "695",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "701",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "705",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "706",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "707",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "714",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "724",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "725",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "731",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "732",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "739",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "741",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "755",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "759",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "801",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "812",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "821",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "842",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "847",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "851",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "855",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "862",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "865",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "868",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "880",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "896",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "906",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "917",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "919",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "924",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "932",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "945",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "949",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "953",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "955",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "970",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "973",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "974",
+   "method": "",
+   "label": 0
+  },
+  {
+   "video_id": "995",
+   "method": "",
+   "label": 0
+  }
+ ]
+}

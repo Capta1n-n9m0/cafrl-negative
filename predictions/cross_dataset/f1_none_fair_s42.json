@@ -1,0 +1,66 @@
+{
+ "schema": "cafrl-negative/predictions/v1",
+ "run": "f1_none_fair_s42",
+ "eval_set": "cross_dataset",
+ "eval_set_title": "Cross-dataset evaluation (Celeb-DF v2, DFD c23/c40)",
+ "model": "cafrl",
+ "arm": "none",
+ "protocol": "mq",
+ "augmentation": "flip-only",
+ "seed": 42,
+ "recipe": "fair",
+ "manuscript_role": "F1 \u2014 the full frequency stack on the narrow trunk, trained with the fair recipe (Phase 5.3).",
+ "manuscript_tables": [
+  "T3",
+  "T4",
+  "T5"
+ ],
+ "per_video_scores": false,
+ "source": {
+  "path": "runs/f1_none_fair_s42/report.json",
+  "sha256": "f4f4eb8925abf67af41ee959928d2ca69ec7633853b360721ae5bda4eaaa6156",
+  "bytes": 354222,
+  "mtime_utc": "2026-07-03T16:13:13Z"
+ },
+ "cells": {
+  "celebdf_v2": {
+   "n_frames": 16576,
+   "n_videos": 518,
+   "n_pos": 340,
+   "n_neg": 178,
+   "aggregate": "mean_pool",
+   "video_auc": 0.6675974884335758,
+   "frame_auc": 0.6356781752158377,
+   "frame_bce": 0.9730516980026631,
+   "ci_lo": 0.6154462114440739,
+   "ci_hi": 0.7164309092613044,
+   "ci_redraws": 0
+  },
+  "dfd_c23": {
+   "n_frames": 109454,
+   "n_videos": 3431,
+   "n_pos": 3068,
+   "n_neg": 363,
+   "aggregate": "per_identity_max",
+   "video_auc": 0.8281209032364656,
+   "frame_auc": 0.7855413895176807,
+   "frame_bce": 1.0784362382626447,
+   "ci_lo": 0.8079551615933047,
+   "ci_hi": 0.8475424673912739,
+   "ci_redraws": 0
+  },
+  "dfd_c40": {
+   "n_frames": 109454,
+   "n_videos": 3431,
+   "n_pos": 3068,
+   "n_neg": 363,
+   "aggregate": "per_identity_max",
+   "video_auc": 0.6830079268445985,
+   "frame_auc": 0.6483800545162446,
+   "frame_bce": 1.2310414047702125,
+   "ci_lo": 0.6556674423165428,
+   "ci_hi": 0.7094635451643959,
+   "ci_redraws": 0
+  }
+ }
+}

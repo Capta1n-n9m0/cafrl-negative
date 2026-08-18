@@ -1,0 +1,4 @@
+model:
+  invariance_arm: none
+train:
+  seed: 1

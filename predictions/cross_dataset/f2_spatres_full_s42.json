@@ -1,0 +1,66 @@
+{
+ "schema": "cafrl-negative/predictions/v1",
+ "run": "f2_spatres_full_s42",
+ "eval_set": "cross_dataset",
+ "eval_set_title": "Cross-dataset evaluation (Celeb-DF v2, DFD c23/c40)",
+ "model": "cafrl",
+ "arm": "none",
+ "protocol": "mq",
+ "augmentation": "flip-only",
+ "seed": 42,
+ "recipe": "fair",
+ "manuscript_role": "F2 \u2014 the frequency residual on the full 1280-d trunk, fair recipe (Phase 5.4).",
+ "manuscript_tables": [
+  "T3",
+  "T4",
+  "T5"
+ ],
+ "per_video_scores": false,
+ "source": {
+  "path": "runs/f2_spatres_full_s42/report.json",
+  "sha256": "85c6b9eb8fb027e1e81e960706c2a76f37ee8da240d7caa9dd558b58ee535612",
+  "bytes": 354004,
+  "mtime_utc": "2026-07-04T03:25:38Z"
+ },
+ "cells": {
+  "celebdf_v2": {
+   "n_frames": 16576,
+   "n_videos": 518,
+   "n_pos": 340,
+   "n_neg": 178,
+   "aggregate": "mean_pool",
+   "video_auc": 0.6838565763384006,
+   "frame_auc": 0.6487244176770076,
+   "frame_bce": 0.9083360610757829,
+   "ci_lo": 0.6335945723321796,
+   "ci_hi": 0.7312896712700984,
+   "ci_redraws": 0
+  },
+  "dfd_c23": {
+   "n_frames": 109454,
+   "n_videos": 3431,
+   "n_pos": 3068,
+   "n_neg": 363,
+   "aggregate": "per_identity_max",
+   "video_auc": 0.8336278513474199,
+   "frame_auc": 0.7818320083828065,
+   "frame_bce": 0.9453460254373446,
+   "ci_lo": 0.8144492393406146,
+   "ci_hi": 0.8519525965690452,
+   "ci_redraws": 0
+  },
+  "dfd_c40": {
+   "n_frames": 109454,
+   "n_videos": 3431,
+   "n_pos": 3068,
+   "n_neg": 363,
+   "aggregate": "per_identity_max",
+   "video_auc": 0.6489910962175984,
+   "frame_auc": 0.6189323060399163,
+   "frame_bce": 1.2172714566568654,
+   "ci_lo": 0.6213905210738236,
+   "ci_hi": 0.6759180135785406,
+   "ci_redraws": 0
+  }
+ }
+}

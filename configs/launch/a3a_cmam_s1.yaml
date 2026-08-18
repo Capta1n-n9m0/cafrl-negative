@@ -1,0 +1,5 @@
+model:
+  fusion:
+    kind: cmam
+train:
+  seed: 1

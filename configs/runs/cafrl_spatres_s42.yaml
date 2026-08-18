@@ -1,0 +1,102 @@
+paths:
+  faces_root: ${FACES_ROOT}
+  celebdf_root: ${CELEBDF_FACES_ROOT}
+  crf_video_root: ${CRF_VIDEO_ROOT}
+  dataset_root: ${DATASET_ROOT}
+  splits_dir: ${SPLITS_DIR}
+  metadata_csv: ${METADATA_CSV}
+  runs_root: ${RUNS_ROOT}
+data:
+  levels:
+  - c0
+  - c23
+  - c28
+  - c32
+  - c36
+  - c40
+  frames_per_video: 32
+  methods:
+  - Deepfakes
+  - Face2Face
+  - FaceSwap
+  - NeuralTextures
+  quality_mix:
+  - 0.3
+  - 0.4
+  - 0.3
+  paired_fraction: 0.25
+  real_oversample: 4
+  batch_size: 32
+  num_workers: 8
+  bin_levels:
+  - c0
+  - c23
+  - c28
+  - c32
+  - c36
+  - c40
+  soft_label_eps: 0.1
+model:
+  dct:
+    block: 8
+    band_sizes:
+    - 6
+    - 10
+    - 20
+    - 28
+    band_channels: 64
+    coeff_norm: log1p
+    layout: channelized
+  phase:
+    window: 32
+    channels:
+    - 64
+    - 128
+    - 256
+    head_pairs: 32
+  estimator:
+    emb_dim: 64
+    num_bins: 6
+    joint_training: true
+  fusion:
+    kind: spatial_residual
+    stream_dim: 256
+  discriminator:
+    hidden: 1024
+    dropout: 0.5
+    spectral_norm: true
+  invariance_arm: grl
+  backbone: efficientnet_b0
+  conditioning: estimated
+  fusion_conditioning: estimated
+loss:
+  cls_smoothing: 0.05
+  w_crf: 0.2
+  w_div: 1.0
+  div_s_max: 0.3
+  w_cons: 0.5
+  w_phase: 0.3
+  w_circ_rel: 0.2
+  grl_lambda_max: 0.5
+  hsic_ratio:
+  - 1.0
+  - 5.0
+  hsic_sigma: median
+  hsic_cka: false
+train:
+  lr_freq: 0.0001
+  lr_backbone: 1.0e-05
+  lr_disc: 0.0001
+  weight_decay: 0.0001
+  epochs: 50
+  phase_bounds:
+  - 10
+  - 25
+  ema_decay: 0.999
+  grad_clip: 1.0
+  amp: bf16
+  seed: 42
+eval:
+  bootstrap_b: 10000
+  frames_per_video: 32
+  ci: 0.95

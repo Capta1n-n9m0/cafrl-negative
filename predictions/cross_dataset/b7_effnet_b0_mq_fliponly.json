@@ -1,0 +1,68 @@
+{
+ "schema": "cafrl-negative/predictions/v1",
+ "run": "b7_effnet_b0_mq_fliponly",
+ "eval_set": "cross_dataset",
+ "eval_set_title": "Cross-dataset evaluation (Celeb-DF v2, DFD c23/c40)",
+ "model": "effnet_b0",
+ "protocol": "mq",
+ "augmentation": "flip-only",
+ "seed": 42,
+ "recipe": "baseline",
+ "manuscript_role": "b7 \u2014 the 4.0 M capacity- and augmentation-matched spatial backbone that fired the STOP-gate.",
+ "manuscript_tables": [
+  "T1",
+  "T3",
+  "T4",
+  "T5",
+  "T7",
+  "T8"
+ ],
+ "per_video_scores": false,
+ "source": {
+  "path": "runs/b7_effnet_b0_mq_fliponly/report.json",
+  "sha256": "1401db4ecc30c025aa42fa654671581be12764909198e891d17946980be53ad4",
+  "bytes": 233999,
+  "mtime_utc": "2026-06-26T19:19:48Z"
+ },
+ "cells": {
+  "celebdf_v2": {
+   "n_frames": 16576,
+   "n_videos": 518,
+   "n_pos": 340,
+   "n_neg": 178,
+   "aggregate": "mean_pool",
+   "video_auc": 0.6990416391275612,
+   "frame_auc": 0.6576576248037839,
+   "frame_bce": 1.9110751718589547,
+   "ci_lo": 0.6494385212017626,
+   "ci_hi": 0.7449634613893878,
+   "ci_redraws": 0
+  },
+  "dfd_c23": {
+   "n_frames": 109454,
+   "n_videos": 3431,
+   "n_pos": 3068,
+   "n_neg": 363,
+   "aggregate": "per_identity_max",
+   "video_auc": 0.8041464185531982,
+   "frame_auc": 0.7589518908618378,
+   "frame_bce": 1.867061908456026,
+   "ci_lo": 0.7828537460774566,
+   "ci_hi": 0.8244905701759638,
+   "ci_redraws": 0
+  },
+  "dfd_c40": {
+   "n_frames": 109454,
+   "n_videos": 3431,
+   "n_pos": 3068,
+   "n_neg": 363,
+   "aggregate": "per_identity_max",
+   "video_auc": 0.6460602828091272,
+   "frame_auc": 0.6132108982883495,
+   "frame_bce": 1.9923218238201534,
+   "ci_lo": 0.6173879849953089,
+   "ci_hi": 0.6736090293149066,
+   "ci_redraws": 0
+  }
+ }
+}

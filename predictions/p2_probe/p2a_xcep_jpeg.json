@@ -1,0 +1,29 @@
+{
+ "schema": "cafrl-negative/predictions/v1",
+ "run": "p2a_xcep_jpeg",
+ "eval_set": "p2_probe",
+ "eval_set_title": "P2 compression-diversification probe (scalar report)",
+ "model": "xception",
+ "protocol": "lit",
+ "augmentation": "flip-only",
+ "seed": 42,
+ "recipe": "baseline",
+ "manuscript_role": "P2a \u2014 synthetic JPEG-quality augmentation instead of real CRF re-encodes; the 0.890 side of the +7.3 pt contrast against b4b_xception_mq_fliponly (0.963).",
+ "manuscript_tables": [
+  "AppC"
+ ],
+ "per_video_scores": false,
+ "source": {
+  "path": "runs/p2a_xcep_jpeg/report.json",
+  "sha256": "0b5783d235539623ec6553a566551a593f02d7f7cf45d2b890442e2596e24bb6",
+  "bytes": 104,
+  "mtime_utc": "2026-06-25T20:43:16Z"
+ },
+ "cells": {
+  "real_c40": 0.8898086734693877,
+  "ci": [
+   0.8608024064716301,
+   0.9160863795054494
+  ]
+ }
+}

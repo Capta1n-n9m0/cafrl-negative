@@ -1,0 +1,65 @@
+{
+ "schema": "cafrl-negative/predictions/v1",
+ "run": "b4_xception_mq",
+ "eval_set": "cross_dataset",
+ "eval_set_title": "Cross-dataset evaluation (Celeb-DF v2, DFD c23/c40)",
+ "model": "xception",
+ "protocol": "mq",
+ "augmentation": "FinetuneCV policy",
+ "seed": 42,
+ "recipe": "baseline",
+ "manuscript_role": "Xception on multi-CRF data with augmentation \u2014 the strongest baseline overall.",
+ "manuscript_tables": [
+  "T1",
+  "T7",
+  "AppC"
+ ],
+ "per_video_scores": false,
+ "source": {
+  "path": "runs/b4_xception_mq/report.json",
+  "sha256": "43999c8a2cffa579f67c1fb2d27370f9d33778d1872afd77345d295a79ac02a0",
+  "bytes": 233706,
+  "mtime_utc": "2026-06-26T19:24:39Z"
+ },
+ "cells": {
+  "celebdf_v2": {
+   "n_frames": 16576,
+   "n_videos": 518,
+   "n_pos": 340,
+   "n_neg": 178,
+   "aggregate": "mean_pool",
+   "video_auc": 0.7023132848645076,
+   "frame_auc": 0.6616246840533089,
+   "frame_bce": 1.3560789104135187,
+   "ci_lo": 0.6533283336406711,
+   "ci_hi": 0.7478573866523804,
+   "ci_redraws": 0
+  },
+  "dfd_c23": {
+   "n_frames": 109454,
+   "n_videos": 3431,
+   "n_pos": 3068,
+   "n_neg": 363,
+   "aggregate": "per_identity_max",
+   "video_auc": 0.8805926995449337,
+   "frame_auc": 0.8250440888764397,
+   "frame_bce": 1.326230127420801,
+   "ci_lo": 0.8638823151641282,
+   "ci_hi": 0.8961970964535381,
+   "ci_redraws": 0
+  },
+  "dfd_c40": {
+   "n_frames": 109454,
+   "n_videos": 3431,
+   "n_pos": 3068,
+   "n_neg": 363,
+   "aggregate": "per_identity_max",
+   "video_auc": 0.6879967746685776,
+   "frame_auc": 0.6429074597269552,
+   "frame_bce": 1.5630357585212795,
+   "ci_lo": 0.6595481239793454,
+   "ci_hi": 0.7154301822512282,
+   "ci_redraws": 0
+  }
+ }
+}

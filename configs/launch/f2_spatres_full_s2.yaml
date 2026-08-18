@@ -1,0 +1,45 @@
+# Phase 5.6 — F2 "spatial-residual-full" CONFIRMATION SEED 2. Identical to
+# configs/phase5/f2_spatres_full_s42.yaml EXCEPT train.seed: 42 -> 2 (the ONLY diff).
+# Purpose: human-directed, descriptive confirmation seed for the paper's tables
+# (per-arm 3-seed means ± seed band; symmetric 3v3 pooled contrasts vs the b7 pool;
+# pins F2's within-2σ +0.56 pt lean). The pre-registered 5.4 NEUTRAL verdict stands.
+#
+# --- f2_spatres_full_s42.yaml verbatim below (seed changed) ---
+# Phase 5.4 — F2 "spatial-residual-full": the full-trunk frequency residual
+# (audit defects D2 + D4).
+#
+# F1's fair recipe verbatim (5.3) PLUS a full-strength spatial path and a
+# label-supervised frequency residual:
+#   * the spatial logit taps EfficientNet-B0's post-conv_head GAP(1280) — b7's own
+#     representation (D4: undo the 320-tap trunk handicap);
+#   * z_freq enters as a zero-init γ-residual (do-no-harm at init ⇒ architecturally
+#     b7), and an aux BCE on the standalone freq_logit gives the frequency path
+#     label gradient REGARDLESS of γ (D2: break the γ→0 deadlock).
+#
+# Diff vs configs/phase5/f1_none_fair_s42.yaml — EXACTLY three lines:
+#   model.fusion.kind        : (cmam)  -> spatial_residual_full
+#   model.backbone_full_head : (false) -> true    (keep conv_head; expose GAP(1280))
+#   loss.w_freq_aux          : (0.0)   -> 0.2      (the deadlock-breaker, pre-reg)
+# Everything else is F1's config verbatim (invariance_arm none, flat curriculum,
+# uniform lr 2e-4, 30 ep, zero invariance/geometry weights, w_crf 0.2, batch 32).
+# seed 2 (confirmation seed). Capacity note: F2 ~9.6M vs b7 4.0M is deliberate — the
+# extra params ARE the frequency path under test; the spatial path alone is
+# param-identical to b7 (frame it "b7 + frequency vs b7").
+model:
+  invariance_arm: none
+  backbone_full_head: true
+  fusion:
+    kind: spatial_residual_full
+train:
+  curriculum: flat
+  lr_freq: 0.0002
+  lr_backbone: 0.0002
+  lr_disc: 0.0002
+  epochs: 30
+  seed: 2
+loss:
+  w_cons: 0.0
+  w_phase: 0.0
+  w_circ_rel: 0.0
+  w_div: 0.0
+  w_freq_aux: 0.2

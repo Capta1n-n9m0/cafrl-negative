@@ -1,0 +1,14 @@
+# Nothing generated at use time belongs in this repository's history.
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+
+# Regenerated evaluation media and model weights never live in git — the
+# checkpoints ship in the archival deposit, and crops are regenerated locally
+# from agreement-obtained videos plus the released crop coordinates.
+*.pt
+*.pth
+*.mp4
+*.avi
+crops/

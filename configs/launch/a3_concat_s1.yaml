@@ -1,0 +1,5 @@
+model:
+  fusion:
+    kind: concat
+train:
+  seed: 1

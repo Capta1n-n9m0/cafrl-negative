@@ -1,0 +1,4 @@
+model:
+  invariance_arm: hsic
+train:
+  seed: 1

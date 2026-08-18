@@ -1,0 +1,49 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+SPDX-License-Identifier: CC-BY-4.0
+
+Copyright (c) 2026 Abbas Aliyev
+
+WHAT THIS COVERS
+----------------
+The non-software content of this repository:
+
+  predictions/    per-video model scores, labels and evaluation statistics
+  splits/         evaluation-set video-ID lists and label assignments
+  preregistration/  the frozen rule texts and the commit/artifact timeline
+  configs/        run configurations and the run index
+  the tabular and textual documentation files throughout the repository
+
+Software in this repository is licensed separately under the MIT License; see
+LICENSE.
+
+TERMS
+-----
+This content is licensed under the Creative Commons Attribution 4.0
+International License. You are free to share and adapt it for any purpose,
+including commercially, provided you give appropriate credit, link to the
+license, and indicate if changes were made.
+
+Full legal code:  https://creativecommons.org/licenses/by/4.0/legalcode
+Summary (deed):   https://creativecommons.org/licenses/by/4.0/
+
+Attribution: please cite the accompanying paper (see the README's "Citing this
+release" section) and, where a DOI is available, the archived deposit.
+
+WHAT THIS DOES NOT COVER — IMPORTANT
+------------------------------------
+No dataset media is distributed here. FaceForensics++, DeepFakeDetection (DFD,
+distributed through the FaceForensics++ infrastructure) and Celeb-DF v2 are
+obtained under their own end-user agreements, and this licence grants no rights
+over them.
+
+In particular:
+
+  * The video-ID lists, labels and per-video model scores in this repository are
+    our own measurements and metadata, and are released under CC BY 4.0 above.
+  * The per-video face-crop COORDINATES in the accompanying archival deposit are
+    likewise our own metadata and are released under CC BY 4.0.
+  * Any face crops or frames REGENERATED from those coordinates are derivative
+    works of the source datasets and inherit the source datasets' agreement
+    terms, including their restrictions on redistribution. Regenerate them
+    locally from videos you have obtained under the relevant agreement; do not
+    redistribute them.

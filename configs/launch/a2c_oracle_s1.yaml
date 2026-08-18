@@ -1,0 +1,5 @@
+model:
+  conditioning: oracle
+  fusion_conditioning: oracle
+train:
+  seed: 1
