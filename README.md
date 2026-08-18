@@ -15,6 +15,22 @@ that were frozen before the runs they adjudicate.
 > a `STATUS.md` are not yet populated — see *What is not here yet* below.
 > Last built 2026-08-18.
 
+## Check it yourself
+
+```bash
+conda env create -f env/environment-verify.yml   # CPU only, six packages
+conda activate cafrl-verify
+python verify/verify.py --jobs 4
+```
+
+A few minutes later you have a pass/fail line for every number the paper prints
+that this repository can check: 64 table cells recomputed from the
+released per-video scores, the derived means and gaps, and the 8
+adjudicated contrasts re-run through the same 10,000-replicate paired bootstrap
+the paper used. No GPU, no dataset, no network. `verify/README.md` explains the
+tolerances and why they differ between the deterministic and the resampled
+quantities.
+
 ## What is here
 
 | directory | contents |
@@ -23,15 +39,22 @@ that were frozen before the runs they adjudicate.
 | `preregistration/` | The frozen STOP-gate and win-rule texts, the tagged commit's content, the decision rules of every audit re-test, and the commit/artifact timeline that places each rule before the runs it governed. |
 | `configs/` | The effective as-run configuration of all 27 released runs, 34 launch overrides (including arms that were specified and deliberately never run), the base configuration, and `RUNS.md` — the index mapping each run to its model, protocol, augmentation policy, seed, launch command and role in the manuscript. |
 | `splits/` | 12 evaluation-set video-ID lists: FF++ test at each of seven compression levels, the held-out FaceShifter cell, Celeb-DF v2, and DFD — plus the official FF++ split files. |
-| `LICENSE`, `LICENSE-DATA` | MIT for code; CC BY 4.0 for predictions, splits, rule texts and metadata. Read `LICENSE-DATA` before regenerating crops: derived imagery inherits the source datasets' agreement terms. |
+| `evaluation/` | The evaluation harness that produced the scores and re-derives every statistic from them — 19 files copied from the research code with their full import closure, plus a loader for the released prediction files and a script that rebuilds the paper's tables. |
+| `curves/` | Per-epoch validation curves for all 27 runs and their selection outcomes: which epoch each reported checkpoint is, under which rule, and the whole trajectory that rule chose from. |
+| `pipeline/` | How the evaluation inputs were made: the multi-CRF re-encode with its exact command line and encoder build, the face detection / track curation / deterministic re-crop code, and the DFD track-selection pipeline. |
+| `figures/` | The figure script, the data it draws (rebuilt from `predictions/` and `curves/` on every release build), and the TikZ sources for the two diagrams. |
+| `env/`, `environment.yml` | The environment the numbers were produced in — 141 conda and 74 pip packages pinned by version and build — plus a six-package CPU-only subset for checking the tables. |
+| `verify/` | The check described above, and `expected.json`: what the paper prints, in machine-readable form. |
+| `LICENSE`, `LICENSE-DATA` | MIT for code; CC BY 4.0 (full legal code included) for predictions, splits, rule texts and metadata. Read `LICENSE-DATA` before regenerating crops: derived imagery inherits the source datasets' agreement terms. |
 
 ## What is not here yet
 
-`evaluation/`, `pipeline/`, `figures/` and `audit/` are placeholders; each carries a
-`STATUS.md` saying what will land in it. The environment lockfile and the
-end-to-end `verify` script are part of the same wave. Until they land, the
-predictions and rule texts stand on their own: they are the raw material, not the
-derivations.
+Two placeholders remain, each with a `STATUS.md` saying what lands in it:
+`audit/` (the per-pass audit checklists and the D1–D8 ledger extract) and
+`evaluation/analysis/` (the equivalence tests and minimum-detectable-effect
+analyses being added in revision). `CLAIMS-MAP.md` — one line per manuscript cell,
+naming the artifact and command behind it — is written once the revised tables are
+final. The archival DOI is minted at submission.
 
 ## What is deliberately not here
 
@@ -59,8 +82,10 @@ bit-exactness applies to one of them. Precisely:
    the per-video scores in `predictions/` and nothing else. This is exact and
    costs no GPU: the released scores reproduce each cell's stored video-AUC, and
    the build fails if they do not — 69 manuscript-printed values are
-   checked against the released artifacts on every build. The bootstrap is seeded,
-   so its intervals reproduce identically.
+   checked against the released artifacts on every build, and `verify/verify.py`
+   repeats the check on your machine. The bootstrap is seeded and its input order
+   fixed, so its intervals reproduce to the digit rather than merely in
+   distribution.
 
 2. **Regenerating predictions by re-running a released checkpoint.** This requires
    the crops, and is subject to the numerics of your GPU, driver and framework
@@ -101,6 +126,10 @@ matching file in `splits/`.
 Pooling: a video's score is the mean over its 32 uniformly spaced sampled frames,
 and the pooling key is the pair `(video_id, method)` so one source video appearing
 under several manipulations stays distinct. Labels are `1` for fake throughout.
+
+Where an arm has several seeds, the paper's pooled contrasts average each video's
+score across that arm's seeds before comparing — `evaluation/README.md` states
+that and the rest of the statistics precisely.
 
 ## On the word "pre-registered"
 

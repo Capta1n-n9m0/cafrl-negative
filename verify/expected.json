@@ -1,0 +1,1006 @@
+{
+ "schema": "cafrl-negative/expected/v1",
+ "note": "What the manuscript prints, and what to recompute to check it. Cell values are video-AUCs at the manuscript's printed precision; contrasts are paired video-bootstrap results. Generated from the release manifest \u2014 see verify/README.md.",
+ "paper": {
+  "title": "Data Diversity, Not Frequency Invariance: A Controlled and Self-Audited Study of Compression-Robust Deepfake Detection",
+  "venue": "IEEE Access"
+ },
+ "bootstrap": {
+  "b": 10000,
+  "seed": 0,
+  "key_order": "sorted",
+  "pooling": "mean_over_seeds"
+ },
+ "tolerances": {
+  "deterministic": "printed_precision",
+  "bootstrap_delta_abs": 0.0005,
+  "bootstrap_ci_abs": 0.001
+ },
+ "cells": [
+  {
+   "run": "a0",
+   "eval_set": "ffpp_test",
+   "cell": "c0",
+   "expect": 0.9843,
+   "tables": [
+    "T1",
+    "T4",
+    "T7"
+   ]
+  },
+  {
+   "run": "a0",
+   "eval_set": "ffpp_test",
+   "cell": "c18",
+   "expect": 0.9791,
+   "tables": [
+    "T1",
+    "T4",
+    "T7"
+   ]
+  },
+  {
+   "run": "a0",
+   "eval_set": "ffpp_test",
+   "cell": "c23",
+   "expect": 0.9738,
+   "tables": [
+    "T1",
+    "T4",
+    "T7"
+   ]
+  },
+  {
+   "run": "a0",
+   "eval_set": "ffpp_test",
+   "cell": "c28",
+   "expect": 0.9659,
+   "tables": [
+    "T1",
+    "T4",
+    "T7"
+   ]
+  },
+  {
+   "run": "a0",
+   "eval_set": "ffpp_test",
+   "cell": "c32",
+   "expect": 0.9572,
+   "tables": [
+    "T1",
+    "T4",
+    "T7"
+   ]
+  },
+  {
+   "run": "a0",
+   "eval_set": "ffpp_test",
+   "cell": "c36",
+   "expect": 0.9451,
+   "tables": [
+    "T1",
+    "T4",
+    "T7"
+   ]
+  },
+  {
+   "run": "a0",
+   "eval_set": "ffpp_test",
+   "cell": "c40",
+   "expect": 0.9224,
+   "tables": [
+    "T1",
+    "T4",
+    "T7"
+   ]
+  },
+  {
+   "run": "a0",
+   "eval_set": "cross_dataset",
+   "cell": "celebdf_v2",
+   "expect": 0.698,
+   "tables": [
+    "T1",
+    "T4",
+    "T7"
+   ]
+  },
+  {
+   "run": "a0",
+   "eval_set": "cross_dataset",
+   "cell": "dfd_c23",
+   "expect": 0.82,
+   "tables": [
+    "T1",
+    "T4",
+    "T7"
+   ]
+  },
+  {
+   "run": "a0",
+   "eval_set": "cross_dataset",
+   "cell": "dfd_c40",
+   "expect": 0.631,
+   "tables": [
+    "T1",
+    "T4",
+    "T7"
+   ]
+  },
+  {
+   "run": "a1_none_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c0",
+   "expect": 0.9923,
+   "tables": [
+    "T3",
+    "T4"
+   ]
+  },
+  {
+   "run": "a1_none_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c18",
+   "expect": 0.9818,
+   "tables": [
+    "T3",
+    "T4"
+   ]
+  },
+  {
+   "run": "a1_none_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c23",
+   "expect": 0.9697,
+   "tables": [
+    "T3",
+    "T4"
+   ]
+  },
+  {
+   "run": "a1_none_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c28",
+   "expect": 0.959,
+   "tables": [
+    "T3",
+    "T4"
+   ]
+  },
+  {
+   "run": "a1_none_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c32",
+   "expect": 0.9484,
+   "tables": [
+    "T3",
+    "T4"
+   ]
+  },
+  {
+   "run": "a1_none_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c36",
+   "expect": 0.9311,
+   "tables": [
+    "T3",
+    "T4"
+   ]
+  },
+  {
+   "run": "a1_none_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c40",
+   "expect": 0.919,
+   "tables": [
+    "T3",
+    "T4"
+   ]
+  },
+  {
+   "run": "cafrl_spatres_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c0",
+   "expect": 0.9714,
+   "tables": [
+    "T3",
+    "T4"
+   ]
+  },
+  {
+   "run": "cafrl_spatres_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c18",
+   "expect": 0.9702,
+   "tables": [
+    "T3",
+    "T4"
+   ]
+  },
+  {
+   "run": "cafrl_spatres_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c23",
+   "expect": 0.9686,
+   "tables": [
+    "T3",
+    "T4"
+   ]
+  },
+  {
+   "run": "cafrl_spatres_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c28",
+   "expect": 0.9583,
+   "tables": [
+    "T3",
+    "T4"
+   ]
+  },
+  {
+   "run": "cafrl_spatres_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c32",
+   "expect": 0.9495,
+   "tables": [
+    "T3",
+    "T4"
+   ]
+  },
+  {
+   "run": "cafrl_spatres_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c36",
+   "expect": 0.9307,
+   "tables": [
+    "T3",
+    "T4"
+   ]
+  },
+  {
+   "run": "cafrl_spatres_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c40",
+   "expect": 0.9139,
+   "tables": [
+    "T3",
+    "T4"
+   ]
+  },
+  {
+   "run": "f1_none_fair_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c0",
+   "expect": 0.9941,
+   "tables": [
+    "T3",
+    "T4",
+    "T5"
+   ]
+  },
+  {
+   "run": "f1_none_fair_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c18",
+   "expect": 0.9901,
+   "tables": [
+    "T3",
+    "T4",
+    "T5"
+   ]
+  },
+  {
+   "run": "f1_none_fair_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c23",
+   "expect": 0.9881,
+   "tables": [
+    "T3",
+    "T4",
+    "T5"
+   ]
+  },
+  {
+   "run": "f1_none_fair_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c28",
+   "expect": 0.9798,
+   "tables": [
+    "T3",
+    "T4",
+    "T5"
+   ]
+  },
+  {
+   "run": "f1_none_fair_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c32",
+   "expect": 0.977,
+   "tables": [
+    "T3",
+    "T4",
+    "T5"
+   ]
+  },
+  {
+   "run": "f1_none_fair_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c36",
+   "expect": 0.9702,
+   "tables": [
+    "T3",
+    "T4",
+    "T5"
+   ]
+  },
+  {
+   "run": "f1_none_fair_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c40",
+   "expect": 0.9586,
+   "tables": [
+    "T3",
+    "T4",
+    "T5"
+   ]
+  },
+  {
+   "run": "f1_none_fair_s1",
+   "eval_set": "ffpp_test",
+   "cell": "c40",
+   "expect": 0.9567,
+   "tables": [
+    "T3",
+    "T5"
+   ]
+  },
+  {
+   "run": "f1_none_fair_s2",
+   "eval_set": "ffpp_test",
+   "cell": "c40",
+   "expect": 0.9536,
+   "tables": [
+    "T3",
+    "T5"
+   ]
+  },
+  {
+   "run": "f2_spatres_full_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c0",
+   "expect": 0.9929,
+   "tables": [
+    "T3",
+    "T4",
+    "T5"
+   ]
+  },
+  {
+   "run": "f2_spatres_full_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c18",
+   "expect": 0.9902,
+   "tables": [
+    "T3",
+    "T4",
+    "T5"
+   ]
+  },
+  {
+   "run": "f2_spatres_full_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c23",
+   "expect": 0.9894,
+   "tables": [
+    "T3",
+    "T4",
+    "T5"
+   ]
+  },
+  {
+   "run": "f2_spatres_full_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c28",
+   "expect": 0.9821,
+   "tables": [
+    "T3",
+    "T4",
+    "T5"
+   ]
+  },
+  {
+   "run": "f2_spatres_full_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c32",
+   "expect": 0.9774,
+   "tables": [
+    "T3",
+    "T4",
+    "T5"
+   ]
+  },
+  {
+   "run": "f2_spatres_full_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c36",
+   "expect": 0.9719,
+   "tables": [
+    "T3",
+    "T4",
+    "T5"
+   ]
+  },
+  {
+   "run": "f2_spatres_full_s42",
+   "eval_set": "ffpp_test",
+   "cell": "c40",
+   "expect": 0.9645,
+   "tables": [
+    "T3",
+    "T4",
+    "T5"
+   ]
+  },
+  {
+   "run": "f2_spatres_full_s1",
+   "eval_set": "ffpp_test",
+   "cell": "c40",
+   "expect": 0.9602,
+   "tables": [
+    "T3",
+    "T5"
+   ]
+  },
+  {
+   "run": "f2_spatres_full_s2",
+   "eval_set": "ffpp_test",
+   "cell": "c40",
+   "expect": 0.9609,
+   "tables": [
+    "T3",
+    "T5"
+   ]
+  },
+  {
+   "run": "b7_effnet_b0_mq_fliponly",
+   "eval_set": "ffpp_test",
+   "cell": "c0",
+   "expect": 0.9919,
+   "tables": [
+    "T1",
+    "T3",
+    "T4",
+    "T5",
+    "T7",
+    "T8"
+   ]
+  },
+  {
+   "run": "b7_effnet_b0_mq_fliponly",
+   "eval_set": "ffpp_test",
+   "cell": "c18",
+   "expect": 0.9892,
+   "tables": [
+    "T1",
+    "T3",
+    "T4",
+    "T5",
+    "T7",
+    "T8"
+   ]
+  },
+  {
+   "run": "b7_effnet_b0_mq_fliponly",
+   "eval_set": "ffpp_test",
+   "cell": "c23",
+   "expect": 0.9867,
+   "tables": [
+    "T1",
+    "T3",
+    "T4",
+    "T5",
+    "T7",
+    "T8"
+   ]
+  },
+  {
+   "run": "b7_effnet_b0_mq_fliponly",
+   "eval_set": "ffpp_test",
+   "cell": "c28",
+   "expect": 0.981,
+   "tables": [
+    "T1",
+    "T3",
+    "T4",
+    "T5",
+    "T7",
+    "T8"
+   ]
+  },
+  {
+   "run": "b7_effnet_b0_mq_fliponly",
+   "eval_set": "ffpp_test",
+   "cell": "c32",
+   "expect": 0.9758,
+   "tables": [
+    "T1",
+    "T3",
+    "T4",
+    "T5",
+    "T7",
+    "T8"
+   ]
+  },
+  {
+   "run": "b7_effnet_b0_mq_fliponly",
+   "eval_set": "ffpp_test",
+   "cell": "c36",
+   "expect": 0.9678,
+   "tables": [
+    "T1",
+    "T3",
+    "T4",
+    "T5",
+    "T7",
+    "T8"
+   ]
+  },
+  {
+   "run": "b7_effnet_b0_mq_fliponly",
+   "eval_set": "ffpp_test",
+   "cell": "c40",
+   "expect": 0.959,
+   "tables": [
+    "T1",
+    "T3",
+    "T4",
+    "T5",
+    "T7",
+    "T8"
+   ]
+  },
+  {
+   "run": "b7_effnet_b0_mq_fliponly",
+   "eval_set": "cross_dataset",
+   "cell": "celebdf_v2",
+   "expect": 0.699,
+   "tables": [
+    "T1",
+    "T3",
+    "T4",
+    "T5",
+    "T7",
+    "T8"
+   ]
+  },
+  {
+   "run": "b7_effnet_b0_mq_fliponly",
+   "eval_set": "cross_dataset",
+   "cell": "dfd_c23",
+   "expect": 0.804,
+   "tables": [
+    "T1",
+    "T3",
+    "T4",
+    "T5",
+    "T7",
+    "T8"
+   ]
+  },
+  {
+   "run": "b7_effnet_b0_mq_fliponly",
+   "eval_set": "cross_dataset",
+   "cell": "dfd_c40",
+   "expect": 0.646,
+   "tables": [
+    "T1",
+    "T3",
+    "T4",
+    "T5",
+    "T7",
+    "T8"
+   ]
+  },
+  {
+   "run": "b7_effnet_b0_mq_fliponly_s1",
+   "eval_set": "ffpp_test",
+   "cell": "c40",
+   "expect": 0.9614,
+   "tables": [
+    "T3",
+    "T5",
+    "T8"
+   ]
+  },
+  {
+   "run": "b7_effnet_b0_mq_fliponly_s2",
+   "eval_set": "ffpp_test",
+   "cell": "c40",
+   "expect": 0.9492,
+   "tables": [
+    "T3",
+    "T5",
+    "T8"
+   ]
+  },
+  {
+   "run": "b1_xception_lit",
+   "eval_set": "ffpp_test",
+   "cell": "c40",
+   "expect": 0.866,
+   "tables": [
+    "AppC"
+   ]
+  },
+  {
+   "run": "b2_f3net_lit",
+   "eval_set": "ffpp_test",
+   "cell": "c40",
+   "expect": 0.86,
+   "tables": [
+    "AppC"
+   ]
+  },
+  {
+   "run": "b3_freqnet_lit",
+   "eval_set": "ffpp_test",
+   "cell": "c40",
+   "expect": 0.768,
+   "tables": [
+    "AppC"
+   ]
+  },
+  {
+   "run": "b4_xception_mq",
+   "eval_set": "ffpp_test",
+   "cell": "c23",
+   "expect": 0.987,
+   "tables": [
+    "T1",
+    "T7",
+    "AppC"
+   ]
+  },
+  {
+   "run": "b4_xception_mq",
+   "eval_set": "ffpp_test",
+   "cell": "c40",
+   "expect": 0.968,
+   "tables": [
+    "T1",
+    "T7",
+    "AppC"
+   ]
+  },
+  {
+   "run": "b4_xception_mq",
+   "eval_set": "cross_dataset",
+   "cell": "celebdf_v2",
+   "expect": 0.702,
+   "tables": [
+    "T1",
+    "T7",
+    "AppC"
+   ]
+  },
+  {
+   "run": "b4_xception_mq",
+   "eval_set": "cross_dataset",
+   "cell": "dfd_c23",
+   "expect": 0.881,
+   "tables": [
+    "T1",
+    "T7",
+    "AppC"
+   ]
+  },
+  {
+   "run": "b4_xception_mq",
+   "eval_set": "cross_dataset",
+   "cell": "dfd_c40",
+   "expect": 0.688,
+   "tables": [
+    "T1",
+    "T7",
+    "AppC"
+   ]
+  },
+  {
+   "run": "b4b_xception_mq_fliponly",
+   "eval_set": "ffpp_test",
+   "cell": "c40",
+   "expect": 0.963,
+   "tables": [
+    "AppC"
+   ]
+  },
+  {
+   "run": "p2a_xcep_jpeg",
+   "eval_set": "p2_probe",
+   "cell": "real_c40",
+   "expect": 0.89,
+   "tables": [
+    "AppC"
+   ]
+  }
+ ],
+ "derived": [
+  {
+   "name": "Table 4, row T: trunk-recipe control, 3-seed mean c40",
+   "kind": "seed_mean",
+   "runs": [
+    "trunk_recipe_s42",
+    "trunk_recipe_s1",
+    "trunk_recipe_s2"
+   ],
+   "eval_set": "ffpp_test",
+   "cell": "c40",
+   "expect": 0.9536
+  },
+  {
+   "name": "Table 5: b7 3-seed mean c40",
+   "kind": "seed_mean",
+   "runs": [
+    "b7_effnet_b0_mq_fliponly",
+    "b7_effnet_b0_mq_fliponly_s1",
+    "b7_effnet_b0_mq_fliponly_s2"
+   ],
+   "eval_set": "ffpp_test",
+   "cell": "c40",
+   "expect": 0.9565
+  },
+  {
+   "name": "Table 5: F1 3-seed mean c40",
+   "kind": "seed_mean",
+   "runs": [
+    "f1_none_fair_s42",
+    "f1_none_fair_s1",
+    "f1_none_fair_s2"
+   ],
+   "eval_set": "ffpp_test",
+   "cell": "c40",
+   "expect": 0.9563
+  },
+  {
+   "name": "Table 5: F2 3-seed mean c40",
+   "kind": "seed_mean",
+   "runs": [
+    "f2_spatres_full_s42",
+    "f2_spatres_full_s1",
+    "f2_spatres_full_s2"
+   ],
+   "eval_set": "ffpp_test",
+   "cell": "c40",
+   "expect": 0.9619
+  },
+  {
+   "name": "Appendix C-C: the +7.3 pt real-CRF vs synthetic-JPEG gap at c40",
+   "kind": "difference",
+   "minuend": {
+    "run": "b4b_xception_mq_fliponly",
+    "eval_set": "ffpp_test",
+    "cell": "c40"
+   },
+   "subtrahend": {
+    "run": "p2a_xcep_jpeg",
+    "eval_set": "p2_probe",
+    "cell": "real_c40"
+   },
+   "expect": 0.073
+  }
+ ],
+ "contrasts": [
+  {
+   "name": "b7 - CAFRL-shipped (STOP-gate)",
+   "a": [
+    "b7_effnet_b0_mq_fliponly"
+   ],
+   "b": [
+    "a0"
+   ],
+   "level": "c40",
+   "expect": {
+    "delta": 0.0366,
+    "ci_lo": 0.021,
+    "ci_hi": 0.054
+   },
+   "verdict": "significant - as-specified loses"
+  },
+  {
+   "name": "F1 - CAFRL-none (what the fair recipe bought)",
+   "a": [
+    "f1_none_fair_s42"
+   ],
+   "b": [
+    "a1_none_s42"
+   ],
+   "level": "c40",
+   "expect": {
+    "delta": 0.0396,
+    "ci_lo": 0.0231,
+    "ci_hi": 0.057
+   },
+   "verdict": "significant - the deficit was recipe"
+  },
+  {
+   "name": "F1 - b7 (single seed)",
+   "a": [
+    "f1_none_fair_s42"
+   ],
+   "b": [
+    "b7_effnet_b0_mq_fliponly"
+   ],
+   "level": "c40",
+   "expect": {
+    "delta": -0.0004,
+    "ci_lo": -0.0092,
+    "ci_hi": 0.008
+   },
+   "verdict": "neutral"
+  },
+  {
+   "name": "F2 - b7 (single seed)",
+   "a": [
+    "f2_spatres_full_s42"
+   ],
+   "b": [
+    "b7_effnet_b0_mq_fliponly"
+   ],
+   "level": "c40",
+   "expect": {
+    "delta": 0.0056,
+    "ci_lo": -0.0022,
+    "ci_hi": 0.0134
+   },
+   "verdict": "neutral (lean)"
+  },
+  {
+   "name": "F1-pool - b7-pool (3v3)",
+   "a": [
+    "f1_none_fair_s42",
+    "f1_none_fair_s1",
+    "f1_none_fair_s2"
+   ],
+   "b": [
+    "b7_effnet_b0_mq_fliponly",
+    "b7_effnet_b0_mq_fliponly_s1",
+    "b7_effnet_b0_mq_fliponly_s2"
+   ],
+   "level": "c40",
+   "expect": {
+    "delta": -0.001,
+    "ci_lo": -0.0066,
+    "ci_hi": 0.0045
+   },
+   "verdict": "neutral, confirmed"
+  },
+  {
+   "name": "F2-pool - b7-pool (3v3)",
+   "a": [
+    "f2_spatres_full_s42",
+    "f2_spatres_full_s1",
+    "f2_spatres_full_s2"
+   ],
+   "b": [
+    "b7_effnet_b0_mq_fliponly",
+    "b7_effnet_b0_mq_fliponly_s1",
+    "b7_effnet_b0_mq_fliponly_s2"
+   ],
+   "level": "c40",
+   "expect": {
+    "delta": 0.0022,
+    "ci_lo": -0.0035,
+    "ci_hi": 0.008
+   },
+   "verdict": "neutral, confirmed"
+  },
+  {
+   "name": "b7 - T (architecture share, pooled)",
+   "a": [
+    "b7_effnet_b0_mq_fliponly"
+   ],
+   "b": [
+    "trunk_recipe_s42",
+    "trunk_recipe_s1",
+    "trunk_recipe_s2"
+   ],
+   "level": "c40",
+   "expect": {
+    "delta": -0.0038,
+    "ci_lo": -0.0116,
+    "ci_hi": 0.0039
+   },
+   "verdict": "no architecture penalty"
+  },
+  {
+   "name": "T - spatial-residual (recipe share, pooled)",
+   "a": [
+    "trunk_recipe_s42",
+    "trunk_recipe_s1",
+    "trunk_recipe_s2"
+   ],
+   "b": [
+    "cafrl_spatres_s42"
+   ],
+   "level": "c40",
+   "expect": {
+    "delta": 0.049,
+    "ci_lo": 0.0294,
+    "ci_hi": 0.0705
+   },
+   "verdict": "significant - the recipe cost"
+  }
+ ],
+ "seed_level": "c40",
+ "seed_groups": {
+  "b7 (backbone)": [
+   "b7_effnet_b0_mq_fliponly",
+   "b7_effnet_b0_mq_fliponly_s1",
+   "b7_effnet_b0_mq_fliponly_s2"
+  ],
+  "F1 (fair CAFRL, narrow trunk)": [
+   "f1_none_fair_s42",
+   "f1_none_fair_s1",
+   "f1_none_fair_s2"
+  ],
+  "F2 (fair CAFRL, full trunk)": [
+   "f2_spatres_full_s42",
+   "f2_spatres_full_s1",
+   "f2_spatres_full_s2"
+  ],
+  "T (trunk-recipe control)": [
+   "trunk_recipe_s42",
+   "trunk_recipe_s1",
+   "trunk_recipe_s2"
+  ]
+ },
+ "faceshifter": {
+  "levels": [
+   "c23",
+   "c40"
+  ],
+  "contrasts": [
+   {
+    "name": "F1-pool - b7-pool (FaceShifter)",
+    "a": [
+     "f1_none_fair_s42",
+     "f1_none_fair_s1",
+     "f1_none_fair_s2"
+    ],
+    "b": [
+     "b7_effnet_b0_mq_fliponly",
+     "b7_effnet_b0_mq_fliponly_s1",
+     "b7_effnet_b0_mq_fliponly_s2"
+    ],
+    "level": "c40"
+   },
+   {
+    "name": "F2-pool - b7-pool (FaceShifter)",
+    "a": [
+     "f2_spatres_full_s42",
+     "f2_spatres_full_s1",
+     "f2_spatres_full_s2"
+    ],
+    "b": [
+     "b7_effnet_b0_mq_fliponly",
+     "b7_effnet_b0_mq_fliponly_s1",
+     "b7_effnet_b0_mq_fliponly_s2"
+    ],
+    "level": "c40"
+   }
+  ]
+ },
+ "probe": {
+  "jpeg_run": "p2a_xcep_jpeg",
+  "jpeg_cell": "real_c40",
+  "crf_run": "b4b_xception_mq_fliponly",
+  "level": "c40",
+  "note": "Both arms are Xception trained under the literature recipe; they differ only in how compression diversity was supplied. The JPEG arm has no per-video scores released (see predictions/GAPS.md), so this is a comparison of two marginal AUCs with their bootstrap intervals, not a paired delta."
+ },
+ "figures": {
+  "rebuild": [
+   "fig2_crf_sweep",
+   "fig4_mechanism"
+  ]
+ }
+}

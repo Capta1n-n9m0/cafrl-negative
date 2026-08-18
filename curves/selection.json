@@ -1,0 +1,227 @@
+{
+ "schema": "cafrl-negative/selection/v1",
+ "rule": "Best-by-validation on the selection metric sel = 0.5 * (video-AUC at c23 + video-AUC at c40), computed on the official FF++ validation split after every epoch; the checkpoint of the epoch with the highest sel is kept. CAFRL arms evaluate the EMA weights, baseline and control arms the raw weights (they train no EMA). No test-split quantity enters selection.",
+ "metric_tag": "sel_metric",
+ "validation_split": "Official FF++ validation split (70 identity pairs), c23 and c40.",
+ "tie_break": "Strict improvement (>) \u2014 on an exact tie the earlier epoch is kept.",
+ "fixed_before_runs": "Yes for every released run: the rule is the trainer's, written in src/training/trainer.py and src/scripts/train_baseline.py before the campaign; no run selects on anything else and no arm has its own rule.",
+ "runs": [
+  {
+   "run": "a0",
+   "n_epochs": 50,
+   "n_series": 56,
+   "selected_epoch": 34,
+   "selected_metric": 0.9464540816326531,
+   "weights": "EMA"
+  },
+  {
+   "run": "a1_grl_s1",
+   "n_epochs": 50,
+   "n_series": 56,
+   "selected_epoch": 29,
+   "selected_metric": 0.9442346938775509,
+   "weights": "EMA"
+  },
+  {
+   "run": "a1_grl_s2",
+   "n_epochs": 50,
+   "n_series": 56,
+   "selected_epoch": 34,
+   "selected_metric": 0.9450255102040817,
+   "weights": "EMA"
+  },
+  {
+   "run": "a1_none_s42",
+   "n_epochs": 50,
+   "n_series": 30,
+   "selected_epoch": 34,
+   "selected_metric": 0.9467474489795918,
+   "weights": "EMA"
+  },
+  {
+   "run": "cafrl_spatres_s42",
+   "n_epochs": 50,
+   "n_series": 56,
+   "selected_epoch": 29,
+   "selected_metric": 0.9361862244897958,
+   "weights": "EMA"
+  },
+  {
+   "run": "trunk_recipe_s42",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 4,
+   "selected_metric": 0.9771428571428571,
+   "weights": "raw"
+  },
+  {
+   "run": "trunk_recipe_s1",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 10,
+   "selected_metric": 0.9775063775510204,
+   "weights": "raw"
+  },
+  {
+   "run": "trunk_recipe_s2",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 8,
+   "selected_metric": 0.9755548469387755,
+   "weights": "raw"
+  },
+  {
+   "run": "f1_none_fair_s42",
+   "n_epochs": 30,
+   "n_series": 30,
+   "selected_epoch": 5,
+   "selected_metric": 0.9770280612244897,
+   "weights": "EMA"
+  },
+  {
+   "run": "f1_none_fair_s1",
+   "n_epochs": 30,
+   "n_series": 31,
+   "selected_epoch": 13,
+   "selected_metric": 0.9782525510204081,
+   "weights": "EMA"
+  },
+  {
+   "run": "f1_none_fair_s2",
+   "n_epochs": 30,
+   "n_series": 31,
+   "selected_epoch": 12,
+   "selected_metric": 0.9767538265306122,
+   "weights": "EMA"
+  },
+  {
+   "run": "f2_spatres_full_s42",
+   "n_epochs": 30,
+   "n_series": 36,
+   "selected_epoch": 5,
+   "selected_metric": 0.9798086734693878,
+   "weights": "EMA"
+  },
+  {
+   "run": "f2_spatres_full_s1",
+   "n_epochs": 30,
+   "n_series": 36,
+   "selected_epoch": 6,
+   "selected_metric": 0.9776211734693878,
+   "weights": "EMA"
+  },
+  {
+   "run": "f2_spatres_full_s2",
+   "n_epochs": 30,
+   "n_series": 36,
+   "selected_epoch": 7,
+   "selected_metric": 0.9794515306122449,
+   "weights": "EMA"
+  },
+  {
+   "run": "b7_effnet_b0_mq_fliponly",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 17,
+   "selected_metric": 0.9758099489795918,
+   "weights": "raw"
+  },
+  {
+   "run": "b7_effnet_b0_mq_fliponly_s1",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 11,
+   "selected_metric": 0.9753507653061225,
+   "weights": "raw"
+  },
+  {
+   "run": "b7_effnet_b0_mq_fliponly_s2",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 8,
+   "selected_metric": 0.9757844387755101,
+   "weights": "raw"
+  },
+  {
+   "run": "b1_xception_lit",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 22,
+   "selected_metric": 0.9308163265306122,
+   "weights": "raw"
+  },
+  {
+   "run": "b1_xception_lit_fliponly",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 28,
+   "selected_metric": 0.928265306122449,
+   "weights": "raw"
+  },
+  {
+   "run": "b2_f3net_lit",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 6,
+   "selected_metric": 0.9315051020408163,
+   "weights": "raw"
+  },
+  {
+   "run": "b2_f3net_lit_fliponly",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 21,
+   "selected_metric": 0.9196109693877552,
+   "weights": "raw"
+  },
+  {
+   "run": "b3_freqnet_lit",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 26,
+   "selected_metric": 0.8849936224489796,
+   "weights": "raw"
+  },
+  {
+   "run": "b4_xception_mq",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 3,
+   "selected_metric": 0.9807461734693879,
+   "weights": "raw"
+  },
+  {
+   "run": "b4b_xception_mq_fliponly",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 3,
+   "selected_metric": 0.9787372448979592,
+   "weights": "raw"
+  },
+  {
+   "run": "b5_f3net_mq",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 9,
+   "selected_metric": 0.9761670918367347,
+   "weights": "raw"
+  },
+  {
+   "run": "b6_freqnet_mq",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 26,
+   "selected_metric": 0.9204974489795918,
+   "weights": "raw"
+  },
+  {
+   "run": "p2a_xcep_jpeg",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 9,
+   "selected_metric": 0.9431823979591837,
+   "weights": "raw"
+  }
+ ],
+ "runs_without_curves": []
+}

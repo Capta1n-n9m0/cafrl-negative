@@ -1,0 +1,19 @@
+# The CPU-only subset needed to re-derive the paper's tables from predictions/.
+#
+# Versions match the environment the numbers were produced in (see
+# ../environment.yml). Nothing here needs a GPU, a dataset, or the network at
+# run time.
+#
+#   conda env create -f environment-verify.yml
+#   conda activate cafrl-verify
+#   python ../verify/verify.py
+name: cafrl-verify
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11.15
+  - numpy=2.4.6
+  - scipy=1.17.1
+  - scikit-learn=1.8.0
+  - matplotlib=3.10.9
+  - pyyaml=6.0.3
