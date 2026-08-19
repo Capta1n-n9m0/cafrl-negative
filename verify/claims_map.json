@@ -3,7 +3,7 @@
  "note": "Every manuscript table cell and present-tense release claim, mapped to the artifact that carries it and the command that recomputes it. Generated from the release manifest; checked on every build.",
  "manuscript": {
   "label": "IEEE Access submission, version B",
-  "sha256": "f72f9780587e6a14965018c866441e53c7a2e4dc7c75c23779e786a2d75bd231",
+  "sha256": "5d23deef02309771e6b35c2e47865914aa04d88ade372cbd9eb4318f5407c7d3",
   "note": "Table and section numbers refer to the submitted manuscript. The map is regenerated whenever the release is rebuilt; if a manuscript number moves, the build fails until the map and the manuscript agree."
  },
  "comp_levels": [
@@ -13,6 +13,246 @@
   "c40"
  ],
  "rows": [
+  {
+   "label": "SpatialBase \u2014 parameters",
+   "printed": "4.0 M",
+   "kind": "params",
+   "source": "probes/param_counts_arms.json",
+   "key": "arms.SpatialBase.millions",
+   "id": "T0.1",
+   "table": "T0",
+   "table_title": "Notation \u2014 every arm this paper compares",
+   "where": "Section IV",
+   "artifacts": [
+    "probes/param_counts_arms.json"
+   ],
+   "command": "python verify/claim.py T0.1"
+  },
+  {
+   "label": "CAFRL as specified \u2014 parameters",
+   "printed": "11.97 M",
+   "kind": "params",
+   "source": "probes/param_counts_arms.json",
+   "key": "arms.CAFRL as specified.millions",
+   "id": "T0.2",
+   "table": "T0",
+   "table_title": "Notation \u2014 every arm this paper compares",
+   "where": "Section IV",
+   "artifacts": [
+    "probes/param_counts_arms.json"
+   ],
+   "command": "python verify/claim.py T0.2"
+  },
+  {
+   "label": "CAFRL\u2212adv \u2014 parameters",
+   "printed": "10.65 M",
+   "kind": "params",
+   "source": "probes/param_counts_arms.json",
+   "key": "arms.CAFRL-adv.millions",
+   "id": "T0.3",
+   "table": "T0",
+   "table_title": "Notation \u2014 every arm this paper compares",
+   "where": "Section IV",
+   "artifacts": [
+    "probes/param_counts_arms.json"
+   ],
+   "command": "python verify/claim.py T0.3"
+  },
+  {
+   "label": "spatial-residual \u2014 parameters",
+   "printed": "10.29 M",
+   "kind": "params",
+   "source": "probes/param_counts_arms.json",
+   "key": "arms.spatial-residual.millions",
+   "id": "T0.4",
+   "table": "T0",
+   "table_title": "Notation \u2014 every arm this paper compares",
+   "where": "Section IV",
+   "artifacts": [
+    "probes/param_counts_arms.json"
+   ],
+   "command": "python verify/claim.py T0.4"
+  },
+  {
+   "label": "TrunkCtrl \u2014 parameters",
+   "printed": "3.68 M",
+   "kind": "params",
+   "source": "probes/param_counts_arms.json",
+   "key": "arms.TrunkCtrl.millions",
+   "id": "T0.5",
+   "table": "T0",
+   "table_title": "Notation \u2014 every arm this paper compares",
+   "where": "Section IV",
+   "artifacts": [
+    "probes/param_counts_arms.json"
+   ],
+   "command": "python verify/claim.py T0.5"
+  },
+  {
+   "label": "Fair-N \u2014 parameters",
+   "printed": "10.65 M",
+   "kind": "params",
+   "source": "probes/param_counts_arms.json",
+   "key": "arms.Fair-N.millions",
+   "id": "T0.6",
+   "table": "T0",
+   "table_title": "Notation \u2014 every arm this paper compares",
+   "where": "Section IV",
+   "artifacts": [
+    "probes/param_counts_arms.json"
+   ],
+   "command": "python verify/claim.py T0.6"
+  },
+  {
+   "label": "Fair-W \u2014 parameters",
+   "printed": "9.63 M",
+   "kind": "params",
+   "source": "probes/param_counts_arms.json",
+   "key": "arms.Fair-W.millions",
+   "id": "T0.7",
+   "table": "T0",
+   "table_title": "Notation \u2014 every arm this paper compares",
+   "where": "Section IV",
+   "artifacts": [
+    "probes/param_counts_arms.json"
+   ],
+   "command": "python verify/claim.py T0.7"
+  },
+  {
+   "label": "Xception-mq \u2014 parameters",
+   "printed": "20.8 M",
+   "kind": "params",
+   "source": "probes/param_counts_arms.json",
+   "key": "arms.Xception-mq.millions",
+   "id": "T0.8",
+   "table": "T0",
+   "table_title": "Notation \u2014 every arm this paper compares",
+   "where": "Section IV",
+   "artifacts": [
+    "probes/param_counts_arms.json"
+   ],
+   "command": "python verify/claim.py T0.8"
+  },
+  {
+   "label": "Xception-mq (flip-only) \u2014 parameters",
+   "printed": "20.8 M",
+   "kind": "params",
+   "source": "probes/param_counts_arms.json",
+   "key": "arms.Xception-mq (flip-only).millions",
+   "id": "T0.9",
+   "table": "T0",
+   "table_title": "Notation \u2014 every arm this paper compares",
+   "where": "Section IV",
+   "artifacts": [
+    "probes/param_counts_arms.json"
+   ],
+   "command": "python verify/claim.py T0.9"
+  },
+  {
+   "label": "F3-Net-mq \u2014 parameters",
+   "printed": "21.0 M",
+   "kind": "params",
+   "source": "probes/param_counts_arms.json",
+   "key": "arms.F3-Net-mq.millions",
+   "id": "T0.10",
+   "table": "T0",
+   "table_title": "Notation \u2014 every arm this paper compares",
+   "where": "Section IV",
+   "artifacts": [
+    "probes/param_counts_arms.json"
+   ],
+   "command": "python verify/claim.py T0.10"
+  },
+  {
+   "label": "FreqNet-mq \u2014 parameters",
+   "printed": "5.1 M",
+   "kind": "params",
+   "source": "probes/param_counts_arms.json",
+   "key": "arms.FreqNet-mq.millions",
+   "id": "T0.11",
+   "table": "T0",
+   "table_title": "Notation \u2014 every arm this paper compares",
+   "where": "Section IV",
+   "artifacts": [
+    "probes/param_counts_arms.json"
+   ],
+   "command": "python verify/claim.py T0.11"
+  },
+  {
+   "label": "Xception (lit) \u2014 parameters",
+   "printed": "20.8 M",
+   "kind": "params",
+   "source": "probes/param_counts_arms.json",
+   "key": "arms.Xception (lit).millions",
+   "id": "T0.12",
+   "table": "T0",
+   "table_title": "Notation \u2014 every arm this paper compares",
+   "where": "Section IV",
+   "artifacts": [
+    "probes/param_counts_arms.json"
+   ],
+   "command": "python verify/claim.py T0.12"
+  },
+  {
+   "label": "F3-Net (lit) \u2014 parameters",
+   "printed": "21.0 M",
+   "kind": "params",
+   "source": "probes/param_counts_arms.json",
+   "key": "arms.F3-Net (lit).millions",
+   "id": "T0.13",
+   "table": "T0",
+   "table_title": "Notation \u2014 every arm this paper compares",
+   "where": "Section IV",
+   "artifacts": [
+    "probes/param_counts_arms.json"
+   ],
+   "command": "python verify/claim.py T0.13"
+  },
+  {
+   "label": "FreqNet (lit) \u2014 parameters",
+   "printed": "5.1 M",
+   "kind": "params",
+   "source": "probes/param_counts_arms.json",
+   "key": "arms.FreqNet (lit).millions",
+   "id": "T0.14",
+   "table": "T0",
+   "table_title": "Notation \u2014 every arm this paper compares",
+   "where": "Section IV",
+   "artifacts": [
+    "probes/param_counts_arms.json"
+   ],
+   "command": "python verify/claim.py T0.14"
+  },
+  {
+   "label": "Xception-JPEG \u2014 parameters",
+   "printed": "20.8 M",
+   "kind": "params",
+   "source": "probes/param_counts_arms.json",
+   "key": "arms.Xception-JPEG.millions",
+   "id": "T0.15",
+   "table": "T0",
+   "table_title": "Notation \u2014 every arm this paper compares",
+   "where": "Section IV",
+   "artifacts": [
+    "probes/param_counts_arms.json"
+   ],
+   "command": "python verify/claim.py T0.15"
+  },
+  {
+   "label": "CAFRL as specified \u2014 parameters at inference (discriminator dropped)",
+   "printed": "10.65 M",
+   "kind": "params",
+   "source": "probes/param_counts_arms.json",
+   "key": "arms.CAFRL as specified.inference_millions",
+   "id": "T0.16",
+   "table": "T0",
+   "table_title": "Notation \u2014 every arm this paper compares",
+   "where": "Section IV",
+   "artifacts": [
+    "probes/param_counts_arms.json"
+   ],
+   "command": "python verify/claim.py T0.16"
+  },
   {
    "label": "SpatialBase EffNet-B0 spatial \u2014 params",
    "printed": "4.0 M",
@@ -1589,6 +1829,117 @@
    "command": "python verify/claim.py T5.18"
   },
   {
+   "label": "TrunkCtrl \u2014 c40 seed 42",
+   "printed": 0.9491,
+   "kind": "cell",
+   "run": "trunk_recipe_s42",
+   "cell": "c40",
+   "id": "T5.19",
+   "table": "T5",
+   "table_title": "Per-seed c40 video-AUC and 3-seed bands",
+   "where": "Appendix A",
+   "artifacts": [
+    "predictions/ffpp/trunk_recipe_s42.json"
+   ],
+   "command": "python verify/claim.py T5.19"
+  },
+  {
+   "label": "TrunkCtrl \u2014 c40 seed 1",
+   "printed": 0.9566,
+   "kind": "cell",
+   "run": "trunk_recipe_s1",
+   "cell": "c40",
+   "id": "T5.20",
+   "table": "T5",
+   "table_title": "Per-seed c40 video-AUC and 3-seed bands",
+   "where": "Appendix A",
+   "artifacts": [
+    "predictions/ffpp/trunk_recipe_s1.json"
+   ],
+   "command": "python verify/claim.py T5.20"
+  },
+  {
+   "label": "TrunkCtrl \u2014 c40 seed 2",
+   "printed": 0.9551,
+   "kind": "cell",
+   "run": "trunk_recipe_s2",
+   "cell": "c40",
+   "id": "T5.21",
+   "table": "T5",
+   "table_title": "Per-seed c40 video-AUC and 3-seed bands",
+   "where": "Appendix A",
+   "artifacts": [
+    "predictions/ffpp/trunk_recipe_s2.json"
+   ],
+   "command": "python verify/claim.py T5.21"
+  },
+  {
+   "label": "TrunkCtrl \u2014 c40 3-seed mean",
+   "printed": 0.9536,
+   "kind": "seed_mean",
+   "group": "t",
+   "cell": "c40",
+   "id": "T5.22",
+   "table": "T5",
+   "table_title": "Per-seed c40 video-AUC and 3-seed bands",
+   "where": "Appendix A",
+   "runs": [
+    "trunk_recipe_s42",
+    "trunk_recipe_s1",
+    "trunk_recipe_s2"
+   ],
+   "artifacts": [
+    "predictions/ffpp/trunk_recipe_s42.json",
+    "predictions/ffpp/trunk_recipe_s1.json",
+    "predictions/ffpp/trunk_recipe_s2.json"
+   ],
+   "command": "python verify/claim.py T5.22"
+  },
+  {
+   "label": "TrunkCtrl \u2014 c40 3-seed band (half-width)",
+   "printed": 0.0098,
+   "kind": "seed_band",
+   "group": "t",
+   "cell": "c40",
+   "id": "T5.23",
+   "table": "T5",
+   "table_title": "Per-seed c40 video-AUC and 3-seed bands",
+   "where": "Appendix A",
+   "runs": [
+    "trunk_recipe_s42",
+    "trunk_recipe_s1",
+    "trunk_recipe_s2"
+   ],
+   "artifacts": [
+    "predictions/ffpp/trunk_recipe_s42.json",
+    "predictions/ffpp/trunk_recipe_s1.json",
+    "predictions/ffpp/trunk_recipe_s2.json"
+   ],
+   "command": "python verify/claim.py T5.23"
+  },
+  {
+   "label": "TrunkCtrl \u2014 AUC_comp 3-seed mean",
+   "printed": 0.9674,
+   "kind": "seed_mean",
+   "group": "t",
+   "cell": "auc_comp",
+   "id": "T5.24",
+   "table": "T5",
+   "table_title": "Per-seed c40 video-AUC and 3-seed bands",
+   "where": "Appendix A",
+   "runs": [
+    "trunk_recipe_s42",
+    "trunk_recipe_s1",
+    "trunk_recipe_s2"
+   ],
+   "artifacts": [
+    "predictions/ffpp/trunk_recipe_s42.json",
+    "predictions/ffpp/trunk_recipe_s1.json",
+    "predictions/ffpp/trunk_recipe_s2.json"
+   ],
+   "command": "python verify/claim.py T5.24"
+  },
+  {
    "label": "The eight defects, why each mattered, and how each was closed",
    "printed": "prose",
    "kind": "text",
@@ -1630,7 +1981,7 @@
    "id": "T7.1",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/a0.json"
    ],
@@ -1647,7 +1998,7 @@
    "id": "T7.2",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/a0.json"
    ],
@@ -1664,7 +2015,7 @@
    "id": "T7.3",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/a0.json"
    ],
@@ -1681,7 +2032,7 @@
    "id": "T7.4",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -1698,7 +2049,7 @@
    "id": "T7.5",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -1715,7 +2066,7 @@
    "id": "T7.6",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -1732,7 +2083,7 @@
    "id": "T7.7",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/b4_xception_mq.json"
    ],
@@ -1749,7 +2100,7 @@
    "id": "T7.8",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/b4_xception_mq.json"
    ],
@@ -1766,7 +2117,7 @@
    "id": "T7.9",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/b4_xception_mq.json"
    ],
@@ -1784,7 +2135,7 @@
    "id": "T7.10",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/a0.json"
    ],
@@ -1802,7 +2153,7 @@
    "id": "T7.11",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/a0.json"
    ],
@@ -1820,7 +2171,7 @@
    "id": "T7.12",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/a0.json"
    ],
@@ -1838,7 +2189,7 @@
    "id": "T7.13",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/a0.json"
    ],
@@ -1856,7 +2207,7 @@
    "id": "T7.14",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/a0.json"
    ],
@@ -1874,7 +2225,7 @@
    "id": "T7.15",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/a0.json"
    ],
@@ -1892,7 +2243,7 @@
    "id": "T7.16",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -1910,7 +2261,7 @@
    "id": "T7.17",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -1928,7 +2279,7 @@
    "id": "T7.18",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -1946,7 +2297,7 @@
    "id": "T7.19",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -1964,7 +2315,7 @@
    "id": "T7.20",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -1982,7 +2333,7 @@
    "id": "T7.21",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -2000,7 +2351,7 @@
    "id": "T7.22",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/b4_xception_mq.json"
    ],
@@ -2018,7 +2369,7 @@
    "id": "T7.23",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/b4_xception_mq.json"
    ],
@@ -2036,7 +2387,7 @@
    "id": "T7.24",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/b4_xception_mq.json"
    ],
@@ -2054,7 +2405,7 @@
    "id": "T7.25",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/b4_xception_mq.json"
    ],
@@ -2072,7 +2423,7 @@
    "id": "T7.26",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/b4_xception_mq.json"
    ],
@@ -2090,11 +2441,956 @@
    "id": "T7.27",
    "table": "T7",
    "table_title": "Cross-dataset evaluation (video-AUC)",
-   "where": "Appendix D-A",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
    "artifacts": [
     "predictions/cross_dataset/b4_xception_mq.json"
    ],
    "command": "python verify/claim.py T7.27"
+  },
+  {
+   "kind": "cell",
+   "run": "f1_none_fair_s42",
+   "label": "Fair-N (s42) \u2014 celebdf_v2",
+   "printed": 0.668,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.28",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "artifacts": [
+    "predictions/cross_dataset/f1_none_fair_s42.json"
+   ],
+   "command": "python verify/claim.py T7.28"
+  },
+  {
+   "kind": "cell",
+   "run": "f1_none_fair_s42",
+   "label": "Fair-N (s42) \u2014 dfd_c23",
+   "printed": 0.828,
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.29",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "artifacts": [
+    "predictions/cross_dataset/f1_none_fair_s42.json"
+   ],
+   "command": "python verify/claim.py T7.29"
+  },
+  {
+   "kind": "cell",
+   "run": "f1_none_fair_s42",
+   "label": "Fair-N (s42) \u2014 dfd_c40",
+   "printed": 0.683,
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.30",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "artifacts": [
+    "predictions/cross_dataset/f1_none_fair_s42.json"
+   ],
+   "command": "python verify/claim.py T7.30"
+  },
+  {
+   "kind": "cell",
+   "run": "f1_none_fair_s42",
+   "metric": "ci_lo",
+   "label": "Fair-N (s42) \u2014 CI lower \u2014 celebdf_v2",
+   "printed": 0.615,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.31",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "artifacts": [
+    "predictions/cross_dataset/f1_none_fair_s42.json"
+   ],
+   "command": "python verify/claim.py T7.31"
+  },
+  {
+   "kind": "cell",
+   "run": "f1_none_fair_s42",
+   "metric": "ci_lo",
+   "label": "Fair-N (s42) \u2014 CI lower \u2014 dfd_c23",
+   "printed": 0.808,
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.32",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "artifacts": [
+    "predictions/cross_dataset/f1_none_fair_s42.json"
+   ],
+   "command": "python verify/claim.py T7.32"
+  },
+  {
+   "kind": "cell",
+   "run": "f1_none_fair_s42",
+   "metric": "ci_lo",
+   "label": "Fair-N (s42) \u2014 CI lower \u2014 dfd_c40",
+   "printed": 0.656,
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.33",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "artifacts": [
+    "predictions/cross_dataset/f1_none_fair_s42.json"
+   ],
+   "command": "python verify/claim.py T7.33"
+  },
+  {
+   "kind": "cell",
+   "run": "f1_none_fair_s42",
+   "metric": "ci_hi",
+   "label": "Fair-N (s42) \u2014 CI upper \u2014 celebdf_v2",
+   "printed": 0.716,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.34",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "artifacts": [
+    "predictions/cross_dataset/f1_none_fair_s42.json"
+   ],
+   "command": "python verify/claim.py T7.34"
+  },
+  {
+   "kind": "cell",
+   "run": "f1_none_fair_s42",
+   "metric": "ci_hi",
+   "label": "Fair-N (s42) \u2014 CI upper \u2014 dfd_c23",
+   "printed": 0.848,
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.35",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "artifacts": [
+    "predictions/cross_dataset/f1_none_fair_s42.json"
+   ],
+   "command": "python verify/claim.py T7.35"
+  },
+  {
+   "kind": "cell",
+   "run": "f1_none_fair_s42",
+   "metric": "ci_hi",
+   "label": "Fair-N (s42) \u2014 CI upper \u2014 dfd_c40",
+   "printed": 0.709,
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.36",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "artifacts": [
+    "predictions/cross_dataset/f1_none_fair_s42.json"
+   ],
+   "command": "python verify/claim.py T7.36"
+  },
+  {
+   "kind": "cell",
+   "run": "f2_spatres_full_s42",
+   "label": "Fair-W (s42) \u2014 celebdf_v2",
+   "printed": 0.684,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.37",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "artifacts": [
+    "predictions/cross_dataset/f2_spatres_full_s42.json"
+   ],
+   "command": "python verify/claim.py T7.37"
+  },
+  {
+   "kind": "cell",
+   "run": "f2_spatres_full_s42",
+   "label": "Fair-W (s42) \u2014 dfd_c23",
+   "printed": 0.834,
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.38",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "artifacts": [
+    "predictions/cross_dataset/f2_spatres_full_s42.json"
+   ],
+   "command": "python verify/claim.py T7.38"
+  },
+  {
+   "kind": "cell",
+   "run": "f2_spatres_full_s42",
+   "label": "Fair-W (s42) \u2014 dfd_c40",
+   "printed": 0.649,
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.39",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "artifacts": [
+    "predictions/cross_dataset/f2_spatres_full_s42.json"
+   ],
+   "command": "python verify/claim.py T7.39"
+  },
+  {
+   "kind": "cell",
+   "run": "f2_spatres_full_s42",
+   "metric": "ci_lo",
+   "label": "Fair-W (s42) \u2014 CI lower \u2014 celebdf_v2",
+   "printed": 0.634,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.40",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "artifacts": [
+    "predictions/cross_dataset/f2_spatres_full_s42.json"
+   ],
+   "command": "python verify/claim.py T7.40"
+  },
+  {
+   "kind": "cell",
+   "run": "f2_spatres_full_s42",
+   "metric": "ci_lo",
+   "label": "Fair-W (s42) \u2014 CI lower \u2014 dfd_c23",
+   "printed": 0.814,
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.41",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "artifacts": [
+    "predictions/cross_dataset/f2_spatres_full_s42.json"
+   ],
+   "command": "python verify/claim.py T7.41"
+  },
+  {
+   "kind": "cell",
+   "run": "f2_spatres_full_s42",
+   "metric": "ci_lo",
+   "label": "Fair-W (s42) \u2014 CI lower \u2014 dfd_c40",
+   "printed": 0.621,
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.42",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "artifacts": [
+    "predictions/cross_dataset/f2_spatres_full_s42.json"
+   ],
+   "command": "python verify/claim.py T7.42"
+  },
+  {
+   "kind": "cell",
+   "run": "f2_spatres_full_s42",
+   "metric": "ci_hi",
+   "label": "Fair-W (s42) \u2014 CI upper \u2014 celebdf_v2",
+   "printed": 0.731,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.43",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "artifacts": [
+    "predictions/cross_dataset/f2_spatres_full_s42.json"
+   ],
+   "command": "python verify/claim.py T7.43"
+  },
+  {
+   "kind": "cell",
+   "run": "f2_spatres_full_s42",
+   "metric": "ci_hi",
+   "label": "Fair-W (s42) \u2014 CI upper \u2014 dfd_c23",
+   "printed": 0.852,
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.44",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "artifacts": [
+    "predictions/cross_dataset/f2_spatres_full_s42.json"
+   ],
+   "command": "python verify/claim.py T7.44"
+  },
+  {
+   "kind": "cell",
+   "run": "f2_spatres_full_s42",
+   "metric": "ci_hi",
+   "label": "Fair-W (s42) \u2014 CI upper \u2014 dfd_c40",
+   "printed": 0.676,
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.45",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "artifacts": [
+    "predictions/cross_dataset/f2_spatres_full_s42.json"
+   ],
+   "command": "python verify/claim.py T7.45"
+  },
+  {
+   "kind": "seed_mean",
+   "group": "a1grl",
+   "label": "CAFRL as specified \u2014 3-seed mean \u2014 celebdf_v2",
+   "printed": 0.705,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.46",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "runs": [
+    "a0",
+    "a1_grl_s1",
+    "a1_grl_s2"
+   ],
+   "artifacts": [
+    "predictions/cross_dataset/a0.json",
+    "predictions/cross_dataset/a1_grl_s1.json",
+    "predictions/cross_dataset/a1_grl_s2.json"
+   ],
+   "command": "python verify/claim.py T7.46"
+  },
+  {
+   "kind": "seed_mean",
+   "group": "a1grl",
+   "label": "CAFRL as specified \u2014 3-seed mean \u2014 dfd_c23",
+   "printed": 0.819,
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.47",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "runs": [
+    "a0",
+    "a1_grl_s1",
+    "a1_grl_s2"
+   ],
+   "artifacts": [
+    "predictions/cross_dataset/a0.json",
+    "predictions/cross_dataset/a1_grl_s1.json",
+    "predictions/cross_dataset/a1_grl_s2.json"
+   ],
+   "command": "python verify/claim.py T7.47"
+  },
+  {
+   "kind": "seed_mean",
+   "group": "a1grl",
+   "label": "CAFRL as specified \u2014 3-seed mean \u2014 dfd_c40",
+   "printed": 0.635,
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.48",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "runs": [
+    "a0",
+    "a1_grl_s1",
+    "a1_grl_s2"
+   ],
+   "artifacts": [
+    "predictions/cross_dataset/a0.json",
+    "predictions/cross_dataset/a1_grl_s1.json",
+    "predictions/cross_dataset/a1_grl_s2.json"
+   ],
+   "command": "python verify/claim.py T7.48"
+  },
+  {
+   "kind": "seed_band",
+   "group": "a1grl",
+   "label": "CAFRL as specified \u2014 3-seed band \u2014 celebdf_v2",
+   "printed": 0.051,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.49",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "runs": [
+    "a0",
+    "a1_grl_s1",
+    "a1_grl_s2"
+   ],
+   "artifacts": [
+    "predictions/cross_dataset/a0.json",
+    "predictions/cross_dataset/a1_grl_s1.json",
+    "predictions/cross_dataset/a1_grl_s2.json"
+   ],
+   "command": "python verify/claim.py T7.49"
+  },
+  {
+   "kind": "seed_band",
+   "group": "a1grl",
+   "label": "CAFRL as specified \u2014 3-seed band \u2014 dfd_c23",
+   "printed": 0.04,
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.50",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "runs": [
+    "a0",
+    "a1_grl_s1",
+    "a1_grl_s2"
+   ],
+   "artifacts": [
+    "predictions/cross_dataset/a0.json",
+    "predictions/cross_dataset/a1_grl_s1.json",
+    "predictions/cross_dataset/a1_grl_s2.json"
+   ],
+   "command": "python verify/claim.py T7.50"
+  },
+  {
+   "kind": "seed_band",
+   "group": "a1grl",
+   "label": "CAFRL as specified \u2014 3-seed band \u2014 dfd_c40",
+   "printed": 0.035,
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.51",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "runs": [
+    "a0",
+    "a1_grl_s1",
+    "a1_grl_s2"
+   ],
+   "artifacts": [
+    "predictions/cross_dataset/a0.json",
+    "predictions/cross_dataset/a1_grl_s1.json",
+    "predictions/cross_dataset/a1_grl_s2.json"
+   ],
+   "command": "python verify/claim.py T7.51"
+  },
+  {
+   "kind": "seed_mean",
+   "group": "b7",
+   "label": "SpatialBase \u2014 3-seed mean \u2014 celebdf_v2",
+   "printed": 0.686,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.52",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "runs": [
+    "b7_effnet_b0_mq_fliponly",
+    "b7_effnet_b0_mq_fliponly_s1",
+    "b7_effnet_b0_mq_fliponly_s2"
+   ],
+   "artifacts": [
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json",
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py T7.52"
+  },
+  {
+   "kind": "seed_mean",
+   "group": "b7",
+   "label": "SpatialBase \u2014 3-seed mean \u2014 dfd_c23",
+   "printed": 0.825,
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.53",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "runs": [
+    "b7_effnet_b0_mq_fliponly",
+    "b7_effnet_b0_mq_fliponly_s1",
+    "b7_effnet_b0_mq_fliponly_s2"
+   ],
+   "artifacts": [
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json",
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py T7.53"
+  },
+  {
+   "kind": "seed_mean",
+   "group": "b7",
+   "label": "SpatialBase \u2014 3-seed mean \u2014 dfd_c40",
+   "printed": 0.65,
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.54",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "runs": [
+    "b7_effnet_b0_mq_fliponly",
+    "b7_effnet_b0_mq_fliponly_s1",
+    "b7_effnet_b0_mq_fliponly_s2"
+   ],
+   "artifacts": [
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json",
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py T7.54"
+  },
+  {
+   "kind": "seed_band",
+   "group": "b7",
+   "label": "SpatialBase \u2014 3-seed band \u2014 celebdf_v2",
+   "printed": 0.035,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.55",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "runs": [
+    "b7_effnet_b0_mq_fliponly",
+    "b7_effnet_b0_mq_fliponly_s1",
+    "b7_effnet_b0_mq_fliponly_s2"
+   ],
+   "artifacts": [
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json",
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py T7.55"
+  },
+  {
+   "kind": "seed_band",
+   "group": "b7",
+   "label": "SpatialBase \u2014 3-seed band \u2014 dfd_c23",
+   "printed": 0.054,
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.56",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "runs": [
+    "b7_effnet_b0_mq_fliponly",
+    "b7_effnet_b0_mq_fliponly_s1",
+    "b7_effnet_b0_mq_fliponly_s2"
+   ],
+   "artifacts": [
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json",
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py T7.56"
+  },
+  {
+   "kind": "seed_band",
+   "group": "b7",
+   "label": "SpatialBase \u2014 3-seed band \u2014 dfd_c40",
+   "printed": 0.031,
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.57",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "runs": [
+    "b7_effnet_b0_mq_fliponly",
+    "b7_effnet_b0_mq_fliponly_s1",
+    "b7_effnet_b0_mq_fliponly_s2"
+   ],
+   "artifacts": [
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json",
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py T7.57"
+  },
+  {
+   "kind": "seed_mean",
+   "group": "f1",
+   "label": "Fair-N \u2014 3-seed mean \u2014 celebdf_v2",
+   "printed": 0.647,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.58",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "runs": [
+    "f1_none_fair_s42",
+    "f1_none_fair_s1",
+    "f1_none_fair_s2"
+   ],
+   "artifacts": [
+    "predictions/cross_dataset/f1_none_fair_s42.json",
+    "predictions/cross_dataset/f1_none_fair_s1.json",
+    "predictions/cross_dataset/f1_none_fair_s2.json"
+   ],
+   "command": "python verify/claim.py T7.58"
+  },
+  {
+   "kind": "seed_mean",
+   "group": "f1",
+   "label": "Fair-N \u2014 3-seed mean \u2014 dfd_c23",
+   "printed": 0.792,
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.59",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "runs": [
+    "f1_none_fair_s42",
+    "f1_none_fair_s1",
+    "f1_none_fair_s2"
+   ],
+   "artifacts": [
+    "predictions/cross_dataset/f1_none_fair_s42.json",
+    "predictions/cross_dataset/f1_none_fair_s1.json",
+    "predictions/cross_dataset/f1_none_fair_s2.json"
+   ],
+   "command": "python verify/claim.py T7.59"
+  },
+  {
+   "kind": "seed_mean",
+   "group": "f1",
+   "label": "Fair-N \u2014 3-seed mean \u2014 dfd_c40",
+   "printed": 0.659,
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.60",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "runs": [
+    "f1_none_fair_s42",
+    "f1_none_fair_s1",
+    "f1_none_fair_s2"
+   ],
+   "artifacts": [
+    "predictions/cross_dataset/f1_none_fair_s42.json",
+    "predictions/cross_dataset/f1_none_fair_s1.json",
+    "predictions/cross_dataset/f1_none_fair_s2.json"
+   ],
+   "command": "python verify/claim.py T7.60"
+  },
+  {
+   "kind": "seed_band",
+   "group": "f1",
+   "label": "Fair-N \u2014 3-seed band \u2014 celebdf_v2",
+   "printed": 0.17,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.61",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "runs": [
+    "f1_none_fair_s42",
+    "f1_none_fair_s1",
+    "f1_none_fair_s2"
+   ],
+   "artifacts": [
+    "predictions/cross_dataset/f1_none_fair_s42.json",
+    "predictions/cross_dataset/f1_none_fair_s1.json",
+    "predictions/cross_dataset/f1_none_fair_s2.json"
+   ],
+   "command": "python verify/claim.py T7.61"
+  },
+  {
+   "kind": "seed_band",
+   "group": "f1",
+   "label": "Fair-N \u2014 3-seed band \u2014 dfd_c23",
+   "printed": 0.095,
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.62",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "runs": [
+    "f1_none_fair_s42",
+    "f1_none_fair_s1",
+    "f1_none_fair_s2"
+   ],
+   "artifacts": [
+    "predictions/cross_dataset/f1_none_fair_s42.json",
+    "predictions/cross_dataset/f1_none_fair_s1.json",
+    "predictions/cross_dataset/f1_none_fair_s2.json"
+   ],
+   "command": "python verify/claim.py T7.62"
+  },
+  {
+   "kind": "seed_band",
+   "group": "f1",
+   "label": "Fair-N \u2014 3-seed band \u2014 dfd_c40",
+   "printed": 0.073,
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.63",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "runs": [
+    "f1_none_fair_s42",
+    "f1_none_fair_s1",
+    "f1_none_fair_s2"
+   ],
+   "artifacts": [
+    "predictions/cross_dataset/f1_none_fair_s42.json",
+    "predictions/cross_dataset/f1_none_fair_s1.json",
+    "predictions/cross_dataset/f1_none_fair_s2.json"
+   ],
+   "command": "python verify/claim.py T7.63"
+  },
+  {
+   "kind": "seed_mean",
+   "group": "f2",
+   "label": "Fair-W \u2014 3-seed mean \u2014 celebdf_v2",
+   "printed": 0.681,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.64",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "runs": [
+    "f2_spatres_full_s42",
+    "f2_spatres_full_s1",
+    "f2_spatres_full_s2"
+   ],
+   "artifacts": [
+    "predictions/cross_dataset/f2_spatres_full_s42.json",
+    "predictions/cross_dataset/f2_spatres_full_s1.json",
+    "predictions/cross_dataset/f2_spatres_full_s2.json"
+   ],
+   "command": "python verify/claim.py T7.64"
+  },
+  {
+   "kind": "seed_mean",
+   "group": "f2",
+   "label": "Fair-W \u2014 3-seed mean \u2014 dfd_c23",
+   "printed": 0.835,
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.65",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "runs": [
+    "f2_spatres_full_s42",
+    "f2_spatres_full_s1",
+    "f2_spatres_full_s2"
+   ],
+   "artifacts": [
+    "predictions/cross_dataset/f2_spatres_full_s42.json",
+    "predictions/cross_dataset/f2_spatres_full_s1.json",
+    "predictions/cross_dataset/f2_spatres_full_s2.json"
+   ],
+   "command": "python verify/claim.py T7.65"
+  },
+  {
+   "kind": "seed_mean",
+   "group": "f2",
+   "label": "Fair-W \u2014 3-seed mean \u2014 dfd_c40",
+   "printed": 0.664,
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.66",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "runs": [
+    "f2_spatres_full_s42",
+    "f2_spatres_full_s1",
+    "f2_spatres_full_s2"
+   ],
+   "artifacts": [
+    "predictions/cross_dataset/f2_spatres_full_s42.json",
+    "predictions/cross_dataset/f2_spatres_full_s1.json",
+    "predictions/cross_dataset/f2_spatres_full_s2.json"
+   ],
+   "command": "python verify/claim.py T7.66"
+  },
+  {
+   "kind": "seed_band",
+   "group": "f2",
+   "label": "Fair-W \u2014 3-seed band \u2014 celebdf_v2",
+   "printed": 0.048,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.67",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "runs": [
+    "f2_spatres_full_s42",
+    "f2_spatres_full_s1",
+    "f2_spatres_full_s2"
+   ],
+   "artifacts": [
+    "predictions/cross_dataset/f2_spatres_full_s42.json",
+    "predictions/cross_dataset/f2_spatres_full_s1.json",
+    "predictions/cross_dataset/f2_spatres_full_s2.json"
+   ],
+   "command": "python verify/claim.py T7.67"
+  },
+  {
+   "kind": "seed_band",
+   "group": "f2",
+   "label": "Fair-W \u2014 3-seed band \u2014 dfd_c23",
+   "printed": 0.057,
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.68",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "runs": [
+    "f2_spatres_full_s42",
+    "f2_spatres_full_s1",
+    "f2_spatres_full_s2"
+   ],
+   "artifacts": [
+    "predictions/cross_dataset/f2_spatres_full_s42.json",
+    "predictions/cross_dataset/f2_spatres_full_s1.json",
+    "predictions/cross_dataset/f2_spatres_full_s2.json"
+   ],
+   "command": "python verify/claim.py T7.68"
+  },
+  {
+   "kind": "seed_band",
+   "group": "f2",
+   "label": "Fair-W \u2014 3-seed band \u2014 dfd_c40",
+   "printed": 0.054,
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.69",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "runs": [
+    "f2_spatres_full_s42",
+    "f2_spatres_full_s1",
+    "f2_spatres_full_s2"
+   ],
+   "artifacts": [
+    "predictions/cross_dataset/f2_spatres_full_s42.json",
+    "predictions/cross_dataset/f2_spatres_full_s1.json",
+    "predictions/cross_dataset/f2_spatres_full_s2.json"
+   ],
+   "command": "python verify/claim.py T7.69"
+  },
+  {
+   "kind": "cell",
+   "run": "f1_none_fair_s42",
+   "note": "The three runs read 0.668, 0.571 and 0.703; the other two are the rows below.",
+   "label": "Fair-N Celeb-DF per seed (s42 / s1 / s2) \u2014 celebdf_v2",
+   "printed": 0.668,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "id": "T7.70",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "artifacts": [
+    "predictions/cross_dataset/f1_none_fair_s42.json"
+   ],
+   "command": "python verify/claim.py T7.70"
+  },
+  {
+   "kind": "cell",
+   "run": "f1_none_fair_s1",
+   "label": "Fair-N Celeb-DF \u2014 seed 1 \u2014 celebdf_v2",
+   "printed": 0.571,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.71",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "artifacts": [
+    "predictions/cross_dataset/f1_none_fair_s1.json"
+   ],
+   "command": "python verify/claim.py T7.71"
+  },
+  {
+   "kind": "cell",
+   "run": "f1_none_fair_s2",
+   "label": "Fair-N Celeb-DF \u2014 seed 2 \u2014 celebdf_v2",
+   "printed": 0.703,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.72",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A (Table 11; intervals released-only after the W8a trim)",
+   "artifacts": [
+    "predictions/cross_dataset/f1_none_fair_s2.json"
+   ],
+   "command": "python verify/claim.py T7.72"
   },
   {
    "label": "c23 \u2014 CAFRL (3-seed)",
@@ -2203,6 +3499,1030 @@
    "command": "\u2014"
   },
   {
+   "kind": "cell",
+   "run": "b1_xception_lit",
+   "label": "Xception (lit) \u2014 c0",
+   "printed": 0.9949,
+   "cell": "c0",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.1",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b1_xception_lit.json"
+   ],
+   "command": "python verify/claim.py AppB2.1"
+  },
+  {
+   "kind": "cell",
+   "run": "b1_xception_lit",
+   "label": "Xception (lit) \u2014 c18",
+   "printed": 0.9948,
+   "cell": "c18",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.2",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b1_xception_lit.json"
+   ],
+   "command": "python verify/claim.py AppB2.2"
+  },
+  {
+   "kind": "cell",
+   "run": "b1_xception_lit",
+   "label": "Xception (lit) \u2014 c23",
+   "printed": 0.9944,
+   "cell": "c23",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.3",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b1_xception_lit.json"
+   ],
+   "command": "python verify/claim.py AppB2.3"
+  },
+  {
+   "kind": "cell",
+   "run": "b1_xception_lit",
+   "label": "Xception (lit) \u2014 c28",
+   "printed": 0.989,
+   "cell": "c28",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.4",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b1_xception_lit.json"
+   ],
+   "command": "python verify/claim.py AppB2.4"
+  },
+  {
+   "kind": "cell",
+   "run": "b1_xception_lit",
+   "label": "Xception (lit) \u2014 c32",
+   "printed": 0.9778,
+   "cell": "c32",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.5",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b1_xception_lit.json"
+   ],
+   "command": "python verify/claim.py AppB2.5"
+  },
+  {
+   "kind": "cell",
+   "run": "b1_xception_lit",
+   "label": "Xception (lit) \u2014 c36",
+   "printed": 0.928,
+   "cell": "c36",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.6",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b1_xception_lit.json"
+   ],
+   "command": "python verify/claim.py AppB2.6"
+  },
+  {
+   "kind": "cell",
+   "run": "b1_xception_lit",
+   "label": "Xception (lit) \u2014 c40",
+   "printed": 0.866,
+   "cell": "c40",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.7",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b1_xception_lit.json"
+   ],
+   "command": "python verify/claim.py AppB2.7"
+  },
+  {
+   "kind": "auc_comp",
+   "run": "b1_xception_lit",
+   "label": "Xception (lit) \u2014 auc_comp",
+   "printed": 0.9402,
+   "cell": "auc_comp",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.8",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b1_xception_lit.json"
+   ],
+   "command": "python verify/claim.py AppB2.8"
+  },
+  {
+   "kind": "cell",
+   "run": "b2_f3net_lit",
+   "label": "F3-Net (lit) \u2014 c0",
+   "printed": 0.9925,
+   "cell": "c0",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.9",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b2_f3net_lit.json"
+   ],
+   "command": "python verify/claim.py AppB2.9"
+  },
+  {
+   "kind": "cell",
+   "run": "b2_f3net_lit",
+   "label": "F3-Net (lit) \u2014 c18",
+   "printed": 0.9924,
+   "cell": "c18",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.10",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b2_f3net_lit.json"
+   ],
+   "command": "python verify/claim.py AppB2.10"
+  },
+  {
+   "kind": "cell",
+   "run": "b2_f3net_lit",
+   "label": "F3-Net (lit) \u2014 c23",
+   "printed": 0.9917,
+   "cell": "c23",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.11",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b2_f3net_lit.json"
+   ],
+   "command": "python verify/claim.py AppB2.11"
+  },
+  {
+   "kind": "cell",
+   "run": "b2_f3net_lit",
+   "label": "F3-Net (lit) \u2014 c28",
+   "printed": 0.9835,
+   "cell": "c28",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.12",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b2_f3net_lit.json"
+   ],
+   "command": "python verify/claim.py AppB2.12"
+  },
+  {
+   "kind": "cell",
+   "run": "b2_f3net_lit",
+   "label": "F3-Net (lit) \u2014 c32",
+   "printed": 0.9654,
+   "cell": "c32",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.13",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b2_f3net_lit.json"
+   ],
+   "command": "python verify/claim.py AppB2.13"
+  },
+  {
+   "kind": "cell",
+   "run": "b2_f3net_lit",
+   "label": "F3-Net (lit) \u2014 c36",
+   "printed": 0.921,
+   "cell": "c36",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.14",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b2_f3net_lit.json"
+   ],
+   "command": "python verify/claim.py AppB2.14"
+  },
+  {
+   "kind": "cell",
+   "run": "b2_f3net_lit",
+   "label": "F3-Net (lit) \u2014 c40",
+   "printed": 0.8599,
+   "cell": "c40",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.15",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b2_f3net_lit.json"
+   ],
+   "command": "python verify/claim.py AppB2.15"
+  },
+  {
+   "kind": "auc_comp",
+   "run": "b2_f3net_lit",
+   "label": "F3-Net (lit) \u2014 auc_comp",
+   "printed": 0.9325,
+   "cell": "auc_comp",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.16",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b2_f3net_lit.json"
+   ],
+   "command": "python verify/claim.py AppB2.16"
+  },
+  {
+   "kind": "cell",
+   "run": "b3_freqnet_lit",
+   "label": "FreqNet (lit) \u2014 c0",
+   "printed": 0.9808,
+   "cell": "c0",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.17",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b3_freqnet_lit.json"
+   ],
+   "command": "python verify/claim.py AppB2.17"
+  },
+  {
+   "kind": "cell",
+   "run": "b3_freqnet_lit",
+   "label": "FreqNet (lit) \u2014 c18",
+   "printed": 0.9899,
+   "cell": "c18",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.18",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b3_freqnet_lit.json"
+   ],
+   "command": "python verify/claim.py AppB2.18"
+  },
+  {
+   "kind": "cell",
+   "run": "b3_freqnet_lit",
+   "label": "FreqNet (lit) \u2014 c23",
+   "printed": 0.9877,
+   "cell": "c23",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.19",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b3_freqnet_lit.json"
+   ],
+   "command": "python verify/claim.py AppB2.19"
+  },
+  {
+   "kind": "cell",
+   "run": "b3_freqnet_lit",
+   "label": "FreqNet (lit) \u2014 c28",
+   "printed": 0.9652,
+   "cell": "c28",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.20",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b3_freqnet_lit.json"
+   ],
+   "command": "python verify/claim.py AppB2.20"
+  },
+  {
+   "kind": "cell",
+   "run": "b3_freqnet_lit",
+   "label": "FreqNet (lit) \u2014 c32",
+   "printed": 0.9274,
+   "cell": "c32",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.21",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b3_freqnet_lit.json"
+   ],
+   "command": "python verify/claim.py AppB2.21"
+  },
+  {
+   "kind": "cell",
+   "run": "b3_freqnet_lit",
+   "label": "FreqNet (lit) \u2014 c36",
+   "printed": 0.8541,
+   "cell": "c36",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.22",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b3_freqnet_lit.json"
+   ],
+   "command": "python verify/claim.py AppB2.22"
+  },
+  {
+   "kind": "cell",
+   "run": "b3_freqnet_lit",
+   "label": "FreqNet (lit) \u2014 c40",
+   "printed": 0.7684,
+   "cell": "c40",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.23",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b3_freqnet_lit.json"
+   ],
+   "command": "python verify/claim.py AppB2.23"
+  },
+  {
+   "kind": "auc_comp",
+   "run": "b3_freqnet_lit",
+   "label": "FreqNet (lit) \u2014 auc_comp",
+   "printed": 0.8788,
+   "cell": "auc_comp",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.24",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b3_freqnet_lit.json"
+   ],
+   "command": "python verify/claim.py AppB2.24"
+  },
+  {
+   "kind": "cell",
+   "run": "b4_xception_mq",
+   "label": "Xception-mq (std aug) \u2014 c0",
+   "printed": 0.9921,
+   "cell": "c0",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.25",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py AppB2.25"
+  },
+  {
+   "kind": "cell",
+   "run": "b4_xception_mq",
+   "label": "Xception-mq (std aug) \u2014 c18",
+   "printed": 0.9899,
+   "cell": "c18",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.26",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py AppB2.26"
+  },
+  {
+   "kind": "cell",
+   "run": "b4_xception_mq",
+   "label": "Xception-mq (std aug) \u2014 c23",
+   "printed": 0.9872,
+   "cell": "c23",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.27",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py AppB2.27"
+  },
+  {
+   "kind": "cell",
+   "run": "b4_xception_mq",
+   "label": "Xception-mq (std aug) \u2014 c28",
+   "printed": 0.9838,
+   "cell": "c28",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.28",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py AppB2.28"
+  },
+  {
+   "kind": "cell",
+   "run": "b4_xception_mq",
+   "label": "Xception-mq (std aug) \u2014 c32",
+   "printed": 0.9803,
+   "cell": "c32",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.29",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py AppB2.29"
+  },
+  {
+   "kind": "cell",
+   "run": "b4_xception_mq",
+   "label": "Xception-mq (std aug) \u2014 c36",
+   "printed": 0.9739,
+   "cell": "c36",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.30",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py AppB2.30"
+  },
+  {
+   "kind": "cell",
+   "run": "b4_xception_mq",
+   "label": "Xception-mq (std aug) \u2014 c40",
+   "printed": 0.9679,
+   "cell": "c40",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.31",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py AppB2.31"
+  },
+  {
+   "kind": "auc_comp",
+   "run": "b4_xception_mq",
+   "label": "Xception-mq (std aug) \u2014 auc_comp",
+   "printed": 0.9765,
+   "cell": "auc_comp",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.32",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py AppB2.32"
+  },
+  {
+   "kind": "cell",
+   "run": "b4b_xception_mq_fliponly",
+   "label": "Xception-mq (flip-only) \u2014 c0",
+   "printed": 0.9918,
+   "cell": "c0",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.33",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b4b_xception_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppB2.33"
+  },
+  {
+   "kind": "cell",
+   "run": "b4b_xception_mq_fliponly",
+   "label": "Xception-mq (flip-only) \u2014 c18",
+   "printed": 0.9893,
+   "cell": "c18",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.34",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b4b_xception_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppB2.34"
+  },
+  {
+   "kind": "cell",
+   "run": "b4b_xception_mq_fliponly",
+   "label": "Xception-mq (flip-only) \u2014 c23",
+   "printed": 0.9869,
+   "cell": "c23",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.35",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b4b_xception_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppB2.35"
+  },
+  {
+   "kind": "cell",
+   "run": "b4b_xception_mq_fliponly",
+   "label": "Xception-mq (flip-only) \u2014 c28",
+   "printed": 0.982,
+   "cell": "c28",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.36",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b4b_xception_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppB2.36"
+  },
+  {
+   "kind": "cell",
+   "run": "b4b_xception_mq_fliponly",
+   "label": "Xception-mq (flip-only) \u2014 c32",
+   "printed": 0.9772,
+   "cell": "c32",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.37",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b4b_xception_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppB2.37"
+  },
+  {
+   "kind": "cell",
+   "run": "b4b_xception_mq_fliponly",
+   "label": "Xception-mq (flip-only) \u2014 c36",
+   "printed": 0.9691,
+   "cell": "c36",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.38",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b4b_xception_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppB2.38"
+  },
+  {
+   "kind": "cell",
+   "run": "b4b_xception_mq_fliponly",
+   "label": "Xception-mq (flip-only) \u2014 c40",
+   "printed": 0.9631,
+   "cell": "c40",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.39",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b4b_xception_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppB2.39"
+  },
+  {
+   "kind": "auc_comp",
+   "run": "b4b_xception_mq_fliponly",
+   "label": "Xception-mq (flip-only) \u2014 auc_comp",
+   "printed": 0.9728,
+   "cell": "auc_comp",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.40",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b4b_xception_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppB2.40"
+  },
+  {
+   "kind": "cell",
+   "run": "b5_f3net_mq",
+   "label": "F3-Net-mq \u2014 c0",
+   "printed": 0.9911,
+   "cell": "c0",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.41",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b5_f3net_mq.json"
+   ],
+   "command": "python verify/claim.py AppB2.41"
+  },
+  {
+   "kind": "cell",
+   "run": "b5_f3net_mq",
+   "label": "F3-Net-mq \u2014 c18",
+   "printed": 0.9902,
+   "cell": "c18",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.42",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b5_f3net_mq.json"
+   ],
+   "command": "python verify/claim.py AppB2.42"
+  },
+  {
+   "kind": "cell",
+   "run": "b5_f3net_mq",
+   "label": "F3-Net-mq \u2014 c23",
+   "printed": 0.9885,
+   "cell": "c23",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.43",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b5_f3net_mq.json"
+   ],
+   "command": "python verify/claim.py AppB2.43"
+  },
+  {
+   "kind": "cell",
+   "run": "b5_f3net_mq",
+   "label": "F3-Net-mq \u2014 c28",
+   "printed": 0.9831,
+   "cell": "c28",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.44",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b5_f3net_mq.json"
+   ],
+   "command": "python verify/claim.py AppB2.44"
+  },
+  {
+   "kind": "cell",
+   "run": "b5_f3net_mq",
+   "label": "F3-Net-mq \u2014 c32",
+   "printed": 0.9766,
+   "cell": "c32",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.45",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b5_f3net_mq.json"
+   ],
+   "command": "python verify/claim.py AppB2.45"
+  },
+  {
+   "kind": "cell",
+   "run": "b5_f3net_mq",
+   "label": "F3-Net-mq \u2014 c36",
+   "printed": 0.9683,
+   "cell": "c36",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.46",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b5_f3net_mq.json"
+   ],
+   "command": "python verify/claim.py AppB2.46"
+  },
+  {
+   "kind": "cell",
+   "run": "b5_f3net_mq",
+   "label": "F3-Net-mq \u2014 c40",
+   "printed": 0.9551,
+   "cell": "c40",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.47",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b5_f3net_mq.json"
+   ],
+   "command": "python verify/claim.py AppB2.47"
+  },
+  {
+   "kind": "auc_comp",
+   "run": "b5_f3net_mq",
+   "label": "F3-Net-mq \u2014 auc_comp",
+   "printed": 0.9708,
+   "cell": "auc_comp",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.48",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b5_f3net_mq.json"
+   ],
+   "command": "python verify/claim.py AppB2.48"
+  },
+  {
+   "kind": "cell",
+   "run": "b6_freqnet_mq",
+   "label": "FreqNet-mq \u2014 c0",
+   "printed": 0.98,
+   "cell": "c0",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.49",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b6_freqnet_mq.json"
+   ],
+   "command": "python verify/claim.py AppB2.49"
+  },
+  {
+   "kind": "cell",
+   "run": "b6_freqnet_mq",
+   "label": "FreqNet-mq \u2014 c18",
+   "printed": 0.9745,
+   "cell": "c18",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.50",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b6_freqnet_mq.json"
+   ],
+   "command": "python verify/claim.py AppB2.50"
+  },
+  {
+   "kind": "cell",
+   "run": "b6_freqnet_mq",
+   "label": "FreqNet-mq \u2014 c23",
+   "printed": 0.9693,
+   "cell": "c23",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.51",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b6_freqnet_mq.json"
+   ],
+   "command": "python verify/claim.py AppB2.51"
+  },
+  {
+   "kind": "cell",
+   "run": "b6_freqnet_mq",
+   "label": "FreqNet-mq \u2014 c28",
+   "printed": 0.9566,
+   "cell": "c28",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.52",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b6_freqnet_mq.json"
+   ],
+   "command": "python verify/claim.py AppB2.52"
+  },
+  {
+   "kind": "cell",
+   "run": "b6_freqnet_mq",
+   "label": "FreqNet-mq \u2014 c32",
+   "printed": 0.9383,
+   "cell": "c32",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.53",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b6_freqnet_mq.json"
+   ],
+   "command": "python verify/claim.py AppB2.53"
+  },
+  {
+   "kind": "cell",
+   "run": "b6_freqnet_mq",
+   "label": "FreqNet-mq \u2014 c36",
+   "printed": 0.9131,
+   "cell": "c36",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.54",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b6_freqnet_mq.json"
+   ],
+   "command": "python verify/claim.py AppB2.54"
+  },
+  {
+   "kind": "cell",
+   "run": "b6_freqnet_mq",
+   "label": "FreqNet-mq \u2014 c40",
+   "printed": 0.8787,
+   "cell": "c40",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.55",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b6_freqnet_mq.json"
+   ],
+   "command": "python verify/claim.py AppB2.55"
+  },
+  {
+   "kind": "auc_comp",
+   "run": "b6_freqnet_mq",
+   "label": "FreqNet-mq \u2014 auc_comp",
+   "printed": 0.9217,
+   "cell": "auc_comp",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.56",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b6_freqnet_mq.json"
+   ],
+   "command": "python verify/claim.py AppB2.56"
+  },
+  {
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "label": "SpatialBase \u2014 c0",
+   "printed": 0.9919,
+   "cell": "c0",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.57",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppB2.57"
+  },
+  {
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "label": "SpatialBase \u2014 c18",
+   "printed": 0.9892,
+   "cell": "c18",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.58",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppB2.58"
+  },
+  {
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "label": "SpatialBase \u2014 c23",
+   "printed": 0.9867,
+   "cell": "c23",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.59",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppB2.59"
+  },
+  {
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "label": "SpatialBase \u2014 c28",
+   "printed": 0.981,
+   "cell": "c28",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.60",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppB2.60"
+  },
+  {
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "label": "SpatialBase \u2014 c32",
+   "printed": 0.9758,
+   "cell": "c32",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.61",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppB2.61"
+  },
+  {
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "label": "SpatialBase \u2014 c36",
+   "printed": 0.9678,
+   "cell": "c36",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.62",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppB2.62"
+  },
+  {
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "label": "SpatialBase \u2014 c40",
+   "printed": 0.959,
+   "cell": "c40",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.63",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppB2.63"
+  },
+  {
+   "kind": "auc_comp",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "label": "SpatialBase \u2014 auc_comp",
+   "printed": 0.9709,
+   "cell": "auc_comp",
+   "note": "Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.",
+   "id": "AppB2.64",
+   "table": "AppB2",
+   "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
+   "where": "Appendix C (Table 9)",
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppB2.64"
+  },
+  {
    "label": "Xception, literature protocol, c40",
    "printed": 0.866,
    "kind": "cell",
@@ -2248,20 +4568,95 @@
    "command": "python verify/claim.py AppC.3"
   },
   {
+   "label": "Multi-CRF training moves Xception c23 0.994 -> 0.987",
+   "printed": 0.994,
+   "kind": "cell",
+   "run": "b1_xception_lit",
+   "cell": "c23",
+   "id": "AppC.4",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b1_xception_lit.json"
+   ],
+   "command": "python verify/claim.py AppC.4"
+  },
+  {
+   "label": "... to Xception-mq c23 0.987",
+   "printed": 0.987,
+   "kind": "cell",
+   "run": "b4_xception_mq",
+   "cell": "c23",
+   "id": "AppC.5",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py AppC.5"
+  },
+  {
+   "label": "Multi-CRF training moves F3-Net c23 0.992 -> 0.989",
+   "printed": 0.992,
+   "kind": "cell",
+   "run": "b2_f3net_lit",
+   "cell": "c23",
+   "id": "AppC.6",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b2_f3net_lit.json"
+   ],
+   "command": "python verify/claim.py AppC.6"
+  },
+  {
+   "label": "... to F3-Net-mq c23 0.989",
+   "printed": 0.989,
+   "kind": "cell",
+   "run": "b5_f3net_mq",
+   "cell": "c23",
+   "id": "AppC.7",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b5_f3net_mq.json"
+   ],
+   "command": "python verify/claim.py AppC.7"
+  },
+  {
+   "label": "FreqNet gains most from multi-CRF: 0.768 -> 0.879 at c40",
+   "printed": 0.879,
+   "kind": "cell",
+   "run": "b6_freqnet_mq",
+   "cell": "c40",
+   "id": "AppC.8",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b6_freqnet_mq.json"
+   ],
+   "command": "python verify/claim.py AppC.8"
+  },
+  {
    "label": "Augmentation recovery, example 1: 0.764 (flip-only frame-AUC, c40)",
    "printed": 0.764,
    "kind": "cell",
    "run": "b1_xception_lit_fliponly",
    "cell": "c40",
    "metric": "frame_auc",
-   "id": "AppC.4",
+   "id": "AppC.9",
    "table": "AppC",
    "table_title": "Baseline reproduction and the augmentation confound",
    "where": "Appendix C",
    "artifacts": [
     "predictions/ffpp/b1_xception_lit_fliponly.json"
    ],
-   "command": "python verify/claim.py AppC.4"
+   "command": "python verify/claim.py AppC.9"
   },
   {
    "label": "Augmentation recovery, example 1: \u2192 0.791 (with augmentation)",
@@ -2271,14 +4666,14 @@
    "cell": "c40",
    "metric": "frame_auc",
    "note": "Corrected in the manuscript (W1, 2026-08-19) from 0.792 to the released frame-AUC 0.79150.",
-   "id": "AppC.5",
+   "id": "AppC.10",
    "table": "AppC",
    "table_title": "Baseline reproduction and the augmentation confound",
    "where": "Appendix C",
    "artifacts": [
     "predictions/ffpp/b1_xception_lit.json"
    ],
-   "command": "python verify/claim.py AppC.5"
+   "command": "python verify/claim.py AppC.10"
   },
   {
    "label": "Augmentation recovery, example 2: 0.725 (flip-only frame-AUC, c40)",
@@ -2287,14 +4682,14 @@
    "run": "b2_f3net_lit_fliponly",
    "cell": "c40",
    "metric": "frame_auc",
-   "id": "AppC.6",
+   "id": "AppC.11",
    "table": "AppC",
    "table_title": "Baseline reproduction and the augmentation confound",
    "where": "Appendix C",
    "artifacts": [
     "predictions/ffpp/b2_f3net_lit_fliponly.json"
    ],
-   "command": "python verify/claim.py AppC.6"
+   "command": "python verify/claim.py AppC.11"
   },
   {
    "label": "Augmentation recovery, example 2: \u2192 0.780 (with augmentation)",
@@ -2303,14 +4698,14 @@
    "run": "b2_f3net_lit",
    "cell": "c40",
    "metric": "frame_auc",
-   "id": "AppC.7",
+   "id": "AppC.12",
    "table": "AppC",
    "table_title": "Baseline reproduction and the augmentation confound",
    "where": "Appendix C",
    "artifacts": [
     "predictions/ffpp/b2_f3net_lit.json"
    ],
-   "command": "python verify/claim.py AppC.7"
+   "command": "python verify/claim.py AppC.12"
   },
   {
    "label": "Augmentation confound control: Xception-mq 0.968 (with augmentation)",
@@ -2318,14 +4713,14 @@
    "kind": "cell",
    "run": "b4_xception_mq",
    "cell": "c40",
-   "id": "AppC.8",
+   "id": "AppC.13",
    "table": "AppC",
    "table_title": "Baseline reproduction and the augmentation confound",
    "where": "Appendix C",
    "artifacts": [
     "predictions/ffpp/b4_xception_mq.json"
    ],
-   "command": "python verify/claim.py AppC.8"
+   "command": "python verify/claim.py AppC.13"
   },
   {
    "label": "Augmentation confound control: \u2192 0.963 flip-only",
@@ -2333,14 +4728,14 @@
    "kind": "cell",
    "run": "b4b_xception_mq_fliponly",
    "cell": "c40",
-   "id": "AppC.9",
+   "id": "AppC.14",
    "table": "AppC",
    "table_title": "Baseline reproduction and the augmentation confound",
    "where": "Appendix C",
    "artifacts": [
     "predictions/ffpp/b4b_xception_mq_fliponly.json"
    ],
-   "command": "python verify/claim.py AppC.9"
+   "command": "python verify/claim.py AppC.14"
   },
   {
    "label": "Synthetic JPEG augmentation at real c40",
@@ -2350,14 +4745,14 @@
    "cell": "real_c40",
    "eval_set": "p2_probe",
    "note": "Marginal statistic only \u2014 this arm has no per-video scores (predictions/GAPS.md), so the +7.3 pt comparison is two marginal AUCs with non-overlapping CIs, not a paired delta.",
-   "id": "AppC.10",
+   "id": "AppC.15",
    "table": "AppC",
    "table_title": "Baseline reproduction and the augmentation confound",
    "where": "Appendix C",
    "artifacts": [
     "predictions/p2_probe/p2a_xcep_jpeg.json"
    ],
-   "command": "python verify/claim.py AppC.10"
+   "command": "python verify/claim.py AppC.15"
   },
   {
    "label": "Real CRF re-encodes at real c40 (same recipe)",
@@ -2365,14 +4760,14 @@
    "kind": "cell",
    "run": "b4b_xception_mq_fliponly",
    "cell": "c40",
-   "id": "AppC.11",
+   "id": "AppC.16",
    "table": "AppC",
    "table_title": "Baseline reproduction and the augmentation confound",
    "where": "Appendix C",
    "artifacts": [
     "predictions/ffpp/b4b_xception_mq_fliponly.json"
    ],
-   "command": "python verify/claim.py AppC.11"
+   "command": "python verify/claim.py AppC.16"
   },
   {
    "label": "The +7.3 pt real-CRF vs synthetic-JPEG gap",
@@ -2387,7 +4782,7 @@
     "cell": "real_c40",
     "eval_set": "p2_probe"
    },
-   "id": "AppC.12",
+   "id": "AppC.17",
    "table": "AppC",
    "table_title": "Baseline reproduction and the augmentation confound",
    "where": "Appendix C",
@@ -2395,7 +4790,311 @@
     "predictions/ffpp/b4b_xception_mq_fliponly.json",
     "predictions/p2_probe/p2a_xcep_jpeg.json"
    ],
-   "command": "python verify/claim.py AppC.12"
+   "command": "python verify/claim.py AppC.17"
+  },
+  {
+   "label": "Synthetic-JPEG arm \u2014 marginal CI",
+   "printed": "[0.8608, 0.9161]",
+   "kind": "text",
+   "artifact": "predictions/p2_probe/p2a_xcep_jpeg.json",
+   "check": "none",
+   "note": "Stored as `cells.ci` in that file ([0.86080240, 0.91608638]); this arm kept no per-video scores (predictions/GAPS.md), so the interval is the one the campaign computed, not one this release can recompute.",
+   "id": "AppC.18",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/p2_probe/p2a_xcep_jpeg.json"
+   ],
+   "command": "python verify/claim.py AppC.18"
+  },
+  {
+   "label": "Real-CRF arm \u2014 marginal CI lower",
+   "printed": 0.9484,
+   "kind": "cell",
+   "run": "b4b_xception_mq_fliponly",
+   "cell": "c40",
+   "metric": "ci_lo",
+   "id": "AppC.19",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b4b_xception_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppC.19"
+  },
+  {
+   "label": "Real-CRF arm \u2014 marginal CI upper",
+   "printed": 0.9758,
+   "kind": "cell",
+   "run": "b4b_xception_mq_fliponly",
+   "cell": "c40",
+   "metric": "ci_hi",
+   "id": "AppC.20",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b4b_xception_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppC.20"
+  },
+  {
+   "label": "Calibration (Appendix C prose + evaluation/CALIBRATION.md) \u2014 Xception (lit), frame-AUC c23",
+   "printed": 0.9901,
+   "kind": "cell",
+   "run": "b1_xception_lit",
+   "cell": "c23",
+   "metric": "frame_auc",
+   "id": "AppC.21",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b1_xception_lit.json"
+   ],
+   "command": "python verify/claim.py AppC.21"
+  },
+  {
+   "label": "Calibration (Appendix C prose + evaluation/CALIBRATION.md) \u2014 Xception (lit), frame-AUC c40",
+   "printed": 0.7915,
+   "kind": "cell",
+   "run": "b1_xception_lit",
+   "cell": "c40",
+   "metric": "frame_auc",
+   "id": "AppC.22",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b1_xception_lit.json"
+   ],
+   "command": "python verify/claim.py AppC.22"
+  },
+  {
+   "label": "Calibration (Appendix C prose + evaluation/CALIBRATION.md) \u2014 F3-Net (lit), frame-AUC c23",
+   "printed": 0.985,
+   "kind": "cell",
+   "run": "b2_f3net_lit",
+   "cell": "c23",
+   "metric": "frame_auc",
+   "id": "AppC.23",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b2_f3net_lit.json"
+   ],
+   "command": "python verify/claim.py AppC.23"
+  },
+  {
+   "label": "Calibration (Appendix C prose + evaluation/CALIBRATION.md) \u2014 F3-Net (lit), frame-AUC c40",
+   "printed": 0.7802,
+   "kind": "cell",
+   "run": "b2_f3net_lit",
+   "cell": "c40",
+   "metric": "frame_auc",
+   "id": "AppC.24",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b2_f3net_lit.json"
+   ],
+   "command": "python verify/claim.py AppC.24"
+  },
+  {
+   "label": "Calibration (Appendix C prose + evaluation/CALIBRATION.md) \u2014 FreqNet (lit), frame-AUC c23",
+   "printed": 0.9673,
+   "kind": "cell",
+   "run": "b3_freqnet_lit",
+   "cell": "c23",
+   "metric": "frame_auc",
+   "id": "AppC.25",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b3_freqnet_lit.json"
+   ],
+   "command": "python verify/claim.py AppC.25"
+  },
+  {
+   "label": "Calibration (Appendix C prose + evaluation/CALIBRATION.md) \u2014 FreqNet (lit), frame-AUC c40",
+   "printed": 0.6802,
+   "kind": "cell",
+   "run": "b3_freqnet_lit",
+   "cell": "c40",
+   "metric": "frame_auc",
+   "id": "AppC.26",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b3_freqnet_lit.json"
+   ],
+   "command": "python verify/claim.py AppC.26"
+  },
+  {
+   "label": "Calibration shortfall at c40: Xception 3.5 frame-AUC points below the anchor",
+   "printed": 0.035,
+   "kind": "text",
+   "artifact": "predictions/ffpp/b1_xception_lit.json",
+   "check": "none",
+   "note": "0.8261 (DeepfakeBench Table 3) minus the released 0.79150. The anchor is a citation, not a released artifact.",
+   "id": "AppC.27",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b1_xception_lit.json"
+   ],
+   "command": "python verify/claim.py AppC.27"
+  },
+  {
+   "label": "Calibration shortfall at c40: F3-Net 4.7 frame-AUC points below the anchor",
+   "printed": 0.047,
+   "kind": "text",
+   "artifact": "predictions/ffpp/b2_f3net_lit.json",
+   "check": "none",
+   "note": "0.8271 (DeepfakeBench Table 3) minus the released 0.78018.",
+   "id": "AppC.28",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b2_f3net_lit.json"
+   ],
+   "command": "python verify/claim.py AppC.28"
+  },
+  {
+   "label": "Augmentation recovery, Xception: +2.7 frame-AUC points at c40",
+   "printed": 0.027,
+   "kind": "text",
+   "artifact": "predictions/ffpp/b1_xception_lit_fliponly.json",
+   "check": "none",
+   "note": "0.79150 minus 0.76418, both released frame-AUCs checked by the four rows above and by the two flip-only rows.",
+   "id": "AppC.29",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b1_xception_lit_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppC.29"
+  },
+  {
+   "label": "Augmentation recovery, F3-Net: +5.5 frame-AUC points at c40",
+   "printed": 0.055,
+   "kind": "text",
+   "artifact": "predictions/ffpp/b2_f3net_lit_fliponly.json",
+   "check": "none",
+   "note": "0.78018 minus 0.72497, both released frame-AUCs.",
+   "id": "AppC.30",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b2_f3net_lit_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppC.30"
+  },
+  {
+   "label": "F3-Net-mq \u2212 SpatialBase at c40 \u2014 \u0394 and CI",
+   "printed": "-0.0040 [-0.0151, +0.0068]",
+   "kind": "contrast",
+   "name": "F3-Net-mq - SpatialBase (descriptive)",
+   "id": "AppC.31",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/ffpp/b5_f3net_mq.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppC.31 --bootstrap"
+  },
+  {
+   "label": "FreqNet-mq \u2212 SpatialBase at c40 \u2014 \u0394 and CI",
+   "printed": "-0.0804 [-0.1084, -0.0543]",
+   "kind": "contrast",
+   "name": "FreqNet-mq - SpatialBase (descriptive)",
+   "id": "AppC.32",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/ffpp/b6_freqnet_mq.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppC.32 --bootstrap"
+  },
+  {
+   "label": "F3-Net-mq \u2212 Xception-mq at c40 \u2014 \u0394 and CI",
+   "printed": "-0.0128 [-0.0236, -0.0029]",
+   "kind": "contrast",
+   "name": "F3-Net-mq - Xception-mq (descriptive, augmentation-matched)",
+   "id": "AppC.33",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/ffpp/b5_f3net_mq.json",
+    "predictions/ffpp/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py AppC.33 --bootstrap"
+  },
+  {
+   "label": "F3-Net-mq \u2212 SpatialBase at AUC_comp \u2014 \u0394 and CI",
+   "printed": "-0.0002 [-0.0073, +0.0066]",
+   "kind": "text",
+   "artifact": "predictions/ffpp/b5_f3net_mq.json",
+   "check": "none",
+   "note": "The AUC_comp endpoint of the same paired bootstrap (10k replicates, seed 0, sorted-key order), computed with the released harness's `paired_auc_comp_delta`; the contrast checker pins level-wise deltas only, so this endpoint is recorded rather than asserted.",
+   "id": "AppC.34",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b5_f3net_mq.json"
+   ],
+   "command": "python verify/claim.py AppC.34"
+  },
+  {
+   "label": "FreqNet-mq \u2212 SpatialBase at AUC_comp \u2014 \u0394 and CI",
+   "printed": "-0.0493 [-0.0671, -0.0330]",
+   "kind": "text",
+   "artifact": "predictions/ffpp/b6_freqnet_mq.json",
+   "check": "none",
+   "note": "As above, for the FreqNet arm.",
+   "id": "AppC.35",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b6_freqnet_mq.json"
+   ],
+   "command": "python verify/claim.py AppC.35"
+  },
+  {
+   "label": "F3-Net-mq \u2212 Xception-mq at AUC_comp \u2014 \u0394 and CI",
+   "printed": "-0.0057 [-0.0124, +0.0007]",
+   "kind": "text",
+   "artifact": "predictions/ffpp/b5_f3net_mq.json",
+   "check": "none",
+   "note": "As above, for the augmentation-matched Xception pair.",
+   "id": "AppC.36",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b5_f3net_mq.json"
+   ],
+   "command": "python verify/claim.py AppC.36"
   },
   {
    "label": "Clean-anchored drop, SpatialBase (0.016)",
@@ -2698,7 +5397,7 @@
    "kind": "gap",
    "gap": "xception_faceshifter",
    "check": "none",
-   "note": "The Xception FaceShifter cells come from the same June follow-up as Table 9's CAFRL column and were never saved as predictions. The paper now also prints the paired interval recorded in the campaign journal for this observation (+0.113, CI [+0.064, +0.162], single seed, n=280), with an explicit note that it is journal-recorded and not re-derivable from this release.",
+   "note": "The Xception FaceShifter cells come from the same June follow-up as Table 12's CAFRL column and were never saved as predictions. The paper now also prints the paired interval recorded in the campaign journal for this observation (+0.113, CI [+0.064, +0.162], single seed, n=280), with an explicit note that it is journal-recorded and not re-derivable from this release.",
    "id": "X1.16",
    "table": "X1",
    "table_title": "Key numbers in the running text",
@@ -2710,17 +5409,17 @@
    "command": "\u2014"
   },
   {
-   "label": "Campaign GPU-hours (~270 saved, ~35 re-tests, ~31 confirmation seeds)",
-   "printed": "GPU-h",
+   "label": "Campaign training hours (~270 saved, ~35 re-tests, ~31 confirmation seeds)",
+   "printed": "training hours",
    "kind": "gap",
    "gap": "gpu_hours",
    "check": "none",
-   "note": "Wall-clock accounting lives in the internal campaign journal, which is not part of this release; the run count and their configurations are (configs/RUNS.md).",
+   "note": "Wall-clock accounting lives in the internal campaign journal, which is not part of this release; the run count and their configurations are (configs/RUNS.md). The manuscript states these as wall-clock training hours on the 2xA100 node and says explicitly that no audited ledger of total consumed compute exists.",
    "id": "X1.17",
    "table": "X1",
    "table_title": "Key numbers in the running text",
    "where": "Sections VII-D, VIII and IX; Appendix D",
-   "gap_reason": "GPU-hour accounting is recorded in the internal campaign journal, which is not part of this release. What is released is every run's configuration and the number of runs.",
+   "gap_reason": "Compute accounting is recorded in the internal campaign journal, which is not part of this release, and no audited ledger of total consumed compute was kept -- the paper says so rather than reconstructing one. What is released is every run's configuration, its per-epoch curve and its selected epoch, which is what a reader would need to price it.",
    "artifacts": [
     "predictions/GAPS.md"
    ],

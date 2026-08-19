@@ -19,7 +19,7 @@ prints a CI-style pass/fail line per check.
    at its printed precision. The stored per-cell AUC is checked against the
    recomputed one too, so a tampered score array cannot pass.
 2. **5 derived values** — three-seed means and the real-CRF-versus-JPEG gap.
-3. **8 adjudicated contrasts** — the paper's headline table, recomputed
+3. **11 adjudicated contrasts** — the paper's headline table, recomputed
    end to end: seeds pooled by video key, then a 10,000-replicate paired video
    bootstrap (RNG seed 0).
 4. **Figure regeneration** — the prediction-driven figures are rebuilt from

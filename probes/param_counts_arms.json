@@ -1,0 +1,144 @@
+{
+  "what": "Trainable-parameter counts of every arm the manuscript compares, built from the configuration each released run used.",
+  "convention": "Every model is counted as trained here: the ImageNet 1000-way classifier is replaced by a single-logit head, which is why EfficientNet-B0 reads 4.0 M rather than its usual 5.3 M and Xception 20.8 M rather than 22.9 M. Counts include every trained parameter; where an arm carries an adversarial discriminator, `inference_total` excludes it (the branch is discarded at test time).",
+  "pretrained_weights_loaded": false,
+  "source_commit": "967b7d8265d78544075aac9dc64be3ea2971a48c",
+  "arms": {
+    "SpatialBase": {
+      "run": "b7_effnet_b0_mq_fliponly",
+      "built_from": "src.baselines.build_baseline('effnet_b0')",
+      "total": 4008829,
+      "millions": 4.0088
+    },
+    "TrunkCtrl": {
+      "run": "trunk_recipe_s42",
+      "built_from": "src.baselines.build_baseline('cafrl_trunk')",
+      "total": 3677821,
+      "millions": 3.6778
+    },
+    "Xception-mq": {
+      "run": "b4_xception_mq",
+      "built_from": "src.baselines.build_baseline('xception')",
+      "total": 20809001,
+      "millions": 20.809
+    },
+    "Xception-mq (flip-only)": {
+      "run": "b4b_xception_mq_fliponly",
+      "built_from": "src.baselines.build_baseline('xception')",
+      "total": 20809001,
+      "millions": 20.809
+    },
+    "Xception (lit)": {
+      "run": "b1_xception_lit",
+      "built_from": "src.baselines.build_baseline('xception')",
+      "total": 20809001,
+      "millions": 20.809
+    },
+    "Xception-JPEG": {
+      "run": "p2a_xcep_jpeg",
+      "built_from": "src.baselines.build_baseline('xception')",
+      "total": 20809001,
+      "millions": 20.809
+    },
+    "F3-Net-mq": {
+      "run": "b5_f3net_mq",
+      "built_from": "src.baselines.build_baseline('f3net')",
+      "total": 21007337,
+      "millions": 21.0073
+    },
+    "F3-Net (lit)": {
+      "run": "b2_f3net_lit",
+      "built_from": "src.baselines.build_baseline('f3net')",
+      "total": 21007337,
+      "millions": 21.0073
+    },
+    "FreqNet-mq": {
+      "run": "b6_freqnet_mq",
+      "built_from": "src.baselines.build_baseline('freqnet')",
+      "total": 5086273,
+      "millions": 5.0863
+    },
+    "FreqNet (lit)": {
+      "run": "b3_freqnet_lit",
+      "built_from": "src.baselines.build_baseline('freqnet')",
+      "total": 5086273,
+      "millions": 5.0863
+    },
+    "CAFRL as specified": {
+      "run": "a0",
+      "built_from": "src.models.CAFRL(runs/a0/config.yaml)",
+      "total": 11971561,
+      "millions": 11.9716,
+      "components": {
+        "dct": 254976,
+        "estimator": 1370790,
+        "band_gate": 4684,
+        "phase": 1164864,
+        "backbone": 3677564,
+        "fusion": 4179765,
+        "discriminator": 1318918
+      },
+      "inference_total": 10652643,
+      "inference_millions": 10.6526
+    },
+    "CAFRL-adv": {
+      "run": "a1_none_s42",
+      "built_from": "src.models.CAFRL(configs/phase5/a1_none_s42.yaml)",
+      "total": 10652643,
+      "millions": 10.6526,
+      "components": {
+        "dct": 254976,
+        "estimator": 1370790,
+        "band_gate": 4684,
+        "phase": 1164864,
+        "backbone": 3677564,
+        "fusion": 4179765
+      }
+    },
+    "spatial-residual": {
+      "run": "cafrl_spatres_s42",
+      "built_from": "src.models.CAFRL(configs/phase5/cafrl_spatres_s42.yaml)",
+      "total": 10288055,
+      "millions": 10.2881,
+      "components": {
+        "dct": 254976,
+        "estimator": 1370790,
+        "band_gate": 4684,
+        "phase": 1164864,
+        "backbone": 3677564,
+        "fusion": 2496259,
+        "discriminator": 1318918
+      },
+      "inference_total": 8969137,
+      "inference_millions": 8.9691
+    },
+    "Fair-N": {
+      "run": "f1_none_fair_s42",
+      "built_from": "src.models.CAFRL(configs/phase5/f1_none_fair_s42.yaml)",
+      "total": 10652643,
+      "millions": 10.6526,
+      "components": {
+        "dct": 254976,
+        "estimator": 1370790,
+        "band_gate": 4684,
+        "phase": 1164864,
+        "backbone": 3677564,
+        "fusion": 4179765
+      }
+    },
+    "Fair-W": {
+      "run": "f2_spatres_full_s42",
+      "built_from": "src.models.CAFRL(configs/phase5/f2_spatres_full_s42.yaml)",
+      "total": 9628081,
+      "millions": 9.6281,
+      "components": {
+        "dct": 254976,
+        "estimator": 1370790,
+        "band_gate": 4684,
+        "phase": 1164864,
+        "backbone": 4335484,
+        "fusion": 2497283
+      }
+    }
+  }
+}

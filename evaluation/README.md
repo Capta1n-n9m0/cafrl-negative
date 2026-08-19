@@ -11,6 +11,9 @@ evaluation/
 ├── src/               the harness, verbatim (19 files, full import closure)
 ├── release_io.py      release-only: reads predictions/*.json into the shape src/ expects
 ├── rederive.py        recomputes the paper's tables and writes them out
+├── CALIBRATION.md     published-anchor calibration of the three literature-protocol
+│                      baselines + the F3-Net/FreqNet adaptation choices (the
+│                      material the paper's Appendix C points here for)
 └── analysis/          the statistics added in revision (equivalence, MDE,
                     cluster and two-level bootstraps, multiplicity) + their outputs
 ```

@@ -70,7 +70,7 @@
           "n_redraws": 0,
           "z": -0.15990943041181896,
           "p_two_sided_z": 0.8729524197245838,
-          "seconds": 4.2
+          "seconds": 4.0
         },
         "seed+source": {
           "scheme": "seed+source",
@@ -136,7 +136,7 @@
           "n_redraws": 0,
           "z": -0.16464982859142452,
           "p_two_sided_z": 0.8692196088596561,
-          "seconds": 4.3
+          "seconds": 4.2
         }
       }
     },

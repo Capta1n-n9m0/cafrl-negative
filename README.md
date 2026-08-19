@@ -25,7 +25,7 @@ python verify/verify.py --jobs 4
 
 A few minutes later you have a pass/fail line for every number the paper prints
 that this repository can check: 64 table cells recomputed from the
-released per-video scores, the derived means and gaps, and the 8
+released per-video scores, the derived means and gaps, and the 11
 adjudicated contrasts re-run through the same 10,000-replicate paired bootstrap
 the paper used. No GPU, no dataset, no network. `verify/README.md` explains the
 tolerances and why they differ between the deterministic and the resampled

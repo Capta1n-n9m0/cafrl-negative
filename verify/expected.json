@@ -738,7 +738,7 @@
    "expect": 0.9536
   },
   {
-   "name": "Table 6: SpatialBase 3-seed mean c40",
+   "name": "Table 7: SpatialBase 3-seed mean c40",
    "kind": "seed_mean",
    "runs": [
     "b7_effnet_b0_mq_fliponly",
@@ -750,7 +750,7 @@
    "expect": 0.9565
   },
   {
-   "name": "Table 6: Fair-N 3-seed mean c40",
+   "name": "Table 7: Fair-N 3-seed mean c40",
    "kind": "seed_mean",
    "runs": [
     "f1_none_fair_s42",
@@ -762,7 +762,7 @@
    "expect": 0.9563
   },
   {
-   "name": "Table 6: Fair-W 3-seed mean c40",
+   "name": "Table 7: Fair-W 3-seed mean c40",
    "kind": "seed_mean",
    "runs": [
     "f2_spatres_full_s42",
@@ -790,6 +790,54 @@
   }
  ],
  "contrasts": [
+  {
+   "name": "F3-Net-mq - SpatialBase (descriptive)",
+   "a": [
+    "b5_f3net_mq"
+   ],
+   "b": [
+    "b7_effnet_b0_mq_fliponly"
+   ],
+   "level": "c40",
+   "expect": {
+    "delta": -0.004,
+    "ci_lo": -0.0151,
+    "ci_hi": 0.0068
+   },
+   "verdict": "includes zero - a published frequency architecture ties the plain backbone on multi-CRF data"
+  },
+  {
+   "name": "FreqNet-mq - SpatialBase (descriptive)",
+   "a": [
+    "b6_freqnet_mq"
+   ],
+   "b": [
+    "b7_effnet_b0_mq_fliponly"
+   ],
+   "level": "c40",
+   "expect": {
+    "delta": -0.0804,
+    "ci_lo": -0.1084,
+    "ci_hi": -0.0543
+   },
+   "verdict": "excludes zero in the negative direction - significantly worse on the same data"
+  },
+  {
+   "name": "F3-Net-mq - Xception-mq (descriptive, augmentation-matched)",
+   "a": [
+    "b5_f3net_mq"
+   ],
+   "b": [
+    "b4_xception_mq"
+   ],
+   "level": "c40",
+   "expect": {
+    "delta": -0.0128,
+    "ci_lo": -0.0236,
+    "ci_hi": -0.0029
+   },
+   "verdict": "excludes zero in the negative direction - frequency on the strongest trunk does not beat that trunk"
+  },
   {
    "name": "SpatialBase - CAFRL as specified (STOP-gate)",
    "a": [

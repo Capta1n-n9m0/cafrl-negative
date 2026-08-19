@@ -16,22 +16,31 @@ two, and every row below names the run it reads. Row ids (`T1.1`, `T3.5`, …) a
 stable handles for `verify/claim.py`, not manuscript table numbers; each section
 heading names the manuscript table it maps.
 
-221 rows and 14 release claims, 235 entries in all.
-**216 are recomputed from the released artifacts and checked against the
+376 rows and 14 release claims, 390 entries in all.
+**347 are recomputed from the released artifacts and checked against the
 paper on every build.** 6 are printed in the paper but *not* derivable
 from this release, each with its reason stated in place. 2 — both of
 them release claims — depend on the archival deposit, which is minted
-immediately before submission. The remaining 11 are *recorded*
+immediately before submission. The remaining 35 are *recorded*
 rather than asserted: prose claims whose artifact is a document, approximate
 glosses ("≈0.4", "40–120×") whose underlying series is released in full, and two
 parameter counts that no released artifact pins.
 
 No row is marked **differs**: every checked number in the manuscript agrees
 with this release's own recomputation. Three last-digit disagreements found
-when this map was first generated — Table 2's Xception-mq AUC_comp, Appendix
-C's augmentation-recovery frame-AUC, and γ's peak — were resolved in the
-manuscript's favour of the artifact: the release's value was kept and the paper
+when this map was first generated — the harmonized benchmark's Xception-mq
+AUC_comp, Appendix C's augmentation-recovery frame-AUC, and γ's peak — were
+resolved in favour of the artifact: the release's value was kept and the paper
 was corrected to it.
+
+**Three numbers the paper now reads here rather than printing.** The revision's
+final page pass moved material into this repository instead of deleting it, so
+a few mapped rows check something the manuscript points at rather than prints:
+the published-anchor calibration table and the F3-Net/FreqNet adaptation
+statement (now `evaluation/CALIBRATION.md`, summarised in the paper's
+Appendix C), the c0 and c18 columns of the harmonized benchmark, and the
+marginal intervals of the cross-dataset cells. The numbers are unchanged and
+still checked below.
 
 Run any row yourself:
 
@@ -60,6 +69,29 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 
 ---
 
+
+## T0 — Notation — every arm this paper compares
+
+*Section IV; `\label{tab:notation}`*
+
+| id | claim | paper prints | this release gives | artifact | command |
+|---|---|---|---|---|---|
+| `T0.1` | SpatialBase — parameters | 4.0 M | 4.0088 | `probes/param_counts_arms.json` | `python verify/claim.py T0.1` |
+| `T0.2` | CAFRL as specified — parameters | 11.97 M | 11.97 | `probes/param_counts_arms.json` | `python verify/claim.py T0.2` |
+| `T0.3` | CAFRL−adv — parameters | 10.65 M | 10.65 | `probes/param_counts_arms.json` | `python verify/claim.py T0.3` |
+| `T0.4` | spatial-residual — parameters | 10.29 M | 10.29 | `probes/param_counts_arms.json` | `python verify/claim.py T0.4` |
+| `T0.5` | TrunkCtrl — parameters | 3.68 M | 3.6778 | `probes/param_counts_arms.json` | `python verify/claim.py T0.5` |
+| `T0.6` | Fair-N — parameters | 10.65 M | 10.65 | `probes/param_counts_arms.json` | `python verify/claim.py T0.6` |
+| `T0.7` | Fair-W — parameters | 9.63 M | 9.6281 | `probes/param_counts_arms.json` | `python verify/claim.py T0.7` |
+| `T0.8` | Xception-mq — parameters | 20.8 M | 20.81 | `probes/param_counts_arms.json` | `python verify/claim.py T0.8` |
+| `T0.9` | Xception-mq (flip-only) — parameters | 20.8 M | 20.81 | `probes/param_counts_arms.json` | `python verify/claim.py T0.9` |
+| `T0.10` | F3-Net-mq — parameters | 21.0 M | 21.01 | `probes/param_counts_arms.json` | `python verify/claim.py T0.10` |
+| `T0.11` | FreqNet-mq — parameters | 5.1 M | 5.0863 | `probes/param_counts_arms.json` | `python verify/claim.py T0.11` |
+| `T0.12` | Xception (lit) — parameters | 20.8 M | 20.81 | `probes/param_counts_arms.json` | `python verify/claim.py T0.12` |
+| `T0.13` | F3-Net (lit) — parameters | 21.0 M | 21.01 | `probes/param_counts_arms.json` | `python verify/claim.py T0.13` |
+| `T0.14` | FreqNet (lit) — parameters | 5.1 M | 5.0863 | `probes/param_counts_arms.json` | `python verify/claim.py T0.14` |
+| `T0.15` | Xception-JPEG — parameters | 20.8 M | 20.81 | `probes/param_counts_arms.json` | `python verify/claim.py T0.15` |
+| `T0.16` | CAFRL as specified — parameters at inference (discriminator dropped) | 10.65 M | 10.65 | `probes/param_counts_arms.json` | `python verify/claim.py T0.16` |
 
 ## T1 — The STOP-gate comparison (video-AUC, FF++ test)
 
@@ -208,6 +240,12 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 | `T5.16` | Fair-W — c40 3-seed mean | 0.9619 | 0.9619 | `predictions/ffpp/f2_spatres_full_s42.json` +2 | `python verify/claim.py T5.16` |
 | `T5.17` | Fair-W — c40 3-seed band (half-width) | 0.0058 | 0.0058 | `predictions/ffpp/f2_spatres_full_s42.json` +2 | `python verify/claim.py T5.17` |
 | `T5.18` | Fair-W — AUC_comp 3-seed mean | 0.9719 | 0.9719 | `predictions/ffpp/f2_spatres_full_s42.json` +2 | `python verify/claim.py T5.18` |
+| `T5.19` | TrunkCtrl — c40 seed 42 | 0.9491 | 0.9491 | `predictions/ffpp/trunk_recipe_s42.json` | `python verify/claim.py T5.19` |
+| `T5.20` | TrunkCtrl — c40 seed 1 | 0.9566 | 0.9566 | `predictions/ffpp/trunk_recipe_s1.json` | `python verify/claim.py T5.20` |
+| `T5.21` | TrunkCtrl — c40 seed 2 | 0.9551 | 0.9551 | `predictions/ffpp/trunk_recipe_s2.json` | `python verify/claim.py T5.21` |
+| `T5.22` | TrunkCtrl — c40 3-seed mean | 0.9536 | 0.9536 | `predictions/ffpp/trunk_recipe_s42.json` +2 | `python verify/claim.py T5.22` |
+| `T5.23` | TrunkCtrl — c40 3-seed band (half-width) | 0.0098 | 0.0098 | `predictions/ffpp/trunk_recipe_s42.json` +2 | `python verify/claim.py T5.23` |
+| `T5.24` | TrunkCtrl — AUC_comp 3-seed mean | 0.9674 | 0.9674 | `predictions/ffpp/trunk_recipe_s42.json` +2 | `python verify/claim.py T5.24` |
 
 ## T6 — The D1–D8 audit ledger (full)
 
@@ -222,7 +260,7 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 
 ## T7 — Cross-dataset evaluation (video-AUC)
 
-*Appendix D-A; `\label{tab:appcrossdataset}`*
+*Appendix D-A (Table 11; intervals released-only after the W8a trim); `\label{tab:appcrossdataset}`*
 
 | id | claim | paper prints | this release gives | artifact | command |
 |---|---|---|---|---|---|
@@ -253,6 +291,51 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 | `T7.25` | Xception-mq — CI upper — celebdf_v2 | 0.748 | 0.7479 | `predictions/cross_dataset/b4_xception_mq.json` | `python verify/claim.py T7.25` |
 | `T7.26` | Xception-mq — CI upper — dfd_c23 | 0.896 | 0.8962 | `predictions/cross_dataset/b4_xception_mq.json` | `python verify/claim.py T7.26` |
 | `T7.27` | Xception-mq — CI upper — dfd_c40 | 0.715 | 0.7154 | `predictions/cross_dataset/b4_xception_mq.json` | `python verify/claim.py T7.27` |
+| `T7.28` | Fair-N (s42) — celebdf_v2 | 0.668 | 0.6676 | `predictions/cross_dataset/f1_none_fair_s42.json` | `python verify/claim.py T7.28` |
+| `T7.29` | Fair-N (s42) — dfd_c23 | 0.828 | 0.8281 | `predictions/cross_dataset/f1_none_fair_s42.json` | `python verify/claim.py T7.29` |
+| `T7.30` | Fair-N (s42) — dfd_c40 | 0.683 | 0.6830 | `predictions/cross_dataset/f1_none_fair_s42.json` | `python verify/claim.py T7.30` |
+| `T7.31` | Fair-N (s42) — CI lower — celebdf_v2 | 0.615 | 0.6154 | `predictions/cross_dataset/f1_none_fair_s42.json` | `python verify/claim.py T7.31` |
+| `T7.32` | Fair-N (s42) — CI lower — dfd_c23 | 0.808 | 0.8080 | `predictions/cross_dataset/f1_none_fair_s42.json` | `python verify/claim.py T7.32` |
+| `T7.33` | Fair-N (s42) — CI lower — dfd_c40 | 0.656 | 0.6557 | `predictions/cross_dataset/f1_none_fair_s42.json` | `python verify/claim.py T7.33` |
+| `T7.34` | Fair-N (s42) — CI upper — celebdf_v2 | 0.716 | 0.7164 | `predictions/cross_dataset/f1_none_fair_s42.json` | `python verify/claim.py T7.34` |
+| `T7.35` | Fair-N (s42) — CI upper — dfd_c23 | 0.848 | 0.8475 | `predictions/cross_dataset/f1_none_fair_s42.json` | `python verify/claim.py T7.35` |
+| `T7.36` | Fair-N (s42) — CI upper — dfd_c40 | 0.709 | 0.7095 | `predictions/cross_dataset/f1_none_fair_s42.json` | `python verify/claim.py T7.36` |
+| `T7.37` | Fair-W (s42) — celebdf_v2 | 0.684 | 0.6839 | `predictions/cross_dataset/f2_spatres_full_s42.json` | `python verify/claim.py T7.37` |
+| `T7.38` | Fair-W (s42) — dfd_c23 | 0.834 | 0.8336 | `predictions/cross_dataset/f2_spatres_full_s42.json` | `python verify/claim.py T7.38` |
+| `T7.39` | Fair-W (s42) — dfd_c40 | 0.649 | 0.6490 | `predictions/cross_dataset/f2_spatres_full_s42.json` | `python verify/claim.py T7.39` |
+| `T7.40` | Fair-W (s42) — CI lower — celebdf_v2 | 0.634 | 0.6336 | `predictions/cross_dataset/f2_spatres_full_s42.json` | `python verify/claim.py T7.40` |
+| `T7.41` | Fair-W (s42) — CI lower — dfd_c23 | 0.814 | 0.8144 | `predictions/cross_dataset/f2_spatres_full_s42.json` | `python verify/claim.py T7.41` |
+| `T7.42` | Fair-W (s42) — CI lower — dfd_c40 | 0.621 | 0.6214 | `predictions/cross_dataset/f2_spatres_full_s42.json` | `python verify/claim.py T7.42` |
+| `T7.43` | Fair-W (s42) — CI upper — celebdf_v2 | 0.731 | 0.7313 | `predictions/cross_dataset/f2_spatres_full_s42.json` | `python verify/claim.py T7.43` |
+| `T7.44` | Fair-W (s42) — CI upper — dfd_c23 | 0.852 | 0.8520 | `predictions/cross_dataset/f2_spatres_full_s42.json` | `python verify/claim.py T7.44` |
+| `T7.45` | Fair-W (s42) — CI upper — dfd_c40 | 0.676 | 0.6759 | `predictions/cross_dataset/f2_spatres_full_s42.json` | `python verify/claim.py T7.45` |
+| `T7.46` | CAFRL as specified — 3-seed mean — celebdf_v2 | 0.705 | 0.7047 | `predictions/cross_dataset/a0.json` +2 | `python verify/claim.py T7.46` |
+| `T7.47` | CAFRL as specified — 3-seed mean — dfd_c23 | 0.819 | 0.8188 | `predictions/cross_dataset/a0.json` +2 | `python verify/claim.py T7.47` |
+| `T7.48` | CAFRL as specified — 3-seed mean — dfd_c40 | 0.635 | 0.6351 | `predictions/cross_dataset/a0.json` +2 | `python verify/claim.py T7.48` |
+| `T7.49` | CAFRL as specified — 3-seed band — celebdf_v2 | 0.051 | 0.0514 | `predictions/cross_dataset/a0.json` +2 | `python verify/claim.py T7.49` |
+| `T7.50` | CAFRL as specified — 3-seed band — dfd_c23 | 0.04 | 0.0397 | `predictions/cross_dataset/a0.json` +2 | `python verify/claim.py T7.50` |
+| `T7.51` | CAFRL as specified — 3-seed band — dfd_c40 | 0.035 | 0.0352 | `predictions/cross_dataset/a0.json` +2 | `python verify/claim.py T7.51` |
+| `T7.52` | SpatialBase — 3-seed mean — celebdf_v2 | 0.686 | 0.6859 | `predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json` +2 | `python verify/claim.py T7.52` |
+| `T7.53` | SpatialBase — 3-seed mean — dfd_c23 | 0.825 | 0.8249 | `predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json` +2 | `python verify/claim.py T7.53` |
+| `T7.54` | SpatialBase — 3-seed mean — dfd_c40 | 0.65 | 0.6504 | `predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json` +2 | `python verify/claim.py T7.54` |
+| `T7.55` | SpatialBase — 3-seed band — celebdf_v2 | 0.035 | 0.0345 | `predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json` +2 | `python verify/claim.py T7.55` |
+| `T7.56` | SpatialBase — 3-seed band — dfd_c23 | 0.054 | 0.0538 | `predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json` +2 | `python verify/claim.py T7.56` |
+| `T7.57` | SpatialBase — 3-seed band — dfd_c40 | 0.031 | 0.0311 | `predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json` +2 | `python verify/claim.py T7.57` |
+| `T7.58` | Fair-N — 3-seed mean — celebdf_v2 | 0.647 | 0.6473 | `predictions/cross_dataset/f1_none_fair_s42.json` +2 | `python verify/claim.py T7.58` |
+| `T7.59` | Fair-N — 3-seed mean — dfd_c23 | 0.792 | 0.7919 | `predictions/cross_dataset/f1_none_fair_s42.json` +2 | `python verify/claim.py T7.59` |
+| `T7.60` | Fair-N — 3-seed mean — dfd_c40 | 0.659 | 0.6595 | `predictions/cross_dataset/f1_none_fair_s42.json` +2 | `python verify/claim.py T7.60` |
+| `T7.61` | Fair-N — 3-seed band — celebdf_v2 | 0.17 | 0.1703 | `predictions/cross_dataset/f1_none_fair_s42.json` +2 | `python verify/claim.py T7.61` |
+| `T7.62` | Fair-N — 3-seed band — dfd_c23 | 0.095 | 0.0953 | `predictions/cross_dataset/f1_none_fair_s42.json` +2 | `python verify/claim.py T7.62` |
+| `T7.63` | Fair-N — 3-seed band — dfd_c40 | 0.073 | 0.0732 | `predictions/cross_dataset/f1_none_fair_s42.json` +2 | `python verify/claim.py T7.63` |
+| `T7.64` | Fair-W — 3-seed mean — celebdf_v2 | 0.681 | 0.6808 | `predictions/cross_dataset/f2_spatres_full_s42.json` +2 | `python verify/claim.py T7.64` |
+| `T7.65` | Fair-W — 3-seed mean — dfd_c23 | 0.835 | 0.8351 | `predictions/cross_dataset/f2_spatres_full_s42.json` +2 | `python verify/claim.py T7.65` |
+| `T7.66` | Fair-W — 3-seed mean — dfd_c40 | 0.664 | 0.6644 | `predictions/cross_dataset/f2_spatres_full_s42.json` +2 | `python verify/claim.py T7.66` |
+| `T7.67` | Fair-W — 3-seed band — celebdf_v2 | 0.048 | 0.0481 | `predictions/cross_dataset/f2_spatres_full_s42.json` +2 | `python verify/claim.py T7.67` |
+| `T7.68` | Fair-W — 3-seed band — dfd_c23 | 0.057 | 0.0569 | `predictions/cross_dataset/f2_spatres_full_s42.json` +2 | `python verify/claim.py T7.68` |
+| `T7.69` | Fair-W — 3-seed band — dfd_c40 | 0.054 | 0.0536 | `predictions/cross_dataset/f2_spatres_full_s42.json` +2 | `python verify/claim.py T7.69` |
+| `T7.70` | Fair-N Celeb-DF per seed (s42 / s1 / s2) — celebdf_v2 | 0.668 | 0.6676 | `predictions/cross_dataset/f1_none_fair_s42.json` | `python verify/claim.py T7.70` |
+| `T7.71` | Fair-N Celeb-DF — seed 1 — celebdf_v2 | 0.571 | 0.5709 | `predictions/cross_dataset/f1_none_fair_s1.json` | `python verify/claim.py T7.71` |
+| `T7.72` | Fair-N Celeb-DF — seed 2 — celebdf_v2 | 0.703 | 0.7035 | `predictions/cross_dataset/f1_none_fair_s2.json` | `python verify/claim.py T7.72` |
 
 - `T7.1` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
 - `T7.2` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
@@ -281,6 +364,51 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 - `T7.25` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
 - `T7.26` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
 - `T7.27` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.28` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.29` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.30` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.31` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.32` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.33` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.34` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.35` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.36` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.37` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.38` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.39` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.40` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.41` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.42` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.43` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.44` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.45` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.46` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.47` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.48` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.49` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.50` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.51` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.52` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.53` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.54` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.55` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.56` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.57` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.58` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.59` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.60` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.61` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.62` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.63` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.64` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.65` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.66` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.67` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.68` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.69` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.70` — The three runs read 0.668, 0.571 and 0.703; the other two are the rows below.
+- `T7.71` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.72` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
 
 ## T8 — FaceShifter (held out), shipped recipe, seed-pooled
 
@@ -297,6 +425,142 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 
 - `T8.1`, `T8.3`, `T8.4`, `T8.6` — **not derivable from this release.** The shipped-recipe FaceShifter evaluation (June out-of-distribution follow-up) saved no per-video predictions — this is audit defect D8, and the fair-recipe re-check that fixed it is what makes `predictions/faceshifter/` exist. The backbone column of that table is re-derivable (b7's FaceShifter predictions were regenerated from the frozen checkpoints); the CAFRL column and the paired statistics are not. Closing this needs a forward pass of the frozen a0/a1_grl checkpoints over the FaceShifter cell, which needs the crops.
 
+## AppB2 — Harmonized baseline benchmark (video-AUC, FF++ test)
+
+*Appendix C (Table 9); `\label{tab:appbench}`*
+
+| id | claim | paper prints | this release gives | artifact | command |
+|---|---|---|---|---|---|
+| `AppB2.1` | Xception (lit) — c0 | 0.9949 | 0.9949 | `predictions/ffpp/b1_xception_lit.json` | `python verify/claim.py AppB2.1` |
+| `AppB2.2` | Xception (lit) — c18 | 0.9948 | 0.9948 | `predictions/ffpp/b1_xception_lit.json` | `python verify/claim.py AppB2.2` |
+| `AppB2.3` | Xception (lit) — c23 | 0.9944 | 0.9944 | `predictions/ffpp/b1_xception_lit.json` | `python verify/claim.py AppB2.3` |
+| `AppB2.4` | Xception (lit) — c28 | 0.989 | 0.9890 | `predictions/ffpp/b1_xception_lit.json` | `python verify/claim.py AppB2.4` |
+| `AppB2.5` | Xception (lit) — c32 | 0.9778 | 0.9778 | `predictions/ffpp/b1_xception_lit.json` | `python verify/claim.py AppB2.5` |
+| `AppB2.6` | Xception (lit) — c36 | 0.928 | 0.9280 | `predictions/ffpp/b1_xception_lit.json` | `python verify/claim.py AppB2.6` |
+| `AppB2.7` | Xception (lit) — c40 | 0.866 | 0.8660 | `predictions/ffpp/b1_xception_lit.json` | `python verify/claim.py AppB2.7` |
+| `AppB2.8` | Xception (lit) — auc_comp | 0.9402 | 0.9402 | `predictions/ffpp/b1_xception_lit.json` | `python verify/claim.py AppB2.8` |
+| `AppB2.9` | F3-Net (lit) — c0 | 0.9925 | 0.9925 | `predictions/ffpp/b2_f3net_lit.json` | `python verify/claim.py AppB2.9` |
+| `AppB2.10` | F3-Net (lit) — c18 | 0.9924 | 0.9924 | `predictions/ffpp/b2_f3net_lit.json` | `python verify/claim.py AppB2.10` |
+| `AppB2.11` | F3-Net (lit) — c23 | 0.9917 | 0.9917 | `predictions/ffpp/b2_f3net_lit.json` | `python verify/claim.py AppB2.11` |
+| `AppB2.12` | F3-Net (lit) — c28 | 0.9835 | 0.9835 | `predictions/ffpp/b2_f3net_lit.json` | `python verify/claim.py AppB2.12` |
+| `AppB2.13` | F3-Net (lit) — c32 | 0.9654 | 0.9654 | `predictions/ffpp/b2_f3net_lit.json` | `python verify/claim.py AppB2.13` |
+| `AppB2.14` | F3-Net (lit) — c36 | 0.921 | 0.9210 | `predictions/ffpp/b2_f3net_lit.json` | `python verify/claim.py AppB2.14` |
+| `AppB2.15` | F3-Net (lit) — c40 | 0.8599 | 0.8599 | `predictions/ffpp/b2_f3net_lit.json` | `python verify/claim.py AppB2.15` |
+| `AppB2.16` | F3-Net (lit) — auc_comp | 0.9325 | 0.9325 | `predictions/ffpp/b2_f3net_lit.json` | `python verify/claim.py AppB2.16` |
+| `AppB2.17` | FreqNet (lit) — c0 | 0.9808 | 0.9808 | `predictions/ffpp/b3_freqnet_lit.json` | `python verify/claim.py AppB2.17` |
+| `AppB2.18` | FreqNet (lit) — c18 | 0.9899 | 0.9899 | `predictions/ffpp/b3_freqnet_lit.json` | `python verify/claim.py AppB2.18` |
+| `AppB2.19` | FreqNet (lit) — c23 | 0.9877 | 0.9877 | `predictions/ffpp/b3_freqnet_lit.json` | `python verify/claim.py AppB2.19` |
+| `AppB2.20` | FreqNet (lit) — c28 | 0.9652 | 0.9652 | `predictions/ffpp/b3_freqnet_lit.json` | `python verify/claim.py AppB2.20` |
+| `AppB2.21` | FreqNet (lit) — c32 | 0.9274 | 0.9274 | `predictions/ffpp/b3_freqnet_lit.json` | `python verify/claim.py AppB2.21` |
+| `AppB2.22` | FreqNet (lit) — c36 | 0.8541 | 0.8541 | `predictions/ffpp/b3_freqnet_lit.json` | `python verify/claim.py AppB2.22` |
+| `AppB2.23` | FreqNet (lit) — c40 | 0.7684 | 0.7684 | `predictions/ffpp/b3_freqnet_lit.json` | `python verify/claim.py AppB2.23` |
+| `AppB2.24` | FreqNet (lit) — auc_comp | 0.8788 | 0.8788 | `predictions/ffpp/b3_freqnet_lit.json` | `python verify/claim.py AppB2.24` |
+| `AppB2.25` | Xception-mq (std aug) — c0 | 0.9921 | 0.9921 | `predictions/ffpp/b4_xception_mq.json` | `python verify/claim.py AppB2.25` |
+| `AppB2.26` | Xception-mq (std aug) — c18 | 0.9899 | 0.9899 | `predictions/ffpp/b4_xception_mq.json` | `python verify/claim.py AppB2.26` |
+| `AppB2.27` | Xception-mq (std aug) — c23 | 0.9872 | 0.9872 | `predictions/ffpp/b4_xception_mq.json` | `python verify/claim.py AppB2.27` |
+| `AppB2.28` | Xception-mq (std aug) — c28 | 0.9838 | 0.9838 | `predictions/ffpp/b4_xception_mq.json` | `python verify/claim.py AppB2.28` |
+| `AppB2.29` | Xception-mq (std aug) — c32 | 0.9803 | 0.9803 | `predictions/ffpp/b4_xception_mq.json` | `python verify/claim.py AppB2.29` |
+| `AppB2.30` | Xception-mq (std aug) — c36 | 0.9739 | 0.9739 | `predictions/ffpp/b4_xception_mq.json` | `python verify/claim.py AppB2.30` |
+| `AppB2.31` | Xception-mq (std aug) — c40 | 0.9679 | 0.9679 | `predictions/ffpp/b4_xception_mq.json` | `python verify/claim.py AppB2.31` |
+| `AppB2.32` | Xception-mq (std aug) — auc_comp | 0.9765 | 0.9765 | `predictions/ffpp/b4_xception_mq.json` | `python verify/claim.py AppB2.32` |
+| `AppB2.33` | Xception-mq (flip-only) — c0 | 0.9918 | 0.9918 | `predictions/ffpp/b4b_xception_mq_fliponly.json` | `python verify/claim.py AppB2.33` |
+| `AppB2.34` | Xception-mq (flip-only) — c18 | 0.9893 | 0.9893 | `predictions/ffpp/b4b_xception_mq_fliponly.json` | `python verify/claim.py AppB2.34` |
+| `AppB2.35` | Xception-mq (flip-only) — c23 | 0.9869 | 0.9869 | `predictions/ffpp/b4b_xception_mq_fliponly.json` | `python verify/claim.py AppB2.35` |
+| `AppB2.36` | Xception-mq (flip-only) — c28 | 0.982 | 0.9820 | `predictions/ffpp/b4b_xception_mq_fliponly.json` | `python verify/claim.py AppB2.36` |
+| `AppB2.37` | Xception-mq (flip-only) — c32 | 0.9772 | 0.9772 | `predictions/ffpp/b4b_xception_mq_fliponly.json` | `python verify/claim.py AppB2.37` |
+| `AppB2.38` | Xception-mq (flip-only) — c36 | 0.9691 | 0.9691 | `predictions/ffpp/b4b_xception_mq_fliponly.json` | `python verify/claim.py AppB2.38` |
+| `AppB2.39` | Xception-mq (flip-only) — c40 | 0.9631 | 0.9631 | `predictions/ffpp/b4b_xception_mq_fliponly.json` | `python verify/claim.py AppB2.39` |
+| `AppB2.40` | Xception-mq (flip-only) — auc_comp | 0.9728 | 0.9728 | `predictions/ffpp/b4b_xception_mq_fliponly.json` | `python verify/claim.py AppB2.40` |
+| `AppB2.41` | F3-Net-mq — c0 | 0.9911 | 0.9911 | `predictions/ffpp/b5_f3net_mq.json` | `python verify/claim.py AppB2.41` |
+| `AppB2.42` | F3-Net-mq — c18 | 0.9902 | 0.9902 | `predictions/ffpp/b5_f3net_mq.json` | `python verify/claim.py AppB2.42` |
+| `AppB2.43` | F3-Net-mq — c23 | 0.9885 | 0.9885 | `predictions/ffpp/b5_f3net_mq.json` | `python verify/claim.py AppB2.43` |
+| `AppB2.44` | F3-Net-mq — c28 | 0.9831 | 0.9831 | `predictions/ffpp/b5_f3net_mq.json` | `python verify/claim.py AppB2.44` |
+| `AppB2.45` | F3-Net-mq — c32 | 0.9766 | 0.9766 | `predictions/ffpp/b5_f3net_mq.json` | `python verify/claim.py AppB2.45` |
+| `AppB2.46` | F3-Net-mq — c36 | 0.9683 | 0.9683 | `predictions/ffpp/b5_f3net_mq.json` | `python verify/claim.py AppB2.46` |
+| `AppB2.47` | F3-Net-mq — c40 | 0.9551 | 0.9551 | `predictions/ffpp/b5_f3net_mq.json` | `python verify/claim.py AppB2.47` |
+| `AppB2.48` | F3-Net-mq — auc_comp | 0.9708 | 0.9708 | `predictions/ffpp/b5_f3net_mq.json` | `python verify/claim.py AppB2.48` |
+| `AppB2.49` | FreqNet-mq — c0 | 0.98 | 0.9800 | `predictions/ffpp/b6_freqnet_mq.json` | `python verify/claim.py AppB2.49` |
+| `AppB2.50` | FreqNet-mq — c18 | 0.9745 | 0.9745 | `predictions/ffpp/b6_freqnet_mq.json` | `python verify/claim.py AppB2.50` |
+| `AppB2.51` | FreqNet-mq — c23 | 0.9693 | 0.9693 | `predictions/ffpp/b6_freqnet_mq.json` | `python verify/claim.py AppB2.51` |
+| `AppB2.52` | FreqNet-mq — c28 | 0.9566 | 0.9566 | `predictions/ffpp/b6_freqnet_mq.json` | `python verify/claim.py AppB2.52` |
+| `AppB2.53` | FreqNet-mq — c32 | 0.9383 | 0.9383 | `predictions/ffpp/b6_freqnet_mq.json` | `python verify/claim.py AppB2.53` |
+| `AppB2.54` | FreqNet-mq — c36 | 0.9131 | 0.9131 | `predictions/ffpp/b6_freqnet_mq.json` | `python verify/claim.py AppB2.54` |
+| `AppB2.55` | FreqNet-mq — c40 | 0.8787 | 0.8787 | `predictions/ffpp/b6_freqnet_mq.json` | `python verify/claim.py AppB2.55` |
+| `AppB2.56` | FreqNet-mq — auc_comp | 0.9217 | 0.9217 | `predictions/ffpp/b6_freqnet_mq.json` | `python verify/claim.py AppB2.56` |
+| `AppB2.57` | SpatialBase — c0 | 0.9919 | 0.9919 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py AppB2.57` |
+| `AppB2.58` | SpatialBase — c18 | 0.9892 | 0.9892 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py AppB2.58` |
+| `AppB2.59` | SpatialBase — c23 | 0.9867 | 0.9867 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py AppB2.59` |
+| `AppB2.60` | SpatialBase — c28 | 0.981 | 0.9810 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py AppB2.60` |
+| `AppB2.61` | SpatialBase — c32 | 0.9758 | 0.9758 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py AppB2.61` |
+| `AppB2.62` | SpatialBase — c36 | 0.9678 | 0.9678 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py AppB2.62` |
+| `AppB2.63` | SpatialBase — c40 | 0.959 | 0.9590 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py AppB2.63` |
+| `AppB2.64` | SpatialBase — auc_comp | 0.9709 | 0.9709 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py AppB2.64` |
+
+- `AppB2.1` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.2` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.3` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.4` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.5` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.6` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.7` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.8` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.9` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.10` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.11` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.12` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.13` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.14` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.15` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.16` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.17` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.18` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.19` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.20` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.21` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.22` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.23` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.24` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.25` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.26` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.27` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.28` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.29` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.30` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.31` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.32` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.33` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.34` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.35` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.36` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.37` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.38` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.39` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.40` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.41` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.42` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.43` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.44` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.45` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.46` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.47` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.48` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.49` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.50` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.51` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.52` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.53` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.54` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.55` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.56` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.57` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.58` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.59` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.60` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.61` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.62` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.63` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+- `AppB2.64` — Every cell is recomputed from the released per-video scores. All eight rows are descriptive: none was pre-registered and none enters the confirmatory family. The SpatialBase row repeats the sweep table's.
+
 ## AppC — Baseline reproduction and the augmentation confound
 
 *Appendix C; `\label{app:baselines}`*
@@ -306,18 +570,50 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 | `AppC.1` | Xception, literature protocol, c40 | 0.866 | 0.8660 | `predictions/ffpp/b1_xception_lit.json` | `python verify/claim.py AppC.1` |
 | `AppC.2` | F3-Net, literature protocol, c40 | 0.86 | 0.8599 | `predictions/ffpp/b2_f3net_lit.json` | `python verify/claim.py AppC.2` |
 | `AppC.3` | FreqNet, literature protocol, c40 | 0.768 | 0.7684 | `predictions/ffpp/b3_freqnet_lit.json` | `python verify/claim.py AppC.3` |
-| `AppC.4` | Augmentation recovery, example 1: 0.764 (flip-only frame-AUC, c40) | 0.764 | 0.7642 | `predictions/ffpp/b1_xception_lit_fliponly.json` | `python verify/claim.py AppC.4` |
-| `AppC.5` | Augmentation recovery, example 1: → 0.791 (with augmentation) | 0.791 | 0.7915 | `predictions/ffpp/b1_xception_lit.json` | `python verify/claim.py AppC.5` |
-| `AppC.6` | Augmentation recovery, example 2: 0.725 (flip-only frame-AUC, c40) | 0.725 | 0.7250 | `predictions/ffpp/b2_f3net_lit_fliponly.json` | `python verify/claim.py AppC.6` |
-| `AppC.7` | Augmentation recovery, example 2: → 0.780 (with augmentation) | 0.78 | 0.7802 | `predictions/ffpp/b2_f3net_lit.json` | `python verify/claim.py AppC.7` |
-| `AppC.8` | Augmentation confound control: Xception-mq 0.968 (with augmentation) | 0.968 | 0.9679 | `predictions/ffpp/b4_xception_mq.json` | `python verify/claim.py AppC.8` |
-| `AppC.9` | Augmentation confound control: → 0.963 flip-only | 0.963 | 0.9631 | `predictions/ffpp/b4b_xception_mq_fliponly.json` | `python verify/claim.py AppC.9` |
-| `AppC.10` | Synthetic JPEG augmentation at real c40 | 0.89 | 0.8898 | `predictions/p2_probe/p2a_xcep_jpeg.json` | `python verify/claim.py AppC.10` |
-| `AppC.11` | Real CRF re-encodes at real c40 (same recipe) | 0.963 | 0.9631 | `predictions/ffpp/b4b_xception_mq_fliponly.json` | `python verify/claim.py AppC.11` |
-| `AppC.12` | The +7.3 pt real-CRF vs synthetic-JPEG gap | 0.073 | 0.0733 | `predictions/ffpp/b4b_xception_mq_fliponly.json` +1 | `python verify/claim.py AppC.12` |
+| `AppC.4` | Multi-CRF training moves Xception c23 0.994 -> 0.987 | 0.994 | 0.9944 | `predictions/ffpp/b1_xception_lit.json` | `python verify/claim.py AppC.4` |
+| `AppC.5` | ... to Xception-mq c23 0.987 | 0.987 | 0.9872 | `predictions/ffpp/b4_xception_mq.json` | `python verify/claim.py AppC.5` |
+| `AppC.6` | Multi-CRF training moves F3-Net c23 0.992 -> 0.989 | 0.992 | 0.9917 | `predictions/ffpp/b2_f3net_lit.json` | `python verify/claim.py AppC.6` |
+| `AppC.7` | ... to F3-Net-mq c23 0.989 | 0.989 | 0.9885 | `predictions/ffpp/b5_f3net_mq.json` | `python verify/claim.py AppC.7` |
+| `AppC.8` | FreqNet gains most from multi-CRF: 0.768 -> 0.879 at c40 | 0.879 | 0.8787 | `predictions/ffpp/b6_freqnet_mq.json` | `python verify/claim.py AppC.8` |
+| `AppC.9` | Augmentation recovery, example 1: 0.764 (flip-only frame-AUC, c40) | 0.764 | 0.7642 | `predictions/ffpp/b1_xception_lit_fliponly.json` | `python verify/claim.py AppC.9` |
+| `AppC.10` | Augmentation recovery, example 1: → 0.791 (with augmentation) | 0.791 | 0.7915 | `predictions/ffpp/b1_xception_lit.json` | `python verify/claim.py AppC.10` |
+| `AppC.11` | Augmentation recovery, example 2: 0.725 (flip-only frame-AUC, c40) | 0.725 | 0.7250 | `predictions/ffpp/b2_f3net_lit_fliponly.json` | `python verify/claim.py AppC.11` |
+| `AppC.12` | Augmentation recovery, example 2: → 0.780 (with augmentation) | 0.78 | 0.7802 | `predictions/ffpp/b2_f3net_lit.json` | `python verify/claim.py AppC.12` |
+| `AppC.13` | Augmentation confound control: Xception-mq 0.968 (with augmentation) | 0.968 | 0.9679 | `predictions/ffpp/b4_xception_mq.json` | `python verify/claim.py AppC.13` |
+| `AppC.14` | Augmentation confound control: → 0.963 flip-only | 0.963 | 0.9631 | `predictions/ffpp/b4b_xception_mq_fliponly.json` | `python verify/claim.py AppC.14` |
+| `AppC.15` | Synthetic JPEG augmentation at real c40 | 0.89 | 0.8898 | `predictions/p2_probe/p2a_xcep_jpeg.json` | `python verify/claim.py AppC.15` |
+| `AppC.16` | Real CRF re-encodes at real c40 (same recipe) | 0.963 | 0.9631 | `predictions/ffpp/b4b_xception_mq_fliponly.json` | `python verify/claim.py AppC.16` |
+| `AppC.17` | The +7.3 pt real-CRF vs synthetic-JPEG gap | 0.073 | 0.0733 | `predictions/ffpp/b4b_xception_mq_fliponly.json` +1 | `python verify/claim.py AppC.17` |
+| `AppC.18` | Synthetic-JPEG arm — marginal CI | [0.8608, 0.9161] | recorded | `predictions/p2_probe/p2a_xcep_jpeg.json` | `python verify/claim.py AppC.18` |
+| `AppC.19` | Real-CRF arm — marginal CI lower | 0.9484 | 0.9484 | `predictions/ffpp/b4b_xception_mq_fliponly.json` | `python verify/claim.py AppC.19` |
+| `AppC.20` | Real-CRF arm — marginal CI upper | 0.9758 | 0.9758 | `predictions/ffpp/b4b_xception_mq_fliponly.json` | `python verify/claim.py AppC.20` |
+| `AppC.21` | Calibration (Appendix C prose + evaluation/CALIBRATION.md) — Xception (lit), frame-AUC c23 | 0.9901 | 0.9901 | `predictions/ffpp/b1_xception_lit.json` | `python verify/claim.py AppC.21` |
+| `AppC.22` | Calibration (Appendix C prose + evaluation/CALIBRATION.md) — Xception (lit), frame-AUC c40 | 0.7915 | 0.7915 | `predictions/ffpp/b1_xception_lit.json` | `python verify/claim.py AppC.22` |
+| `AppC.23` | Calibration (Appendix C prose + evaluation/CALIBRATION.md) — F3-Net (lit), frame-AUC c23 | 0.985 | 0.9850 | `predictions/ffpp/b2_f3net_lit.json` | `python verify/claim.py AppC.23` |
+| `AppC.24` | Calibration (Appendix C prose + evaluation/CALIBRATION.md) — F3-Net (lit), frame-AUC c40 | 0.7802 | 0.7802 | `predictions/ffpp/b2_f3net_lit.json` | `python verify/claim.py AppC.24` |
+| `AppC.25` | Calibration (Appendix C prose + evaluation/CALIBRATION.md) — FreqNet (lit), frame-AUC c23 | 0.9673 | 0.9673 | `predictions/ffpp/b3_freqnet_lit.json` | `python verify/claim.py AppC.25` |
+| `AppC.26` | Calibration (Appendix C prose + evaluation/CALIBRATION.md) — FreqNet (lit), frame-AUC c40 | 0.6802 | 0.6802 | `predictions/ffpp/b3_freqnet_lit.json` | `python verify/claim.py AppC.26` |
+| `AppC.27` | Calibration shortfall at c40: Xception 3.5 frame-AUC points below the anchor | 0.035 | recorded | `predictions/ffpp/b1_xception_lit.json` | `python verify/claim.py AppC.27` |
+| `AppC.28` | Calibration shortfall at c40: F3-Net 4.7 frame-AUC points below the anchor | 0.047 | recorded | `predictions/ffpp/b2_f3net_lit.json` | `python verify/claim.py AppC.28` |
+| `AppC.29` | Augmentation recovery, Xception: +2.7 frame-AUC points at c40 | 0.027 | recorded | `predictions/ffpp/b1_xception_lit_fliponly.json` | `python verify/claim.py AppC.29` |
+| `AppC.30` | Augmentation recovery, F3-Net: +5.5 frame-AUC points at c40 | 0.055 | recorded | `predictions/ffpp/b2_f3net_lit_fliponly.json` | `python verify/claim.py AppC.30` |
+| `AppC.31` | F3-Net-mq − SpatialBase at c40 — Δ and CI | -0.0040 [-0.0151, +0.0068] | -0.0040 | `verify/expected.json` +2 | `python verify/claim.py AppC.31 --bootstrap` |
+| `AppC.32` | FreqNet-mq − SpatialBase at c40 — Δ and CI | -0.0804 [-0.1084, -0.0543] | -0.0804 | `verify/expected.json` +2 | `python verify/claim.py AppC.32 --bootstrap` |
+| `AppC.33` | F3-Net-mq − Xception-mq at c40 — Δ and CI | -0.0128 [-0.0236, -0.0029] | -0.0128 | `verify/expected.json` +2 | `python verify/claim.py AppC.33 --bootstrap` |
+| `AppC.34` | F3-Net-mq − SpatialBase at AUC_comp — Δ and CI | -0.0002 [-0.0073, +0.0066] | recorded | `predictions/ffpp/b5_f3net_mq.json` | `python verify/claim.py AppC.34` |
+| `AppC.35` | FreqNet-mq − SpatialBase at AUC_comp — Δ and CI | -0.0493 [-0.0671, -0.0330] | recorded | `predictions/ffpp/b6_freqnet_mq.json` | `python verify/claim.py AppC.35` |
+| `AppC.36` | F3-Net-mq − Xception-mq at AUC_comp — Δ and CI | -0.0057 [-0.0124, +0.0007] | recorded | `predictions/ffpp/b5_f3net_mq.json` | `python verify/claim.py AppC.36` |
 
-- `AppC.5` — Corrected in the manuscript (W1, 2026-08-19) from 0.792 to the released frame-AUC 0.79150.
-- `AppC.10` — Marginal statistic only — this arm has no per-video scores (predictions/GAPS.md), so the +7.3 pt comparison is two marginal AUCs with non-overlapping CIs, not a paired delta.
+- `AppC.10` — Corrected in the manuscript (W1, 2026-08-19) from 0.792 to the released frame-AUC 0.79150.
+- `AppC.15` — Marginal statistic only — this arm has no per-video scores (predictions/GAPS.md), so the +7.3 pt comparison is two marginal AUCs with non-overlapping CIs, not a paired delta.
+- `AppC.18` — Stored as `cells.ci` in that file ([0.86080240, 0.91608638]); this arm kept no per-video scores (predictions/GAPS.md), so the interval is the one the campaign computed, not one this release can recompute.
+- `AppC.27` — 0.8261 (DeepfakeBench Table 3) minus the released 0.79150. The anchor is a citation, not a released artifact.
+- `AppC.28` — 0.8271 (DeepfakeBench Table 3) minus the released 0.78018.
+- `AppC.29` — 0.79150 minus 0.76418, both released frame-AUCs checked by the four rows above and by the two flip-only rows.
+- `AppC.30` — 0.78018 minus 0.72497, both released frame-AUCs.
+- `AppC.34` — The AUC_comp endpoint of the same paired bootstrap (10k replicates, seed 0, sorted-key order), computed with the released harness's `paired_auc_comp_delta`; the contrast checker pins level-wise deltas only, so this endpoint is recorded rather than asserted.
+- `AppC.35` — As above, for the FreqNet arm.
+- `AppC.36` — As above, for the augmentation-matched Xception pair.
 
 ## X1 — Key numbers in the running text
 
@@ -341,10 +637,10 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 | `X1.14` | Sign-inconsistent single-seed leans: Fair-N +0.022 | +0.0220 | 0.0220 | `verify/expected.json` +4 | `python verify/claim.py X1.14 --bootstrap` |
 | `X1.15` | Sign-inconsistent single-seed leans: Fair-W -0.023 | -0.0227 | -0.0227 | `verify/expected.json` +4 | `python verify/claim.py X1.15 --bootstrap` |
 | `X1.16` | Xception overfits: ~11 pt below smaller models on unseen FaceShifter at c23 | ~11 pt | **not derivable** | `predictions/GAPS.md` | — |
-| `X1.17` | Campaign GPU-hours (~270 saved, ~35 re-tests, ~31 confirmation seeds) | GPU-h | **not derivable** | `predictions/GAPS.md` | — |
+| `X1.17` | Campaign training hours (~270 saved, ~35 re-tests, ~31 confirmation seeds) | training hours | **not derivable** | `predictions/GAPS.md` | — |
 
-- `X1.16` — **not derivable from this release.** Same cause: the Xception FaceShifter numbers come from the June follow-up and were never persisted as predictions. The Xception FaceShifter cells come from the same June follow-up as Table 9's CAFRL column and were never saved as predictions. The paper now also prints the paired interval recorded in the campaign journal for this observation (+0.113, CI [+0.064, +0.162], single seed, n=280), with an explicit note that it is journal-recorded and not re-derivable from this release.
-- `X1.17` — **not derivable from this release.** GPU-hour accounting is recorded in the internal campaign journal, which is not part of this release. What is released is every run's configuration and the number of runs. Wall-clock accounting lives in the internal campaign journal, which is not part of this release; the run count and their configurations are (configs/RUNS.md).
+- `X1.16` — **not derivable from this release.** Same cause: the Xception FaceShifter numbers come from the June follow-up and were never persisted as predictions. The Xception FaceShifter cells come from the same June follow-up as Table 12's CAFRL column and were never saved as predictions. The paper now also prints the paired interval recorded in the campaign journal for this observation (+0.113, CI [+0.064, +0.162], single seed, n=280), with an explicit note that it is journal-recorded and not re-derivable from this release.
+- `X1.17` — **not derivable from this release.** Compute accounting is recorded in the internal campaign journal, which is not part of this release, and no audited ledger of total consumed compute was kept -- the paper says so rather than reconstructing one. What is released is every run's configuration, its per-epoch curve and its selected epoch, which is what a reader would need to price it. Wall-clock accounting lives in the internal campaign journal, which is not part of this release; the run count and their configurations are (configs/RUNS.md). The manuscript states these as wall-clock training hours on the 2xA100 node and says explicitly that no audited ledger of total consumed compute exists.
 
 ## M1 — Mechanism claims, from the released training curves
 
