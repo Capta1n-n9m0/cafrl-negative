@@ -1,0 +1,592 @@
+{
+  "what": "what the design could and could not have detected",
+  "headline_sentence": "the design cannot distinguish a zero effect from a true effect of up to 0.9 AUC points at the video level (conditional on the three realized seeds), or 1.5 points treating the seed as the experimental unit, at 80% power",
+  "headline_two_level_mde_power80_pt": 1.65,
+  "alpha": 0.05,
+  "powers": [
+    0.8,
+    0.9
+  ],
+  "level": "c40",
+  "seed_level": {
+    "definition": "two-sample t comparison of per-seed video-AUCs, k vs k, MDE = (t_{1-a/2,df} + t_{power,df}) * s_pooled * sqrt(2/k)",
+    "per_arm": {
+      "SpatialBase": {
+        "runs": [
+          "b7_effnet_b0_mq_fliponly",
+          "b7_effnet_b0_mq_fliponly_s1",
+          "b7_effnet_b0_mq_fliponly_s2"
+        ],
+        "auc": [
+          0.9590051020408163,
+          0.9613647959183672,
+          0.9491964285714285
+        ],
+        "k": 3,
+        "mean": 0.9565221088435374,
+        "sd": 0.006453001812010547,
+        "band_half_width_t430": 0.016020262032955358
+      },
+      "Fair-N": {
+        "runs": [
+          "f1_none_fair_s42",
+          "f1_none_fair_s1",
+          "f1_none_fair_s2"
+        ],
+        "auc": [
+          0.9585841836734694,
+          0.9566581632653061,
+          0.953609693877551
+        ],
+        "k": 3,
+        "mean": 0.9562840136054422,
+        "sd": 0.0025082619796198136,
+        "band_half_width_t430": 0.006227026635265893
+      },
+      "Fair-W": {
+        "runs": [
+          "f2_spatres_full_s42",
+          "f2_spatres_full_s1",
+          "f2_spatres_full_s2"
+        ],
+        "auc": [
+          0.964515306122449,
+          0.9601785714285714,
+          0.9608928571428571
+        ],
+        "k": 3,
+        "mean": 0.9618622448979591,
+        "sd": 0.0023252099724705715,
+        "band_half_width_t430": 0.005772580595171633
+      },
+      "TrunkCtrl": {
+        "runs": [
+          "trunk_recipe_s42",
+          "trunk_recipe_s1",
+          "trunk_recipe_s2"
+        ],
+        "auc": [
+          0.949094387755102,
+          0.9565816326530613,
+          0.9550892857142858
+        ],
+        "k": 3,
+        "mean": 0.9535884353741496,
+        "sd": 0.003962842773580498,
+        "band_half_width_t430": 0.009838177870956314
+      }
+    },
+    "pairs": {
+      "Fair-N vs SpatialBase": {
+        "k": 3,
+        "sd_a": 0.0025082619796198136,
+        "sd_b": 0.006453001812010547,
+        "sd_pooled": 0.0048955393239263085,
+        "df": 4,
+        "observed_seed_mean_difference": -0.00023809523809514843,
+        "mde_power80": 0.01485919697121666,
+        "mde_power90": 0.01722650022252586
+      },
+      "Fair-W vs SpatialBase": {
+        "k": 3,
+        "sd_a": 0.0023252099724705715,
+        "sd_b": 0.006453001812010547,
+        "sd_pooled": 0.004850146070062632,
+        "df": 4,
+        "observed_seed_mean_difference": 0.00534013605442174,
+        "mde_power80": 0.014721416993221543,
+        "mde_power90": 0.017066769731962333
+      }
+    }
+  },
+  "video_level_unconditional_on_seeds": {
+    "definition": "the same MDE formula applied to the two-level (seed x video) bootstrap's standard error",
+    "source": "seed_uncertainty.json",
+    "per_contrast": {
+      "C5": {
+        "name": "Fair-N pool - SpatialBase pool (3v3)",
+        "schemes": {
+          "seed+video": {
+            "se": 0.005902575905558795,
+            "mde_power80": 0.016536569405803288,
+            "mde_power90": 0.019133291583423844
+          },
+          "seed+source": {
+            "se": 0.005992728116645087,
+            "mde_power80": 0.016789138507762844,
+            "mde_power90": 0.019425521377534574
+          },
+          "seed+pair": {
+            "se": 0.005732636098654241,
+            "mde_power80": 0.01606046855481052,
+            "mde_power90": 0.01858242905676435
+          }
+        }
+      },
+      "C6": {
+        "name": "Fair-W pool - SpatialBase pool (3v3)",
+        "schemes": {
+          "seed+video": {
+            "se": 0.0056403407116678,
+            "mde_power80": 0.015801895162929288,
+            "mde_power90": 0.01828325212464672
+          },
+          "seed+source": {
+            "se": 0.005774297733878122,
+            "mde_power80": 0.016177187176216155,
+            "mde_power90": 0.018717475895184514
+          },
+          "seed+pair": {
+            "se": 0.0054751967140140015,
+            "mde_power80": 0.015339230180242323,
+            "mde_power90": 0.01774793528824879
+          }
+        }
+      }
+    }
+  },
+  "video_level_conditional": {
+    "definition": "MDE = (z_{1-a/2} + z_power) * SE, with SE the standard deviation of the paired bootstrap distribution; conditional on the three realized seeds",
+    "source": "cluster_bootstrap.json",
+    "per_contrast": {
+      "C1": {
+        "name": "SpatialBase - CAFRL as specified (s42)",
+        "schemes": {
+          "video": {
+            "se": 0.008506658489856666,
+            "ci_half_width": 0.016657451807139203,
+            "mde_power80": 0.023832128680717622,
+            "mde_power90": 0.027574465774130027
+          },
+          "source": {
+            "se": 0.009843895591052745,
+            "ci_half_width": 0.019356345663265252,
+            "mde_power80": 0.02757851237654079,
+            "mde_power90": 0.03190914063180724
+          },
+          "target": {
+            "se": 0.007678867694919487,
+            "ci_half_width": 0.015153858418367378,
+            "mde_power80": 0.021513002225931638,
+            "mde_power90": 0.024891169040124225
+          },
+          "basevideo": {
+            "se": 0.009556938008653738,
+            "ci_half_width": 0.01859357742336452,
+            "mde_power80": 0.026774576255466302,
+            "mde_power90": 0.030978963166246164
+          },
+          "pair": {
+            "se": 0.007480902052698933,
+            "ci_half_width": 0.01465577168367348,
+            "mde_power80": 0.020958384608992294,
+            "mde_power90": 0.0242494603324838
+          }
+        }
+      },
+      "C2": {
+        "name": "Fair-N - CAFRL-adv (s42)",
+        "schemes": {
+          "video": {
+            "se": 0.008678892035099712,
+            "ci_half_width": 0.016940179782979167,
+            "mde_power80": 0.02431465563513373,
+            "mde_power90": 0.028132763489281568
+          },
+          "source": {
+            "se": 0.009111055726618595,
+            "ci_half_width": 0.017927614795918353,
+            "mde_power80": 0.025525399045098165,
+            "mde_power90": 0.029533628815522017
+          },
+          "target": {
+            "se": 0.007838669842165958,
+            "ci_half_width": 0.015395727040816308,
+            "mde_power80": 0.021960701559480062,
+            "mde_power90": 0.025409170185360576
+          },
+          "basevideo": {
+            "se": 0.009125656646776205,
+            "ci_half_width": 0.017915607743329308,
+            "mde_power80": 0.025566304767182572,
+            "mde_power90": 0.02958095792525845
+          },
+          "pair": {
+            "se": 0.007945675295768121,
+            "ci_half_width": 0.015708067602040847,
+            "mde_power80": 0.022260486456549357,
+            "mde_power90": 0.02575603002715585
+          }
+        }
+      },
+      "C3": {
+        "name": "Fair-N - SpatialBase (s42)",
+        "schemes": {
+          "video": {
+            "se": 0.004392785923081917,
+            "ci_half_width": 0.008646607809508936,
+            "mde_power80": 0.01230676410844103,
+            "mde_power90": 0.014239283877863006
+          },
+          "source": {
+            "se": 0.004451195196403812,
+            "ci_half_width": 0.008718590561224517,
+            "mde_power80": 0.012470402665180371,
+            "mde_power90": 0.014428618445605074
+          },
+          "target": {
+            "se": 0.004203752997254722,
+            "ci_half_width": 0.008220982142857144,
+            "mde_power80": 0.011777172257706916,
+            "mde_power90": 0.013626530709316156
+          },
+          "basevideo": {
+            "se": 0.004593516180520785,
+            "ci_half_width": 0.00899233303364692,
+            "mde_power80": 0.012869127030509771,
+            "mde_power90": 0.014889954128723593
+          },
+          "pair": {
+            "se": 0.004121291772668876,
+            "ci_half_width": 0.0081315369897959,
+            "mde_power80": 0.011546150109839715,
+            "mde_power90": 0.013359231367542112
+          }
+        }
+      },
+      "C4": {
+        "name": "Fair-W - SpatialBase (s42)",
+        "schemes": {
+          "video": {
+            "se": 0.003955105536602678,
+            "ci_half_width": 0.007793654782056648,
+            "mde_power80": 0.01108056520742282,
+            "mde_power90": 0.012820536099123491
+          },
+          "source": {
+            "se": 0.004135227353334468,
+            "ci_half_width": 0.008125159438775554,
+            "mde_power80": 0.011585191826638258,
+            "mde_power90": 0.013404403768969087
+          },
+          "target": {
+            "se": 0.0036888967897091168,
+            "ci_half_width": 0.007340720663265291,
+            "mde_power80": 0.010334758717193445,
+            "mde_power90": 0.011957616306499464
+          },
+          "basevideo": {
+            "se": 0.004109913894493348,
+            "ci_half_width": 0.00818031995586755,
+            "mde_power80": 0.011514274014529665,
+            "mde_power90": 0.01332234979850917
+          },
+          "pair": {
+            "se": 0.003692419924801556,
+            "ci_half_width": 0.007308673469387739,
+            "mde_power80": 0.010344629080389836,
+            "mde_power90": 0.011969036603686653
+          }
+        }
+      },
+      "C5": {
+        "name": "Fair-N pool - SpatialBase pool (3v3)",
+        "schemes": {
+          "video": {
+            "se": 0.0028321645098520697,
+            "ci_half_width": 0.0055619661681605825,
+            "mde_power80": 0.007934550226065719,
+            "mde_power90": 0.009180505299083368
+          },
+          "source": {
+            "se": 0.0027973918312969204,
+            "ci_half_width": 0.0055041454081633375,
+            "mde_power80": 0.007837131603831418,
+            "mde_power90": 0.009067789120828756
+          },
+          "target": {
+            "se": 0.0026716150560640614,
+            "ci_half_width": 0.005229591836734715,
+            "mde_power80": 0.007484757249557124,
+            "mde_power90": 0.008660081748071941
+          },
+          "basevideo": {
+            "se": 0.0029249365830861453,
+            "ci_half_width": 0.005749029184013221,
+            "mde_power80": 0.008194459095091998,
+            "mde_power90": 0.009481227417085215
+          },
+          "pair": {
+            "se": 0.002773486545895625,
+            "ci_half_width": 0.005446747448979591,
+            "mde_power80": 0.007770158909616378,
+            "mde_power90": 0.008990299766471246
+          }
+        }
+      },
+      "C6": {
+        "name": "Fair-W pool - SpatialBase pool (3v3)",
+        "schemes": {
+          "video": {
+            "se": 0.002957237920081914,
+            "ci_half_width": 0.005738626180156086,
+            "mde_power80": 0.00828495404334463,
+            "mde_power90": 0.009585932703245524
+          },
+          "source": {
+            "se": 0.003244090562448451,
+            "ci_half_width": 0.0063584183673469075,
+            "mde_power80": 0.009088596165975366,
+            "mde_power90": 0.010515770004059526
+          },
+          "target": {
+            "se": 0.003075576690504672,
+            "ci_half_width": 0.005969387755102031,
+            "mde_power80": 0.008616490193290693,
+            "mde_power90": 0.009969529667748793
+          },
+          "basevideo": {
+            "se": 0.003320219038583982,
+            "ci_half_width": 0.006549201206730887,
+            "mde_power80": 0.009301876579394136,
+            "mde_power90": 0.010762541643257099
+          },
+          "pair": {
+            "se": 0.003011460539046081,
+            "ci_half_width": 0.005963010204081631,
+            "mde_power80": 0.008436863331122011,
+            "mde_power90": 0.009761696165784187
+          }
+        }
+      },
+      "C7": {
+        "name": "SpatialBase (s42) - TrunkCtrl pool",
+        "schemes": {
+          "video": {
+            "se": 0.003915507988124387,
+            "ci_half_width": 0.007716314937074324,
+            "mde_power80": 0.010969629300932532,
+            "mde_power90": 0.012692180029985883
+          },
+          "source": {
+            "se": 0.004066378728715254,
+            "ci_half_width": 0.00804846938775511,
+            "mde_power80": 0.011392306537617658,
+            "mde_power90": 0.013181229881663963
+          },
+          "target": {
+            "se": 0.0036014284791059943,
+            "ci_half_width": 0.006977040816326552,
+            "mde_power80": 0.010089708791154423,
+            "mde_power90": 0.011674086417539807
+          },
+          "basevideo": {
+            "se": 0.004058573487323631,
+            "ci_half_width": 0.008062116689933993,
+            "mde_power80": 0.011370439488711087,
+            "mde_power90": 0.013155929070320855
+          },
+          "pair": {
+            "se": 0.0040045725317151525,
+            "ci_half_width": 0.007736128826530624,
+            "mde_power80": 0.011219151209714397,
+            "mde_power90": 0.012980884132996539
+          }
+        }
+      },
+      "C8": {
+        "name": "TrunkCtrl pool - spatial-residual (s42)",
+        "schemes": {
+          "video": {
+            "se": 0.010602473343439006,
+            "ci_half_width": 0.020535799107943016,
+            "mde_power80": 0.0297037325944155,
+            "mde_power90": 0.034368082212115576
+          },
+          "source": {
+            "se": 0.010760462883918959,
+            "ci_half_width": 0.02093813775510204,
+            "mde_power80": 0.030146353755640596,
+            "mde_power90": 0.03488020776433207
+          },
+          "target": {
+            "se": 0.009506986937939653,
+            "ci_half_width": 0.018546237244897998,
+            "mde_power80": 0.026634634074124804,
+            "mde_power90": 0.030817045993783078
+          },
+          "basevideo": {
+            "se": 0.011262604407300873,
+            "ci_half_width": 0.02199050626954832,
+            "mde_power80": 0.031553146024948096,
+            "mde_power90": 0.03650790732071774
+          },
+          "pair": {
+            "se": 0.008366381807700522,
+            "ci_half_width": 0.016371492346938788,
+            "mde_power80": 0.023439131601543036,
+            "mde_power90": 0.027119756727606602
+          }
+        }
+      },
+      "F1": {
+        "name": "Fair-N pool - SpatialBase pool (FaceShifter)",
+        "schemes": {
+          "video": {
+            "se": 0.011126798180525825,
+            "ci_half_width": 0.02152940985302685,
+            "mde_power80": 0.031172673307487422,
+            "mde_power90": 0.0360676893248281
+          },
+          "source": {
+            "se": 0.011193695798606027,
+            "ci_half_width": 0.021864158163265347,
+            "mde_power80": 0.03136009268542788,
+            "mde_power90": 0.0362845389940987
+          },
+          "target": {
+            "se": 0.00933193053364678,
+            "ci_half_width": 0.018087372448979597,
+            "mde_power80": 0.026144198639521884,
+            "mde_power90": 0.030249597937125824
+          },
+          "basevideo": {
+            "se": 0.011007254450588906,
+            "ci_half_width": 0.02148772337305818,
+            "mde_power80": 0.030837761360778062,
+            "mde_power90": 0.03568018646532246
+          },
+          "pair": {
+            "se": 0.009083749463973289,
+            "ci_half_width": 0.017755102040816317,
+            "mde_power80": 0.025448898223309167,
+            "mde_power90": 0.02944511514054256
+          }
+        }
+      },
+      "F2": {
+        "name": "Fair-W pool - SpatialBase pool (FaceShifter)",
+        "schemes": {
+          "video": {
+            "se": 0.013114875073474074,
+            "ci_half_width": 0.025520730132242382,
+            "mde_power80": 0.036742440143243196,
+            "mde_power90": 0.042512071488083836
+          },
+          "source": {
+            "se": 0.012627624095556206,
+            "ci_half_width": 0.02464349489795917,
+            "mde_power80": 0.035377365005997405,
+            "mde_power90": 0.04093263986636911
+          },
+          "target": {
+            "se": 0.011685728644288412,
+            "ci_half_width": 0.02273022959183676,
+            "mde_power80": 0.03273856463271771,
+            "mde_power90": 0.03787947111453056
+          },
+          "basevideo": {
+            "se": 0.013061462705490736,
+            "ci_half_width": 0.025482918591380528,
+            "mde_power80": 0.036592800842636664,
+            "mde_power90": 0.042338934466699
+          },
+          "pair": {
+            "se": 0.01271359548770884,
+            "ci_half_width": 0.024694515306122464,
+            "mde_power80": 0.03561822118743282,
+            "mde_power90": 0.0412113174708943
+          }
+        }
+      },
+      "F3": {
+        "name": "Fair-N s42 - SpatialBase pool (FaceShifter)",
+        "schemes": {
+          "video": {
+            "se": 0.01450491240414568,
+            "ci_half_width": 0.028510132262854045,
+            "mde_power80": 0.04063674818147798,
+            "mde_power90": 0.047017899110654016
+          },
+          "source": {
+            "se": 0.01391172285085746,
+            "ci_half_width": 0.027245535714285705,
+            "mde_power80": 0.03897487709744667,
+            "mde_power90": 0.04509506594952248
+          },
+          "target": {
+            "se": 0.011605002289946889,
+            "ci_half_width": 0.022679209183673478,
+            "mde_power80": 0.032512402871682354,
+            "mde_power90": 0.03761779538163086
+          },
+          "basevideo": {
+            "se": 0.014403945529707057,
+            "ci_half_width": 0.02831264814466334,
+            "mde_power80": 0.04035388087853166,
+            "mde_power90": 0.04669061341711777
+          },
+          "pair": {
+            "se": 0.012054549841942753,
+            "ci_half_width": 0.023316964285714316,
+            "mde_power80": 0.03377184864819283,
+            "mde_power90": 0.039075010761927945
+          }
+        }
+      },
+      "F4": {
+        "name": "Fair-W s42 - SpatialBase pool (FaceShifter)",
+        "schemes": {
+          "video": {
+            "se": 0.015794334497518808,
+            "ci_half_width": 0.030919558193982618,
+            "mde_power80": 0.04424917405818041,
+            "mde_power90": 0.05119758087694571
+          },
+          "source": {
+            "se": 0.01576809131849691,
+            "ci_half_width": 0.03079145408163261,
+            "mde_power80": 0.04417565155575637,
+            "mde_power90": 0.05111251320406258
+          },
+          "target": {
+            "se": 0.01352890342654289,
+            "ci_half_width": 0.026658801020408164,
+            "mde_power80": 0.03790237585708044,
+            "mde_power90": 0.04385415083273234
+          },
+          "basevideo": {
+            "se": 0.015604618437893706,
+            "ci_half_width": 0.030490084212697128,
+            "mde_power80": 0.043717668349896086,
+            "mde_power90": 0.05058261331957016
+          },
+          "pair": {
+            "se": 0.013618467528679158,
+            "ci_half_width": 0.02640369897959186,
+            "mde_power80": 0.038153297321698976,
+            "mde_power90": 0.044144474262536426
+          }
+        }
+      }
+    },
+    "headline": {
+      "video": {
+        "rows": [
+          "C5",
+          "C6"
+        ],
+        "mde_power80_max": 0.00828495404334463,
+        "mde_power80_max_pt": 0.83
+      },
+      "source": {
+        "rows": [
+          "C5",
+          "C6"
+        ],
+        "mde_power80_max": 0.009088596165975366,
+        "mde_power80_max_pt": 0.91
+      }
+    }
+  }
+}

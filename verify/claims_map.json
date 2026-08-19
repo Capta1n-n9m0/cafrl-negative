@@ -3,7 +3,7 @@
  "note": "Every manuscript table cell and present-tense release claim, mapped to the artifact that carries it and the command that recomputes it. Generated from the release manifest; checked on every build.",
  "manuscript": {
   "label": "IEEE Access submission, version B",
-  "sha256": "d6ecfc7950dd277ab9144ac25cf52bbd5be56998d93554e92cd798a32d23c158",
+  "sha256": "1c6a317d0da3469bb5cf34543e8ed19deb471d80771172c89dcf825d5c20954f",
   "note": "Table and section numbers refer to the submitted manuscript. The map is regenerated whenever the release is rebuilt; if a manuscript number moves, the build fails until the map and the manuscript agree."
  },
  "comp_levels": [
@@ -2876,6 +2876,806 @@
     "probes/band_energy.json"
    ],
    "command": "python verify/claim.py M1.9"
+  },
+  {
+   "label": "SpatialBase \u2212 CAFRL as specified (s42) \u2014 clustered CI lower",
+   "printed": 0.0182,
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.C1.schemes.source.ci_lo",
+   "id": "AppE.1",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py AppE.1"
+  },
+  {
+   "label": "SpatialBase \u2212 CAFRL as specified (s42) \u2014 clustered CI upper",
+   "printed": 0.0569,
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.C1.schemes.source.ci_hi",
+   "id": "AppE.2",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py AppE.2"
+  },
+  {
+   "label": "Fair-N \u2212 CAFRL\u2212adv (s42) \u2014 clustered CI lower",
+   "printed": 0.0222,
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.C2.schemes.source.ci_lo",
+   "id": "AppE.3",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py AppE.3"
+  },
+  {
+   "label": "Fair-N \u2212 CAFRL\u2212adv (s42) \u2014 clustered CI upper",
+   "printed": 0.058,
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.C2.schemes.source.ci_hi",
+   "id": "AppE.4",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py AppE.4"
+  },
+  {
+   "label": "Fair-N \u2212 SpatialBase (s42) \u2014 clustered CI lower",
+   "printed": -0.0095,
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.C3.schemes.source.ci_lo",
+   "id": "AppE.5",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py AppE.5"
+  },
+  {
+   "label": "Fair-N \u2212 SpatialBase (s42) \u2014 clustered CI upper",
+   "printed": 0.008,
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.C3.schemes.source.ci_hi",
+   "id": "AppE.6",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py AppE.6"
+  },
+  {
+   "label": "Fair-W \u2212 SpatialBase (s42) \u2014 clustered CI lower",
+   "printed": -0.0026,
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.C4.schemes.source.ci_lo",
+   "id": "AppE.7",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py AppE.7"
+  },
+  {
+   "label": "Fair-W \u2212 SpatialBase (s42) \u2014 clustered CI upper",
+   "printed": 0.0137,
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.C4.schemes.source.ci_hi",
+   "id": "AppE.8",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py AppE.8"
+  },
+  {
+   "label": "Fair-N pool \u2212 SpatialBase pool (3v3) \u2014 clustered CI lower",
+   "printed": -0.0064,
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.C5.schemes.source.ci_lo",
+   "id": "AppE.9",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py AppE.9"
+  },
+  {
+   "label": "Fair-N pool \u2212 SpatialBase pool (3v3) \u2014 clustered CI upper",
+   "printed": 0.0046,
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.C5.schemes.source.ci_hi",
+   "id": "AppE.10",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py AppE.10"
+  },
+  {
+   "label": "Fair-W pool \u2212 SpatialBase pool (3v3) \u2014 clustered CI lower",
+   "printed": -0.0042,
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.C6.schemes.source.ci_lo",
+   "id": "AppE.11",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py AppE.11"
+  },
+  {
+   "label": "Fair-W pool \u2212 SpatialBase pool (3v3) \u2014 clustered CI upper",
+   "printed": 0.0085,
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.C6.schemes.source.ci_hi",
+   "id": "AppE.12",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py AppE.12"
+  },
+  {
+   "label": "SpatialBase (s42) \u2212 TrunkCtrl pool \u2014 clustered CI lower",
+   "printed": -0.0119,
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.C7.schemes.source.ci_lo",
+   "id": "AppE.13",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py AppE.13"
+  },
+  {
+   "label": "SpatialBase (s42) \u2212 TrunkCtrl pool \u2014 clustered CI upper",
+   "printed": 0.0042,
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.C7.schemes.source.ci_hi",
+   "id": "AppE.14",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py AppE.14"
+  },
+  {
+   "label": "TrunkCtrl pool \u2212 spatial-residual (s42) \u2014 clustered CI lower",
+   "printed": 0.0296,
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.C8.schemes.source.ci_lo",
+   "id": "AppE.15",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py AppE.15"
+  },
+  {
+   "label": "TrunkCtrl pool \u2212 spatial-residual (s42) \u2014 clustered CI upper",
+   "printed": 0.0715,
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.C8.schemes.source.ci_hi",
+   "id": "AppE.16",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py AppE.16"
+  },
+  {
+   "label": "FaceShifter: Fair-N pool \u2212 SpatialBase pool \u2014 clustered CI lower",
+   "printed": -0.0546,
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.F1.schemes.source.ci_lo",
+   "id": "AppE.17",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py AppE.17"
+  },
+  {
+   "label": "FaceShifter: Fair-N pool \u2212 SpatialBase pool \u2014 clustered CI upper",
+   "printed": -0.0109,
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.F1.schemes.source.ci_hi",
+   "id": "AppE.18",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py AppE.18"
+  },
+  {
+   "label": "FaceShifter: Fair-W pool \u2212 SpatialBase pool \u2014 clustered CI lower",
+   "printed": -0.0563,
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.F2.schemes.source.ci_lo",
+   "id": "AppE.19",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py AppE.19"
+  },
+  {
+   "label": "FaceShifter: Fair-W pool \u2212 SpatialBase pool \u2014 clustered CI upper",
+   "printed": -0.007,
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.F2.schemes.source.ci_hi",
+   "id": "AppE.20",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py AppE.20"
+  },
+  {
+   "label": "FaceShifter: Fair-N (s42) \u2212 SpatialBase pool \u2014 clustered CI lower",
+   "printed": -0.0045,
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.F3.schemes.source.ci_lo",
+   "id": "AppE.21",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py AppE.21"
+  },
+  {
+   "label": "FaceShifter: Fair-N (s42) \u2212 SpatialBase pool \u2014 clustered CI upper",
+   "printed": 0.05,
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.F3.schemes.source.ci_hi",
+   "id": "AppE.22",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py AppE.22"
+  },
+  {
+   "label": "FaceShifter: Fair-W (s42) \u2212 SpatialBase pool \u2014 clustered CI lower",
+   "printed": -0.0534,
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.F4.schemes.source.ci_lo",
+   "id": "AppE.23",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py AppE.23"
+  },
+  {
+   "label": "FaceShifter: Fair-W (s42) \u2212 SpatialBase pool \u2014 clustered CI upper",
+   "printed": 0.0082,
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.F4.schemes.source.ci_hi",
+   "id": "AppE.24",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py AppE.24"
+  },
+  {
+   "label": "Seeds resampled: Fair-N \u2212 SpatialBase, CI lower",
+   "printed": -0.0119,
+   "kind": "scalar",
+   "source": "evaluation/analysis/seed_uncertainty.json",
+   "key": "contrasts.C5.schemes.seed+video.ci_lo",
+   "id": "AppE.25",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/seed_uncertainty.json"
+   ],
+   "command": "python verify/claim.py AppE.25"
+  },
+  {
+   "label": "Seeds resampled: Fair-N \u2212 SpatialBase, CI upper",
+   "printed": 0.0123,
+   "kind": "scalar",
+   "source": "evaluation/analysis/seed_uncertainty.json",
+   "key": "contrasts.C5.schemes.seed+video.ci_hi",
+   "id": "AppE.26",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/seed_uncertainty.json"
+   ],
+   "command": "python verify/claim.py AppE.26"
+  },
+  {
+   "label": "Seeds resampled: Fair-W \u2212 SpatialBase, CI lower",
+   "printed": -0.0065,
+   "kind": "scalar",
+   "source": "evaluation/analysis/seed_uncertainty.json",
+   "key": "contrasts.C6.schemes.seed+video.ci_lo",
+   "id": "AppE.27",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/seed_uncertainty.json"
+   ],
+   "command": "python verify/claim.py AppE.27"
+  },
+  {
+   "label": "Seeds resampled: Fair-W \u2212 SpatialBase, CI upper",
+   "printed": 0.0164,
+   "kind": "scalar",
+   "source": "evaluation/analysis/seed_uncertainty.json",
+   "key": "contrasts.C6.schemes.seed+video.ci_hi",
+   "id": "AppE.28",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/seed_uncertainty.json"
+   ],
+   "command": "python verify/claim.py AppE.28"
+  },
+  {
+   "label": "Equivalence margin (post hoc)",
+   "printed": 0.01,
+   "kind": "scalar",
+   "source": "evaluation/analysis/equivalence.json",
+   "key": "margin",
+   "id": "AppE.29",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/equivalence.json"
+   ],
+   "command": "python verify/claim.py AppE.29"
+  },
+  {
+   "label": "TOST Fair-N: 90% CI lower (video unit)",
+   "printed": -0.0057,
+   "kind": "scalar",
+   "source": "evaluation/analysis/equivalence.json",
+   "key": "contrasts.C5.schemes.video.ci90_lo",
+   "id": "AppE.30",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/equivalence.json"
+   ],
+   "command": "python verify/claim.py AppE.30"
+  },
+  {
+   "label": "TOST Fair-N: 90% CI upper (video unit)",
+   "printed": 0.0036,
+   "kind": "scalar",
+   "source": "evaluation/analysis/equivalence.json",
+   "key": "contrasts.C5.schemes.video.ci90_hi",
+   "id": "AppE.31",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/equivalence.json"
+   ],
+   "command": "python verify/claim.py AppE.31"
+  },
+  {
+   "label": "TOST Fair-N: p (video unit)",
+   "printed": 0.001,
+   "kind": "scalar",
+   "source": "evaluation/analysis/equivalence.json",
+   "key": "contrasts.C5.schemes.video.p_tost_bootstrap",
+   "id": "AppE.32",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/equivalence.json"
+   ],
+   "command": "python verify/claim.py AppE.32"
+  },
+  {
+   "label": "TOST Fair-W: 90% CI lower (video unit)",
+   "printed": -0.0025,
+   "kind": "scalar",
+   "source": "evaluation/analysis/equivalence.json",
+   "key": "contrasts.C6.schemes.video.ci90_lo",
+   "id": "AppE.33",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/equivalence.json"
+   ],
+   "command": "python verify/claim.py AppE.33"
+  },
+  {
+   "label": "TOST Fair-W: 90% CI upper (video unit)",
+   "printed": 0.0071,
+   "kind": "scalar",
+   "source": "evaluation/analysis/equivalence.json",
+   "key": "contrasts.C6.schemes.video.ci90_hi",
+   "id": "AppE.34",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/equivalence.json"
+   ],
+   "command": "python verify/claim.py AppE.34"
+  },
+  {
+   "label": "TOST Fair-W: p (video unit)",
+   "printed": 0.006,
+   "kind": "scalar",
+   "source": "evaluation/analysis/equivalence.json",
+   "key": "contrasts.C6.schemes.video.p_tost_bootstrap",
+   "id": "AppE.35",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/equivalence.json"
+   ],
+   "command": "python verify/claim.py AppE.35"
+  },
+  {
+   "label": "TOST worst case over the four cluster units (Fair-W)",
+   "printed": 0.01,
+   "kind": "scalar",
+   "source": "evaluation/analysis/equivalence.json",
+   "key": "contrasts.C6.worst_p_tost_conditional",
+   "id": "AppE.36",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/equivalence.json"
+   ],
+   "command": "python verify/claim.py AppE.36"
+  },
+  {
+   "label": "Tightest margin concluded, Fair-N",
+   "printed": 0.006,
+   "kind": "scalar",
+   "source": "evaluation/analysis/equivalence.json",
+   "key": "contrasts.C5.smallest_margin_conditional",
+   "note": "Printed in the paper as 0.6 AUC points.",
+   "id": "AppE.37",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/equivalence.json"
+   ],
+   "command": "python verify/claim.py AppE.37"
+  },
+  {
+   "label": "Tightest margin concluded, Fair-W",
+   "printed": 0.008,
+   "kind": "scalar",
+   "source": "evaluation/analysis/equivalence.json",
+   "key": "contrasts.C6.smallest_margin_conditional",
+   "note": "Printed in the paper as 0.8 AUC points.",
+   "id": "AppE.38",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/equivalence.json"
+   ],
+   "command": "python verify/claim.py AppE.38"
+  },
+  {
+   "label": "Seeds resampled: Fair-W 90% CI upper",
+   "printed": 0.0131,
+   "kind": "scalar",
+   "source": "evaluation/analysis/equivalence.json",
+   "key": "contrasts.C6.schemes.seed+video.ci90_hi",
+   "id": "AppE.39",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/equivalence.json"
+   ],
+   "command": "python verify/claim.py AppE.39"
+  },
+  {
+   "label": "Seeds resampled: Fair-W TOST p",
+   "printed": 0.11,
+   "kind": "scalar",
+   "source": "evaluation/analysis/equivalence.json",
+   "key": "contrasts.C6.schemes.seed+video.p_tost_bootstrap",
+   "id": "AppE.40",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/equivalence.json"
+   ],
+   "command": "python verify/claim.py AppE.40"
+  },
+  {
+   "label": "MDE, video unit (80% power)",
+   "printed": 0.83,
+   "kind": "scalar",
+   "source": "evaluation/analysis/mde.json",
+   "key": "video_level_conditional.headline.video.mde_power80_max_pt",
+   "note": "In AUC points; printed in Section IV as 0.83.",
+   "id": "AppE.41",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/mde.json"
+   ],
+   "command": "python verify/claim.py AppE.41"
+  },
+  {
+   "label": "MDE, source-identity cluster unit (80% power)",
+   "printed": 0.91,
+   "kind": "scalar",
+   "source": "evaluation/analysis/mde.json",
+   "key": "video_level_conditional.headline.source.mde_power80_max_pt",
+   "id": "AppE.42",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/mde.json"
+   ],
+   "command": "python verify/claim.py AppE.42"
+  },
+  {
+   "label": "MDE, seed as the experimental unit (80% power)",
+   "printed": 0.0149,
+   "kind": "scalar",
+   "source": "evaluation/analysis/mde.json",
+   "key": "seed_level.pairs.Fair-N vs SpatialBase.mde_power80",
+   "note": "Printed in the paper as 1.5 AUC points; the Fair-W pair gives 1.47.",
+   "id": "AppE.43",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/mde.json"
+   ],
+   "command": "python verify/claim.py AppE.43"
+  },
+  {
+   "label": "MDE implied by the two-level bootstrap",
+   "printed": 1.65,
+   "kind": "scalar",
+   "source": "evaluation/analysis/mde.json",
+   "key": "headline_two_level_mde_power80_pt",
+   "note": "Printed in the paper as 1.7 AUC points.",
+   "id": "AppE.44",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/mde.json"
+   ],
+   "command": "python verify/claim.py AppE.44"
+  },
+  {
+   "label": "Smallest observed across-seed SD (Fair-W)",
+   "printed": 0.0023,
+   "kind": "scalar",
+   "source": "evaluation/analysis/mde.json",
+   "key": "seed_level.per_arm.Fair-W.sd",
+   "id": "AppE.45",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/mde.json"
+   ],
+   "command": "python verify/claim.py AppE.45"
+  },
+  {
+   "label": "Largest observed across-seed SD (SpatialBase)",
+   "printed": 0.0065,
+   "kind": "scalar",
+   "source": "evaluation/analysis/mde.json",
+   "key": "seed_level.per_arm.SpatialBase.sd",
+   "id": "AppE.46",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/mde.json"
+   ],
+   "command": "python verify/claim.py AppE.46"
+  },
+  {
+   "label": "Bonferroni threshold over the 13-comparison family",
+   "printed": 0.0038,
+   "kind": "scalar",
+   "source": "evaluation/analysis/multiplicity.json",
+   "key": "families.all_adjudicated_including_training_data_gap.bonferroni_threshold",
+   "id": "AppE.47",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/multiplicity.json"
+   ],
+   "command": "python verify/claim.py AppE.47"
+  },
+  {
+   "label": "p, STOP-gate contrast (cluster unit)",
+   "printed": 0.0002,
+   "kind": "scalar",
+   "source": "evaluation/analysis/multiplicity.json",
+   "key": "members.C1.p",
+   "id": "AppE.48",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/multiplicity.json"
+   ],
+   "command": "python verify/claim.py AppE.48"
+  },
+  {
+   "label": "p, fair-recipe recovery (cluster unit)",
+   "printed": 1.4e-05,
+   "kind": "scalar",
+   "source": "evaluation/analysis/multiplicity.json",
+   "key": "members.C2.p",
+   "id": "AppE.49",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/multiplicity.json"
+   ],
+   "command": "python verify/claim.py AppE.49"
+  },
+  {
+   "label": "p, recipe share (cluster unit)",
+   "printed": 5.5e-06,
+   "kind": "scalar",
+   "source": "evaluation/analysis/multiplicity.json",
+   "key": "members.C8.p",
+   "id": "AppE.50",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/multiplicity.json"
+   ],
+   "command": "python verify/claim.py AppE.50"
+  },
+  {
+   "label": "p, real-CRF vs synthetic-JPEG training gap (unpaired)",
+   "printed": 3.3e-06,
+   "kind": "scalar",
+   "source": "evaluation/analysis/multiplicity.json",
+   "key": "members.G1.p",
+   "id": "AppE.51",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/multiplicity.json"
+   ],
+   "command": "python verify/claim.py AppE.51"
+  },
+  {
+   "label": "p, FaceShifter Fair-N pooled deficit",
+   "printed": 0.0037,
+   "kind": "scalar",
+   "source": "evaluation/analysis/multiplicity.json",
+   "key": "members.F1.p",
+   "id": "AppE.52",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/multiplicity.json"
+   ],
+   "command": "python verify/claim.py AppE.52"
+  },
+  {
+   "label": "p, FaceShifter Fair-W pooled deficit",
+   "printed": 0.012,
+   "kind": "scalar",
+   "source": "evaluation/analysis/multiplicity.json",
+   "key": "members.F2.p",
+   "id": "AppE.53",
+   "table": "AppE",
+   "table_title": "Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)",
+   "where": "Appendix E and Section IV (statistical reporting)",
+   "artifacts": [
+    "evaluation/analysis/multiplicity.json"
+   ],
+   "command": "python verify/claim.py AppE.53"
   }
  ],
  "release_claims": [

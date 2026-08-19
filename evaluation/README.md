@@ -11,7 +11,8 @@ evaluation/
 ├── src/               the harness, verbatim (19 files, full import closure)
 ├── release_io.py      release-only: reads predictions/*.json into the shape src/ expects
 ├── rederive.py        recomputes the paper's tables and writes them out
-└── analysis/          statistical analyses (equivalence tests, MDE); see its STATUS.md
+└── analysis/          the statistics added in revision (equivalence, MDE,
+                    cluster and two-level bootstraps, multiplicity) + their outputs
 ```
 
 ## Re-derive the tables

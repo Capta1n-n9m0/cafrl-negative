@@ -1,0 +1,275 @@
+{
+  "what": "seed x video bootstrap: the pooled contrast with the seed draw included, so the interval is not conditional on the realized seeds",
+  "recipe": {
+    "b": 10000,
+    "rng_seed": 0,
+    "key_order": "sorted",
+    "seed_pooling": "per-video mean",
+    "interval": "percentile",
+    "seed_draw": "k seeds with replacement, independently per arm"
+  },
+  "contrasts": {
+    "C5": {
+      "name": "Fair-N pool - SpatialBase pool (3v3)",
+      "runs_a": [
+        "f1_none_fair_s42",
+        "f1_none_fair_s1",
+        "f1_none_fair_s2"
+      ],
+      "runs_b": [
+        "b7_effnet_b0_mq_fliponly",
+        "b7_effnet_b0_mq_fliponly_s1",
+        "b7_effnet_b0_mq_fliponly_s2"
+      ],
+      "k_a": 3,
+      "k_b": 3,
+      "published": {
+        "delta": -0.001,
+        "ci_lo": -0.0066,
+        "ci_hi": 0.0045
+      },
+      "per_seed_auc_a": [
+        0.9585841836734694,
+        0.9566581632653062,
+        0.953609693877551
+      ],
+      "per_seed_auc_b": [
+        0.9590051020408163,
+        0.9613647959183673,
+        0.9491964285714286
+      ],
+      "schemes": {
+        "seed+video": {
+          "scheme": "seed+video",
+          "delta": -0.0009438775510204334,
+          "delta_boot_mean": -0.0009666517067887333,
+          "se": 0.005902575905558795,
+          "ci_lo": -0.011865004916420827,
+          "ci_hi": 0.012317038421954314,
+          "ci_level": 0.95,
+          "ci90_lo": -0.009900381927656049,
+          "ci90_hi": 0.009053760884340633,
+          "ci90_level": 0.9,
+          "quantiles": {
+            "q2.5": -0.011865004916420827,
+            "q5.0": -0.009900381927656049,
+            "q50.0": -0.0012963862108867352,
+            "q95.0": 0.009053760884340633,
+            "q97.5": 0.012317038421954314
+          },
+          "p_delta_gt_0": 0.3993,
+          "excludes_zero": false,
+          "asl_two_sided_vs_0": 0.8002,
+          "asl_le_minus_margin": 0.0486,
+          "asl_ge_plus_margin": 0.0396,
+          "margin": 0.01,
+          "b": 10000,
+          "rng_seed": 0,
+          "n_resampling_units": 700,
+          "n_videos": 700,
+          "n_redraws": 0,
+          "z": -0.15990943041181896,
+          "p_two_sided_z": 0.8729524197245838,
+          "seconds": 4.1
+        },
+        "seed+source": {
+          "scheme": "seed+source",
+          "delta": -0.0009438775510204334,
+          "delta_boot_mean": -0.000905330357142857,
+          "se": 0.005992728116645087,
+          "ci_lo": -0.01239795918367348,
+          "ci_hi": 0.012206951530612227,
+          "ci_level": 0.95,
+          "ci90_lo": -0.010089923469387729,
+          "ci90_hi": 0.00895535714285716,
+          "ci90_level": 0.9,
+          "quantiles": {
+            "q2.5": -0.01239795918367348,
+            "q5.0": -0.010089923469387729,
+            "q50.0": -0.0010841836734694077,
+            "q95.0": 0.00895535714285716,
+            "q97.5": 0.012206951530612227
+          },
+          "p_delta_gt_0": 0.4136,
+          "excludes_zero": false,
+          "asl_two_sided_vs_0": 0.8294,
+          "asl_le_minus_margin": 0.0515,
+          "asl_ge_plus_margin": 0.0396,
+          "margin": 0.01,
+          "b": 10000,
+          "rng_seed": 0,
+          "n_resampling_units": 140,
+          "n_videos": 700,
+          "n_redraws": 0,
+          "z": -0.15750381673394603,
+          "p_two_sided_z": 0.8748478001197868,
+          "seconds": 4.5
+        },
+        "seed+pair": {
+          "scheme": "seed+pair",
+          "delta": -0.0009438775510204334,
+          "delta_boot_mean": -0.0010798903061224492,
+          "se": 0.005732636098654241,
+          "ci_lo": -0.012130102040816326,
+          "ci_hi": 0.011109693877551011,
+          "ci_level": 0.95,
+          "ci90_lo": -0.009808673469387741,
+          "ci90_hi": 0.008431122448979589,
+          "ci90_level": 0.9,
+          "quantiles": {
+            "q2.5": -0.012130102040816326,
+            "q5.0": -0.009808673469387741,
+            "q50.0": -0.001301020408163267,
+            "q95.0": 0.008431122448979589,
+            "q97.5": 0.011109693877551011
+          },
+          "p_delta_gt_0": 0.4,
+          "excludes_zero": false,
+          "asl_two_sided_vs_0": 0.8016,
+          "asl_le_minus_margin": 0.0477,
+          "asl_ge_plus_margin": 0.0334,
+          "margin": 0.01,
+          "b": 10000,
+          "rng_seed": 0,
+          "n_resampling_units": 70,
+          "n_videos": 700,
+          "n_redraws": 0,
+          "z": -0.16464982859142452,
+          "p_two_sided_z": 0.8692196088596561,
+          "seconds": 4.3
+        }
+      }
+    },
+    "C6": {
+      "name": "Fair-W pool - SpatialBase pool (3v3)",
+      "runs_a": [
+        "f2_spatres_full_s42",
+        "f2_spatres_full_s1",
+        "f2_spatres_full_s2"
+      ],
+      "runs_b": [
+        "b7_effnet_b0_mq_fliponly",
+        "b7_effnet_b0_mq_fliponly_s1",
+        "b7_effnet_b0_mq_fliponly_s2"
+      ],
+      "k_a": 3,
+      "k_b": 3,
+      "published": {
+        "delta": 0.0022,
+        "ci_lo": -0.0035,
+        "ci_hi": 0.008
+      },
+      "per_seed_auc_a": [
+        0.964515306122449,
+        0.9601785714285714,
+        0.9608928571428571
+      ],
+      "per_seed_auc_b": [
+        0.9590051020408163,
+        0.9613647959183673,
+        0.9491964285714286
+      ],
+      "schemes": {
+        "seed+video": {
+          "scheme": "seed+video",
+          "delta": 0.002181122448979611,
+          "delta_boot_mean": 0.003311494982021058,
+          "se": 0.0056403407116678,
+          "ci_lo": -0.006475506756756788,
+          "ci_hi": 0.01637786500400613,
+          "ci_level": 0.95,
+          "ci90_lo": -0.00473505342779239,
+          "ci90_hi": 0.013135058319132129,
+          "ci90_level": 0.9,
+          "quantiles": {
+            "q2.5": -0.006475506756756788,
+            "q5.0": -0.00473505342779239,
+            "q50.0": 0.002763102364793324,
+            "q95.0": 0.013135058319132129,
+            "q97.5": 0.01637786500400613
+          },
+          "p_delta_gt_0": 0.7352,
+          "excludes_zero": false,
+          "asl_two_sided_vs_0": 0.5296,
+          "asl_le_minus_margin": 0.0052,
+          "asl_ge_plus_margin": 0.1077,
+          "margin": 0.01,
+          "b": 10000,
+          "rng_seed": 0,
+          "n_resampling_units": 700,
+          "n_videos": 700,
+          "n_redraws": 0,
+          "z": 0.386700477945892,
+          "p_two_sided_z": 0.6989779622814029,
+          "seconds": 4.1
+        },
+        "seed+source": {
+          "scheme": "seed+source",
+          "delta": 0.002181122448979611,
+          "delta_boot_mean": 0.0031832780612244898,
+          "se": 0.005774297733878122,
+          "ci_lo": -0.006977040816326552,
+          "ci_hi": 0.016557079081632682,
+          "ci_level": 0.95,
+          "ci90_lo": -0.005204081632653068,
+          "ci90_hi": 0.01322767857142856,
+          "ci90_level": 0.9,
+          "quantiles": {
+            "q2.5": -0.006977040816326552,
+            "q5.0": -0.005204081632653068,
+            "q50.0": 0.0026913265306122147,
+            "q95.0": 0.01322767857142856,
+            "q97.5": 0.016557079081632682
+          },
+          "p_delta_gt_0": 0.7211,
+          "excludes_zero": false,
+          "asl_two_sided_vs_0": 0.5578,
+          "asl_le_minus_margin": 0.0067,
+          "asl_ge_plus_margin": 0.1034,
+          "margin": 0.01,
+          "b": 10000,
+          "rng_seed": 0,
+          "n_resampling_units": 140,
+          "n_videos": 700,
+          "n_redraws": 0,
+          "z": 0.3777294745615291,
+          "p_two_sided_z": 0.705631569654735,
+          "seconds": 4.5
+        },
+        "seed+pair": {
+          "scheme": "seed+pair",
+          "delta": 0.002181122448979611,
+          "delta_boot_mean": 0.003054279336734694,
+          "se": 0.0054751967140140015,
+          "ci_lo": -0.006658482142857233,
+          "ci_hi": 0.015485331632653058,
+          "ci_level": 0.95,
+          "ci90_lo": -0.0049751275510204465,
+          "ci90_hi": 0.01248724489795916,
+          "ci90_level": 0.9,
+          "quantiles": {
+            "q2.5": -0.006658482142857233,
+            "q5.0": -0.0049751275510204465,
+            "q50.0": 0.0026721938775510212,
+            "q95.0": 0.01248724489795916,
+            "q97.5": 0.015485331632653058
+          },
+          "p_delta_gt_0": 0.7172,
+          "excludes_zero": false,
+          "asl_two_sided_vs_0": 0.5656,
+          "asl_le_minus_margin": 0.0049,
+          "asl_ge_plus_margin": 0.094,
+          "margin": 0.01,
+          "b": 10000,
+          "rng_seed": 0,
+          "n_resampling_units": 70,
+          "n_videos": 700,
+          "n_redraws": 0,
+          "z": 0.3983642164667681,
+          "p_two_sided_z": 0.6903617309554371,
+          "seconds": 4.4
+        }
+      }
+    }
+  }
+}

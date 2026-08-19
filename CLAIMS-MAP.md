@@ -16,8 +16,8 @@ two, and every row below names the run it reads. Row ids (`T1.1`, `T3.5`, …) a
 stable handles for `verify/claim.py`, not manuscript table numbers; each section
 heading names the manuscript table it maps.
 
-168 rows and 14 release claims, 182 entries in all.
-**163 are recomputed from the released artifacts and checked against the
+221 rows and 14 release claims, 235 entries in all.
+**216 are recomputed from the released artifacts and checked against the
 paper on every build.** 6 are printed in the paper but *not* derivable
 from this release, each with its reason stated in place. 2 — both of
 them release claims — depend on the archival deposit, which is minted
@@ -367,6 +367,72 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 - `M1.7` — The released a0 curve starts at 1.00 and ends at 0.33, passing through ≈0.4 in the adversarial phase; the fair arms stay healthy (F1 min 0.89, F2 min 0.93 — same tag in their curve files).
 - `M1.8` — Released as two series in curves/a0.json — loss/cons and loss/cls — so the ratio is computable per epoch. The raw ratio peaks at about 134x at epoch 13; the manuscript's 40–120x is the range around the compressed-phase onset.
 - `M1.9` — Per-level band energies on real crops (Phase 2).
+
+## AppE — Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)
+
+*Appendix E and Section IV (statistical reporting); `\label{app:stats}`*
+
+| id | claim | paper prints | this release gives | artifact | command |
+|---|---|---|---|---|---|
+| `AppE.1` | SpatialBase − CAFRL as specified (s42) — clustered CI lower | 0.0182 | 0.0182 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py AppE.1` |
+| `AppE.2` | SpatialBase − CAFRL as specified (s42) — clustered CI upper | 0.0569 | 0.0569 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py AppE.2` |
+| `AppE.3` | Fair-N − CAFRL−adv (s42) — clustered CI lower | 0.0222 | 0.0222 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py AppE.3` |
+| `AppE.4` | Fair-N − CAFRL−adv (s42) — clustered CI upper | 0.058 | 0.0580 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py AppE.4` |
+| `AppE.5` | Fair-N − SpatialBase (s42) — clustered CI lower | -0.0095 | -0.0095 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py AppE.5` |
+| `AppE.6` | Fair-N − SpatialBase (s42) — clustered CI upper | 0.008 | 0.0080 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py AppE.6` |
+| `AppE.7` | Fair-W − SpatialBase (s42) — clustered CI lower | -0.0026 | -0.0026 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py AppE.7` |
+| `AppE.8` | Fair-W − SpatialBase (s42) — clustered CI upper | 0.0137 | 0.0137 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py AppE.8` |
+| `AppE.9` | Fair-N pool − SpatialBase pool (3v3) — clustered CI lower | -0.0064 | -0.0064 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py AppE.9` |
+| `AppE.10` | Fair-N pool − SpatialBase pool (3v3) — clustered CI upper | 0.0046 | 0.0046 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py AppE.10` |
+| `AppE.11` | Fair-W pool − SpatialBase pool (3v3) — clustered CI lower | -0.0042 | -0.0042 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py AppE.11` |
+| `AppE.12` | Fair-W pool − SpatialBase pool (3v3) — clustered CI upper | 0.0085 | 0.0085 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py AppE.12` |
+| `AppE.13` | SpatialBase (s42) − TrunkCtrl pool — clustered CI lower | -0.0119 | -0.0119 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py AppE.13` |
+| `AppE.14` | SpatialBase (s42) − TrunkCtrl pool — clustered CI upper | 0.0042 | 0.0042 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py AppE.14` |
+| `AppE.15` | TrunkCtrl pool − spatial-residual (s42) — clustered CI lower | 0.0296 | 0.0296 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py AppE.15` |
+| `AppE.16` | TrunkCtrl pool − spatial-residual (s42) — clustered CI upper | 0.0715 | 0.0715 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py AppE.16` |
+| `AppE.17` | FaceShifter: Fair-N pool − SpatialBase pool — clustered CI lower | -0.0546 | -0.0546 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py AppE.17` |
+| `AppE.18` | FaceShifter: Fair-N pool − SpatialBase pool — clustered CI upper | -0.0109 | -0.0109 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py AppE.18` |
+| `AppE.19` | FaceShifter: Fair-W pool − SpatialBase pool — clustered CI lower | -0.0563 | -0.0563 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py AppE.19` |
+| `AppE.20` | FaceShifter: Fair-W pool − SpatialBase pool — clustered CI upper | -0.007 | -0.0070 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py AppE.20` |
+| `AppE.21` | FaceShifter: Fair-N (s42) − SpatialBase pool — clustered CI lower | -0.0045 | -0.0045 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py AppE.21` |
+| `AppE.22` | FaceShifter: Fair-N (s42) − SpatialBase pool — clustered CI upper | 0.05 | 0.0500 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py AppE.22` |
+| `AppE.23` | FaceShifter: Fair-W (s42) − SpatialBase pool — clustered CI lower | -0.0534 | -0.0534 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py AppE.23` |
+| `AppE.24` | FaceShifter: Fair-W (s42) − SpatialBase pool — clustered CI upper | 0.0082 | 0.0082 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py AppE.24` |
+| `AppE.25` | Seeds resampled: Fair-N − SpatialBase, CI lower | -0.0119 | -0.0119 | `evaluation/analysis/seed_uncertainty.json` | `python verify/claim.py AppE.25` |
+| `AppE.26` | Seeds resampled: Fair-N − SpatialBase, CI upper | 0.0123 | 0.0123 | `evaluation/analysis/seed_uncertainty.json` | `python verify/claim.py AppE.26` |
+| `AppE.27` | Seeds resampled: Fair-W − SpatialBase, CI lower | -0.0065 | -0.0065 | `evaluation/analysis/seed_uncertainty.json` | `python verify/claim.py AppE.27` |
+| `AppE.28` | Seeds resampled: Fair-W − SpatialBase, CI upper | 0.0164 | 0.0164 | `evaluation/analysis/seed_uncertainty.json` | `python verify/claim.py AppE.28` |
+| `AppE.29` | Equivalence margin (post hoc) | 0.01 | 0.0100 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.29` |
+| `AppE.30` | TOST Fair-N: 90% CI lower (video unit) | -0.0057 | -0.0057 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.30` |
+| `AppE.31` | TOST Fair-N: 90% CI upper (video unit) | 0.0036 | 0.0036 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.31` |
+| `AppE.32` | TOST Fair-N: p (video unit) | 0.001 | 0.0010 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.32` |
+| `AppE.33` | TOST Fair-W: 90% CI lower (video unit) | -0.0025 | -0.0025 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.33` |
+| `AppE.34` | TOST Fair-W: 90% CI upper (video unit) | 0.0071 | 0.0071 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.34` |
+| `AppE.35` | TOST Fair-W: p (video unit) | 0.006 | 0.0064 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.35` |
+| `AppE.36` | TOST worst case over the four cluster units (Fair-W) | 0.01 | 0.0103 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.36` |
+| `AppE.37` | Tightest margin concluded, Fair-N | 0.006 | 0.0058 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.37` |
+| `AppE.38` | Tightest margin concluded, Fair-W | 0.008 | 0.0075 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.38` |
+| `AppE.39` | Seeds resampled: Fair-W 90% CI upper | 0.0131 | 0.0131 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.39` |
+| `AppE.40` | Seeds resampled: Fair-W TOST p | 0.11 | 0.1077 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.40` |
+| `AppE.41` | MDE, video unit (80% power) | 0.83 | 0.8300 | `evaluation/analysis/mde.json` | `python verify/claim.py AppE.41` |
+| `AppE.42` | MDE, source-identity cluster unit (80% power) | 0.91 | 0.9100 | `evaluation/analysis/mde.json` | `python verify/claim.py AppE.42` |
+| `AppE.43` | MDE, seed as the experimental unit (80% power) | 0.0149 | 0.0149 | `evaluation/analysis/mde.json` | `python verify/claim.py AppE.43` |
+| `AppE.44` | MDE implied by the two-level bootstrap | 1.65 | 1.6500 | `evaluation/analysis/mde.json` | `python verify/claim.py AppE.44` |
+| `AppE.45` | Smallest observed across-seed SD (Fair-W) | 0.0023 | 0.0023 | `evaluation/analysis/mde.json` | `python verify/claim.py AppE.45` |
+| `AppE.46` | Largest observed across-seed SD (SpatialBase) | 0.0065 | 0.0065 | `evaluation/analysis/mde.json` | `python verify/claim.py AppE.46` |
+| `AppE.47` | Bonferroni threshold over the 13-comparison family | 0.0038 | 0.0038 | `evaluation/analysis/multiplicity.json` | `python verify/claim.py AppE.47` |
+| `AppE.48` | p, STOP-gate contrast (cluster unit) | 0.0002 | 0.0002 | `evaluation/analysis/multiplicity.json` | `python verify/claim.py AppE.48` |
+| `AppE.49` | p, fair-recipe recovery (cluster unit) | 1.4e-05 | 0.0000 | `evaluation/analysis/multiplicity.json` | `python verify/claim.py AppE.49` |
+| `AppE.50` | p, recipe share (cluster unit) | 5.5e-06 | 0.0000 | `evaluation/analysis/multiplicity.json` | `python verify/claim.py AppE.50` |
+| `AppE.51` | p, real-CRF vs synthetic-JPEG training gap (unpaired) | 3.3e-06 | 0.0000 | `evaluation/analysis/multiplicity.json` | `python verify/claim.py AppE.51` |
+| `AppE.52` | p, FaceShifter Fair-N pooled deficit | 0.0037 | 0.0037 | `evaluation/analysis/multiplicity.json` | `python verify/claim.py AppE.52` |
+| `AppE.53` | p, FaceShifter Fair-W pooled deficit | 0.012 | 0.0121 | `evaluation/analysis/multiplicity.json` | `python verify/claim.py AppE.53` |
+
+- `AppE.37` — Printed in the paper as 0.6 AUC points.
+- `AppE.38` — Printed in the paper as 0.8 AUC points.
+- `AppE.41` — In AUC points; printed in Section IV as 0.83.
+- `AppE.43` — Printed in the paper as 1.5 AUC points; the Fair-W pair gives 1.47.
+- `AppE.44` — Printed in the paper as 1.7 AUC points.
 
 ## Release claims
 

@@ -40,6 +40,7 @@ quantities.
 | `configs/` | The effective as-run configuration of all 27 released runs, 34 launch overrides (including arms that were specified and deliberately never run), the base configuration, and `RUNS.md` — the index mapping each run to its model, protocol, augmentation policy, seed, launch command and role in the manuscript. |
 | `splits/` | 12 evaluation-set video-ID lists: FF++ test at each of seven compression levels, the held-out FaceShifter cell, Celeb-DF v2, and DFD — plus the official FF++ split files. |
 | `evaluation/` | The evaluation harness that produced the scores and re-derives every statistic from them — 19 files copied from the research code with their full import closure, plus a loader for the released prediction files and a script that rebuilds the paper's tables. |
+| `evaluation/analysis/` | The statistics added in revision, as runnable scripts and as their outputs: equivalence tests against a stated margin, minimum detectable effect, a cluster bootstrap at four exchangeability units, a two-level seed×video bootstrap, and multiplicity adjustment over the contrast family. |
 | `curves/` | Per-epoch validation curves for all 27 runs and their selection outcomes: which epoch each reported checkpoint is, under which rule, and the whole trajectory that rule chose from. |
 | `pipeline/` | How the evaluation inputs were made: the multi-CRF re-encode with its exact command line and encoder build, the face detection / track curation / deterministic re-crop code, and the DFD track-selection pipeline. |
 | `figures/` | The figure script, the data it draws (rebuilt from `predictions/` and `curves/` on every release build), and the TikZ sources for the two diagrams. |
@@ -52,13 +53,10 @@ quantities.
 
 ## What is not here yet
 
-One placeholder remains, with a `STATUS.md` saying what lands in it:
-`evaluation/analysis/` (the equivalence tests and minimum-detectable-effect
-analyses being added in revision). Six numbers the paper prints cannot be
-re-derived from this release at all — the shipped-recipe held-out-manipulation
-cells and the campaign's GPU-hour accounting; `CLAIMS-MAP.md` names each one and
-says why. Three more differ from the manuscript in their last printed digit, and
-the map states both values. The archival DOI is minted at submission.
+Six numbers the paper prints cannot be re-derived from this release at all — the
+shipped-recipe held-out-manipulation cells and the campaign's GPU-hour
+accounting; `CLAIMS-MAP.md` names each one and says why. The archival DOI is
+minted at submission; every other directory of the layout carries content.
 
 ## What is deliberately not here
 

@@ -1,0 +1,431 @@
+{
+  "what": "two one-sided tests (TOST) of the neutral headline contrasts",
+  "margin": 0.01,
+  "margin_is_post_hoc": true,
+  "margin_justification": "on the paper's own scale: the plain spatial baseline's own 95% three-seed band at c40 is +/-1.60 pt (across-seed SD 0.65 pt), and widening the spatial trunk is worth about 1 pt",
+  "rule": "equivalence is concluded when the whole 90% percentile interval of the paired bootstrap lies inside (-margin, +margin)",
+  "contrasts": {
+    "C5": {
+      "name": "Fair-N pool - SpatialBase pool (3v3)",
+      "schemes": {
+        "video": {
+          "scheme": "video",
+          "delta": -0.0009438775510204334,
+          "se": 0.0028321645098520697,
+          "ci90": [
+            -0.005720660157327806,
+            0.003596577867619538
+          ],
+          "ci90_lo": -0.005720660157327806,
+          "ci90_hi": 0.003596577867619538,
+          "ci95": [
+            -0.006649711971201058,
+            0.004474220365120107
+          ],
+          "ci95_lo": -0.006649711971201058,
+          "ci95_hi": 0.004474220365120107,
+          "margin": 0.01,
+          "ci90_within_margin": true,
+          "equivalence_concluded": true,
+          "p_tost_bootstrap": 0.001,
+          "p_tost_bootstrap_lower": 0.001,
+          "p_tost_bootstrap_upper": 0.0,
+          "smallest_margin_concluded": 0.005720660157327806,
+          "p_tost_normal": 0.0006928875300828607
+        },
+        "source": {
+          "scheme": "source",
+          "delta": -0.0009438775510204334,
+          "se": 0.0027973918312969204,
+          "ci90": [
+            -0.005459821428571465,
+            0.003711734693877533
+          ],
+          "ci90_lo": -0.005459821428571465,
+          "ci90_hi": 0.003711734693877533,
+          "ci95": [
+            -0.006416135204081674,
+            0.004592155612245001
+          ],
+          "ci95_lo": -0.006416135204081674,
+          "ci95_hi": 0.004592155612245001,
+          "margin": 0.01,
+          "ci90_within_margin": true,
+          "equivalence_concluded": true,
+          "p_tost_bootstrap": 0.0011,
+          "p_tost_bootstrap_lower": 0.0011,
+          "p_tost_bootstrap_upper": 0.0001,
+          "smallest_margin_concluded": 0.005459821428571465,
+          "p_tost_normal": 0.0006032373037646549
+        },
+        "target": {
+          "scheme": "target",
+          "delta": -0.0009438775510204334,
+          "se": 0.0026716150560640614,
+          "ci90": [
+            -0.00530612244897955,
+            0.003482142857142878
+          ],
+          "ci90_lo": -0.00530612244897955,
+          "ci90_hi": 0.003482142857142878,
+          "ci95": [
+            -0.006160714285714297,
+            0.004298469387755133
+          ],
+          "ci95_lo": -0.006160714285714297,
+          "ci95_hi": 0.004298469387755133,
+          "margin": 0.01,
+          "ci90_within_margin": true,
+          "equivalence_concluded": true,
+          "p_tost_bootstrap": 0.0008,
+          "p_tost_bootstrap_lower": 0.0008,
+          "p_tost_bootstrap_upper": 0.0,
+          "smallest_margin_concluded": 0.00530612244897955,
+          "p_tost_normal": 0.0003497746335998557
+        },
+        "basevideo": {
+          "scheme": "basevideo",
+          "delta": -0.0009438775510204334,
+          "se": 0.0029249365830861453,
+          "ci90": [
+            -0.005829081632653055,
+            0.0037678387888220575
+          ],
+          "ci90_lo": -0.005829081632653055,
+          "ci90_hi": 0.0037678387888220575,
+          "ci95": [
+            -0.006795223754067164,
+            0.004702834613959278
+          ],
+          "ci95_lo": -0.006795223754067164,
+          "ci95_hi": 0.004702834613959278,
+          "margin": 0.01,
+          "ci90_within_margin": true,
+          "equivalence_concluded": true,
+          "p_tost_bootstrap": 0.0021,
+          "p_tost_bootstrap_lower": 0.0021,
+          "p_tost_bootstrap_upper": 0.0,
+          "smallest_margin_concluded": 0.005829081632653055,
+          "p_tost_normal": 0.0009801653169426133
+        },
+        "pair": {
+          "scheme": "pair",
+          "delta": -0.0009438775510204334,
+          "se": 0.002773486545895625,
+          "ci90": [
+            -0.005548469387755106,
+            0.0036224489795918524
+          ],
+          "ci90_lo": -0.005548469387755106,
+          "ci90_hi": 0.0036224489795918524,
+          "ci95": [
+            -0.0065181760204081505,
+            0.004375318877551033
+          ],
+          "ci95_lo": -0.0065181760204081505,
+          "ci95_hi": 0.004375318877551033,
+          "margin": 0.01,
+          "ci90_within_margin": true,
+          "equivalence_concluded": true,
+          "p_tost_bootstrap": 0.0005,
+          "p_tost_bootstrap_lower": 0.0005,
+          "p_tost_bootstrap_upper": 0.0,
+          "smallest_margin_concluded": 0.005548469387755106,
+          "p_tost_normal": 0.0005468406371991039
+        },
+        "seed+video": {
+          "scheme": "seed+video",
+          "delta": -0.0009438775510204334,
+          "se": 0.005902575905558795,
+          "ci90": [
+            -0.009900381927656049,
+            0.009053760884340633
+          ],
+          "ci90_lo": -0.009900381927656049,
+          "ci90_hi": 0.009053760884340633,
+          "ci95": [
+            -0.011865004916420827,
+            0.012317038421954314
+          ],
+          "ci95_lo": -0.011865004916420827,
+          "ci95_hi": 0.012317038421954314,
+          "margin": 0.01,
+          "ci90_within_margin": true,
+          "equivalence_concluded": true,
+          "p_tost_bootstrap": 0.0486,
+          "p_tost_bootstrap_lower": 0.0486,
+          "p_tost_bootstrap_upper": 0.0396,
+          "smallest_margin_concluded": 0.009900381927656049,
+          "p_tost_normal": 0.062482094024766094
+        },
+        "seed+source": {
+          "scheme": "seed+source",
+          "delta": -0.0009438775510204334,
+          "se": 0.005992728116645087,
+          "ci90": [
+            -0.010089923469387729,
+            0.00895535714285716
+          ],
+          "ci90_lo": -0.010089923469387729,
+          "ci90_hi": 0.00895535714285716,
+          "ci95": [
+            -0.01239795918367348,
+            0.012206951530612227
+          ],
+          "ci95_lo": -0.01239795918367348,
+          "ci95_hi": 0.012206951530612227,
+          "margin": 0.01,
+          "ci90_within_margin": false,
+          "equivalence_concluded": false,
+          "p_tost_bootstrap": 0.0515,
+          "p_tost_bootstrap_lower": 0.0515,
+          "p_tost_bootstrap_upper": 0.0396,
+          "smallest_margin_concluded": 0.010089923469387729,
+          "p_tost_normal": 0.06537062729376408
+        },
+        "seed+pair": {
+          "scheme": "seed+pair",
+          "delta": -0.0009438775510204334,
+          "se": 0.005732636098654241,
+          "ci90": [
+            -0.009808673469387741,
+            0.008431122448979589
+          ],
+          "ci90_lo": -0.009808673469387741,
+          "ci90_hi": 0.008431122448979589,
+          "ci95": [
+            -0.012130102040816326,
+            0.011109693877551011
+          ],
+          "ci95_lo": -0.012130102040816326,
+          "ci95_hi": 0.011109693877551011,
+          "margin": 0.01,
+          "ci90_within_margin": true,
+          "equivalence_concluded": true,
+          "p_tost_bootstrap": 0.0477,
+          "p_tost_bootstrap_lower": 0.0477,
+          "p_tost_bootstrap_upper": 0.0334,
+          "smallest_margin_concluded": 0.009808673469387741,
+          "p_tost_normal": 0.05708225348069535
+        }
+      },
+      "equivalence_all_video_and_cluster_units": true,
+      "equivalence_two_level": false,
+      "worst_p_tost_conditional": 0.0021,
+      "smallest_margin_conditional": 0.005829081632653055,
+      "smallest_margin_two_level": 0.010089923469387729
+    },
+    "C6": {
+      "name": "Fair-W pool - SpatialBase pool (3v3)",
+      "schemes": {
+        "video": {
+          "scheme": "video",
+          "delta": 0.002181122448979611,
+          "se": 0.002957237920081914,
+          "ci90": [
+            -0.002539359315948214,
+            0.007085502862056231
+          ],
+          "ci90_lo": -0.002539359315948214,
+          "ci90_hi": 0.007085502862056231,
+          "ci95": [
+            -0.0034620859747801045,
+            0.008015166385532069
+          ],
+          "ci95_lo": -0.0034620859747801045,
+          "ci95_hi": 0.008015166385532069,
+          "margin": 0.01,
+          "ci90_within_margin": true,
+          "equivalence_concluded": true,
+          "p_tost_bootstrap": 0.0064,
+          "p_tost_bootstrap_lower": 0.0001,
+          "p_tost_bootstrap_upper": 0.0064,
+          "smallest_margin_concluded": 0.007085502862056231,
+          "p_tost_normal": 0.004096876366827132
+        },
+        "source": {
+          "scheme": "source",
+          "delta": 0.002181122448979611,
+          "se": 0.003244090562448451,
+          "ci90": [
+            -0.003176020408163227,
+            0.007449617346938688
+          ],
+          "ci90_lo": -0.003176020408163227,
+          "ci90_hi": 0.007449617346938688,
+          "ci95": [
+            -0.00418367346938775,
+            0.008533163265306065
+          ],
+          "ci95_lo": -0.00418367346938775,
+          "ci95_hi": 0.008533163265306065,
+          "margin": 0.01,
+          "ci90_within_margin": true,
+          "equivalence_concluded": true,
+          "p_tost_bootstrap": 0.01,
+          "p_tost_bootstrap_lower": 0.0001,
+          "p_tost_bootstrap_upper": 0.01,
+          "smallest_margin_concluded": 0.007449617346938688,
+          "p_tost_normal": 0.007972087704072641
+        },
+        "target": {
+          "scheme": "target",
+          "delta": 0.002181122448979611,
+          "se": 0.003075576690504672,
+          "ci90": [
+            -0.0028571428571428914,
+            0.007245535714285736
+          ],
+          "ci90_lo": -0.0028571428571428914,
+          "ci90_hi": 0.007245535714285736,
+          "ci95": [
+            -0.003813775510204012,
+            0.008125000000000049
+          ],
+          "ci95_lo": -0.003813775510204012,
+          "ci95_hi": 0.008125000000000049,
+          "margin": 0.01,
+          "ci90_within_margin": true,
+          "equivalence_concluded": true,
+          "p_tost_bootstrap": 0.0056,
+          "p_tost_bootstrap_lower": 0.0,
+          "p_tost_bootstrap_upper": 0.0056,
+          "smallest_margin_concluded": 0.007245535714285736,
+          "p_tost_normal": 0.005507105467833492
+        },
+        "basevideo": {
+          "scheme": "basevideo",
+          "delta": 0.002181122448979611,
+          "se": 0.003320219038583982,
+          "ci90": [
+            -0.003279026062106621,
+            0.007548357561415391
+          ],
+          "ci90_lo": -0.003279026062106621,
+          "ci90_hi": 0.007548357561415391,
+          "ci95": [
+            -0.004370427830687634,
+            0.00872797458277414
+          ],
+          "ci95_lo": -0.004370427830687634,
+          "ci95_hi": 0.00872797458277414,
+          "margin": 0.01,
+          "ci90_within_margin": true,
+          "equivalence_concluded": true,
+          "p_tost_bootstrap": 0.0103,
+          "p_tost_bootstrap_lower": 0.0004,
+          "p_tost_bootstrap_upper": 0.0103,
+          "smallest_margin_concluded": 0.007548357561415391,
+          "p_tost_normal": 0.009263141692160217
+        },
+        "pair": {
+          "scheme": "pair",
+          "delta": 0.002181122448979611,
+          "se": 0.003011460539046081,
+          "ci90": [
+            -0.002870535714285726,
+            0.006977678571428583
+          ],
+          "ci90_lo": -0.002870535714285726,
+          "ci90_hi": 0.006977678571428583,
+          "ci95": [
+            -0.003992346938775482,
+            0.00793367346938778
+          ],
+          "ci95_lo": -0.003992346938775482,
+          "ci95_hi": 0.00793367346938778,
+          "margin": 0.01,
+          "ci90_within_margin": true,
+          "equivalence_concluded": true,
+          "p_tost_bootstrap": 0.005,
+          "p_tost_bootstrap_lower": 0.0,
+          "p_tost_bootstrap_upper": 0.005,
+          "smallest_margin_concluded": 0.006977678571428583,
+          "p_tost_normal": 0.004710673997405873
+        },
+        "seed+video": {
+          "scheme": "seed+video",
+          "delta": 0.002181122448979611,
+          "se": 0.0056403407116678,
+          "ci90": [
+            -0.00473505342779239,
+            0.013135058319132129
+          ],
+          "ci90_lo": -0.00473505342779239,
+          "ci90_hi": 0.013135058319132129,
+          "ci95": [
+            -0.006475506756756788,
+            0.01637786500400613
+          ],
+          "ci95_lo": -0.006475506756756788,
+          "ci95_hi": 0.01637786500400613,
+          "margin": 0.01,
+          "ci90_within_margin": false,
+          "equivalence_concluded": false,
+          "p_tost_bootstrap": 0.1077,
+          "p_tost_bootstrap_lower": 0.0052,
+          "p_tost_bootstrap_upper": 0.1077,
+          "smallest_margin_concluded": 0.013135058319132129,
+          "p_tost_normal": 0.08283650052170564
+        },
+        "seed+source": {
+          "scheme": "seed+source",
+          "delta": 0.002181122448979611,
+          "se": 0.005774297733878122,
+          "ci90": [
+            -0.005204081632653068,
+            0.01322767857142856
+          ],
+          "ci90_lo": -0.005204081632653068,
+          "ci90_hi": 0.01322767857142856,
+          "ci95": [
+            -0.006977040816326552,
+            0.016557079081632682
+          ],
+          "ci95_lo": -0.006977040816326552,
+          "ci95_hi": 0.016557079081632682,
+          "margin": 0.01,
+          "ci90_within_margin": false,
+          "equivalence_concluded": false,
+          "p_tost_bootstrap": 0.1034,
+          "p_tost_bootstrap_lower": 0.0067,
+          "p_tost_bootstrap_upper": 0.1034,
+          "smallest_margin_concluded": 0.01322767857142856,
+          "p_tost_normal": 0.08785497298818949
+        },
+        "seed+pair": {
+          "scheme": "seed+pair",
+          "delta": 0.002181122448979611,
+          "se": 0.0054751967140140015,
+          "ci90": [
+            -0.0049751275510204465,
+            0.01248724489795916
+          ],
+          "ci90_lo": -0.0049751275510204465,
+          "ci90_hi": 0.01248724489795916,
+          "ci95": [
+            -0.006658482142857233,
+            0.015485331632653058
+          ],
+          "ci95_lo": -0.006658482142857233,
+          "ci95_hi": 0.015485331632653058,
+          "margin": 0.01,
+          "ci90_within_margin": false,
+          "equivalence_concluded": false,
+          "p_tost_bootstrap": 0.094,
+          "p_tost_bootstrap_lower": 0.0049,
+          "p_tost_bootstrap_upper": 0.094,
+          "smallest_margin_concluded": 0.01248724489795916,
+          "p_tost_normal": 0.0766381323050308
+        }
+      },
+      "equivalence_all_video_and_cluster_units": true,
+      "equivalence_two_level": false,
+      "worst_p_tost_conditional": 0.0103,
+      "smallest_margin_conditional": 0.007548357561415391,
+      "smallest_margin_two_level": 0.01322767857142856
+    }
+  },
+  "equivalence_concluded_conditional_all_rows": true,
+  "equivalence_concluded_two_level_all_rows": false
+}
