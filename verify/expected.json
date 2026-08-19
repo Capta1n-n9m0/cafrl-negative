@@ -972,7 +972,13 @@
      "b7_effnet_b0_mq_fliponly_s1",
      "b7_effnet_b0_mq_fliponly_s2"
     ],
-    "level": "c40"
+    "level": "c40",
+    "expect": {
+     "delta": -0.0325,
+     "ci_lo": -0.0545,
+     "ci_hi": -0.0114
+    },
+    "verdict": "excludes zero in the negative direction - no unseen-manipulation advantage"
    },
    {
     "name": "F2-pool - b7-pool (FaceShifter)",
@@ -986,7 +992,49 @@
      "b7_effnet_b0_mq_fliponly_s1",
      "b7_effnet_b0_mq_fliponly_s2"
     ],
-    "level": "c40"
+    "level": "c40",
+    "expect": {
+     "delta": -0.0318,
+     "ci_lo": -0.0575,
+     "ci_hi": -0.0065
+    },
+    "verdict": "excludes zero in the negative direction - no unseen-manipulation advantage"
+   },
+   {
+    "name": "F1 s42 - b7-pool (FaceShifter, single seed)",
+    "a": [
+     "f1_none_fair_s42"
+    ],
+    "b": [
+     "b7_effnet_b0_mq_fliponly",
+     "b7_effnet_b0_mq_fliponly_s1",
+     "b7_effnet_b0_mq_fliponly_s2"
+    ],
+    "level": "c40",
+    "expect": {
+     "delta": 0.022,
+     "ci_lo": -0.0062,
+     "ci_hi": 0.0508
+    },
+    "verdict": "includes zero - a lean, not a claim (the pre-stated gate)"
+   },
+   {
+    "name": "F2 s42 - b7-pool (FaceShifter, single seed)",
+    "a": [
+     "f2_spatres_full_s42"
+    ],
+    "b": [
+     "b7_effnet_b0_mq_fliponly",
+     "b7_effnet_b0_mq_fliponly_s1",
+     "b7_effnet_b0_mq_fliponly_s2"
+    ],
+    "level": "c40",
+    "expect": {
+     "delta": -0.0227,
+     "ci_lo": -0.0537,
+     "ci_hi": 0.0081
+    },
+    "verdict": "includes zero - the opposite-signed lean of the same pair"
    }
   ]
  },

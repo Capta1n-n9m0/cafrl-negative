@@ -1,0 +1,200 @@
+{
+  "param_table": {
+    "dct": {
+      "trainable_params": 254976,
+      "millions": 0.255,
+      "budget_lo_M": 0.2,
+      "budget_hi_M": 1.5,
+      "budget_ref_M": 0.255,
+      "within_budget": true
+    },
+    "phase": {
+      "trainable_params": 1164864,
+      "millions": 1.1649,
+      "budget_lo_M": 1.0,
+      "budget_hi_M": 2.0,
+      "budget_ref_M": 1.165,
+      "within_budget": true
+    },
+    "estimator": {
+      "trainable_params": 1370790,
+      "millions": 1.3708,
+      "budget_lo_M": 1.3,
+      "budget_hi_M": 3.0,
+      "budget_ref_M": 1.3708,
+      "within_budget": true
+    },
+    "gate": {
+      "trainable_params": 4684,
+      "millions": 0.0047,
+      "budget_lo_M": 0.0,
+      "budget_hi_M": 0.05,
+      "budget_ref_M": 0.0,
+      "within_budget": true
+    }
+  },
+  "total_trainable": 2795314,
+  "total_millions": 2.7953,
+  "all_within_budget": true,
+  "chained_forward": {
+    "batch_size": 8,
+    "device": "cuda",
+    "bin_idx": [
+      0,
+      1,
+      0,
+      1,
+      5,
+      0,
+      1,
+      1
+    ],
+    "arms": {
+      "estimated": {
+        "passed": true,
+        "errors": [],
+        "shapes": {
+          "F_dct": [
+            8,
+            256,
+            32,
+            32
+          ],
+          "F_phase": [
+            8,
+            256,
+            32,
+            32
+          ],
+          "phase_head": [
+            8,
+            64,
+            32,
+            32
+          ],
+          "q_emb": [
+            8,
+            64
+          ],
+          "g": [
+            8,
+            4
+          ],
+          "logits": [
+            8,
+            6
+          ]
+        }
+      },
+      "oracle": {
+        "passed": true,
+        "errors": [],
+        "shapes": {
+          "F_dct": [
+            8,
+            256,
+            32,
+            32
+          ],
+          "F_phase": [
+            8,
+            256,
+            32,
+            32
+          ],
+          "phase_head": [
+            8,
+            64,
+            32,
+            32
+          ],
+          "q_emb": [
+            8,
+            64
+          ],
+          "g": [
+            8,
+            4
+          ],
+          "logits": [
+            8,
+            6
+          ]
+        }
+      },
+      "none": {
+        "passed": true,
+        "errors": [],
+        "shapes": {
+          "F_dct": [
+            8,
+            256,
+            32,
+            32
+          ],
+          "F_phase": [
+            8,
+            256,
+            32,
+            32
+          ],
+          "phase_head": [
+            8,
+            64,
+            32,
+            32
+          ],
+          "q_emb": [
+            8,
+            64
+          ],
+          "g": [
+            8,
+            4
+          ],
+          "logits": [
+            8,
+            6
+          ]
+        }
+      },
+      "concat": {
+        "passed": true,
+        "errors": [],
+        "shapes": {
+          "F_dct": [
+            8,
+            256,
+            32,
+            32
+          ],
+          "F_phase": [
+            8,
+            256,
+            32,
+            32
+          ],
+          "phase_head": [
+            8,
+            64,
+            32,
+            32
+          ],
+          "q_emb": [
+            8,
+            64
+          ],
+          "g": [
+            8,
+            4
+          ],
+          "logits": [
+            8,
+            6
+          ]
+        }
+      }
+    },
+    "all_passed": true
+  }
+}

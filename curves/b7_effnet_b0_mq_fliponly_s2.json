@@ -221,8 +221,9 @@
  ],
  "step_level_tags_not_exported": [],
  "source": {
-  "path": "runs/b7_effnet_b0_mq_fliponly_s2/tb/events.out.tfevents.1782504892.mgpu1.4062318.0",
+  "path": "runs/b7_effnet_b0_mq_fliponly_s2/tb/events.out.tfevents.<redacted>",
   "sha256": "94d92952beb1ddbad15c6201703ec973908de5dfaffc8933200ee1b08e4045ed",
-  "bytes": 6868
+  "bytes": 6868,
+  "note": "Host name and process id removed from the event-file name; the sha256 is of the file as it exists in the authors' records."
  }
 }

@@ -221,8 +221,9 @@
  ],
  "step_level_tags_not_exported": [],
  "source": {
-  "path": "runs/b2_f3net_lit/tb/events.out.tfevents.1782344477.mgpu1.2344988.0",
+  "path": "runs/b2_f3net_lit/tb/events.out.tfevents.<redacted>",
   "sha256": "c10bf22e8e33eb9a2e0775715ef9a4a2e11cc40ff3f405119317d7b9782a6939",
-  "bytes": 6868
+  "bytes": 6868,
+  "note": "Host name and process id removed from the event-file name; the sha256 is of the file as it exists in the authors' records."
  }
 }

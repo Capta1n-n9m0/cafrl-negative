@@ -207,5 +207,5 @@ Otherwise (both pooled contrasts CI-incl-0 AND both arms' seed-std ≤ 0.5 pt): 
 
 ---
 
-*Assembled verbatim by the release build from the working repository's frozen documents; see `history-excerpts.md` for the commit dates that place each rule before the runs it governed.*
+*Assembled verbatim by the release build from the working repository's frozen documents; see `preregistration/history-excerpts.md` for the commit dates that place each rule before the runs it governed.*
 

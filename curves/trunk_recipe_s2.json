@@ -221,8 +221,9 @@
  ],
  "step_level_tags_not_exported": [],
  "source": {
-  "path": "runs/trunk_recipe_s2/tb/events.out.tfevents.1783011604.mgpu1.937686.0",
+  "path": "runs/trunk_recipe_s2/tb/events.out.tfevents.<redacted>",
   "sha256": "996693826cb74bb2aef22cd2eeae3da69fb1c28f1d14a3e5b67b3593836905e4",
-  "bytes": 6868
+  "bytes": 6868,
+  "note": "Host name and process id removed from the event-file name; the sha256 is of the file as it exists in the authors' records."
  }
 }

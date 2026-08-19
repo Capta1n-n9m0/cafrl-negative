@@ -5,7 +5,7 @@ Run it from inside the repository, in the CPU-only environment described by
 
     python verify.py --jobs 4
 
-Five groups of checks, in order:
+Seven groups of checks, in order:
 
 1. every manuscript-printed cell value, recomputed from the released per-video
    scores through `../evaluation/` (the campaign's own harness) and compared at
@@ -15,9 +15,12 @@ Five groups of checks, in order:
    synthetic-JPEG gap);
 3. the adjudicated contrast table, recomputed end to end: seed pooling by video
    key, then the 10,000-replicate paired video bootstrap at the pinned RNG seed;
-4. the prediction-driven figures, rebuilt from `../predictions/` and `../curves/`
+4. the held-out-manipulation contrasts, recomputed the same way;
+5. every row of `../CLAIMS-MAP.md` — each mapped artifact must exist, and each
+   mapped number must come back out of it;
+6. the prediction-driven figures, rebuilt from `../predictions/` and `../curves/`
    and compared against the released `figures/figure_data.json`;
-5. self-containment: after all of the above, every module that was imported must
+7. self-containment: after all of the above, every module that was imported must
    have come from inside this repository, the standard library, or site-packages.
 
 Exit status is 0 only if every check passes.
@@ -214,6 +217,87 @@ def check_contrasts(preds: Predictions, spec: dict[str, Any], rep: Report,
 
 
 # ---------------------------------------------------------------------------
+# 3b. held-out-manipulation contrasts
+# ---------------------------------------------------------------------------
+
+def check_faceshifter(preds: Predictions, spec: dict[str, Any], rep: Report,
+                      jobs: int, fast: bool) -> None:
+    """The FaceShifter contrasts — the axis the paper reports closed."""
+    t0 = time.time()
+    declared = spec.get("faceshifter", {}).get("contrasts", [])
+    if not any("expect" in c for c in declared):
+        rep.add("SKIP", "faceshifter", "no expected values declared")
+        rep.group_summary("faceshifter", t0)
+        return
+    res = rederive.faceshifter(preds, spec, jobs=jobs, b_override=1000 if fast else None)
+    got = {c["name"]: c for c in res["contrasts"]}
+    tol_delta = float(spec["tolerances"]["bootstrap_delta_abs"])
+    tol_ci = float(spec["tolerances"]["bootstrap_ci_abs"])
+    for decl in declared:
+        exp = decl.get("expect")
+        if not exp:
+            continue
+        actual = got.get(decl["name"])
+        if actual is None:
+            rep.add("FAIL", "faceshifter", f"{decl['name']}: not recomputed")
+            continue
+        detail = (f"{decl['name']}: Δ {actual['delta']:+.4f} "
+                  f"CI [{actual['ci_lo']:+.4f}, {actual['ci_hi']:+.4f}]")
+        worst = 0.0
+        for key, allowed in (("delta", tol_delta), ("ci_lo", tol_ci), ("ci_hi", tol_ci)):
+            if key in exp:
+                allowed = max(allowed, printed_tolerance(exp[key]))
+                worst = max(worst, abs(actual[key] - exp[key]) - allowed)
+        if fast:
+            rep.add("SKIP", "faceshifter", f"{detail} — --fast")
+        elif worst > 0:
+            rep.add("FAIL", "faceshifter", f"{detail}; exceeds tolerance by {worst:.5f}")
+        else:
+            rep.add("PASS", "faceshifter", detail)
+        expected_excl = not (exp["ci_lo"] <= 0.0 <= exp["ci_hi"])
+        if not fast and actual["excludes_zero"] != expected_excl:
+            rep.add("FAIL", "faceshifter", f"{decl['name']}: verdict differs from the paper")
+        else:
+            rep.add("PASS", "faceshifter", f"{decl['name']} (verdict)")
+    rep.group_summary("faceshifter", t0)
+
+
+# ---------------------------------------------------------------------------
+# 3c. the claims map
+# ---------------------------------------------------------------------------
+
+def check_claims_map(rep: Report) -> None:
+    """Every row of CLAIMS-MAP.md: its artifacts exist and its number returns."""
+    t0 = time.time()
+    try:
+        if str(HERE) not in sys.path:       # `python -I` does not add the script's dir
+            sys.path.insert(0, str(HERE))
+        import claim                                            # noqa: PLC0415
+        results = claim.check_all(bootstrap=False)
+    except Exception as exc:                                     # noqa: BLE001
+        rep.add("FAIL", "claims-map", f"could not run claim.py: {exc}")
+        rep.group_summary("claims-map", t0)
+        return
+    if not results:
+        rep.add("FAIL", "claims-map", "the claims map is empty")
+    for res in results:
+        label = f"{res['id']} {res['label']}"
+        if res["status"] == "FAIL":
+            rep.add("FAIL", "claims-map", f"{label}: {res['detail']}")
+        elif res["status"] in ("GAP", "PENDING"):
+            rep.add("SKIP", "claims-map", f"{label}: {res['status'].lower()}")
+        elif res["status"] == "DIFFERS":
+            rep.add("SKIP", "claims-map", f"{label}: {res['detail']}")
+        else:
+            rep.add("PASS", "claims-map", label)
+    if not (ROOT / "CLAIMS-MAP.md").is_file():
+        rep.add("FAIL", "claims-map", "CLAIMS-MAP.md is missing")
+    else:
+        rep.add("PASS", "claims-map", "CLAIMS-MAP.md present")
+    rep.group_summary("claims-map", t0)
+
+
+# ---------------------------------------------------------------------------
 # 4. figures
 # ---------------------------------------------------------------------------
 
@@ -314,7 +398,7 @@ def check_self_contained(rep: Report) -> None:
                 "every imported module came from this repository, the standard "
                 "library, or site-packages")
     for required in ("predictions", "evaluation", "curves", "figures", "splits",
-                     "configs", "preregistration", "env"):
+                     "configs", "preregistration", "env", "audit", "probes"):
         d = ROOT / required
         rep.add("PASS" if d.is_dir() else "FAIL", "self-containment",
                 f"{required}/ present" if d.is_dir() else f"{required}/ is missing")
@@ -345,6 +429,8 @@ def main(argv: list[str] | None = None) -> int:
     check_cells(preds, spec, rep)
     check_derived(preds, spec, rep)
     results = check_contrasts(preds, spec, rep, jobs=args.jobs, fast=args.fast)
+    check_faceshifter(preds, spec, rep, jobs=args.jobs, fast=args.fast)
+    check_claims_map(rep)
     check_figures(spec, rep, draw=not args.no_draw)
     check_self_contained(rep)
 

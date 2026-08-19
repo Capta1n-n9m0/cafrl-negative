@@ -13,7 +13,7 @@ that were frozen before the runs they adjudicate.
 
 > **Status.** This repository is being assembled for submission. Directories with
 > a `STATUS.md` are not yet populated — see *What is not here yet* below.
-> Last built 2026-08-18.
+> Last built 2026-08-19.
 
 ## Check it yourself
 
@@ -44,17 +44,21 @@ quantities.
 | `pipeline/` | How the evaluation inputs were made: the multi-CRF re-encode with its exact command line and encoder build, the face detection / track curation / deterministic re-crop code, and the DFD track-selection pipeline. |
 | `figures/` | The figure script, the data it draws (rebuilt from `predictions/` and `curves/` on every release build), and the TikZ sources for the two diagrams. |
 | `env/`, `environment.yml` | The environment the numbers were produced in — 141 conda and 74 pip packages pinned by version and build — plus a six-package CPU-only subset for checking the tables. |
-| `verify/` | The check described above, and `expected.json`: what the paper prints, in machine-readable form. |
+| `audit/` | The self-audit that tried to kill this paper's own result: the four review passes as they were scoped, the checks they ran, the complete D1–D8 ledger with each defect's closure — and an explicit statement of what "independent" does and does not mean here. |
+| `probes/` | The small design-time measurements the paper cites but no training run produces: the compression estimator's accuracy, the parameter counts, the band-energy premise. |
+| `verify/` | The check described above, `expected.json` (what the paper prints, in machine-readable form), and `claim.py` — the per-claim version of the same check. |
+| `CLAIMS-MAP.md` | One row per manuscript table cell, per load-bearing number in the text, and per present-tense claim this paper makes about this repository — each with the artifact it comes from and the command that recomputes it. Generated and re-checked on every build. |
 | `LICENSE`, `LICENSE-DATA` | MIT for code; CC BY 4.0 (full legal code included) for predictions, splits, rule texts and metadata. Read `LICENSE-DATA` before regenerating crops: derived imagery inherits the source datasets' agreement terms. |
 
 ## What is not here yet
 
-Two placeholders remain, each with a `STATUS.md` saying what lands in it:
-`audit/` (the per-pass audit checklists and the D1–D8 ledger extract) and
+One placeholder remains, with a `STATUS.md` saying what lands in it:
 `evaluation/analysis/` (the equivalence tests and minimum-detectable-effect
-analyses being added in revision). `CLAIMS-MAP.md` — one line per manuscript cell,
-naming the artifact and command behind it — is written once the revised tables are
-final. The archival DOI is minted at submission.
+analyses being added in revision). Six numbers the paper prints cannot be
+re-derived from this release at all — the shipped-recipe held-out-manipulation
+cells and the campaign's GPU-hour accounting; `CLAIMS-MAP.md` names each one and
+says why. Three more differ from the manuscript in their last printed digit, and
+the map states both values. The archival DOI is minted at submission.
 
 ## What is deliberately not here
 

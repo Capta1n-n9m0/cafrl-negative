@@ -1,0 +1,240 @@
+{
+  "budget_lo_M": 10.0,
+  "budget_hi_M": 25.0,
+  "all_within_budget": true,
+  "default_arm": "grl/estimated",
+  "by_arm_conditioning": {
+    "none/estimated": {
+      "components": {
+        "backbone": 3595388,
+        "proj": 82176,
+        "dct": 254976,
+        "phase": 1164864,
+        "estimator": 1370790,
+        "band_gate": 4684,
+        "fusion": 4179765
+      },
+      "total": 10652643,
+      "total_millions": 10.6526,
+      "within_budget": true
+    },
+    "none/oracle": {
+      "components": {
+        "backbone": 3595388,
+        "proj": 82176,
+        "dct": 254976,
+        "phase": 1164864,
+        "estimator": 1370790,
+        "band_gate": 5068,
+        "fusion": 4180149
+      },
+      "total": 10653411,
+      "total_millions": 10.6534,
+      "within_budget": true
+    },
+    "none/none": {
+      "components": {
+        "backbone": 3595388,
+        "proj": 82176,
+        "dct": 254976,
+        "phase": 1164864,
+        "estimator": 1370790,
+        "band_gate": 4,
+        "fusion": 4075765
+      },
+      "total": 10543963,
+      "total_millions": 10.544,
+      "within_budget": true
+    },
+    "none/concat": {
+      "components": {
+        "backbone": 3595388,
+        "proj": 82176,
+        "dct": 418816,
+        "phase": 1164864,
+        "estimator": 1370790,
+        "band_gate": 4,
+        "fusion": 4100341
+      },
+      "total": 10732379,
+      "total_millions": 10.7324,
+      "within_budget": true
+    },
+    "grl/estimated": {
+      "components": {
+        "backbone": 3595388,
+        "proj": 82176,
+        "dct": 254976,
+        "phase": 1164864,
+        "estimator": 1370790,
+        "band_gate": 4684,
+        "fusion": 4179765,
+        "discriminator": 1318918
+      },
+      "total": 11971561,
+      "total_millions": 11.9716,
+      "within_budget": true
+    },
+    "grl/oracle": {
+      "components": {
+        "backbone": 3595388,
+        "proj": 82176,
+        "dct": 254976,
+        "phase": 1164864,
+        "estimator": 1370790,
+        "band_gate": 5068,
+        "fusion": 4180149,
+        "discriminator": 1318918
+      },
+      "total": 11972329,
+      "total_millions": 11.9723,
+      "within_budget": true
+    },
+    "grl/none": {
+      "components": {
+        "backbone": 3595388,
+        "proj": 82176,
+        "dct": 254976,
+        "phase": 1164864,
+        "estimator": 1370790,
+        "band_gate": 4,
+        "fusion": 4075765,
+        "discriminator": 1318918
+      },
+      "total": 11862881,
+      "total_millions": 11.8629,
+      "within_budget": true
+    },
+    "grl/concat": {
+      "components": {
+        "backbone": 3595388,
+        "proj": 82176,
+        "dct": 418816,
+        "phase": 1164864,
+        "estimator": 1370790,
+        "band_gate": 4,
+        "fusion": 4100341,
+        "discriminator": 1318918
+      },
+      "total": 12051297,
+      "total_millions": 12.0513,
+      "within_budget": true
+    },
+    "hsic/estimated": {
+      "components": {
+        "backbone": 3595388,
+        "proj": 82176,
+        "dct": 254976,
+        "phase": 1164864,
+        "estimator": 1370790,
+        "band_gate": 4684,
+        "fusion": 4179765
+      },
+      "total": 10652643,
+      "total_millions": 10.6526,
+      "within_budget": true
+    },
+    "hsic/oracle": {
+      "components": {
+        "backbone": 3595388,
+        "proj": 82176,
+        "dct": 254976,
+        "phase": 1164864,
+        "estimator": 1370790,
+        "band_gate": 5068,
+        "fusion": 4180149
+      },
+      "total": 10653411,
+      "total_millions": 10.6534,
+      "within_budget": true
+    },
+    "hsic/none": {
+      "components": {
+        "backbone": 3595388,
+        "proj": 82176,
+        "dct": 254976,
+        "phase": 1164864,
+        "estimator": 1370790,
+        "band_gate": 4,
+        "fusion": 4075765
+      },
+      "total": 10543963,
+      "total_millions": 10.544,
+      "within_budget": true
+    },
+    "hsic/concat": {
+      "components": {
+        "backbone": 3595388,
+        "proj": 82176,
+        "dct": 418816,
+        "phase": 1164864,
+        "estimator": 1370790,
+        "band_gate": 4,
+        "fusion": 4100341
+      },
+      "total": 10732379,
+      "total_millions": 10.7324,
+      "within_budget": true
+    },
+    "both/estimated": {
+      "components": {
+        "backbone": 3595388,
+        "proj": 82176,
+        "dct": 254976,
+        "phase": 1164864,
+        "estimator": 1370790,
+        "band_gate": 4684,
+        "fusion": 4179765,
+        "discriminator": 1318918
+      },
+      "total": 11971561,
+      "total_millions": 11.9716,
+      "within_budget": true
+    },
+    "both/oracle": {
+      "components": {
+        "backbone": 3595388,
+        "proj": 82176,
+        "dct": 254976,
+        "phase": 1164864,
+        "estimator": 1370790,
+        "band_gate": 5068,
+        "fusion": 4180149,
+        "discriminator": 1318918
+      },
+      "total": 11972329,
+      "total_millions": 11.9723,
+      "within_budget": true
+    },
+    "both/none": {
+      "components": {
+        "backbone": 3595388,
+        "proj": 82176,
+        "dct": 254976,
+        "phase": 1164864,
+        "estimator": 1370790,
+        "band_gate": 4,
+        "fusion": 4075765,
+        "discriminator": 1318918
+      },
+      "total": 11862881,
+      "total_millions": 11.8629,
+      "within_budget": true
+    },
+    "both/concat": {
+      "components": {
+        "backbone": 3595388,
+        "proj": 82176,
+        "dct": 418816,
+        "phase": 1164864,
+        "estimator": 1370790,
+        "band_gate": 4,
+        "fusion": 4100341,
+        "discriminator": 1318918
+      },
+      "total": 12051297,
+      "total_millions": 12.0513,
+      "within_budget": true
+    }
+  }
+}

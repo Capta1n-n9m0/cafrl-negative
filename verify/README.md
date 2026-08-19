@@ -56,5 +56,5 @@ side receives it, so the asymmetry is recorded rather than quietly evened out.
 
 `expected.json` is the machine-readable form of everything the paper prints that
 this repository can check, generated from the release manifest. Reading it
-alongside the claims map (`../CLAIMS-MAP.md`, added before submission) tells you
+alongside the claims map (`../CLAIMS-MAP.md`) tells you
 which artifact stands behind which cell.

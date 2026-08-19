@@ -38,8 +38,8 @@ class PathsConfig:
     crf_video_root: str = "~/sdc/datasets/ffpp_crf_variants"
     dataset_root: str = "~/sdc/datasets/ffpp_original"
     splits_dir: str = "src/config/splits"
-    metadata_csv: str = "~/Projects/FakeDetectResearch/datasets/ffpp_metadata.csv"
-    runs_root: str = "~/Projects/FakeDetectResearch/experiments/exp3-cafrl/runs"
+    metadata_csv: str = "${METADATA_CSV}"
+    runs_root: str = "${RUNS_ROOT}"
 
     def resolved(self, name: str) -> Path:
         """Return the resolved ``Path`` for a named path field."""

@@ -48,5 +48,5 @@ Run **B1–B6** (the 6 baseline runs). Tabulate video-level + frame-level (separ
 
 ---
 
-*Assembled verbatim by the release build from the working repository's frozen documents; see `history-excerpts.md` for the commit dates that place each rule before the runs it governed.*
+*Assembled verbatim by the release build from the working repository's frozen documents; see `preregistration/history-excerpts.md` for the commit dates that place each rule before the runs it governed.*
 

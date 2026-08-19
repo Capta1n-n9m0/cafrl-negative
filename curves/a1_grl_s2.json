@@ -3005,8 +3005,9 @@
   "loss_step/total"
  ],
  "source": {
-  "path": "runs/a1_grl_s2/tb/events.out.tfevents.1782547428.mgpu1.353631.0",
+  "path": "runs/a1_grl_s2/tb/events.out.tfevents.<redacted>",
   "sha256": "2dbc67ed2f627c99030107f6585a7bd1bf8324c5e4fa6f94b4328a3009216ac4",
-  "bytes": 4028312
+  "bytes": 4028312,
+  "note": "Host name and process id removed from the event-file name; the sha256 is of the file as it exists in the authors' records."
  }
 }

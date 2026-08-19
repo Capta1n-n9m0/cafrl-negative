@@ -1,14 +1,15 @@
-"""Publication figures for the negative-result paper (docs/25 §6).
+"""Publication figures for the paper.
 
 Fig 2 — CRF-sweep curves: (a) shipped-recipe falsification, (b) fair-recipe re-test.
 Fig 4 — F2 mechanism panel: (a) residual-gate γ trajectories, (b) standalone freq-head AUC.
 
 Reads per-run ``report.json`` sweeps + TensorBoard scalars + (for the shipped
 spatial-residual γ-collapse contrast) the raw ``epoch_*.pt`` checkpoints.
-Extraction is cached to ``paper/figures/_data_cache.json`` so restyling never
-re-touches run artifacts. Everything is read-only over ``runs/``.
+In this release the extracted values ship as ``figures/figure_data.json``,
+rebuilt from ``predictions/`` and ``curves/``; the extraction path is never
+taken, because that cache is always present.
 
-Usage:  conda run -n cv python paper/make_figures.py [--refresh-cache]
+Usage:  python figures/make_figures.py
 """
 
 from __future__ import annotations
@@ -33,7 +34,8 @@ LEVELS = ["c0", "c18", "c23", "c28", "c32", "c36", "c40"]
 CRF_X = [0, 18, 23, 28, 32, 36, 40]
 
 # ---------------------------------------------------------------- palette ---
-# Validated (dataviz six checks, light surface #fcfcfb): panel A set worst
+# Validated for colour-vision-deficiency separation (light surface
+# #fcfcfb): panel A set worst
 # all-pairs CVD ΔE 24.2, panel B set 16.6. Contrast WARNs (aqua/yellow/magenta
 # sub-3:1) get relief via per-series markers + legend + the paper's tables.
 INK = "#0b0b0b"

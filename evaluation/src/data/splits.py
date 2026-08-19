@@ -1,8 +1,9 @@
 """Official FF++ train/val/test splits + membership rules.
 
 The splits are JSON lists of ``[target, source]`` ID pairs (360/70/70). A FF++
-fake video is named ``{target}_{source}.mp4`` (the corrected as-built fact — see
-exp3 ``CLAUDE.md``); a real video is named ``{id}.mp4``.
+fake video is named ``{target}_{source}.mp4`` (the corrected as-built
+fact; an earlier metadata build had the two reversed); a real video is
+named ``{id}.mp4``.
 
 Membership rules:
 * fake ``{t}_{s}`` belongs to the split that contains the **unordered** pair

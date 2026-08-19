@@ -1226,8 +1226,9 @@
   "loss_step/total"
  ],
  "source": {
-  "path": "runs/f2_spatres_full_s42/tb/events.out.tfevents.1783107465.mgpu1.2538395.0",
+  "path": "runs/f2_spatres_full_s42/tb/events.out.tfevents.<redacted>",
   "sha256": "dc114221c0862e240cee64e6e22bfbdb0f4841318e7a87af394c964bdf71e15d",
-  "bytes": 3731252
+  "bytes": 3731252,
+  "note": "Host name and process id removed from the event-file name; the sha256 is of the file as it exists in the authors' records."
  }
 }

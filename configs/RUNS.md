@@ -56,3 +56,10 @@ and their numbers exist, but no cell of the current manuscript prints them.
 the STOP-gate, which fired, so they were never executed — about 270 GPU-hours that
 the gate saved. They are released because the fact that they were fully specified
 and then deliberately not run is part of what the paper claims about the protocol.
+
+## Known errors in these files
+
+Released as they were run, including their mistakes; the corrections are here rather than in the files.
+
+- `configs/launch/f2_spatres_full_s42.yaml` carries a stale capacity comment ("F2 ~13.3M vs b7 4.0M"). The correct trainable-parameter count of that arm is **9,628,081** (~9.6 M), which is what the two confirmation seeds' configs (`..._s1.yaml`, `..._s2.yaml`) state. The comment has no effect on the run; the three configs are otherwise identical apart from the seed, and the counts are reproducible by building the model from any of them.
+- Comments in these files cite internal planning documents and phase numbers that are not part of this release. They are left as written.

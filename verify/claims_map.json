@@ -1,0 +1,2726 @@
+{
+ "schema": "cafrl-negative/claims-map/v1",
+ "note": "Every manuscript table cell and present-tense release claim, mapped to the artifact that carries it and the command that recomputes it. Generated from the release manifest; checked on every build.",
+ "manuscript": {
+  "label": "IEEE Access submission, version B",
+  "sha256": "b574c5f2ee8e5cbd6070edfb3c4ced17421f300ecfc206f573603f52d2ac64d8",
+  "note": "Table and section numbers refer to the submitted manuscript. The map is regenerated whenever the release is rebuilt; if a manuscript number moves, the build fails until the map and the manuscript agree."
+ },
+ "comp_levels": [
+  "c28",
+  "c32",
+  "c36",
+  "c40"
+ ],
+ "rows": [
+  {
+   "label": "b7 EffNet-B0 spatial \u2014 params",
+   "printed": "4.0 M",
+   "kind": "params",
+   "source": "configs/runs/b7_effnet_b0_mq_fliponly.yaml",
+   "check": "none",
+   "note": "The standard EfficientNet-B0 count with a binary head, as built by the released config. No released artifact pins it; a per-arm parameter table is added in revision.",
+   "id": "T1.1",
+   "table": "T1",
+   "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
+   "where": "Section V-A (the STOP-gate fires)",
+   "artifacts": [
+    "configs/runs/b7_effnet_b0_mq_fliponly.yaml"
+   ],
+   "command": "python verify/claim.py T1.1"
+  },
+  {
+   "label": "b7 \u2014 c23",
+   "printed": 0.987,
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "cell": "c23",
+   "id": "T1.2",
+   "table": "T1",
+   "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
+   "where": "Section V-A (the STOP-gate fires)",
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py T1.2"
+  },
+  {
+   "label": "b7 \u2014 c40",
+   "printed": 0.959,
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "cell": "c40",
+   "id": "T1.3",
+   "table": "T1",
+   "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
+   "where": "Section V-A (the STOP-gate fires)",
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py T1.3"
+  },
+  {
+   "label": "b7 \u2014 AUC_comp",
+   "printed": 0.971,
+   "kind": "auc_comp",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "id": "T1.4",
+   "table": "T1",
+   "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
+   "where": "Section V-A (the STOP-gate fires)",
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py T1.4"
+  },
+  {
+   "label": "CAFRL as specified (grl) \u2014 params",
+   "printed": "11.97 M",
+   "kind": "params",
+   "source": "probes/param_counts_cafrl.json",
+   "key": "by_arm_conditioning.grl/estimated.total_millions",
+   "id": "T1.5",
+   "table": "T1",
+   "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
+   "where": "Section V-A (the STOP-gate fires)",
+   "artifacts": [
+    "probes/param_counts_cafrl.json"
+   ],
+   "command": "python verify/claim.py T1.5"
+  },
+  {
+   "label": "CAFRL as specified (grl) \u2014 c23",
+   "printed": 0.974,
+   "kind": "cell",
+   "run": "a0",
+   "cell": "c23",
+   "id": "T1.6",
+   "table": "T1",
+   "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
+   "where": "Section V-A (the STOP-gate fires)",
+   "artifacts": [
+    "predictions/ffpp/a0.json"
+   ],
+   "command": "python verify/claim.py T1.6"
+  },
+  {
+   "label": "CAFRL as specified (grl) \u2014 c40",
+   "printed": 0.922,
+   "kind": "cell",
+   "run": "a0",
+   "cell": "c40",
+   "id": "T1.7",
+   "table": "T1",
+   "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
+   "where": "Section V-A (the STOP-gate fires)",
+   "artifacts": [
+    "predictions/ffpp/a0.json"
+   ],
+   "command": "python verify/claim.py T1.7"
+  },
+  {
+   "label": "CAFRL as specified (grl) \u2014 AUC_comp",
+   "printed": 0.948,
+   "kind": "auc_comp",
+   "run": "a0",
+   "id": "T1.8",
+   "table": "T1",
+   "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
+   "where": "Section V-A (the STOP-gate fires)",
+   "artifacts": [
+    "predictions/ffpp/a0.json"
+   ],
+   "command": "python verify/claim.py T1.8"
+  },
+  {
+   "label": "Xception-mq \u2014 params",
+   "printed": "20.8 M",
+   "kind": "params",
+   "source": "configs/runs/b4_xception_mq.yaml",
+   "check": "none",
+   "note": "The standard Xception count with a binary head, as built by the released config; not pinned by a released artifact.",
+   "id": "T1.9",
+   "table": "T1",
+   "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
+   "where": "Section V-A (the STOP-gate fires)",
+   "artifacts": [
+    "configs/runs/b4_xception_mq.yaml"
+   ],
+   "command": "python verify/claim.py T1.9"
+  },
+  {
+   "label": "Xception-mq \u2014 c23",
+   "printed": 0.987,
+   "kind": "cell",
+   "run": "b4_xception_mq",
+   "cell": "c23",
+   "id": "T1.10",
+   "table": "T1",
+   "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
+   "where": "Section V-A (the STOP-gate fires)",
+   "artifacts": [
+    "predictions/ffpp/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py T1.10"
+  },
+  {
+   "label": "Xception-mq \u2014 c40",
+   "printed": 0.968,
+   "kind": "cell",
+   "run": "b4_xception_mq",
+   "cell": "c40",
+   "id": "T1.11",
+   "table": "T1",
+   "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
+   "where": "Section V-A (the STOP-gate fires)",
+   "artifacts": [
+    "predictions/ffpp/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py T1.11"
+  },
+  {
+   "label": "Xception-mq \u2014 AUC_comp",
+   "printed": 0.977,
+   "kind": "auc_comp",
+   "run": "b4_xception_mq",
+   "reconcile": "Queued for correction in the next manuscript revision: the run's own stored AUC_comp is 0.97645, which rounds to 0.976. A last-digit rounding difference, no effect on any comparison.",
+   "id": "T1.12",
+   "table": "T1",
+   "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
+   "where": "Section V-A (the STOP-gate fires)",
+   "artifacts": [
+    "predictions/ffpp/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py T1.12"
+  },
+  {
+   "label": "The condensed D1\u2013D8 ledger (all rows)",
+   "printed": "prose",
+   "kind": "text",
+   "artifact": "audit/LEDGER-D1-D8.md",
+   "check": "none",
+   "note": "The full ledger this table condenses, in two halves: the defects as first stated (2026-07-02) and their closure status after the re-tests.",
+   "id": "T2.1",
+   "table": "T2",
+   "table_title": "The audit ledger (condensed)",
+   "where": "Section VI (the self-audit)",
+   "artifacts": [
+    "audit/LEDGER-D1-D8.md"
+   ],
+   "command": "python verify/claim.py T2.1"
+  },
+  {
+   "label": "b7 \u2212 CAFRL-shipped (STOP-gate) \u2014 \u0394 and CI",
+   "printed": "+0.0366 [+0.021, +0.054]",
+   "kind": "contrast",
+   "name": "b7 - CAFRL-shipped (STOP-gate)",
+   "note": "The released recomputation puts the lower bound at +0.0205, which rounds to +0.020; the printed +0.021 is a Monte-Carlo difference of ~5e-4 from a different draw. Every other endpoint reproduces exactly.",
+   "id": "T3.1",
+   "table": "T3",
+   "table_title": "The adjudicated contrasts (10k paired video bootstrap)",
+   "where": "Section VII-C (seed confirmation)",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json",
+    "predictions/ffpp/a0.json"
+   ],
+   "command": "python verify/claim.py T3.1 --bootstrap"
+  },
+  {
+   "label": "F1 \u2212 CAFRL-none (what the fair recipe bought) \u2014 \u0394 and CI",
+   "printed": "+0.0396 [+0.0231, +0.0570]",
+   "kind": "contrast",
+   "name": "F1 - CAFRL-none (what the fair recipe bought)",
+   "id": "T3.2",
+   "table": "T3",
+   "table_title": "The adjudicated contrasts (10k paired video bootstrap)",
+   "where": "Section VII-C (seed confirmation)",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/ffpp/f1_none_fair_s42.json",
+    "predictions/ffpp/a1_none_s42.json"
+   ],
+   "command": "python verify/claim.py T3.2 --bootstrap"
+  },
+  {
+   "label": "F1 \u2212 b7 (single seed) \u2014 \u0394 and CI",
+   "printed": "-0.0004 [-0.0092, +0.0080]",
+   "kind": "contrast",
+   "name": "F1 - b7 (single seed)",
+   "id": "T3.3",
+   "table": "T3",
+   "table_title": "The adjudicated contrasts (10k paired video bootstrap)",
+   "where": "Section VII-C (seed confirmation)",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/ffpp/f1_none_fair_s42.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py T3.3 --bootstrap"
+  },
+  {
+   "label": "F2 \u2212 b7 (single seed) \u2014 \u0394 and CI",
+   "printed": "+0.0056 [-0.0022, +0.0134]",
+   "kind": "contrast",
+   "name": "F2 - b7 (single seed)",
+   "id": "T3.4",
+   "table": "T3",
+   "table_title": "The adjudicated contrasts (10k paired video bootstrap)",
+   "where": "Section VII-C (seed confirmation)",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/ffpp/f2_spatres_full_s42.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py T3.4 --bootstrap"
+  },
+  {
+   "label": "F1-pool \u2212 b7-pool (3v3) \u2014 \u0394 and CI",
+   "printed": "-0.0010 [-0.0066, +0.0045]",
+   "kind": "contrast",
+   "name": "F1-pool - b7-pool (3v3)",
+   "id": "T3.5",
+   "table": "T3",
+   "table_title": "The adjudicated contrasts (10k paired video bootstrap)",
+   "where": "Section VII-C (seed confirmation)",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/ffpp/f1_none_fair_s42.json",
+    "predictions/ffpp/f1_none_fair_s1.json",
+    "predictions/ffpp/f1_none_fair_s2.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py T3.5 --bootstrap"
+  },
+  {
+   "label": "F2-pool \u2212 b7-pool (3v3) \u2014 \u0394 and CI",
+   "printed": "+0.0022 [-0.0035, +0.0080]",
+   "kind": "contrast",
+   "name": "F2-pool - b7-pool (3v3)",
+   "id": "T3.6",
+   "table": "T3",
+   "table_title": "The adjudicated contrasts (10k paired video bootstrap)",
+   "where": "Section VII-C (seed confirmation)",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/ffpp/f2_spatres_full_s42.json",
+    "predictions/ffpp/f2_spatres_full_s1.json",
+    "predictions/ffpp/f2_spatres_full_s2.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py T3.6 --bootstrap"
+  },
+  {
+   "label": "b7 \u2212 T (architecture share, pooled) \u2014 \u0394 and CI",
+   "printed": "-0.0038 [-0.0116, +0.0039]",
+   "kind": "contrast",
+   "name": "b7 - T (architecture share, pooled)",
+   "note": "Asymmetric as run and as printed: the single frozen b7 (seed 42) against the three-seed pool of T, which is what the Phase-5.2 rule specified. Pooling b7's seeds as well moves the point estimate to about +0.002; the verdict is unchanged.",
+   "id": "T3.7",
+   "table": "T3",
+   "table_title": "The adjudicated contrasts (10k paired video bootstrap)",
+   "where": "Section VII-C (seed confirmation)",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json",
+    "predictions/ffpp/trunk_recipe_s42.json",
+    "predictions/ffpp/trunk_recipe_s1.json",
+    "predictions/ffpp/trunk_recipe_s2.json"
+   ],
+   "command": "python verify/claim.py T3.7 --bootstrap"
+  },
+  {
+   "label": "T \u2212 spatial-residual (recipe share, pooled) \u2014 \u0394 and CI",
+   "printed": "+0.0490 [+0.0294, +0.0705]",
+   "kind": "contrast",
+   "name": "T - spatial-residual (recipe share, pooled)",
+   "id": "T3.8",
+   "table": "T3",
+   "table_title": "The adjudicated contrasts (10k paired video bootstrap)",
+   "where": "Section VII-C (seed confirmation)",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/ffpp/trunk_recipe_s42.json",
+    "predictions/ffpp/trunk_recipe_s1.json",
+    "predictions/ffpp/trunk_recipe_s2.json",
+    "predictions/ffpp/cafrl_spatres_s42.json"
+   ],
+   "command": "python verify/claim.py T3.8 --bootstrap"
+  },
+  {
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "label": "b7 EffNet-B0 spatial (fair) \u2014 c0",
+   "printed": 0.9919,
+   "cell": "c0",
+   "id": "T4.1",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py T4.1"
+  },
+  {
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "label": "b7 EffNet-B0 spatial (fair) \u2014 c18",
+   "printed": 0.9892,
+   "cell": "c18",
+   "id": "T4.2",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py T4.2"
+  },
+  {
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "label": "b7 EffNet-B0 spatial (fair) \u2014 c23",
+   "printed": 0.9867,
+   "cell": "c23",
+   "id": "T4.3",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py T4.3"
+  },
+  {
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "label": "b7 EffNet-B0 spatial (fair) \u2014 c28",
+   "printed": 0.981,
+   "cell": "c28",
+   "id": "T4.4",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py T4.4"
+  },
+  {
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "label": "b7 EffNet-B0 spatial (fair) \u2014 c32",
+   "printed": 0.9758,
+   "cell": "c32",
+   "id": "T4.5",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py T4.5"
+  },
+  {
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "label": "b7 EffNet-B0 spatial (fair) \u2014 c36",
+   "printed": 0.9678,
+   "cell": "c36",
+   "id": "T4.6",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py T4.6"
+  },
+  {
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "label": "b7 EffNet-B0 spatial (fair) \u2014 c40",
+   "printed": 0.959,
+   "cell": "c40",
+   "id": "T4.7",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py T4.7"
+  },
+  {
+   "kind": "auc_comp",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "label": "b7 EffNet-B0 spatial (fair) \u2014 auc_comp",
+   "printed": 0.9709,
+   "cell": "auc_comp",
+   "id": "T4.8",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py T4.8"
+  },
+  {
+   "kind": "cell",
+   "run": "f2_spatres_full_s42",
+   "label": "F2 full trunk + freq residual (fair) \u2014 c0",
+   "printed": 0.9929,
+   "cell": "c0",
+   "id": "T4.9",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/f2_spatres_full_s42.json"
+   ],
+   "command": "python verify/claim.py T4.9"
+  },
+  {
+   "kind": "cell",
+   "run": "f2_spatres_full_s42",
+   "label": "F2 full trunk + freq residual (fair) \u2014 c18",
+   "printed": 0.9902,
+   "cell": "c18",
+   "id": "T4.10",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/f2_spatres_full_s42.json"
+   ],
+   "command": "python verify/claim.py T4.10"
+  },
+  {
+   "kind": "cell",
+   "run": "f2_spatres_full_s42",
+   "label": "F2 full trunk + freq residual (fair) \u2014 c23",
+   "printed": 0.9894,
+   "cell": "c23",
+   "id": "T4.11",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/f2_spatres_full_s42.json"
+   ],
+   "command": "python verify/claim.py T4.11"
+  },
+  {
+   "kind": "cell",
+   "run": "f2_spatres_full_s42",
+   "label": "F2 full trunk + freq residual (fair) \u2014 c28",
+   "printed": 0.9821,
+   "cell": "c28",
+   "id": "T4.12",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/f2_spatres_full_s42.json"
+   ],
+   "command": "python verify/claim.py T4.12"
+  },
+  {
+   "kind": "cell",
+   "run": "f2_spatres_full_s42",
+   "label": "F2 full trunk + freq residual (fair) \u2014 c32",
+   "printed": 0.9774,
+   "cell": "c32",
+   "id": "T4.13",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/f2_spatres_full_s42.json"
+   ],
+   "command": "python verify/claim.py T4.13"
+  },
+  {
+   "kind": "cell",
+   "run": "f2_spatres_full_s42",
+   "label": "F2 full trunk + freq residual (fair) \u2014 c36",
+   "printed": 0.9719,
+   "cell": "c36",
+   "id": "T4.14",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/f2_spatres_full_s42.json"
+   ],
+   "command": "python verify/claim.py T4.14"
+  },
+  {
+   "kind": "cell",
+   "run": "f2_spatres_full_s42",
+   "label": "F2 full trunk + freq residual (fair) \u2014 c40",
+   "printed": 0.9645,
+   "cell": "c40",
+   "id": "T4.15",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/f2_spatres_full_s42.json"
+   ],
+   "command": "python verify/claim.py T4.15"
+  },
+  {
+   "kind": "auc_comp",
+   "run": "f2_spatres_full_s42",
+   "label": "F2 full trunk + freq residual (fair) \u2014 auc_comp",
+   "printed": 0.974,
+   "cell": "auc_comp",
+   "id": "T4.16",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/f2_spatres_full_s42.json"
+   ],
+   "command": "python verify/claim.py T4.16"
+  },
+  {
+   "kind": "cell",
+   "run": "f1_none_fair_s42",
+   "label": "F1 narrow trunk, full freq stack (fair) \u2014 c0",
+   "printed": 0.9941,
+   "cell": "c0",
+   "id": "T4.17",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/f1_none_fair_s42.json"
+   ],
+   "command": "python verify/claim.py T4.17"
+  },
+  {
+   "kind": "cell",
+   "run": "f1_none_fair_s42",
+   "label": "F1 narrow trunk, full freq stack (fair) \u2014 c18",
+   "printed": 0.9901,
+   "cell": "c18",
+   "id": "T4.18",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/f1_none_fair_s42.json"
+   ],
+   "command": "python verify/claim.py T4.18"
+  },
+  {
+   "kind": "cell",
+   "run": "f1_none_fair_s42",
+   "label": "F1 narrow trunk, full freq stack (fair) \u2014 c23",
+   "printed": 0.9881,
+   "cell": "c23",
+   "id": "T4.19",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/f1_none_fair_s42.json"
+   ],
+   "command": "python verify/claim.py T4.19"
+  },
+  {
+   "kind": "cell",
+   "run": "f1_none_fair_s42",
+   "label": "F1 narrow trunk, full freq stack (fair) \u2014 c28",
+   "printed": 0.9798,
+   "cell": "c28",
+   "id": "T4.20",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/f1_none_fair_s42.json"
+   ],
+   "command": "python verify/claim.py T4.20"
+  },
+  {
+   "kind": "cell",
+   "run": "f1_none_fair_s42",
+   "label": "F1 narrow trunk, full freq stack (fair) \u2014 c32",
+   "printed": 0.977,
+   "cell": "c32",
+   "id": "T4.21",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/f1_none_fair_s42.json"
+   ],
+   "command": "python verify/claim.py T4.21"
+  },
+  {
+   "kind": "cell",
+   "run": "f1_none_fair_s42",
+   "label": "F1 narrow trunk, full freq stack (fair) \u2014 c36",
+   "printed": 0.9702,
+   "cell": "c36",
+   "id": "T4.22",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/f1_none_fair_s42.json"
+   ],
+   "command": "python verify/claim.py T4.22"
+  },
+  {
+   "kind": "cell",
+   "run": "f1_none_fair_s42",
+   "label": "F1 narrow trunk, full freq stack (fair) \u2014 c40",
+   "printed": 0.9586,
+   "cell": "c40",
+   "id": "T4.23",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/f1_none_fair_s42.json"
+   ],
+   "command": "python verify/claim.py T4.23"
+  },
+  {
+   "kind": "auc_comp",
+   "run": "f1_none_fair_s42",
+   "label": "F1 narrow trunk, full freq stack (fair) \u2014 auc_comp",
+   "printed": 0.9714,
+   "cell": "auc_comp",
+   "id": "T4.24",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/f1_none_fair_s42.json"
+   ],
+   "command": "python verify/claim.py T4.24"
+  },
+  {
+   "kind": "seed_mean",
+   "group": "t",
+   "note": "Every cell in this row is the mean of the three seeds' per-level video-AUCs; the AUC_comp cell is the mean of the three seeds' AUC_comp (identical to four decimals either way).",
+   "label": "T trunk-recipe control (fair, 3-seed mean) \u2014 c0",
+   "printed": 0.992,
+   "cell": "c0",
+   "id": "T4.25",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "runs": [
+    "trunk_recipe_s42",
+    "trunk_recipe_s1",
+    "trunk_recipe_s2"
+   ],
+   "artifacts": [
+    "predictions/ffpp/trunk_recipe_s42.json",
+    "predictions/ffpp/trunk_recipe_s1.json",
+    "predictions/ffpp/trunk_recipe_s2.json"
+   ],
+   "command": "python verify/claim.py T4.25"
+  },
+  {
+   "kind": "seed_mean",
+   "group": "t",
+   "note": "Every cell in this row is the mean of the three seeds' per-level video-AUCs; the AUC_comp cell is the mean of the three seeds' AUC_comp (identical to four decimals either way).",
+   "label": "T trunk-recipe control (fair, 3-seed mean) \u2014 c18",
+   "printed": 0.9886,
+   "cell": "c18",
+   "id": "T4.26",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "runs": [
+    "trunk_recipe_s42",
+    "trunk_recipe_s1",
+    "trunk_recipe_s2"
+   ],
+   "artifacts": [
+    "predictions/ffpp/trunk_recipe_s42.json",
+    "predictions/ffpp/trunk_recipe_s1.json",
+    "predictions/ffpp/trunk_recipe_s2.json"
+   ],
+   "command": "python verify/claim.py T4.26"
+  },
+  {
+   "kind": "seed_mean",
+   "group": "t",
+   "note": "Every cell in this row is the mean of the three seeds' per-level video-AUCs; the AUC_comp cell is the mean of the three seeds' AUC_comp (identical to four decimals either way).",
+   "label": "T trunk-recipe control (fair, 3-seed mean) \u2014 c23",
+   "printed": 0.9863,
+   "cell": "c23",
+   "id": "T4.27",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "runs": [
+    "trunk_recipe_s42",
+    "trunk_recipe_s1",
+    "trunk_recipe_s2"
+   ],
+   "artifacts": [
+    "predictions/ffpp/trunk_recipe_s42.json",
+    "predictions/ffpp/trunk_recipe_s1.json",
+    "predictions/ffpp/trunk_recipe_s2.json"
+   ],
+   "command": "python verify/claim.py T4.27"
+  },
+  {
+   "kind": "seed_mean",
+   "group": "t",
+   "note": "Every cell in this row is the mean of the three seeds' per-level video-AUCs; the AUC_comp cell is the mean of the three seeds' AUC_comp (identical to four decimals either way).",
+   "label": "T trunk-recipe control (fair, 3-seed mean) \u2014 c28",
+   "printed": 0.9796,
+   "cell": "c28",
+   "id": "T4.28",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "runs": [
+    "trunk_recipe_s42",
+    "trunk_recipe_s1",
+    "trunk_recipe_s2"
+   ],
+   "artifacts": [
+    "predictions/ffpp/trunk_recipe_s42.json",
+    "predictions/ffpp/trunk_recipe_s1.json",
+    "predictions/ffpp/trunk_recipe_s2.json"
+   ],
+   "command": "python verify/claim.py T4.28"
+  },
+  {
+   "kind": "seed_mean",
+   "group": "t",
+   "note": "Every cell in this row is the mean of the three seeds' per-level video-AUCs; the AUC_comp cell is the mean of the three seeds' AUC_comp (identical to four decimals either way).",
+   "label": "T trunk-recipe control (fair, 3-seed mean) \u2014 c32",
+   "printed": 0.9719,
+   "cell": "c32",
+   "id": "T4.29",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "runs": [
+    "trunk_recipe_s42",
+    "trunk_recipe_s1",
+    "trunk_recipe_s2"
+   ],
+   "artifacts": [
+    "predictions/ffpp/trunk_recipe_s42.json",
+    "predictions/ffpp/trunk_recipe_s1.json",
+    "predictions/ffpp/trunk_recipe_s2.json"
+   ],
+   "command": "python verify/claim.py T4.29"
+  },
+  {
+   "kind": "seed_mean",
+   "group": "t",
+   "note": "Every cell in this row is the mean of the three seeds' per-level video-AUCs; the AUC_comp cell is the mean of the three seeds' AUC_comp (identical to four decimals either way).",
+   "label": "T trunk-recipe control (fair, 3-seed mean) \u2014 c36",
+   "printed": 0.9644,
+   "cell": "c36",
+   "id": "T4.30",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "runs": [
+    "trunk_recipe_s42",
+    "trunk_recipe_s1",
+    "trunk_recipe_s2"
+   ],
+   "artifacts": [
+    "predictions/ffpp/trunk_recipe_s42.json",
+    "predictions/ffpp/trunk_recipe_s1.json",
+    "predictions/ffpp/trunk_recipe_s2.json"
+   ],
+   "command": "python verify/claim.py T4.30"
+  },
+  {
+   "kind": "seed_mean",
+   "group": "t",
+   "note": "Every cell in this row is the mean of the three seeds' per-level video-AUCs; the AUC_comp cell is the mean of the three seeds' AUC_comp (identical to four decimals either way).",
+   "label": "T trunk-recipe control (fair, 3-seed mean) \u2014 c40",
+   "printed": 0.9536,
+   "cell": "c40",
+   "id": "T4.31",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "runs": [
+    "trunk_recipe_s42",
+    "trunk_recipe_s1",
+    "trunk_recipe_s2"
+   ],
+   "artifacts": [
+    "predictions/ffpp/trunk_recipe_s42.json",
+    "predictions/ffpp/trunk_recipe_s1.json",
+    "predictions/ffpp/trunk_recipe_s2.json"
+   ],
+   "command": "python verify/claim.py T4.31"
+  },
+  {
+   "kind": "seed_mean",
+   "group": "t",
+   "note": "Every cell in this row is the mean of the three seeds' per-level video-AUCs; the AUC_comp cell is the mean of the three seeds' AUC_comp (identical to four decimals either way).",
+   "label": "T trunk-recipe control (fair, 3-seed mean) \u2014 auc_comp",
+   "printed": 0.9674,
+   "cell": "auc_comp",
+   "id": "T4.32",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "runs": [
+    "trunk_recipe_s42",
+    "trunk_recipe_s1",
+    "trunk_recipe_s2"
+   ],
+   "artifacts": [
+    "predictions/ffpp/trunk_recipe_s42.json",
+    "predictions/ffpp/trunk_recipe_s1.json",
+    "predictions/ffpp/trunk_recipe_s2.json"
+   ],
+   "command": "python verify/claim.py T4.32"
+  },
+  {
+   "kind": "cell",
+   "run": "a0",
+   "label": "CAFRL-grl (shipped) \u2014 c0",
+   "printed": 0.9843,
+   "cell": "c0",
+   "id": "T4.33",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/a0.json"
+   ],
+   "command": "python verify/claim.py T4.33"
+  },
+  {
+   "kind": "cell",
+   "run": "a0",
+   "label": "CAFRL-grl (shipped) \u2014 c18",
+   "printed": 0.9791,
+   "cell": "c18",
+   "id": "T4.34",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/a0.json"
+   ],
+   "command": "python verify/claim.py T4.34"
+  },
+  {
+   "kind": "cell",
+   "run": "a0",
+   "label": "CAFRL-grl (shipped) \u2014 c23",
+   "printed": 0.9738,
+   "cell": "c23",
+   "id": "T4.35",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/a0.json"
+   ],
+   "command": "python verify/claim.py T4.35"
+  },
+  {
+   "kind": "cell",
+   "run": "a0",
+   "label": "CAFRL-grl (shipped) \u2014 c28",
+   "printed": 0.9659,
+   "cell": "c28",
+   "id": "T4.36",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/a0.json"
+   ],
+   "command": "python verify/claim.py T4.36"
+  },
+  {
+   "kind": "cell",
+   "run": "a0",
+   "label": "CAFRL-grl (shipped) \u2014 c32",
+   "printed": 0.9572,
+   "cell": "c32",
+   "id": "T4.37",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/a0.json"
+   ],
+   "command": "python verify/claim.py T4.37"
+  },
+  {
+   "kind": "cell",
+   "run": "a0",
+   "label": "CAFRL-grl (shipped) \u2014 c36",
+   "printed": 0.9451,
+   "cell": "c36",
+   "id": "T4.38",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/a0.json"
+   ],
+   "command": "python verify/claim.py T4.38"
+  },
+  {
+   "kind": "cell",
+   "run": "a0",
+   "label": "CAFRL-grl (shipped) \u2014 c40",
+   "printed": 0.9224,
+   "cell": "c40",
+   "id": "T4.39",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/a0.json"
+   ],
+   "command": "python verify/claim.py T4.39"
+  },
+  {
+   "kind": "auc_comp",
+   "run": "a0",
+   "label": "CAFRL-grl (shipped) \u2014 auc_comp",
+   "printed": 0.9477,
+   "cell": "auc_comp",
+   "id": "T4.40",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/a0.json"
+   ],
+   "command": "python verify/claim.py T4.40"
+  },
+  {
+   "kind": "cell",
+   "run": "a1_none_s42",
+   "label": "CAFRL-none (shipped) \u2014 c0",
+   "printed": 0.9923,
+   "cell": "c0",
+   "id": "T4.41",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/a1_none_s42.json"
+   ],
+   "command": "python verify/claim.py T4.41"
+  },
+  {
+   "kind": "cell",
+   "run": "a1_none_s42",
+   "label": "CAFRL-none (shipped) \u2014 c18",
+   "printed": 0.9818,
+   "cell": "c18",
+   "id": "T4.42",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/a1_none_s42.json"
+   ],
+   "command": "python verify/claim.py T4.42"
+  },
+  {
+   "kind": "cell",
+   "run": "a1_none_s42",
+   "label": "CAFRL-none (shipped) \u2014 c23",
+   "printed": 0.9697,
+   "cell": "c23",
+   "id": "T4.43",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/a1_none_s42.json"
+   ],
+   "command": "python verify/claim.py T4.43"
+  },
+  {
+   "kind": "cell",
+   "run": "a1_none_s42",
+   "label": "CAFRL-none (shipped) \u2014 c28",
+   "printed": 0.959,
+   "cell": "c28",
+   "id": "T4.44",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/a1_none_s42.json"
+   ],
+   "command": "python verify/claim.py T4.44"
+  },
+  {
+   "kind": "cell",
+   "run": "a1_none_s42",
+   "label": "CAFRL-none (shipped) \u2014 c32",
+   "printed": 0.9484,
+   "cell": "c32",
+   "id": "T4.45",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/a1_none_s42.json"
+   ],
+   "command": "python verify/claim.py T4.45"
+  },
+  {
+   "kind": "cell",
+   "run": "a1_none_s42",
+   "label": "CAFRL-none (shipped) \u2014 c36",
+   "printed": 0.9311,
+   "cell": "c36",
+   "id": "T4.46",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/a1_none_s42.json"
+   ],
+   "command": "python verify/claim.py T4.46"
+  },
+  {
+   "kind": "cell",
+   "run": "a1_none_s42",
+   "label": "CAFRL-none (shipped) \u2014 c40",
+   "printed": 0.919,
+   "cell": "c40",
+   "id": "T4.47",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/a1_none_s42.json"
+   ],
+   "command": "python verify/claim.py T4.47"
+  },
+  {
+   "kind": "auc_comp",
+   "run": "a1_none_s42",
+   "label": "CAFRL-none (shipped) \u2014 auc_comp",
+   "printed": 0.9394,
+   "cell": "auc_comp",
+   "id": "T4.48",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/a1_none_s42.json"
+   ],
+   "command": "python verify/claim.py T4.48"
+  },
+  {
+   "kind": "cell",
+   "run": "cafrl_spatres_s42",
+   "label": "spatial-residual (shipped, \u03b3\u21920) \u2014 c0",
+   "printed": 0.9714,
+   "cell": "c0",
+   "id": "T4.49",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/cafrl_spatres_s42.json"
+   ],
+   "command": "python verify/claim.py T4.49"
+  },
+  {
+   "kind": "cell",
+   "run": "cafrl_spatres_s42",
+   "label": "spatial-residual (shipped, \u03b3\u21920) \u2014 c18",
+   "printed": 0.9702,
+   "cell": "c18",
+   "id": "T4.50",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/cafrl_spatres_s42.json"
+   ],
+   "command": "python verify/claim.py T4.50"
+  },
+  {
+   "kind": "cell",
+   "run": "cafrl_spatres_s42",
+   "label": "spatial-residual (shipped, \u03b3\u21920) \u2014 c23",
+   "printed": 0.9686,
+   "cell": "c23",
+   "id": "T4.51",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/cafrl_spatres_s42.json"
+   ],
+   "command": "python verify/claim.py T4.51"
+  },
+  {
+   "kind": "cell",
+   "run": "cafrl_spatres_s42",
+   "label": "spatial-residual (shipped, \u03b3\u21920) \u2014 c28",
+   "printed": 0.9583,
+   "cell": "c28",
+   "id": "T4.52",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/cafrl_spatres_s42.json"
+   ],
+   "command": "python verify/claim.py T4.52"
+  },
+  {
+   "kind": "cell",
+   "run": "cafrl_spatres_s42",
+   "label": "spatial-residual (shipped, \u03b3\u21920) \u2014 c32",
+   "printed": 0.9495,
+   "cell": "c32",
+   "id": "T4.53",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/cafrl_spatres_s42.json"
+   ],
+   "command": "python verify/claim.py T4.53"
+  },
+  {
+   "kind": "cell",
+   "run": "cafrl_spatres_s42",
+   "label": "spatial-residual (shipped, \u03b3\u21920) \u2014 c36",
+   "printed": 0.9307,
+   "cell": "c36",
+   "id": "T4.54",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/cafrl_spatres_s42.json"
+   ],
+   "command": "python verify/claim.py T4.54"
+  },
+  {
+   "kind": "cell",
+   "run": "cafrl_spatres_s42",
+   "label": "spatial-residual (shipped, \u03b3\u21920) \u2014 c40",
+   "printed": 0.9139,
+   "cell": "c40",
+   "id": "T4.55",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/cafrl_spatres_s42.json"
+   ],
+   "command": "python verify/claim.py T4.55"
+  },
+  {
+   "kind": "auc_comp",
+   "run": "cafrl_spatres_s42",
+   "label": "spatial-residual (shipped, \u03b3\u21920) \u2014 auc_comp",
+   "printed": 0.9381,
+   "cell": "auc_comp",
+   "id": "T4.56",
+   "table": "T4",
+   "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
+   "where": "Section VIII (what buys compression robustness)",
+   "artifacts": [
+    "predictions/ffpp/cafrl_spatres_s42.json"
+   ],
+   "command": "python verify/claim.py T4.56"
+  },
+  {
+   "label": "b7 \u2014 c40 seed 42",
+   "printed": 0.959,
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "cell": "c40",
+   "id": "T5.1",
+   "table": "T5",
+   "table_title": "Per-seed c40 video-AUC and 3-seed bands",
+   "where": "Appendix A",
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py T5.1"
+  },
+  {
+   "label": "b7 \u2014 c40 seed 1",
+   "printed": 0.9614,
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly_s1",
+   "cell": "c40",
+   "id": "T5.2",
+   "table": "T5",
+   "table_title": "Per-seed c40 video-AUC and 3-seed bands",
+   "where": "Appendix A",
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly_s1.json"
+   ],
+   "command": "python verify/claim.py T5.2"
+  },
+  {
+   "label": "b7 \u2014 c40 seed 2",
+   "printed": 0.9492,
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly_s2",
+   "cell": "c40",
+   "id": "T5.3",
+   "table": "T5",
+   "table_title": "Per-seed c40 video-AUC and 3-seed bands",
+   "where": "Appendix A",
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py T5.3"
+  },
+  {
+   "label": "b7 \u2014 c40 3-seed mean",
+   "printed": 0.9565,
+   "kind": "seed_mean",
+   "group": "b7",
+   "cell": "c40",
+   "id": "T5.4",
+   "table": "T5",
+   "table_title": "Per-seed c40 video-AUC and 3-seed bands",
+   "where": "Appendix A",
+   "runs": [
+    "b7_effnet_b0_mq_fliponly",
+    "b7_effnet_b0_mq_fliponly_s1",
+    "b7_effnet_b0_mq_fliponly_s2"
+   ],
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py T5.4"
+  },
+  {
+   "label": "b7 \u2014 c40 3-seed band (half-width)",
+   "printed": 0.016,
+   "kind": "seed_band",
+   "group": "b7",
+   "cell": "c40",
+   "id": "T5.5",
+   "table": "T5",
+   "table_title": "Per-seed c40 video-AUC and 3-seed bands",
+   "where": "Appendix A",
+   "runs": [
+    "b7_effnet_b0_mq_fliponly",
+    "b7_effnet_b0_mq_fliponly_s1",
+    "b7_effnet_b0_mq_fliponly_s2"
+   ],
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py T5.5"
+  },
+  {
+   "label": "b7 \u2014 AUC_comp 3-seed mean",
+   "printed": 0.9688,
+   "kind": "seed_mean",
+   "group": "b7",
+   "cell": "auc_comp",
+   "id": "T5.6",
+   "table": "T5",
+   "table_title": "Per-seed c40 video-AUC and 3-seed bands",
+   "where": "Appendix A",
+   "runs": [
+    "b7_effnet_b0_mq_fliponly",
+    "b7_effnet_b0_mq_fliponly_s1",
+    "b7_effnet_b0_mq_fliponly_s2"
+   ],
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py T5.6"
+  },
+  {
+   "label": "F1 \u2014 c40 seed 42",
+   "printed": 0.9586,
+   "kind": "cell",
+   "run": "f1_none_fair_s42",
+   "cell": "c40",
+   "id": "T5.7",
+   "table": "T5",
+   "table_title": "Per-seed c40 video-AUC and 3-seed bands",
+   "where": "Appendix A",
+   "artifacts": [
+    "predictions/ffpp/f1_none_fair_s42.json"
+   ],
+   "command": "python verify/claim.py T5.7"
+  },
+  {
+   "label": "F1 \u2014 c40 seed 1",
+   "printed": 0.9567,
+   "kind": "cell",
+   "run": "f1_none_fair_s1",
+   "cell": "c40",
+   "id": "T5.8",
+   "table": "T5",
+   "table_title": "Per-seed c40 video-AUC and 3-seed bands",
+   "where": "Appendix A",
+   "artifacts": [
+    "predictions/ffpp/f1_none_fair_s1.json"
+   ],
+   "command": "python verify/claim.py T5.8"
+  },
+  {
+   "label": "F1 \u2014 c40 seed 2",
+   "printed": 0.9536,
+   "kind": "cell",
+   "run": "f1_none_fair_s2",
+   "cell": "c40",
+   "id": "T5.9",
+   "table": "T5",
+   "table_title": "Per-seed c40 video-AUC and 3-seed bands",
+   "where": "Appendix A",
+   "artifacts": [
+    "predictions/ffpp/f1_none_fair_s2.json"
+   ],
+   "command": "python verify/claim.py T5.9"
+  },
+  {
+   "label": "F1 \u2014 c40 3-seed mean",
+   "printed": 0.9563,
+   "kind": "seed_mean",
+   "group": "f1",
+   "cell": "c40",
+   "id": "T5.10",
+   "table": "T5",
+   "table_title": "Per-seed c40 video-AUC and 3-seed bands",
+   "where": "Appendix A",
+   "runs": [
+    "f1_none_fair_s42",
+    "f1_none_fair_s1",
+    "f1_none_fair_s2"
+   ],
+   "artifacts": [
+    "predictions/ffpp/f1_none_fair_s42.json",
+    "predictions/ffpp/f1_none_fair_s1.json",
+    "predictions/ffpp/f1_none_fair_s2.json"
+   ],
+   "command": "python verify/claim.py T5.10"
+  },
+  {
+   "label": "F1 \u2014 c40 3-seed band (half-width)",
+   "printed": 0.0062,
+   "kind": "seed_band",
+   "group": "f1",
+   "cell": "c40",
+   "id": "T5.11",
+   "table": "T5",
+   "table_title": "Per-seed c40 video-AUC and 3-seed bands",
+   "where": "Appendix A",
+   "runs": [
+    "f1_none_fair_s42",
+    "f1_none_fair_s1",
+    "f1_none_fair_s2"
+   ],
+   "artifacts": [
+    "predictions/ffpp/f1_none_fair_s42.json",
+    "predictions/ffpp/f1_none_fair_s1.json",
+    "predictions/ffpp/f1_none_fair_s2.json"
+   ],
+   "command": "python verify/claim.py T5.11"
+  },
+  {
+   "label": "F1 \u2014 AUC_comp 3-seed mean",
+   "printed": 0.9675,
+   "kind": "seed_mean",
+   "group": "f1",
+   "cell": "auc_comp",
+   "id": "T5.12",
+   "table": "T5",
+   "table_title": "Per-seed c40 video-AUC and 3-seed bands",
+   "where": "Appendix A",
+   "runs": [
+    "f1_none_fair_s42",
+    "f1_none_fair_s1",
+    "f1_none_fair_s2"
+   ],
+   "artifacts": [
+    "predictions/ffpp/f1_none_fair_s42.json",
+    "predictions/ffpp/f1_none_fair_s1.json",
+    "predictions/ffpp/f1_none_fair_s2.json"
+   ],
+   "command": "python verify/claim.py T5.12"
+  },
+  {
+   "label": "F2 \u2014 c40 seed 42",
+   "printed": 0.9645,
+   "kind": "cell",
+   "run": "f2_spatres_full_s42",
+   "cell": "c40",
+   "id": "T5.13",
+   "table": "T5",
+   "table_title": "Per-seed c40 video-AUC and 3-seed bands",
+   "where": "Appendix A",
+   "artifacts": [
+    "predictions/ffpp/f2_spatres_full_s42.json"
+   ],
+   "command": "python verify/claim.py T5.13"
+  },
+  {
+   "label": "F2 \u2014 c40 seed 1",
+   "printed": 0.9602,
+   "kind": "cell",
+   "run": "f2_spatres_full_s1",
+   "cell": "c40",
+   "id": "T5.14",
+   "table": "T5",
+   "table_title": "Per-seed c40 video-AUC and 3-seed bands",
+   "where": "Appendix A",
+   "artifacts": [
+    "predictions/ffpp/f2_spatres_full_s1.json"
+   ],
+   "command": "python verify/claim.py T5.14"
+  },
+  {
+   "label": "F2 \u2014 c40 seed 2",
+   "printed": 0.9609,
+   "kind": "cell",
+   "run": "f2_spatres_full_s2",
+   "cell": "c40",
+   "id": "T5.15",
+   "table": "T5",
+   "table_title": "Per-seed c40 video-AUC and 3-seed bands",
+   "where": "Appendix A",
+   "artifacts": [
+    "predictions/ffpp/f2_spatres_full_s2.json"
+   ],
+   "command": "python verify/claim.py T5.15"
+  },
+  {
+   "label": "F2 \u2014 c40 3-seed mean",
+   "printed": 0.9619,
+   "kind": "seed_mean",
+   "group": "f2",
+   "cell": "c40",
+   "id": "T5.16",
+   "table": "T5",
+   "table_title": "Per-seed c40 video-AUC and 3-seed bands",
+   "where": "Appendix A",
+   "runs": [
+    "f2_spatres_full_s42",
+    "f2_spatres_full_s1",
+    "f2_spatres_full_s2"
+   ],
+   "artifacts": [
+    "predictions/ffpp/f2_spatres_full_s42.json",
+    "predictions/ffpp/f2_spatres_full_s1.json",
+    "predictions/ffpp/f2_spatres_full_s2.json"
+   ],
+   "command": "python verify/claim.py T5.16"
+  },
+  {
+   "label": "F2 \u2014 c40 3-seed band (half-width)",
+   "printed": 0.0058,
+   "kind": "seed_band",
+   "group": "f2",
+   "cell": "c40",
+   "id": "T5.17",
+   "table": "T5",
+   "table_title": "Per-seed c40 video-AUC and 3-seed bands",
+   "where": "Appendix A",
+   "runs": [
+    "f2_spatres_full_s42",
+    "f2_spatres_full_s1",
+    "f2_spatres_full_s2"
+   ],
+   "artifacts": [
+    "predictions/ffpp/f2_spatres_full_s42.json",
+    "predictions/ffpp/f2_spatres_full_s1.json",
+    "predictions/ffpp/f2_spatres_full_s2.json"
+   ],
+   "command": "python verify/claim.py T5.17"
+  },
+  {
+   "label": "F2 \u2014 AUC_comp 3-seed mean",
+   "printed": 0.9719,
+   "kind": "seed_mean",
+   "group": "f2",
+   "cell": "auc_comp",
+   "id": "T5.18",
+   "table": "T5",
+   "table_title": "Per-seed c40 video-AUC and 3-seed bands",
+   "where": "Appendix A",
+   "runs": [
+    "f2_spatres_full_s42",
+    "f2_spatres_full_s1",
+    "f2_spatres_full_s2"
+   ],
+   "artifacts": [
+    "predictions/ffpp/f2_spatres_full_s42.json",
+    "predictions/ffpp/f2_spatres_full_s1.json",
+    "predictions/ffpp/f2_spatres_full_s2.json"
+   ],
+   "command": "python verify/claim.py T5.18"
+  },
+  {
+   "label": "The eight defects, why each mattered, and how each was closed",
+   "printed": "prose",
+   "kind": "text",
+   "artifact": "audit/LEDGER-D1-D8.md",
+   "check": "none",
+   "id": "T6.1",
+   "table": "T6",
+   "table_title": "The D1\u2013D8 audit ledger (full)",
+   "where": "Appendix B",
+   "artifacts": [
+    "audit/LEDGER-D1-D8.md"
+   ],
+   "command": "python verify/claim.py T6.1"
+  },
+  {
+   "label": "\"four independent review passes (training parity, the frequency-path implementation, evaluation symmetry, run diagnostics)\"",
+   "printed": "prose",
+   "kind": "text",
+   "artifact": "audit/AUDIT-PASSES.md",
+   "check": "none",
+   "note": "The four pass scopes verbatim, the checks they ran with outcomes, and an explicit statement of what their independence does and does not mean (audit/README.md).",
+   "id": "T6.2",
+   "table": "T6",
+   "table_title": "The D1\u2013D8 audit ledger (full)",
+   "where": "Appendix B",
+   "artifacts": [
+    "audit/AUDIT-PASSES.md"
+   ],
+   "command": "python verify/claim.py T6.2"
+  },
+  {
+   "kind": "cell",
+   "run": "a0",
+   "label": "CAFRL (shipped, A0) \u2014 celebdf_v2",
+   "printed": 0.698,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.1",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/a0.json"
+   ],
+   "command": "python verify/claim.py T7.1"
+  },
+  {
+   "kind": "cell",
+   "run": "a0",
+   "label": "CAFRL (shipped, A0) \u2014 dfd_c23",
+   "printed": 0.82,
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.2",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/a0.json"
+   ],
+   "command": "python verify/claim.py T7.2"
+  },
+  {
+   "kind": "cell",
+   "run": "a0",
+   "label": "CAFRL (shipped, A0) \u2014 dfd_c40",
+   "printed": 0.631,
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.3",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/a0.json"
+   ],
+   "command": "python verify/claim.py T7.3"
+  },
+  {
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "label": "EffNet-B0 backbone (b7) \u2014 celebdf_v2",
+   "printed": 0.699,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.4",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py T7.4"
+  },
+  {
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "label": "EffNet-B0 backbone (b7) \u2014 dfd_c23",
+   "printed": 0.804,
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.5",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py T7.5"
+  },
+  {
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "label": "EffNet-B0 backbone (b7) \u2014 dfd_c40",
+   "printed": 0.646,
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.6",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py T7.6"
+  },
+  {
+   "kind": "cell",
+   "run": "b4_xception_mq",
+   "label": "Xception-mq \u2014 celebdf_v2",
+   "printed": 0.702,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.7",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py T7.7"
+  },
+  {
+   "kind": "cell",
+   "run": "b4_xception_mq",
+   "label": "Xception-mq \u2014 dfd_c23",
+   "printed": 0.881,
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.8",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py T7.8"
+  },
+  {
+   "kind": "cell",
+   "run": "b4_xception_mq",
+   "label": "Xception-mq \u2014 dfd_c40",
+   "printed": 0.688,
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.9",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py T7.9"
+  },
+  {
+   "label": "c23 \u2014 CAFRL (3-seed)",
+   "printed": 0.822,
+   "kind": "gap",
+   "gap": "shipped_faceshifter",
+   "id": "T8.1",
+   "table": "T8",
+   "table_title": "FaceShifter (held out), shipped recipe, seed-pooled",
+   "where": "Appendix D-B",
+   "gap_reason": "The shipped-recipe FaceShifter evaluation (June out-of-distribution follow-up) saved no per-video predictions \u2014 this is audit defect D8, and the fair-recipe re-check that fixed it is what makes `predictions/faceshifter/` exist. The backbone column of that table is re-derivable (b7's FaceShifter predictions were regenerated from the frozen checkpoints); the CAFRL column and the paired statistics are not. Closing this needs a forward pass of the frozen a0/a1_grl checkpoints over the FaceShifter cell, which needs the crops.",
+   "artifacts": [
+    "predictions/GAPS.md"
+   ],
+   "command": "\u2014"
+  },
+  {
+   "label": "c23 \u2014 backbone (3-seed)",
+   "printed": 0.823,
+   "kind": "seed_mean",
+   "group": "b7",
+   "cell": "c23",
+   "eval_set": "faceshifter",
+   "id": "T8.2",
+   "table": "T8",
+   "table_title": "FaceShifter (held out), shipped recipe, seed-pooled",
+   "where": "Appendix D-B",
+   "runs": [
+    "b7_effnet_b0_mq_fliponly",
+    "b7_effnet_b0_mq_fliponly_s1",
+    "b7_effnet_b0_mq_fliponly_s2"
+   ],
+   "artifacts": [
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py T8.2"
+  },
+  {
+   "label": "c23 \u2014 paired \u0394, CI, P(\u0394>0)",
+   "printed": "-0.008 [-0.041, +0.025], P 0.30",
+   "kind": "gap",
+   "gap": "shipped_faceshifter",
+   "id": "T8.3",
+   "table": "T8",
+   "table_title": "FaceShifter (held out), shipped recipe, seed-pooled",
+   "where": "Appendix D-B",
+   "gap_reason": "The shipped-recipe FaceShifter evaluation (June out-of-distribution follow-up) saved no per-video predictions \u2014 this is audit defect D8, and the fair-recipe re-check that fixed it is what makes `predictions/faceshifter/` exist. The backbone column of that table is re-derivable (b7's FaceShifter predictions were regenerated from the frozen checkpoints); the CAFRL column and the paired statistics are not. Closing this needs a forward pass of the frozen a0/a1_grl checkpoints over the FaceShifter cell, which needs the crops.",
+   "artifacts": [
+    "predictions/GAPS.md"
+   ],
+   "command": "\u2014"
+  },
+  {
+   "label": "c40 \u2014 CAFRL (3-seed)",
+   "printed": 0.758,
+   "kind": "gap",
+   "gap": "shipped_faceshifter",
+   "id": "T8.4",
+   "table": "T8",
+   "table_title": "FaceShifter (held out), shipped recipe, seed-pooled",
+   "where": "Appendix D-B",
+   "gap_reason": "The shipped-recipe FaceShifter evaluation (June out-of-distribution follow-up) saved no per-video predictions \u2014 this is audit defect D8, and the fair-recipe re-check that fixed it is what makes `predictions/faceshifter/` exist. The backbone column of that table is re-derivable (b7's FaceShifter predictions were regenerated from the frozen checkpoints); the CAFRL column and the paired statistics are not. Closing this needs a forward pass of the frozen a0/a1_grl checkpoints over the FaceShifter cell, which needs the crops.",
+   "artifacts": [
+    "predictions/GAPS.md"
+   ],
+   "command": "\u2014"
+  },
+  {
+   "label": "c40 \u2014 backbone (3-seed)",
+   "printed": 0.732,
+   "kind": "seed_mean",
+   "group": "b7",
+   "cell": "c40",
+   "eval_set": "faceshifter",
+   "id": "T8.5",
+   "table": "T8",
+   "table_title": "FaceShifter (held out), shipped recipe, seed-pooled",
+   "where": "Appendix D-B",
+   "runs": [
+    "b7_effnet_b0_mq_fliponly",
+    "b7_effnet_b0_mq_fliponly_s1",
+    "b7_effnet_b0_mq_fliponly_s2"
+   ],
+   "artifacts": [
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py T8.5"
+  },
+  {
+   "label": "c40 \u2014 paired \u0394, CI, P(\u0394>0)",
+   "printed": "+0.022 [-0.021, +0.064], P 0.84",
+   "kind": "gap",
+   "gap": "shipped_faceshifter",
+   "id": "T8.6",
+   "table": "T8",
+   "table_title": "FaceShifter (held out), shipped recipe, seed-pooled",
+   "where": "Appendix D-B",
+   "gap_reason": "The shipped-recipe FaceShifter evaluation (June out-of-distribution follow-up) saved no per-video predictions \u2014 this is audit defect D8, and the fair-recipe re-check that fixed it is what makes `predictions/faceshifter/` exist. The backbone column of that table is re-derivable (b7's FaceShifter predictions were regenerated from the frozen checkpoints); the CAFRL column and the paired statistics are not. Closing this needs a forward pass of the frozen a0/a1_grl checkpoints over the FaceShifter cell, which needs the crops.",
+   "artifacts": [
+    "predictions/GAPS.md"
+   ],
+   "command": "\u2014"
+  },
+  {
+   "label": "Xception, literature protocol, c40",
+   "printed": 0.866,
+   "kind": "cell",
+   "run": "b1_xception_lit",
+   "cell": "c40",
+   "id": "AppC.1",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b1_xception_lit.json"
+   ],
+   "command": "python verify/claim.py AppC.1"
+  },
+  {
+   "label": "F3-Net, literature protocol, c40",
+   "printed": 0.86,
+   "kind": "cell",
+   "run": "b2_f3net_lit",
+   "cell": "c40",
+   "id": "AppC.2",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b2_f3net_lit.json"
+   ],
+   "command": "python verify/claim.py AppC.2"
+  },
+  {
+   "label": "FreqNet, literature protocol, c40",
+   "printed": 0.768,
+   "kind": "cell",
+   "run": "b3_freqnet_lit",
+   "cell": "c40",
+   "id": "AppC.3",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b3_freqnet_lit.json"
+   ],
+   "command": "python verify/claim.py AppC.3"
+  },
+  {
+   "label": "Augmentation recovery, example 1: 0.764 (flip-only frame-AUC, c40)",
+   "printed": 0.764,
+   "kind": "cell",
+   "run": "b1_xception_lit_fliponly",
+   "cell": "c40",
+   "metric": "frame_auc",
+   "id": "AppC.4",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b1_xception_lit_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppC.4"
+  },
+  {
+   "label": "Augmentation recovery, example 1: \u2192 0.792 (with augmentation)",
+   "printed": 0.792,
+   "kind": "cell",
+   "run": "b1_xception_lit",
+   "cell": "c40",
+   "metric": "frame_auc",
+   "reconcile": "Queued for correction in the next manuscript revision: the released frame-AUC is 0.79150, which rounds to 0.791. A last-digit rounding difference; the recovery it illustrates (+2.7 frame-AUC points) is unaffected.",
+   "id": "AppC.5",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b1_xception_lit.json"
+   ],
+   "command": "python verify/claim.py AppC.5"
+  },
+  {
+   "label": "Augmentation recovery, example 2: 0.725 (flip-only frame-AUC, c40)",
+   "printed": 0.725,
+   "kind": "cell",
+   "run": "b2_f3net_lit_fliponly",
+   "cell": "c40",
+   "metric": "frame_auc",
+   "id": "AppC.6",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b2_f3net_lit_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppC.6"
+  },
+  {
+   "label": "Augmentation recovery, example 2: \u2192 0.780 (with augmentation)",
+   "printed": 0.78,
+   "kind": "cell",
+   "run": "b2_f3net_lit",
+   "cell": "c40",
+   "metric": "frame_auc",
+   "id": "AppC.7",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b2_f3net_lit.json"
+   ],
+   "command": "python verify/claim.py AppC.7"
+  },
+  {
+   "label": "Augmentation confound control: Xception-mq 0.968 (with augmentation)",
+   "printed": 0.968,
+   "kind": "cell",
+   "run": "b4_xception_mq",
+   "cell": "c40",
+   "id": "AppC.8",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py AppC.8"
+  },
+  {
+   "label": "Augmentation confound control: \u2192 0.963 flip-only",
+   "printed": 0.963,
+   "kind": "cell",
+   "run": "b4b_xception_mq_fliponly",
+   "cell": "c40",
+   "id": "AppC.9",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b4b_xception_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppC.9"
+  },
+  {
+   "label": "Synthetic JPEG augmentation at real c40",
+   "printed": 0.89,
+   "kind": "cell",
+   "run": "p2a_xcep_jpeg",
+   "cell": "real_c40",
+   "eval_set": "p2_probe",
+   "note": "Marginal statistic only \u2014 this arm has no per-video scores (predictions/GAPS.md), so the +7.3 pt comparison is two marginal AUCs with non-overlapping CIs, not a paired delta.",
+   "id": "AppC.10",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/p2_probe/p2a_xcep_jpeg.json"
+   ],
+   "command": "python verify/claim.py AppC.10"
+  },
+  {
+   "label": "Real CRF re-encodes at real c40 (same recipe)",
+   "printed": 0.963,
+   "kind": "cell",
+   "run": "b4b_xception_mq_fliponly",
+   "cell": "c40",
+   "id": "AppC.11",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b4b_xception_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py AppC.11"
+  },
+  {
+   "label": "The +7.3 pt real-CRF vs synthetic-JPEG gap",
+   "printed": 0.073,
+   "kind": "difference",
+   "minuend": {
+    "run": "b4b_xception_mq_fliponly",
+    "cell": "c40"
+   },
+   "subtrahend": {
+    "run": "p2a_xcep_jpeg",
+    "cell": "real_c40",
+    "eval_set": "p2_probe"
+   },
+   "id": "AppC.12",
+   "table": "AppC",
+   "table_title": "Baseline reproduction and the augmentation confound",
+   "where": "Appendix C",
+   "artifacts": [
+    "predictions/ffpp/b4b_xception_mq_fliponly.json",
+    "predictions/p2_probe/p2a_xcep_jpeg.json"
+   ],
+   "command": "python verify/claim.py AppC.12"
+  },
+  {
+   "label": "Clean-anchored drop, b7 (0.016)",
+   "printed": 0.016,
+   "kind": "drop",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "id": "X1.1",
+   "table": "X1",
+   "table_title": "Key numbers in the running text",
+   "where": "Sections VII-D, VIII and IX; Appendix D",
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py X1.1"
+  },
+  {
+   "label": "Clean-anchored drop, T (0.019)",
+   "printed": 0.019,
+   "kind": "drop",
+   "group": "t",
+   "id": "X1.2",
+   "table": "X1",
+   "table_title": "Key numbers in the running text",
+   "where": "Sections VII-D, VIII and IX; Appendix D",
+   "runs": [
+    "trunk_recipe_s42",
+    "trunk_recipe_s1",
+    "trunk_recipe_s2"
+   ],
+   "artifacts": [
+    "predictions/ffpp/trunk_recipe_s42.json",
+    "predictions/ffpp/trunk_recipe_s1.json",
+    "predictions/ffpp/trunk_recipe_s2.json"
+   ],
+   "command": "python verify/claim.py X1.2"
+  },
+  {
+   "label": "Clean-anchored drop, F1 (0.017)",
+   "printed": 0.017,
+   "kind": "drop",
+   "run": "f1_none_fair_s42",
+   "id": "X1.3",
+   "table": "X1",
+   "table_title": "Key numbers in the running text",
+   "where": "Sections VII-D, VIII and IX; Appendix D",
+   "artifacts": [
+    "predictions/ffpp/f1_none_fair_s42.json"
+   ],
+   "command": "python verify/claim.py X1.3"
+  },
+  {
+   "label": "Clean-anchored drop, F2 (0.015)",
+   "printed": 0.015,
+   "kind": "drop",
+   "run": "f2_spatres_full_s42",
+   "id": "X1.4",
+   "table": "X1",
+   "table_title": "Key numbers in the running text",
+   "where": "Sections VII-D, VIII and IX; Appendix D",
+   "artifacts": [
+    "predictions/ffpp/f2_spatres_full_s42.json"
+   ],
+   "command": "python verify/claim.py X1.4"
+  },
+  {
+   "label": "Clean-anchored drop, shipped CAFRL (0.026)",
+   "printed": 0.026,
+   "kind": "drop",
+   "run": "a0",
+   "id": "X1.5",
+   "table": "X1",
+   "table_title": "Key numbers in the running text",
+   "where": "Sections VII-D, VIII and IX; Appendix D",
+   "artifacts": [
+    "predictions/ffpp/a0.json"
+   ],
+   "command": "python verify/claim.py X1.5"
+  },
+  {
+   "label": "FaceShifter fair 3-seed mean, F1 c23",
+   "printed": 0.799,
+   "kind": "seed_mean",
+   "group": "f1",
+   "cell": "c23",
+   "eval_set": "faceshifter",
+   "id": "X1.6",
+   "table": "X1",
+   "table_title": "Key numbers in the running text",
+   "where": "Sections VII-D, VIII and IX; Appendix D",
+   "runs": [
+    "f1_none_fair_s42",
+    "f1_none_fair_s1",
+    "f1_none_fair_s2"
+   ],
+   "artifacts": [
+    "predictions/faceshifter/f1_none_fair_s42.json",
+    "predictions/faceshifter/f1_none_fair_s1.json",
+    "predictions/faceshifter/f1_none_fair_s2.json"
+   ],
+   "command": "python verify/claim.py X1.6"
+  },
+  {
+   "label": "FaceShifter fair 3-seed mean, F1 c40",
+   "printed": 0.711,
+   "kind": "seed_mean",
+   "group": "f1",
+   "cell": "c40",
+   "eval_set": "faceshifter",
+   "id": "X1.7",
+   "table": "X1",
+   "table_title": "Key numbers in the running text",
+   "where": "Sections VII-D, VIII and IX; Appendix D",
+   "runs": [
+    "f1_none_fair_s42",
+    "f1_none_fair_s1",
+    "f1_none_fair_s2"
+   ],
+   "artifacts": [
+    "predictions/faceshifter/f1_none_fair_s42.json",
+    "predictions/faceshifter/f1_none_fair_s1.json",
+    "predictions/faceshifter/f1_none_fair_s2.json"
+   ],
+   "command": "python verify/claim.py X1.7"
+  },
+  {
+   "label": "FaceShifter fair 3-seed mean, F2 c23",
+   "printed": 0.768,
+   "kind": "seed_mean",
+   "group": "f2",
+   "cell": "c23",
+   "eval_set": "faceshifter",
+   "id": "X1.8",
+   "table": "X1",
+   "table_title": "Key numbers in the running text",
+   "where": "Sections VII-D, VIII and IX; Appendix D",
+   "runs": [
+    "f2_spatres_full_s42",
+    "f2_spatres_full_s1",
+    "f2_spatres_full_s2"
+   ],
+   "artifacts": [
+    "predictions/faceshifter/f2_spatres_full_s42.json",
+    "predictions/faceshifter/f2_spatres_full_s1.json",
+    "predictions/faceshifter/f2_spatres_full_s2.json"
+   ],
+   "command": "python verify/claim.py X1.8"
+  },
+  {
+   "label": "FaceShifter fair 3-seed mean, F2 c40",
+   "printed": 0.707,
+   "kind": "seed_mean",
+   "group": "f2",
+   "cell": "c40",
+   "eval_set": "faceshifter",
+   "id": "X1.9",
+   "table": "X1",
+   "table_title": "Key numbers in the running text",
+   "where": "Sections VII-D, VIII and IX; Appendix D",
+   "runs": [
+    "f2_spatres_full_s42",
+    "f2_spatres_full_s1",
+    "f2_spatres_full_s2"
+   ],
+   "artifacts": [
+    "predictions/faceshifter/f2_spatres_full_s42.json",
+    "predictions/faceshifter/f2_spatres_full_s1.json",
+    "predictions/faceshifter/f2_spatres_full_s2.json"
+   ],
+   "command": "python verify/claim.py X1.9"
+  },
+  {
+   "label": "FaceShifter b7 3-seed mean, c23",
+   "printed": 0.823,
+   "kind": "seed_mean",
+   "group": "b7",
+   "cell": "c23",
+   "eval_set": "faceshifter",
+   "id": "X1.10",
+   "table": "X1",
+   "table_title": "Key numbers in the running text",
+   "where": "Sections VII-D, VIII and IX; Appendix D",
+   "runs": [
+    "b7_effnet_b0_mq_fliponly",
+    "b7_effnet_b0_mq_fliponly_s1",
+    "b7_effnet_b0_mq_fliponly_s2"
+   ],
+   "artifacts": [
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py X1.10"
+  },
+  {
+   "label": "FaceShifter b7 3-seed mean, c40",
+   "printed": 0.732,
+   "kind": "seed_mean",
+   "group": "b7",
+   "cell": "c40",
+   "eval_set": "faceshifter",
+   "id": "X1.11",
+   "table": "X1",
+   "table_title": "Key numbers in the running text",
+   "where": "Sections VII-D, VIII and IX; Appendix D",
+   "runs": [
+    "b7_effnet_b0_mq_fliponly",
+    "b7_effnet_b0_mq_fliponly_s1",
+    "b7_effnet_b0_mq_fliponly_s2"
+   ],
+   "artifacts": [
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py X1.11"
+  },
+  {
+   "label": "Fair variants sit below the backbone: F1-pool \u0394 \u2248 -0.033 at c40",
+   "printed": "-0.0325",
+   "kind": "contrast",
+   "name": "F1-pool - b7-pool (FaceShifter)",
+   "scope": "faceshifter",
+   "id": "X1.12",
+   "table": "X1",
+   "table_title": "Key numbers in the running text",
+   "where": "Sections VII-D, VIII and IX; Appendix D",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/faceshifter/f1_none_fair_s42.json",
+    "predictions/faceshifter/f1_none_fair_s1.json",
+    "predictions/faceshifter/f1_none_fair_s2.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py X1.12 --bootstrap"
+  },
+  {
+   "label": "Fair variants sit below the backbone: F2-pool \u0394 \u2248 -0.032 at c40",
+   "printed": "-0.0318",
+   "kind": "contrast",
+   "name": "F2-pool - b7-pool (FaceShifter)",
+   "scope": "faceshifter",
+   "id": "X1.13",
+   "table": "X1",
+   "table_title": "Key numbers in the running text",
+   "where": "Sections VII-D, VIII and IX; Appendix D",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/faceshifter/f2_spatres_full_s42.json",
+    "predictions/faceshifter/f2_spatres_full_s1.json",
+    "predictions/faceshifter/f2_spatres_full_s2.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py X1.13 --bootstrap"
+  },
+  {
+   "label": "Sign-inconsistent single-seed leans: F1 +0.022",
+   "printed": "+0.0220",
+   "kind": "contrast",
+   "name": "F1 s42 - b7-pool (FaceShifter, single seed)",
+   "scope": "faceshifter",
+   "id": "X1.14",
+   "table": "X1",
+   "table_title": "Key numbers in the running text",
+   "where": "Sections VII-D, VIII and IX; Appendix D",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/faceshifter/f1_none_fair_s42.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py X1.14 --bootstrap"
+  },
+  {
+   "label": "Sign-inconsistent single-seed leans: F2 -0.023",
+   "printed": "-0.0227",
+   "kind": "contrast",
+   "name": "F2 s42 - b7-pool (FaceShifter, single seed)",
+   "scope": "faceshifter",
+   "id": "X1.15",
+   "table": "X1",
+   "table_title": "Key numbers in the running text",
+   "where": "Sections VII-D, VIII and IX; Appendix D",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/faceshifter/f2_spatres_full_s42.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py X1.15 --bootstrap"
+  },
+  {
+   "label": "Xception overfits: ~11 pt below smaller models on unseen FaceShifter at c23",
+   "printed": "~11 pt",
+   "kind": "gap",
+   "gap": "xception_faceshifter",
+   "check": "none",
+   "note": "The Xception FaceShifter cells come from the same June follow-up as Table 8's CAFRL column and were never saved as predictions.",
+   "id": "X1.16",
+   "table": "X1",
+   "table_title": "Key numbers in the running text",
+   "where": "Sections VII-D, VIII and IX; Appendix D",
+   "gap_reason": "Same cause: the Xception FaceShifter numbers come from the June follow-up and were never persisted as predictions.",
+   "artifacts": [
+    "predictions/GAPS.md"
+   ],
+   "command": "\u2014"
+  },
+  {
+   "label": "Campaign GPU-hours (~270 saved, ~35 re-tests, ~31 confirmation seeds)",
+   "printed": "GPU-h",
+   "kind": "gap",
+   "gap": "gpu_hours",
+   "check": "none",
+   "note": "Wall-clock accounting lives in the internal campaign journal, which is not part of this release; the run count and their configurations are (configs/RUNS.md).",
+   "id": "X1.17",
+   "table": "X1",
+   "table_title": "Key numbers in the running text",
+   "where": "Sections VII-D, VIII and IX; Appendix D",
+   "gap_reason": "GPU-hour accounting is recorded in the internal campaign journal, which is not part of this release. What is released is every run's configuration and the number of runs.",
+   "artifacts": [
+    "predictions/GAPS.md"
+   ],
+   "command": "\u2014"
+  },
+  {
+   "label": "\u03b3 grows to its peak 0.145 (deadlock broken, F2)",
+   "printed": 0.145,
+   "kind": "curve",
+   "run": "f2_spatres_full_s42",
+   "tag": "diag/residual_gamma",
+   "reduce": "max",
+   "reconcile": "Queued for correction in the next manuscript revision: the released per-epoch series peaks at 0.1464 (0.1464 on the live tag too), which rounds to 0.146. The claim it supports \u2014 the gate grows instead of collapsing \u2014 is unaffected.",
+   "id": "M1.1",
+   "table": "M1",
+   "table_title": "Mechanism claims, from the released training curves",
+   "where": "Sections VI\u2013VIII and Fig. 4",
+   "artifacts": [
+    "curves/f2_spatres_full_s42.json"
+   ],
+   "command": "python verify/claim.py M1.1"
+  },
+  {
+   "label": "\u03b3 decays to \u22480.03 by the end of training (F2)",
+   "printed": 0.031,
+   "kind": "curve",
+   "run": "f2_spatres_full_s42",
+   "tag": "diag/residual_gamma",
+   "reduce": "final",
+   "id": "M1.2",
+   "table": "M1",
+   "table_title": "Mechanism claims, from the released training curves",
+   "where": "Sections VI\u2013VIII and Fig. 4",
+   "artifacts": [
+    "curves/f2_spatres_full_s42.json"
+   ],
+   "command": "python verify/claim.py M1.2"
+  },
+  {
+   "label": "\u03b3 at the selected epoch (F2)",
+   "printed": 0.14,
+   "kind": "curve",
+   "run": "f2_spatres_full_s42",
+   "tag": "diag/residual_gamma",
+   "reduce": "at_selected_epoch",
+   "id": "M1.3",
+   "table": "M1",
+   "table_title": "Mechanism claims, from the released training curves",
+   "where": "Sections VI\u2013VIII and Fig. 4",
+   "artifacts": [
+    "curves/f2_spatres_full_s42.json"
+   ],
+   "command": "python verify/claim.py M1.3"
+  },
+  {
+   "label": "Frequency head is individually discriminative: \u22480.98 at c23 (F2)",
+   "printed": 0.98,
+   "kind": "curve",
+   "run": "f2_spatres_full_s42",
+   "tag": "auc/freq_c23",
+   "reduce": "max",
+   "check": "none",
+   "note": "The manuscript quotes the plateau the head reaches and holds from about epoch 8; the released series carries every epoch.",
+   "id": "M1.4",
+   "table": "M1",
+   "table_title": "Mechanism claims, from the released training curves",
+   "where": "Sections VI\u2013VIII and Fig. 4",
+   "artifacts": [
+    "curves/f2_spatres_full_s42.json"
+   ],
+   "command": "python verify/claim.py M1.4"
+  },
+  {
+   "label": "Frequency head is individually discriminative: \u22480.91 at c40 (F2)",
+   "printed": 0.91,
+   "kind": "curve",
+   "run": "f2_spatres_full_s42",
+   "tag": "auc/freq_c40",
+   "reduce": "max",
+   "check": "none",
+   "id": "M1.5",
+   "table": "M1",
+   "table_title": "Mechanism claims, from the released training curves",
+   "where": "Sections VI\u2013VIII and Fig. 4",
+   "artifacts": [
+    "curves/f2_spatres_full_s42.json"
+   ],
+   "command": "python verify/claim.py M1.5"
+  },
+  {
+   "label": "The estimator's \u00b11-bin accuracy without the adversary (the 0.88 premise)",
+   "printed": 0.876,
+   "kind": "scalar",
+   "source": "probes/p1_compression_estimator.json",
+   "key": "pm1_acc",
+   "id": "M1.6",
+   "table": "M1",
+   "table_title": "Mechanism claims, from the released training curves",
+   "where": "Sections VI\u2013VIII and Fig. 4",
+   "artifacts": [
+    "probes/p1_compression_estimator.json"
+   ],
+   "command": "python verify/claim.py M1.6"
+  },
+  {
+   "label": "The estimator's \u00b11-bin accuracy under the GRL falls to \u22480.4 (defect D6)",
+   "printed": 0.4,
+   "kind": "curve",
+   "run": "a0",
+   "tag": "diag/est_pm1_acc",
+   "reduce": "final",
+   "check": "none",
+   "note": "The released a0 curve starts at 1.00 and ends at 0.33, passing through \u22480.4 in the adversarial phase; the fair arms stay healthy (F1 min 0.89, F2 min 0.93 \u2014 same tag in their curve files).",
+   "id": "M1.7",
+   "table": "M1",
+   "table_title": "Mechanism claims, from the released training curves",
+   "where": "Sections VI\u2013VIII and Fig. 4",
+   "artifacts": [
+    "curves/a0.json"
+   ],
+   "command": "python verify/claim.py M1.7"
+  },
+  {
+   "label": "The consistency loss ran 40\u2013120\u00d7 the classification loss (defect D1)",
+   "printed": "40\u2013120x",
+   "kind": "curve",
+   "run": "a0",
+   "tag": "loss/cons",
+   "reduce": "max",
+   "check": "none",
+   "note": "Released as two series in curves/a0.json \u2014 loss/cons and loss/cls \u2014 so the ratio is computable per epoch. The raw ratio peaks at about 134x at epoch 13; the manuscript's 40\u2013120x is the range around the compressed-phase onset.",
+   "id": "M1.8",
+   "table": "M1",
+   "table_title": "Mechanism claims, from the released training curves",
+   "where": "Sections VI\u2013VIII and Fig. 4",
+   "artifacts": [
+    "curves/a0.json"
+   ],
+   "command": "python verify/claim.py M1.8"
+  },
+  {
+   "label": "The band-energy premise the frequency design rests on",
+   "printed": "measurement",
+   "kind": "scalar",
+   "source": "probes/band_energy.json",
+   "check": "none",
+   "note": "Per-level band energies on real crops (Phase 2).",
+   "id": "M1.9",
+   "table": "M1",
+   "table_title": "Mechanism claims, from the released training curves",
+   "where": "Sections VI\u2013VIII and Fig. 4",
+   "artifacts": [
+    "probes/band_energy.json"
+   ],
+   "command": "python verify/claim.py M1.9"
+  }
+ ],
+ "release_claims": [
+  {
+   "id": "R1",
+   "claim": "Per-video predictions for every reported cell",
+   "quote": "every reported cell carries per-video predictions and checkpoint/selector provenance",
+   "where": "Reproducibility statement; Abstract; contribution C4",
+   "artifacts": [
+    "predictions/ffpp/*.json",
+    "predictions/faceshifter/*.json",
+    "predictions/cross_dataset/*.json",
+    "predictions/p2_probe/*.json",
+    "predictions/GAPS.md"
+   ],
+   "caveat": "Three groups of cells carry the reported statistics only, with the reason stated: the cross-dataset cells, the JPEG-augmentation probe, and the shipped-recipe FaceShifter cells (predictions/GAPS.md)."
+  },
+  {
+   "id": "R2",
+   "claim": "The frozen pre-registered decision rules, verbatim, with their git history",
+   "quote": "All decision rules were pre-registered (git-tagged before results)",
+   "where": "Reproducibility statement; Section IV-C; Abstract",
+   "artifacts": [
+    "preregistration/PREREGISTRATION-A1.md",
+    "preregistration/STOP-GATE.md",
+    "preregistration/retest-gates.md",
+    "preregistration/tag-phase5-prereg-a1.txt",
+    "preregistration/history-excerpts.md"
+   ],
+   "caveat": "The repository was private during the campaign, so the timeline is author-controlled version-control evidence, not third-party registration \u2014 history-excerpts.md says so in those words."
+  },
+  {
+   "id": "R3",
+   "claim": "The full D1\u2013D8 audit ledger",
+   "quote": "the full audit ledger",
+   "where": "Abstract; Appendix B",
+   "artifacts": [
+    "audit/LEDGER-D1-D8.md",
+    "audit/AUDIT-PASSES.md",
+    "audit/README.md"
+   ]
+  },
+  {
+   "id": "R4",
+   "claim": "Configurations for every arm in the tables",
+   "quote": "configurations for every arm",
+   "where": "Reproducibility statement",
+   "artifacts": [
+    "configs/runs/*.yaml",
+    "configs/launch/*.yaml",
+    "configs/base/*",
+    "configs/RUNS.md"
+   ]
+  },
+  {
+   "id": "R5",
+   "claim": "The evaluation harness (paired bootstrap, seed pooling)",
+   "quote": "the evaluation harness (paired bootstrap, seed pooling)",
+   "where": "Reproducibility statement; Section IV-B",
+   "artifacts": [
+    "evaluation/src/evaluation/metrics.py",
+    "evaluation/src/evaluation/aggregate_runs.py",
+    "evaluation/rederive.py",
+    "evaluation/release_io.py",
+    "evaluation/README.md"
+   ]
+  },
+  {
+   "id": "R6",
+   "claim": "The figure-generation scripts",
+   "quote": "the figure-generation scripts are released",
+   "where": "Reproducibility statement",
+   "artifacts": [
+    "figures/make_figures.py",
+    "figures/figure_data.json",
+    "figures/fig1_architecture.tex",
+    "figures/fig3_campaign_flow.tex"
+   ],
+   "caveat": "One plotted series \u2014 the shipped spatial-residual run's per-epoch \u03b3 in Fig. 4(a) \u2014 is published as data because it was read from per-epoch checkpoints that are archival only (figures/README.md)."
+  },
+  {
+   "id": "R7",
+   "claim": "The multi-CRF re-encode pipeline, with exact commands and encoder versions",
+   "quote": "The multi-CRF re-encode pipeline is scripted from the public FaceForensics++ distribution",
+   "where": "Reproducibility statement; Data availability",
+   "artifacts": [
+    "pipeline/crf/*.py",
+    "pipeline/faces/*.py",
+    "pipeline/dfd/*.py",
+    "pipeline/VERSIONS.md",
+    "pipeline/README.md"
+   ]
+  },
+  {
+   "id": "R8",
+   "claim": "Video-ID lists for every evaluation set",
+   "quote": "identical 700-video set",
+   "where": "Section IV-B; Table 3 caption",
+   "artifacts": [
+    "splits/*.json",
+    "splits/ffpp_official/*.json",
+    "splits/README.md"
+   ]
+  },
+  {
+   "id": "R9",
+   "claim": "Checkpoint and selector provenance, and the per-epoch validation curves behind it",
+   "quote": "checkpoint/selector provenance",
+   "where": "Reproducibility statement; Section IV-A",
+   "artifacts": [
+    "curves/*.json",
+    "curves/selection.json",
+    "curves/README.md"
+   ]
+  },
+  {
+   "id": "R10",
+   "claim": "Environment pins and a stated reproduction tolerance",
+   "quote": "(README: bit-exact only under deterministic fp32; otherwise within 4e-3)",
+   "where": "Release README (reproduction-tolerance contract)",
+   "artifacts": [
+    "environment.yml",
+    "env/conda-linux-64.explicit.txt",
+    "env/pip-freeze.txt",
+    "env/environment-verify.yml",
+    "env/README.md"
+   ]
+  },
+  {
+   "id": "R11",
+   "claim": "A check anyone can run: the paper's tables re-derived from the released artifacts",
+   "quote": "released in full so the comparison can be re-adjudicated",
+   "where": "Contribution C3",
+   "artifacts": [
+    "verify/verify.py",
+    "verify/expected.json",
+    "verify/claim.py",
+    "verify/claims_map.json",
+    "verify/README.md",
+    "CLAIMS-MAP.md"
+   ]
+  },
+  {
+   "id": "R12",
+   "claim": "Licences: code MIT, data CC BY 4.0",
+   "quote": "(Release licensing)",
+   "where": "Release README",
+   "artifacts": [
+    "LICENSE",
+    "LICENSE-DATA"
+   ]
+  },
+  {
+   "id": "R13",
+   "claim": "Model checkpoints for every released run",
+   "quote": "(Data availability: the archival deposit)",
+   "where": "Release README; Data availability",
+   "artifacts": [],
+   "status": "pending",
+   "pending_reason": "In the Zenodo deposit, minted immediately before submission. Not in git: ~6.5 GB of weights."
+  },
+  {
+   "id": "R14",
+   "claim": "Per-video crop coordinates for byte-identical crop regeneration",
+   "quote": "(Data availability: crop coordinates for regeneration)",
+   "where": "Data availability",
+   "artifacts": [],
+   "status": "pending",
+   "pending_reason": "In the Zenodo deposit (48,294 per-video meta.json, ~7 GB raw), minted before submission. The crops themselves are not redistributable under the FF++/DFD agreements."
+  }
+ ]
+}

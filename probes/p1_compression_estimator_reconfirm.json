@@ -1,0 +1,93 @@
+{
+  "path": "retrain",
+  "reason_no_checkpoint": "runs/p1/ holds no state_dict; probe never saved one",
+  "module": "src/models/compression_estimator.CompressionEstimator (via CanonicalEstimatorAdapter + BlockDCTStream.transform)",
+  "available_bins": [
+    "c0",
+    "c23",
+    "c28",
+    "c32",
+    "c36",
+    "c40"
+  ],
+  "num_bins": 6,
+  "n_train": 49998,
+  "n_val": 9996,
+  "canonical_estimator_params": 1370790,
+  "exact_acc": 0.4769907963185274,
+  "pm1_acc": 0.8545418167266907,
+  "per_bin_recall": {
+    "0": 0.7683073229291717,
+    "1": 0.32953181272509,
+    "2": 0.2460984393757503,
+    "3": 0.2887154861944778,
+    "4": 0.44657863145258103,
+    "5": 0.7827130852340937
+  },
+  "confusion": [
+    [
+      1280,
+      253,
+      81,
+      42,
+      9,
+      1
+    ],
+    [
+      760,
+      549,
+      214,
+      117,
+      22,
+      4
+    ],
+    [
+      353,
+      600,
+      410,
+      226,
+      71,
+      6
+    ],
+    [
+      88,
+      310,
+      486,
+      481,
+      258,
+      43
+    ],
+    [
+      6,
+      78,
+      161,
+      468,
+      744,
+      209
+    ],
+    [
+      2,
+      8,
+      2,
+      50,
+      300,
+      1304
+    ]
+  ],
+  "p1_recorded_pm1": 0.876,
+  "p1_threshold": 0.7,
+  "accept_band_pp": 3.0,
+  "delta_pp": -2.146,
+  "same_side_of_threshold": true,
+  "within_band": true,
+  "passed": true,
+  "wall_s": 335.3,
+  "seed": 42,
+  "protocol": {
+    "epochs": 10,
+    "batch_size": 128,
+    "lr": 0.0001,
+    "weight_decay": 0.0001,
+    "soft_label_eps": 0.1
+  }
+}
