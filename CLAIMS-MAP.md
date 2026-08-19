@@ -7,20 +7,31 @@ and per present-tense claim the paper makes about this repository. Each row
 names the artifact the number comes out of and the exact command that recomputes
 it from that artifact.
 
-150 rows and 14 release claims, 164 entries in all.
-**142 are recomputed from the released artifacts and checked against the
+Rows use the manuscript's names for the trained configurations (SpatialBase,
+CAFRL as specified, CAFRL−adv, spatial-residual, TrunkCtrl, Fair-N, Fair-W);
+the directories and files under `configs/`, `predictions/` and `curves/` use
+this study's internal run identifiers (`b7_effnet_b0_mq_fliponly`, `a0`,
+`f1_none_fair_s42`, …). Table 1 of the manuscript is the crosswalk between the
+two, and every row below names the run it reads. Row ids (`T1.1`, `T3.5`, …) are
+stable handles for `verify/claim.py`, not manuscript table numbers; each section
+heading names the manuscript table it maps.
+
+168 rows and 14 release claims, 182 entries in all.
+**163 are recomputed from the released artifacts and checked against the
 paper on every build.** 6 are printed in the paper but *not* derivable
 from this release, each with its reason stated in place. 2 — both of
 them release claims — depend on the archival deposit, which is minted
-immediately before submission. The remaining 14 are *recorded*
+immediately before submission. The remaining 11 are *recorded*
 rather than asserted: prose claims whose artifact is a document, approximate
 glosses ("≈0.4", "40–120×") whose underlying series is released in full, and two
 parameter counts that no released artifact pins.
 
-Three rows are marked **differs**: the release's value and the manuscript's
-disagree in the last printed digit (a rounding difference of ≤1.4e-3, no
-comparison affected). They are stated rather than smoothed over, with both
-numbers and where the correction is queued.
+No row is marked **differs**: every checked number in the manuscript agrees
+with this release's own recomputation. Three last-digit disagreements found
+when this map was first generated — Table 2's Xception-mq AUC_comp, Appendix
+C's augmentation-recovery frame-AUC, and γ's peak — were resolved in the
+manuscript's favour of the artifact: the release's value was kept and the paper
+was corrected to it.
 
 Run any row yourself:
 
@@ -56,10 +67,10 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 
 | id | claim | paper prints | this release gives | artifact | command |
 |---|---|---|---|---|---|
-| `T1.1` | b7 EffNet-B0 spatial — params | 4.0 M | recorded | `configs/runs/b7_effnet_b0_mq_fliponly.yaml` | `python verify/claim.py T1.1` |
-| `T1.2` | b7 — c23 | 0.987 | 0.9867 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T1.2` |
-| `T1.3` | b7 — c40 | 0.959 | 0.9590 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T1.3` |
-| `T1.4` | b7 — AUC_comp | 0.971 | 0.9709 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T1.4` |
+| `T1.1` | SpatialBase EffNet-B0 spatial — params | 4.0 M | recorded | `configs/runs/b7_effnet_b0_mq_fliponly.yaml` | `python verify/claim.py T1.1` |
+| `T1.2` | SpatialBase — c23 | 0.987 | 0.9867 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T1.2` |
+| `T1.3` | SpatialBase — c40 | 0.959 | 0.9590 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T1.3` |
+| `T1.4` | SpatialBase — AUC_comp | 0.971 | 0.9709 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T1.4` |
 | `T1.5` | CAFRL as specified (grl) — params | 11.97 M | 11.97 | `probes/param_counts_cafrl.json` | `python verify/claim.py T1.5` |
 | `T1.6` | CAFRL as specified (grl) — c23 | 0.974 | 0.9738 | `predictions/ffpp/a0.json` | `python verify/claim.py T1.6` |
 | `T1.7` | CAFRL as specified (grl) — c40 | 0.922 | 0.9224 | `predictions/ffpp/a0.json` | `python verify/claim.py T1.7` |
@@ -67,11 +78,11 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 | `T1.9` | Xception-mq — params | 20.8 M | recorded | `configs/runs/b4_xception_mq.yaml` | `python verify/claim.py T1.9` |
 | `T1.10` | Xception-mq — c23 | 0.987 | 0.9872 | `predictions/ffpp/b4_xception_mq.json` | `python verify/claim.py T1.10` |
 | `T1.11` | Xception-mq — c40 | 0.968 | 0.9679 | `predictions/ffpp/b4_xception_mq.json` | `python verify/claim.py T1.11` |
-| `T1.12` | Xception-mq — AUC_comp | 0.977 | **0.9765** | `predictions/ffpp/b4_xception_mq.json` | `python verify/claim.py T1.12` |
+| `T1.12` | Xception-mq — AUC_comp | 0.976 | 0.9765 | `predictions/ffpp/b4_xception_mq.json` | `python verify/claim.py T1.12` |
 
 - `T1.1` — The standard EfficientNet-B0 count with a binary head, as built by the released config. No released artifact pins it; a per-arm parameter table is added in revision.
 - `T1.9` — The standard Xception count with a binary head, as built by the released config; not pinned by a released artifact.
-- `T1.12` — **differs from the manuscript.** mean video-AUC over c28-c40: 0.976451; the paper prints 0.977 (difference -0.000549). Queued for correction in the next manuscript revision: the run's own stored AUC_comp is 0.97645, which rounds to 0.976. A last-digit rounding difference, no effect on any comparison.
+- `T1.12` — Corrected in the manuscript (W1, 2026-08-19) from 0.977 to the released recomputation: mean video-AUC over c28-c40 is 0.97645.
 
 ## T2 — The audit ledger (condensed)
 
@@ -89,17 +100,17 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 
 | id | claim | paper prints | this release gives | artifact | command |
 |---|---|---|---|---|---|
-| `T3.1` | b7 − CAFRL-shipped (STOP-gate) — Δ and CI | +0.0366 [+0.021, +0.054] | 0.0366 | `verify/expected.json` +2 | `python verify/claim.py T3.1 --bootstrap` |
-| `T3.2` | F1 − CAFRL-none (what the fair recipe bought) — Δ and CI | +0.0396 [+0.0231, +0.0570] | 0.0396 | `verify/expected.json` +2 | `python verify/claim.py T3.2 --bootstrap` |
-| `T3.3` | F1 − b7 (single seed) — Δ and CI | -0.0004 [-0.0092, +0.0080] | -0.0004 | `verify/expected.json` +2 | `python verify/claim.py T3.3 --bootstrap` |
-| `T3.4` | F2 − b7 (single seed) — Δ and CI | +0.0056 [-0.0022, +0.0134] | 0.0056 | `verify/expected.json` +2 | `python verify/claim.py T3.4 --bootstrap` |
-| `T3.5` | F1-pool − b7-pool (3v3) — Δ and CI | -0.0010 [-0.0066, +0.0045] | -0.0010 | `verify/expected.json` +6 | `python verify/claim.py T3.5 --bootstrap` |
-| `T3.6` | F2-pool − b7-pool (3v3) — Δ and CI | +0.0022 [-0.0035, +0.0080] | 0.0022 | `verify/expected.json` +6 | `python verify/claim.py T3.6 --bootstrap` |
-| `T3.7` | b7 − T (architecture share, pooled) — Δ and CI | -0.0038 [-0.0116, +0.0039] | -0.0038 | `verify/expected.json` +4 | `python verify/claim.py T3.7 --bootstrap` |
-| `T3.8` | T − spatial-residual (recipe share, pooled) — Δ and CI | +0.0490 [+0.0294, +0.0705] | 0.0490 | `verify/expected.json` +4 | `python verify/claim.py T3.8 --bootstrap` |
+| `T3.1` | SpatialBase − CAFRL as specified (STOP-gate) — Δ and CI | +0.0366 [+0.020, +0.054] | 0.0366 | `verify/expected.json` +2 | `python verify/claim.py T3.1 --bootstrap` |
+| `T3.2` | Fair-N − CAFRL−adv (what the fair recipe bought) — Δ and CI | +0.0396 [+0.0231, +0.0570] | 0.0396 | `verify/expected.json` +2 | `python verify/claim.py T3.2 --bootstrap` |
+| `T3.3` | Fair-N − SpatialBase (single seed) — Δ and CI | -0.0004 [-0.0092, +0.0080] | -0.0004 | `verify/expected.json` +2 | `python verify/claim.py T3.3 --bootstrap` |
+| `T3.4` | Fair-W − SpatialBase (single seed) — Δ and CI | +0.0056 [-0.0022, +0.0134] | 0.0056 | `verify/expected.json` +2 | `python verify/claim.py T3.4 --bootstrap` |
+| `T3.5` | Fair-N pool − SpatialBase pool (3v3) — Δ and CI | -0.0010 [-0.0066, +0.0045] | -0.0010 | `verify/expected.json` +6 | `python verify/claim.py T3.5 --bootstrap` |
+| `T3.6` | Fair-W pool − SpatialBase pool (3v3) — Δ and CI | +0.0022 [-0.0035, +0.0080] | 0.0022 | `verify/expected.json` +6 | `python verify/claim.py T3.6 --bootstrap` |
+| `T3.7` | SpatialBase − TrunkCtrl (architecture share, pooled) — Δ and CI | -0.0038 [-0.0116, +0.0039] | -0.0038 | `verify/expected.json` +4 | `python verify/claim.py T3.7 --bootstrap` |
+| `T3.8` | TrunkCtrl − spatial-residual (recipe share, pooled) — Δ and CI | +0.0490 [+0.0294, +0.0705] | 0.0490 | `verify/expected.json` +4 | `python verify/claim.py T3.8 --bootstrap` |
 
-- `T3.1` — The released recomputation puts the lower bound at +0.0205, which rounds to +0.020; the printed +0.021 is a Monte-Carlo difference of ~5e-4 from a different draw. Every other endpoint reproduces exactly.
-- `T3.7` — Asymmetric as run and as printed: the single frozen b7 (seed 42) against the three-seed pool of T, which is what the Phase-5.2 rule specified. Pooling b7's seeds as well moves the point estimate to about +0.002; the verdict is unchanged.
+- `T3.1` — The lower bound is reprinted from this release's recomputation (+0.0205, which rounds to +0.020); the manuscript's earlier +0.021 came from a different draw, a Monte-Carlo difference of ~5e-4. Corrected in the manuscript (W1, 2026-08-19). Every other endpoint reproduces exactly.
+- `T3.7` — Asymmetric as run and as printed: the single frozen b7 (seed 42) against the three-seed pool of T, which is what the Phase-5.2 rule specified. Pooling b7's seeds as well moves the point estimate to about +0.002; the verdict is unchanged. The manuscript states this in the table caption (W1, 2026-08-19).
 
 ## T4 — CRF sweep, all key arms (video-AUC, FF++ test)
 
@@ -107,38 +118,38 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 
 | id | claim | paper prints | this release gives | artifact | command |
 |---|---|---|---|---|---|
-| `T4.1` | b7 EffNet-B0 spatial (fair) — c0 | 0.9919 | 0.9919 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T4.1` |
-| `T4.2` | b7 EffNet-B0 spatial (fair) — c18 | 0.9892 | 0.9892 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T4.2` |
-| `T4.3` | b7 EffNet-B0 spatial (fair) — c23 | 0.9867 | 0.9867 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T4.3` |
-| `T4.4` | b7 EffNet-B0 spatial (fair) — c28 | 0.981 | 0.9810 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T4.4` |
-| `T4.5` | b7 EffNet-B0 spatial (fair) — c32 | 0.9758 | 0.9758 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T4.5` |
-| `T4.6` | b7 EffNet-B0 spatial (fair) — c36 | 0.9678 | 0.9678 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T4.6` |
-| `T4.7` | b7 EffNet-B0 spatial (fair) — c40 | 0.959 | 0.9590 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T4.7` |
-| `T4.8` | b7 EffNet-B0 spatial (fair) — auc_comp | 0.9709 | 0.9709 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T4.8` |
-| `T4.9` | F2 full trunk + freq residual (fair) — c0 | 0.9929 | 0.9929 | `predictions/ffpp/f2_spatres_full_s42.json` | `python verify/claim.py T4.9` |
-| `T4.10` | F2 full trunk + freq residual (fair) — c18 | 0.9902 | 0.9902 | `predictions/ffpp/f2_spatres_full_s42.json` | `python verify/claim.py T4.10` |
-| `T4.11` | F2 full trunk + freq residual (fair) — c23 | 0.9894 | 0.9894 | `predictions/ffpp/f2_spatres_full_s42.json` | `python verify/claim.py T4.11` |
-| `T4.12` | F2 full trunk + freq residual (fair) — c28 | 0.9821 | 0.9821 | `predictions/ffpp/f2_spatres_full_s42.json` | `python verify/claim.py T4.12` |
-| `T4.13` | F2 full trunk + freq residual (fair) — c32 | 0.9774 | 0.9774 | `predictions/ffpp/f2_spatres_full_s42.json` | `python verify/claim.py T4.13` |
-| `T4.14` | F2 full trunk + freq residual (fair) — c36 | 0.9719 | 0.9719 | `predictions/ffpp/f2_spatres_full_s42.json` | `python verify/claim.py T4.14` |
-| `T4.15` | F2 full trunk + freq residual (fair) — c40 | 0.9645 | 0.9645 | `predictions/ffpp/f2_spatres_full_s42.json` | `python verify/claim.py T4.15` |
-| `T4.16` | F2 full trunk + freq residual (fair) — auc_comp | 0.974 | 0.9740 | `predictions/ffpp/f2_spatres_full_s42.json` | `python verify/claim.py T4.16` |
-| `T4.17` | F1 narrow trunk, full freq stack (fair) — c0 | 0.9941 | 0.9941 | `predictions/ffpp/f1_none_fair_s42.json` | `python verify/claim.py T4.17` |
-| `T4.18` | F1 narrow trunk, full freq stack (fair) — c18 | 0.9901 | 0.9901 | `predictions/ffpp/f1_none_fair_s42.json` | `python verify/claim.py T4.18` |
-| `T4.19` | F1 narrow trunk, full freq stack (fair) — c23 | 0.9881 | 0.9881 | `predictions/ffpp/f1_none_fair_s42.json` | `python verify/claim.py T4.19` |
-| `T4.20` | F1 narrow trunk, full freq stack (fair) — c28 | 0.9798 | 0.9798 | `predictions/ffpp/f1_none_fair_s42.json` | `python verify/claim.py T4.20` |
-| `T4.21` | F1 narrow trunk, full freq stack (fair) — c32 | 0.977 | 0.9770 | `predictions/ffpp/f1_none_fair_s42.json` | `python verify/claim.py T4.21` |
-| `T4.22` | F1 narrow trunk, full freq stack (fair) — c36 | 0.9702 | 0.9702 | `predictions/ffpp/f1_none_fair_s42.json` | `python verify/claim.py T4.22` |
-| `T4.23` | F1 narrow trunk, full freq stack (fair) — c40 | 0.9586 | 0.9586 | `predictions/ffpp/f1_none_fair_s42.json` | `python verify/claim.py T4.23` |
-| `T4.24` | F1 narrow trunk, full freq stack (fair) — auc_comp | 0.9714 | 0.9714 | `predictions/ffpp/f1_none_fair_s42.json` | `python verify/claim.py T4.24` |
-| `T4.25` | T trunk-recipe control (fair, 3-seed mean) — c0 | 0.992 | 0.9920 | `predictions/ffpp/trunk_recipe_s42.json` +2 | `python verify/claim.py T4.25` |
-| `T4.26` | T trunk-recipe control (fair, 3-seed mean) — c18 | 0.9886 | 0.9886 | `predictions/ffpp/trunk_recipe_s42.json` +2 | `python verify/claim.py T4.26` |
-| `T4.27` | T trunk-recipe control (fair, 3-seed mean) — c23 | 0.9863 | 0.9863 | `predictions/ffpp/trunk_recipe_s42.json` +2 | `python verify/claim.py T4.27` |
-| `T4.28` | T trunk-recipe control (fair, 3-seed mean) — c28 | 0.9796 | 0.9796 | `predictions/ffpp/trunk_recipe_s42.json` +2 | `python verify/claim.py T4.28` |
-| `T4.29` | T trunk-recipe control (fair, 3-seed mean) — c32 | 0.9719 | 0.9719 | `predictions/ffpp/trunk_recipe_s42.json` +2 | `python verify/claim.py T4.29` |
-| `T4.30` | T trunk-recipe control (fair, 3-seed mean) — c36 | 0.9644 | 0.9644 | `predictions/ffpp/trunk_recipe_s42.json` +2 | `python verify/claim.py T4.30` |
-| `T4.31` | T trunk-recipe control (fair, 3-seed mean) — c40 | 0.9536 | 0.9536 | `predictions/ffpp/trunk_recipe_s42.json` +2 | `python verify/claim.py T4.31` |
-| `T4.32` | T trunk-recipe control (fair, 3-seed mean) — auc_comp | 0.9674 | 0.9674 | `predictions/ffpp/trunk_recipe_s42.json` +2 | `python verify/claim.py T4.32` |
+| `T4.1` | SpatialBase EffNet-B0 spatial (fair) — c0 | 0.9919 | 0.9919 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T4.1` |
+| `T4.2` | SpatialBase EffNet-B0 spatial (fair) — c18 | 0.9892 | 0.9892 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T4.2` |
+| `T4.3` | SpatialBase EffNet-B0 spatial (fair) — c23 | 0.9867 | 0.9867 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T4.3` |
+| `T4.4` | SpatialBase EffNet-B0 spatial (fair) — c28 | 0.981 | 0.9810 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T4.4` |
+| `T4.5` | SpatialBase EffNet-B0 spatial (fair) — c32 | 0.9758 | 0.9758 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T4.5` |
+| `T4.6` | SpatialBase EffNet-B0 spatial (fair) — c36 | 0.9678 | 0.9678 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T4.6` |
+| `T4.7` | SpatialBase EffNet-B0 spatial (fair) — c40 | 0.959 | 0.9590 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T4.7` |
+| `T4.8` | SpatialBase EffNet-B0 spatial (fair) — auc_comp | 0.9709 | 0.9709 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T4.8` |
+| `T4.9` | Fair-W full trunk + freq residual (fair) — c0 | 0.9929 | 0.9929 | `predictions/ffpp/f2_spatres_full_s42.json` | `python verify/claim.py T4.9` |
+| `T4.10` | Fair-W full trunk + freq residual (fair) — c18 | 0.9902 | 0.9902 | `predictions/ffpp/f2_spatres_full_s42.json` | `python verify/claim.py T4.10` |
+| `T4.11` | Fair-W full trunk + freq residual (fair) — c23 | 0.9894 | 0.9894 | `predictions/ffpp/f2_spatres_full_s42.json` | `python verify/claim.py T4.11` |
+| `T4.12` | Fair-W full trunk + freq residual (fair) — c28 | 0.9821 | 0.9821 | `predictions/ffpp/f2_spatres_full_s42.json` | `python verify/claim.py T4.12` |
+| `T4.13` | Fair-W full trunk + freq residual (fair) — c32 | 0.9774 | 0.9774 | `predictions/ffpp/f2_spatres_full_s42.json` | `python verify/claim.py T4.13` |
+| `T4.14` | Fair-W full trunk + freq residual (fair) — c36 | 0.9719 | 0.9719 | `predictions/ffpp/f2_spatres_full_s42.json` | `python verify/claim.py T4.14` |
+| `T4.15` | Fair-W full trunk + freq residual (fair) — c40 | 0.9645 | 0.9645 | `predictions/ffpp/f2_spatres_full_s42.json` | `python verify/claim.py T4.15` |
+| `T4.16` | Fair-W full trunk + freq residual (fair) — auc_comp | 0.974 | 0.9740 | `predictions/ffpp/f2_spatres_full_s42.json` | `python verify/claim.py T4.16` |
+| `T4.17` | Fair-N narrow trunk, full freq stack (fair) — c0 | 0.9941 | 0.9941 | `predictions/ffpp/f1_none_fair_s42.json` | `python verify/claim.py T4.17` |
+| `T4.18` | Fair-N narrow trunk, full freq stack (fair) — c18 | 0.9901 | 0.9901 | `predictions/ffpp/f1_none_fair_s42.json` | `python verify/claim.py T4.18` |
+| `T4.19` | Fair-N narrow trunk, full freq stack (fair) — c23 | 0.9881 | 0.9881 | `predictions/ffpp/f1_none_fair_s42.json` | `python verify/claim.py T4.19` |
+| `T4.20` | Fair-N narrow trunk, full freq stack (fair) — c28 | 0.9798 | 0.9798 | `predictions/ffpp/f1_none_fair_s42.json` | `python verify/claim.py T4.20` |
+| `T4.21` | Fair-N narrow trunk, full freq stack (fair) — c32 | 0.977 | 0.9770 | `predictions/ffpp/f1_none_fair_s42.json` | `python verify/claim.py T4.21` |
+| `T4.22` | Fair-N narrow trunk, full freq stack (fair) — c36 | 0.9702 | 0.9702 | `predictions/ffpp/f1_none_fair_s42.json` | `python verify/claim.py T4.22` |
+| `T4.23` | Fair-N narrow trunk, full freq stack (fair) — c40 | 0.9586 | 0.9586 | `predictions/ffpp/f1_none_fair_s42.json` | `python verify/claim.py T4.23` |
+| `T4.24` | Fair-N narrow trunk, full freq stack (fair) — auc_comp | 0.9714 | 0.9714 | `predictions/ffpp/f1_none_fair_s42.json` | `python verify/claim.py T4.24` |
+| `T4.25` | TrunkCtrl trunk-recipe control (fair, 3-seed mean) — c0 | 0.992 | 0.9920 | `predictions/ffpp/trunk_recipe_s42.json` +2 | `python verify/claim.py T4.25` |
+| `T4.26` | TrunkCtrl trunk-recipe control (fair, 3-seed mean) — c18 | 0.9886 | 0.9886 | `predictions/ffpp/trunk_recipe_s42.json` +2 | `python verify/claim.py T4.26` |
+| `T4.27` | TrunkCtrl trunk-recipe control (fair, 3-seed mean) — c23 | 0.9863 | 0.9863 | `predictions/ffpp/trunk_recipe_s42.json` +2 | `python verify/claim.py T4.27` |
+| `T4.28` | TrunkCtrl trunk-recipe control (fair, 3-seed mean) — c28 | 0.9796 | 0.9796 | `predictions/ffpp/trunk_recipe_s42.json` +2 | `python verify/claim.py T4.28` |
+| `T4.29` | TrunkCtrl trunk-recipe control (fair, 3-seed mean) — c32 | 0.9719 | 0.9719 | `predictions/ffpp/trunk_recipe_s42.json` +2 | `python verify/claim.py T4.29` |
+| `T4.30` | TrunkCtrl trunk-recipe control (fair, 3-seed mean) — c36 | 0.9644 | 0.9644 | `predictions/ffpp/trunk_recipe_s42.json` +2 | `python verify/claim.py T4.30` |
+| `T4.31` | TrunkCtrl trunk-recipe control (fair, 3-seed mean) — c40 | 0.9536 | 0.9536 | `predictions/ffpp/trunk_recipe_s42.json` +2 | `python verify/claim.py T4.31` |
+| `T4.32` | TrunkCtrl trunk-recipe control (fair, 3-seed mean) — auc_comp | 0.9674 | 0.9674 | `predictions/ffpp/trunk_recipe_s42.json` +2 | `python verify/claim.py T4.32` |
 | `T4.33` | CAFRL-grl (shipped) — c0 | 0.9843 | 0.9843 | `predictions/ffpp/a0.json` | `python verify/claim.py T4.33` |
 | `T4.34` | CAFRL-grl (shipped) — c18 | 0.9791 | 0.9791 | `predictions/ffpp/a0.json` | `python verify/claim.py T4.34` |
 | `T4.35` | CAFRL-grl (shipped) — c23 | 0.9738 | 0.9738 | `predictions/ffpp/a0.json` | `python verify/claim.py T4.35` |
@@ -147,14 +158,14 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 | `T4.38` | CAFRL-grl (shipped) — c36 | 0.9451 | 0.9451 | `predictions/ffpp/a0.json` | `python verify/claim.py T4.38` |
 | `T4.39` | CAFRL-grl (shipped) — c40 | 0.9224 | 0.9224 | `predictions/ffpp/a0.json` | `python verify/claim.py T4.39` |
 | `T4.40` | CAFRL-grl (shipped) — auc_comp | 0.9477 | 0.9477 | `predictions/ffpp/a0.json` | `python verify/claim.py T4.40` |
-| `T4.41` | CAFRL-none (shipped) — c0 | 0.9923 | 0.9923 | `predictions/ffpp/a1_none_s42.json` | `python verify/claim.py T4.41` |
-| `T4.42` | CAFRL-none (shipped) — c18 | 0.9818 | 0.9818 | `predictions/ffpp/a1_none_s42.json` | `python verify/claim.py T4.42` |
-| `T4.43` | CAFRL-none (shipped) — c23 | 0.9697 | 0.9697 | `predictions/ffpp/a1_none_s42.json` | `python verify/claim.py T4.43` |
-| `T4.44` | CAFRL-none (shipped) — c28 | 0.959 | 0.9590 | `predictions/ffpp/a1_none_s42.json` | `python verify/claim.py T4.44` |
-| `T4.45` | CAFRL-none (shipped) — c32 | 0.9484 | 0.9484 | `predictions/ffpp/a1_none_s42.json` | `python verify/claim.py T4.45` |
-| `T4.46` | CAFRL-none (shipped) — c36 | 0.9311 | 0.9311 | `predictions/ffpp/a1_none_s42.json` | `python verify/claim.py T4.46` |
-| `T4.47` | CAFRL-none (shipped) — c40 | 0.919 | 0.9190 | `predictions/ffpp/a1_none_s42.json` | `python verify/claim.py T4.47` |
-| `T4.48` | CAFRL-none (shipped) — auc_comp | 0.9394 | 0.9394 | `predictions/ffpp/a1_none_s42.json` | `python verify/claim.py T4.48` |
+| `T4.41` | CAFRL−adv (shipped) — c0 | 0.9923 | 0.9923 | `predictions/ffpp/a1_none_s42.json` | `python verify/claim.py T4.41` |
+| `T4.42` | CAFRL−adv (shipped) — c18 | 0.9818 | 0.9818 | `predictions/ffpp/a1_none_s42.json` | `python verify/claim.py T4.42` |
+| `T4.43` | CAFRL−adv (shipped) — c23 | 0.9697 | 0.9697 | `predictions/ffpp/a1_none_s42.json` | `python verify/claim.py T4.43` |
+| `T4.44` | CAFRL−adv (shipped) — c28 | 0.959 | 0.9590 | `predictions/ffpp/a1_none_s42.json` | `python verify/claim.py T4.44` |
+| `T4.45` | CAFRL−adv (shipped) — c32 | 0.9484 | 0.9484 | `predictions/ffpp/a1_none_s42.json` | `python verify/claim.py T4.45` |
+| `T4.46` | CAFRL−adv (shipped) — c36 | 0.9311 | 0.9311 | `predictions/ffpp/a1_none_s42.json` | `python verify/claim.py T4.46` |
+| `T4.47` | CAFRL−adv (shipped) — c40 | 0.919 | 0.9190 | `predictions/ffpp/a1_none_s42.json` | `python verify/claim.py T4.47` |
+| `T4.48` | CAFRL−adv (shipped) — auc_comp | 0.9394 | 0.9394 | `predictions/ffpp/a1_none_s42.json` | `python verify/claim.py T4.48` |
 | `T4.49` | spatial-residual (shipped, γ→0) — c0 | 0.9714 | 0.9714 | `predictions/ffpp/cafrl_spatres_s42.json` | `python verify/claim.py T4.49` |
 | `T4.50` | spatial-residual (shipped, γ→0) — c18 | 0.9702 | 0.9702 | `predictions/ffpp/cafrl_spatres_s42.json` | `python verify/claim.py T4.50` |
 | `T4.51` | spatial-residual (shipped, γ→0) — c23 | 0.9686 | 0.9686 | `predictions/ffpp/cafrl_spatres_s42.json` | `python verify/claim.py T4.51` |
@@ -179,24 +190,24 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 
 | id | claim | paper prints | this release gives | artifact | command |
 |---|---|---|---|---|---|
-| `T5.1` | b7 — c40 seed 42 | 0.959 | 0.9590 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T5.1` |
-| `T5.2` | b7 — c40 seed 1 | 0.9614 | 0.9614 | `predictions/ffpp/b7_effnet_b0_mq_fliponly_s1.json` | `python verify/claim.py T5.2` |
-| `T5.3` | b7 — c40 seed 2 | 0.9492 | 0.9492 | `predictions/ffpp/b7_effnet_b0_mq_fliponly_s2.json` | `python verify/claim.py T5.3` |
-| `T5.4` | b7 — c40 3-seed mean | 0.9565 | 0.9565 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` +2 | `python verify/claim.py T5.4` |
-| `T5.5` | b7 — c40 3-seed band (half-width) | 0.016 | 0.0160 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` +2 | `python verify/claim.py T5.5` |
-| `T5.6` | b7 — AUC_comp 3-seed mean | 0.9688 | 0.9688 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` +2 | `python verify/claim.py T5.6` |
-| `T5.7` | F1 — c40 seed 42 | 0.9586 | 0.9586 | `predictions/ffpp/f1_none_fair_s42.json` | `python verify/claim.py T5.7` |
-| `T5.8` | F1 — c40 seed 1 | 0.9567 | 0.9567 | `predictions/ffpp/f1_none_fair_s1.json` | `python verify/claim.py T5.8` |
-| `T5.9` | F1 — c40 seed 2 | 0.9536 | 0.9536 | `predictions/ffpp/f1_none_fair_s2.json` | `python verify/claim.py T5.9` |
-| `T5.10` | F1 — c40 3-seed mean | 0.9563 | 0.9563 | `predictions/ffpp/f1_none_fair_s42.json` +2 | `python verify/claim.py T5.10` |
-| `T5.11` | F1 — c40 3-seed band (half-width) | 0.0062 | 0.0062 | `predictions/ffpp/f1_none_fair_s42.json` +2 | `python verify/claim.py T5.11` |
-| `T5.12` | F1 — AUC_comp 3-seed mean | 0.9675 | 0.9675 | `predictions/ffpp/f1_none_fair_s42.json` +2 | `python verify/claim.py T5.12` |
-| `T5.13` | F2 — c40 seed 42 | 0.9645 | 0.9645 | `predictions/ffpp/f2_spatres_full_s42.json` | `python verify/claim.py T5.13` |
-| `T5.14` | F2 — c40 seed 1 | 0.9602 | 0.9602 | `predictions/ffpp/f2_spatres_full_s1.json` | `python verify/claim.py T5.14` |
-| `T5.15` | F2 — c40 seed 2 | 0.9609 | 0.9609 | `predictions/ffpp/f2_spatres_full_s2.json` | `python verify/claim.py T5.15` |
-| `T5.16` | F2 — c40 3-seed mean | 0.9619 | 0.9619 | `predictions/ffpp/f2_spatres_full_s42.json` +2 | `python verify/claim.py T5.16` |
-| `T5.17` | F2 — c40 3-seed band (half-width) | 0.0058 | 0.0058 | `predictions/ffpp/f2_spatres_full_s42.json` +2 | `python verify/claim.py T5.17` |
-| `T5.18` | F2 — AUC_comp 3-seed mean | 0.9719 | 0.9719 | `predictions/ffpp/f2_spatres_full_s42.json` +2 | `python verify/claim.py T5.18` |
+| `T5.1` | SpatialBase — c40 seed 42 | 0.959 | 0.9590 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T5.1` |
+| `T5.2` | SpatialBase — c40 seed 1 | 0.9614 | 0.9614 | `predictions/ffpp/b7_effnet_b0_mq_fliponly_s1.json` | `python verify/claim.py T5.2` |
+| `T5.3` | SpatialBase — c40 seed 2 | 0.9492 | 0.9492 | `predictions/ffpp/b7_effnet_b0_mq_fliponly_s2.json` | `python verify/claim.py T5.3` |
+| `T5.4` | SpatialBase — c40 3-seed mean | 0.9565 | 0.9565 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` +2 | `python verify/claim.py T5.4` |
+| `T5.5` | SpatialBase — c40 3-seed band (half-width) | 0.016 | 0.0160 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` +2 | `python verify/claim.py T5.5` |
+| `T5.6` | SpatialBase — AUC_comp 3-seed mean | 0.9688 | 0.9688 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` +2 | `python verify/claim.py T5.6` |
+| `T5.7` | Fair-N — c40 seed 42 | 0.9586 | 0.9586 | `predictions/ffpp/f1_none_fair_s42.json` | `python verify/claim.py T5.7` |
+| `T5.8` | Fair-N — c40 seed 1 | 0.9567 | 0.9567 | `predictions/ffpp/f1_none_fair_s1.json` | `python verify/claim.py T5.8` |
+| `T5.9` | Fair-N — c40 seed 2 | 0.9536 | 0.9536 | `predictions/ffpp/f1_none_fair_s2.json` | `python verify/claim.py T5.9` |
+| `T5.10` | Fair-N — c40 3-seed mean | 0.9563 | 0.9563 | `predictions/ffpp/f1_none_fair_s42.json` +2 | `python verify/claim.py T5.10` |
+| `T5.11` | Fair-N — c40 3-seed band (half-width) | 0.0062 | 0.0062 | `predictions/ffpp/f1_none_fair_s42.json` +2 | `python verify/claim.py T5.11` |
+| `T5.12` | Fair-N — AUC_comp 3-seed mean | 0.9675 | 0.9675 | `predictions/ffpp/f1_none_fair_s42.json` +2 | `python verify/claim.py T5.12` |
+| `T5.13` | Fair-W — c40 seed 42 | 0.9645 | 0.9645 | `predictions/ffpp/f2_spatres_full_s42.json` | `python verify/claim.py T5.13` |
+| `T5.14` | Fair-W — c40 seed 1 | 0.9602 | 0.9602 | `predictions/ffpp/f2_spatres_full_s1.json` | `python verify/claim.py T5.14` |
+| `T5.15` | Fair-W — c40 seed 2 | 0.9609 | 0.9609 | `predictions/ffpp/f2_spatres_full_s2.json` | `python verify/claim.py T5.15` |
+| `T5.16` | Fair-W — c40 3-seed mean | 0.9619 | 0.9619 | `predictions/ffpp/f2_spatres_full_s42.json` +2 | `python verify/claim.py T5.16` |
+| `T5.17` | Fair-W — c40 3-seed band (half-width) | 0.0058 | 0.0058 | `predictions/ffpp/f2_spatres_full_s42.json` +2 | `python verify/claim.py T5.17` |
+| `T5.18` | Fair-W — AUC_comp 3-seed mean | 0.9719 | 0.9719 | `predictions/ffpp/f2_spatres_full_s42.json` +2 | `python verify/claim.py T5.18` |
 
 ## T6 — The D1–D8 audit ledger (full)
 
@@ -218,12 +229,30 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 | `T7.1` | CAFRL (shipped, A0) — celebdf_v2 | 0.698 | 0.6979 | `predictions/cross_dataset/a0.json` | `python verify/claim.py T7.1` |
 | `T7.2` | CAFRL (shipped, A0) — dfd_c23 | 0.82 | 0.8200 | `predictions/cross_dataset/a0.json` | `python verify/claim.py T7.2` |
 | `T7.3` | CAFRL (shipped, A0) — dfd_c40 | 0.631 | 0.6307 | `predictions/cross_dataset/a0.json` | `python verify/claim.py T7.3` |
-| `T7.4` | EffNet-B0 backbone (b7) — celebdf_v2 | 0.699 | 0.6990 | `predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T7.4` |
-| `T7.5` | EffNet-B0 backbone (b7) — dfd_c23 | 0.804 | 0.8041 | `predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T7.5` |
-| `T7.6` | EffNet-B0 backbone (b7) — dfd_c40 | 0.646 | 0.6461 | `predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T7.6` |
+| `T7.4` | EffNet-B0 backbone (SpatialBase) — celebdf_v2 | 0.699 | 0.6990 | `predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T7.4` |
+| `T7.5` | EffNet-B0 backbone (SpatialBase) — dfd_c23 | 0.804 | 0.8041 | `predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T7.5` |
+| `T7.6` | EffNet-B0 backbone (SpatialBase) — dfd_c40 | 0.646 | 0.6461 | `predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T7.6` |
 | `T7.7` | Xception-mq — celebdf_v2 | 0.702 | 0.7023 | `predictions/cross_dataset/b4_xception_mq.json` | `python verify/claim.py T7.7` |
 | `T7.8` | Xception-mq — dfd_c23 | 0.881 | 0.8806 | `predictions/cross_dataset/b4_xception_mq.json` | `python verify/claim.py T7.8` |
 | `T7.9` | Xception-mq — dfd_c40 | 0.688 | 0.6880 | `predictions/cross_dataset/b4_xception_mq.json` | `python verify/claim.py T7.9` |
+| `T7.10` | CAFRL (shipped, A0) — CI lower — celebdf_v2 | 0.648 | 0.6484 | `predictions/cross_dataset/a0.json` | `python verify/claim.py T7.10` |
+| `T7.11` | CAFRL (shipped, A0) — CI lower — dfd_c23 | 0.8 | 0.8002 | `predictions/cross_dataset/a0.json` | `python verify/claim.py T7.11` |
+| `T7.12` | CAFRL (shipped, A0) — CI lower — dfd_c40 | 0.602 | 0.6018 | `predictions/cross_dataset/a0.json` | `python verify/claim.py T7.12` |
+| `T7.13` | CAFRL (shipped, A0) — CI upper — celebdf_v2 | 0.745 | 0.7449 | `predictions/cross_dataset/a0.json` | `python verify/claim.py T7.13` |
+| `T7.14` | CAFRL (shipped, A0) — CI upper — dfd_c23 | 0.839 | 0.8391 | `predictions/cross_dataset/a0.json` | `python verify/claim.py T7.14` |
+| `T7.15` | CAFRL (shipped, A0) — CI upper — dfd_c40 | 0.659 | 0.6589 | `predictions/cross_dataset/a0.json` | `python verify/claim.py T7.15` |
+| `T7.16` | EffNet-B0 backbone (SpatialBase) — CI lower — celebdf_v2 | 0.649 | 0.6494 | `predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T7.16` |
+| `T7.17` | EffNet-B0 backbone (SpatialBase) — CI lower — dfd_c23 | 0.783 | 0.7829 | `predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T7.17` |
+| `T7.18` | EffNet-B0 backbone (SpatialBase) — CI lower — dfd_c40 | 0.617 | 0.6174 | `predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T7.18` |
+| `T7.19` | EffNet-B0 backbone (SpatialBase) — CI upper — celebdf_v2 | 0.745 | 0.7450 | `predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T7.19` |
+| `T7.20` | EffNet-B0 backbone (SpatialBase) — CI upper — dfd_c23 | 0.824 | 0.8245 | `predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T7.20` |
+| `T7.21` | EffNet-B0 backbone (SpatialBase) — CI upper — dfd_c40 | 0.674 | 0.6736 | `predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py T7.21` |
+| `T7.22` | Xception-mq — CI lower — celebdf_v2 | 0.653 | 0.6533 | `predictions/cross_dataset/b4_xception_mq.json` | `python verify/claim.py T7.22` |
+| `T7.23` | Xception-mq — CI lower — dfd_c23 | 0.864 | 0.8639 | `predictions/cross_dataset/b4_xception_mq.json` | `python verify/claim.py T7.23` |
+| `T7.24` | Xception-mq — CI lower — dfd_c40 | 0.66 | 0.6595 | `predictions/cross_dataset/b4_xception_mq.json` | `python verify/claim.py T7.24` |
+| `T7.25` | Xception-mq — CI upper — celebdf_v2 | 0.748 | 0.7479 | `predictions/cross_dataset/b4_xception_mq.json` | `python verify/claim.py T7.25` |
+| `T7.26` | Xception-mq — CI upper — dfd_c23 | 0.896 | 0.8962 | `predictions/cross_dataset/b4_xception_mq.json` | `python verify/claim.py T7.26` |
+| `T7.27` | Xception-mq — CI upper — dfd_c40 | 0.715 | 0.7154 | `predictions/cross_dataset/b4_xception_mq.json` | `python verify/claim.py T7.27` |
 
 - `T7.1` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
 - `T7.2` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
@@ -234,6 +263,24 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 - `T7.7` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
 - `T7.8` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
 - `T7.9` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.10` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.11` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.12` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.13` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.14` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.15` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.16` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.17` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.18` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.19` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.20` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.21` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.22` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.23` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.24` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.25` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.26` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
+- `T7.27` — These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores — see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.
 
 ## T8 — FaceShifter (held out), shipped recipe, seed-pooled
 
@@ -260,7 +307,7 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 | `AppC.2` | F3-Net, literature protocol, c40 | 0.86 | 0.8599 | `predictions/ffpp/b2_f3net_lit.json` | `python verify/claim.py AppC.2` |
 | `AppC.3` | FreqNet, literature protocol, c40 | 0.768 | 0.7684 | `predictions/ffpp/b3_freqnet_lit.json` | `python verify/claim.py AppC.3` |
 | `AppC.4` | Augmentation recovery, example 1: 0.764 (flip-only frame-AUC, c40) | 0.764 | 0.7642 | `predictions/ffpp/b1_xception_lit_fliponly.json` | `python verify/claim.py AppC.4` |
-| `AppC.5` | Augmentation recovery, example 1: → 0.792 (with augmentation) | 0.792 | **0.7915** | `predictions/ffpp/b1_xception_lit.json` | `python verify/claim.py AppC.5` |
+| `AppC.5` | Augmentation recovery, example 1: → 0.791 (with augmentation) | 0.791 | 0.7915 | `predictions/ffpp/b1_xception_lit.json` | `python verify/claim.py AppC.5` |
 | `AppC.6` | Augmentation recovery, example 2: 0.725 (flip-only frame-AUC, c40) | 0.725 | 0.7250 | `predictions/ffpp/b2_f3net_lit_fliponly.json` | `python verify/claim.py AppC.6` |
 | `AppC.7` | Augmentation recovery, example 2: → 0.780 (with augmentation) | 0.78 | 0.7802 | `predictions/ffpp/b2_f3net_lit.json` | `python verify/claim.py AppC.7` |
 | `AppC.8` | Augmentation confound control: Xception-mq 0.968 (with augmentation) | 0.968 | 0.9679 | `predictions/ffpp/b4_xception_mq.json` | `python verify/claim.py AppC.8` |
@@ -269,7 +316,7 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 | `AppC.11` | Real CRF re-encodes at real c40 (same recipe) | 0.963 | 0.9631 | `predictions/ffpp/b4b_xception_mq_fliponly.json` | `python verify/claim.py AppC.11` |
 | `AppC.12` | The +7.3 pt real-CRF vs synthetic-JPEG gap | 0.073 | 0.0733 | `predictions/ffpp/b4b_xception_mq_fliponly.json` +1 | `python verify/claim.py AppC.12` |
 
-- `AppC.5` — **differs from the manuscript.** recomputed from released scores: 0.791498; the paper prints 0.792 (difference -0.000502). Queued for correction in the next manuscript revision: the released frame-AUC is 0.79150, which rounds to 0.791. A last-digit rounding difference; the recovery it illustrates (+2.7 frame-AUC points) is unaffected.
+- `AppC.5` — Corrected in the manuscript (W1, 2026-08-19) from 0.792 to the released frame-AUC 0.79150.
 - `AppC.10` — Marginal statistic only — this arm has no per-video scores (predictions/GAPS.md), so the +7.3 pt comparison is two marginal AUCs with non-overlapping CIs, not a paired delta.
 
 ## X1 — Key numbers in the running text
@@ -278,25 +325,25 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 
 | id | claim | paper prints | this release gives | artifact | command |
 |---|---|---|---|---|---|
-| `X1.1` | Clean-anchored drop, b7 (0.016) | 0.016 | 0.0158 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py X1.1` |
-| `X1.2` | Clean-anchored drop, T (0.019) | 0.019 | 0.0190 | `predictions/ffpp/trunk_recipe_s42.json` +2 | `python verify/claim.py X1.2` |
-| `X1.3` | Clean-anchored drop, F1 (0.017) | 0.017 | 0.0167 | `predictions/ffpp/f1_none_fair_s42.json` | `python verify/claim.py X1.3` |
-| `X1.4` | Clean-anchored drop, F2 (0.015) | 0.015 | 0.0154 | `predictions/ffpp/f2_spatres_full_s42.json` | `python verify/claim.py X1.4` |
+| `X1.1` | Clean-anchored drop, SpatialBase (0.016) | 0.016 | 0.0158 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` | `python verify/claim.py X1.1` |
+| `X1.2` | Clean-anchored drop, TrunkCtrl (0.019) | 0.019 | 0.0190 | `predictions/ffpp/trunk_recipe_s42.json` +2 | `python verify/claim.py X1.2` |
+| `X1.3` | Clean-anchored drop, Fair-N (0.017) | 0.017 | 0.0167 | `predictions/ffpp/f1_none_fair_s42.json` | `python verify/claim.py X1.3` |
+| `X1.4` | Clean-anchored drop, Fair-W (0.015) | 0.015 | 0.0154 | `predictions/ffpp/f2_spatres_full_s42.json` | `python verify/claim.py X1.4` |
 | `X1.5` | Clean-anchored drop, shipped CAFRL (0.026) | 0.026 | 0.0261 | `predictions/ffpp/a0.json` | `python verify/claim.py X1.5` |
-| `X1.6` | FaceShifter fair 3-seed mean, F1 c23 | 0.799 | 0.7992 | `predictions/faceshifter/f1_none_fair_s42.json` +2 | `python verify/claim.py X1.6` |
-| `X1.7` | FaceShifter fair 3-seed mean, F1 c40 | 0.711 | 0.7109 | `predictions/faceshifter/f1_none_fair_s42.json` +2 | `python verify/claim.py X1.7` |
-| `X1.8` | FaceShifter fair 3-seed mean, F2 c23 | 0.768 | 0.7681 | `predictions/faceshifter/f2_spatres_full_s42.json` +2 | `python verify/claim.py X1.8` |
-| `X1.9` | FaceShifter fair 3-seed mean, F2 c40 | 0.707 | 0.7071 | `predictions/faceshifter/f2_spatres_full_s42.json` +2 | `python verify/claim.py X1.9` |
-| `X1.10` | FaceShifter b7 3-seed mean, c23 | 0.823 | 0.8230 | `predictions/faceshifter/b7_effnet_b0_mq_fliponly.json` +2 | `python verify/claim.py X1.10` |
-| `X1.11` | FaceShifter b7 3-seed mean, c40 | 0.732 | 0.7318 | `predictions/faceshifter/b7_effnet_b0_mq_fliponly.json` +2 | `python verify/claim.py X1.11` |
-| `X1.12` | Fair variants sit below the backbone: F1-pool Δ ≈ -0.033 at c40 | -0.0325 | -0.0325 | `verify/expected.json` +6 | `python verify/claim.py X1.12 --bootstrap` |
-| `X1.13` | Fair variants sit below the backbone: F2-pool Δ ≈ -0.032 at c40 | -0.0318 | -0.0318 | `verify/expected.json` +6 | `python verify/claim.py X1.13 --bootstrap` |
-| `X1.14` | Sign-inconsistent single-seed leans: F1 +0.022 | +0.0220 | 0.0220 | `verify/expected.json` +4 | `python verify/claim.py X1.14 --bootstrap` |
-| `X1.15` | Sign-inconsistent single-seed leans: F2 -0.023 | -0.0227 | -0.0227 | `verify/expected.json` +4 | `python verify/claim.py X1.15 --bootstrap` |
+| `X1.6` | FaceShifter fair 3-seed mean, Fair-N c23 | 0.799 | 0.7992 | `predictions/faceshifter/f1_none_fair_s42.json` +2 | `python verify/claim.py X1.6` |
+| `X1.7` | FaceShifter fair 3-seed mean, Fair-N c40 | 0.711 | 0.7109 | `predictions/faceshifter/f1_none_fair_s42.json` +2 | `python verify/claim.py X1.7` |
+| `X1.8` | FaceShifter fair 3-seed mean, Fair-W c23 | 0.768 | 0.7681 | `predictions/faceshifter/f2_spatres_full_s42.json` +2 | `python verify/claim.py X1.8` |
+| `X1.9` | FaceShifter fair 3-seed mean, Fair-W c40 | 0.707 | 0.7071 | `predictions/faceshifter/f2_spatres_full_s42.json` +2 | `python verify/claim.py X1.9` |
+| `X1.10` | FaceShifter SpatialBase 3-seed mean, c23 | 0.823 | 0.8230 | `predictions/faceshifter/b7_effnet_b0_mq_fliponly.json` +2 | `python verify/claim.py X1.10` |
+| `X1.11` | FaceShifter SpatialBase 3-seed mean, c40 | 0.732 | 0.7318 | `predictions/faceshifter/b7_effnet_b0_mq_fliponly.json` +2 | `python verify/claim.py X1.11` |
+| `X1.12` | Fair variants sit below the backbone: Fair-N pool Δ ≈ -0.033 at c40 | -0.0325 | -0.0325 | `verify/expected.json` +6 | `python verify/claim.py X1.12 --bootstrap` |
+| `X1.13` | Fair variants sit below the backbone: Fair-W pool Δ ≈ -0.032 at c40 | -0.0318 | -0.0318 | `verify/expected.json` +6 | `python verify/claim.py X1.13 --bootstrap` |
+| `X1.14` | Sign-inconsistent single-seed leans: Fair-N +0.022 | +0.0220 | 0.0220 | `verify/expected.json` +4 | `python verify/claim.py X1.14 --bootstrap` |
+| `X1.15` | Sign-inconsistent single-seed leans: Fair-W -0.023 | -0.0227 | -0.0227 | `verify/expected.json` +4 | `python verify/claim.py X1.15 --bootstrap` |
 | `X1.16` | Xception overfits: ~11 pt below smaller models on unseen FaceShifter at c23 | ~11 pt | **not derivable** | `predictions/GAPS.md` | — |
 | `X1.17` | Campaign GPU-hours (~270 saved, ~35 re-tests, ~31 confirmation seeds) | GPU-h | **not derivable** | `predictions/GAPS.md` | — |
 
-- `X1.16` — **not derivable from this release.** Same cause: the Xception FaceShifter numbers come from the June follow-up and were never persisted as predictions. The Xception FaceShifter cells come from the same June follow-up as Table 8's CAFRL column and were never saved as predictions.
+- `X1.16` — **not derivable from this release.** Same cause: the Xception FaceShifter numbers come from the June follow-up and were never persisted as predictions. The Xception FaceShifter cells come from the same June follow-up as Table 9's CAFRL column and were never saved as predictions.
 - `X1.17` — **not derivable from this release.** GPU-hour accounting is recorded in the internal campaign journal, which is not part of this release. What is released is every run's configuration and the number of runs. Wall-clock accounting lives in the internal campaign journal, which is not part of this release; the run count and their configurations are (configs/RUNS.md).
 
 ## M1 — Mechanism claims, from the released training curves
@@ -305,18 +352,18 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 
 | id | claim | paper prints | this release gives | artifact | command |
 |---|---|---|---|---|---|
-| `M1.1` | γ grows to its peak 0.145 (deadlock broken, F2) | 0.145 | **0.1464** | `curves/f2_spatres_full_s42.json` | `python verify/claim.py M1.1` |
-| `M1.2` | γ decays to ≈0.03 by the end of training (F2) | 0.031 | 0.0307 | `curves/f2_spatres_full_s42.json` | `python verify/claim.py M1.2` |
-| `M1.3` | γ at the selected epoch (F2) | 0.14 | 0.1400 | `curves/f2_spatres_full_s42.json` | `python verify/claim.py M1.3` |
-| `M1.4` | Frequency head is individually discriminative: ≈0.98 at c23 (F2) | 0.98 | recorded | `curves/f2_spatres_full_s42.json` | `python verify/claim.py M1.4` |
-| `M1.5` | Frequency head is individually discriminative: ≈0.91 at c40 (F2) | 0.91 | recorded | `curves/f2_spatres_full_s42.json` | `python verify/claim.py M1.5` |
+| `M1.1` | γ grows to its peak 0.146 (deadlock broken, Fair-W) | 0.146 | 0.1464 | `curves/f2_spatres_full_s42.json` | `python verify/claim.py M1.1` |
+| `M1.2` | γ decays to ≈0.03 by the end of training (Fair-W) | 0.031 | 0.0307 | `curves/f2_spatres_full_s42.json` | `python verify/claim.py M1.2` |
+| `M1.3` | γ at the selected epoch (Fair-W) | 0.14 | 0.1400 | `curves/f2_spatres_full_s42.json` | `python verify/claim.py M1.3` |
+| `M1.4` | Frequency head is individually discriminative: ≈0.98 at c23 (Fair-W) | 0.98 | recorded | `curves/f2_spatres_full_s42.json` | `python verify/claim.py M1.4` |
+| `M1.5` | Frequency head is individually discriminative: ≈0.91 at c40 (Fair-W) | 0.91 | recorded | `curves/f2_spatres_full_s42.json` | `python verify/claim.py M1.5` |
 | `M1.6` | The estimator's ±1-bin accuracy without the adversary (the 0.88 premise) | 0.876 | 0.8758 | `probes/p1_compression_estimator.json` | `python verify/claim.py M1.6` |
 | `M1.7` | The estimator's ±1-bin accuracy under the GRL falls to ≈0.4 (defect D6) | 0.4 | recorded | `curves/a0.json` | `python verify/claim.py M1.7` |
 | `M1.8` | The consistency loss ran 40–120× the classification loss (defect D1) | 40–120x | recorded | `curves/a0.json` | `python verify/claim.py M1.8` |
 | `M1.9` | The band-energy premise the frequency design rests on | measurement | recorded | `probes/band_energy.json` | `python verify/claim.py M1.9` |
 
-- `M1.1` — **differs from the manuscript.** max of diag/residual_gamma in curves/: 0.146357; the paper prints 0.145 (difference +0.001357). Queued for correction in the next manuscript revision: the released per-epoch series peaks at 0.1464 (0.1464 on the live tag too), which rounds to 0.146. The claim it supports — the gate grows instead of collapsing — is unaffected.
-- `M1.4` — The manuscript quotes the plateau the head reaches and holds from about epoch 8; the released series carries every epoch.
+- `M1.1` — Corrected in the manuscript (W1, 2026-08-19) from 0.145 to the released series peak 0.14636 (epoch 6, seed 42; seeds 1 and 2 peak at 0.158 and 0.151).
+- `M1.4` — The manuscript quotes the plateau the head reaches over the second half of training, together with its epoch-1 and selected-epoch values (3-seed means: 0.81/0.71 at epoch 1, 0.97/0.85 at the selected epoch, c23/c40); the released series carries every epoch of every seed.
 - `M1.7` — The released a0 curve starts at 1.00 and ends at 0.33, passing through ≈0.4 in the adversarial phase; the fair arms stay healthy (F1 min 0.89, F2 min 0.93 — same tag in their curve files).
 - `M1.8` — Released as two series in curves/a0.json — loss/cons and loss/cls — so the ratio is computable per epoch. The raw ratio peaks at about 134x at epoch 13; the manuscript's 40–120x is the range around the compressed-phase onset.
 - `M1.9` — Per-level band energies on real crops (Phase 2).
@@ -334,7 +381,7 @@ The present-tense claims the manuscript makes about this repository.
 | `R5` | The evaluation harness (paired bootstrap, seed pooling) | Reproducibility statement; Section IV-B | checked | `evaluation/src/evaluation/metrics.py`, `evaluation/src/evaluation/aggregate_runs.py`, `evaluation/rederive.py` … (+2) |
 | `R6` | The figure-generation scripts | Reproducibility statement | checked | `figures/make_figures.py`, `figures/figure_data.json`, `figures/fig1_architecture.tex` … (+1) |
 | `R7` | The multi-CRF re-encode pipeline, with exact commands and encoder versions | Reproducibility statement; Data availability | checked | `pipeline/crf/generate_crf_variants.py`, `pipeline/faces/assess_extraction.py`, `pipeline/faces/extract_faces.py` … (+11) |
-| `R8` | Video-ID lists for every evaluation set | Section IV-B; Table 3 caption | checked | `splits/celebdf_v2_test.json`, `splits/dfd_eval_c23.json`, `splits/dfd_eval_c40.json` … (+13) |
+| `R8` | Video-ID lists for every evaluation set | Section IV-B; Table 4 caption | checked | `splits/celebdf_v2_test.json`, `splits/dfd_eval_c23.json`, `splits/dfd_eval_c40.json` … (+13) |
 | `R9` | Checkpoint and selector provenance, and the per-epoch validation curves behind it | Reproducibility statement; Section IV-A | checked | `curves/a0.json`, `curves/a1_grl_s1.json`, `curves/a1_grl_s2.json` … (+27) |
 | `R10` | Environment pins and a stated reproduction tolerance | Release README (reproduction-tolerance contract) | checked | `environment.yml`, `env/conda-linux-64.explicit.txt`, `env/pip-freeze.txt` … (+2) |
 | `R11` | A check anyone can run: the paper's tables re-derived from the released artifacts | Contribution C3 | checked | `verify/verify.py`, `verify/expected.json`, `verify/claim.py` … (+3) |

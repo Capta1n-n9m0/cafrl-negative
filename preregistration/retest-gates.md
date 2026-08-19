@@ -10,12 +10,15 @@ two gates that were journaled rather than planned (the FaceShifter re-check
 and the Phase-5.6 confirmation seeds).
 
 **Reading the excerpts.** These are internal planning documents, quoted
-without edits. They name runs by their internal identifiers — `a0` (CAFRL
-as specified), `b7` (the capacity- and augmentation-matched spatial
-control), `T`/`trunk_recipe_*` (CAFRL's spatial trunk under the fair
-recipe), `F1`/`f1_none_fair_*` and `F2`/`f2_spatres_full_*` (the two fair
-frequency re-tests) — all of which appear in `configs/RUNS.md` with their
-launch commands. They also cross-reference source files and internal
+without edits. They name runs by their internal identifiers, which the
+paper renames: `a0` (CAFRL as specified), `b7` (the capacity- and
+augmentation-matched spatial control, **SpatialBase** in the paper),
+`T`/`trunk_recipe_*` (CAFRL's spatial trunk under the fair recipe,
+**TrunkCtrl**), `F1`/`f1_none_fair_*` (**Fair-N**) and
+`F2`/`f2_spatres_full_*` (**Fair-W**) — the two fair frequency re-tests.
+All of them appear in `configs/RUNS.md` with their launch commands, and in
+Table 1 of the paper. The identifiers are left as the frozen text wrote
+them. They also cross-reference source files and internal
 analysis documents that are not part of this release; those references are
 left intact rather than rewritten, because the point of the excerpt is what
 the rule said at the time it was frozen, not a tidied restatement of it.

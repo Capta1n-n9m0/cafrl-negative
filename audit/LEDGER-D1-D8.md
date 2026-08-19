@@ -1,6 +1,6 @@
 # The complete D1–D8 audit ledger, and how each defect was closed
 
-Table 6 of the manuscript is a condensed form of this ledger. Here is the
+Table 7 of the manuscript is a condensed form of this ledger. Here is the
 full text: first the defects exactly as the audit stated them on
 2026-07-02 — before any re-test had run, when it was still possible that
 the negative would be overturned — and then the final closure status of

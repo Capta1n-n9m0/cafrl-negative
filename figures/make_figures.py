@@ -1,7 +1,7 @@
 """Publication figures for the paper.
 
 Fig 2 — CRF-sweep curves: (a) shipped-recipe falsification, (b) fair-recipe re-test.
-Fig 4 — F2 mechanism panel: (a) residual-gate γ trajectories, (b) standalone freq-head AUC.
+Fig 4 — Fair-W mechanism panel: (a) residual-gate γ trajectories, (b) standalone freq-head AUC.
 
 Reads per-run ``report.json`` sweeps + TensorBoard scalars + (for the shipped
 spatial-residual γ-collapse contrast) the raw ``epoch_*.pt`` checkpoints.
@@ -45,13 +45,13 @@ GRID = "#e1e0d9"
 AXIS = "#c3c2b7"
 SURFACE = "#ffffff"  # journal page
 
-C_B7 = "#2a78d6"      # slot 1 blue    — plain backbone (the anchor, both panels)
-C_CAFRL = "#1baf7a"   # slot 2 aqua    — CAFRL as specified (grl)
-C_NONE = "#eda100"    # slot 3 yellow  — CAFRL-none
+C_B7 = "#2a78d6"      # slot 1 blue    — SpatialBase (the anchor, both panels)
+C_CAFRL = "#1baf7a"   # slot 2 aqua    — CAFRL as specified
+C_NONE = "#eda100"    # slot 3 yellow  — CAFRL−adv
 C_SPATRES = "#008300" # slot 4 green   — spatial-residual (shipped recipe)
-C_F1 = "#4a3aa7"      # slot 5 violet  — F1 fair, narrow trunk
-C_F2 = "#e34948"      # slot 6 red     — F2 fair, full trunk
-C_TRUNK = "#e87ba4"   # slot 7 magenta — trunk-recipe control
+C_F1 = "#4a3aa7"      # slot 5 violet  — Fair-N (narrow trunk)
+C_F2 = "#e34948"      # slot 6 red     — Fair-W (full trunk)
+C_TRUNK = "#e87ba4"   # slot 7 magenta — TrunkCtrl
 
 
 @dataclass(frozen=True)
@@ -60,20 +60,30 @@ class Arm:
     runs: tuple[str, ...]  # 1 run = plain line; 3 runs = seed mean ± t-band
     color: str
     marker: str
+    linestyle: str = "-"   # hue alone is not separable in grayscale print
 
 
+# Panel A is the falsification exactly as the STOP-gate adjudicated it: one
+# run per arm at seed 42, so every plotted point is a printed table cell
+# (Tables 1 and 4) and the annotated c40 gap is the adjudicated paired Δ.
+# Panel B reports the fair-recipe re-tests as 3-seed means ± the 95% t-band.
 PANEL_A = (
-    Arm("Backbone (EffNet-B0, multi-CRF)", ("b7_effnet_b0_mq_fliponly", "b7_effnet_b0_mq_fliponly_s1", "b7_effnet_b0_mq_fliponly_s2"), C_B7, "o"),
-    Arm("CAFRL as specified (GRL)", ("a0", "a1_grl_s1", "a1_grl_s2"), C_CAFRL, "s"),
-    Arm("CAFRL-none (no adversary)", ("a1_none_s42",), C_NONE, "^"),
-    Arm("Spatial-residual (γ→0)", ("cafrl_spatres_s42",), C_SPATRES, "D"),
+    Arm("SpatialBase (EffNet-B0)", ("b7_effnet_b0_mq_fliponly",), C_B7, "o", "-"),
+    Arm("CAFRL as specified", ("a0",), C_CAFRL, "s", "--"),
+    Arm("CAFRL−adv (no adversary)", ("a1_none_s42",), C_NONE, "^", "-."),
+    Arm("Spatial-residual (γ→0)", ("cafrl_spatres_s42",), C_SPATRES, "D", (0, (1, 1.4))),
 )
 PANEL_B = (
-    Arm("Backbone (EffNet-B0, multi-CRF)", ("b7_effnet_b0_mq_fliponly", "b7_effnet_b0_mq_fliponly_s1", "b7_effnet_b0_mq_fliponly_s2"), C_B7, "o"),
-    Arm("F1: fair CAFRL, narrow trunk", ("f1_none_fair_s42", "f1_none_fair_s1", "f1_none_fair_s2"), C_F1, "s"),
-    Arm("F2: fair CAFRL, full trunk", ("f2_spatres_full_s42", "f2_spatres_full_s1", "f2_spatres_full_s2"), C_F2, "^"),
-    Arm("Trunk-recipe control", ("trunk_recipe_s42", "trunk_recipe_s1", "trunk_recipe_s2"), C_TRUNK, "D"),
+    Arm("SpatialBase (EffNet-B0)", ("b7_effnet_b0_mq_fliponly", "b7_effnet_b0_mq_fliponly_s1", "b7_effnet_b0_mq_fliponly_s2"), C_B7, "o", "-"),
+    Arm("Fair-N (narrow trunk)", ("f1_none_fair_s42", "f1_none_fair_s1", "f1_none_fair_s2"), C_F1, "s", "--"),
+    Arm("Fair-W (full trunk)", ("f2_spatres_full_s42", "f2_spatres_full_s1", "f2_spatres_full_s2"), C_F2, "^", "-."),
+    Arm("TrunkCtrl", ("trunk_recipe_s42", "trunk_recipe_s1", "trunk_recipe_s2"), C_TRUNK, "D", (0, (1, 1.4))),
 )
+# Extra runs kept in the cached extraction although no panel plots them: the
+# two further shipped-CAFRL seeds, quoted in Fig. 2's caption as the spread
+# around panel (a)'s single-seed curve.
+EXTRA_SWEEP_RUNS = ("a1_grl_s1", "a1_grl_s2")
+
 F2_RUNS = ("f2_spatres_full_s42", "f2_spatres_full_s1", "f2_spatres_full_s2")
 F2_SELECTED_EPOCH = 5  # EMA best-by-val selection, all three seeds
 
@@ -95,12 +105,12 @@ def extract() -> dict:
 
     data: dict = {"sweeps": {}, "f2_tb": {}, "spatres_gamma": {}}
 
-    for arm in PANEL_A + PANEL_B:
-        for run in arm.runs:
-            if run in data["sweeps"]:
-                continue
-            rep = json.loads((RUNS / run / "report.json").read_text())
-            data["sweeps"][run] = {lv: rep["sweep"][lv]["video_auc"] for lv in LEVELS}
+    runs = [r for arm in PANEL_A + PANEL_B for r in arm.runs] + list(EXTRA_SWEEP_RUNS)
+    for run in runs:
+        if run in data["sweeps"]:
+            continue
+        rep = json.loads((RUNS / run / "report.json").read_text())
+        data["sweeps"][run] = {lv: rep["sweep"][lv]["video_auc"] for lv in LEVELS}
 
     for run in F2_RUNS:
         ea = EventAccumulator(str(RUNS / run / "tb"))
@@ -167,10 +177,13 @@ def draw_arm(ax, arm: Arm, sweeps: dict) -> None:
     mean = [sum(v) / len(v) for v in ys]
     if len(arm.runs) >= 3:
         band = [seed_band(v) for v in ys]
+        # Four overlapping translucent bands print as mud (CEL-13): keep them
+        # readable by thinning them; the line style carries the identity.
         ax.fill_between(CRF_X, [m - b for m, b in zip(mean, band)],
                         [m + b for m, b in zip(mean, band)],
-                        color=arm.color, alpha=0.12, linewidth=0)
+                        color=arm.color, alpha=0.07, linewidth=0)
     ax.plot(CRF_X, mean, color=arm.color, marker=arm.marker, label=arm.label,
+            linestyle=arm.linestyle,
             markeredgecolor=SURFACE, markeredgewidth=0.8, clip_on=False)
 
 
@@ -180,7 +193,8 @@ def fig2(data: dict) -> Path:
     fig, axes = plt.subplots(1, 2, figsize=(7.1, 2.75), sharey=True)
     for ax, arms, title in zip(
         axes, (PANEL_A, PANEL_B),
-        ("(a)  Shipped recipe — the falsification", "(b)  Fair recipe — the re-test"),
+        ("(a)  Shipped recipe — the falsification (seed 42)",
+         "(b)  Fair recipe — the re-test (3-seed means)"),
     ):
         for arm in arms:
             draw_arm(ax, arm, data["sweeps"])
@@ -194,14 +208,18 @@ def fig2(data: dict) -> Path:
     axes[0].set_ylim(0.90, 1.001)
 
     # The one annotation: the c40 gap in (a) that the fair recipe closes in (b).
-    b7_c40 = sum(data["sweeps"][r]["c40"] for r in PANEL_A[0].runs) / 3
-    cafrl_c40 = sum(data["sweeps"][r]["c40"] for r in PANEL_A[1].runs) / 3
+    # Both endpoints are the seed-42 runs, so the arrow spans exactly the
+    # adjudicated STOP-gate contrast Δ(SpatialBase − CAFRL as specified) = +0.0366.
+    b7_c40 = data["sweeps"][PANEL_A[0].runs[0]]["c40"]
+    cafrl_c40 = data["sweeps"][PANEL_A[1].runs[0]]["c40"]
     axes[0].annotate(
         "", xy=(40, b7_c40), xytext=(40, cafrl_c40),
         arrowprops=dict(arrowstyle="<->", color=INK2, lw=0.8, shrinkA=2, shrinkB=2),
         annotation_clip=False)
-    axes[0].text(39.2, (b7_c40 + cafrl_c40) / 2, f"−{(b7_c40 - cafrl_c40) * 100:.1f} pt",
-                 ha="right", va="center", fontsize=7, color=INK2)
+    axes[0].text(38.6, (b7_c40 + cafrl_c40) / 2,
+                 f"Δ = {(b7_c40 - cafrl_c40) * 100:.2f} pt\n(paired, s42)",
+                 ha="right", va="center", fontsize=7, color=INK2, linespacing=1.35,
+                 bbox=dict(facecolor=SURFACE, edgecolor="none", pad=1.2, alpha=0.82))
 
     fig.tight_layout(w_pad=2.0)
     out = OUT / "fig2_crf_sweep"
@@ -227,9 +245,9 @@ def fig4(data: dict) -> Path:
         ax1.plot(xs, [abs(g[x]) for x in xs], color=C_F2,
                  alpha=1.0 if i == 0 else 0.45,
                  linewidth=1.6 if i == 0 else 1.1,
-                 label="F2 fair (3 seeds)" if i == 0 else None)
+                 label="Fair-W (3 seeds)" if i == 0 else None)
     ax1.axvline(F2_SELECTED_EPOCH, color=AXIS, linewidth=0.8)
-    ax1.text(F2_SELECTED_EPOCH - 0.6, 0.002, "selected ckpt", fontsize=6.5,
+    ax1.text(F2_SELECTED_EPOCH - 0.6, 0.002, "selected ckpt (s42, ep 5)", fontsize=6.5,
              color=MUTED, rotation=90, va="bottom", ha="right")
     ax1.set_ylabel("Residual gate  |γ|")
     ax1.set_ylim(0, 0.16)
@@ -250,7 +268,7 @@ def fig4(data: dict) -> Path:
     ax2.axhline(0.5, color=AXIS, linewidth=0.8, linestyle="--")
     ax2.text(1.8, 0.512, "chance", fontsize=6.5, color=MUTED, ha="left")
     ax2.axvline(F2_SELECTED_EPOCH, color=AXIS, linewidth=0.8)
-    ax2.set_ylabel("Standalone freq-head AUC (val)")
+    ax2.set_ylabel("Standalone freq-head AUC (val)\n3-seed mean, min–max band")
     ax2.set_xlabel("Epoch")
     ax2.set_ylim(0.45, 1.0)
     ax2.set_xlim(1, 30)

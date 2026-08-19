@@ -3,7 +3,7 @@
  "note": "Every manuscript table cell and present-tense release claim, mapped to the artifact that carries it and the command that recomputes it. Generated from the release manifest; checked on every build.",
  "manuscript": {
   "label": "IEEE Access submission, version B",
-  "sha256": "b574c5f2ee8e5cbd6070edfb3c4ced17421f300ecfc206f573603f52d2ac64d8",
+  "sha256": "d6ecfc7950dd277ab9144ac25cf52bbd5be56998d93554e92cd798a32d23c158",
   "note": "Table and section numbers refer to the submitted manuscript. The map is regenerated whenever the release is rebuilt; if a manuscript number moves, the build fails until the map and the manuscript agree."
  },
  "comp_levels": [
@@ -14,7 +14,7 @@
  ],
  "rows": [
   {
-   "label": "b7 EffNet-B0 spatial \u2014 params",
+   "label": "SpatialBase EffNet-B0 spatial \u2014 params",
    "printed": "4.0 M",
    "kind": "params",
    "source": "configs/runs/b7_effnet_b0_mq_fliponly.yaml",
@@ -30,7 +30,7 @@
    "command": "python verify/claim.py T1.1"
   },
   {
-   "label": "b7 \u2014 c23",
+   "label": "SpatialBase \u2014 c23",
    "printed": 0.987,
    "kind": "cell",
    "run": "b7_effnet_b0_mq_fliponly",
@@ -45,7 +45,7 @@
    "command": "python verify/claim.py T1.2"
   },
   {
-   "label": "b7 \u2014 c40",
+   "label": "SpatialBase \u2014 c40",
    "printed": 0.959,
    "kind": "cell",
    "run": "b7_effnet_b0_mq_fliponly",
@@ -60,7 +60,7 @@
    "command": "python verify/claim.py T1.3"
   },
   {
-   "label": "b7 \u2014 AUC_comp",
+   "label": "SpatialBase \u2014 AUC_comp",
    "printed": 0.971,
    "kind": "auc_comp",
    "run": "b7_effnet_b0_mq_fliponly",
@@ -180,10 +180,10 @@
   },
   {
    "label": "Xception-mq \u2014 AUC_comp",
-   "printed": 0.977,
+   "printed": 0.976,
    "kind": "auc_comp",
    "run": "b4_xception_mq",
-   "reconcile": "Queued for correction in the next manuscript revision: the run's own stored AUC_comp is 0.97645, which rounds to 0.976. A last-digit rounding difference, no effect on any comparison.",
+   "note": "Corrected in the manuscript (W1, 2026-08-19) from 0.977 to the released recomputation: mean video-AUC over c28-c40 is 0.97645.",
    "id": "T1.12",
    "table": "T1",
    "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
@@ -210,11 +210,11 @@
    "command": "python verify/claim.py T2.1"
   },
   {
-   "label": "b7 \u2212 CAFRL-shipped (STOP-gate) \u2014 \u0394 and CI",
-   "printed": "+0.0366 [+0.021, +0.054]",
+   "label": "SpatialBase \u2212 CAFRL as specified (STOP-gate) \u2014 \u0394 and CI",
+   "printed": "+0.0366 [+0.020, +0.054]",
    "kind": "contrast",
-   "name": "b7 - CAFRL-shipped (STOP-gate)",
-   "note": "The released recomputation puts the lower bound at +0.0205, which rounds to +0.020; the printed +0.021 is a Monte-Carlo difference of ~5e-4 from a different draw. Every other endpoint reproduces exactly.",
+   "name": "SpatialBase - CAFRL as specified (STOP-gate)",
+   "note": "The lower bound is reprinted from this release's recomputation (+0.0205, which rounds to +0.020); the manuscript's earlier +0.021 came from a different draw, a Monte-Carlo difference of ~5e-4. Corrected in the manuscript (W1, 2026-08-19). Every other endpoint reproduces exactly.",
    "id": "T3.1",
    "table": "T3",
    "table_title": "The adjudicated contrasts (10k paired video bootstrap)",
@@ -227,10 +227,10 @@
    "command": "python verify/claim.py T3.1 --bootstrap"
   },
   {
-   "label": "F1 \u2212 CAFRL-none (what the fair recipe bought) \u2014 \u0394 and CI",
+   "label": "Fair-N \u2212 CAFRL\u2212adv (what the fair recipe bought) \u2014 \u0394 and CI",
    "printed": "+0.0396 [+0.0231, +0.0570]",
    "kind": "contrast",
-   "name": "F1 - CAFRL-none (what the fair recipe bought)",
+   "name": "Fair-N - CAFRL\u2212adv (what the fair recipe bought)",
    "id": "T3.2",
    "table": "T3",
    "table_title": "The adjudicated contrasts (10k paired video bootstrap)",
@@ -243,10 +243,10 @@
    "command": "python verify/claim.py T3.2 --bootstrap"
   },
   {
-   "label": "F1 \u2212 b7 (single seed) \u2014 \u0394 and CI",
+   "label": "Fair-N \u2212 SpatialBase (single seed) \u2014 \u0394 and CI",
    "printed": "-0.0004 [-0.0092, +0.0080]",
    "kind": "contrast",
-   "name": "F1 - b7 (single seed)",
+   "name": "Fair-N - SpatialBase (single seed)",
    "id": "T3.3",
    "table": "T3",
    "table_title": "The adjudicated contrasts (10k paired video bootstrap)",
@@ -259,10 +259,10 @@
    "command": "python verify/claim.py T3.3 --bootstrap"
   },
   {
-   "label": "F2 \u2212 b7 (single seed) \u2014 \u0394 and CI",
+   "label": "Fair-W \u2212 SpatialBase (single seed) \u2014 \u0394 and CI",
    "printed": "+0.0056 [-0.0022, +0.0134]",
    "kind": "contrast",
-   "name": "F2 - b7 (single seed)",
+   "name": "Fair-W - SpatialBase (single seed)",
    "id": "T3.4",
    "table": "T3",
    "table_title": "The adjudicated contrasts (10k paired video bootstrap)",
@@ -275,10 +275,10 @@
    "command": "python verify/claim.py T3.4 --bootstrap"
   },
   {
-   "label": "F1-pool \u2212 b7-pool (3v3) \u2014 \u0394 and CI",
+   "label": "Fair-N pool \u2212 SpatialBase pool (3v3) \u2014 \u0394 and CI",
    "printed": "-0.0010 [-0.0066, +0.0045]",
    "kind": "contrast",
-   "name": "F1-pool - b7-pool (3v3)",
+   "name": "Fair-N pool - SpatialBase pool (3v3)",
    "id": "T3.5",
    "table": "T3",
    "table_title": "The adjudicated contrasts (10k paired video bootstrap)",
@@ -295,10 +295,10 @@
    "command": "python verify/claim.py T3.5 --bootstrap"
   },
   {
-   "label": "F2-pool \u2212 b7-pool (3v3) \u2014 \u0394 and CI",
+   "label": "Fair-W pool \u2212 SpatialBase pool (3v3) \u2014 \u0394 and CI",
    "printed": "+0.0022 [-0.0035, +0.0080]",
    "kind": "contrast",
-   "name": "F2-pool - b7-pool (3v3)",
+   "name": "Fair-W pool - SpatialBase pool (3v3)",
    "id": "T3.6",
    "table": "T3",
    "table_title": "The adjudicated contrasts (10k paired video bootstrap)",
@@ -315,11 +315,11 @@
    "command": "python verify/claim.py T3.6 --bootstrap"
   },
   {
-   "label": "b7 \u2212 T (architecture share, pooled) \u2014 \u0394 and CI",
+   "label": "SpatialBase \u2212 TrunkCtrl (architecture share, pooled) \u2014 \u0394 and CI",
    "printed": "-0.0038 [-0.0116, +0.0039]",
    "kind": "contrast",
-   "name": "b7 - T (architecture share, pooled)",
-   "note": "Asymmetric as run and as printed: the single frozen b7 (seed 42) against the three-seed pool of T, which is what the Phase-5.2 rule specified. Pooling b7's seeds as well moves the point estimate to about +0.002; the verdict is unchanged.",
+   "name": "SpatialBase - TrunkCtrl (architecture share, pooled)",
+   "note": "Asymmetric as run and as printed: the single frozen b7 (seed 42) against the three-seed pool of T, which is what the Phase-5.2 rule specified. Pooling b7's seeds as well moves the point estimate to about +0.002; the verdict is unchanged. The manuscript states this in the table caption (W1, 2026-08-19).",
    "id": "T3.7",
    "table": "T3",
    "table_title": "The adjudicated contrasts (10k paired video bootstrap)",
@@ -334,10 +334,10 @@
    "command": "python verify/claim.py T3.7 --bootstrap"
   },
   {
-   "label": "T \u2212 spatial-residual (recipe share, pooled) \u2014 \u0394 and CI",
+   "label": "TrunkCtrl \u2212 spatial-residual (recipe share, pooled) \u2014 \u0394 and CI",
    "printed": "+0.0490 [+0.0294, +0.0705]",
    "kind": "contrast",
-   "name": "T - spatial-residual (recipe share, pooled)",
+   "name": "TrunkCtrl - spatial-residual (recipe share, pooled)",
    "id": "T3.8",
    "table": "T3",
    "table_title": "The adjudicated contrasts (10k paired video bootstrap)",
@@ -354,7 +354,7 @@
   {
    "kind": "cell",
    "run": "b7_effnet_b0_mq_fliponly",
-   "label": "b7 EffNet-B0 spatial (fair) \u2014 c0",
+   "label": "SpatialBase EffNet-B0 spatial (fair) \u2014 c0",
    "printed": 0.9919,
    "cell": "c0",
    "id": "T4.1",
@@ -369,7 +369,7 @@
   {
    "kind": "cell",
    "run": "b7_effnet_b0_mq_fliponly",
-   "label": "b7 EffNet-B0 spatial (fair) \u2014 c18",
+   "label": "SpatialBase EffNet-B0 spatial (fair) \u2014 c18",
    "printed": 0.9892,
    "cell": "c18",
    "id": "T4.2",
@@ -384,7 +384,7 @@
   {
    "kind": "cell",
    "run": "b7_effnet_b0_mq_fliponly",
-   "label": "b7 EffNet-B0 spatial (fair) \u2014 c23",
+   "label": "SpatialBase EffNet-B0 spatial (fair) \u2014 c23",
    "printed": 0.9867,
    "cell": "c23",
    "id": "T4.3",
@@ -399,7 +399,7 @@
   {
    "kind": "cell",
    "run": "b7_effnet_b0_mq_fliponly",
-   "label": "b7 EffNet-B0 spatial (fair) \u2014 c28",
+   "label": "SpatialBase EffNet-B0 spatial (fair) \u2014 c28",
    "printed": 0.981,
    "cell": "c28",
    "id": "T4.4",
@@ -414,7 +414,7 @@
   {
    "kind": "cell",
    "run": "b7_effnet_b0_mq_fliponly",
-   "label": "b7 EffNet-B0 spatial (fair) \u2014 c32",
+   "label": "SpatialBase EffNet-B0 spatial (fair) \u2014 c32",
    "printed": 0.9758,
    "cell": "c32",
    "id": "T4.5",
@@ -429,7 +429,7 @@
   {
    "kind": "cell",
    "run": "b7_effnet_b0_mq_fliponly",
-   "label": "b7 EffNet-B0 spatial (fair) \u2014 c36",
+   "label": "SpatialBase EffNet-B0 spatial (fair) \u2014 c36",
    "printed": 0.9678,
    "cell": "c36",
    "id": "T4.6",
@@ -444,7 +444,7 @@
   {
    "kind": "cell",
    "run": "b7_effnet_b0_mq_fliponly",
-   "label": "b7 EffNet-B0 spatial (fair) \u2014 c40",
+   "label": "SpatialBase EffNet-B0 spatial (fair) \u2014 c40",
    "printed": 0.959,
    "cell": "c40",
    "id": "T4.7",
@@ -459,7 +459,7 @@
   {
    "kind": "auc_comp",
    "run": "b7_effnet_b0_mq_fliponly",
-   "label": "b7 EffNet-B0 spatial (fair) \u2014 auc_comp",
+   "label": "SpatialBase EffNet-B0 spatial (fair) \u2014 auc_comp",
    "printed": 0.9709,
    "cell": "auc_comp",
    "id": "T4.8",
@@ -474,7 +474,7 @@
   {
    "kind": "cell",
    "run": "f2_spatres_full_s42",
-   "label": "F2 full trunk + freq residual (fair) \u2014 c0",
+   "label": "Fair-W full trunk + freq residual (fair) \u2014 c0",
    "printed": 0.9929,
    "cell": "c0",
    "id": "T4.9",
@@ -489,7 +489,7 @@
   {
    "kind": "cell",
    "run": "f2_spatres_full_s42",
-   "label": "F2 full trunk + freq residual (fair) \u2014 c18",
+   "label": "Fair-W full trunk + freq residual (fair) \u2014 c18",
    "printed": 0.9902,
    "cell": "c18",
    "id": "T4.10",
@@ -504,7 +504,7 @@
   {
    "kind": "cell",
    "run": "f2_spatres_full_s42",
-   "label": "F2 full trunk + freq residual (fair) \u2014 c23",
+   "label": "Fair-W full trunk + freq residual (fair) \u2014 c23",
    "printed": 0.9894,
    "cell": "c23",
    "id": "T4.11",
@@ -519,7 +519,7 @@
   {
    "kind": "cell",
    "run": "f2_spatres_full_s42",
-   "label": "F2 full trunk + freq residual (fair) \u2014 c28",
+   "label": "Fair-W full trunk + freq residual (fair) \u2014 c28",
    "printed": 0.9821,
    "cell": "c28",
    "id": "T4.12",
@@ -534,7 +534,7 @@
   {
    "kind": "cell",
    "run": "f2_spatres_full_s42",
-   "label": "F2 full trunk + freq residual (fair) \u2014 c32",
+   "label": "Fair-W full trunk + freq residual (fair) \u2014 c32",
    "printed": 0.9774,
    "cell": "c32",
    "id": "T4.13",
@@ -549,7 +549,7 @@
   {
    "kind": "cell",
    "run": "f2_spatres_full_s42",
-   "label": "F2 full trunk + freq residual (fair) \u2014 c36",
+   "label": "Fair-W full trunk + freq residual (fair) \u2014 c36",
    "printed": 0.9719,
    "cell": "c36",
    "id": "T4.14",
@@ -564,7 +564,7 @@
   {
    "kind": "cell",
    "run": "f2_spatres_full_s42",
-   "label": "F2 full trunk + freq residual (fair) \u2014 c40",
+   "label": "Fair-W full trunk + freq residual (fair) \u2014 c40",
    "printed": 0.9645,
    "cell": "c40",
    "id": "T4.15",
@@ -579,7 +579,7 @@
   {
    "kind": "auc_comp",
    "run": "f2_spatres_full_s42",
-   "label": "F2 full trunk + freq residual (fair) \u2014 auc_comp",
+   "label": "Fair-W full trunk + freq residual (fair) \u2014 auc_comp",
    "printed": 0.974,
    "cell": "auc_comp",
    "id": "T4.16",
@@ -594,7 +594,7 @@
   {
    "kind": "cell",
    "run": "f1_none_fair_s42",
-   "label": "F1 narrow trunk, full freq stack (fair) \u2014 c0",
+   "label": "Fair-N narrow trunk, full freq stack (fair) \u2014 c0",
    "printed": 0.9941,
    "cell": "c0",
    "id": "T4.17",
@@ -609,7 +609,7 @@
   {
    "kind": "cell",
    "run": "f1_none_fair_s42",
-   "label": "F1 narrow trunk, full freq stack (fair) \u2014 c18",
+   "label": "Fair-N narrow trunk, full freq stack (fair) \u2014 c18",
    "printed": 0.9901,
    "cell": "c18",
    "id": "T4.18",
@@ -624,7 +624,7 @@
   {
    "kind": "cell",
    "run": "f1_none_fair_s42",
-   "label": "F1 narrow trunk, full freq stack (fair) \u2014 c23",
+   "label": "Fair-N narrow trunk, full freq stack (fair) \u2014 c23",
    "printed": 0.9881,
    "cell": "c23",
    "id": "T4.19",
@@ -639,7 +639,7 @@
   {
    "kind": "cell",
    "run": "f1_none_fair_s42",
-   "label": "F1 narrow trunk, full freq stack (fair) \u2014 c28",
+   "label": "Fair-N narrow trunk, full freq stack (fair) \u2014 c28",
    "printed": 0.9798,
    "cell": "c28",
    "id": "T4.20",
@@ -654,7 +654,7 @@
   {
    "kind": "cell",
    "run": "f1_none_fair_s42",
-   "label": "F1 narrow trunk, full freq stack (fair) \u2014 c32",
+   "label": "Fair-N narrow trunk, full freq stack (fair) \u2014 c32",
    "printed": 0.977,
    "cell": "c32",
    "id": "T4.21",
@@ -669,7 +669,7 @@
   {
    "kind": "cell",
    "run": "f1_none_fair_s42",
-   "label": "F1 narrow trunk, full freq stack (fair) \u2014 c36",
+   "label": "Fair-N narrow trunk, full freq stack (fair) \u2014 c36",
    "printed": 0.9702,
    "cell": "c36",
    "id": "T4.22",
@@ -684,7 +684,7 @@
   {
    "kind": "cell",
    "run": "f1_none_fair_s42",
-   "label": "F1 narrow trunk, full freq stack (fair) \u2014 c40",
+   "label": "Fair-N narrow trunk, full freq stack (fair) \u2014 c40",
    "printed": 0.9586,
    "cell": "c40",
    "id": "T4.23",
@@ -699,7 +699,7 @@
   {
    "kind": "auc_comp",
    "run": "f1_none_fair_s42",
-   "label": "F1 narrow trunk, full freq stack (fair) \u2014 auc_comp",
+   "label": "Fair-N narrow trunk, full freq stack (fair) \u2014 auc_comp",
    "printed": 0.9714,
    "cell": "auc_comp",
    "id": "T4.24",
@@ -715,7 +715,7 @@
    "kind": "seed_mean",
    "group": "t",
    "note": "Every cell in this row is the mean of the three seeds' per-level video-AUCs; the AUC_comp cell is the mean of the three seeds' AUC_comp (identical to four decimals either way).",
-   "label": "T trunk-recipe control (fair, 3-seed mean) \u2014 c0",
+   "label": "TrunkCtrl trunk-recipe control (fair, 3-seed mean) \u2014 c0",
    "printed": 0.992,
    "cell": "c0",
    "id": "T4.25",
@@ -738,7 +738,7 @@
    "kind": "seed_mean",
    "group": "t",
    "note": "Every cell in this row is the mean of the three seeds' per-level video-AUCs; the AUC_comp cell is the mean of the three seeds' AUC_comp (identical to four decimals either way).",
-   "label": "T trunk-recipe control (fair, 3-seed mean) \u2014 c18",
+   "label": "TrunkCtrl trunk-recipe control (fair, 3-seed mean) \u2014 c18",
    "printed": 0.9886,
    "cell": "c18",
    "id": "T4.26",
@@ -761,7 +761,7 @@
    "kind": "seed_mean",
    "group": "t",
    "note": "Every cell in this row is the mean of the three seeds' per-level video-AUCs; the AUC_comp cell is the mean of the three seeds' AUC_comp (identical to four decimals either way).",
-   "label": "T trunk-recipe control (fair, 3-seed mean) \u2014 c23",
+   "label": "TrunkCtrl trunk-recipe control (fair, 3-seed mean) \u2014 c23",
    "printed": 0.9863,
    "cell": "c23",
    "id": "T4.27",
@@ -784,7 +784,7 @@
    "kind": "seed_mean",
    "group": "t",
    "note": "Every cell in this row is the mean of the three seeds' per-level video-AUCs; the AUC_comp cell is the mean of the three seeds' AUC_comp (identical to four decimals either way).",
-   "label": "T trunk-recipe control (fair, 3-seed mean) \u2014 c28",
+   "label": "TrunkCtrl trunk-recipe control (fair, 3-seed mean) \u2014 c28",
    "printed": 0.9796,
    "cell": "c28",
    "id": "T4.28",
@@ -807,7 +807,7 @@
    "kind": "seed_mean",
    "group": "t",
    "note": "Every cell in this row is the mean of the three seeds' per-level video-AUCs; the AUC_comp cell is the mean of the three seeds' AUC_comp (identical to four decimals either way).",
-   "label": "T trunk-recipe control (fair, 3-seed mean) \u2014 c32",
+   "label": "TrunkCtrl trunk-recipe control (fair, 3-seed mean) \u2014 c32",
    "printed": 0.9719,
    "cell": "c32",
    "id": "T4.29",
@@ -830,7 +830,7 @@
    "kind": "seed_mean",
    "group": "t",
    "note": "Every cell in this row is the mean of the three seeds' per-level video-AUCs; the AUC_comp cell is the mean of the three seeds' AUC_comp (identical to four decimals either way).",
-   "label": "T trunk-recipe control (fair, 3-seed mean) \u2014 c36",
+   "label": "TrunkCtrl trunk-recipe control (fair, 3-seed mean) \u2014 c36",
    "printed": 0.9644,
    "cell": "c36",
    "id": "T4.30",
@@ -853,7 +853,7 @@
    "kind": "seed_mean",
    "group": "t",
    "note": "Every cell in this row is the mean of the three seeds' per-level video-AUCs; the AUC_comp cell is the mean of the three seeds' AUC_comp (identical to four decimals either way).",
-   "label": "T trunk-recipe control (fair, 3-seed mean) \u2014 c40",
+   "label": "TrunkCtrl trunk-recipe control (fair, 3-seed mean) \u2014 c40",
    "printed": 0.9536,
    "cell": "c40",
    "id": "T4.31",
@@ -876,7 +876,7 @@
    "kind": "seed_mean",
    "group": "t",
    "note": "Every cell in this row is the mean of the three seeds' per-level video-AUCs; the AUC_comp cell is the mean of the three seeds' AUC_comp (identical to four decimals either way).",
-   "label": "T trunk-recipe control (fair, 3-seed mean) \u2014 auc_comp",
+   "label": "TrunkCtrl trunk-recipe control (fair, 3-seed mean) \u2014 auc_comp",
    "printed": 0.9674,
    "cell": "auc_comp",
    "id": "T4.32",
@@ -1018,7 +1018,7 @@
   {
    "kind": "cell",
    "run": "a1_none_s42",
-   "label": "CAFRL-none (shipped) \u2014 c0",
+   "label": "CAFRL\u2212adv (shipped) \u2014 c0",
    "printed": 0.9923,
    "cell": "c0",
    "id": "T4.41",
@@ -1033,7 +1033,7 @@
   {
    "kind": "cell",
    "run": "a1_none_s42",
-   "label": "CAFRL-none (shipped) \u2014 c18",
+   "label": "CAFRL\u2212adv (shipped) \u2014 c18",
    "printed": 0.9818,
    "cell": "c18",
    "id": "T4.42",
@@ -1048,7 +1048,7 @@
   {
    "kind": "cell",
    "run": "a1_none_s42",
-   "label": "CAFRL-none (shipped) \u2014 c23",
+   "label": "CAFRL\u2212adv (shipped) \u2014 c23",
    "printed": 0.9697,
    "cell": "c23",
    "id": "T4.43",
@@ -1063,7 +1063,7 @@
   {
    "kind": "cell",
    "run": "a1_none_s42",
-   "label": "CAFRL-none (shipped) \u2014 c28",
+   "label": "CAFRL\u2212adv (shipped) \u2014 c28",
    "printed": 0.959,
    "cell": "c28",
    "id": "T4.44",
@@ -1078,7 +1078,7 @@
   {
    "kind": "cell",
    "run": "a1_none_s42",
-   "label": "CAFRL-none (shipped) \u2014 c32",
+   "label": "CAFRL\u2212adv (shipped) \u2014 c32",
    "printed": 0.9484,
    "cell": "c32",
    "id": "T4.45",
@@ -1093,7 +1093,7 @@
   {
    "kind": "cell",
    "run": "a1_none_s42",
-   "label": "CAFRL-none (shipped) \u2014 c36",
+   "label": "CAFRL\u2212adv (shipped) \u2014 c36",
    "printed": 0.9311,
    "cell": "c36",
    "id": "T4.46",
@@ -1108,7 +1108,7 @@
   {
    "kind": "cell",
    "run": "a1_none_s42",
-   "label": "CAFRL-none (shipped) \u2014 c40",
+   "label": "CAFRL\u2212adv (shipped) \u2014 c40",
    "printed": 0.919,
    "cell": "c40",
    "id": "T4.47",
@@ -1123,7 +1123,7 @@
   {
    "kind": "auc_comp",
    "run": "a1_none_s42",
-   "label": "CAFRL-none (shipped) \u2014 auc_comp",
+   "label": "CAFRL\u2212adv (shipped) \u2014 auc_comp",
    "printed": 0.9394,
    "cell": "auc_comp",
    "id": "T4.48",
@@ -1256,7 +1256,7 @@
    "command": "python verify/claim.py T4.56"
   },
   {
-   "label": "b7 \u2014 c40 seed 42",
+   "label": "SpatialBase \u2014 c40 seed 42",
    "printed": 0.959,
    "kind": "cell",
    "run": "b7_effnet_b0_mq_fliponly",
@@ -1271,7 +1271,7 @@
    "command": "python verify/claim.py T5.1"
   },
   {
-   "label": "b7 \u2014 c40 seed 1",
+   "label": "SpatialBase \u2014 c40 seed 1",
    "printed": 0.9614,
    "kind": "cell",
    "run": "b7_effnet_b0_mq_fliponly_s1",
@@ -1286,7 +1286,7 @@
    "command": "python verify/claim.py T5.2"
   },
   {
-   "label": "b7 \u2014 c40 seed 2",
+   "label": "SpatialBase \u2014 c40 seed 2",
    "printed": 0.9492,
    "kind": "cell",
    "run": "b7_effnet_b0_mq_fliponly_s2",
@@ -1301,7 +1301,7 @@
    "command": "python verify/claim.py T5.3"
   },
   {
-   "label": "b7 \u2014 c40 3-seed mean",
+   "label": "SpatialBase \u2014 c40 3-seed mean",
    "printed": 0.9565,
    "kind": "seed_mean",
    "group": "b7",
@@ -1323,7 +1323,7 @@
    "command": "python verify/claim.py T5.4"
   },
   {
-   "label": "b7 \u2014 c40 3-seed band (half-width)",
+   "label": "SpatialBase \u2014 c40 3-seed band (half-width)",
    "printed": 0.016,
    "kind": "seed_band",
    "group": "b7",
@@ -1345,7 +1345,7 @@
    "command": "python verify/claim.py T5.5"
   },
   {
-   "label": "b7 \u2014 AUC_comp 3-seed mean",
+   "label": "SpatialBase \u2014 AUC_comp 3-seed mean",
    "printed": 0.9688,
    "kind": "seed_mean",
    "group": "b7",
@@ -1367,7 +1367,7 @@
    "command": "python verify/claim.py T5.6"
   },
   {
-   "label": "F1 \u2014 c40 seed 42",
+   "label": "Fair-N \u2014 c40 seed 42",
    "printed": 0.9586,
    "kind": "cell",
    "run": "f1_none_fair_s42",
@@ -1382,7 +1382,7 @@
    "command": "python verify/claim.py T5.7"
   },
   {
-   "label": "F1 \u2014 c40 seed 1",
+   "label": "Fair-N \u2014 c40 seed 1",
    "printed": 0.9567,
    "kind": "cell",
    "run": "f1_none_fair_s1",
@@ -1397,7 +1397,7 @@
    "command": "python verify/claim.py T5.8"
   },
   {
-   "label": "F1 \u2014 c40 seed 2",
+   "label": "Fair-N \u2014 c40 seed 2",
    "printed": 0.9536,
    "kind": "cell",
    "run": "f1_none_fair_s2",
@@ -1412,7 +1412,7 @@
    "command": "python verify/claim.py T5.9"
   },
   {
-   "label": "F1 \u2014 c40 3-seed mean",
+   "label": "Fair-N \u2014 c40 3-seed mean",
    "printed": 0.9563,
    "kind": "seed_mean",
    "group": "f1",
@@ -1434,7 +1434,7 @@
    "command": "python verify/claim.py T5.10"
   },
   {
-   "label": "F1 \u2014 c40 3-seed band (half-width)",
+   "label": "Fair-N \u2014 c40 3-seed band (half-width)",
    "printed": 0.0062,
    "kind": "seed_band",
    "group": "f1",
@@ -1456,7 +1456,7 @@
    "command": "python verify/claim.py T5.11"
   },
   {
-   "label": "F1 \u2014 AUC_comp 3-seed mean",
+   "label": "Fair-N \u2014 AUC_comp 3-seed mean",
    "printed": 0.9675,
    "kind": "seed_mean",
    "group": "f1",
@@ -1478,7 +1478,7 @@
    "command": "python verify/claim.py T5.12"
   },
   {
-   "label": "F2 \u2014 c40 seed 42",
+   "label": "Fair-W \u2014 c40 seed 42",
    "printed": 0.9645,
    "kind": "cell",
    "run": "f2_spatres_full_s42",
@@ -1493,7 +1493,7 @@
    "command": "python verify/claim.py T5.13"
   },
   {
-   "label": "F2 \u2014 c40 seed 1",
+   "label": "Fair-W \u2014 c40 seed 1",
    "printed": 0.9602,
    "kind": "cell",
    "run": "f2_spatres_full_s1",
@@ -1508,7 +1508,7 @@
    "command": "python verify/claim.py T5.14"
   },
   {
-   "label": "F2 \u2014 c40 seed 2",
+   "label": "Fair-W \u2014 c40 seed 2",
    "printed": 0.9609,
    "kind": "cell",
    "run": "f2_spatres_full_s2",
@@ -1523,7 +1523,7 @@
    "command": "python verify/claim.py T5.15"
   },
   {
-   "label": "F2 \u2014 c40 3-seed mean",
+   "label": "Fair-W \u2014 c40 3-seed mean",
    "printed": 0.9619,
    "kind": "seed_mean",
    "group": "f2",
@@ -1545,7 +1545,7 @@
    "command": "python verify/claim.py T5.16"
   },
   {
-   "label": "F2 \u2014 c40 3-seed band (half-width)",
+   "label": "Fair-W \u2014 c40 3-seed band (half-width)",
    "printed": 0.0058,
    "kind": "seed_band",
    "group": "f2",
@@ -1567,7 +1567,7 @@
    "command": "python verify/claim.py T5.17"
   },
   {
-   "label": "F2 \u2014 AUC_comp 3-seed mean",
+   "label": "Fair-W \u2014 AUC_comp 3-seed mean",
    "printed": 0.9719,
    "kind": "seed_mean",
    "group": "f2",
@@ -1673,7 +1673,7 @@
   {
    "kind": "cell",
    "run": "b7_effnet_b0_mq_fliponly",
-   "label": "EffNet-B0 backbone (b7) \u2014 celebdf_v2",
+   "label": "EffNet-B0 backbone (SpatialBase) \u2014 celebdf_v2",
    "printed": 0.699,
    "cell": "celebdf_v2",
    "eval_set": "cross_dataset",
@@ -1690,7 +1690,7 @@
   {
    "kind": "cell",
    "run": "b7_effnet_b0_mq_fliponly",
-   "label": "EffNet-B0 backbone (b7) \u2014 dfd_c23",
+   "label": "EffNet-B0 backbone (SpatialBase) \u2014 dfd_c23",
    "printed": 0.804,
    "cell": "dfd_c23",
    "eval_set": "cross_dataset",
@@ -1707,7 +1707,7 @@
   {
    "kind": "cell",
    "run": "b7_effnet_b0_mq_fliponly",
-   "label": "EffNet-B0 backbone (b7) \u2014 dfd_c40",
+   "label": "EffNet-B0 backbone (SpatialBase) \u2014 dfd_c40",
    "printed": 0.646,
    "cell": "dfd_c40",
    "eval_set": "cross_dataset",
@@ -1771,6 +1771,330 @@
     "predictions/cross_dataset/b4_xception_mq.json"
    ],
    "command": "python verify/claim.py T7.9"
+  },
+  {
+   "kind": "cell",
+   "run": "a0",
+   "metric": "ci_lo",
+   "label": "CAFRL (shipped, A0) \u2014 CI lower \u2014 celebdf_v2",
+   "printed": 0.648,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.10",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/a0.json"
+   ],
+   "command": "python verify/claim.py T7.10"
+  },
+  {
+   "kind": "cell",
+   "run": "a0",
+   "metric": "ci_lo",
+   "label": "CAFRL (shipped, A0) \u2014 CI lower \u2014 dfd_c23",
+   "printed": 0.8,
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.11",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/a0.json"
+   ],
+   "command": "python verify/claim.py T7.11"
+  },
+  {
+   "kind": "cell",
+   "run": "a0",
+   "metric": "ci_lo",
+   "label": "CAFRL (shipped, A0) \u2014 CI lower \u2014 dfd_c40",
+   "printed": 0.602,
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.12",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/a0.json"
+   ],
+   "command": "python verify/claim.py T7.12"
+  },
+  {
+   "kind": "cell",
+   "run": "a0",
+   "metric": "ci_hi",
+   "label": "CAFRL (shipped, A0) \u2014 CI upper \u2014 celebdf_v2",
+   "printed": 0.745,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.13",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/a0.json"
+   ],
+   "command": "python verify/claim.py T7.13"
+  },
+  {
+   "kind": "cell",
+   "run": "a0",
+   "metric": "ci_hi",
+   "label": "CAFRL (shipped, A0) \u2014 CI upper \u2014 dfd_c23",
+   "printed": 0.839,
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.14",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/a0.json"
+   ],
+   "command": "python verify/claim.py T7.14"
+  },
+  {
+   "kind": "cell",
+   "run": "a0",
+   "metric": "ci_hi",
+   "label": "CAFRL (shipped, A0) \u2014 CI upper \u2014 dfd_c40",
+   "printed": 0.659,
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.15",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/a0.json"
+   ],
+   "command": "python verify/claim.py T7.15"
+  },
+  {
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "metric": "ci_lo",
+   "label": "EffNet-B0 backbone (SpatialBase) \u2014 CI lower \u2014 celebdf_v2",
+   "printed": 0.649,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.16",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py T7.16"
+  },
+  {
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "metric": "ci_lo",
+   "label": "EffNet-B0 backbone (SpatialBase) \u2014 CI lower \u2014 dfd_c23",
+   "printed": 0.783,
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.17",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py T7.17"
+  },
+  {
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "metric": "ci_lo",
+   "label": "EffNet-B0 backbone (SpatialBase) \u2014 CI lower \u2014 dfd_c40",
+   "printed": 0.617,
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.18",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py T7.18"
+  },
+  {
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "metric": "ci_hi",
+   "label": "EffNet-B0 backbone (SpatialBase) \u2014 CI upper \u2014 celebdf_v2",
+   "printed": 0.745,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.19",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py T7.19"
+  },
+  {
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "metric": "ci_hi",
+   "label": "EffNet-B0 backbone (SpatialBase) \u2014 CI upper \u2014 dfd_c23",
+   "printed": 0.824,
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.20",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py T7.20"
+  },
+  {
+   "kind": "cell",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "metric": "ci_hi",
+   "label": "EffNet-B0 backbone (SpatialBase) \u2014 CI upper \u2014 dfd_c40",
+   "printed": 0.674,
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.21",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py T7.21"
+  },
+  {
+   "kind": "cell",
+   "run": "b4_xception_mq",
+   "metric": "ci_lo",
+   "label": "Xception-mq \u2014 CI lower \u2014 celebdf_v2",
+   "printed": 0.653,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.22",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py T7.22"
+  },
+  {
+   "kind": "cell",
+   "run": "b4_xception_mq",
+   "metric": "ci_lo",
+   "label": "Xception-mq \u2014 CI lower \u2014 dfd_c23",
+   "printed": 0.864,
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.23",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py T7.23"
+  },
+  {
+   "kind": "cell",
+   "run": "b4_xception_mq",
+   "metric": "ci_lo",
+   "label": "Xception-mq \u2014 CI lower \u2014 dfd_c40",
+   "printed": 0.66,
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.24",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py T7.24"
+  },
+  {
+   "kind": "cell",
+   "run": "b4_xception_mq",
+   "metric": "ci_hi",
+   "label": "Xception-mq \u2014 CI upper \u2014 celebdf_v2",
+   "printed": 0.748,
+   "cell": "celebdf_v2",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.25",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py T7.25"
+  },
+  {
+   "kind": "cell",
+   "run": "b4_xception_mq",
+   "metric": "ci_hi",
+   "label": "Xception-mq \u2014 CI upper \u2014 dfd_c23",
+   "printed": 0.896,
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.26",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py T7.26"
+  },
+  {
+   "kind": "cell",
+   "run": "b4_xception_mq",
+   "metric": "ci_hi",
+   "label": "Xception-mq \u2014 CI upper \u2014 dfd_c40",
+   "printed": 0.715,
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "These cells carry the reported statistics (video-AUC, frame-AUC, frame-BCE and the marginal bootstrap CI) but no per-video scores \u2014 see predictions/GAPS.md. The map checks the released statistic against the printed value; it cannot re-derive it from scores.",
+   "id": "T7.27",
+   "table": "T7",
+   "table_title": "Cross-dataset evaluation (video-AUC)",
+   "where": "Appendix D-A",
+   "artifacts": [
+    "predictions/cross_dataset/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py T7.27"
   },
   {
    "label": "c23 \u2014 CAFRL (3-seed)",
@@ -1940,13 +2264,13 @@
    "command": "python verify/claim.py AppC.4"
   },
   {
-   "label": "Augmentation recovery, example 1: \u2192 0.792 (with augmentation)",
-   "printed": 0.792,
+   "label": "Augmentation recovery, example 1: \u2192 0.791 (with augmentation)",
+   "printed": 0.791,
    "kind": "cell",
    "run": "b1_xception_lit",
    "cell": "c40",
    "metric": "frame_auc",
-   "reconcile": "Queued for correction in the next manuscript revision: the released frame-AUC is 0.79150, which rounds to 0.791. A last-digit rounding difference; the recovery it illustrates (+2.7 frame-AUC points) is unaffected.",
+   "note": "Corrected in the manuscript (W1, 2026-08-19) from 0.792 to the released frame-AUC 0.79150.",
    "id": "AppC.5",
    "table": "AppC",
    "table_title": "Baseline reproduction and the augmentation confound",
@@ -2074,7 +2398,7 @@
    "command": "python verify/claim.py AppC.12"
   },
   {
-   "label": "Clean-anchored drop, b7 (0.016)",
+   "label": "Clean-anchored drop, SpatialBase (0.016)",
    "printed": 0.016,
    "kind": "drop",
    "run": "b7_effnet_b0_mq_fliponly",
@@ -2088,7 +2412,7 @@
    "command": "python verify/claim.py X1.1"
   },
   {
-   "label": "Clean-anchored drop, T (0.019)",
+   "label": "Clean-anchored drop, TrunkCtrl (0.019)",
    "printed": 0.019,
    "kind": "drop",
    "group": "t",
@@ -2109,7 +2433,7 @@
    "command": "python verify/claim.py X1.2"
   },
   {
-   "label": "Clean-anchored drop, F1 (0.017)",
+   "label": "Clean-anchored drop, Fair-N (0.017)",
    "printed": 0.017,
    "kind": "drop",
    "run": "f1_none_fair_s42",
@@ -2123,7 +2447,7 @@
    "command": "python verify/claim.py X1.3"
   },
   {
-   "label": "Clean-anchored drop, F2 (0.015)",
+   "label": "Clean-anchored drop, Fair-W (0.015)",
    "printed": 0.015,
    "kind": "drop",
    "run": "f2_spatres_full_s42",
@@ -2151,7 +2475,7 @@
    "command": "python verify/claim.py X1.5"
   },
   {
-   "label": "FaceShifter fair 3-seed mean, F1 c23",
+   "label": "FaceShifter fair 3-seed mean, Fair-N c23",
    "printed": 0.799,
    "kind": "seed_mean",
    "group": "f1",
@@ -2174,7 +2498,7 @@
    "command": "python verify/claim.py X1.6"
   },
   {
-   "label": "FaceShifter fair 3-seed mean, F1 c40",
+   "label": "FaceShifter fair 3-seed mean, Fair-N c40",
    "printed": 0.711,
    "kind": "seed_mean",
    "group": "f1",
@@ -2197,7 +2521,7 @@
    "command": "python verify/claim.py X1.7"
   },
   {
-   "label": "FaceShifter fair 3-seed mean, F2 c23",
+   "label": "FaceShifter fair 3-seed mean, Fair-W c23",
    "printed": 0.768,
    "kind": "seed_mean",
    "group": "f2",
@@ -2220,7 +2544,7 @@
    "command": "python verify/claim.py X1.8"
   },
   {
-   "label": "FaceShifter fair 3-seed mean, F2 c40",
+   "label": "FaceShifter fair 3-seed mean, Fair-W c40",
    "printed": 0.707,
    "kind": "seed_mean",
    "group": "f2",
@@ -2243,7 +2567,7 @@
    "command": "python verify/claim.py X1.9"
   },
   {
-   "label": "FaceShifter b7 3-seed mean, c23",
+   "label": "FaceShifter SpatialBase 3-seed mean, c23",
    "printed": 0.823,
    "kind": "seed_mean",
    "group": "b7",
@@ -2266,7 +2590,7 @@
    "command": "python verify/claim.py X1.10"
   },
   {
-   "label": "FaceShifter b7 3-seed mean, c40",
+   "label": "FaceShifter SpatialBase 3-seed mean, c40",
    "printed": 0.732,
    "kind": "seed_mean",
    "group": "b7",
@@ -2289,10 +2613,10 @@
    "command": "python verify/claim.py X1.11"
   },
   {
-   "label": "Fair variants sit below the backbone: F1-pool \u0394 \u2248 -0.033 at c40",
+   "label": "Fair variants sit below the backbone: Fair-N pool \u0394 \u2248 -0.033 at c40",
    "printed": "-0.0325",
    "kind": "contrast",
-   "name": "F1-pool - b7-pool (FaceShifter)",
+   "name": "Fair-N pool - SpatialBase pool (FaceShifter)",
    "scope": "faceshifter",
    "id": "X1.12",
    "table": "X1",
@@ -2310,10 +2634,10 @@
    "command": "python verify/claim.py X1.12 --bootstrap"
   },
   {
-   "label": "Fair variants sit below the backbone: F2-pool \u0394 \u2248 -0.032 at c40",
+   "label": "Fair variants sit below the backbone: Fair-W pool \u0394 \u2248 -0.032 at c40",
    "printed": "-0.0318",
    "kind": "contrast",
-   "name": "F2-pool - b7-pool (FaceShifter)",
+   "name": "Fair-W pool - SpatialBase pool (FaceShifter)",
    "scope": "faceshifter",
    "id": "X1.13",
    "table": "X1",
@@ -2331,10 +2655,10 @@
    "command": "python verify/claim.py X1.13 --bootstrap"
   },
   {
-   "label": "Sign-inconsistent single-seed leans: F1 +0.022",
+   "label": "Sign-inconsistent single-seed leans: Fair-N +0.022",
    "printed": "+0.0220",
    "kind": "contrast",
-   "name": "F1 s42 - b7-pool (FaceShifter, single seed)",
+   "name": "Fair-N s42 - SpatialBase pool (FaceShifter, single seed)",
    "scope": "faceshifter",
    "id": "X1.14",
    "table": "X1",
@@ -2350,10 +2674,10 @@
    "command": "python verify/claim.py X1.14 --bootstrap"
   },
   {
-   "label": "Sign-inconsistent single-seed leans: F2 -0.023",
+   "label": "Sign-inconsistent single-seed leans: Fair-W -0.023",
    "printed": "-0.0227",
    "kind": "contrast",
-   "name": "F2 s42 - b7-pool (FaceShifter, single seed)",
+   "name": "Fair-W s42 - SpatialBase pool (FaceShifter, single seed)",
    "scope": "faceshifter",
    "id": "X1.15",
    "table": "X1",
@@ -2374,7 +2698,7 @@
    "kind": "gap",
    "gap": "xception_faceshifter",
    "check": "none",
-   "note": "The Xception FaceShifter cells come from the same June follow-up as Table 8's CAFRL column and were never saved as predictions.",
+   "note": "The Xception FaceShifter cells come from the same June follow-up as Table 9's CAFRL column and were never saved as predictions.",
    "id": "X1.16",
    "table": "X1",
    "table_title": "Key numbers in the running text",
@@ -2403,13 +2727,13 @@
    "command": "\u2014"
   },
   {
-   "label": "\u03b3 grows to its peak 0.145 (deadlock broken, F2)",
-   "printed": 0.145,
+   "label": "\u03b3 grows to its peak 0.146 (deadlock broken, Fair-W)",
+   "printed": 0.146,
    "kind": "curve",
    "run": "f2_spatres_full_s42",
    "tag": "diag/residual_gamma",
    "reduce": "max",
-   "reconcile": "Queued for correction in the next manuscript revision: the released per-epoch series peaks at 0.1464 (0.1464 on the live tag too), which rounds to 0.146. The claim it supports \u2014 the gate grows instead of collapsing \u2014 is unaffected.",
+   "note": "Corrected in the manuscript (W1, 2026-08-19) from 0.145 to the released series peak 0.14636 (epoch 6, seed 42; seeds 1 and 2 peak at 0.158 and 0.151).",
    "id": "M1.1",
    "table": "M1",
    "table_title": "Mechanism claims, from the released training curves",
@@ -2420,7 +2744,7 @@
    "command": "python verify/claim.py M1.1"
   },
   {
-   "label": "\u03b3 decays to \u22480.03 by the end of training (F2)",
+   "label": "\u03b3 decays to \u22480.03 by the end of training (Fair-W)",
    "printed": 0.031,
    "kind": "curve",
    "run": "f2_spatres_full_s42",
@@ -2436,7 +2760,7 @@
    "command": "python verify/claim.py M1.2"
   },
   {
-   "label": "\u03b3 at the selected epoch (F2)",
+   "label": "\u03b3 at the selected epoch (Fair-W)",
    "printed": 0.14,
    "kind": "curve",
    "run": "f2_spatres_full_s42",
@@ -2452,14 +2776,14 @@
    "command": "python verify/claim.py M1.3"
   },
   {
-   "label": "Frequency head is individually discriminative: \u22480.98 at c23 (F2)",
+   "label": "Frequency head is individually discriminative: \u22480.98 at c23 (Fair-W)",
    "printed": 0.98,
    "kind": "curve",
    "run": "f2_spatres_full_s42",
    "tag": "auc/freq_c23",
    "reduce": "max",
    "check": "none",
-   "note": "The manuscript quotes the plateau the head reaches and holds from about epoch 8; the released series carries every epoch.",
+   "note": "The manuscript quotes the plateau the head reaches over the second half of training, together with its epoch-1 and selected-epoch values (3-seed means: 0.81/0.71 at epoch 1, 0.97/0.85 at the selected epoch, c23/c40); the released series carries every epoch of every seed.",
    "id": "M1.4",
    "table": "M1",
    "table_title": "Mechanism claims, from the released training curves",
@@ -2470,7 +2794,7 @@
    "command": "python verify/claim.py M1.4"
   },
   {
-   "label": "Frequency head is individually discriminative: \u22480.91 at c40 (F2)",
+   "label": "Frequency head is individually discriminative: \u22480.91 at c40 (Fair-W)",
    "printed": 0.91,
    "kind": "curve",
    "run": "f2_spatres_full_s42",
@@ -2649,7 +2973,7 @@
    "id": "R8",
    "claim": "Video-ID lists for every evaluation set",
    "quote": "identical 700-video set",
-   "where": "Section IV-B; Table 3 caption",
+   "where": "Section IV-B; Table 4 caption",
    "artifacts": [
     "splits/*.json",
     "splits/ffpp_official/*.json",

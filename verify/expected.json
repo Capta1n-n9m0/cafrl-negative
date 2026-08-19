@@ -726,7 +726,7 @@
  ],
  "derived": [
   {
-   "name": "Table 4, row T: trunk-recipe control, 3-seed mean c40",
+   "name": "Table 5, row TrunkCtrl: trunk-recipe control, 3-seed mean c40",
    "kind": "seed_mean",
    "runs": [
     "trunk_recipe_s42",
@@ -738,7 +738,7 @@
    "expect": 0.9536
   },
   {
-   "name": "Table 5: b7 3-seed mean c40",
+   "name": "Table 6: SpatialBase 3-seed mean c40",
    "kind": "seed_mean",
    "runs": [
     "b7_effnet_b0_mq_fliponly",
@@ -750,7 +750,7 @@
    "expect": 0.9565
   },
   {
-   "name": "Table 5: F1 3-seed mean c40",
+   "name": "Table 6: Fair-N 3-seed mean c40",
    "kind": "seed_mean",
    "runs": [
     "f1_none_fair_s42",
@@ -762,7 +762,7 @@
    "expect": 0.9563
   },
   {
-   "name": "Table 5: F2 3-seed mean c40",
+   "name": "Table 6: Fair-W 3-seed mean c40",
    "kind": "seed_mean",
    "runs": [
     "f2_spatres_full_s42",
@@ -791,7 +791,7 @@
  ],
  "contrasts": [
   {
-   "name": "b7 - CAFRL-shipped (STOP-gate)",
+   "name": "SpatialBase - CAFRL as specified (STOP-gate)",
    "a": [
     "b7_effnet_b0_mq_fliponly"
    ],
@@ -801,13 +801,13 @@
    "level": "c40",
    "expect": {
     "delta": 0.0366,
-    "ci_lo": 0.021,
+    "ci_lo": 0.0205,
     "ci_hi": 0.054
    },
    "verdict": "significant - as-specified loses"
   },
   {
-   "name": "F1 - CAFRL-none (what the fair recipe bought)",
+   "name": "Fair-N - CAFRL\u2212adv (what the fair recipe bought)",
    "a": [
     "f1_none_fair_s42"
    ],
@@ -823,7 +823,7 @@
    "verdict": "significant - the deficit was recipe"
   },
   {
-   "name": "F1 - b7 (single seed)",
+   "name": "Fair-N - SpatialBase (single seed)",
    "a": [
     "f1_none_fair_s42"
    ],
@@ -839,7 +839,7 @@
    "verdict": "neutral"
   },
   {
-   "name": "F2 - b7 (single seed)",
+   "name": "Fair-W - SpatialBase (single seed)",
    "a": [
     "f2_spatres_full_s42"
    ],
@@ -855,7 +855,7 @@
    "verdict": "neutral (lean)"
   },
   {
-   "name": "F1-pool - b7-pool (3v3)",
+   "name": "Fair-N pool - SpatialBase pool (3v3)",
    "a": [
     "f1_none_fair_s42",
     "f1_none_fair_s1",
@@ -875,7 +875,7 @@
    "verdict": "neutral, confirmed"
   },
   {
-   "name": "F2-pool - b7-pool (3v3)",
+   "name": "Fair-W pool - SpatialBase pool (3v3)",
    "a": [
     "f2_spatres_full_s42",
     "f2_spatres_full_s1",
@@ -895,7 +895,7 @@
    "verdict": "neutral, confirmed"
   },
   {
-   "name": "b7 - T (architecture share, pooled)",
+   "name": "SpatialBase - TrunkCtrl (architecture share, pooled)",
    "a": [
     "b7_effnet_b0_mq_fliponly"
    ],
@@ -913,7 +913,7 @@
    "verdict": "no architecture penalty"
   },
   {
-   "name": "T - spatial-residual (recipe share, pooled)",
+   "name": "TrunkCtrl - spatial-residual (recipe share, pooled)",
    "a": [
     "trunk_recipe_s42",
     "trunk_recipe_s1",
@@ -961,7 +961,7 @@
   ],
   "contrasts": [
    {
-    "name": "F1-pool - b7-pool (FaceShifter)",
+    "name": "Fair-N pool - SpatialBase pool (FaceShifter)",
     "a": [
      "f1_none_fair_s42",
      "f1_none_fair_s1",
@@ -981,7 +981,7 @@
     "verdict": "excludes zero in the negative direction - no unseen-manipulation advantage"
    },
    {
-    "name": "F2-pool - b7-pool (FaceShifter)",
+    "name": "Fair-W pool - SpatialBase pool (FaceShifter)",
     "a": [
      "f2_spatres_full_s42",
      "f2_spatres_full_s1",
@@ -1001,7 +1001,7 @@
     "verdict": "excludes zero in the negative direction - no unseen-manipulation advantage"
    },
    {
-    "name": "F1 s42 - b7-pool (FaceShifter, single seed)",
+    "name": "Fair-N s42 - SpatialBase pool (FaceShifter, single seed)",
     "a": [
      "f1_none_fair_s42"
     ],
@@ -1019,7 +1019,7 @@
     "verdict": "includes zero - a lean, not a claim (the pre-stated gate)"
    },
    {
-    "name": "F2 s42 - b7-pool (FaceShifter, single seed)",
+    "name": "Fair-W s42 - SpatialBase pool (FaceShifter, single seed)",
     "a": [
      "f2_spatres_full_s42"
     ],

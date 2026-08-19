@@ -15,8 +15,10 @@
 \definecolor{muted}{HTML}{898781}
 \definecolor{okgreen}{HTML}{2E7D32} % verdict
 
-\newcommand{\head}{\small\bfseries}
-\newcommand{\body}{\footnotesize}
+% W2 (m-50 / CEL-13): base font bumped one step — at IEEE Access column
+% width the previous \footnotesize body rendered below the template minimum.
+\newcommand{\head}{\normalsize\bfseries}
+\newcommand{\body}{\small}
 
 \begin{document}
 \begin{tikzpicture}[
@@ -32,56 +34,58 @@
   ghost/.style={stage, draw=muted, dashed, fill=black!2, text=ink2},
   flow/.style={-{Latex[length=2.6mm]}, line width=0.8pt, draw=ink2},
   ghostflow/.style={-{Latex[length=2.4mm]}, line width=0.7pt, draw=muted, dashed},
-  gpu/.style={font=\footnotesize, text=muted, anchor=west},
 ]
 
 % ---------------------------------------------------------------- stages ----
 \node[preblock] (prereg) at (0,0) {%
   {\head Pre-registration (before any result)}\\[1pt]
-  {\body STOP-gate + paired-$\Delta$ win-rule frozen under a git tag;
-   each later re-test's decision rule journaled before its run.}};
+  {\body STOP-gate $+$ paired-$\Delta$ win-rule frozen under a git tag;
+   each re-test's rule journaled before its run.}};
 
-\node[runblock, below=5.5mm of prereg] (campaign) {%
+\node[runblock, below=4mm of prereg] (campaign) {%
   {\head Controlled campaign}\\[1pt]
-  {\body full CAFRL (11.97\,M) vs capacity-matched EfficientNet-B0
-   ``b7'' (4.0\,M) + Xception / F3-Net / FreqNet, all on identical
+  {\body full CAFRL (11.97\,M) vs the capacity-matched
+   ``SpatialBase'' (4.0\,M) $+$ Xception / F3-Net / FreqNet, identical
    multi-CRF data.\\
-   \textit{Confounds caught \& ruled out:} augmentation policy;
-   backbone capacity.}};
+   \textit{Confounds ruled out:} augmentation; capacity.}};
 
-\node[stopblock, below=5.5mm of campaign] (stop) {%
+\node[stopblock, below=4mm of campaign] (stop) {%
   {\head STOP-gate fires --- the thesis is falsified}\\[1pt]
-  {\body b7 beats full CAFRL at every level
-   (c40: 0.959 vs 0.922; $\Delta$ +0.037, CI [+0.021,\,+0.054]).}};
+  {\body SpatialBase beats full CAFRL at every level
+   (c40: 0.959 vs 0.922; $\Delta$ +0.0366, CI [+0.020,\,+0.054]).}};
 
-\node[ghost, below right=4.5mm and -49mm of stop, text width=5.7cm] (ablations) {%
-  {\head\color{ink2} Ablation campaign A1--A6}\\[1pt]
-  {\body GRL-vs-HSIC bake-off, conditioning, fusion, curriculum arms
-   --- \textbf{never run} per the frozen rule.}};
+\node[ghost, below right=4.5mm and -62mm of stop, text width=5.7cm] (ablations) {%
+  {\head\color{ink2} Planned ablation campaign}\\[1pt]
+  {\body six arms --- GRL-vs-HSIC bake-off, conditioning, fusion, curriculum ---
+   \textbf{never run} per the frozen rule.\\[1pt]
+   \color{freq!70!black}\textbf{$\approx$270 GPU-h saved}}};
 
-\node[audblock, anchor=north] (audit) at ($(stop.south -| stop.center)+(0,-3.6cm)$) {%
+\node[audblock, anchor=north] (audit) at ($(stop.south -| stop.center)+(0,-3.1cm)$) {%
   {\head Adversarial self-audit of the negative}\\[1pt]
   {\body measurement reproduces bit-exactly; causal reading unsound.
    Four defects biased \emph{against} frequency: D1 auxiliary-loss
-   dominance (40--120$\times$) $\cdot$ D2 $\gamma$ gradient deadlock $\cdot$
-   D3 20$\times$ optimization mismatch $\cdot$ D4 bottlenecked trunk.}};
+   dominance $\cdot$ D2 $\gamma$ deadlock $\cdot$ D3 optimization
+   mismatch $\cdot$ D4 bottlenecked trunk.}};
 
-\node[runblock, below=5.5mm of audit] (retests) {%
+\node[runblock, below=4mm of audit] (retests) {%
   {\head Pre-registered fair re-tests (repair D1--D4)}\\[1pt]
-  {\body T: $\approx$88\% of the gap was recipe (significant)\\
-   F1 (fair recipe, zero invariance losses): 0.9586${}\approx{}$b7~0.9590\\
-   F2 (full trunk + $\gamma$-residual): +0.0056, CI includes 0}};
+  {\body TrunkCtrl: trunk gap recipe-dominant ($\approx$88\%)\\
+   Fair-N (no invariance losses):
+   0.9586 $\approx$ SpatialBase 0.9590\\
+   Fair-W (full trunk $+\gamma$-residual): +0.0056, CI incl.\ 0\\[1pt]
+   {\color{muted}$\approx$35 GPU-h}}};
 
-\node[runblock, below=5.5mm of retests] (seeds) {%
+\node[runblock, below=4mm of retests] (seeds) {%
   {\head Seed confirmation (3 seeds vs 3 seeds)}\\[1pt]
-  {\body pooled $\Delta$ at c40: F1 $-$0.0010 / F2 +0.0022,
-   both CIs include 0 --- neutral, confirmed.}};
+  {\body pooled $\Delta$ at c40: Fair-N $-$0.0010 / Fair-W +0.0022,
+   both CIs include 0 --- neutral, confirmed.\\[1pt]
+   {\color{muted}$\approx$31 GPU-h}}};
 
-\node[verblock, below=5.5mm of seeds] (verdict) {%
+\node[verblock, below=4mm of seeds] (verdict) {%
   {\head Verdict}\\[1pt]
-  {\body deficit = recipe artifact (+3.96\,pt recovered);
-   frequency informative alone (AUC 0.91--0.98) yet redundant in fusion;
-   robustness is bought by data diversity (real CRF $\gg$ JPEG, +7.3\,pt).}};
+  {\body deficit $=$ recipe artifact ($+3.96$\,pt at c40, s42); frequency
+   informative alone (AUC 0.91--0.98) yet redundant in fusion; robustness is
+   bought by data diversity (real CRF $\gg$ JPEG, $+7.3$\,pt).}};
 
 % ----------------------------------------------------------------- edges ----
 \draw[flow] (prereg.south) -- (campaign.north);
@@ -92,13 +96,6 @@
 \draw[flow] (retests.south) -- (seeds.north);
 \draw[flow] (seeds.south) -- (verdict.north);
 
-% --------------------------------------------------------- GPU-h economics --
-\node[gpu, text=freq!70!black, align=left] at ($(ablations.east)+(0.25,0)$)
-  {$\approx$270 GPU-h\\[-2pt]\textbf{saved}};
-\node[gpu, align=left] at ($(retests.east)+(0.25,0)$)
-  {$\approx$35 GPU-h};
-\node[gpu, align=left] at ($(seeds.east)+(0.25,0)$)
-  {$\approx$31 GPU-h};
 
 \end{tikzpicture}
 \end{document}
