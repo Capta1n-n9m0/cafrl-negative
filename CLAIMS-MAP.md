@@ -343,7 +343,7 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 | `X1.16` | Xception overfits: ~11 pt below smaller models on unseen FaceShifter at c23 | ~11 pt | **not derivable** | `predictions/GAPS.md` | — |
 | `X1.17` | Campaign GPU-hours (~270 saved, ~35 re-tests, ~31 confirmation seeds) | GPU-h | **not derivable** | `predictions/GAPS.md` | — |
 
-- `X1.16` — **not derivable from this release.** Same cause: the Xception FaceShifter numbers come from the June follow-up and were never persisted as predictions. The Xception FaceShifter cells come from the same June follow-up as Table 9's CAFRL column and were never saved as predictions.
+- `X1.16` — **not derivable from this release.** Same cause: the Xception FaceShifter numbers come from the June follow-up and were never persisted as predictions. The Xception FaceShifter cells come from the same June follow-up as Table 9's CAFRL column and were never saved as predictions. The paper now also prints the paired interval recorded in the campaign journal for this observation (+0.113, CI [+0.064, +0.162], single seed, n=280), with an explicit note that it is journal-recorded and not re-derivable from this release.
 - `X1.17` — **not derivable from this release.** GPU-hour accounting is recorded in the internal campaign journal, which is not part of this release. What is released is every run's configuration and the number of runs. Wall-clock accounting lives in the internal campaign journal, which is not part of this release; the run count and their configurations are (configs/RUNS.md).
 
 ## M1 — Mechanism claims, from the released training curves

@@ -836,7 +836,7 @@
     "ci_lo": -0.0092,
     "ci_hi": 0.008
    },
-   "verdict": "neutral"
+   "verdict": "no detectable difference"
   },
   {
    "name": "Fair-W - SpatialBase (single seed)",
@@ -852,7 +852,7 @@
     "ci_lo": -0.0022,
     "ci_hi": 0.0134
    },
-   "verdict": "neutral (lean)"
+   "verdict": "no detectable difference (lean)"
   },
   {
    "name": "Fair-N pool - SpatialBase pool (3v3)",
@@ -872,7 +872,7 @@
     "ci_lo": -0.0066,
     "ci_hi": 0.0045
    },
-   "verdict": "neutral, confirmed"
+   "verdict": "no detectable difference; equivalent within \u00b11 pt (post hoc)"
   },
   {
    "name": "Fair-W pool - SpatialBase pool (3v3)",
@@ -892,7 +892,7 @@
     "ci_lo": -0.0035,
     "ci_hi": 0.008
    },
-   "verdict": "neutral, confirmed"
+   "verdict": "no detectable difference; equivalent within \u00b11 pt (post hoc)"
   },
   {
    "name": "SpatialBase - TrunkCtrl (architecture share, pooled)",

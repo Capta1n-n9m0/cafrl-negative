@@ -3,7 +3,7 @@
  "note": "Every manuscript table cell and present-tense release claim, mapped to the artifact that carries it and the command that recomputes it. Generated from the release manifest; checked on every build.",
  "manuscript": {
   "label": "IEEE Access submission, version B",
-  "sha256": "1c6a317d0da3469bb5cf34543e8ed19deb471d80771172c89dcf825d5c20954f",
+  "sha256": "f72f9780587e6a14965018c866441e53c7a2e4dc7c75c23779e786a2d75bd231",
   "note": "Table and section numbers refer to the submitted manuscript. The map is regenerated whenever the release is rebuilt; if a manuscript number moves, the build fails until the map and the manuscript agree."
  },
  "comp_levels": [
@@ -2698,7 +2698,7 @@
    "kind": "gap",
    "gap": "xception_faceshifter",
    "check": "none",
-   "note": "The Xception FaceShifter cells come from the same June follow-up as Table 9's CAFRL column and were never saved as predictions.",
+   "note": "The Xception FaceShifter cells come from the same June follow-up as Table 9's CAFRL column and were never saved as predictions. The paper now also prints the paired interval recorded in the campaign journal for this observation (+0.113, CI [+0.064, +0.162], single seed, n=280), with an explicit note that it is journal-recorded and not re-derivable from this release.",
    "id": "X1.16",
    "table": "X1",
    "table_title": "Key numbers in the running text",
