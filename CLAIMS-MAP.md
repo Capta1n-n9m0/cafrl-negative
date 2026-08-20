@@ -16,8 +16,8 @@ two, and every row below names the run it reads. Row ids (`T1.1`, `T3.5`, …) a
 stable handles for `verify/claim.py`, not manuscript table numbers; each section
 heading names the manuscript table it maps.
 
-376 rows and 14 release claims, 390 entries in all.
-**347 are recomputed from the released artifacts and checked against the
+382 rows and 14 release claims, 396 entries in all.
+**353 are recomputed from the released artifacts and checked against the
 paper on every build.** 6 are printed in the paper but *not* derivable
 from this release, each with its reason stated in place. 2 — both of
 them release claims — depend on the archival deposit, which is minted
@@ -29,7 +29,7 @@ parameter counts that no released artifact pins.
 No row is marked **differs**: every checked number in the manuscript agrees
 with this release's own recomputation. Three last-digit disagreements found
 when this map was first generated — the harmonized benchmark's Xception-mq
-AUC_comp, Appendix C's augmentation-recovery frame-AUC, and γ's peak — were
+AUC_comp, the baseline appendix's augmentation-recovery frame-AUC, and γ's peak — were
 resolved in favour of the artifact: the release's value was kept and the paper
 was corrected to it.
 
@@ -41,12 +41,12 @@ prints:
 - the published-anchor calibration *table* and the F3-Net/FreqNet adaptation
   statement in full — `evaluation/CALIBRATION.md`. The six frame-level
   reproduction numbers and their anchors were restored to the paper's
-  Appendix C in the W9 revision and are printed there;
+  baseline appendix in the W9 revision and are printed there;
 - the complete harmonized baseline benchmark over all seven CRF levels —
   `evaluation/BENCHMARK.md`. Its compressed form (c23–c40 and AUC_comp, eight
-  rows) was restored to the paper's Appendix C in W9 and is printed there;
+  rows) was restored to the paper's baseline appendix in W9 and is printed there;
 - the full out-of-distribution evaluation protocol — `evaluation/OOD-PROTOCOL.md`,
-  stated in two sentences in Appendix D;
+  stated in two sentences in the out-of-distribution appendix;
 - the marginal intervals of the cross-dataset cells, and the seed-42 values of
   the four arms that were also run at three seeds — the paper's cross-dataset
   table now prints the 3-seed block and the one single-seed arm.
@@ -129,7 +129,7 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 
 ## T2 — The audit ledger (D1-D4, named in Section VI's prose)
 
-*Section VI (the self-audit); the condensed table was replaced by prose in the W9 duplication pass, Appendix B remaining the authoritative telling; `\label{sec:audit}`*
+*Section VI (the self-audit); the condensed table was replaced by prose in the W9 duplication pass, Appendix A remaining the authoritative telling; `\label{sec:audit}`*
 
 | id | claim | paper prints | this release gives | artifact | command |
 |---|---|---|---|---|---|
@@ -229,7 +229,7 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 
 ## T5 — Per-seed c40 video-AUC and 3-seed bands
 
-*Appendix A; `\label{tab:appseeds}`*
+*Supplementary Material §S1 (Table S1); `\label{tab:appseeds}`*
 
 | id | claim | paper prints | this release gives | artifact | command |
 |---|---|---|---|---|---|
@@ -260,7 +260,7 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 
 ## T6 — The D1–D8 audit ledger (full)
 
-*Appendix B; `\label{tab:appledger}`*
+*Appendix A (Table 6) — the one appendix kept in the main paper; `\label{tab:appledger}`*
 
 | id | claim | paper prints | this release gives | artifact | command |
 |---|---|---|---|---|---|
@@ -271,7 +271,7 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 
 ## T7 — Cross-dataset evaluation (video-AUC)
 
-*Appendix D-A (Table 9; intervals released-only after the W8a trim, and the four replicated arms' seed-42 values released-only after the W8b cut A); `\label{tab:appcrossdataset}`*
+*Supplementary Material §S3-A (Table S3; intervals released-only after the W8a trim, and the four replicated arms' seed-42 values released-only after the W8b cut A); `\label{tab:appcrossdataset}`*
 
 | id | claim | paper prints | this release gives | artifact | command |
 |---|---|---|---|---|---|
@@ -423,7 +423,7 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 
 ## T8 — FaceShifter (held out), shipped recipe, seed-pooled
 
-*Appendix D-B; `\label{tab:appfaceshifter}`*
+*Supplementary Material §S3-B (Table S4); `\label{tab:appfaceshifter}`*
 
 | id | claim | paper prints | this release gives | artifact | command |
 |---|---|---|---|---|---|
@@ -438,7 +438,7 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 
 ## AppB2 — Harmonized baseline benchmark (video-AUC, FF++ test)
 
-*Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md; `\label{tab:appbench}`*
+*Supplementary Material §S2 (Table S2, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md; `\label{tab:appbench}`*
 
 | id | claim | paper prints | this release gives | artifact | command |
 |---|---|---|---|---|---|
@@ -574,7 +574,7 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 
 ## AppC — Baseline reproduction and the augmentation confound
 
-*Appendix C; `\label{app:baselines}`*
+*Supplementary Material §S2; `\label{app:baselines}`*
 
 | id | claim | paper prints | this release gives | artifact | command |
 |---|---|---|---|---|---|
@@ -628,7 +628,7 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 
 ## X1 — Key numbers in the running text
 
-*Sections VII-D, VIII and IX; Appendix D*
+*Sections VII-D, VIII and IX; Supplementary Material §S3*
 
 | id | claim | paper prints | this release gives | artifact | command |
 |---|---|---|---|---|---|
@@ -677,7 +677,7 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 
 ## AppE — Statistical robustness (cluster and two-level bootstraps, equivalence, multiplicity)
 
-*Appendix E and Section IV (statistical reporting); `\label{app:stats}`*
+*Supplementary Material §S4 and Section IV (statistical reporting); `\label{app:stats}`*
 
 | id | claim | paper prints | this release gives | artifact | command |
 |---|---|---|---|---|---|
@@ -709,37 +709,43 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 | `AppE.26` | Seeds resampled: Fair-N − SpatialBase, CI upper | 0.0123 | 0.0123 | `evaluation/analysis/seed_uncertainty.json` | `python verify/claim.py AppE.26` |
 | `AppE.27` | Seeds resampled: Fair-W − SpatialBase, CI lower | -0.0065 | -0.0065 | `evaluation/analysis/seed_uncertainty.json` | `python verify/claim.py AppE.27` |
 | `AppE.28` | Seeds resampled: Fair-W − SpatialBase, CI upper | 0.0164 | 0.0164 | `evaluation/analysis/seed_uncertainty.json` | `python verify/claim.py AppE.28` |
-| `AppE.29` | Equivalence margin (post hoc) | 0.01 | 0.0100 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.29` |
-| `AppE.30` | TOST Fair-N: 90% CI lower (video unit) | -0.0057 | -0.0057 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.30` |
-| `AppE.31` | TOST Fair-N: 90% CI upper (video unit) | 0.0036 | 0.0036 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.31` |
-| `AppE.32` | TOST Fair-N: p (video unit) | 0.001 | 0.0010 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.32` |
-| `AppE.33` | TOST Fair-W: 90% CI lower (video unit) | -0.0025 | -0.0025 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.33` |
-| `AppE.34` | TOST Fair-W: 90% CI upper (video unit) | 0.0071 | 0.0071 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.34` |
-| `AppE.35` | TOST Fair-W: p (video unit) | 0.006 | 0.0064 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.35` |
-| `AppE.36` | TOST worst case over the four cluster units (Fair-W) | 0.01 | 0.0103 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.36` |
-| `AppE.37` | Tightest margin concluded, Fair-N | 0.006 | 0.0058 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.37` |
-| `AppE.38` | Tightest margin concluded, Fair-W | 0.008 | 0.0075 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.38` |
-| `AppE.39` | Seeds resampled: Fair-W 90% CI upper | 0.0131 | 0.0131 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.39` |
-| `AppE.40` | Seeds resampled: Fair-W TOST p | 0.11 | 0.1077 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.40` |
-| `AppE.41` | MDE, video unit (80% power) | 0.83 | 0.8300 | `evaluation/analysis/mde.json` | `python verify/claim.py AppE.41` |
-| `AppE.42` | MDE, source-identity cluster unit (80% power) | 0.91 | 0.9100 | `evaluation/analysis/mde.json` | `python verify/claim.py AppE.42` |
-| `AppE.43` | MDE, seed as the experimental unit (80% power) | 0.0149 | 0.0149 | `evaluation/analysis/mde.json` | `python verify/claim.py AppE.43` |
-| `AppE.44` | MDE implied by the two-level bootstrap | 1.65 | 1.6500 | `evaluation/analysis/mde.json` | `python verify/claim.py AppE.44` |
-| `AppE.45` | Smallest observed across-seed SD (Fair-W) | 0.0023 | 0.0023 | `evaluation/analysis/mde.json` | `python verify/claim.py AppE.45` |
-| `AppE.46` | Largest observed across-seed SD (SpatialBase) | 0.0065 | 0.0065 | `evaluation/analysis/mde.json` | `python verify/claim.py AppE.46` |
-| `AppE.47` | Bonferroni threshold over the 13-comparison family | 0.0038 | 0.0038 | `evaluation/analysis/multiplicity.json` | `python verify/claim.py AppE.47` |
-| `AppE.48` | p, STOP-gate contrast (cluster unit) | 0.0002 | 0.0002 | `evaluation/analysis/multiplicity.json` | `python verify/claim.py AppE.48` |
-| `AppE.49` | p, fair-recipe recovery (cluster unit) | 1.4e-05 | 0.0000 | `evaluation/analysis/multiplicity.json` | `python verify/claim.py AppE.49` |
-| `AppE.50` | p, recipe share (cluster unit) | 5.5e-06 | 0.0000 | `evaluation/analysis/multiplicity.json` | `python verify/claim.py AppE.50` |
-| `AppE.51` | p, real-CRF vs synthetic-JPEG training gap (unpaired) | 3.3e-06 | 0.0000 | `evaluation/analysis/multiplicity.json` | `python verify/claim.py AppE.51` |
-| `AppE.52` | p, FaceShifter Fair-N pooled deficit | 0.0037 | 0.0037 | `evaluation/analysis/multiplicity.json` | `python verify/claim.py AppE.52` |
-| `AppE.53` | p, FaceShifter Fair-W pooled deficit | 0.012 | 0.0121 | `evaluation/analysis/multiplicity.json` | `python verify/claim.py AppE.53` |
+| `AppE.29` | Seeds resampled: FaceShifter Fair-N pool − SpatialBase pool, Δ | -0.0325 | -0.0325 | `evaluation/analysis/seed_uncertainty.json` | `python verify/claim.py AppE.29` |
+| `AppE.30` | Seeds resampled: FaceShifter Fair-N pool − SpatialBase pool, CI lower | -0.0899 | -0.0899 | `evaluation/analysis/seed_uncertainty.json` | `python verify/claim.py AppE.30` |
+| `AppE.31` | Seeds resampled: FaceShifter Fair-N pool − SpatialBase pool, CI upper | 0.0342 | 0.0342 | `evaluation/analysis/seed_uncertainty.json` | `python verify/claim.py AppE.31` |
+| `AppE.32` | Seeds resampled: FaceShifter Fair-W pool − SpatialBase pool, Δ | -0.0317 | -0.0317 | `evaluation/analysis/seed_uncertainty.json` | `python verify/claim.py AppE.32` |
+| `AppE.33` | Seeds resampled: FaceShifter Fair-W pool − SpatialBase pool, CI lower | -0.0827 | -0.0827 | `evaluation/analysis/seed_uncertainty.json` | `python verify/claim.py AppE.33` |
+| `AppE.34` | Seeds resampled: FaceShifter Fair-W pool − SpatialBase pool, CI upper | 0.0204 | 0.0204 | `evaluation/analysis/seed_uncertainty.json` | `python verify/claim.py AppE.34` |
+| `AppE.35` | Equivalence margin (post hoc) | 0.01 | 0.0100 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.35` |
+| `AppE.36` | TOST Fair-N: 90% CI lower (video unit) | -0.0057 | -0.0057 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.36` |
+| `AppE.37` | TOST Fair-N: 90% CI upper (video unit) | 0.0036 | 0.0036 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.37` |
+| `AppE.38` | TOST Fair-N: p (video unit) | 0.001 | 0.0010 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.38` |
+| `AppE.39` | TOST Fair-W: 90% CI lower (video unit) | -0.0025 | -0.0025 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.39` |
+| `AppE.40` | TOST Fair-W: 90% CI upper (video unit) | 0.0071 | 0.0071 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.40` |
+| `AppE.41` | TOST Fair-W: p (video unit) | 0.006 | 0.0064 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.41` |
+| `AppE.42` | TOST worst case over the four cluster units (Fair-W) | 0.01 | 0.0103 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.42` |
+| `AppE.43` | Tightest margin concluded, Fair-N | 0.006 | 0.0058 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.43` |
+| `AppE.44` | Tightest margin concluded, Fair-W | 0.008 | 0.0075 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.44` |
+| `AppE.45` | Seeds resampled: Fair-W 90% CI upper | 0.0131 | 0.0131 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.45` |
+| `AppE.46` | Seeds resampled: Fair-W TOST p | 0.11 | 0.1077 | `evaluation/analysis/equivalence.json` | `python verify/claim.py AppE.46` |
+| `AppE.47` | MDE, video unit (80% power) | 0.83 | 0.8300 | `evaluation/analysis/mde.json` | `python verify/claim.py AppE.47` |
+| `AppE.48` | MDE, source-identity cluster unit (80% power) | 0.91 | 0.9100 | `evaluation/analysis/mde.json` | `python verify/claim.py AppE.48` |
+| `AppE.49` | MDE, seed as the experimental unit (80% power) | 0.0149 | 0.0149 | `evaluation/analysis/mde.json` | `python verify/claim.py AppE.49` |
+| `AppE.50` | MDE implied by the two-level bootstrap | 1.65 | 1.6500 | `evaluation/analysis/mde.json` | `python verify/claim.py AppE.50` |
+| `AppE.51` | Smallest observed across-seed SD (Fair-W) | 0.0023 | 0.0023 | `evaluation/analysis/mde.json` | `python verify/claim.py AppE.51` |
+| `AppE.52` | Largest observed across-seed SD (SpatialBase) | 0.0065 | 0.0065 | `evaluation/analysis/mde.json` | `python verify/claim.py AppE.52` |
+| `AppE.53` | Bonferroni threshold over the 13-comparison family | 0.0038 | 0.0038 | `evaluation/analysis/multiplicity.json` | `python verify/claim.py AppE.53` |
+| `AppE.54` | p, STOP-gate contrast (cluster unit) | 0.0002 | 0.0002 | `evaluation/analysis/multiplicity.json` | `python verify/claim.py AppE.54` |
+| `AppE.55` | p, fair-recipe recovery (cluster unit) | 1.4e-05 | 0.0000 | `evaluation/analysis/multiplicity.json` | `python verify/claim.py AppE.55` |
+| `AppE.56` | p, recipe share (cluster unit) | 5.5e-06 | 0.0000 | `evaluation/analysis/multiplicity.json` | `python verify/claim.py AppE.56` |
+| `AppE.57` | p, real-CRF vs synthetic-JPEG training gap (unpaired) | 3.3e-06 | 0.0000 | `evaluation/analysis/multiplicity.json` | `python verify/claim.py AppE.57` |
+| `AppE.58` | p, FaceShifter Fair-N pooled deficit | 0.0037 | 0.0037 | `evaluation/analysis/multiplicity.json` | `python verify/claim.py AppE.58` |
+| `AppE.59` | p, FaceShifter Fair-W pooled deficit | 0.012 | 0.0121 | `evaluation/analysis/multiplicity.json` | `python verify/claim.py AppE.59` |
 
-- `AppE.37` — Printed in the paper as 0.6 AUC points.
-- `AppE.38` — Printed in the paper as 0.8 AUC points.
-- `AppE.41` — In AUC points; printed in Section IV as 0.83.
-- `AppE.43` — Printed in the paper as 1.5 AUC points; the Fair-W pair gives 1.47.
-- `AppE.44` — Printed in the paper as 1.7 AUC points.
+- `AppE.43` — Printed in the paper as 0.6 AUC points.
+- `AppE.44` — Printed in the paper as 0.8 AUC points.
+- `AppE.47` — In AUC points; printed in Section IV as 0.83.
+- `AppE.49` — Printed in the paper as 1.5 AUC points; the Fair-W pair gives 1.47.
+- `AppE.50` — Printed in the paper as 1.7 AUC points.
 
 ## Release claims
 
@@ -749,7 +755,7 @@ The present-tense claims the manuscript makes about this repository.
 |---|---|---|---|---|
 | `R1` | Per-video predictions for every reported cell | Reproducibility statement; Abstract; contribution C4 | checked | `predictions/ffpp/a0.json`, `predictions/ffpp/a1_grl_s1.json`, `predictions/ffpp/a1_grl_s2.json` … (+47) |
 | `R2` | The frozen pre-registered decision rules, verbatim, with their git history | Reproducibility statement; Section IV-C; Abstract | checked | `preregistration/PREREGISTRATION-A1.md`, `preregistration/STOP-GATE.md`, `preregistration/retest-gates.md` … (+2) |
-| `R3` | The full D1–D8 audit ledger | Abstract; Appendix B | checked | `audit/LEDGER-D1-D8.md`, `audit/AUDIT-PASSES.md`, `audit/README.md` |
+| `R3` | The full D1–D8 audit ledger | Abstract; Appendix A | checked | `audit/LEDGER-D1-D8.md`, `audit/AUDIT-PASSES.md`, `audit/README.md` |
 | `R4` | Configurations for every arm in the tables | Reproducibility statement | checked | `configs/runs/a0.yaml`, `configs/runs/a1_grl_s1.yaml`, `configs/runs/a1_grl_s2.yaml` … (+61) |
 | `R5` | The evaluation harness (paired bootstrap, seed pooling) | Reproducibility statement; Section IV-B | checked | `evaluation/src/evaluation/metrics.py`, `evaluation/src/evaluation/aggregate_runs.py`, `evaluation/rederive.py` … (+2) |
 | `R6` | The figure-generation scripts | Reproducibility statement | checked | `figures/make_figures.py`, `figures/figure_data.json`, `figures/fig1_architecture.tex` … (+1) |

@@ -1,6 +1,6 @@
 # Out-of-distribution evaluation protocol
 
-*(Companion to the paper's Appendix D. The manuscript states the protocol in
+*(Companion to the paper's out-of-distribution appendix, which is Supplementary Material §S3. The manuscript states the protocol in
 two sentences — what each corpus contributes, and that both are used as
 distributed — and points here for the full statement. Nothing here is new
 evidence; it is the procedure behind the cells in that appendix, whose numbers

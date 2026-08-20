@@ -1,6 +1,6 @@
 # The harmonized baseline benchmark
 
-*(Companion to the paper's Appendix C. The manuscript states this benchmark's
+*(Companion to the paper's baseline appendix, which is Supplementary Material §S2. The manuscript states this benchmark's
 reading in prose — what multi-CRF training buys each architecture — and points
 here for the complete matrix. Every cell below is recomputed by
 `verify/verify.py` from the per-video scores in `predictions/ffpp/` — see the
@@ -46,7 +46,7 @@ the standard augmentation policy while SpatialBase is flip-only, so any
 comparison between them is run in the frequency baselines' favour; the two
 Xception-mq runs bound that advantage at ≈0.5 pt at c40 (0.9679 std vs 0.9631
 flip-only). The paired contrasts the paper draws from these rows, with their
-intervals, are in the paper's Appendix C and in `CLAIMS-MAP.md`.
+intervals, are in the paper's Supplementary Material §S2 and in `CLAIMS-MAP.md`.
 
 **Calibration against published anchors** — the frame-level check of the three
 `lit` rows against DeepfakeBench's Table 3, and the two documented

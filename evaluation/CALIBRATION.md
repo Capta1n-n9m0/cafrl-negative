@@ -1,6 +1,6 @@
 # Baseline calibration and adaptation choices
 
-*(Companion to the paper's Appendix C. The manuscript states the calibration
+*(Companion to the paper's baseline appendix, which is Supplementary Material §S2. The manuscript states the calibration
 verdict and points here for the table and for the two documented
 simplifications; this file is where they live in full. Every "ours" number
 below is recomputed by `verify/verify.py` from the per-video scores in

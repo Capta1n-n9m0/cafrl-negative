@@ -70,7 +70,7 @@
           "n_redraws": 0,
           "z": -0.15990943041181896,
           "p_two_sided_z": 0.8729524197245838,
-          "seconds": 4.1
+          "seconds": 4.2
         },
         "seed+source": {
           "scheme": "seed+source",
@@ -103,7 +103,7 @@
           "n_redraws": 0,
           "z": -0.15750381673394603,
           "p_two_sided_z": 0.8748478001197868,
-          "seconds": 4.6
+          "seconds": 4.5
         },
         "seed+pair": {
           "scheme": "seed+pair",
@@ -201,7 +201,7 @@
           "n_redraws": 0,
           "z": 0.386700477945892,
           "p_two_sided_z": 0.6989779622814029,
-          "seconds": 4.3
+          "seconds": 4.2
         },
         "seed+source": {
           "scheme": "seed+source",
@@ -529,7 +529,7 @@
           "n_redraws": 0,
           "z": -1.2115918202350238,
           "p_two_sided_z": 0.22566866725985446,
-          "seconds": 3.3
+          "seconds": 3.7
         }
       }
     }
