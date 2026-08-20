@@ -774,7 +774,7 @@
    "expect": 0.9619
   },
   {
-   "name": "Supplementary Material \u00a7S2-G: the +7.3 pt real-CRF vs synthetic-JPEG gap at c40",
+   "name": "Supplementary Material \u00a7S2-I (real CRF versus synthetic JPEG): the +7.3 pt gap at c40",
    "kind": "difference",
    "minuend": {
     "run": "b4b_xception_mq_fliponly",

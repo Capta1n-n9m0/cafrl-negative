@@ -423,7 +423,7 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 
 ## T8 — FaceShifter (held out), shipped recipe, seed-pooled
 
-*Supplementary Material §S3-B (Table S4); `\label{tab:appfaceshifter}`*
+*Supplementary Material §S3-C (Table S4, unseen manipulation); `\label{tab:appfaceshifter}`*
 
 | id | claim | paper prints | this release gives | artifact | command |
 |---|---|---|---|---|---|

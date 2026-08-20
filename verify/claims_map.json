@@ -3,7 +3,7 @@
  "note": "Every manuscript table cell and present-tense release claim, mapped to the artifact that carries it and the command that recomputes it. Generated from the release manifest; checked on every build.",
  "manuscript": {
   "label": "IEEE Access submission, version B",
-  "sha256": "e65ec7a0ad31d74f8267d203ad8caca52074a2f1301993946ef52d13ba038ad1",
+  "sha256": "5bf5490501f68cad2e3a1282181cd68828ca779722fe8f941733c88d168e2727",
   "note": "Table and section numbers refer to the submitted manuscript. The map is regenerated whenever the release is rebuilt; if a manuscript number moves, the build fails until the map and the manuscript agree."
  },
  "comp_levels": [
@@ -3400,7 +3400,7 @@
    "id": "T8.1",
    "table": "T8",
    "table_title": "FaceShifter (held out), shipped recipe, seed-pooled",
-   "where": "Supplementary Material \u00a7S3-B (Table S4)",
+   "where": "Supplementary Material \u00a7S3-C (Table S4, unseen manipulation)",
    "gap_reason": "The shipped-recipe FaceShifter evaluation (June out-of-distribution follow-up) saved no per-video predictions \u2014 this is audit defect D8, and the fair-recipe re-check that fixed it is what makes `predictions/faceshifter/` exist. The backbone column of that table is re-derivable (b7's FaceShifter predictions were regenerated from the frozen checkpoints); the CAFRL column and the paired statistics are not. Closing this needs a forward pass of the frozen a0/a1_grl checkpoints over the FaceShifter cell, which needs the crops.",
    "artifacts": [
     "predictions/GAPS.md"
@@ -3417,7 +3417,7 @@
    "id": "T8.2",
    "table": "T8",
    "table_title": "FaceShifter (held out), shipped recipe, seed-pooled",
-   "where": "Supplementary Material \u00a7S3-B (Table S4)",
+   "where": "Supplementary Material \u00a7S3-C (Table S4, unseen manipulation)",
    "runs": [
     "b7_effnet_b0_mq_fliponly",
     "b7_effnet_b0_mq_fliponly_s1",
@@ -3438,7 +3438,7 @@
    "id": "T8.3",
    "table": "T8",
    "table_title": "FaceShifter (held out), shipped recipe, seed-pooled",
-   "where": "Supplementary Material \u00a7S3-B (Table S4)",
+   "where": "Supplementary Material \u00a7S3-C (Table S4, unseen manipulation)",
    "gap_reason": "The shipped-recipe FaceShifter evaluation (June out-of-distribution follow-up) saved no per-video predictions \u2014 this is audit defect D8, and the fair-recipe re-check that fixed it is what makes `predictions/faceshifter/` exist. The backbone column of that table is re-derivable (b7's FaceShifter predictions were regenerated from the frozen checkpoints); the CAFRL column and the paired statistics are not. Closing this needs a forward pass of the frozen a0/a1_grl checkpoints over the FaceShifter cell, which needs the crops.",
    "artifacts": [
     "predictions/GAPS.md"
@@ -3453,7 +3453,7 @@
    "id": "T8.4",
    "table": "T8",
    "table_title": "FaceShifter (held out), shipped recipe, seed-pooled",
-   "where": "Supplementary Material \u00a7S3-B (Table S4)",
+   "where": "Supplementary Material \u00a7S3-C (Table S4, unseen manipulation)",
    "gap_reason": "The shipped-recipe FaceShifter evaluation (June out-of-distribution follow-up) saved no per-video predictions \u2014 this is audit defect D8, and the fair-recipe re-check that fixed it is what makes `predictions/faceshifter/` exist. The backbone column of that table is re-derivable (b7's FaceShifter predictions were regenerated from the frozen checkpoints); the CAFRL column and the paired statistics are not. Closing this needs a forward pass of the frozen a0/a1_grl checkpoints over the FaceShifter cell, which needs the crops.",
    "artifacts": [
     "predictions/GAPS.md"
@@ -3470,7 +3470,7 @@
    "id": "T8.5",
    "table": "T8",
    "table_title": "FaceShifter (held out), shipped recipe, seed-pooled",
-   "where": "Supplementary Material \u00a7S3-B (Table S4)",
+   "where": "Supplementary Material \u00a7S3-C (Table S4, unseen manipulation)",
    "runs": [
     "b7_effnet_b0_mq_fliponly",
     "b7_effnet_b0_mq_fliponly_s1",
@@ -3491,7 +3491,7 @@
    "id": "T8.6",
    "table": "T8",
    "table_title": "FaceShifter (held out), shipped recipe, seed-pooled",
-   "where": "Supplementary Material \u00a7S3-B (Table S4)",
+   "where": "Supplementary Material \u00a7S3-C (Table S4, unseen manipulation)",
    "gap_reason": "The shipped-recipe FaceShifter evaluation (June out-of-distribution follow-up) saved no per-video predictions \u2014 this is audit defect D8, and the fair-recipe re-check that fixed it is what makes `predictions/faceshifter/` exist. The backbone column of that table is re-derivable (b7's FaceShifter predictions were regenerated from the frozen checkpoints); the CAFRL column and the paired statistics are not. Closing this needs a forward pass of the frozen a0/a1_grl checkpoints over the FaceShifter cell, which needs the crops.",
    "artifacts": [
     "predictions/GAPS.md"

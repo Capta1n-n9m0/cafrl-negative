@@ -70,7 +70,7 @@
           "n_redraws": 0,
           "z": -0.15990943041181896,
           "p_two_sided_z": 0.8729524197245838,
-          "seconds": 4.0
+          "seconds": 4.2
         },
         "seed+source": {
           "scheme": "seed+source",
@@ -103,7 +103,7 @@
           "n_redraws": 0,
           "z": -0.15750381673394603,
           "p_two_sided_z": 0.8748478001197868,
-          "seconds": 4.5
+          "seconds": 4.6
         },
         "seed+pair": {
           "scheme": "seed+pair",
@@ -136,7 +136,7 @@
           "n_redraws": 0,
           "z": -0.16464982859142452,
           "p_two_sided_z": 0.8692196088596561,
-          "seconds": 4.2
+          "seconds": 4.4
         }
       }
     },
@@ -201,7 +201,7 @@
           "n_redraws": 0,
           "z": 0.386700477945892,
           "p_two_sided_z": 0.6989779622814029,
-          "seconds": 4.0
+          "seconds": 4.1
         },
         "seed+source": {
           "scheme": "seed+source",
@@ -234,7 +234,7 @@
           "n_redraws": 0,
           "z": 0.3777294745615291,
           "p_two_sided_z": 0.705631569654735,
-          "seconds": 4.6
+          "seconds": 4.7
         },
         "seed+pair": {
           "scheme": "seed+pair",
@@ -267,7 +267,7 @@
           "n_redraws": 0,
           "z": 0.3983642164667681,
           "p_two_sided_z": 0.6903617309554371,
-          "seconds": 4.3
+          "seconds": 4.5
         }
       }
     },
@@ -332,7 +332,7 @@
           "n_redraws": 0,
           "z": -1.0279773196814468,
           "p_two_sided_z": 0.30396049651432144,
-          "seconds": 3.1
+          "seconds": 3.2
         },
         "seed+source": {
           "scheme": "seed+source",
@@ -365,7 +365,7 @@
           "n_redraws": 0,
           "z": -1.0368881907339198,
           "p_two_sided_z": 0.29978796818381603,
-          "seconds": 3.6
+          "seconds": 3.8
         },
         "seed+pair": {
           "scheme": "seed+pair",
@@ -529,7 +529,7 @@
           "n_redraws": 0,
           "z": -1.2115918202350238,
           "p_two_sided_z": 0.22566866725985446,
-          "seconds": 3.4
+          "seconds": 3.5
         }
       }
     }
