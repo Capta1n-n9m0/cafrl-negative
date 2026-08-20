@@ -70,7 +70,7 @@
           "n_redraws": 0,
           "z": -0.15990943041181896,
           "p_two_sided_z": 0.8729524197245838,
-          "seconds": 4.0
+          "seconds": 4.1
         },
         "seed+source": {
           "scheme": "seed+source",
@@ -103,7 +103,7 @@
           "n_redraws": 0,
           "z": -0.15750381673394603,
           "p_two_sided_z": 0.8748478001197868,
-          "seconds": 4.5
+          "seconds": 4.6
         },
         "seed+pair": {
           "scheme": "seed+pair",
@@ -136,7 +136,7 @@
           "n_redraws": 0,
           "z": -0.16464982859142452,
           "p_two_sided_z": 0.8692196088596561,
-          "seconds": 4.2
+          "seconds": 4.3
         }
       }
     },
@@ -201,7 +201,7 @@
           "n_redraws": 0,
           "z": 0.386700477945892,
           "p_two_sided_z": 0.6989779622814029,
-          "seconds": 4.0
+          "seconds": 4.4
         },
         "seed+source": {
           "scheme": "seed+source",
@@ -267,7 +267,7 @@
           "n_redraws": 0,
           "z": 0.3983642164667681,
           "p_two_sided_z": 0.6903617309554371,
-          "seconds": 4.3
+          "seconds": 4.2
         }
       }
     }

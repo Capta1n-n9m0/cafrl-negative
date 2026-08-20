@@ -235,7 +235,7 @@ def fig4(data: dict) -> Path:
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(3.45, 4.4))
     epochs = list(range(1, 31))
 
-    # (a) |γ| trajectories: F2 seeds (accent) vs the shipped spatial-residual (context).
+    # (a) |γ| trajectories: Fair-W seeds (accent) vs the shipped spatial-residual (context).
     sp = [abs(data["spatres_gamma"][str(ep)]) for ep in epochs]
     ax1.plot(epochs, sp, color=MUTED, linestyle="--", linewidth=1.3,
              label="shipped recipe")

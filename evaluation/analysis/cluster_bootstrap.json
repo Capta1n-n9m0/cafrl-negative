@@ -98,7 +98,7 @@
           "n_redraws": 0,
           "z": 3.7148786486783156,
           "p_two_sided_z": 0.00020330123484737307,
-          "seconds": 3.9
+          "seconds": 4.2
         },
         "target": {
           "scheme": "target",
@@ -131,7 +131,7 @@
           "n_redraws": 0,
           "z": 4.762274726417704,
           "p_two_sided_z": 1.914228357083137e-06,
-          "seconds": 3.9
+          "seconds": 4.0
         },
         "basevideo": {
           "scheme": "basevideo",
@@ -164,7 +164,7 @@
           "n_redraws": 0,
           "z": 3.826421968825956,
           "p_two_sided_z": 0.00013001933849741441,
-          "seconds": 4.3
+          "seconds": 4.4
         },
         "pair": {
           "scheme": "pair",
@@ -197,7 +197,7 @@
           "n_redraws": 0,
           "z": 4.888297867478062,
           "p_two_sided_z": 1.0171155668540804e-06,
-          "seconds": 3.7
+          "seconds": 3.6
         }
       },
       "verdict_flips_vs_video": false,
@@ -286,7 +286,7 @@
           "n_redraws": 0,
           "z": 4.341272034261952,
           "p_two_sided_z": 1.4166020459546508e-05,
-          "seconds": 3.9
+          "seconds": 4.3
         },
         "target": {
           "scheme": "target",
@@ -319,7 +319,7 @@
           "n_redraws": 0,
           "z": 5.045954508225875,
           "p_two_sided_z": 4.512627780083323e-07,
-          "seconds": 3.9
+          "seconds": 4.0
         },
         "basevideo": {
           "scheme": "basevideo",
@@ -385,7 +385,7 @@
           "n_redraws": 0,
           "z": 4.977999975614132,
           "p_two_sided_z": 6.424466437359449e-07,
-          "seconds": 3.6
+          "seconds": 3.7
         }
       },
       "verdict_flips_vs_video": false,
@@ -507,7 +507,7 @@
           "n_redraws": 0,
           "z": -0.10012918637745973,
           "p_two_sided_z": 0.9202417643854394,
-          "seconds": 3.8
+          "seconds": 3.9
         },
         "basevideo": {
           "scheme": "basevideo",
@@ -821,7 +821,7 @@
           "n_redraws": 0,
           "z": -0.33327073612321134,
           "p_two_sided_z": 0.7389299271308148,
-          "seconds": 3.5
+          "seconds": 3.6
         },
         "source": {
           "scheme": "source",
@@ -1112,7 +1112,7 @@
           "n_redraws": 0,
           "z": 0.6569212523731035,
           "p_two_sided_z": 0.511231552228419,
-          "seconds": 4.3
+          "seconds": 4.2
         },
         "pair": {
           "scheme": "pair",
@@ -1145,7 +1145,7 @@
           "n_redraws": 0,
           "z": 0.7242739596616165,
           "p_two_sided_z": 0.46889756053754644,
-          "seconds": 3.8
+          "seconds": 3.7
         }
       },
       "verdict_flips_vs_video": false,
@@ -1203,7 +1203,7 @@
           "n_redraws": 0,
           "z": -0.9740180640088261,
           "p_two_sided_z": 0.33004757014182795,
-          "seconds": 3.5
+          "seconds": 3.4
         },
         "source": {
           "scheme": "source",
@@ -1236,7 +1236,7 @@
           "n_redraws": 0,
           "z": -0.9378800560982049,
           "p_two_sided_z": 0.3483060535609568,
-          "seconds": 4.0
+          "seconds": 3.9
         },
         "target": {
           "scheme": "target",
@@ -1302,7 +1302,7 @@
           "n_redraws": 0,
           "z": -0.9396837391550965,
           "p_two_sided_z": 0.34737980844681665,
-          "seconds": 4.3
+          "seconds": 4.4
         },
         "pair": {
           "scheme": "pair",
@@ -1525,7 +1525,7 @@
           "n_redraws": 0,
           "z": 5.843661841663703,
           "p_two_sided_z": 5.106563823093908e-09,
-          "seconds": 3.7
+          "seconds": 3.8
         }
       },
       "verdict_flips_vs_video": false,
@@ -1618,7 +1618,7 @@
           "n_redraws": 0,
           "z": -2.903419977166725,
           "p_two_sided_z": 0.0036911128683733132,
-          "seconds": 3.2
+          "seconds": 3.1
         },
         "target": {
           "scheme": "target",
@@ -1651,7 +1651,7 @@
           "n_redraws": 0,
           "z": -3.48266630177105,
           "p_two_sided_z": 0.0004964467659807416,
-          "seconds": 3.1
+          "seconds": 3.2
         },
         "basevideo": {
           "scheme": "basevideo",
@@ -1684,7 +1684,7 @@
           "n_redraws": 0,
           "z": -2.952598229276073,
           "p_two_sided_z": 0.00315111795796165,
-          "seconds": 3.4
+          "seconds": 3.8
         },
         "pair": {
           "scheme": "pair",
@@ -1777,7 +1777,7 @@
           "n_redraws": 0,
           "z": -2.4158578173169714,
           "p_two_sided_z": 0.01569818993953325,
-          "seconds": 2.6
+          "seconds": 2.8
         },
         "source": {
           "scheme": "source",
@@ -1843,7 +1843,7 @@
           "n_redraws": 0,
           "z": -2.7113134690898146,
           "p_two_sided_z": 0.006701723606251528,
-          "seconds": 3.1
+          "seconds": 3.0
         },
         "basevideo": {
           "scheme": "basevideo",
@@ -1876,7 +1876,7 @@
           "n_redraws": 0,
           "z": -2.4257370084645076,
           "p_two_sided_z": 0.015277336657372907,
-          "seconds": 3.5
+          "seconds": 3.4
         },
         "pair": {
           "scheme": "pair",
@@ -1967,7 +1967,7 @@
           "n_redraws": 0,
           "z": 1.5300938697621602,
           "p_two_sided_z": 0.12599349542920368,
-          "seconds": 2.6
+          "seconds": 2.7
         },
         "source": {
           "scheme": "source",
@@ -2000,7 +2000,7 @@
           "n_redraws": 0,
           "z": 1.595336378459587,
           "p_two_sided_z": 0.11063703476671446,
-          "seconds": 3.1
+          "seconds": 3.0
         },
         "target": {
           "scheme": "target",
@@ -2033,7 +2033,7 @@
           "n_redraws": 0,
           "z": 1.9124406007439052,
           "p_two_sided_z": 0.05581970456590932,
-          "seconds": 3.0
+          "seconds": 3.2
         },
         "basevideo": {
           "scheme": "basevideo",
@@ -2157,7 +2157,7 @@
           "n_redraws": 0,
           "z": -1.427791744673122,
           "p_two_sided_z": 0.1533518096793087,
-          "seconds": 2.6
+          "seconds": 2.7
         },
         "source": {
           "scheme": "source",
@@ -2190,7 +2190,7 @@
           "n_redraws": 0,
           "z": -1.4301680496807858,
           "p_two_sided_z": 0.1526687930807375,
-          "seconds": 3.0
+          "seconds": 3.3
         },
         "target": {
           "scheme": "target",
@@ -2223,7 +2223,7 @@
           "n_redraws": 0,
           "z": -1.6668771811852483,
           "p_two_sided_z": 0.09553882912855541,
-          "seconds": 3.1
+          "seconds": 3.3
         },
         "basevideo": {
           "scheme": "basevideo",
@@ -2256,7 +2256,7 @@
           "n_redraws": 0,
           "z": -1.4451503891566586,
           "p_two_sided_z": 0.14841564791143386,
-          "seconds": 3.4
+          "seconds": 3.5
         },
         "pair": {
           "scheme": "pair",

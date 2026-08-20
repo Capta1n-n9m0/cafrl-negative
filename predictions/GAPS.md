@@ -35,7 +35,7 @@ The P2a probe predates the per-video-prediction convention: its report.json hold
 |---|---|
 | `p2a_xcep_jpeg` | `real_c40`, `ci` |
 
-## FaceShifter, shipped recipe (Table 12's CAFRL column and its paired delta)
+## FaceShifter, shipped recipe (the FaceShifter table's CAFRL column and its paired delta)
 
 The shipped-recipe FaceShifter cells were evaluated in the June out-of-distribution follow-up, before the per-video-prediction convention reached that path: the driver was ad-hoc and saved no predictions (this is audit defect D8, and the fix is why the fair-recipe re-check in `predictions/faceshifter/` does save them). The backbone column of that table IS re-derivable — the b7 FaceShifter predictions were regenerated from the frozen checkpoints during the re-check and are released — but the CAFRL column, and therefore the paired delta, CI and P of that table, are not.
 

@@ -14,6 +14,11 @@ evaluation/
 ├── CALIBRATION.md     published-anchor calibration of the three literature-protocol
 │                      baselines + the F3-Net/FreqNet adaptation choices (the
 │                      material the paper's Appendix C points here for)
+├── BENCHMARK.md       the complete harmonized baseline benchmark: 8 arms x 7 CRF
+│                      levels + AUC_comp, params and augmentation policy (the
+│                      matrix the paper's Appendix C points here for)
+├── OOD-PROTOCOL.md    the full out-of-distribution evaluation protocol behind
+│                      Appendix D's cells, and what those cells can support
 └── analysis/          the statistics added in revision (equivalence, MDE,
                     cluster and two-level bootstraps, multiplicity) + their outputs
 ```

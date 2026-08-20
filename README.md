@@ -13,7 +13,7 @@ that were frozen before the runs they adjudicate.
 
 > **Status.** This repository is being assembled for submission. Directories with
 > a `STATUS.md` are not yet populated — see *What is not here yet* below.
-> Last built 2026-08-19.
+> Last built 2026-08-20.
 
 ## Check it yourself
 

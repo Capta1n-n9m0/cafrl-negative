@@ -33,14 +33,24 @@ AUC_comp, Appendix C's augmentation-recovery frame-AUC, and γ's peak — were
 resolved in favour of the artifact: the release's value was kept and the paper
 was corrected to it.
 
-**Three numbers the paper now reads here rather than printing.** The revision's
-final page pass moved material into this repository instead of deleting it, so
-a few mapped rows check something the manuscript points at rather than prints:
-the published-anchor calibration table and the F3-Net/FreqNet adaptation
-statement (now `evaluation/CALIBRATION.md`, summarised in the paper's
-Appendix C), the c0 and c18 columns of the harmonized benchmark, and the
-marginal intervals of the cross-dataset cells. The numbers are unchanged and
-still checked below.
+**What the paper now reads here rather than printing.** The revision's final
+page pass moved material into this repository instead of deleting it, so a
+number of mapped rows check something the manuscript points at rather than
+prints:
+
+- the published-anchor calibration table, the six frame-level reproduction
+  numbers, and the F3-Net/FreqNet adaptation statement — `evaluation/CALIBRATION.md`,
+  with the three cautions and the calibration verdict kept in the paper's
+  Appendix C;
+- the complete harmonized baseline benchmark, all eight rows over all seven CRF
+  levels — `evaluation/BENCHMARK.md`, with its reading kept in Appendix C prose;
+- the full out-of-distribution evaluation protocol — `evaluation/OOD-PROTOCOL.md`,
+  stated in two sentences in Appendix D;
+- the marginal intervals of the cross-dataset cells, and the seed-42 values of
+  the four arms that were also run at three seeds — the paper's cross-dataset
+  table now prints the 3-seed block and the one single-seed arm.
+
+The numbers are unchanged and still checked below.
 
 Run any row yourself:
 
@@ -260,7 +270,7 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 
 ## T7 — Cross-dataset evaluation (video-AUC)
 
-*Appendix D-A (Table 11; intervals released-only after the W8a trim); `\label{tab:appcrossdataset}`*
+*Appendix D-A (Table 9; intervals released-only after the W8a trim, and the four replicated arms' seed-42 values released-only after the W8b cut A); `\label{tab:appcrossdataset}`*
 
 | id | claim | paper prints | this release gives | artifact | command |
 |---|---|---|---|---|---|
@@ -427,7 +437,7 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 
 ## AppB2 — Harmonized baseline benchmark (video-AUC, FF++ test)
 
-*Appendix C (Table 9); `\label{tab:appbench}`*
+*Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose; `\label{tab:appbench}`*
 
 | id | claim | paper prints | this release gives | artifact | command |
 |---|---|---|---|---|---|
@@ -587,12 +597,12 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 | `AppC.18` | Synthetic-JPEG arm — marginal CI | [0.8608, 0.9161] | recorded | `predictions/p2_probe/p2a_xcep_jpeg.json` | `python verify/claim.py AppC.18` |
 | `AppC.19` | Real-CRF arm — marginal CI lower | 0.9484 | 0.9484 | `predictions/ffpp/b4b_xception_mq_fliponly.json` | `python verify/claim.py AppC.19` |
 | `AppC.20` | Real-CRF arm — marginal CI upper | 0.9758 | 0.9758 | `predictions/ffpp/b4b_xception_mq_fliponly.json` | `python verify/claim.py AppC.20` |
-| `AppC.21` | Calibration (Appendix C prose + evaluation/CALIBRATION.md) — Xception (lit), frame-AUC c23 | 0.9901 | 0.9901 | `predictions/ffpp/b1_xception_lit.json` | `python verify/claim.py AppC.21` |
-| `AppC.22` | Calibration (Appendix C prose + evaluation/CALIBRATION.md) — Xception (lit), frame-AUC c40 | 0.7915 | 0.7915 | `predictions/ffpp/b1_xception_lit.json` | `python verify/claim.py AppC.22` |
-| `AppC.23` | Calibration (Appendix C prose + evaluation/CALIBRATION.md) — F3-Net (lit), frame-AUC c23 | 0.985 | 0.9850 | `predictions/ffpp/b2_f3net_lit.json` | `python verify/claim.py AppC.23` |
-| `AppC.24` | Calibration (Appendix C prose + evaluation/CALIBRATION.md) — F3-Net (lit), frame-AUC c40 | 0.7802 | 0.7802 | `predictions/ffpp/b2_f3net_lit.json` | `python verify/claim.py AppC.24` |
-| `AppC.25` | Calibration (Appendix C prose + evaluation/CALIBRATION.md) — FreqNet (lit), frame-AUC c23 | 0.9673 | 0.9673 | `predictions/ffpp/b3_freqnet_lit.json` | `python verify/claim.py AppC.25` |
-| `AppC.26` | Calibration (Appendix C prose + evaluation/CALIBRATION.md) — FreqNet (lit), frame-AUC c40 | 0.6802 | 0.6802 | `predictions/ffpp/b3_freqnet_lit.json` | `python verify/claim.py AppC.26` |
+| `AppC.21` | Calibration (evaluation/CALIBRATION.md) — Xception (lit), frame-AUC c23 | 0.9901 | 0.9901 | `predictions/ffpp/b1_xception_lit.json` | `python verify/claim.py AppC.21` |
+| `AppC.22` | Calibration (evaluation/CALIBRATION.md) — Xception (lit), frame-AUC c40 | 0.7915 | 0.7915 | `predictions/ffpp/b1_xception_lit.json` | `python verify/claim.py AppC.22` |
+| `AppC.23` | Calibration (evaluation/CALIBRATION.md) — F3-Net (lit), frame-AUC c23 | 0.985 | 0.9850 | `predictions/ffpp/b2_f3net_lit.json` | `python verify/claim.py AppC.23` |
+| `AppC.24` | Calibration (evaluation/CALIBRATION.md) — F3-Net (lit), frame-AUC c40 | 0.7802 | 0.7802 | `predictions/ffpp/b2_f3net_lit.json` | `python verify/claim.py AppC.24` |
+| `AppC.25` | Calibration (evaluation/CALIBRATION.md) — FreqNet (lit), frame-AUC c23 | 0.9673 | 0.9673 | `predictions/ffpp/b3_freqnet_lit.json` | `python verify/claim.py AppC.25` |
+| `AppC.26` | Calibration (evaluation/CALIBRATION.md) — FreqNet (lit), frame-AUC c40 | 0.6802 | 0.6802 | `predictions/ffpp/b3_freqnet_lit.json` | `python verify/claim.py AppC.26` |
 | `AppC.27` | Calibration shortfall at c40: Xception 3.5 frame-AUC points below the anchor | 0.035 | recorded | `predictions/ffpp/b1_xception_lit.json` | `python verify/claim.py AppC.27` |
 | `AppC.28` | Calibration shortfall at c40: F3-Net 4.7 frame-AUC points below the anchor | 0.047 | recorded | `predictions/ffpp/b2_f3net_lit.json` | `python verify/claim.py AppC.28` |
 | `AppC.29` | Augmentation recovery, Xception: +2.7 frame-AUC points at c40 | 0.027 | recorded | `predictions/ffpp/b1_xception_lit_fliponly.json` | `python verify/claim.py AppC.29` |
@@ -639,7 +649,7 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 | `X1.16` | Xception overfits: ~11 pt below smaller models on unseen FaceShifter at c23 | ~11 pt | **not derivable** | `predictions/GAPS.md` | — |
 | `X1.17` | Campaign training hours (~270 saved, ~35 re-tests, ~31 confirmation seeds) | training hours | **not derivable** | `predictions/GAPS.md` | — |
 
-- `X1.16` — **not derivable from this release.** Same cause: the Xception FaceShifter numbers come from the June follow-up and were never persisted as predictions. The Xception FaceShifter cells come from the same June follow-up as Table 12's CAFRL column and were never saved as predictions. The paper now also prints the paired interval recorded in the campaign journal for this observation (+0.113, CI [+0.064, +0.162], single seed, n=280), with an explicit note that it is journal-recorded and not re-derivable from this release.
+- `X1.16` — **not derivable from this release.** Same cause: the Xception FaceShifter numbers come from the June follow-up and were never persisted as predictions. The Xception FaceShifter cells come from the same June follow-up as the FaceShifter table's CAFRL column and were never saved as predictions. The paper now also prints the paired interval recorded in the campaign journal for this observation (+0.113, CI [+0.064, +0.162], single seed, n=280), with an explicit note that it is journal-recorded and not re-derivable from this release.
 - `X1.17` — **not derivable from this release.** Compute accounting is recorded in the internal campaign journal, which is not part of this release, and no audited ledger of total consumed compute was kept -- the paper says so rather than reconstructing one. What is released is every run's configuration, its per-epoch curve and its selected epoch, which is what a reader would need to price it. Wall-clock accounting lives in the internal campaign journal, which is not part of this release; the run count and their configurations are (configs/RUNS.md). The manuscript states these as wall-clock training hours on the 2xA100 node and says explicitly that no audited ledger of total consumed compute exists.
 
 ## M1 — Mechanism claims, from the released training curves

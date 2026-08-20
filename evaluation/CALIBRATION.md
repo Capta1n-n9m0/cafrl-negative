@@ -89,5 +89,5 @@ training-side code), but every score those models produced is in
 |---|---|
 | ours c23 / c40 (frame-AUC), three literature arms | `predictions/ffpp/b{1,2,3}_*_lit.json` |
 | the flip-only pair behind the augmentation recovery | `predictions/ffpp/b{1,2}_*_lit_fliponly.json` |
-| the video-level sweeps for the same runs | the benchmark table of the paper's Appendix C; `CLAIMS-MAP.md` block `AppB2` |
+| the video-level sweeps for the same runs | `evaluation/BENCHMARK.md`; `CLAIMS-MAP.md` block `AppB2` |
 | the published anchors | citations (DeepfakeBench Table 3; FaceForensics++; FreqNet), not artifacts of this release |
