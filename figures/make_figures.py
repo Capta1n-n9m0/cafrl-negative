@@ -71,7 +71,7 @@ PANEL_A = (
     Arm("SpatialBase (EffNet-B0)", ("b7_effnet_b0_mq_fliponly",), C_B7, "o", "-"),
     Arm("CAFRL as specified", ("a0",), C_CAFRL, "s", "--"),
     Arm("CAFRL−adv (no adversary)", ("a1_none_s42",), C_NONE, "^", "-."),
-    Arm("Spatial-residual (γ→0)", ("cafrl_spatres_s42",), C_SPATRES, "D", (0, (1, 1.4))),
+    Arm("spatial-residual (γ→0)", ("cafrl_spatres_s42",), C_SPATRES, "D", (0, (1, 1.4))),
 )
 PANEL_B = (
     Arm("SpatialBase (EffNet-B0)", ("b7_effnet_b0_mq_fliponly", "b7_effnet_b0_mq_fliponly_s1", "b7_effnet_b0_mq_fliponly_s2"), C_B7, "o", "-"),

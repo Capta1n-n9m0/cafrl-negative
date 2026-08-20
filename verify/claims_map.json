@@ -3,7 +3,7 @@
  "note": "Every manuscript table cell and present-tense release claim, mapped to the artifact that carries it and the command that recomputes it. Generated from the release manifest; checked on every build.",
  "manuscript": {
   "label": "IEEE Access submission, version B",
-  "sha256": "d76b0d47662577cd9ae7e0071619969e075bd946d20e003fa4c18b1a1e83e9b9",
+  "sha256": "2d714bcd1a416fcf3b7999e4e5ec41607c2c323de80a685757707b46b8e92f91",
   "note": "Table and section numbers refer to the submitted manuscript. The map is regenerated whenever the release is rebuilt; if a manuscript number moves, the build fails until the map and the manuscript agree."
  },
  "comp_levels": [
@@ -434,16 +434,16 @@
    "command": "python verify/claim.py T1.12"
   },
   {
-   "label": "The condensed D1\u2013D8 ledger (all rows)",
+   "label": "The D1\u2013D8 ledger (all rows)",
    "printed": "prose",
    "kind": "text",
    "artifact": "audit/LEDGER-D1-D8.md",
    "check": "none",
-   "note": "The full ledger this table condenses, in two halves: the defects as first stated (2026-07-02) and their closure status after the re-tests.",
+   "note": "The full ledger, in two halves: the defects as first stated (2026-07-02) and their closure status after the re-tests.",
    "id": "T2.1",
    "table": "T2",
-   "table_title": "The audit ledger (condensed)",
-   "where": "Section VI (the self-audit)",
+   "table_title": "The audit ledger (D1-D4, named in Section VI's prose)",
+   "where": "Section VI (the self-audit); the condensed table was replaced by prose in the W9 duplication pass, Appendix B remaining the authoritative telling",
    "artifacts": [
     "audit/LEDGER-D1-D8.md"
    ],
@@ -3508,7 +3508,7 @@
    "id": "AppB2.1",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b1_xception_lit.json"
    ],
@@ -3524,7 +3524,7 @@
    "id": "AppB2.2",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b1_xception_lit.json"
    ],
@@ -3540,7 +3540,7 @@
    "id": "AppB2.3",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b1_xception_lit.json"
    ],
@@ -3556,7 +3556,7 @@
    "id": "AppB2.4",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b1_xception_lit.json"
    ],
@@ -3572,7 +3572,7 @@
    "id": "AppB2.5",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b1_xception_lit.json"
    ],
@@ -3588,7 +3588,7 @@
    "id": "AppB2.6",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b1_xception_lit.json"
    ],
@@ -3604,7 +3604,7 @@
    "id": "AppB2.7",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b1_xception_lit.json"
    ],
@@ -3620,7 +3620,7 @@
    "id": "AppB2.8",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b1_xception_lit.json"
    ],
@@ -3636,7 +3636,7 @@
    "id": "AppB2.9",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b2_f3net_lit.json"
    ],
@@ -3652,7 +3652,7 @@
    "id": "AppB2.10",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b2_f3net_lit.json"
    ],
@@ -3668,7 +3668,7 @@
    "id": "AppB2.11",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b2_f3net_lit.json"
    ],
@@ -3684,7 +3684,7 @@
    "id": "AppB2.12",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b2_f3net_lit.json"
    ],
@@ -3700,7 +3700,7 @@
    "id": "AppB2.13",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b2_f3net_lit.json"
    ],
@@ -3716,7 +3716,7 @@
    "id": "AppB2.14",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b2_f3net_lit.json"
    ],
@@ -3732,7 +3732,7 @@
    "id": "AppB2.15",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b2_f3net_lit.json"
    ],
@@ -3748,7 +3748,7 @@
    "id": "AppB2.16",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b2_f3net_lit.json"
    ],
@@ -3764,7 +3764,7 @@
    "id": "AppB2.17",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b3_freqnet_lit.json"
    ],
@@ -3780,7 +3780,7 @@
    "id": "AppB2.18",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b3_freqnet_lit.json"
    ],
@@ -3796,7 +3796,7 @@
    "id": "AppB2.19",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b3_freqnet_lit.json"
    ],
@@ -3812,7 +3812,7 @@
    "id": "AppB2.20",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b3_freqnet_lit.json"
    ],
@@ -3828,7 +3828,7 @@
    "id": "AppB2.21",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b3_freqnet_lit.json"
    ],
@@ -3844,7 +3844,7 @@
    "id": "AppB2.22",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b3_freqnet_lit.json"
    ],
@@ -3860,7 +3860,7 @@
    "id": "AppB2.23",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b3_freqnet_lit.json"
    ],
@@ -3876,7 +3876,7 @@
    "id": "AppB2.24",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b3_freqnet_lit.json"
    ],
@@ -3892,7 +3892,7 @@
    "id": "AppB2.25",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b4_xception_mq.json"
    ],
@@ -3908,7 +3908,7 @@
    "id": "AppB2.26",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b4_xception_mq.json"
    ],
@@ -3924,7 +3924,7 @@
    "id": "AppB2.27",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b4_xception_mq.json"
    ],
@@ -3940,7 +3940,7 @@
    "id": "AppB2.28",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b4_xception_mq.json"
    ],
@@ -3956,7 +3956,7 @@
    "id": "AppB2.29",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b4_xception_mq.json"
    ],
@@ -3972,7 +3972,7 @@
    "id": "AppB2.30",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b4_xception_mq.json"
    ],
@@ -3988,7 +3988,7 @@
    "id": "AppB2.31",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b4_xception_mq.json"
    ],
@@ -4004,7 +4004,7 @@
    "id": "AppB2.32",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b4_xception_mq.json"
    ],
@@ -4020,7 +4020,7 @@
    "id": "AppB2.33",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b4b_xception_mq_fliponly.json"
    ],
@@ -4036,7 +4036,7 @@
    "id": "AppB2.34",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b4b_xception_mq_fliponly.json"
    ],
@@ -4052,7 +4052,7 @@
    "id": "AppB2.35",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b4b_xception_mq_fliponly.json"
    ],
@@ -4068,7 +4068,7 @@
    "id": "AppB2.36",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b4b_xception_mq_fliponly.json"
    ],
@@ -4084,7 +4084,7 @@
    "id": "AppB2.37",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b4b_xception_mq_fliponly.json"
    ],
@@ -4100,7 +4100,7 @@
    "id": "AppB2.38",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b4b_xception_mq_fliponly.json"
    ],
@@ -4116,7 +4116,7 @@
    "id": "AppB2.39",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b4b_xception_mq_fliponly.json"
    ],
@@ -4132,7 +4132,7 @@
    "id": "AppB2.40",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b4b_xception_mq_fliponly.json"
    ],
@@ -4148,7 +4148,7 @@
    "id": "AppB2.41",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b5_f3net_mq.json"
    ],
@@ -4164,7 +4164,7 @@
    "id": "AppB2.42",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b5_f3net_mq.json"
    ],
@@ -4180,7 +4180,7 @@
    "id": "AppB2.43",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b5_f3net_mq.json"
    ],
@@ -4196,7 +4196,7 @@
    "id": "AppB2.44",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b5_f3net_mq.json"
    ],
@@ -4212,7 +4212,7 @@
    "id": "AppB2.45",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b5_f3net_mq.json"
    ],
@@ -4228,7 +4228,7 @@
    "id": "AppB2.46",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b5_f3net_mq.json"
    ],
@@ -4244,7 +4244,7 @@
    "id": "AppB2.47",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b5_f3net_mq.json"
    ],
@@ -4260,7 +4260,7 @@
    "id": "AppB2.48",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b5_f3net_mq.json"
    ],
@@ -4276,7 +4276,7 @@
    "id": "AppB2.49",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b6_freqnet_mq.json"
    ],
@@ -4292,7 +4292,7 @@
    "id": "AppB2.50",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b6_freqnet_mq.json"
    ],
@@ -4308,7 +4308,7 @@
    "id": "AppB2.51",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b6_freqnet_mq.json"
    ],
@@ -4324,7 +4324,7 @@
    "id": "AppB2.52",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b6_freqnet_mq.json"
    ],
@@ -4340,7 +4340,7 @@
    "id": "AppB2.53",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b6_freqnet_mq.json"
    ],
@@ -4356,7 +4356,7 @@
    "id": "AppB2.54",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b6_freqnet_mq.json"
    ],
@@ -4372,7 +4372,7 @@
    "id": "AppB2.55",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b6_freqnet_mq.json"
    ],
@@ -4388,7 +4388,7 @@
    "id": "AppB2.56",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b6_freqnet_mq.json"
    ],
@@ -4404,7 +4404,7 @@
    "id": "AppB2.57",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -4420,7 +4420,7 @@
    "id": "AppB2.58",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -4436,7 +4436,7 @@
    "id": "AppB2.59",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -4452,7 +4452,7 @@
    "id": "AppB2.60",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -4468,7 +4468,7 @@
    "id": "AppB2.61",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -4484,7 +4484,7 @@
    "id": "AppB2.62",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -4500,7 +4500,7 @@
    "id": "AppB2.63",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -4516,7 +4516,7 @@
    "id": "AppB2.64",
    "table": "AppB2",
    "table_title": "Harmonized baseline benchmark (video-AUC, FF++ test)",
-   "where": "Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose",
+   "where": "Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md",
    "artifacts": [
     "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
    ],

@@ -1,7 +1,7 @@
 # The complete D1–D8 audit ledger, and how each defect was closed
 
-Table 3 of the manuscript is a condensed form of this ledger. Here is the
-full text: first the defects exactly as the audit stated them on
+The manuscript's Section VI names D1-D4 in prose and points here. This
+is the full text: first the defects exactly as the audit stated them on
 2026-07-02 — before any re-test had run, when it was still possible that
 the negative would be overturned — and then the final closure status of
 each after the pre-registered re-tests (Phases 5.1–5.6) had executed.

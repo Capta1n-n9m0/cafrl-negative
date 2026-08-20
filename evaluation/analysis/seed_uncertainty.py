@@ -45,7 +45,7 @@ def _task(args: tuple[str, str, str | None, int]) -> tuple[str, str, dict]:
 
 def main() -> None:
     ap = S.add_common_args(argparse.ArgumentParser(description=__doc__))
-    ap.add_argument("--rows", default=",".join(S.HEADLINE_ROWS))
+    ap.add_argument("--rows", default=",".join(S.SEED_RESAMPLED_ROWS))
     ap.add_argument("--jobs", type=int, default=1)
     args = ap.parse_args()
 

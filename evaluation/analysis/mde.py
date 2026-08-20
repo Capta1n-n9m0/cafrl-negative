@@ -131,8 +131,11 @@ def main() -> None:
             "level (conditional on the three realized seeds), or "
             f"{max(v['mde_power80'] for v in seed_mde.values()) * 100:.1f} points "
             "treating the seed as the experimental unit, at 80% power"),
+        # over the headline rows only: seed_uncertainty.json also carries the
+        # two held-out-manipulation contrasts, whose SEs are several times larger.
         "headline_two_level_mde_power80_pt": round(max(
-            v["schemes"]["seed+video"]["mde_power80"] for v in two_level.values()
+            two_level[r]["schemes"]["seed+video"]["mde_power80"]
+            for r in S.HEADLINE_ROWS
         ) * 100, 2),
         "alpha": ALPHA, "powers": list(POWERS), "level": S.LEVEL,
         "seed_level": {

@@ -38,12 +38,13 @@ page pass moved material into this repository instead of deleting it, so a
 number of mapped rows check something the manuscript points at rather than
 prints:
 
-- the published-anchor calibration table, the six frame-level reproduction
-  numbers, and the F3-Net/FreqNet adaptation statement — `evaluation/CALIBRATION.md`,
-  with the three cautions and the calibration verdict kept in the paper's
-  Appendix C;
-- the complete harmonized baseline benchmark, all eight rows over all seven CRF
-  levels — `evaluation/BENCHMARK.md`, with its reading kept in Appendix C prose;
+- the published-anchor calibration *table* and the F3-Net/FreqNet adaptation
+  statement in full — `evaluation/CALIBRATION.md`. The six frame-level
+  reproduction numbers and their anchors were restored to the paper's
+  Appendix C in the W9 revision and are printed there;
+- the complete harmonized baseline benchmark over all seven CRF levels —
+  `evaluation/BENCHMARK.md`. Its compressed form (c23–c40 and AUC_comp, eight
+  rows) was restored to the paper's Appendix C in W9 and is printed there;
 - the full out-of-distribution evaluation protocol — `evaluation/OOD-PROTOCOL.md`,
   stated in two sentences in Appendix D;
 - the marginal intervals of the cross-dataset cells, and the seed-42 values of
@@ -126,15 +127,15 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 - `T1.9` — The standard Xception count with a binary head, as built by the released config; not pinned by a released artifact.
 - `T1.12` — Corrected in the manuscript (W1, 2026-08-19) from 0.977 to the released recomputation: mean video-AUC over c28-c40 is 0.97645.
 
-## T2 — The audit ledger (condensed)
+## T2 — The audit ledger (D1-D4, named in Section VI's prose)
 
-*Section VI (the self-audit); `\label{tab:ledger}`*
+*Section VI (the self-audit); the condensed table was replaced by prose in the W9 duplication pass, Appendix B remaining the authoritative telling; `\label{sec:audit}`*
 
 | id | claim | paper prints | this release gives | artifact | command |
 |---|---|---|---|---|---|
-| `T2.1` | The condensed D1–D8 ledger (all rows) | prose | recorded | `audit/LEDGER-D1-D8.md` | `python verify/claim.py T2.1` |
+| `T2.1` | The D1–D8 ledger (all rows) | prose | recorded | `audit/LEDGER-D1-D8.md` | `python verify/claim.py T2.1` |
 
-- `T2.1` — The full ledger this table condenses, in two halves: the defects as first stated (2026-07-02) and their closure status after the re-tests.
+- `T2.1` — The full ledger, in two halves: the defects as first stated (2026-07-02) and their closure status after the re-tests.
 
 ## T3 — The adjudicated contrasts (10k paired video bootstrap)
 
@@ -437,7 +438,7 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores at
 
 ## AppB2 — Harmonized baseline benchmark (video-AUC, FF++ test)
 
-*Released as evaluation/BENCHMARK.md; the paper's Appendix C keeps the reading in prose; `\label{tab:appbench}`*
+*Appendix C (Table 9 of the manuscript, compressed levels c23-c40 + AUC_comp); the complete seven-level matrix is evaluation/BENCHMARK.md; `\label{tab:appbench}`*
 
 | id | claim | paper prints | this release gives | artifact | command |
 |---|---|---|---|---|---|

@@ -61,12 +61,12 @@
 \node[stopblock] (stop) at (2*\colsep,0) {%
   {\head STOP-gate fires --- the thesis is falsified}\\[1pt]
   {\body SpatialBase beats full CAFRL at every level
-   (c40: 0.959 vs 0.922; $\Delta$ +0.0366, CI [+0.020,\,+0.054]).}};
+   (c40: .9590 vs .9224; $\Delta$ +0.0366, CI [+0.020,\,+0.054]).}};
 
 \node[ghost] (ablations) at (3*\colsep,0) {%
   {\head\color{ink2} Planned ablation campaign}\\[1pt]
-  {\body six arms --- GRL-vs-HSIC bake-off, conditioning, fusion, curriculum ---
-   \textbf{never run} per the frozen rule.\\[1pt]
+  {\body six arm families, 38 runs --- GRL-vs-HSIC bake-off, conditioning,
+   fusion, curriculum --- \textbf{never run} per the frozen rule.\\[1pt]
    \color{freq!70!black}\textbf{$\approx$270\,h of training saved}}};
 
 % ------------------------------------------------------------- row 2 --------
@@ -94,8 +94,9 @@
 \node[verblock] (verdict) at (3*\colsep,\rowsep) {%
   {\head Verdict}\\[1pt]
   {\body deficit $=$ recipe artifact ($+3.96$\,pt at c40, s42); frequency
-   informative alone (AUC 0.91--0.98) yet redundant under this fusion; robustness is
-   bought by data diversity (real CRF $\gg$ JPEG, $+7.3$\,pt).}};
+   informative alone (AUC 0.91--0.98) yet redundant under this fusion;
+   robustness \emph{under single-pass H.264 CRF re-encoding, in corpus}
+   is bought by data diversity (real CRF $\gg$ JPEG, $+7.3$\,pt).}};
 
 % -------------------------------------------------------------- edges -------
 \draw[flow] (prereg.east) -- (campaign.west);

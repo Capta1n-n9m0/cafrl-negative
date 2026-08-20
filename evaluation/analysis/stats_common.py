@@ -114,6 +114,11 @@ CONTRASTS: list[Contrast] = [
 
 CONTRAST_BY_ROW = {c.row: c for c in CONTRASTS}
 HEADLINE_ROWS = [c.row for c in CONTRASTS if c.headline]
+# Rows the manuscript reports with the seeds resampled as well. The two pooled
+# 3v3 headline rows, plus the two pooled held-out-manipulation rows: the paper
+# applies the estimator symmetrically, including where it retires the paper's
+# own unfavourable result (revision W9).
+SEED_RESAMPLED_ROWS = HEADLINE_ROWS + ["F1", "F2"]
 
 
 # ---------------------------------------------------------------------------
