@@ -11,9 +11,10 @@ repository exists to let you check it: every number the paper prints can be
 recomputed from the per-video model scores released here, under decision rules
 that were frozen before the runs they adjudicate.
 
-> **Status.** This repository is being assembled for submission. Directories with
-> a `STATUS.md` are not yet populated — see *What is not here yet* below.
-> Last built 2026-08-20.
+> **Status.** Published with the manuscript's submission. Every directory of the
+> layout carries content; the handful of numbers this release cannot re-derive are
+> named individually in `CLAIMS-MAP.md` and summarized under *What is not here
+> yet* below. Last built 2026-08-20.
 
 ## Check it yourself
 
@@ -69,10 +70,10 @@ the per-video crop coordinates (in the archival deposit), and the re-encode and
 cropping pipeline. Crops are a deterministic function of source video plus stored
 coordinates — regenerating them reproduces the original crops exactly.
 
-**No model weights in git.** The trained checkpoints (~6.5 GB) ship in the
-archival deposit alongside the crop coordinates.
+**No model weights in git.** The trained checkpoints (37 files, 6.0 GB) ship in
+the archival deposit alongside the crop coordinates.
 
-Archival deposit: **to be assigned before publication**
+Archival deposit: **10.5281/zenodo.22032529**
 
 ## Reproduction contract
 
@@ -155,7 +156,7 @@ authors' own preferred mechanism the loser. It did.
 ## Citing this release
 
 Cite the paper. If you use the predictions or the split lists directly, please
-also cite the archival deposit (to be assigned before publication).
+also cite the archival deposit (10.5281/zenodo.22032529).
 
 ```
 Abbas Aliyev and Samir Rustamov. Data Diversity, Not Frequency Invariance: A Controlled and Self-Audited Study of Compression-Robust Deepfake Detection. IEEE Access, 2026.

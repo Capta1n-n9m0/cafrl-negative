@@ -771,8 +771,8 @@ The present-tense claims the manuscript makes about this repository.
 - `R1` — Three groups of cells carry the reported statistics only, with the reason stated: the cross-dataset cells, the JPEG-augmentation probe, and the shipped-recipe FaceShifter cells (predictions/GAPS.md).
 - `R2` — The repository was private during the campaign, so the timeline is author-controlled version-control evidence, not third-party registration — history-excerpts.md says so in those words.
 - `R6` — One plotted series — the shipped spatial-residual run's per-epoch γ in Fig. 4(a) — is published as data because it was read from per-epoch checkpoints that are archival only (figures/README.md).
-- `R13` — **pending.** In the Zenodo deposit, minted immediately before submission. Not in git: ~6.5 GB of weights.
-- `R14` — **pending.** In the Zenodo deposit (48,294 per-video meta.json, ~7 GB raw), minted before submission. The crops themselves are not redistributable under the FF++/DFD agreements.
+- `R13` — **pending.** In the archival deposit, DOI 10.5281/zenodo.22032529 -- 37 checkpoints, 6.0 GB, one per released run per selection rule, each with its own SHA-256 in the deposit's checkpoints-manifest.json. Not in git, and not checkable from this tree: verifying it means downloading the deposit and comparing digests.
+- `R14` — **pending.** In the archival deposit, DOI 10.5281/zenodo.22032529 -- 48,294 per-video meta.json (~7 GB raw, compressed in crop-coordinates.tar.zst). The crops themselves are not redistributable under the FF++/DFD agreements; these are the coordinates that regenerate them.
 
 ---
 

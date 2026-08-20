@@ -70,7 +70,7 @@
           "n_redraws": 0,
           "z": -0.15990943041181896,
           "p_two_sided_z": 0.8729524197245838,
-          "seconds": 4.2
+          "seconds": 4.0
         },
         "seed+source": {
           "scheme": "seed+source",
@@ -136,7 +136,7 @@
           "n_redraws": 0,
           "z": -0.16464982859142452,
           "p_two_sided_z": 0.8692196088596561,
-          "seconds": 4.4
+          "seconds": 4.2
         }
       }
     },
@@ -201,7 +201,7 @@
           "n_redraws": 0,
           "z": 0.386700477945892,
           "p_two_sided_z": 0.6989779622814029,
-          "seconds": 4.2
+          "seconds": 4.0
         },
         "seed+source": {
           "scheme": "seed+source",
@@ -234,7 +234,7 @@
           "n_redraws": 0,
           "z": 0.3777294745615291,
           "p_two_sided_z": 0.705631569654735,
-          "seconds": 4.5
+          "seconds": 4.6
         },
         "seed+pair": {
           "scheme": "seed+pair",
@@ -398,7 +398,7 @@
           "n_redraws": 0,
           "z": -1.076151073399806,
           "p_two_sided_z": 0.28185969713837333,
-          "seconds": 3.4
+          "seconds": 3.5
         }
       }
     },
@@ -529,7 +529,7 @@
           "n_redraws": 0,
           "z": -1.2115918202350238,
           "p_two_sided_z": 0.22566866725985446,
-          "seconds": 3.7
+          "seconds": 3.4
         }
       }
     }
