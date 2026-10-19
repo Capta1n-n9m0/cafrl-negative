@@ -8,7 +8,7 @@ with its complete import closure so it runs on its own.
 
 ```
 evaluation/
-├── src/               the harness, verbatim (19 files, full import closure)
+├── src/               the harness, verbatim (20 files, full import closure)
 ├── release_io.py      release-only: reads predictions/*.json into the shape src/ expects
 ├── rederive.py        recomputes the paper's tables and writes them out
 ├── CALIBRATION.md     published-anchor calibration of the three literature-protocol
@@ -51,6 +51,7 @@ comparison and a pass/fail summary.
 | `src/data/ffpp_faces.py` | the FF++ evaluation dataset |
 | `src/data/frame_select.py` | the 32-frame uniform selection rule |
 | `src/data/index.py` | the per-level crop indexes |
+| `src/data/jpeg_levels.py` | package marker |
 | `src/data/sample_spec.py` | the sampling specification |
 | `src/data/splits.py` | official FF++ split loading |
 | `src/data/transforms.py` | evaluation-time preprocessing |

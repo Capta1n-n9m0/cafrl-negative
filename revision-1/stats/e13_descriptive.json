@@ -1,0 +1,286 @@
+{
+  "e13_descriptive": {
+    "label": "descriptive only (one seed per arm): effect size with a fixed-seed cluster-bootstrap interval; no p-value, no test, no verdict",
+    "source": "PREREGISTRATION-R1 \u00a76.8 (analysis), \u00a79 (the E13 sentence)",
+    "contrast": "ablation arm - FairN_s42 (one seed each)",
+    "estimand": "video AUC of the single seed-42 run (the primary estimand at k = 1)",
+    "unit": "AUC on the 0-1 scale, as every estimate of the confirmatory output; x 100 = AUC points (the prereg \u00a79 E13 sentence quotes points)",
+    "endpoints": {
+      "c40": [
+        "c40"
+      ],
+      "AUC_comp": [
+        "c28",
+        "c32",
+        "c36",
+        "c40"
+      ]
+    },
+    "interval_rule": "95 % percentile of the B replicate differences (np.quantile default)",
+    "bootstrap": {
+      "b": 10000,
+      "rng_seed": 0,
+      "scheme": "seed+source",
+      "cluster": "source",
+      "n_units": 140,
+      "n_videos": 700,
+      "n_redraws": 0,
+      "arm_rng_order": [
+        "FairN_s42",
+        "abl_curriculum",
+        "abl_lrbb",
+        "abl_lrfreq",
+        "abl_aux",
+        "abl_ep50"
+      ],
+      "seed_resample": "trivial (one seed per arm); only the shared source-identity cluster resample varies"
+    },
+    "arm_order": [
+      "abl_curriculum",
+      "abl_lrbb",
+      "abl_lrfreq",
+      "abl_aux",
+      "abl_ep50"
+    ],
+    "reference": {
+      "arm": "FairN_s42",
+      "run": "runs/f1_none_fair_s42/report.json",
+      "stopped": null,
+      "stopped_flag": null,
+      "auc": {
+        "c40": 0.9585841836734694,
+        "AUC_comp": 0.9713934948979591
+      }
+    },
+    "arms": {
+      "abl_curriculum": {
+        "change_reverted": "curriculum flat -> baby_step, phase_bounds (10, 25)",
+        "confound": "confound: with the literal phase_bounds (10, 25) inside Fair-N's 30 epochs, c36/c40 are seen only in epochs 26-30 (at <= 7 % of peak learning rate); baby_step applies its own hard-coded w_cons/w_phase (phase A 0/0 with the backbone frozen, B 0.5/0.3, C 0.3/0.3; lesson L2), so this arm reverts the curriculum together with those weights and cannot separate them. Decision 'Phase 6: E13 curriculum arm keeps the literal phase bounds' (2026-10-10, pending C1).",
+        "run": "runs/r1_abl_curriculum_s42/report.json",
+        "stopped": {
+          "epoch": 14,
+          "reason": "divergence"
+        },
+        "stopped_flag": "stopped at epoch 14 (divergence)",
+        "available": true,
+        "auc": {
+          "c40": 0.9351147959183673,
+          "AUC_comp": 0.9698852040816326
+        },
+        "delta_vs_FairN_s42": {
+          "c40": {
+            "levels": [
+              "c40"
+            ],
+            "estimate": -0.0234693877551021,
+            "ci_lo": -0.042462372448979636,
+            "ci_hi": -0.005216836734693864,
+            "ci_level": 0.95,
+            "b": 10000,
+            "rng_seed": 0,
+            "run_ablation": "runs/r1_abl_curriculum_s42/report.json",
+            "run_reference": "runs/f1_none_fair_s42/report.json"
+          },
+          "AUC_comp": {
+            "levels": [
+              "c28",
+              "c32",
+              "c36",
+              "c40"
+            ],
+            "estimate": -0.0015082908163265296,
+            "ci_lo": -0.010000239158163277,
+            "ci_hi": 0.007044244260204105,
+            "ci_level": 0.95,
+            "b": 10000,
+            "rng_seed": 0,
+            "run_ablation": "runs/r1_abl_curriculum_s42/report.json",
+            "run_reference": "runs/f1_none_fair_s42/report.json"
+          }
+        }
+      },
+      "abl_lrbb": {
+        "change_reverted": "lr_backbone 2e-4 -> 1e-5",
+        "run": "runs/r1_abl_lrbb_s42/report.json",
+        "stopped": null,
+        "stopped_flag": null,
+        "available": true,
+        "auc": {
+          "c40": 0.9179209183673469,
+          "AUC_comp": 0.9442538265306122
+        },
+        "delta_vs_FairN_s42": {
+          "c40": {
+            "levels": [
+              "c40"
+            ],
+            "estimate": -0.04066326530612252,
+            "ci_lo": -0.05798469387755101,
+            "ci_hi": -0.024489477040816294,
+            "ci_level": 0.95,
+            "b": 10000,
+            "rng_seed": 0,
+            "run_ablation": "runs/r1_abl_lrbb_s42/report.json",
+            "run_reference": "runs/f1_none_fair_s42/report.json"
+          },
+          "AUC_comp": {
+            "levels": [
+              "c28",
+              "c32",
+              "c36",
+              "c40"
+            ],
+            "estimate": -0.027139668367346936,
+            "ci_lo": -0.03969730548469396,
+            "ci_hi": -0.015816326530612372,
+            "ci_level": 0.95,
+            "b": 10000,
+            "rng_seed": 0,
+            "run_ablation": "runs/r1_abl_lrbb_s42/report.json",
+            "run_reference": "runs/f1_none_fair_s42/report.json"
+          }
+        }
+      },
+      "abl_lrfreq": {
+        "change_reverted": "lr_freq 2e-4 -> 1e-4",
+        "run": "runs/r1_abl_lrfreq_s42/report.json",
+        "stopped": null,
+        "stopped_flag": null,
+        "available": true,
+        "auc": {
+          "c40": 0.96,
+          "AUC_comp": 0.9705899234693878
+        },
+        "delta_vs_FairN_s42": {
+          "c40": {
+            "levels": [
+              "c40"
+            ],
+            "estimate": 0.001415816326530539,
+            "ci_lo": -0.0100255102040816,
+            "ci_hi": 0.013316645408163226,
+            "ci_level": 0.95,
+            "b": 10000,
+            "rng_seed": 0,
+            "run_ablation": "runs/r1_abl_lrfreq_s42/report.json",
+            "run_reference": "runs/f1_none_fair_s42/report.json"
+          },
+          "AUC_comp": {
+            "levels": [
+              "c28",
+              "c32",
+              "c36",
+              "c40"
+            ],
+            "estimate": -0.000803571428571348,
+            "ci_lo": -0.00820479910714278,
+            "ci_hi": 0.007034518494897997,
+            "ci_level": 0.95,
+            "b": 10000,
+            "rng_seed": 0,
+            "run_ablation": "runs/r1_abl_lrfreq_s42/report.json",
+            "run_reference": "runs/f1_none_fair_s42/report.json"
+          }
+        }
+      },
+      "abl_aux": {
+        "change_reverted": "auxiliary losses back on: w_cons 0.5, w_phase 0.3, w_circ_rel 0.2, w_div 1.0",
+        "run": "runs/r1_abl_aux_s42/report.json",
+        "stopped": null,
+        "stopped_flag": null,
+        "available": true,
+        "auc": {
+          "c40": 0.9596173469387755,
+          "AUC_comp": 0.9743494897959184
+        },
+        "delta_vs_FairN_s42": {
+          "c40": {
+            "levels": [
+              "c40"
+            ],
+            "estimate": 0.001033163265306114,
+            "ci_lo": -0.009400510204081614,
+            "ci_hi": 0.011836734693877582,
+            "ci_level": 0.95,
+            "b": 10000,
+            "rng_seed": 0,
+            "run_ablation": "runs/r1_abl_aux_s42/report.json",
+            "run_reference": "runs/f1_none_fair_s42/report.json"
+          },
+          "AUC_comp": {
+            "levels": [
+              "c28",
+              "c32",
+              "c36",
+              "c40"
+            ],
+            "estimate": 0.00295599489795928,
+            "ci_lo": -0.0030935108418368297,
+            "ci_hi": 0.010063855229591743,
+            "ci_level": 0.95,
+            "b": 10000,
+            "rng_seed": 0,
+            "run_ablation": "runs/r1_abl_aux_s42/report.json",
+            "run_reference": "runs/f1_none_fair_s42/report.json"
+          }
+        }
+      },
+      "abl_ep50": {
+        "change_reverted": "epochs 30 -> 50 (the cosine horizon stretches with it)",
+        "run": "runs/r1_abl_ep50_s42/report.json",
+        "stopped": null,
+        "stopped_flag": null,
+        "available": true,
+        "auc": {
+          "c40": 0.9590816326530612,
+          "AUC_comp": 0.9701147959183674
+        },
+        "delta_vs_FairN_s42": {
+          "c40": {
+            "levels": [
+              "c40"
+            ],
+            "estimate": 0.000497448979591808,
+            "ci_lo": -0.010166135204081703,
+            "ci_hi": 0.01054846938775511,
+            "ci_level": 0.95,
+            "b": 10000,
+            "rng_seed": 0,
+            "run_ablation": "runs/r1_abl_ep50_s42/report.json",
+            "run_reference": "runs/f1_none_fair_s42/report.json"
+          },
+          "AUC_comp": {
+            "levels": [
+              "c28",
+              "c32",
+              "c36",
+              "c40"
+            ],
+            "estimate": -0.0012786989795917636,
+            "ci_lo": -0.009254225127550907,
+            "ci_hi": 0.0064828603316325825,
+            "ci_level": 0.95,
+            "b": 10000,
+            "rng_seed": 0,
+            "run_ablation": "runs/r1_abl_ep50_s42/report.json",
+            "run_reference": "runs/f1_none_fair_s42/report.json"
+          }
+        }
+      }
+    }
+  },
+  "manifest": {
+    "FairN_s42": "runs/f1_none_fair_s42/report.json",
+    "abl_curriculum": {
+      "report": "runs/r1_abl_curriculum_s42/report.json",
+      "stopped": {
+        "epoch": 14,
+        "reason": "divergence"
+      }
+    },
+    "abl_lrbb": "runs/r1_abl_lrbb_s42/report.json",
+    "abl_lrfreq": "runs/r1_abl_lrfreq_s42/report.json",
+    "abl_aux": "runs/r1_abl_aux_s42/report.json",
+    "abl_ep50": "runs/r1_abl_ep50_s42/report.json"
+  }
+}

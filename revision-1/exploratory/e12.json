@@ -1,0 +1,3158 @@
+{
+ "header": "Exploratory / descriptive, not registered (prereg §11)",
+ "block": "e12",
+ "created_utc": "2026-10-14T18:37:33+00:00",
+ "plan": "docs/phases/phase6-w5-plan.md (commit e278d6e)",
+ "estimands": {
+  "primary": "mean over seeds of per-seed video AUC",
+  "ensemble": "AUC of the per-video mean score over seeds (secondary)"
+ },
+ "b": 10000,
+ "rng_seed": 0,
+ "interval": "95 % percentile (phase6_stats._ci); point = un-resampled; no p-value",
+ "cluster_rule": "Celeb-DF: target celebrity id (first id<N> of the stem); each YouTube-real video its own cluster (cluster field of the preds)",
+ "checks": [
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/r1_fairn_grl_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/r1_fairn_grl_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/r1_fairn_grl_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/f1_none_fair_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/f1_none_fair_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/f1_none_fair_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/b7_effnet_b0_mq_fliponly.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/b7_effnet_b0_mq_fliponly_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/b7_effnet_b0_mq_fliponly_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/r1_sb_noc40_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/r1_sb_noc40_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/r1_sb_noc40_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/r1_sb_c23only_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/r1_sb_c23only_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/r1_sb_c23only_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/r1_sb_jpeg_all_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/r1_sb_jpeg_all_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/r1_sb_jpeg_all_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/r1_sb_jpeg_noc40_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/r1_sb_jpeg_noc40_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/r1_sb_jpeg_noc40_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/r1_sb_noc36c40_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/r1_sb_noc36c40_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/r1_sb_noc36c40_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/f2_spatres_full_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/f2_spatres_full_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/f2_spatres_full_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/trunk_recipe_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/trunk_recipe_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/trunk_recipe_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/a0.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/a1_grl_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/a1_grl_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/a1_none_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/cafrl_spatres_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/b1_xception_lit.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/b1_xception_lit_fliponly.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/b2_f3net_lit.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/b2_f3net_lit_fliponly.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/b3_freqnet_lit.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/b4_xception_mq.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/b4b_xception_mq_fliponly.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/b5_f3net_mq.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/b6_freqnet_mq.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/p2a_xcep_jpeg.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/r1_abl_curriculum_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/r1_abl_lrbb_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/r1_abl_lrfreq_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/r1_abl_aux_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track/r1_abl_ep50_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/r1_fairn_grl_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/r1_fairn_grl_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/r1_fairn_grl_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/f1_none_fair_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/f1_none_fair_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/f1_none_fair_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/b7_effnet_b0_mq_fliponly.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/b7_effnet_b0_mq_fliponly_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/b7_effnet_b0_mq_fliponly_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/r1_sb_noc40_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/r1_sb_noc40_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/r1_sb_noc40_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/r1_sb_c23only_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/r1_sb_c23only_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/r1_sb_c23only_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/r1_sb_jpeg_all_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/r1_sb_jpeg_all_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/r1_sb_jpeg_all_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/r1_sb_jpeg_noc40_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/r1_sb_jpeg_noc40_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/r1_sb_jpeg_noc40_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/r1_sb_noc36c40_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/r1_sb_noc36c40_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/r1_sb_noc36c40_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/f2_spatres_full_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/f2_spatres_full_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/f2_spatres_full_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/trunk_recipe_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/trunk_recipe_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/trunk_recipe_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/a0.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/a1_grl_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/a1_grl_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/a1_none_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/cafrl_spatres_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/b1_xception_lit.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/b1_xception_lit_fliponly.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/b2_f3net_lit.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/b2_f3net_lit_fliponly.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/b3_freqnet_lit.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/b4_xception_mq.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/b4b_xception_mq_fliponly.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/b5_f3net_mq.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/b6_freqnet_mq.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/p2a_xcep_jpeg.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/r1_abl_curriculum_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/r1_abl_lrbb_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/r1_abl_lrfreq_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/r1_abl_aux_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig/r1_abl_ep50_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e12/crops_manifest_orig.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "pairs",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/track",
+    "${RUNS_ROOT}/phase6_build/w5/e12/preds/orig",
+    "--keys-common",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_orig.tsv"
+   ],
+   "ok": true
+  }
+ ],
+ "selection": "best.pt",
+ "cells": {
+  "cdf_track": {
+   "cell": "cdf_track",
+   "n_videos": 518,
+   "n_per_class": {
+    "real": 178,
+    "fake": 340
+   },
+   "n_clusters": 124,
+   "n_redraws": 0,
+   "b": 10000,
+   "rng_seed": 0,
+   "scheme": "seed+map",
+   "arm_rng_order": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6",
+    "A7",
+    "A8",
+    "A9",
+    "A10",
+    "A11",
+    "A12",
+    "A13",
+    "A14",
+    "A15",
+    "A16",
+    "A17",
+    "A18",
+    "A19",
+    "A20",
+    "A21",
+    "A22",
+    "A23",
+    "A24",
+    "A25",
+    "A26",
+    "A27",
+    "A28"
+   ],
+   "engine": "describe.hierarchical_bootstrap_clusters (copy, per-key cluster map)",
+   "arms": {
+    "A1": {
+     "runs": [
+      "r1_fairn_grl_s42",
+      "r1_fairn_grl_s1",
+      "r1_fairn_grl_s2"
+     ],
+     "primary": {
+      "point": 0.6891275611368144,
+      "ci_lo": 0.6400768461199249,
+      "ci_hi": 0.7346222927746939
+     },
+     "ensemble": {
+      "point": 0.6956212822207535,
+      "ci_lo": 0.6432310845206157,
+      "ci_hi": 0.7399911207104662
+     },
+     "per_seed": [
+      0.6885988103106411,
+      0.6909947124917383,
+      0.6877891606080635
+     ],
+     "k": 3
+    },
+    "A2": {
+     "runs": [
+      "f1_none_fair_s42",
+      "f1_none_fair_s1",
+      "f1_none_fair_s2"
+     ],
+     "primary": {
+      "point": 0.6485514430491297,
+      "ci_lo": 0.5619996610859739,
+      "ci_hi": 0.7239410283909194
+     },
+     "ensemble": {
+      "point": 0.6567085261070721,
+      "ci_lo": 0.5656101323551374,
+      "ci_hi": 0.7281047634271801
+     },
+     "per_seed": [
+      0.6726701916721745,
+      0.5700099140779907,
+      0.702974223397224
+     ],
+     "k": 3
+    },
+    "A3": {
+     "runs": [
+      "b7_effnet_b0_mq_fliponly",
+      "b7_effnet_b0_mq_fliponly_s1",
+      "b7_effnet_b0_mq_fliponly_s2"
+     ],
+     "primary": {
+      "point": 0.6888686935448337,
+      "ci_lo": 0.6398089813370997,
+      "ci_hi": 0.7367793705751875
+     },
+     "ensemble": {
+      "point": 0.6997686715135493,
+      "ci_lo": 0.6435514308766992,
+      "ci_hi": 0.745490665700072
+     },
+     "per_seed": [
+      0.7008261731658956,
+      0.68805353602115,
+      0.6777263714474554
+     ],
+     "k": 3
+    },
+    "A4": {
+     "runs": [
+      "r1_sb_noc40_s42",
+      "r1_sb_noc40_s1",
+      "r1_sb_noc40_s2"
+     ],
+     "primary": {
+      "point": 0.6967393699052655,
+      "ci_lo": 0.643472528640024,
+      "ci_hi": 0.7470082008570927
+     },
+     "ensemble": {
+      "point": 0.7066424322538004,
+      "ci_lo": 0.6481835377774554,
+      "ci_hi": 0.7552808860549473
+     },
+     "per_seed": [
+      0.6788664904163912,
+      0.691044282881692,
+      0.7203073364177132
+     ],
+     "k": 3
+    },
+    "A5": {
+     "runs": [
+      "r1_sb_c23only_s42",
+      "r1_sb_c23only_s1",
+      "r1_sb_c23only_s2"
+     ],
+     "primary": {
+      "point": 0.693660497907028,
+      "ci_lo": 0.635881008755516,
+      "ci_hi": 0.745648140583628
+     },
+     "ensemble": {
+      "point": 0.714177131526768,
+      "ci_lo": 0.6441615085063394,
+      "ci_hi": 0.7619716321423972
+     },
+     "per_seed": [
+      0.6613185723727694,
+      0.6944150693985459,
+      0.7252478519497687
+     ],
+     "k": 3
+    },
+    "A6": {
+     "runs": [
+      "r1_sb_jpeg_all_s42",
+      "r1_sb_jpeg_all_s1",
+      "r1_sb_jpeg_all_s2"
+     ],
+     "primary": {
+      "point": 0.6897995153117428,
+      "ci_lo": 0.6199151938318073,
+      "ci_hi": 0.7506769223463767
+     },
+     "ensemble": {
+      "point": 0.6974223397224059,
+      "ci_lo": 0.620872423319308,
+      "ci_hi": 0.7603059187503977
+     },
+     "per_seed": [
+      0.7023793787177792,
+      0.7306510244547257,
+      0.636368142762723
+     ],
+     "k": 3
+    },
+    "A7": {
+     "runs": [
+      "r1_sb_jpeg_noc40_s42",
+      "r1_sb_jpeg_noc40_s1",
+      "r1_sb_jpeg_noc40_s2"
+     ],
+     "primary": {
+      "point": 0.7412701035470368,
+      "ci_lo": 0.6920490764415909,
+      "ci_hi": 0.7856079700075962
+     },
+     "ensemble": {
+      "point": 0.7613516192994052,
+      "ci_lo": 0.7000987772034006,
+      "ci_hi": 0.80232363924707
+     },
+     "per_seed": [
+      0.7426305353602115,
+      0.7265366820885658,
+      0.7546430931923331
+     ],
+     "k": 3
+    },
+    "A8": {
+     "runs": [
+      "r1_sb_noc36c40_s42",
+      "r1_sb_noc36c40_s1",
+      "r1_sb_noc36c40_s2"
+     ],
+     "primary": {
+      "point": 0.6922725269883235,
+      "ci_lo": 0.6434774031289154,
+      "ci_hi": 0.7405058476263278
+     },
+     "ensemble": {
+      "point": 0.7092531394580304,
+      "ci_lo": 0.6508847320525784,
+      "ci_hi": 0.7533218128658544
+     },
+     "per_seed": [
+      0.6907303370786517,
+      0.7090218109715797,
+      0.677065432914739
+     ],
+     "k": 3
+    },
+    "A9": {
+     "runs": [
+      "f2_spatres_full_s42",
+      "f2_spatres_full_s1",
+      "f2_spatres_full_s2"
+     ],
+     "primary": {
+      "point": 0.682457589777484,
+      "ci_lo": 0.627263717787965,
+      "ci_hi": 0.7339749286361041
+     },
+     "ensemble": {
+      "point": 0.6902346331791144,
+      "ci_lo": 0.6308462618646289,
+      "ci_hi": 0.7403602278264738
+     },
+     "per_seed": [
+      0.685261070720423,
+      0.6993060145406477,
+      0.6628056840713814
+     ],
+     "k": 3
+    },
+    "A10": {
+     "runs": [
+      "trunk_recipe_s42",
+      "trunk_recipe_s1",
+      "trunk_recipe_s2"
+     ],
+     "primary": {
+      "point": 0.6846276712932364,
+      "ci_lo": 0.6319850441387506,
+      "ci_hi": 0.7346655871297645
+     },
+     "ensemble": {
+      "point": 0.6981493721083939,
+      "ci_lo": 0.6375263046244886,
+      "ci_hi": 0.7465144857430687
+     },
+     "per_seed": [
+      0.6760244547257105,
+      0.6741077329808328,
+      0.7037508261731659
+     ],
+     "k": 3
+    },
+    "A11": {
+     "runs": [
+      "a0",
+      "a1_grl_s1",
+      "a1_grl_s2"
+     ],
+     "primary": {
+      "point": 0.7021039876624807,
+      "ci_lo": 0.6493430509911277,
+      "ci_hi": 0.7512336456455881
+     },
+     "ensemble": {
+      "point": 0.7049074686054198,
+      "ci_lo": 0.6509095509357149,
+      "ci_hi": 0.7542248297029854
+     },
+     "per_seed": [
+      0.6947951090548579,
+      0.7261896893588896,
+      0.6853271645736947
+     ],
+     "k": 3
+    },
+    "A12": {
+     "runs": [
+      "a1_none_s42"
+     ],
+     "primary": {
+      "point": 0.6774454725710509,
+      "ci_lo": 0.6283959786968835,
+      "ci_hi": 0.7243185097894873
+     },
+     "ensemble": {
+      "point": 0.6774454725710509,
+      "ci_lo": 0.6283959786968835,
+      "ci_hi": 0.7243185097894873
+     },
+     "per_seed": [
+      0.6774454725710509
+     ],
+     "k": 1
+    },
+    "A13": {
+     "runs": [
+      "cafrl_spatres_s42"
+     ],
+     "primary": {
+      "point": 0.7287508261731659,
+      "ci_lo": 0.6795311505328863,
+      "ci_hi": 0.7755665629330978
+     },
+     "ensemble": {
+      "point": 0.7287508261731659,
+      "ci_lo": 0.6795311505328863,
+      "ci_hi": 0.7755665629330978
+     },
+     "per_seed": [
+      0.7287508261731659
+     ],
+     "k": 1
+    },
+    "A14": {
+     "runs": [
+      "b1_xception_lit"
+     ],
+     "primary": {
+      "point": 0.728916060806345,
+      "ci_lo": 0.6846058369286498,
+      "ci_hi": 0.7692205547984023
+     },
+     "ensemble": {
+      "point": 0.728916060806345,
+      "ci_lo": 0.6846058369286498,
+      "ci_hi": 0.7692205547984023
+     },
+     "per_seed": [
+      0.728916060806345
+     ],
+     "k": 1
+    },
+    "A15": {
+     "runs": [
+      "b1_xception_lit_fliponly"
+     ],
+     "primary": {
+      "point": 0.6410112359550562,
+      "ci_lo": 0.5856665928107958,
+      "ci_hi": 0.694137730565239
+     },
+     "ensemble": {
+      "point": 0.6410112359550562,
+      "ci_lo": 0.5856665928107958,
+      "ci_hi": 0.694137730565239
+     },
+     "per_seed": [
+      0.6410112359550562
+     ],
+     "k": 1
+    },
+    "A16": {
+     "runs": [
+      "b2_f3net_lit"
+     ],
+     "primary": {
+      "point": 0.7468605419695968,
+      "ci_lo": 0.6977801471329869,
+      "ci_hi": 0.7937290873498308
+     },
+     "ensemble": {
+      "point": 0.7468605419695968,
+      "ci_lo": 0.6977801471329869,
+      "ci_hi": 0.7937290873498308
+     },
+     "per_seed": [
+      0.7468605419695968
+     ],
+     "k": 1
+    },
+    "A17": {
+     "runs": [
+      "b2_f3net_lit_fliponly"
+     ],
+     "primary": {
+      "point": 0.6637144745538665,
+      "ci_lo": 0.6098121242280287,
+      "ci_hi": 0.7168548382990265
+     },
+     "ensemble": {
+      "point": 0.6637144745538665,
+      "ci_lo": 0.6098121242280287,
+      "ci_hi": 0.7168548382990265
+     },
+     "per_seed": [
+      0.6637144745538665
+     ],
+     "k": 1
+    },
+    "A18": {
+     "runs": [
+      "b3_freqnet_lit"
+     ],
+     "primary": {
+      "point": 0.762690019828156,
+      "ci_lo": 0.7181218819953892,
+      "ci_hi": 0.8045247642478363
+     },
+     "ensemble": {
+      "point": 0.762690019828156,
+      "ci_lo": 0.7181218819953892,
+      "ci_hi": 0.8045247642478363
+     },
+     "per_seed": [
+      0.762690019828156
+     ],
+     "k": 1
+    },
+    "A19": {
+     "runs": [
+      "b4_xception_mq"
+     ],
+     "primary": {
+      "point": 0.7061797752808989,
+      "ci_lo": 0.6589982372803431,
+      "ci_hi": 0.7524261800184902
+     },
+     "ensemble": {
+      "point": 0.7061797752808989,
+      "ci_lo": 0.6589982372803431,
+      "ci_hi": 0.7524261800184902
+     },
+     "per_seed": [
+      0.7061797752808989
+     ],
+     "k": 1
+    },
+    "A20": {
+     "runs": [
+      "b4b_xception_mq_fliponly"
+     ],
+     "primary": {
+      "point": 0.731543291473893,
+      "ci_lo": 0.6836604976661551,
+      "ci_hi": 0.7774671391118552
+     },
+     "ensemble": {
+      "point": 0.731543291473893,
+      "ci_lo": 0.6836604976661551,
+      "ci_hi": 0.7774671391118552
+     },
+     "per_seed": [
+      0.731543291473893
+     ],
+     "k": 1
+    },
+    "A21": {
+     "runs": [
+      "b5_f3net_mq"
+     ],
+     "primary": {
+      "point": 0.7781394580304032,
+      "ci_lo": 0.7332835559408347,
+      "ci_hi": 0.8227907385630023
+     },
+     "ensemble": {
+      "point": 0.7781394580304032,
+      "ci_lo": 0.7332835559408347,
+      "ci_hi": 0.8227907385630023
+     },
+     "per_seed": [
+      0.7781394580304032
+     ],
+     "k": 1
+    },
+    "A22": {
+     "runs": [
+      "b6_freqnet_mq"
+     ],
+     "primary": {
+      "point": 0.8194811632518176,
+      "ci_lo": 0.7798937806809513,
+      "ci_hi": 0.8567655666039833
+     },
+     "ensemble": {
+      "point": 0.8194811632518176,
+      "ci_lo": 0.7798937806809513,
+      "ci_hi": 0.8567655666039833
+     },
+     "per_seed": [
+      0.8194811632518176
+     ],
+     "k": 1
+    },
+    "A23": {
+     "runs": [
+      "p2a_xcep_jpeg"
+     ],
+     "primary": {
+      "point": 0.7825677461996035,
+      "ci_lo": 0.7377541396856655,
+      "ci_hi": 0.8241165144278244
+     },
+     "ensemble": {
+      "point": 0.7825677461996035,
+      "ci_lo": 0.7377541396856655,
+      "ci_hi": 0.8241165144278244
+     },
+     "per_seed": [
+      0.7825677461996035
+     ],
+     "k": 1
+    },
+    "A24": {
+     "runs": [
+      "r1_abl_curriculum_s42"
+     ],
+     "primary": {
+      "point": 0.7163582286847323,
+      "ci_lo": 0.6652788890744583,
+      "ci_hi": 0.7645534815069877
+     },
+     "ensemble": {
+      "point": 0.7163582286847323,
+      "ci_lo": 0.6652788890744583,
+      "ci_hi": 0.7645534815069877
+     },
+     "per_seed": [
+      0.7163582286847323
+     ],
+     "k": 1
+    },
+    "A25": {
+     "runs": [
+      "r1_abl_lrbb_s42"
+     ],
+     "primary": {
+      "point": 0.699619960343688,
+      "ci_lo": 0.6518933812408912,
+      "ci_hi": 0.7448700543464069
+     },
+     "ensemble": {
+      "point": 0.699619960343688,
+      "ci_lo": 0.6518933812408912,
+      "ci_hi": 0.7448700543464069
+     },
+     "per_seed": [
+      0.699619960343688
+     ],
+     "k": 1
+    },
+    "A26": {
+     "runs": [
+      "r1_abl_lrfreq_s42"
+     ],
+     "primary": {
+      "point": 0.6489920687376074,
+      "ci_lo": 0.5974093459716147,
+      "ci_hi": 0.6985741570919252
+     },
+     "ensemble": {
+      "point": 0.6489920687376074,
+      "ci_lo": 0.5974093459716147,
+      "ci_hi": 0.6985741570919252
+     },
+     "per_seed": [
+      0.6489920687376074
+     ],
+     "k": 1
+    },
+    "A27": {
+     "runs": [
+      "r1_abl_aux_s42"
+     ],
+     "primary": {
+      "point": 0.6812954395241243,
+      "ci_lo": 0.6292446486807848,
+      "ci_hi": 0.7306546906118536
+     },
+     "ensemble": {
+      "point": 0.6812954395241243,
+      "ci_lo": 0.6292446486807848,
+      "ci_hi": 0.7306546906118536
+     },
+     "per_seed": [
+      0.6812954395241243
+     ],
+     "k": 1
+    },
+    "A28": {
+     "runs": [
+      "r1_abl_ep50_s42"
+     ],
+     "primary": {
+      "point": 0.6304362194315929,
+      "ci_lo": 0.571159540163458,
+      "ci_hi": 0.685472691365853
+     },
+     "ensemble": {
+      "point": 0.6304362194315929,
+      "ci_lo": 0.571159540163458,
+      "ci_hi": 0.685472691365853
+     },
+     "per_seed": [
+      0.6304362194315929
+     ],
+     "k": 1
+    }
+   },
+   "contrasts": [
+    {
+     "id": "D1",
+     "name": "E1 − Fair-N",
+     "weights": {
+      "A1": 1.0,
+      "A2": -1.0
+     },
+     "levels": [
+      "cdf_track"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": 0.04057611808768469,
+      "ci_lo": -0.0170706629028985,
+      "ci_hi": 0.11511467698297724
+     },
+     "ensemble": {
+      "point": 0.03891275611368139,
+      "ci_lo": -0.016093832428990783,
+      "ci_hi": 0.11682081525862517
+     }
+    },
+    {
+     "id": "D2",
+     "name": "Fair-N − b7",
+     "weights": {
+      "A2": 1.0,
+      "A3": -1.0
+     },
+     "levels": [
+      "cdf_track"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.040317250495704005,
+      "ci_lo": -0.1161652832885984,
+      "ci_hi": 0.025217748764506675
+     },
+     "ensemble": {
+      "point": -0.04306014540647718,
+      "ci_lo": -0.12074758871218916,
+      "ci_hi": 0.022624247588052464
+     }
+    },
+    {
+     "id": "D3",
+     "name": "F2 − b7",
+     "weights": {
+      "A9": 1.0,
+      "A3": -1.0
+     },
+     "levels": [
+      "cdf_track"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.006411103767349657,
+      "ci_lo": -0.04121227444579837,
+      "ci_hi": 0.029263546166639037
+     },
+     "ensemble": {
+      "point": -0.009534038334434891,
+      "ci_lo": -0.045298862173554624,
+      "ci_hi": 0.029439765029008785
+     }
+    },
+    {
+     "id": "D4",
+     "name": "b7 − anchor",
+     "weights": {
+      "A3": 1.0,
+      "A5": -1.0
+     },
+     "levels": [
+      "cdf_track"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.004791804362194285,
+      "ci_lo": -0.055666914942510935,
+      "ci_hi": 0.048319721454093294
+     },
+     "ensemble": {
+      "point": -0.014408460013218716,
+      "ci_lo": -0.06447933782451526,
+      "ci_hi": 0.04759863948618743
+     }
+    },
+    {
+     "id": "D5",
+     "name": "½[(b7 − E3a) + (E2a − E3b)] (T4 form)",
+     "weights": {
+      "A3": 0.5,
+      "A6": -0.5,
+      "A4": 0.5,
+      "A7": -0.5
+     },
+     "levels": [
+      "cdf_track"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.022730777704340177,
+      "ci_lo": -0.06398041127084618,
+      "ci_hi": 0.020093664728599827
+     },
+     "ensemble": {
+      "point": -0.02618142762723069,
+      "ci_lo": -0.06896348377939712,
+      "ci_hi": 0.02088956046047516
+     }
+    },
+    {
+     "id": "D6",
+     "name": "½[(b7 − E2a) + (E3a − E3b)] (T5 form)",
+     "weights": {
+      "A3": 0.5,
+      "A4": -0.5,
+      "A6": 0.5,
+      "A7": -0.5
+     },
+     "levels": [
+      "cdf_track"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.02967063229786293,
+      "ci_lo": -0.0646145628972031,
+      "ci_hi": 0.001581708566438401
+     },
+     "ensemble": {
+      "point": -0.035401520158625244,
+      "ci_lo": -0.07103979916335851,
+      "ci_hi": 0.0009067024251928356
+     }
+    }
+   ]
+  },
+  "cdf_orig": {
+   "cell": "cdf_orig",
+   "n_videos": 518,
+   "n_per_class": {
+    "real": 178,
+    "fake": 340
+   },
+   "n_clusters": 124,
+   "n_redraws": 0,
+   "b": 10000,
+   "rng_seed": 0,
+   "scheme": "seed+map",
+   "arm_rng_order": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6",
+    "A7",
+    "A8",
+    "A9",
+    "A10",
+    "A11",
+    "A12",
+    "A13",
+    "A14",
+    "A15",
+    "A16",
+    "A17",
+    "A18",
+    "A19",
+    "A20",
+    "A21",
+    "A22",
+    "A23",
+    "A24",
+    "A25",
+    "A26",
+    "A27",
+    "A28"
+   ],
+   "engine": "describe.hierarchical_bootstrap_clusters (copy, per-key cluster map)",
+   "arms": {
+    "A1": {
+     "runs": [
+      "r1_fairn_grl_s42",
+      "r1_fairn_grl_s1",
+      "r1_fairn_grl_s2"
+     ],
+     "primary": {
+      "point": 0.6898050231328486,
+      "ci_lo": 0.6405444414607948,
+      "ci_hi": 0.7369723174490671
+     },
+     "ensemble": {
+      "point": 0.6966787838730998,
+      "ci_lo": 0.6438302311614679,
+      "ci_hi": 0.7425458981123043
+     },
+     "per_seed": [
+      0.6869134170522141,
+      0.6925809649702578,
+      0.689920687376074
+     ],
+     "k": 3
+    },
+    "A2": {
+     "runs": [
+      "f1_none_fair_s42",
+      "f1_none_fair_s1",
+      "f1_none_fair_s2"
+     ],
+     "primary": {
+      "point": 0.6473011676580744,
+      "ci_lo": 0.5623567634760434,
+      "ci_hi": 0.7224406626433375
+     },
+     "ensemble": {
+      "point": 0.6557997356245869,
+      "ci_lo": 0.5661236748663777,
+      "ci_hi": 0.7263324382730192
+     },
+     "per_seed": [
+      0.6675974884335757,
+      0.5708526107072043,
+      0.7034534038334435
+     ],
+     "k": 3
+    },
+    "A3": {
+     "runs": [
+      "b7_effnet_b0_mq_fliponly",
+      "b7_effnet_b0_mq_fliponly_s1",
+      "b7_effnet_b0_mq_fliponly_s2"
+     ],
+     "primary": {
+      "point": 0.6859330248953514,
+      "ci_lo": 0.6362891631530703,
+      "ci_hi": 0.7353063104747753
+     },
+     "ensemble": {
+      "point": 0.6964639788499669,
+      "ci_lo": 0.6405419072314024,
+      "ci_hi": 0.744480917687561
+     },
+     "per_seed": [
+      0.6990416391275611,
+      0.6874256444150694,
+      0.6713317911434237
+     ],
+     "k": 3
+    },
+    "A4": {
+     "runs": [
+      "r1_sb_noc40_s42",
+      "r1_sb_noc40_s1",
+      "r1_sb_noc40_s2"
+     ],
+     "primary": {
+      "point": 0.695714915179555,
+      "ci_lo": 0.6418891774823342,
+      "ci_hi": 0.7461358531528354
+     },
+     "ensemble": {
+      "point": 0.7054692663582287,
+      "ci_lo": 0.6470013586140636,
+      "ci_hi": 0.7547190256756173
+     },
+     "per_seed": [
+      0.6768175809649702,
+      0.6916886979510906,
+      0.7186384666226041
+     ],
+     "k": 3
+    },
+    "A5": {
+     "runs": [
+      "r1_sb_c23only_s42",
+      "r1_sb_c23only_s1",
+      "r1_sb_c23only_s2"
+     ],
+     "primary": {
+      "point": 0.6957975324961446,
+      "ci_lo": 0.6370474832642102,
+      "ci_hi": 0.749670805546867
+     },
+     "ensemble": {
+      "point": 0.7170687376074025,
+      "ci_lo": 0.6452929507484666,
+      "ci_hi": 0.765381017926137
+     },
+     "per_seed": [
+      0.6603602115003304,
+      0.6976206212822208,
+      0.7294117647058823
+     ],
+     "k": 3
+    },
+    "A6": {
+     "runs": [
+      "r1_sb_jpeg_all_s42",
+      "r1_sb_jpeg_all_s1",
+      "r1_sb_jpeg_all_s2"
+     ],
+     "primary": {
+      "point": 0.6868032606300947,
+      "ci_lo": 0.6199147061661016,
+      "ci_hi": 0.7462717143717826
+     },
+     "ensemble": {
+      "point": 0.6943489755452743,
+      "ci_lo": 0.6200098339929461,
+      "ci_hi": 0.7551193157403439
+     },
+     "per_seed": [
+      0.6950760079312623,
+      0.729296100462657,
+      0.6360376734963649
+     ],
+     "k": 3
+    },
+    "A7": {
+     "runs": [
+      "r1_sb_jpeg_noc40_s42",
+      "r1_sb_jpeg_noc40_s1",
+      "r1_sb_jpeg_noc40_s2"
+     ],
+     "primary": {
+      "point": 0.7400583829037233,
+      "ci_lo": 0.6920245223271003,
+      "ci_hi": 0.7833175616735039
+     },
+     "ensemble": {
+      "point": 0.7590383344348975,
+      "ci_lo": 0.6999738681236272,
+      "ci_hi": 0.7994417481317745
+     },
+     "per_seed": [
+      0.7427957699933906,
+      0.7255617977528089,
+      0.7518175809649703
+     ],
+     "k": 3
+    },
+    "A8": {
+     "runs": [
+      "r1_sb_noc36c40_s42",
+      "r1_sb_noc36c40_s1",
+      "r1_sb_noc36c40_s2"
+     ],
+     "primary": {
+      "point": 0.6920522141440846,
+      "ci_lo": 0.6429157326272795,
+      "ci_hi": 0.7410078760709928
+     },
+     "ensemble": {
+      "point": 0.7088730998017184,
+      "ci_lo": 0.6504666740839533,
+      "ci_hi": 0.7534949488890499
+     },
+     "per_seed": [
+      0.6922009253139458,
+      0.7081791143423661,
+      0.6757766027759419
+     ],
+     "k": 3
+    },
+    "A9": {
+     "runs": [
+      "f2_spatres_full_s42",
+      "f2_spatres_full_s1",
+      "f2_spatres_full_s2"
+     ],
+     "primary": {
+      "point": 0.6808107512667988,
+      "ci_lo": 0.6255394346115117,
+      "ci_hi": 0.7336808356238197
+     },
+     "ensemble": {
+      "point": 0.6882683410442829,
+      "ci_lo": 0.6284916300000775,
+      "ci_hi": 0.7394508999443333
+     },
+     "per_seed": [
+      0.6838565763384006,
+      0.6984963648380701,
+      0.6600793126239259
+     ],
+     "k": 3
+    },
+    "A10": {
+     "runs": [
+      "trunk_recipe_s42",
+      "trunk_recipe_s1",
+      "trunk_recipe_s2"
+     ],
+     "primary": {
+      "point": 0.682457589777484,
+      "ci_lo": 0.6305325150313704,
+      "ci_hi": 0.7325572566997918
+     },
+     "ensemble": {
+      "point": 0.6951916721744877,
+      "ci_lo": 0.6356723388498788,
+      "ci_hi": 0.7427078658553008
+     },
+     "per_seed": [
+      0.676867151354924,
+      0.6745703899537343,
+      0.6959352280237938
+     ],
+     "k": 3
+    },
+    "A11": {
+     "runs": [
+      "a0",
+      "a1_grl_s1",
+      "a1_grl_s2"
+     ],
+     "primary": {
+      "point": 0.7047422339722406,
+      "ci_lo": 0.6530506303103556,
+      "ci_hi": 0.7535549499248221
+     },
+     "ensemble": {
+      "point": 0.7075842696629213,
+      "ci_lo": 0.6550504145981847,
+      "ci_hi": 0.7560964844241659
+     },
+     "per_seed": [
+      0.6978849966953073,
+      0.7280237937871777,
+      0.6883179114342366
+     ],
+     "k": 3
+    },
+    "A12": {
+     "runs": [
+      "a1_none_s42"
+     ],
+     "primary": {
+      "point": 0.6792630535360211,
+      "ci_lo": 0.6307718611044573,
+      "ci_hi": 0.7252070349505002
+     },
+     "ensemble": {
+      "point": 0.6792630535360211,
+      "ci_lo": 0.6307718611044573,
+      "ci_hi": 0.7252070349505002
+     },
+     "per_seed": [
+      0.6792630535360211
+     ],
+     "k": 1
+    },
+    "A13": {
+     "runs": [
+      "cafrl_spatres_s42"
+     ],
+     "primary": {
+      "point": 0.7318241903502974,
+      "ci_lo": 0.6838721533825176,
+      "ci_hi": 0.7782226920089665
+     },
+     "ensemble": {
+      "point": 0.7318241903502974,
+      "ci_lo": 0.6838721533825176,
+      "ci_hi": 0.7782226920089665
+     },
+     "per_seed": [
+      0.7318241903502974
+     ],
+     "k": 1
+    },
+    "A14": {
+     "runs": [
+      "b1_xception_lit"
+     ],
+     "primary": {
+      "point": 0.7252148050231328,
+      "ci_lo": 0.6824573727433646,
+      "ci_hi": 0.7659972795013885
+     },
+     "ensemble": {
+      "point": 0.7252148050231328,
+      "ci_lo": 0.6824573727433646,
+      "ci_hi": 0.7659972795013885
+     },
+     "per_seed": [
+      0.7252148050231328
+     ],
+     "k": 1
+    },
+    "A15": {
+     "runs": [
+      "b1_xception_lit_fliponly"
+     ],
+     "primary": {
+      "point": 0.6402676801057502,
+      "ci_lo": 0.5844163107786878,
+      "ci_hi": 0.693029084633955
+     },
+     "ensemble": {
+      "point": 0.6402676801057502,
+      "ci_lo": 0.5844163107786878,
+      "ci_hi": 0.693029084633955
+     },
+     "per_seed": [
+      0.6402676801057502
+     ],
+     "k": 1
+    },
+    "A16": {
+     "runs": [
+      "b2_f3net_lit"
+     ],
+     "primary": {
+      "point": 0.741044282881692,
+      "ci_lo": 0.689964338656735,
+      "ci_hi": 0.7900133426309199
+     },
+     "ensemble": {
+      "point": 0.741044282881692,
+      "ci_lo": 0.689964338656735,
+      "ci_hi": 0.7900133426309199
+     },
+     "per_seed": [
+      0.741044282881692
+     ],
+     "k": 1
+    },
+    "A17": {
+     "runs": [
+      "b2_f3net_lit_fliponly"
+     ],
+     "primary": {
+      "point": 0.666606080634501,
+      "ci_lo": 0.6119867079623178,
+      "ci_hi": 0.7197527551497469
+     },
+     "ensemble": {
+      "point": 0.666606080634501,
+      "ci_lo": 0.6119867079623178,
+      "ci_hi": 0.7197527551497469
+     },
+     "per_seed": [
+      0.666606080634501
+     ],
+     "k": 1
+    },
+    "A18": {
+     "runs": [
+      "b3_freqnet_lit"
+     ],
+     "primary": {
+      "point": 0.760079312623926,
+      "ci_lo": 0.7165766978983794,
+      "ci_hi": 0.8024858543004058
+     },
+     "ensemble": {
+      "point": 0.760079312623926,
+      "ci_lo": 0.7165766978983794,
+      "ci_hi": 0.8024858543004058
+     },
+     "per_seed": [
+      0.760079312623926
+     ],
+     "k": 1
+    },
+    "A19": {
+     "runs": [
+      "b4_xception_mq"
+     ],
+     "primary": {
+      "point": 0.7023132848645076,
+      "ci_lo": 0.6554284254236618,
+      "ci_hi": 0.7499837209145733
+     },
+     "ensemble": {
+      "point": 0.7023132848645076,
+      "ci_lo": 0.6554284254236618,
+      "ci_hi": 0.7499837209145733
+     },
+     "per_seed": [
+      0.7023132848645076
+     ],
+     "k": 1
+    },
+    "A20": {
+     "runs": [
+      "b4b_xception_mq_fliponly"
+     ],
+     "primary": {
+      "point": 0.729296100462657,
+      "ci_lo": 0.6816610366662413,
+      "ci_hi": 0.77660709851606
+     },
+     "ensemble": {
+      "point": 0.729296100462657,
+      "ci_lo": 0.6816610366662413,
+      "ci_hi": 0.77660709851606
+     },
+     "per_seed": [
+      0.729296100462657
+     ],
+     "k": 1
+    },
+    "A21": {
+     "runs": [
+      "b5_f3net_mq"
+     ],
+     "primary": {
+      "point": 0.777428949107733,
+      "ci_lo": 0.7328566940082818,
+      "ci_hi": 0.8228546504250319
+     },
+     "ensemble": {
+      "point": 0.777428949107733,
+      "ci_lo": 0.7328566940082818,
+      "ci_hi": 0.8228546504250319
+     },
+     "per_seed": [
+      0.777428949107733
+     ],
+     "k": 1
+    },
+    "A22": {
+     "runs": [
+      "b6_freqnet_mq"
+     ],
+     "primary": {
+      "point": 0.819035029742234,
+      "ci_lo": 0.7783484570750077,
+      "ci_hi": 0.8578580316872709
+     },
+     "ensemble": {
+      "point": 0.819035029742234,
+      "ci_lo": 0.7783484570750077,
+      "ci_hi": 0.8578580316872709
+     },
+     "per_seed": [
+      0.819035029742234
+     ],
+     "k": 1
+    },
+    "A23": {
+     "runs": [
+      "p2a_xcep_jpeg"
+     ],
+     "primary": {
+      "point": 0.7838896232650363,
+      "ci_lo": 0.739408188885766,
+      "ci_hi": 0.8251025170200056
+     },
+     "ensemble": {
+      "point": 0.7838896232650363,
+      "ci_lo": 0.739408188885766,
+      "ci_hi": 0.8251025170200056
+     },
+     "per_seed": [
+      0.7838896232650363
+     ],
+     "k": 1
+    },
+    "A24": {
+     "runs": [
+      "r1_abl_curriculum_s42"
+     ],
+     "primary": {
+      "point": 0.7141440846001322,
+      "ci_lo": 0.6637410450152991,
+      "ci_hi": 0.7624615403023159
+     },
+     "ensemble": {
+      "point": 0.7141440846001322,
+      "ci_lo": 0.6637410450152991,
+      "ci_hi": 0.7624615403023159
+     },
+     "per_seed": [
+      0.7141440846001322
+     ],
+     "k": 1
+    },
+    "A25": {
+     "runs": [
+      "r1_abl_lrbb_s42"
+     ],
+     "primary": {
+      "point": 0.7057997356245869,
+      "ci_lo": 0.6587965784222596,
+      "ci_hi": 0.7506491186801859
+     },
+     "ensemble": {
+      "point": 0.7057997356245869,
+      "ci_lo": 0.6587965784222596,
+      "ci_hi": 0.7506491186801859
+     },
+     "per_seed": [
+      0.7057997356245869
+     ],
+     "k": 1
+    },
+    "A26": {
+     "runs": [
+      "r1_abl_lrfreq_s42"
+     ],
+     "primary": {
+      "point": 0.650743555849306,
+      "ci_lo": 0.5991850609921838,
+      "ci_hi": 0.7009001599453536
+     },
+     "ensemble": {
+      "point": 0.650743555849306,
+      "ci_lo": 0.5991850609921838,
+      "ci_hi": 0.7009001599453536
+     },
+     "per_seed": [
+      0.650743555849306
+     ],
+     "k": 1
+    },
+    "A27": {
+     "runs": [
+      "r1_abl_aux_s42"
+     ],
+     "primary": {
+      "point": 0.6839061467283543,
+      "ci_lo": 0.6318966202150158,
+      "ci_hi": 0.733402642948348
+     },
+     "ensemble": {
+      "point": 0.6839061467283543,
+      "ci_lo": 0.6318966202150158,
+      "ci_hi": 0.733402642948348
+     },
+     "per_seed": [
+      0.6839061467283543
+     ],
+     "k": 1
+    },
+    "A28": {
+     "runs": [
+      "r1_abl_ep50_s42"
+     ],
+     "primary": {
+      "point": 0.6280733641771316,
+      "ci_lo": 0.5715057687790533,
+      "ci_hi": 0.6823800579142176
+     },
+     "ensemble": {
+      "point": 0.6280733641771316,
+      "ci_lo": 0.5715057687790533,
+      "ci_hi": 0.6823800579142176
+     },
+     "per_seed": [
+      0.6280733641771316
+     ],
+     "k": 1
+    }
+   },
+   "contrasts": [
+    {
+     "id": "D1",
+     "name": "E1 − Fair-N",
+     "weights": {
+      "A1": 1.0,
+      "A2": -1.0
+     },
+     "levels": [
+      "cdf_orig"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": 0.0425038554747742,
+      "ci_lo": -0.015669907926964616,
+      "ci_hi": 0.11512075353696374
+     },
+     "ensemble": {
+      "point": 0.04087904824851285,
+      "ci_lo": -0.013804290554331416,
+      "ci_hi": 0.1177701535438535
+     }
+    },
+    {
+     "id": "D2",
+     "name": "Fair-N − b7",
+     "weights": {
+      "A2": 1.0,
+      "A3": -1.0
+     },
+     "levels": [
+      "cdf_orig"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.03863185723727691,
+      "ci_lo": -0.11380594486284716,
+      "ci_hi": 0.027079367604930186
+     },
+     "ensemble": {
+      "point": -0.04066424322537998,
+      "ci_lo": -0.11849219455988341,
+      "ci_hi": 0.02408589958398978
+     }
+    },
+    {
+     "id": "D3",
+     "name": "F2 − b7",
+     "weights": {
+      "A9": 1.0,
+      "A3": -1.0
+     },
+     "levels": [
+      "cdf_orig"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.005122273628552554,
+      "ci_lo": -0.04168588106658808,
+      "ci_hi": 0.03155396602885535
+     },
+     "ensemble": {
+      "point": -0.008195637805683997,
+      "ci_lo": -0.04600931608746762,
+      "ci_hi": 0.03171002234814425
+     }
+    },
+    {
+     "id": "D4",
+     "name": "b7 − anchor",
+     "weights": {
+      "A3": 1.0,
+      "A5": -1.0
+     },
+     "levels": [
+      "cdf_orig"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.00986450760079327,
+      "ci_lo": -0.06289920526489026,
+      "ci_hi": 0.044702844711563286
+     },
+     "ensemble": {
+      "point": -0.020604758757435615,
+      "ci_lo": -0.07113043967076838,
+      "ci_hi": 0.04400434628678845
+     }
+    },
+    {
+     "id": "D5",
+     "name": "½[(b7 − E3a) + (E2a − E3b)] (T4 form)",
+     "weights": {
+      "A3": 0.5,
+      "A6": -0.5,
+      "A4": 0.5,
+      "A7": -0.5
+     },
+     "levels": [
+      "cdf_orig"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.022606851729455812,
+      "ci_lo": -0.06351938732518103,
+      "ci_hi": 0.020231895111752256
+     },
+     "ensemble": {
+      "point": -0.025727032385988113,
+      "ci_lo": -0.06789277022412617,
+      "ci_hi": 0.020919729154031813
+     }
+    },
+    {
+     "id": "D6",
+     "name": "½[(b7 − E2a) + (E3a − E3b)] (T5 form)",
+     "weights": {
+      "A3": 0.5,
+      "A4": -0.5,
+      "A6": 0.5,
+      "A7": -0.5
+     },
+     "levels": [
+      "cdf_orig"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.031518506278916114,
+      "ci_lo": -0.06538522249183333,
+      "ci_hi": -0.00035068777473622637
+     },
+     "ensemble": {
+      "point": -0.036847323198942517,
+      "ci_lo": -0.07144855573005508,
+      "ci_hi": -0.0011090806256940926
+     }
+    }
+   ]
+  }
+ },
+ "cross_cell": {
+  "cdf_track-cdf_orig": {
+   "cells": [
+    "cdf_track",
+    "cdf_orig"
+   ],
+   "difference": "cdf_track − cdf_orig",
+   "b": 10000,
+   "rng_seed": 0,
+   "scheme": "seed+map",
+   "n_videos": 518,
+   "n_clusters": 124,
+   "n_redraws": 0,
+   "arm_rng_order": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6",
+    "A7",
+    "A8",
+    "A9",
+    "A10",
+    "A11",
+    "A12",
+    "A13",
+    "A14",
+    "A15",
+    "A16",
+    "A17",
+    "A18",
+    "A19",
+    "A20",
+    "A21",
+    "A22",
+    "A23",
+    "A24",
+    "A25",
+    "A26",
+    "A27",
+    "A28"
+   ],
+   "n_common_keys": 518,
+   "n_keys_not_common": 0,
+   "note": "joint call gives only the difference; each cell's own interval is its single-cell call",
+   "arms": {
+    "A1": {
+     "primary": {
+      "point": -0.0006774619960342454,
+      "ci_lo": -0.011943252909908211,
+      "ci_hi": 0.011561312928927526
+     },
+     "ensemble": {
+      "point": -0.0010575016523463043,
+      "ci_lo": -0.013055582402532248,
+      "ci_hi": 0.012994143149988202
+     },
+     "k": 3
+    },
+    "A2": {
+     "primary": {
+      "point": 0.0012502753910552666,
+      "ci_lo": -0.004602283590182438,
+      "ci_hi": 0.009756234368356072
+     },
+     "ensemble": {
+      "point": 0.0009087904824851556,
+      "ci_lo": -0.005697969850219011,
+      "ci_hi": 0.010785072592936994
+     },
+     "k": 3
+    },
+    "A3": {
+     "primary": {
+      "point": 0.002935668649482359,
+      "ci_lo": -0.003432454851656225,
+      "ci_hi": 0.012191566341870535
+     },
+     "ensemble": {
+      "point": 0.0033046926635823537,
+      "ci_lo": -0.0037994018143797715,
+      "ci_hi": 0.012617747135397914
+     },
+     "k": 3
+    },
+    "A4": {
+     "primary": {
+      "point": 0.0010244547257105552,
+      "ci_lo": -0.0032128907288934386,
+      "ci_hi": 0.005916051133347516
+     },
+     "ensemble": {
+      "point": 0.001173165895571704,
+      "ci_lo": -0.004051406613709224,
+      "ci_hi": 0.006318161677126872
+     },
+     "k": 3
+    },
+    "A5": {
+     "primary": {
+      "point": -0.0021370345891166265,
+      "ci_lo": -0.00918775005688682,
+      "ci_hi": 0.0033564763472123307
+     },
+     "ensemble": {
+      "point": -0.0028916060806345456,
+      "ci_lo": -0.010928994009210869,
+      "ci_hi": 0.004033951490349545
+     },
+     "k": 3
+    },
+    "A6": {
+     "primary": {
+      "point": 0.002996254681648103,
+      "ci_lo": -0.0061003872286045,
+      "ci_hi": 0.01745430981361931
+     },
+     "ensemble": {
+      "point": 0.0030733641771315545,
+      "ci_lo": -0.006557435841521531,
+      "ci_hi": 0.018886922080715848
+     },
+     "k": 3
+    },
+    "A7": {
+     "primary": {
+      "point": 0.0012117206433135408,
+      "ci_lo": -0.005668213785374757,
+      "ci_hi": 0.008173027073074761
+     },
+     "ensemble": {
+      "point": 0.0023132848645076587,
+      "ci_lo": -0.004969514938895111,
+      "ci_hi": 0.009498143472899748
+     },
+     "k": 3
+    },
+    "A8": {
+     "primary": {
+      "point": 0.0002203128442389568,
+      "ci_lo": -0.004085970223711275,
+      "ci_hi": 0.004905576164974798
+     },
+     "ensemble": {
+      "point": 0.0003800396563119479,
+      "ci_lo": -0.005009234398500409,
+      "ci_hi": 0.005220132100670494
+     },
+     "k": 3
+    },
+    "A9": {
+     "primary": {
+      "point": 0.0016468385106852557,
+      "ci_lo": -0.006288035950600756,
+      "ci_hi": 0.010010843423508053
+     },
+     "ensemble": {
+      "point": 0.00196629213483146,
+      "ci_lo": -0.0062562482688150066,
+      "ci_hi": 0.01109429826775522
+     },
+     "k": 3
+    },
+    "A10": {
+     "primary": {
+      "point": 0.0021700815157523756,
+      "ci_lo": -0.008222379598317823,
+      "ci_hi": 0.015959547761902823
+     },
+     "ensemble": {
+      "point": 0.002957699933906155,
+      "ci_lo": -0.009325992194630619,
+      "ci_hi": 0.018053146210041424
+     },
+     "k": 3
+    },
+    "A11": {
+     "primary": {
+      "point": -0.0026382463097598396,
+      "ci_lo": -0.011296276135135692,
+      "ci_hi": 0.004189385219622431
+     },
+     "ensemble": {
+      "point": -0.0026768010575015655,
+      "ci_lo": -0.011554763210541339,
+      "ci_hi": 0.004635498987226054
+     },
+     "k": 3
+    },
+    "A12": {
+     "primary": {
+      "point": -0.0018175809649702002,
+      "ci_lo": -0.014397019549326335,
+      "ci_hi": 0.010551169240358597
+     },
+     "ensemble": {
+      "point": -0.0018175809649702002,
+      "ci_lo": -0.014397019549326335,
+      "ci_hi": 0.010551169240358597
+     },
+     "k": 1
+    },
+    "A13": {
+     "primary": {
+      "point": -0.0030733641771315545,
+      "ci_lo": -0.011129303295268206,
+      "ci_hi": 0.0031145923077938588
+     },
+     "ensemble": {
+      "point": -0.0030733641771315545,
+      "ci_lo": -0.011129303295268206,
+      "ci_hi": 0.0031145923077938588
+     },
+     "k": 1
+    },
+    "A14": {
+     "primary": {
+      "point": 0.0037012557832121207,
+      "ci_lo": -0.01068032186061966,
+      "ci_hi": 0.0182059012157017
+     },
+     "ensemble": {
+      "point": 0.0037012557832121207,
+      "ci_lo": -0.01068032186061966,
+      "ci_hi": 0.0182059012157017
+     },
+     "k": 1
+    },
+    "A15": {
+     "primary": {
+      "point": 0.0007435558493059657,
+      "ci_lo": -0.003930609703377039,
+      "ci_hi": 0.005401698425623059
+     },
+     "ensemble": {
+      "point": 0.0007435558493059657,
+      "ci_lo": -0.003930609703377039,
+      "ci_hi": 0.005401698425623059
+     },
+     "k": 1
+    },
+    "A16": {
+     "primary": {
+      "point": 0.00581625908790484,
+      "ci_lo": -0.011379793602822744,
+      "ci_hi": 0.02411040202802986
+     },
+     "ensemble": {
+      "point": 0.00581625908790484,
+      "ci_lo": -0.011379793602822744,
+      "ci_hi": 0.02411040202802986
+     },
+     "k": 1
+    },
+    "A17": {
+     "primary": {
+      "point": -0.0028916060806345456,
+      "ci_lo": -0.013753415027516907,
+      "ci_hi": 0.006149491999714096
+     },
+     "ensemble": {
+      "point": -0.0028916060806345456,
+      "ci_lo": -0.013753415027516907,
+      "ci_hi": 0.006149491999714096
+     },
+     "k": 1
+    },
+    "A18": {
+     "primary": {
+      "point": 0.002610707204229956,
+      "ci_lo": -0.01038635990497722,
+      "ci_hi": 0.017335284215009506
+     },
+     "ensemble": {
+      "point": 0.002610707204229956,
+      "ci_lo": -0.01038635990497722,
+      "ci_hi": 0.017335284215009506
+     },
+     "k": 1
+    },
+    "A19": {
+     "primary": {
+      "point": 0.0038664904163913105,
+      "ci_lo": -0.010229608253121322,
+      "ci_hi": 0.018831697926244752
+     },
+     "ensemble": {
+      "point": 0.0038664904163913105,
+      "ci_lo": -0.010229608253121322,
+      "ci_hi": 0.018831697926244752
+     },
+     "k": 1
+    },
+    "A20": {
+     "primary": {
+      "point": 0.0022471910112359383,
+      "ci_lo": -0.007768612593832027,
+      "ci_hi": 0.011844054724952055
+     },
+     "ensemble": {
+      "point": 0.0022471910112359383,
+      "ci_lo": -0.007768612593832027,
+      "ci_hi": 0.011844054724952055
+     },
+     "k": 1
+    },
+    "A21": {
+     "primary": {
+      "point": 0.0007105089226702166,
+      "ci_lo": -0.008722576467092779,
+      "ci_hi": 0.009811370350259018
+     },
+     "ensemble": {
+      "point": 0.0007105089226702166,
+      "ci_lo": -0.008722576467092779,
+      "ci_hi": 0.009811370350259018
+     },
+     "k": 1
+    },
+    "A22": {
+     "primary": {
+      "point": 0.00044613350958366826,
+      "ci_lo": -0.007777697755008133,
+      "ci_hi": 0.00976746915933438
+     },
+     "ensemble": {
+      "point": 0.00044613350958366826,
+      "ci_lo": -0.007777697755008133,
+      "ci_hi": 0.00976746915933438
+     },
+     "k": 1
+    },
+    "A23": {
+     "primary": {
+      "point": -0.0013218770654328527,
+      "ci_lo": -0.005456664751136008,
+      "ci_hi": 0.0015580039435765065
+     },
+     "ensemble": {
+      "point": -0.0013218770654328527,
+      "ci_lo": -0.005456664751136008,
+      "ci_hi": 0.0015580039435765065
+     },
+     "k": 1
+    },
+    "A24": {
+     "primary": {
+      "point": 0.002214144084600078,
+      "ci_lo": -0.008472792631280462,
+      "ci_hi": 0.015775970366232996
+     },
+     "ensemble": {
+      "point": 0.002214144084600078,
+      "ci_lo": -0.008472792631280462,
+      "ci_hi": 0.015775970366232996
+     },
+     "k": 1
+    },
+    "A25": {
+     "primary": {
+      "point": -0.006179775280898858,
+      "ci_lo": -0.020419151815385745,
+      "ci_hi": 0.004191191945106883
+     },
+     "ensemble": {
+      "point": -0.006179775280898858,
+      "ci_lo": -0.020419151815385745,
+      "ci_hi": 0.004191191945106883
+     },
+     "k": 1
+    },
+    "A26": {
+     "primary": {
+      "point": -0.0017514871116985908,
+      "ci_lo": -0.006869724268637625,
+      "ci_hi": 0.002114528441214441
+     },
+     "ensemble": {
+      "point": -0.0017514871116985908,
+      "ci_lo": -0.006869724268637625,
+      "ci_hi": 0.002114528441214441
+     },
+     "k": 1
+    },
+    "A27": {
+     "primary": {
+      "point": -0.002610707204229956,
+      "ci_lo": -0.00711786869563607,
+      "ci_hi": 0.001238226736687389
+     },
+     "ensemble": {
+      "point": -0.002610707204229956,
+      "ci_lo": -0.00711786869563607,
+      "ci_hi": 0.001238226736687389
+     },
+     "k": 1
+    },
+    "A28": {
+     "primary": {
+      "point": 0.002362855254461338,
+      "ci_lo": -0.010015770430145862,
+      "ci_hi": 0.017933097489859873
+     },
+     "ensemble": {
+      "point": 0.002362855254461338,
+      "ci_lo": -0.010015770430145862,
+      "ci_hi": 0.017933097489859873
+     },
+     "k": 1
+    }
+   }
+  }
+ },
+ "missing_runs": [],
+ "missing_arms": [],
+ "exclusions": {
+  "cells": {
+   "cdf_track": {
+    "file": "runs/phase6_build/w5/e12/exclusions_track.tsv",
+    "level": null,
+    "n": 0,
+    "by_class_reason": {},
+    "data_manifest": "runs/phase6_build/w5/e12/data_manifest_track.json",
+    "data_manifest_counts": {
+     "counts": {
+      "fake": {
+       "attempted": 340,
+       "excluded": {},
+       "extracted": 340,
+       "n_crops": 12256,
+       "n_tracks": 383
+      },
+      "real": {
+       "attempted": 178,
+       "excluded": {},
+       "extracted": 178,
+       "n_crops": 6080,
+       "n_tracks": 190
+      }
+     },
+     "exclusion_rules": {
+      "no face track": "no track >= 30 frames",
+      "unreadable": "decode error or 0 frames"
+     },
+     "exclusions": {
+      "n_rows": 0,
+      "path": "${RUNS_ROOT}/phase6_build/w5/e12/exclusions_track.tsv",
+      "sha256": "882c9f02367fd61ac05fcbf2ea4ec57412cf76a999a7829318ed7db7f57bc3ba"
+     }
+    },
+    "by_class": {
+     "real": {
+      "excluded": 0,
+      "attempted": 178,
+      "attempted_source": "data manifest",
+      "fraction": 0.0
+     },
+     "fake": {
+      "excluded": 0,
+      "attempted": 340,
+      "attempted_source": "data manifest",
+      "fraction": 0.0
+     }
+    },
+    "degraded_data": false,
+    "problems": []
+   },
+   "cdf_orig": {
+    "file": "runs/phase6_build/w5/e12/exclusions_orig.tsv",
+    "level": null,
+    "n": 0,
+    "by_class_reason": {},
+    "data_manifest": "runs/phase6_build/w5/e12/data_manifest_orig.json",
+    "data_manifest_counts": {
+     "attempted": {
+      "real": 178,
+      "fake": 340
+     },
+     "extracted": {
+      "real": 178,
+      "fake": 340
+     },
+     "excluded": {},
+     "exclusions_sha256": "882c9f02367fd61ac05fcbf2ea4ec57412cf76a999a7829318ed7db7f57bc3ba"
+    },
+    "by_class": {
+     "real": {
+      "excluded": 0,
+      "attempted": 178,
+      "attempted_source": "data manifest",
+      "fraction": 0.0
+     },
+     "fake": {
+      "excluded": 0,
+      "attempted": 340,
+      "attempted_source": "data manifest",
+      "fraction": 0.0
+     }
+    },
+    "degraded_data": false,
+    "problems": []
+   }
+  },
+  "unused_files": []
+ }
+}

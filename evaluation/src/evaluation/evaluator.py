@@ -332,8 +332,15 @@ class Evaluator:
             _LOG.warning("sweep: <2 levels produced an AUC — slope/std skipped")
         return out
 
-    def cross_dataset(self, model: ModelLike) -> dict[str, Any]:
+    def cross_dataset(
+        self, model: ModelLike, *, return_preds: bool = False,
+    ) -> dict[str, Any]:
         """Celeb-DF v2 + DFD (c23 **and** c40) cells per the standard protocol.
+
+        ``return_preds=True`` (Phase 6, lesson L6) attaches the per-video keyed
+        predictions to each cell exactly as in ``sweep``. It is default-off and only
+        adds the ``video_keys``/``video_scores``/``video_labels`` fields; every scalar
+        comes from the same single inference pass, so it is identical either way.
 
         Phase-5 Step 5.3 added the **DFD-c40** cell (crops on disk,
         `phase1-asbuilt §C3`) — both DFD levels are part of the pre-registered
@@ -349,7 +356,8 @@ class Evaluator:
             cdf = CelebDFFacesDataset(self.cfg)
             if len(cdf) > 0:
                 out["celebdf_v2"] = self.evaluate(model, cdf, "test",
-                                                  name="CelebDF-v2")
+                                                  name="CelebDF-v2",
+                                                  return_preds=return_preds)
             else:
                 _LOG.warning("cross_dataset: Celeb-DF has 0 samples — skipping")
                 out["celebdf_v2"] = {"name": "CelebDF-v2", "status": "empty"}
@@ -366,7 +374,7 @@ class Evaluator:
                 if len(dfd) > 0:
                     out[key] = self.evaluate(
                         model, dfd, lvl, aggregate="per_identity_max",
-                        name=f"DFD@{lvl}",
+                        name=f"DFD@{lvl}", return_preds=return_preds,
                     )
                 else:
                     _LOG.warning("cross_dataset: DFD %s has 0 samples — skipping", lvl)

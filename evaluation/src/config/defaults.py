@@ -212,6 +212,10 @@ class LossConfig:
 # Train
 # ---------------------------------------------------------------------------
 
+# Valid ``TrainConfig.grl_ramp`` values (see the field's comment).
+GRL_RAMPS: tuple[str, ...] = ("phase_anchored", "from_step0")
+
+
 @dataclass
 class TrainConfig:
     lr_freq: float = 1e-4
@@ -237,6 +241,49 @@ class TrainConfig:
     grad_clip: float = 1.0
     amp: str = "bf16"
     seed: int = 42
+    # --- Phase 6 (Revision 1, W0) options. Every default reproduces the f2e3558
+    # trainer bit for bit (decision "Phase 6 build: default options must reproduce
+    # the old code bit for bit"); new runs opt in through their YAML. -------------
+    # GRL λ ramp origin (lesson L1).
+    #   "phase_anchored" (default) — the ramp starts at curriculum Phase B
+    #       (`phase_bounds[0]`), even in flat mode, so λ ≡ 0 for epochs 1..10.
+    #   "from_step0" — the DANN ramp λ = λmax·(2/(1+e^(−10p)) − 1) with
+    #       p = global_step / total_steps, total_steps summed over ALL epochs. This
+    #       is E1's ramp (decision "Revision 1 W0: adversary tested as designed,
+    #       ramp from step 0"). Ignored by arms without a GRL.
+    grl_ramp: str = "phase_anchored"
+    # Step-scalar cadence in global steps (was the module constant
+    # `_STEP_LOG_EVERY = 50`). The smoke sets 1 to log λ at every step.
+    step_log_every: int = 50
+    # When True, every `step_log_every` steps also emit a greppable `STEP` line
+    # (step, λ used, losses, train-batch est_pm1 and disc_bal_acc) to the log and
+    # add est_pm1/disc_bal_acc to the step TB scalars. Read-only on the forward
+    # outputs, so training numerics are unchanged.
+    step_log_detail: bool = False
+    # When True, each validation also scores the RAW (live) model on the same val
+    # levels and logs its AUCs next to the EMA ones. Selection is unchanged (EMA).
+    # The extra pass runs under a forked RNG, so the training stream is unchanged.
+    val_raw: bool = False
+    # W5b V3 (the post hoc EMA-fix arm; diagnosis runs/phase6_build/steps/
+    # W5b-S0.diagnosis.md). When True, the EMA
+    # shadow keeps BatchNorm running stats computed from its OWN weights (an extra
+    # no-grad forward of the shadow on each of the last steps of every epoch, see
+    # trainer `_EMA_BN_WINDOW_STEPS`) instead of the live model's copied stats.
+    # False (default) is the original EMA, unchanged.
+    ema_own_bn_stats: bool = False
+
+    def __setattr__(self, name: str, value: object) -> None:
+        """Reject an unknown ``grl_ramp`` when the config is built or loaded.
+
+        Runs on dataclass ``__init__`` and on every ``load_config`` merge (it sets
+        fields with ``setattr``), so a typo in a YAML fails at load time, not at
+        ``Trainer.__init__`` (S2 2b verifier, NIT 6).
+        """
+        if name == "grl_ramp" and value not in GRL_RAMPS:
+            raise ValueError(
+                f"train.grl_ramp must be one of {list(GRL_RAMPS)}; got {value!r}"
+            )
+        super().__setattr__(name, value)
 
 
 # ---------------------------------------------------------------------------
@@ -263,11 +310,15 @@ class Config:
     train: TrainConfig = field(default_factory=TrainConfig)
     eval: EvalConfig = field(default_factory=EvalConfig)
 
-    def dump(self, run_dir: Path | str, filename: str = "config.yaml") -> Path:
+    def dump(
+        self, run_dir: Path | str, filename: str = "config.yaml",
+        *, provenance: dict | None = None,
+    ) -> Path:
         """Write the fully-resolved config as YAML into ``run_dir``.
 
-        Thin wrapper over ``load.dump_config`` (lazy import avoids a cycle).
+        Thin wrapper over ``load.dump_config`` (lazy import avoids a cycle);
+        ``provenance`` adds the optional top-level run-provenance record.
         """
         from .load import dump_config
 
-        return dump_config(self, run_dir, filename=filename)
+        return dump_config(self, run_dir, filename=filename, provenance=provenance)

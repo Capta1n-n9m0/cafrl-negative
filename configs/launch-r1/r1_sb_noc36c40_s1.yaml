@@ -1,0 +1,34 @@
+# Phase 6 (Revision 1, W0) — E2b r1_sb_noc36c40_s1: SpatialBase without c36 and c40 (levels c0–c32).
+#
+# Parent: the b7 recipe (runs/b7_effnet_b0_mq_fliponly{,_s1,_s2}), i.e.
+#   python -m src.scripts.train_baseline --model effnet_b0 --protocol mq --no-aug --seed <S>
+#   = effnet_b0, protocol mq (six levels c0..c40, mix 0.3/0.4/0.3, paired 0.25), flip-only,
+#   lr 2e-4, wd 1e-4, 30 epochs, warmup 1, batch 32, no EMA, selection = best mean val AUC
+#   over c23 + c40 (real H.264 val crops).
+# Format: everything lives in this YAML (`baseline:` block = BaselineTrainConfig fields,
+#   `train.seed` = the seed); launch.sh passes only --config and --name:
+#   python -m src.scripts.train_baseline --config configs/phase6/r1_sb_noc36c40_s1.yaml --name r1_sb_noc36c40_s1
+# Eval: python -m src.scripts.eval_battery --run r1_sb_noc36c40_s1 --baseline
+#       python -m src.scripts.eval_faceshifter --run r1_sb_noc36c40_s1 --baseline
+# The b7-recipe fields are written out explicitly (lr, weight_decay, epochs, warmup_epochs,
+# model, protocol, use_aug); they equal the defaults/b7's flags. The mix compensation
+# (decision "Phase 6 build: compensated singles quota for asymmetric level sets") is always on
+# in train_baseline and is a proven no-op for six levels and c23-only.
+# Every diff below is checked against the resolved b7 recipe by src/tests/test_phase6_configs.py.
+# Diff vs the resolved b7 recipe at seed 1 (the declared line-set, nothing else):
+#   baseline.train_levels    : (protocol mq: c0..c40) -> [c0, c23, c28, c32]
+#   baseline.selector_levels : [c23, c40] -> [c23, c32]
+#   No heavy group: the mix renormalizes to 0.4286 / 0.5714 (clean / medium).
+# Why: decisions "Revision 1 W0: build defaults" (1); kickoff §3 arm table (E2b).
+train:
+  seed: 1
+baseline:
+  model: effnet_b0
+  protocol: mq
+  use_aug: false
+  lr: 0.0002
+  weight_decay: 0.0001
+  epochs: 30
+  warmup_epochs: 1
+  train_levels: [c0, c23, c28, c32]
+  selector_levels: [c23, c32]

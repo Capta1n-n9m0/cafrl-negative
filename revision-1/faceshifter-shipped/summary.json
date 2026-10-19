@@ -1,0 +1,559 @@
+{
+  "label": "POST HOC: IEEE Access Revision 1, wave W4a-2 stage S0 (decision 2026-10-17 'W4a-1 ruling: Table S4 gets 4 decimals from a post hoc GPU evaluation'); not a registered result",
+  "post_hoc": true,
+  "decision": "W4a-1 ruling: Table S4 gets 4 decimals from a post hoc GPU evaluation",
+  "ledger_row": "R1.42",
+  "table": "supplement Table S4 (tab:appfaceshifter), paper/latex/access/access-b-supp.tex",
+  "pass_rule": "each new AUC and each \u0394 formed from them must round to its published 3-decimal value (fixed before the run)",
+  "weights": "EMA (best.pt ema_model) for every CAFRL number",
+  "created": "2026-10-17T22:59:29+00:00",
+  "summary_code": {
+    "path": "src/scripts/w4a2/s0_summary.py",
+    "sha256": "c74f4a146025784fea6632711c6d0d6d0fce688f1ab1e68e322da28c16f8770c",
+    "git": {
+      "commit": "c460907d980f733bbc667d74937ed1aa066a7147",
+      "status_porcelain_src_scripts_w4a2": [
+        "?? experiments/exp3-cafrl/src/scripts/w4a2/"
+      ]
+    }
+  },
+  "comparator_files": {
+    "b7_effnet_b0_mq_fliponly": {
+      "path": "runs/b7_effnet_b0_mq_fliponly/faceshifter_preds.json",
+      "sha256": "16667b4af95fb08b5a257ae9cbed41756f840121b660276ff342dc7e53c321f2"
+    },
+    "b7_effnet_b0_mq_fliponly_s1": {
+      "path": "runs/b7_effnet_b0_mq_fliponly_s1/faceshifter_preds.json",
+      "sha256": "f41011203dd0f82707f883f3a0082e83197b119ca6b4d6ad2189ea57d20127cf"
+    },
+    "b7_effnet_b0_mq_fliponly_s2": {
+      "path": "runs/b7_effnet_b0_mq_fliponly_s2/faceshifter_preds.json",
+      "sha256": "b25272196fd5e603131ba05f2fd7189a0e45583eeff0060c8bbe3f0787699c1a"
+    }
+  },
+  "checkpoints": {
+    "a0": {
+      "weights": "ema",
+      "selector": "ema_best_by_val_auc(best.pt)",
+      "weights_check": {
+        "loaded_state_fingerprint": "74b3ed358c774d0b84378c67898dde5f3c6ade70a8de7b3604822af2f8afbf1d",
+        "ema_fingerprint": "74b3ed358c774d0b84378c67898dde5f3c6ade70a8de7b3604822af2f8afbf1d",
+        "raw_fingerprint": "672b5b3500fb492671d5f1c3ef041db8263ce6b15ce051e058c2e2ec2611a1b1",
+        "loaded_equals_ema": true,
+        "ema_differs_from_raw": true
+      },
+      "checkpoint_path": "${RUNS_ROOT}/a0/best.pt",
+      "checkpoint_realpath": "${HOME}/sdd/exp3-cafrl-runs/a0/best.pt",
+      "checkpoint_epoch": 34,
+      "checkpoint_sha256_before": "723c02d2d5a87a5ba81c823053a178786f2cc881f24f15830439022ef0dc33f2",
+      "checkpoint_sha256_after": "723c02d2d5a87a5ba81c823053a178786f2cc881f24f15830439022ef0dc33f2",
+      "checkpoint_unchanged_during_eval": true,
+      "test_list": {
+        "path": "${SPLITS_DIR}/test.json",
+        "sha256": "886f5a0da623c25820692e0d8dc33d197ddb1db527a7f1cfcb9bcbca60fe4f40",
+        "official_path": "${HOME}/Projects/FinetuneCV/config/splits/ffpp_official_splits/test.json",
+        "official_sha256": "886f5a0da623c25820692e0d8dc33d197ddb1db527a7f1cfcb9bcbca60fe4f40",
+        "config_splits_dir": "${SPLITS_DIR}"
+      },
+      "eval_code": {
+        "git_commit": "c460907d980f733bbc667d74937ed1aa066a7147",
+        "git_tracked_changes": false,
+        "code_sha256": {
+          "wrapper": "22f55d5a20b8c90a164dbdb642b4280ca97dbd6a6300d8f1dfacdf5a3a913460",
+          "driver": "bf4c7061d36feb506ebca9334c0c678177d3df91ee56f3cd1b58aa69b9589ca2"
+        },
+        "driver": "src.scripts.eval_faceshifter.evaluate_faceshifter (imported, unchanged)"
+      },
+      "result_json_sha256": "e06fc7bbf4de1474fb616770d7084a6b7ae6908b1679986af940cea18b31861f",
+      "eval_started": "2026-10-17T22:46:56+00:00",
+      "eval_finished": "2026-10-17T22:47:36+00:00",
+      "levels": {
+        "c23": {
+          "auc": 0.8196428571428572,
+          "auc_4dp": 0.8196,
+          "auc_3dp": 0.82,
+          "auc_result_json": 0.8196428571428572,
+          "abs_diff_vs_result_json": 0.0,
+          "n_videos": 280,
+          "n_real": 140,
+          "n_fake": 140,
+          "preds_file": "runs/phase6_build/w4a2/s0/a0/preds_c23.csv",
+          "preds_sha256": "f2ca75434b7350a191d391ba5dc08a71fb95c2240ff3cee625e5ec302a5e6845",
+          "published_in_table_s4": null,
+          "journal_single_seed_check": {
+            "source": "runs/phase5_build/journal.md:153 (not printed in the paper; informational, not under the pass rule)",
+            "published": "0.820",
+            "published_dp": 3,
+            "new": 0.8196428571428572,
+            "new_4dp": 0.8196,
+            "new_3dp": 0.82,
+            "new_at_published_dp": 0.82,
+            "rounds_to_published": true
+          }
+        },
+        "c40": {
+          "auc": 0.7506122448979592,
+          "auc_4dp": 0.7506,
+          "auc_3dp": 0.751,
+          "auc_result_json": 0.7506122448979592,
+          "abs_diff_vs_result_json": 0.0,
+          "n_videos": 280,
+          "n_real": 140,
+          "n_fake": 140,
+          "preds_file": "runs/phase6_build/w4a2/s0/a0/preds_c40.csv",
+          "preds_sha256": "4daf55b3974bcfb140942247579462a86b3320606a3a78a2cb1a3e4668538100",
+          "published_in_table_s4": null,
+          "journal_single_seed_check": {
+            "source": "runs/phase5_build/journal.md:153 (not printed in the paper; informational, not under the pass rule)",
+            "published": "0.751",
+            "published_dp": 3,
+            "new": 0.7506122448979592,
+            "new_4dp": 0.7506,
+            "new_3dp": 0.751,
+            "new_at_published_dp": 0.751,
+            "rounds_to_published": true
+          }
+        }
+      },
+      "checkpoint_sha256_now": "723c02d2d5a87a5ba81c823053a178786f2cc881f24f15830439022ef0dc33f2"
+    },
+    "a1_grl_s1": {
+      "weights": "ema",
+      "selector": "ema_best_by_val_auc(best.pt)",
+      "weights_check": {
+        "loaded_state_fingerprint": "25bb66b06d4de330e6c8e1a1932441f5211fb896e2b61d738dc2104f0c6a4871",
+        "ema_fingerprint": "25bb66b06d4de330e6c8e1a1932441f5211fb896e2b61d738dc2104f0c6a4871",
+        "raw_fingerprint": "ee29a5e762a2d65bae38ec9c45f8c6029e579f7cdca9845d07fa12715992af8a",
+        "loaded_equals_ema": true,
+        "ema_differs_from_raw": true
+      },
+      "checkpoint_path": "${RUNS_ROOT}/a1_grl_s1/best.pt",
+      "checkpoint_realpath": "${HOME}/sdd/exp3-cafrl-runs/a1_grl_s1/best.pt",
+      "checkpoint_epoch": 29,
+      "checkpoint_sha256_before": "e5acd1b769db3f975fb86a2cb8ef561629d8857ac819f8cc0c37daa867cd732b",
+      "checkpoint_sha256_after": "e5acd1b769db3f975fb86a2cb8ef561629d8857ac819f8cc0c37daa867cd732b",
+      "checkpoint_unchanged_during_eval": true,
+      "test_list": {
+        "path": "${SPLITS_DIR}/test.json",
+        "sha256": "886f5a0da623c25820692e0d8dc33d197ddb1db527a7f1cfcb9bcbca60fe4f40",
+        "official_path": "${HOME}/Projects/FinetuneCV/config/splits/ffpp_official_splits/test.json",
+        "official_sha256": "886f5a0da623c25820692e0d8dc33d197ddb1db527a7f1cfcb9bcbca60fe4f40",
+        "config_splits_dir": "${SPLITS_DIR}"
+      },
+      "eval_code": {
+        "git_commit": "c460907d980f733bbc667d74937ed1aa066a7147",
+        "git_tracked_changes": false,
+        "code_sha256": {
+          "wrapper": "22f55d5a20b8c90a164dbdb642b4280ca97dbd6a6300d8f1dfacdf5a3a913460",
+          "driver": "bf4c7061d36feb506ebca9334c0c678177d3df91ee56f3cd1b58aa69b9589ca2"
+        },
+        "driver": "src.scripts.eval_faceshifter.evaluate_faceshifter (imported, unchanged)"
+      },
+      "result_json_sha256": "2c909577160e84467abfe22f508401bcc69f6ba0383b4018452a753b0b78ed75",
+      "eval_started": "2026-10-17T22:47:40+00:00",
+      "eval_finished": "2026-10-17T22:48:22+00:00",
+      "levels": {
+        "c23": {
+          "auc": 0.8086224489795919,
+          "auc_4dp": 0.8086,
+          "auc_3dp": 0.809,
+          "auc_result_json": 0.8086224489795919,
+          "abs_diff_vs_result_json": 0.0,
+          "n_videos": 280,
+          "n_real": 140,
+          "n_fake": 140,
+          "preds_file": "runs/phase6_build/w4a2/s0/a1_grl_s1/preds_c23.csv",
+          "preds_sha256": "4e967ee68711d93a13fb4a028fd30e96fbac5f97ca9daedaa77d709b8b0d1021",
+          "published_in_table_s4": null
+        },
+        "c40": {
+          "auc": 0.7738775510204081,
+          "auc_4dp": 0.7739,
+          "auc_3dp": 0.774,
+          "auc_result_json": 0.7738775510204081,
+          "abs_diff_vs_result_json": 0.0,
+          "n_videos": 280,
+          "n_real": 140,
+          "n_fake": 140,
+          "preds_file": "runs/phase6_build/w4a2/s0/a1_grl_s1/preds_c40.csv",
+          "preds_sha256": "b70ee55540be9c8a2a3a22e50f646f01b906060b809dca9eb36ab54a30b35e5c",
+          "published_in_table_s4": null
+        }
+      },
+      "checkpoint_sha256_now": "e5acd1b769db3f975fb86a2cb8ef561629d8857ac819f8cc0c37daa867cd732b"
+    },
+    "a1_grl_s2": {
+      "weights": "ema",
+      "selector": "ema_best_by_val_auc(best.pt)",
+      "weights_check": {
+        "loaded_state_fingerprint": "ad0cb2037fc7290fe5cbeb5a3e1db09472c410a63b087c0bd9b2d643e7f47648",
+        "ema_fingerprint": "ad0cb2037fc7290fe5cbeb5a3e1db09472c410a63b087c0bd9b2d643e7f47648",
+        "raw_fingerprint": "a575c7e2944eb8ae8b616ed98411661d0f6ffcf6671e88527dd91d51f1a7ee08",
+        "loaded_equals_ema": true,
+        "ema_differs_from_raw": true
+      },
+      "checkpoint_path": "${RUNS_ROOT}/a1_grl_s2/best.pt",
+      "checkpoint_realpath": "${HOME}/sdd/exp3-cafrl-runs/a1_grl_s2/best.pt",
+      "checkpoint_epoch": 34,
+      "checkpoint_sha256_before": "618b405343612f485fe83602e61ad6d9805049dc455a9a77d01af05a878357e4",
+      "checkpoint_sha256_after": "618b405343612f485fe83602e61ad6d9805049dc455a9a77d01af05a878357e4",
+      "checkpoint_unchanged_during_eval": true,
+      "test_list": {
+        "path": "${SPLITS_DIR}/test.json",
+        "sha256": "886f5a0da623c25820692e0d8dc33d197ddb1db527a7f1cfcb9bcbca60fe4f40",
+        "official_path": "${HOME}/Projects/FinetuneCV/config/splits/ffpp_official_splits/test.json",
+        "official_sha256": "886f5a0da623c25820692e0d8dc33d197ddb1db527a7f1cfcb9bcbca60fe4f40",
+        "config_splits_dir": "${SPLITS_DIR}"
+      },
+      "eval_code": {
+        "git_commit": "c460907d980f733bbc667d74937ed1aa066a7147",
+        "git_tracked_changes": false,
+        "code_sha256": {
+          "wrapper": "22f55d5a20b8c90a164dbdb642b4280ca97dbd6a6300d8f1dfacdf5a3a913460",
+          "driver": "bf4c7061d36feb506ebca9334c0c678177d3df91ee56f3cd1b58aa69b9589ca2"
+        },
+        "driver": "src.scripts.eval_faceshifter.evaluate_faceshifter (imported, unchanged)"
+      },
+      "result_json_sha256": "e9772c4eb2951f6dd2c2bb104720e2b64d9ea3ac1b1864134924ff4559c1eddc",
+      "eval_started": "2026-10-17T22:48:25+00:00",
+      "eval_finished": "2026-10-17T22:49:06+00:00",
+      "levels": {
+        "c23": {
+          "auc": 0.8365816326530613,
+          "auc_4dp": 0.8366,
+          "auc_3dp": 0.837,
+          "auc_result_json": 0.8365816326530613,
+          "abs_diff_vs_result_json": 0.0,
+          "n_videos": 280,
+          "n_real": 140,
+          "n_fake": 140,
+          "preds_file": "runs/phase6_build/w4a2/s0/a1_grl_s2/preds_c23.csv",
+          "preds_sha256": "292072f4f29f914ce0070d8520d14dde422a39e0823702d8a70cd2b39ada80d4",
+          "published_in_table_s4": null
+        },
+        "c40": {
+          "auc": 0.7480612244897958,
+          "auc_4dp": 0.7481,
+          "auc_3dp": 0.748,
+          "auc_result_json": 0.7480612244897958,
+          "abs_diff_vs_result_json": 0.0,
+          "n_videos": 280,
+          "n_real": 140,
+          "n_fake": 140,
+          "preds_file": "runs/phase6_build/w4a2/s0/a1_grl_s2/preds_c40.csv",
+          "preds_sha256": "c3368566dc291f53961c2224c94ca23f953d94471826a99814916d0960738173",
+          "published_in_table_s4": null
+        }
+      },
+      "checkpoint_sha256_now": "618b405343612f485fe83602e61ad6d9805049dc455a9a77d01af05a878357e4"
+    }
+  },
+  "table_s4": {
+    "c23": {
+      "n_videos": 280,
+      "n_real": 140,
+      "n_fake": 140,
+      "cafrl_column": {
+        "formed_as": "mean over the 3 seeds (a0, a1_grl_s1, a1_grl_s2; EMA) of each seed's video AUC",
+        "per_seed_auc": {
+          "a0": 0.8196428571428572,
+          "a1_grl_s1": 0.8086224489795919,
+          "a1_grl_s2": 0.8365816326530613
+        },
+        "published": "0.822",
+        "published_dp": 3,
+        "new": 0.8216156462585035,
+        "new_4dp": 0.8216,
+        "new_3dp": 0.822,
+        "new_at_published_dp": 0.822,
+        "rounds_to_published": true,
+        "under_pass_rule": true
+      },
+      "spatialbase_column": {
+        "formed_as": "mean of the 3 b7 per-seed video AUCs (released predictions); not from the S0 checkpoints, informational",
+        "per_seed_auc": {
+          "b7_effnet_b0_mq_fliponly": 0.8082142857142857,
+          "b7_effnet_b0_mq_fliponly_s1": 0.8411224489795918,
+          "b7_effnet_b0_mq_fliponly_s2": 0.8195408163265306
+        },
+        "published": "0.8230",
+        "published_dp": 4,
+        "new": 0.8229591836734693,
+        "new_4dp": 0.823,
+        "new_3dp": 0.823,
+        "new_at_published_dp": 0.823,
+        "rounds_to_published": true,
+        "under_pass_rule": false
+      },
+      "delta": {
+        "formed_as": "AUC(CAFRL seed pool) - AUC(SpatialBase seed pool); seed pool = per-video mean of the 3 seeds' per-video scores (mean-pooled logits); same 280 videos; positive favours CAFRL",
+        "auc_cafrl_pool": 0.83,
+        "auc_spatialbase_pool": 0.8380102040816326,
+        "published_estimand": {
+          "what": "bootstrap mean delta_mean of src.evaluation.metrics.paired_auc_delta (the published estimand)",
+          "b": 10000,
+          "seed": 0,
+          "video_order": "b7 s42 faceshifter_preds.json video_keys order (the June order is not recorded)",
+          "n_redraws": 0,
+          "published": "-0.008",
+          "published_dp": 3,
+          "new": -0.00798614252394979,
+          "new_4dp": -0.008,
+          "new_3dp": -0.008,
+          "new_at_published_dp": -0.008,
+          "rounds_to_published": true,
+          "under_pass_rule": true
+        },
+        "point_estimate": {
+          "what": "un-resampled difference (decision 'W4a-1 ruling: every \u0394 is printed as a point estimate'; the value S1 prints)",
+          "published": "-0.008",
+          "published_dp": 3,
+          "new": -0.008010204081632666,
+          "new_4dp": -0.008,
+          "new_3dp": -0.008,
+          "new_at_published_dp": -0.008,
+          "rounds_to_published": true,
+          "under_pass_rule": "reported (builder-1 proposal: rule applied to the published estimand; the point estimate is reported beside it)"
+        },
+        "ci95": {
+          "what": "2.5/97.5 percentiles of the same bootstrap; informational (June bootstrap seed and video order not recorded, so an exact match is not required)",
+          "lo": {
+            "published": "-0.041",
+            "published_dp": 3,
+            "new": -0.04092781739020932,
+            "new_4dp": -0.0409,
+            "new_3dp": -0.041,
+            "new_at_published_dp": -0.041,
+            "rounds_to_published": true
+          },
+          "hi": {
+            "published": "+0.025",
+            "published_dp": 3,
+            "new": 0.025056786478309254,
+            "new_4dp": 0.0251,
+            "new_3dp": 0.025,
+            "new_at_published_dp": 0.025,
+            "rounds_to_published": true
+          }
+        },
+        "p_delta_gt_0": {
+          "what": "share of bootstrap replicates with \u0394>0; informational",
+          "published": "0.30",
+          "published_dp": 2,
+          "new": 0.3168,
+          "new_4dp": 0.3168,
+          "new_3dp": 0.317,
+          "new_at_published_dp": 0.32,
+          "rounds_to_published": false
+        },
+        "bootstrap_seed_sensitivity": {
+          "what": "the same bootstrap re-run with other seeds (Monte Carlo spread only; informational)",
+          "runs": [
+            {
+              "seed": 1,
+              "delta_mean": -0.008082567760885352,
+              "ci_lo": -0.04169343574700221,
+              "ci_hi": 0.024234972209750655,
+              "p_delta_gt_0": 0.317
+            },
+            {
+              "seed": 2,
+              "delta_mean": -0.007866327261337243,
+              "ci_lo": -0.04115482251971233,
+              "ci_hi": 0.02523662744912754,
+              "p_delta_gt_0": 0.3202
+            },
+            {
+              "seed": 3,
+              "delta_mean": -0.008323078053608955,
+              "ci_lo": -0.04123104667247303,
+              "ci_hi": 0.02413711773019322,
+              "p_delta_gt_0": 0.3109
+            },
+            {
+              "seed": 4,
+              "delta_mean": -0.00796788227873239,
+              "ci_lo": -0.04197403581593929,
+              "ci_hi": 0.02536035457648182,
+              "p_delta_gt_0": 0.3193
+            },
+            {
+              "seed": 5,
+              "delta_mean": -0.007814528057082463,
+              "ci_lo": -0.04061996527777763,
+              "ci_hi": 0.025319542433310305,
+              "p_delta_gt_0": 0.3227
+            }
+          ]
+        }
+      }
+    },
+    "c40": {
+      "n_videos": 280,
+      "n_real": 140,
+      "n_fake": 140,
+      "cafrl_column": {
+        "formed_as": "mean over the 3 seeds (a0, a1_grl_s1, a1_grl_s2; EMA) of each seed's video AUC",
+        "per_seed_auc": {
+          "a0": 0.7506122448979592,
+          "a1_grl_s1": 0.7738775510204081,
+          "a1_grl_s2": 0.7480612244897958
+        },
+        "published": "0.758",
+        "published_dp": 3,
+        "new": 0.757517006802721,
+        "new_4dp": 0.7575,
+        "new_3dp": 0.758,
+        "new_at_published_dp": 0.758,
+        "rounds_to_published": true,
+        "under_pass_rule": true
+      },
+      "spatialbase_column": {
+        "formed_as": "mean of the 3 b7 per-seed video AUCs (released predictions); not from the S0 checkpoints, informational",
+        "per_seed_auc": {
+          "b7_effnet_b0_mq_fliponly": 0.7176020408163264,
+          "b7_effnet_b0_mq_fliponly_s1": 0.7468877551020408,
+          "b7_effnet_b0_mq_fliponly_s2": 0.7308163265306122
+        },
+        "published": "0.7318",
+        "published_dp": 4,
+        "new": 0.7317687074829932,
+        "new_4dp": 0.7318,
+        "new_3dp": 0.732,
+        "new_at_published_dp": 0.7318,
+        "rounds_to_published": true,
+        "under_pass_rule": false
+      },
+      "delta": {
+        "formed_as": "AUC(CAFRL seed pool) - AUC(SpatialBase seed pool); seed pool = per-video mean of the 3 seeds' per-video scores (mean-pooled logits); same 280 videos; positive favours CAFRL",
+        "auc_cafrl_pool": 0.7650000000000001,
+        "auc_spatialbase_pool": 0.7428571428571428,
+        "published_estimand": {
+          "what": "bootstrap mean delta_mean of src.evaluation.metrics.paired_auc_delta (the published estimand)",
+          "b": 10000,
+          "seed": 0,
+          "video_order": "b7 s42 faceshifter_preds.json video_keys order (the June order is not recorded)",
+          "n_redraws": 0,
+          "published": "+0.022",
+          "published_dp": 3,
+          "new": 0.021855818199477826,
+          "new_4dp": 0.0219,
+          "new_3dp": 0.022,
+          "new_at_published_dp": 0.022,
+          "rounds_to_published": true,
+          "under_pass_rule": true
+        },
+        "point_estimate": {
+          "what": "un-resampled difference (decision 'W4a-1 ruling: every \u0394 is printed as a point estimate'; the value S1 prints)",
+          "published": "+0.022",
+          "published_dp": 3,
+          "new": 0.022142857142857353,
+          "new_4dp": 0.0221,
+          "new_3dp": 0.022,
+          "new_at_published_dp": 0.022,
+          "rounds_to_published": true,
+          "under_pass_rule": "reported (builder-1 proposal: rule applied to the published estimand; the point estimate is reported beside it)"
+        },
+        "ci95": {
+          "what": "2.5/97.5 percentiles of the same bootstrap; informational (June bootstrap seed and video order not recorded, so an exact match is not required)",
+          "lo": {
+            "published": "-0.021",
+            "published_dp": 3,
+            "new": -0.02035508618669493,
+            "new_4dp": -0.0204,
+            "new_3dp": -0.02,
+            "new_at_published_dp": -0.02,
+            "rounds_to_published": false
+          },
+          "hi": {
+            "published": "+0.064",
+            "published_dp": 3,
+            "new": 0.06440139514331711,
+            "new_4dp": 0.0644,
+            "new_3dp": 0.064,
+            "new_at_published_dp": 0.064,
+            "rounds_to_published": true
+          }
+        },
+        "p_delta_gt_0": {
+          "what": "share of bootstrap replicates with \u0394>0; informational",
+          "published": "0.84",
+          "published_dp": 2,
+          "new": 0.8466,
+          "new_4dp": 0.8466,
+          "new_3dp": 0.847,
+          "new_at_published_dp": 0.85,
+          "rounds_to_published": false
+        },
+        "bootstrap_seed_sensitivity": {
+          "what": "the same bootstrap re-run with other seeds (Monte Carlo spread only; informational)",
+          "runs": [
+            {
+              "seed": 1,
+              "delta_mean": 0.02148833453459621,
+              "ci_lo": -0.0211242391693518,
+              "ci_hi": 0.0632175551368543,
+              "p_delta_gt_0": 0.8409
+            },
+            {
+              "seed": 2,
+              "delta_mean": 0.021698388469010076,
+              "ci_lo": -0.0207665998314495,
+              "ci_hi": 0.06454278392498437,
+              "p_delta_gt_0": 0.8422
+            },
+            {
+              "seed": 3,
+              "delta_mean": 0.021613610809462818,
+              "ci_lo": -0.019750076938778675,
+              "ci_hi": 0.06345344125065655,
+              "p_delta_gt_0": 0.8455
+            },
+            {
+              "seed": 4,
+              "delta_mean": 0.022135427377046237,
+              "ci_lo": -0.020536944282247553,
+              "ci_hi": 0.06523682477349008,
+              "p_delta_gt_0": 0.8438
+            },
+            {
+              "seed": 5,
+              "delta_mean": 0.022117507310086642,
+              "ci_lo": -0.019849361430395885,
+              "ci_hi": 0.06406970548752877,
+              "p_delta_gt_0": 0.8497
+            }
+          ]
+        }
+      }
+    }
+  },
+  "pass_rule_results": [
+    {
+      "value": "c23 CAFRL column",
+      "rounds_to_published": true
+    },
+    {
+      "value": "c23 \u0394 (published estimand)",
+      "rounds_to_published": true
+    },
+    {
+      "value": "c40 CAFRL column",
+      "rounds_to_published": true
+    },
+    {
+      "value": "c40 \u0394 (published estimand)",
+      "rounds_to_published": true
+    }
+  ],
+  "all_pass": true,
+  "frozen_check": {
+    "command": "grep ' runs/' ${RUNS_ROOT}/phase6_build/frozen_hashes_before.txt | grep -v '^#' | sha256sum -c",
+    "returncode": 0,
+    "n_lines": 58,
+    "n_ok": 58,
+    "not_ok": [],
+    "stderr": "",
+    "pass": true
+  }
+}

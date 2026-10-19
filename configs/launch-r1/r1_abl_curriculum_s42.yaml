@@ -1,0 +1,41 @@
+# Phase 6 (Revision 1, W0) — E13 r1_abl_curriculum_s42: Fair-N with ONE change reverted to a0 — the curriculum reverted to a0's baby_step with phase_bounds (10, 25) LITERAL.
+#
+# Parent: configs/phase5/f1_none_fair_s42.yaml (Fair-N, seed 42; invariance_arm none, so no
+# adversary and no λ ramp). Its body is repeated below with the one change.
+# Diff vs the resolved parent (the declared line-set, nothing else):
+#   train.curriculum      : flat -> baby_step      a0's curriculum (a0 has no explicit key;
+#                           baby_step is the dataclass default a0 ran with)
+#   train.val_raw         : false -> true            log raw AND EMA val AUC (kickoff §3)
+# Written out, no resolved change: train.phase_bounds [10, 25] (= the default = a0's).
+# What baby_step brings (L2, S0 m1): phase A epochs 1–10 = c0+c23 with the backbone FROZEN;
+#   phase B 11–25 adds c28/c32 with HARD-CODED w_cons 0.5 / w_phase 0.3; phase C 26–30 = all six
+#   levels, w_cons 0.3 / w_phase 0.3. The YAML's w_cons/w_phase are ignored by baby_step;
+#   w_circ_rel and w_div stay at Fair-N's 0, w_crf 0.2. Confound (disclosed in the paper):
+#   c36/c40 appear only in epochs 26–30, at <= 7 % of peak LR (a0 had 25 such epochs).
+# Why: decisions "Revision 1 W0: five-arm recipe ablation" (1) and "Phase 6: E13 curriculum
+#   arm keeps the literal phase bounds" (open for C1; alternative (6, 15) rejected).
+# Not reverted (stated in the paper): batch 32 on one GPU (a0: 2 GPUs), lr_disc (moot: no disc).
+# E13 is descriptive (one seed, no test).
+#
+# Run: python -m src.train --config configs/phase6/r1_abl_curriculum_s42.yaml --name r1_abl_curriculum_s42
+#      (one GPU, no torchrun; never the max-epochs or subset-fraction flags; via runs/phase6_build/launch.sh)
+# Eval: python -m src.scripts.eval_battery --run r1_abl_curriculum_s42 --bn-routing clean
+#       python -m src.scripts.eval_faceshifter --run r1_abl_curriculum_s42
+# Selection: unchanged trainer rule = EMA weights, best mean val AUC over c23 + c40 (Fair-N's).
+# Every diff below is checked against the resolved parent by src/tests/test_phase6_configs.py.
+model:
+  invariance_arm: none
+train:
+  curriculum: baby_step
+  lr_freq: 0.0002
+  lr_backbone: 0.0002
+  lr_disc: 0.0002
+  epochs: 30
+  seed: 42
+  phase_bounds: [10, 25]
+  val_raw: true
+loss:
+  w_cons: 0.0
+  w_phase: 0.0
+  w_circ_rel: 0.0
+  w_div: 0.0

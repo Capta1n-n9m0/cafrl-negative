@@ -1,0 +1,1819 @@
+{
+ "header": "Exploratory / descriptive, not registered (prereg §11)",
+ "block": "e7_dfdc",
+ "created_utc": "2026-10-14T23:53:16+00:00",
+ "plan": "docs/phases/phase6-w5-plan.md (commit e278d6e)",
+ "estimands": {
+  "primary": "mean over seeds of per-seed video AUC",
+  "ensemble": "AUC of the per-video mean score over seeds (secondary)"
+ },
+ "b": 10000,
+ "rng_seed": 0,
+ "interval": "95 % percentile (phase6_stats._ci); point = un-resampled; no p-value",
+ "cluster_rule": "DFDC: the pair (real video + its drawn fake), cluster field of the preds",
+ "checks": [
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/r1_fairn_grl_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/r1_fairn_grl_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/r1_fairn_grl_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/f1_none_fair_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/f1_none_fair_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/f1_none_fair_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/b7_effnet_b0_mq_fliponly.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/b7_effnet_b0_mq_fliponly_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/b7_effnet_b0_mq_fliponly_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/r1_sb_noc40_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/r1_sb_noc40_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/r1_sb_noc40_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/r1_sb_c23only_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/r1_sb_c23only_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/r1_sb_c23only_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/r1_sb_jpeg_all_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/r1_sb_jpeg_all_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/r1_sb_jpeg_all_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/r1_sb_jpeg_noc40_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/r1_sb_jpeg_noc40_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/r1_sb_jpeg_noc40_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/r1_sb_noc36c40_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/r1_sb_noc36c40_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/r1_sb_noc36c40_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/f2_spatres_full_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/f2_spatres_full_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/f2_spatres_full_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/trunk_recipe_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/trunk_recipe_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/trunk_recipe_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/a0.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/a1_grl_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/a1_grl_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/a1_none_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/cafrl_spatres_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/b1_xception_lit.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/b1_xception_lit_fliponly.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/b2_f3net_lit.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/b2_f3net_lit_fliponly.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/b3_freqnet_lit.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/b4_xception_mq.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/b4b_xception_mq_fliponly.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/b5_f3net_mq.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/b6_freqnet_mq.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/p2a_xcep_jpeg.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/r1_abl_curriculum_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/r1_abl_lrbb_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/r1_abl_lrfreq_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/r1_abl_aux_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/preds/r1_abl_ep50_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv"
+   ],
+   "ok": true
+  }
+ ],
+ "weights": {
+  "A1": "ema",
+  "A2": "ema",
+  "A3": "raw",
+  "A4": "raw",
+  "A5": "raw",
+  "A6": "raw",
+  "A7": "raw",
+  "A8": "raw",
+  "A9": "ema",
+  "A10": "raw",
+  "A11": "ema",
+  "A12": "ema",
+  "A13": "ema",
+  "A14": "raw",
+  "A15": "raw",
+  "A16": "raw",
+  "A17": "raw",
+  "A18": "raw",
+  "A19": "raw",
+  "A20": "raw",
+  "A21": "raw",
+  "A22": "raw",
+  "A23": "raw",
+  "A24": "ema",
+  "A25": "ema",
+  "A26": "ema",
+  "A27": "ema",
+  "A28": "ema"
+ },
+ "selection": "best.pt",
+ "missing_runs": [],
+ "missing_arms": [],
+ "exclusions": {
+  "cells": {
+   "dfdc": {
+    "file": "runs/phase6_build/w5/e7_dfdc/exclusions.tsv",
+    "level": null,
+    "n": 0,
+    "by_class_reason": {},
+    "data_manifest": "runs/phase6_build/w5/e7_dfdc/data_manifest.json",
+    "data_manifest_counts": {
+     "counts": {
+      "fake": {
+       "attempted": 500,
+       "excluded": {},
+       "extracted": 500,
+       "n_crops": 18208,
+       "n_tracks": 569
+      },
+      "real": {
+       "attempted": 500,
+       "excluded": {},
+       "extracted": 500,
+       "n_crops": 17312,
+       "n_tracks": 541
+      }
+     },
+     "exclusion_rules": {
+      "no face track": "no track >= 30 frames",
+      "unreadable": "decode error or 0 frames"
+     },
+     "exclusions": {
+      "n_rows": 0,
+      "path": "${RUNS_ROOT}/phase6_build/w5/e7_dfdc/exclusions.tsv",
+      "sha256": "882c9f02367fd61ac05fcbf2ea4ec57412cf76a999a7829318ed7db7f57bc3ba"
+     }
+    },
+    "by_class": {
+     "real": {
+      "excluded": 0,
+      "attempted": 500,
+      "attempted_source": "data manifest",
+      "fraction": 0.0
+     },
+     "fake": {
+      "excluded": 0,
+      "attempted": 500,
+      "attempted_source": "data manifest",
+      "fraction": 0.0
+     }
+    },
+    "degraded_data": false,
+    "problems": []
+   }
+  },
+  "unused_files": []
+ },
+ "stated_limitation": "Stated limitation (plan §2.2): the clusters are the best available, not true identities: DFDC actors recur across many real videos of a zip and the metadata has no actor id; the WildDeepfake real–fake tar-id link is an assumption. The intervals of these two sets may therefore be too narrow.",
+ "preds_meta": [
+  {
+   "arm": "A1",
+   "run": "r1_fairn_grl_s42",
+   "set": "dfdc",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A1",
+   "run": "r1_fairn_grl_s1",
+   "set": "dfdc",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A1",
+   "run": "r1_fairn_grl_s2",
+   "set": "dfdc",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A2",
+   "run": "f1_none_fair_s42",
+   "set": "dfdc",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A2",
+   "run": "f1_none_fair_s1",
+   "set": "dfdc",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A2",
+   "run": "f1_none_fair_s2",
+   "set": "dfdc",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A3",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A3",
+   "run": "b7_effnet_b0_mq_fliponly_s1",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A3",
+   "run": "b7_effnet_b0_mq_fliponly_s2",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A4",
+   "run": "r1_sb_noc40_s42",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A4",
+   "run": "r1_sb_noc40_s1",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A4",
+   "run": "r1_sb_noc40_s2",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A5",
+   "run": "r1_sb_c23only_s42",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A5",
+   "run": "r1_sb_c23only_s1",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A5",
+   "run": "r1_sb_c23only_s2",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A6",
+   "run": "r1_sb_jpeg_all_s42",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A6",
+   "run": "r1_sb_jpeg_all_s1",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A6",
+   "run": "r1_sb_jpeg_all_s2",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A7",
+   "run": "r1_sb_jpeg_noc40_s42",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A7",
+   "run": "r1_sb_jpeg_noc40_s1",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A7",
+   "run": "r1_sb_jpeg_noc40_s2",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A8",
+   "run": "r1_sb_noc36c40_s42",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A8",
+   "run": "r1_sb_noc36c40_s1",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A8",
+   "run": "r1_sb_noc36c40_s2",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A9",
+   "run": "f2_spatres_full_s42",
+   "set": "dfdc",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A9",
+   "run": "f2_spatres_full_s1",
+   "set": "dfdc",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A9",
+   "run": "f2_spatres_full_s2",
+   "set": "dfdc",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A10",
+   "run": "trunk_recipe_s42",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A10",
+   "run": "trunk_recipe_s1",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A10",
+   "run": "trunk_recipe_s2",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A11",
+   "run": "a0",
+   "set": "dfdc",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A11",
+   "run": "a1_grl_s1",
+   "set": "dfdc",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A11",
+   "run": "a1_grl_s2",
+   "set": "dfdc",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A12",
+   "run": "a1_none_s42",
+   "set": "dfdc",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A13",
+   "run": "cafrl_spatres_s42",
+   "set": "dfdc",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A14",
+   "run": "b1_xception_lit",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A15",
+   "run": "b1_xception_lit_fliponly",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A16",
+   "run": "b2_f3net_lit",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A17",
+   "run": "b2_f3net_lit_fliponly",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A18",
+   "run": "b3_freqnet_lit",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A19",
+   "run": "b4_xception_mq",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A20",
+   "run": "b4b_xception_mq_fliponly",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A21",
+   "run": "b5_f3net_mq",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A22",
+   "run": "b6_freqnet_mq",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A23",
+   "run": "p2a_xcep_jpeg",
+   "set": "dfdc",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A24",
+   "run": "r1_abl_curriculum_s42",
+   "set": "dfdc",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A25",
+   "run": "r1_abl_lrbb_s42",
+   "set": "dfdc",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A26",
+   "run": "r1_abl_lrfreq_s42",
+   "set": "dfdc",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A27",
+   "run": "r1_abl_aux_s42",
+   "set": "dfdc",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  },
+  {
+   "arm": "A28",
+   "run": "r1_abl_ep50_s42",
+   "set": "dfdc",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "b18cb5a40379ee176375e815bdbdadbb8e5db73208f2605494e35f3f343ac6cc"
+  }
+ ],
+ "cells": {
+  "dfdc": {
+   "cell": "dfdc",
+   "n_videos": 1000,
+   "n_per_class": {
+    "real": 500,
+    "fake": 500
+   },
+   "n_clusters": 500,
+   "n_redraws": 0,
+   "b": 10000,
+   "rng_seed": 0,
+   "scheme": "seed+map",
+   "arm_rng_order": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6",
+    "A7",
+    "A8",
+    "A9",
+    "A10",
+    "A11",
+    "A12",
+    "A13",
+    "A14",
+    "A15",
+    "A16",
+    "A17",
+    "A18",
+    "A19",
+    "A20",
+    "A21",
+    "A22",
+    "A23",
+    "A24",
+    "A25",
+    "A26",
+    "A27",
+    "A28"
+   ],
+   "engine": "describe.hierarchical_bootstrap_clusters (copy, per-key cluster map)",
+   "arms": {
+    "A1": {
+     "runs": [
+      "r1_fairn_grl_s42",
+      "r1_fairn_grl_s1",
+      "r1_fairn_grl_s2"
+     ],
+     "primary": {
+      "point": 0.730696,
+      "ci_lo": 0.6893353,
+      "ci_hi": 0.7757974999999999
+     },
+     "ensemble": {
+      "point": 0.742328,
+      "ci_lo": 0.6951427,
+      "ci_hi": 0.7795649
+     },
+     "per_seed": [
+      0.693112,
+      0.77732,
+      0.721656
+     ],
+     "k": 3
+    },
+    "A2": {
+     "runs": [
+      "f1_none_fair_s42",
+      "f1_none_fair_s1",
+      "f1_none_fair_s2"
+     ],
+     "primary": {
+      "point": 0.6671093333333333,
+      "ci_lo": 0.5899745999999999,
+      "ci_hi": 0.7349561
+     },
+     "ensemble": {
+      "point": 0.70408,
+      "ci_lo": 0.5902218,
+      "ci_hi": 0.7404282999999999
+     },
+     "per_seed": [
+      0.736408,
+      0.585048,
+      0.679872
+     ],
+     "k": 3
+    },
+    "A3": {
+     "runs": [
+      "b7_effnet_b0_mq_fliponly",
+      "b7_effnet_b0_mq_fliponly_s1",
+      "b7_effnet_b0_mq_fliponly_s2"
+     ],
+     "primary": {
+      "point": 0.6976293333333333,
+      "ci_lo": 0.6762098,
+      "ci_hi": 0.7197973999999999
+     },
+     "ensemble": {
+      "point": 0.704096,
+      "ci_lo": 0.678976,
+      "ci_hi": 0.7248773999999999
+     },
+     "per_seed": [
+      0.70754,
+      0.701352,
+      0.683996
+     ],
+     "k": 3
+    },
+    "A4": {
+     "runs": [
+      "r1_sb_noc40_s42",
+      "r1_sb_noc40_s1",
+      "r1_sb_noc40_s2"
+     ],
+     "primary": {
+      "point": 0.7058906666666666,
+      "ci_lo": 0.6864079000000001,
+      "ci_hi": 0.7259682666666666
+     },
+     "ensemble": {
+      "point": 0.711552,
+      "ci_lo": 0.6893478,
+      "ci_hi": 0.7307017
+     },
+     "per_seed": [
+      0.700128,
+      0.71082,
+      0.706724
+     ],
+     "k": 3
+    },
+    "A5": {
+     "runs": [
+      "r1_sb_c23only_s42",
+      "r1_sb_c23only_s1",
+      "r1_sb_c23only_s2"
+     ],
+     "primary": {
+      "point": 0.814396,
+      "ci_lo": 0.7845491999999998,
+      "ci_hi": 0.8477686
+     },
+     "ensemble": {
+      "point": 0.834688,
+      "ci_lo": 0.7928159,
+      "ci_hi": 0.8565923
+     },
+     "per_seed": [
+      0.844504,
+      0.79364,
+      0.805044
+     ],
+     "k": 3
+    },
+    "A6": {
+     "runs": [
+      "r1_sb_jpeg_all_s42",
+      "r1_sb_jpeg_all_s1",
+      "r1_sb_jpeg_all_s2"
+     ],
+     "primary": {
+      "point": 0.7140719999999999,
+      "ci_lo": 0.6888940000000001,
+      "ci_hi": 0.7395841999999999
+     },
+     "ensemble": {
+      "point": 0.724864,
+      "ci_lo": 0.6934629,
+      "ci_hi": 0.7474444
+     },
+     "per_seed": [
+      0.698296,
+      0.728596,
+      0.715324
+     ],
+     "k": 3
+    },
+    "A7": {
+     "runs": [
+      "r1_sb_jpeg_noc40_s42",
+      "r1_sb_jpeg_noc40_s1",
+      "r1_sb_jpeg_noc40_s2"
+     ],
+     "primary": {
+      "point": 0.7225800000000001,
+      "ci_lo": 0.6945332,
+      "ci_hi": 0.7499477666666666
+     },
+     "ensemble": {
+      "point": 0.73278,
+      "ci_lo": 0.6985113000000001,
+      "ci_hi": 0.7561322
+     },
+     "per_seed": [
+      0.742048,
+      0.726004,
+      0.699688
+     ],
+     "k": 3
+    },
+    "A8": {
+     "runs": [
+      "r1_sb_noc36c40_s42",
+      "r1_sb_noc36c40_s1",
+      "r1_sb_noc36c40_s2"
+     ],
+     "primary": {
+      "point": 0.7482026666666667,
+      "ci_lo": 0.7267411666666667,
+      "ci_hi": 0.7713361333333333
+     },
+     "ensemble": {
+      "point": 0.756436,
+      "ci_lo": 0.7304193999999999,
+      "ci_hi": 0.7774924
+     },
+     "per_seed": [
+      0.746372,
+      0.739676,
+      0.75856
+     ],
+     "k": 3
+    },
+    "A9": {
+     "runs": [
+      "f2_spatres_full_s42",
+      "f2_spatres_full_s1",
+      "f2_spatres_full_s2"
+     ],
+     "primary": {
+      "point": 0.7163879999999999,
+      "ci_lo": 0.6870449,
+      "ci_hi": 0.7463761666666667
+     },
+     "ensemble": {
+      "point": 0.72748,
+      "ci_lo": 0.6902199,
+      "ci_hi": 0.7513645
+     },
+     "per_seed": [
+      0.718528,
+      0.740188,
+      0.690448
+     ],
+     "k": 3
+    },
+    "A10": {
+     "runs": [
+      "trunk_recipe_s42",
+      "trunk_recipe_s1",
+      "trunk_recipe_s2"
+     ],
+     "primary": {
+      "point": 0.7012613333333334,
+      "ci_lo": 0.6770757000000001,
+      "ci_hi": 0.7272662666666667
+     },
+     "ensemble": {
+      "point": 0.708204,
+      "ci_lo": 0.6785385,
+      "ci_hi": 0.7316648
+     },
+     "per_seed": [
+      0.698936,
+      0.720308,
+      0.68454
+     ],
+     "k": 3
+    },
+    "A11": {
+     "runs": [
+      "a0",
+      "a1_grl_s1",
+      "a1_grl_s2"
+     ],
+     "primary": {
+      "point": 0.7230066666666667,
+      "ci_lo": 0.6990369666666667,
+      "ci_hi": 0.7482968
+     },
+     "ensemble": {
+      "point": 0.727512,
+      "ci_lo": 0.7011435,
+      "ci_hi": 0.7515523
+     },
+     "per_seed": [
+      0.740252,
+      0.71506,
+      0.713708
+     ],
+     "k": 3
+    },
+    "A12": {
+     "runs": [
+      "a1_none_s42"
+     ],
+     "primary": {
+      "point": 0.726568,
+      "ci_lo": 0.7047749,
+      "ci_hi": 0.74892
+     },
+     "ensemble": {
+      "point": 0.726568,
+      "ci_lo": 0.7047749,
+      "ci_hi": 0.74892
+     },
+     "per_seed": [
+      0.726568
+     ],
+     "k": 1
+    },
+    "A13": {
+     "runs": [
+      "cafrl_spatres_s42"
+     ],
+     "primary": {
+      "point": 0.714868,
+      "ci_lo": 0.696467,
+      "ci_hi": 0.7339924
+     },
+     "ensemble": {
+      "point": 0.714868,
+      "ci_lo": 0.696467,
+      "ci_hi": 0.7339924
+     },
+     "per_seed": [
+      0.714868
+     ],
+     "k": 1
+    },
+    "A14": {
+     "runs": [
+      "b1_xception_lit"
+     ],
+     "primary": {
+      "point": 0.798676,
+      "ci_lo": 0.7790317,
+      "ci_hi": 0.8190082999999999
+     },
+     "ensemble": {
+      "point": 0.798676,
+      "ci_lo": 0.7790317,
+      "ci_hi": 0.8190082999999999
+     },
+     "per_seed": [
+      0.798676
+     ],
+     "k": 1
+    },
+    "A15": {
+     "runs": [
+      "b1_xception_lit_fliponly"
+     ],
+     "primary": {
+      "point": 0.78644,
+      "ci_lo": 0.7644796,
+      "ci_hi": 0.8081368
+     },
+     "ensemble": {
+      "point": 0.78644,
+      "ci_lo": 0.7644796,
+      "ci_hi": 0.8081368
+     },
+     "per_seed": [
+      0.78644
+     ],
+     "k": 1
+    },
+    "A16": {
+     "runs": [
+      "b2_f3net_lit"
+     ],
+     "primary": {
+      "point": 0.77952,
+      "ci_lo": 0.7566506,
+      "ci_hi": 0.8027564
+     },
+     "ensemble": {
+      "point": 0.77952,
+      "ci_lo": 0.7566506,
+      "ci_hi": 0.8027564
+     },
+     "per_seed": [
+      0.77952
+     ],
+     "k": 1
+    },
+    "A17": {
+     "runs": [
+      "b2_f3net_lit_fliponly"
+     ],
+     "primary": {
+      "point": 0.748516,
+      "ci_lo": 0.7260793999999999,
+      "ci_hi": 0.7712441
+     },
+     "ensemble": {
+      "point": 0.748516,
+      "ci_lo": 0.7260793999999999,
+      "ci_hi": 0.7712441
+     },
+     "per_seed": [
+      0.748516
+     ],
+     "k": 1
+    },
+    "A18": {
+     "runs": [
+      "b3_freqnet_lit"
+     ],
+     "primary": {
+      "point": 0.772276,
+      "ci_lo": 0.7493387,
+      "ci_hi": 0.7950961
+     },
+     "ensemble": {
+      "point": 0.772276,
+      "ci_lo": 0.7493387,
+      "ci_hi": 0.7950961
+     },
+     "per_seed": [
+      0.772276
+     ],
+     "k": 1
+    },
+    "A19": {
+     "runs": [
+      "b4_xception_mq"
+     ],
+     "primary": {
+      "point": 0.737048,
+      "ci_lo": 0.716148,
+      "ci_hi": 0.7587804
+     },
+     "ensemble": {
+      "point": 0.737048,
+      "ci_lo": 0.716148,
+      "ci_hi": 0.7587804
+     },
+     "per_seed": [
+      0.737048
+     ],
+     "k": 1
+    },
+    "A20": {
+     "runs": [
+      "b4b_xception_mq_fliponly"
+     ],
+     "primary": {
+      "point": 0.7418,
+      "ci_lo": 0.7215797,
+      "ci_hi": 0.7625602
+     },
+     "ensemble": {
+      "point": 0.7418,
+      "ci_lo": 0.7215797,
+      "ci_hi": 0.7625602
+     },
+     "per_seed": [
+      0.7418
+     ],
+     "k": 1
+    },
+    "A21": {
+     "runs": [
+      "b5_f3net_mq"
+     ],
+     "primary": {
+      "point": 0.685544,
+      "ci_lo": 0.6640668,
+      "ci_hi": 0.7075926
+     },
+     "ensemble": {
+      "point": 0.685544,
+      "ci_lo": 0.6640668,
+      "ci_hi": 0.7075926
+     },
+     "per_seed": [
+      0.685544
+     ],
+     "k": 1
+    },
+    "A22": {
+     "runs": [
+      "b6_freqnet_mq"
+     ],
+     "primary": {
+      "point": 0.728828,
+      "ci_lo": 0.7052598,
+      "ci_hi": 0.7528273
+     },
+     "ensemble": {
+      "point": 0.728828,
+      "ci_lo": 0.7052598,
+      "ci_hi": 0.7528273
+     },
+     "per_seed": [
+      0.728828
+     ],
+     "k": 1
+    },
+    "A23": {
+     "runs": [
+      "p2a_xcep_jpeg"
+     ],
+     "primary": {
+      "point": 0.770408,
+      "ci_lo": 0.7496316,
+      "ci_hi": 0.7915245
+     },
+     "ensemble": {
+      "point": 0.770408,
+      "ci_lo": 0.7496316,
+      "ci_hi": 0.7915245
+     },
+     "per_seed": [
+      0.770408
+     ],
+     "k": 1
+    },
+    "A24": {
+     "runs": [
+      "r1_abl_curriculum_s42"
+     ],
+     "primary": {
+      "point": 0.761392,
+      "ci_lo": 0.741708,
+      "ci_hi": 0.7826618
+     },
+     "ensemble": {
+      "point": 0.761392,
+      "ci_lo": 0.741708,
+      "ci_hi": 0.7826618
+     },
+     "per_seed": [
+      0.761392
+     ],
+     "k": 1
+    },
+    "A25": {
+     "runs": [
+      "r1_abl_lrbb_s42"
+     ],
+     "primary": {
+      "point": 0.74782,
+      "ci_lo": 0.7276159000000001,
+      "ci_hi": 0.7686763
+     },
+     "ensemble": {
+      "point": 0.74782,
+      "ci_lo": 0.7276159000000001,
+      "ci_hi": 0.7686763
+     },
+     "per_seed": [
+      0.74782
+     ],
+     "k": 1
+    },
+    "A26": {
+     "runs": [
+      "r1_abl_lrfreq_s42"
+     ],
+     "primary": {
+      "point": 0.696068,
+      "ci_lo": 0.6757151,
+      "ci_hi": 0.7171373
+     },
+     "ensemble": {
+      "point": 0.696068,
+      "ci_lo": 0.6757151,
+      "ci_hi": 0.7171373
+     },
+     "per_seed": [
+      0.696068
+     ],
+     "k": 1
+    },
+    "A27": {
+     "runs": [
+      "r1_abl_aux_s42"
+     ],
+     "primary": {
+      "point": 0.667612,
+      "ci_lo": 0.6476799000000001,
+      "ci_hi": 0.6885282
+     },
+     "ensemble": {
+      "point": 0.667612,
+      "ci_lo": 0.6476799000000001,
+      "ci_hi": 0.6885282
+     },
+     "per_seed": [
+      0.667612
+     ],
+     "k": 1
+    },
+    "A28": {
+     "runs": [
+      "r1_abl_ep50_s42"
+     ],
+     "primary": {
+      "point": 0.71004,
+      "ci_lo": 0.6893074,
+      "ci_hi": 0.7312811
+     },
+     "ensemble": {
+      "point": 0.71004,
+      "ci_lo": 0.6893074,
+      "ci_hi": 0.7312811
+     },
+     "per_seed": [
+      0.71004
+     ],
+     "k": 1
+    }
+   },
+   "contrasts": [
+    {
+     "id": "D1",
+     "name": "E1 − Fair-N",
+     "weights": {
+      "A1": 1.0,
+      "A2": -1.0
+     },
+     "levels": [
+      "dfdc"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": 0.06358666666666668,
+      "ci_lo": -0.013292933333333198,
+      "ci_hi": 0.14823606666666658
+     },
+     "ensemble": {
+      "point": 0.03824799999999995,
+      "ci_lo": -0.013076799999999977,
+      "ci_hi": 0.14313650000000003
+     }
+    },
+    {
+     "id": "D2",
+     "name": "Fair-N − b7",
+     "weights": {
+      "A2": 1.0,
+      "A3": -1.0
+     },
+     "levels": [
+      "dfdc"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.03051999999999999,
+      "ci_lo": -0.10730499999999996,
+      "ci_hi": 0.03508700000000004
+     },
+     "ensemble": {
+      "point": -1.6000000000016e-05,
+      "ci_lo": -0.11127339999999993,
+      "ci_hi": 0.03516040000000007
+     }
+    },
+    {
+     "id": "D3",
+     "name": "F2 − b7",
+     "weights": {
+      "A9": 1.0,
+      "A3": -1.0
+     },
+     "levels": [
+      "dfdc"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": 0.01875866666666659,
+      "ci_lo": -0.009037766666666785,
+      "ci_hi": 0.045968333333333354
+     },
+     "ensemble": {
+      "point": 0.02338399999999996,
+      "ci_lo": -0.010880800000000001,
+      "ci_hi": 0.046937199999999964
+     }
+    },
+    {
+     "id": "D4",
+     "name": "b7 − anchor",
+     "weights": {
+      "A3": 1.0,
+      "A5": -1.0
+     },
+     "levels": [
+      "dfdc"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.11676666666666669,
+      "ci_lo": -0.14976546666666662,
+      "ci_hi": -0.08573516666666677
+     },
+     "ensemble": {
+      "point": -0.13059199999999993,
+      "ci_lo": -0.15559620000000007,
+      "ci_hi": -0.08934360000000009
+     }
+    },
+    {
+     "id": "D5",
+     "name": "½[(b7 − E3a) + (E2a − E3b)] (T4 form)",
+     "weights": {
+      "A3": 0.5,
+      "A6": -0.5,
+      "A4": 0.5,
+      "A7": -0.5
+     },
+     "levels": [
+      "dfdc"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.01656600000000008,
+      "ci_lo": -0.036812483333333285,
+      "ci_hi": 0.0042983000000000725
+     },
+     "ensemble": {
+      "point": -0.02099799999999996,
+      "ci_lo": -0.04075805000000002,
+      "ci_hi": 0.003212199999999936
+     }
+    },
+    {
+     "id": "D6",
+     "name": "½[(b7 − E2a) + (E3a − E3b)] (T5 form)",
+     "weights": {
+      "A3": 0.5,
+      "A4": -0.5,
+      "A6": 0.5,
+      "A7": -0.5
+     },
+     "levels": [
+      "dfdc"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.008384666666666707,
+      "ci_lo": -0.0237649666666666,
+      "ci_hi": 0.007058683333333161
+     },
+     "ensemble": {
+      "point": -0.007685999999999971,
+      "ci_lo": -0.024425000000000054,
+      "ci_hi": 0.009095999999999995
+     }
+    }
+   ]
+  }
+ }
+}

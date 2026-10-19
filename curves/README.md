@@ -3,7 +3,7 @@
 Tables and figures in the paper report a model at a *selected* checkpoint, so the
 release has to show the whole trajectory selection ran over, say which epoch was
 taken, and let you recompute that choice. This directory does all three, for each
-of the 27 released runs.
+of the 53 released runs.
 
 ## The selection rule
 
@@ -64,8 +64,34 @@ epoch-level content.
 | `b5_f3net_mq` | 30 | 9 | 0.97617 | raw |
 | `b6_freqnet_mq` | 30 | 26 | 0.92050 | raw |
 | `p2a_xcep_jpeg` | 30 | 9 | 0.94318 | raw |
+| `r1_fairn_grl_s42` | 30 | 4 | 0.98093 | EMA |
+| `r1_fairn_grl_s1` | 30 | 3 | 0.97754 | EMA |
+| `r1_fairn_grl_s2` | 30 | 6 | 0.97762 | EMA |
+| `r1_sb_noc40_s42` | 30 | 15 | 0.97828 | raw |
+| `r1_sb_noc40_s1` | 30 | 9 | 0.97952 | raw |
+| `r1_sb_noc40_s2` | 30 | 18 | 0.97871 | raw |
+| `r1_sb_noc36c40_s42` | 30 | 13 | 0.98720 | raw |
+| `r1_sb_noc36c40_s1` | 30 | 12 | 0.98700 | raw |
+| `r1_sb_noc36c40_s2` | 30 | 2 | 0.98477 | raw |
+| `r1_sb_jpeg_all_s42` | 30 | 22 | 0.94326 | raw |
+| `r1_sb_jpeg_all_s1` | 30 | 13 | 0.93604 | raw |
+| `r1_sb_jpeg_all_s2` | 30 | 23 | 0.93605 | raw |
+| `r1_sb_jpeg_noc40_s42` | 30 | 10 | 0.95607 | raw |
+| `r1_sb_jpeg_noc40_s1` | 30 | 9 | 0.94905 | raw |
+| `r1_sb_jpeg_noc40_s2` | 30 | 9 | 0.95872 | raw |
+| `r1_sb_c23only_s42` | 30 | 19 | 0.92820 | raw |
+| `r1_sb_c23only_s1` | 30 | 14 | 0.93462 | raw |
+| `r1_sb_c23only_s2` | 30 | 20 | 0.92416 | raw |
+| `r1_abl_lrbb_s42` | 30 | 5 | 0.95141 | EMA |
+| `r1_abl_lrfreq_s42` | 30 | 8 | 0.97916 | EMA |
+| `r1_abl_aux_s42` | 30 | 15 | 0.97955 | EMA |
+| `r1_abl_ep50_s42` | 50 | 8 | 0.97779 | EMA |
+| `r1_abl_curriculum_s42` | 14 | 13 | 0.96129 | EMA |
+| `r1x_abl_curriculum_rerun_s42` | 30 | 29 | 0.96721 | EMA |
+| `r1x_abl_curriculum_nostop_s42` | 30 | 27 | 0.96814 | EMA |
+| `r1x_abl_curriculum_emafix_s42` | 30 | 27 | 0.96651 | EMA |
 
-## Reading Fig. 4(a) against these curves
+## Reading Fig. 3(a) against these curves
 
 F2's selected epoch is early (epoch 5 of 30), which is where the residual gate γ
 peaks. That is worth knowing when reading the mechanism claim, and it is why

@@ -1,10 +1,10 @@
 {
  "schema": "cafrl-negative/claims-map/v1",
- "note": "Every manuscript table cell and present-tense release claim, mapped to the artifact that carries it and the command that recomputes it. Generated from the release manifest; checked on every build.",
+ "note": "Every manuscript table cell and present-tense release claim, mapped to the artifact that carries it and the command that checks it against that artifact (recomputing the number, reading it back from a shipped file, or stating why it cannot be checked; see Reproducibility tiers in README.md). Generated from the release manifest; checked on every build.",
  "manuscript": {
-  "label": "IEEE Access submission, version B",
-  "sha256": "5bf5490501f68cad2e3a1282181cd68828ca779722fe8f941733c88d168e2727",
-  "note": "Table and section numbers refer to the submitted manuscript. The map is regenerated whenever the release is rebuilt; if a manuscript number moves, the build fails until the map and the manuscript agree."
+  "label": "IEEE Access, revision 1",
+  "sha256": "743a6611c06cf91c727975c41867d33f0b306d3e2a04a471f09977898eebe674",
+  "note": "Table, figure and section numbers refer to the revised manuscript (revision 1) and its Supplementary Material. The map is regenerated whenever the release is rebuilt; if a manuscript number moves, the build fails until the map and the manuscript agree."
  },
  "comp_levels": [
   "c28",
@@ -22,7 +22,7 @@
    "id": "T0.1",
    "table": "T0",
    "table_title": "Notation \u2014 every arm this paper compares",
-   "where": "Section IV",
+   "where": "Supplementary Material \u00a7S12 (Table S28)",
    "artifacts": [
     "probes/param_counts_arms.json"
    ],
@@ -37,7 +37,7 @@
    "id": "T0.2",
    "table": "T0",
    "table_title": "Notation \u2014 every arm this paper compares",
-   "where": "Section IV",
+   "where": "Supplementary Material \u00a7S12 (Table S28)",
    "artifacts": [
     "probes/param_counts_arms.json"
    ],
@@ -52,7 +52,7 @@
    "id": "T0.3",
    "table": "T0",
    "table_title": "Notation \u2014 every arm this paper compares",
-   "where": "Section IV",
+   "where": "Supplementary Material \u00a7S12 (Table S28)",
    "artifacts": [
     "probes/param_counts_arms.json"
    ],
@@ -67,7 +67,7 @@
    "id": "T0.4",
    "table": "T0",
    "table_title": "Notation \u2014 every arm this paper compares",
-   "where": "Section IV",
+   "where": "Supplementary Material \u00a7S12 (Table S28)",
    "artifacts": [
     "probes/param_counts_arms.json"
    ],
@@ -82,7 +82,7 @@
    "id": "T0.5",
    "table": "T0",
    "table_title": "Notation \u2014 every arm this paper compares",
-   "where": "Section IV",
+   "where": "Supplementary Material \u00a7S12 (Table S28)",
    "artifacts": [
     "probes/param_counts_arms.json"
    ],
@@ -97,7 +97,7 @@
    "id": "T0.6",
    "table": "T0",
    "table_title": "Notation \u2014 every arm this paper compares",
-   "where": "Section IV",
+   "where": "Supplementary Material \u00a7S12 (Table S28)",
    "artifacts": [
     "probes/param_counts_arms.json"
    ],
@@ -112,7 +112,7 @@
    "id": "T0.7",
    "table": "T0",
    "table_title": "Notation \u2014 every arm this paper compares",
-   "where": "Section IV",
+   "where": "Supplementary Material \u00a7S12 (Table S28)",
    "artifacts": [
     "probes/param_counts_arms.json"
    ],
@@ -127,7 +127,7 @@
    "id": "T0.8",
    "table": "T0",
    "table_title": "Notation \u2014 every arm this paper compares",
-   "where": "Section IV",
+   "where": "Supplementary Material \u00a7S12 (Table S28)",
    "artifacts": [
     "probes/param_counts_arms.json"
    ],
@@ -142,7 +142,7 @@
    "id": "T0.9",
    "table": "T0",
    "table_title": "Notation \u2014 every arm this paper compares",
-   "where": "Section IV",
+   "where": "Supplementary Material \u00a7S12 (Table S28)",
    "artifacts": [
     "probes/param_counts_arms.json"
    ],
@@ -157,7 +157,7 @@
    "id": "T0.10",
    "table": "T0",
    "table_title": "Notation \u2014 every arm this paper compares",
-   "where": "Section IV",
+   "where": "Supplementary Material \u00a7S12 (Table S28)",
    "artifacts": [
     "probes/param_counts_arms.json"
    ],
@@ -172,7 +172,7 @@
    "id": "T0.11",
    "table": "T0",
    "table_title": "Notation \u2014 every arm this paper compares",
-   "where": "Section IV",
+   "where": "Supplementary Material \u00a7S12 (Table S28)",
    "artifacts": [
     "probes/param_counts_arms.json"
    ],
@@ -187,7 +187,7 @@
    "id": "T0.12",
    "table": "T0",
    "table_title": "Notation \u2014 every arm this paper compares",
-   "where": "Section IV",
+   "where": "Supplementary Material \u00a7S12 (Table S28)",
    "artifacts": [
     "probes/param_counts_arms.json"
    ],
@@ -202,7 +202,7 @@
    "id": "T0.13",
    "table": "T0",
    "table_title": "Notation \u2014 every arm this paper compares",
-   "where": "Section IV",
+   "where": "Supplementary Material \u00a7S12 (Table S28)",
    "artifacts": [
     "probes/param_counts_arms.json"
    ],
@@ -217,7 +217,7 @@
    "id": "T0.14",
    "table": "T0",
    "table_title": "Notation \u2014 every arm this paper compares",
-   "where": "Section IV",
+   "where": "Supplementary Material \u00a7S12 (Table S28)",
    "artifacts": [
     "probes/param_counts_arms.json"
    ],
@@ -232,7 +232,7 @@
    "id": "T0.15",
    "table": "T0",
    "table_title": "Notation \u2014 every arm this paper compares",
-   "where": "Section IV",
+   "where": "Supplementary Material \u00a7S12 (Table S28)",
    "artifacts": [
     "probes/param_counts_arms.json"
    ],
@@ -247,7 +247,7 @@
    "id": "T0.16",
    "table": "T0",
    "table_title": "Notation \u2014 every arm this paper compares",
-   "where": "Section IV",
+   "where": "Supplementary Material \u00a7S12 (Table S28)",
    "artifacts": [
     "probes/param_counts_arms.json"
    ],
@@ -263,7 +263,7 @@
    "id": "T1.1",
    "table": "T1",
    "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
-   "where": "Section V-A (the STOP-gate fires)",
+   "where": "Section V-A (the STOP-gate fires; Table 1)",
    "artifacts": [
     "configs/runs/b7_effnet_b0_mq_fliponly.yaml"
    ],
@@ -278,7 +278,7 @@
    "id": "T1.2",
    "table": "T1",
    "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
-   "where": "Section V-A (the STOP-gate fires)",
+   "where": "Section V-A (the STOP-gate fires; Table 1)",
    "artifacts": [
     "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -286,14 +286,14 @@
   },
   {
    "label": "SpatialBase \u2014 c40",
-   "printed": 0.959,
+   "printed": "0.9590",
    "kind": "cell",
    "run": "b7_effnet_b0_mq_fliponly",
    "cell": "c40",
    "id": "T1.3",
    "table": "T1",
    "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
-   "where": "Section V-A (the STOP-gate fires)",
+   "where": "Section V-A (the STOP-gate fires; Table 1)",
    "artifacts": [
     "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -307,7 +307,7 @@
    "id": "T1.4",
    "table": "T1",
    "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
-   "where": "Section V-A (the STOP-gate fires)",
+   "where": "Section V-A (the STOP-gate fires; Table 1)",
    "artifacts": [
     "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -322,7 +322,7 @@
    "id": "T1.5",
    "table": "T1",
    "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
-   "where": "Section V-A (the STOP-gate fires)",
+   "where": "Section V-A (the STOP-gate fires; Table 1)",
    "artifacts": [
     "probes/param_counts_cafrl.json"
    ],
@@ -337,7 +337,7 @@
    "id": "T1.6",
    "table": "T1",
    "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
-   "where": "Section V-A (the STOP-gate fires)",
+   "where": "Section V-A (the STOP-gate fires; Table 1)",
    "artifacts": [
     "predictions/ffpp/a0.json"
    ],
@@ -352,7 +352,7 @@
    "id": "T1.7",
    "table": "T1",
    "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
-   "where": "Section V-A (the STOP-gate fires)",
+   "where": "Section V-A (the STOP-gate fires; Table 1)",
    "artifacts": [
     "predictions/ffpp/a0.json"
    ],
@@ -366,7 +366,7 @@
    "id": "T1.8",
    "table": "T1",
    "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
-   "where": "Section V-A (the STOP-gate fires)",
+   "where": "Section V-A (the STOP-gate fires; Table 1)",
    "artifacts": [
     "predictions/ffpp/a0.json"
    ],
@@ -382,7 +382,7 @@
    "id": "T1.9",
    "table": "T1",
    "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
-   "where": "Section V-A (the STOP-gate fires)",
+   "where": "Section V-A (the STOP-gate fires; Table 1)",
    "artifacts": [
     "configs/runs/b4_xception_mq.yaml"
    ],
@@ -397,7 +397,7 @@
    "id": "T1.10",
    "table": "T1",
    "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
-   "where": "Section V-A (the STOP-gate fires)",
+   "where": "Section V-A (the STOP-gate fires; Table 1)",
    "artifacts": [
     "predictions/ffpp/b4_xception_mq.json"
    ],
@@ -412,7 +412,7 @@
    "id": "T1.11",
    "table": "T1",
    "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
-   "where": "Section V-A (the STOP-gate fires)",
+   "where": "Section V-A (the STOP-gate fires; Table 1)",
    "artifacts": [
     "predictions/ffpp/b4_xception_mq.json"
    ],
@@ -427,7 +427,7 @@
    "id": "T1.12",
    "table": "T1",
    "table_title": "The STOP-gate comparison (video-AUC, FF++ test)",
-   "where": "Section V-A (the STOP-gate fires)",
+   "where": "Section V-A (the STOP-gate fires; Table 1)",
    "artifacts": [
     "predictions/ffpp/b4_xception_mq.json"
    ],
@@ -458,7 +458,7 @@
    "id": "T3.1",
    "table": "T3",
    "table_title": "The adjudicated contrasts (10k paired video bootstrap)",
-   "where": "Section VII-C (seed confirmation)",
+   "where": "Section VII-D (seed confirmation; Table 4)",
    "artifacts": [
     "verify/expected.json",
     "predictions/ffpp/b7_effnet_b0_mq_fliponly.json",
@@ -474,7 +474,7 @@
    "id": "T3.2",
    "table": "T3",
    "table_title": "The adjudicated contrasts (10k paired video bootstrap)",
-   "where": "Section VII-C (seed confirmation)",
+   "where": "Section VII-D (seed confirmation; Table 4)",
    "artifacts": [
     "verify/expected.json",
     "predictions/ffpp/f1_none_fair_s42.json",
@@ -490,7 +490,7 @@
    "id": "T3.3",
    "table": "T3",
    "table_title": "The adjudicated contrasts (10k paired video bootstrap)",
-   "where": "Section VII-C (seed confirmation)",
+   "where": "Section VII-D (seed confirmation; Table 4)",
    "artifacts": [
     "verify/expected.json",
     "predictions/ffpp/f1_none_fair_s42.json",
@@ -500,13 +500,13 @@
   },
   {
    "label": "Fair-W \u2212 SpatialBase (single seed) \u2014 \u0394 and CI",
-   "printed": "+0.0056 [-0.0022, +0.0134]",
+   "printed": "+0.0055 [-0.0022, +0.0134]",
    "kind": "contrast",
    "name": "Fair-W - SpatialBase (single seed)",
    "id": "T3.4",
    "table": "T3",
    "table_title": "The adjudicated contrasts (10k paired video bootstrap)",
-   "where": "Section VII-C (seed confirmation)",
+   "where": "Section VII-D (seed confirmation; Table 4)",
    "artifacts": [
     "verify/expected.json",
     "predictions/ffpp/f2_spatres_full_s42.json",
@@ -516,13 +516,13 @@
   },
   {
    "label": "Fair-N pool \u2212 SpatialBase pool (3v3) \u2014 \u0394 and CI",
-   "printed": "-0.0010 [-0.0066, +0.0045]",
+   "printed": "-0.0009 [-0.0066, +0.0045]",
    "kind": "contrast",
    "name": "Fair-N pool - SpatialBase pool (3v3)",
    "id": "T3.5",
    "table": "T3",
    "table_title": "The adjudicated contrasts (10k paired video bootstrap)",
-   "where": "Section VII-C (seed confirmation)",
+   "where": "Section VII-D (seed confirmation; Table 4)",
    "artifacts": [
     "verify/expected.json",
     "predictions/ffpp/f1_none_fair_s42.json",
@@ -542,7 +542,7 @@
    "id": "T3.6",
    "table": "T3",
    "table_title": "The adjudicated contrasts (10k paired video bootstrap)",
-   "where": "Section VII-C (seed confirmation)",
+   "where": "Section VII-D (seed confirmation; Table 4)",
    "artifacts": [
     "verify/expected.json",
     "predictions/ffpp/f2_spatres_full_s42.json",
@@ -563,7 +563,7 @@
    "id": "T3.7",
    "table": "T3",
    "table_title": "The adjudicated contrasts (10k paired video bootstrap)",
-   "where": "Section VII-C (seed confirmation)",
+   "where": "Section VII-D (seed confirmation; Table 4)",
    "artifacts": [
     "verify/expected.json",
     "predictions/ffpp/b7_effnet_b0_mq_fliponly.json",
@@ -575,13 +575,13 @@
   },
   {
    "label": "TrunkCtrl \u2212 spatial-residual (recipe share, pooled) \u2014 \u0394 and CI",
-   "printed": "+0.0490 [+0.0294, +0.0705]",
+   "printed": "+0.0489 [+0.0294, +0.0705]",
    "kind": "contrast",
    "name": "TrunkCtrl - spatial-residual (recipe share, pooled)",
    "id": "T3.8",
    "table": "T3",
    "table_title": "The adjudicated contrasts (10k paired video bootstrap)",
-   "where": "Section VII-C (seed confirmation)",
+   "where": "Section VII-D (seed confirmation; Table 4)",
    "artifacts": [
     "verify/expected.json",
     "predictions/ffpp/trunk_recipe_s42.json",
@@ -600,7 +600,7 @@
    "id": "T4.1",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -615,7 +615,7 @@
    "id": "T4.2",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -630,7 +630,7 @@
    "id": "T4.3",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -645,7 +645,7 @@
    "id": "T4.4",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -660,7 +660,7 @@
    "id": "T4.5",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -675,7 +675,7 @@
    "id": "T4.6",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -690,7 +690,7 @@
    "id": "T4.7",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -705,7 +705,7 @@
    "id": "T4.8",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -720,7 +720,7 @@
    "id": "T4.9",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/f2_spatres_full_s42.json"
    ],
@@ -735,7 +735,7 @@
    "id": "T4.10",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/f2_spatres_full_s42.json"
    ],
@@ -750,7 +750,7 @@
    "id": "T4.11",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/f2_spatres_full_s42.json"
    ],
@@ -765,7 +765,7 @@
    "id": "T4.12",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/f2_spatres_full_s42.json"
    ],
@@ -780,7 +780,7 @@
    "id": "T4.13",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/f2_spatres_full_s42.json"
    ],
@@ -795,7 +795,7 @@
    "id": "T4.14",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/f2_spatres_full_s42.json"
    ],
@@ -810,7 +810,7 @@
    "id": "T4.15",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/f2_spatres_full_s42.json"
    ],
@@ -825,7 +825,7 @@
    "id": "T4.16",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/f2_spatres_full_s42.json"
    ],
@@ -840,7 +840,7 @@
    "id": "T4.17",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/f1_none_fair_s42.json"
    ],
@@ -855,7 +855,7 @@
    "id": "T4.18",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/f1_none_fair_s42.json"
    ],
@@ -870,7 +870,7 @@
    "id": "T4.19",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/f1_none_fair_s42.json"
    ],
@@ -885,7 +885,7 @@
    "id": "T4.20",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/f1_none_fair_s42.json"
    ],
@@ -900,7 +900,7 @@
    "id": "T4.21",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/f1_none_fair_s42.json"
    ],
@@ -915,7 +915,7 @@
    "id": "T4.22",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/f1_none_fair_s42.json"
    ],
@@ -930,7 +930,7 @@
    "id": "T4.23",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/f1_none_fair_s42.json"
    ],
@@ -945,7 +945,7 @@
    "id": "T4.24",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/f1_none_fair_s42.json"
    ],
@@ -961,7 +961,7 @@
    "id": "T4.25",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "runs": [
     "trunk_recipe_s42",
     "trunk_recipe_s1",
@@ -984,7 +984,7 @@
    "id": "T4.26",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "runs": [
     "trunk_recipe_s42",
     "trunk_recipe_s1",
@@ -1007,7 +1007,7 @@
    "id": "T4.27",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "runs": [
     "trunk_recipe_s42",
     "trunk_recipe_s1",
@@ -1030,7 +1030,7 @@
    "id": "T4.28",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "runs": [
     "trunk_recipe_s42",
     "trunk_recipe_s1",
@@ -1053,7 +1053,7 @@
    "id": "T4.29",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "runs": [
     "trunk_recipe_s42",
     "trunk_recipe_s1",
@@ -1076,7 +1076,7 @@
    "id": "T4.30",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "runs": [
     "trunk_recipe_s42",
     "trunk_recipe_s1",
@@ -1099,7 +1099,7 @@
    "id": "T4.31",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "runs": [
     "trunk_recipe_s42",
     "trunk_recipe_s1",
@@ -1122,7 +1122,7 @@
    "id": "T4.32",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "runs": [
     "trunk_recipe_s42",
     "trunk_recipe_s1",
@@ -1144,7 +1144,7 @@
    "id": "T4.33",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/a0.json"
    ],
@@ -1159,7 +1159,7 @@
    "id": "T4.34",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/a0.json"
    ],
@@ -1174,7 +1174,7 @@
    "id": "T4.35",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/a0.json"
    ],
@@ -1189,7 +1189,7 @@
    "id": "T4.36",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/a0.json"
    ],
@@ -1204,7 +1204,7 @@
    "id": "T4.37",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/a0.json"
    ],
@@ -1219,7 +1219,7 @@
    "id": "T4.38",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/a0.json"
    ],
@@ -1234,7 +1234,7 @@
    "id": "T4.39",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/a0.json"
    ],
@@ -1249,7 +1249,7 @@
    "id": "T4.40",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/a0.json"
    ],
@@ -1264,7 +1264,7 @@
    "id": "T4.41",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/a1_none_s42.json"
    ],
@@ -1279,7 +1279,7 @@
    "id": "T4.42",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/a1_none_s42.json"
    ],
@@ -1294,7 +1294,7 @@
    "id": "T4.43",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/a1_none_s42.json"
    ],
@@ -1309,7 +1309,7 @@
    "id": "T4.44",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/a1_none_s42.json"
    ],
@@ -1324,7 +1324,7 @@
    "id": "T4.45",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/a1_none_s42.json"
    ],
@@ -1339,7 +1339,7 @@
    "id": "T4.46",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/a1_none_s42.json"
    ],
@@ -1354,7 +1354,7 @@
    "id": "T4.47",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/a1_none_s42.json"
    ],
@@ -1369,7 +1369,7 @@
    "id": "T4.48",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/a1_none_s42.json"
    ],
@@ -1384,7 +1384,7 @@
    "id": "T4.49",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/cafrl_spatres_s42.json"
    ],
@@ -1399,7 +1399,7 @@
    "id": "T4.50",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/cafrl_spatres_s42.json"
    ],
@@ -1414,7 +1414,7 @@
    "id": "T4.51",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/cafrl_spatres_s42.json"
    ],
@@ -1429,7 +1429,7 @@
    "id": "T4.52",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/cafrl_spatres_s42.json"
    ],
@@ -1444,7 +1444,7 @@
    "id": "T4.53",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/cafrl_spatres_s42.json"
    ],
@@ -1459,7 +1459,7 @@
    "id": "T4.54",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/cafrl_spatres_s42.json"
    ],
@@ -1474,7 +1474,7 @@
    "id": "T4.55",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/cafrl_spatres_s42.json"
    ],
@@ -1489,7 +1489,7 @@
    "id": "T4.56",
    "table": "T4",
    "table_title": "CRF sweep, all key arms (video-AUC, FF++ test)",
-   "where": "Section VIII (what buys compression robustness)",
+   "where": "Supplementary Material \u00a7S11 (Table S27)",
    "artifacts": [
     "predictions/ffpp/cafrl_spatres_s42.json"
    ],
@@ -1497,7 +1497,7 @@
   },
   {
    "label": "SpatialBase \u2014 c40 seed 42",
-   "printed": 0.959,
+   "printed": ".9590",
    "kind": "cell",
    "run": "b7_effnet_b0_mq_fliponly",
    "cell": "c40",
@@ -1564,7 +1564,7 @@
   },
   {
    "label": "SpatialBase \u2014 c40 3-seed band (half-width)",
-   "printed": 0.016,
+   "printed": ".0160",
    "kind": "seed_band",
    "group": "b7",
    "cell": "c40",
@@ -3394,29 +3394,38 @@
   },
   {
    "label": "c23 \u2014 CAFRL (3-seed)",
-   "printed": 0.822,
-   "kind": "gap",
-   "gap": "shipped_faceshifter",
+   "printed": 0.8216,
+   "kind": "seed_mean",
+   "group": "a1grl",
+   "cell": "c23",
+   "eval_set": "faceshifter",
+   "note": "Post hoc re-evaluation (2026-10-17); v1.0.0 printed 0.822 and could not derive it.",
    "id": "T8.1",
    "table": "T8",
-   "table_title": "FaceShifter (held out), shipped recipe, seed-pooled",
+   "table_title": "FaceShifter (held out), shipped recipe, 3 seeds each arm",
    "where": "Supplementary Material \u00a7S3-C (Table S4, unseen manipulation)",
-   "gap_reason": "The shipped-recipe FaceShifter evaluation (June out-of-distribution follow-up) saved no per-video predictions \u2014 this is audit defect D8, and the fair-recipe re-check that fixed it is what makes `predictions/faceshifter/` exist. The backbone column of that table is re-derivable (b7's FaceShifter predictions were regenerated from the frozen checkpoints); the CAFRL column and the paired statistics are not. Closing this needs a forward pass of the frozen a0/a1_grl checkpoints over the FaceShifter cell, which needs the crops.",
-   "artifacts": [
-    "predictions/GAPS.md"
+   "runs": [
+    "a0",
+    "a1_grl_s1",
+    "a1_grl_s2"
    ],
-   "command": "\u2014"
+   "artifacts": [
+    "predictions/faceshifter/a0.json",
+    "predictions/faceshifter/a1_grl_s1.json",
+    "predictions/faceshifter/a1_grl_s2.json"
+   ],
+   "command": "python verify/claim.py T8.1"
   },
   {
    "label": "c23 \u2014 backbone (3-seed)",
-   "printed": 0.823,
+   "printed": "0.8230",
    "kind": "seed_mean",
    "group": "b7",
    "cell": "c23",
    "eval_set": "faceshifter",
    "id": "T8.2",
    "table": "T8",
-   "table_title": "FaceShifter (held out), shipped recipe, seed-pooled",
+   "table_title": "FaceShifter (held out), shipped recipe, 3 seeds each arm",
    "where": "Supplementary Material \u00a7S3-C (Table S4, unseen manipulation)",
    "runs": [
     "b7_effnet_b0_mq_fliponly",
@@ -3431,15 +3440,36 @@
    "command": "python verify/claim.py T8.2"
   },
   {
-   "label": "c23 \u2014 paired \u0394, CI, P(\u0394>0)",
-   "printed": "-0.008 [-0.041, +0.025], P 0.30",
-   "kind": "gap",
-   "gap": "shipped_faceshifter",
+   "label": "c23 \u2014 paired \u0394 (point estimate)",
+   "printed": "-0.0080",
+   "kind": "contrast",
+   "name": "CAFRL as specified pool - SpatialBase pool (FaceShifter c23, shipped recipe)",
+   "scope": "faceshifter",
    "id": "T8.3",
    "table": "T8",
-   "table_title": "FaceShifter (held out), shipped recipe, seed-pooled",
+   "table_title": "FaceShifter (held out), shipped recipe, 3 seeds each arm",
    "where": "Supplementary Material \u00a7S3-C (Table S4, unseen manipulation)",
-   "gap_reason": "The shipped-recipe FaceShifter evaluation (June out-of-distribution follow-up) saved no per-video predictions \u2014 this is audit defect D8, and the fair-recipe re-check that fixed it is what makes `predictions/faceshifter/` exist. The backbone column of that table is re-derivable (b7's FaceShifter predictions were regenerated from the frozen checkpoints); the CAFRL column and the paired statistics are not. Closing this needs a forward pass of the frozen a0/a1_grl checkpoints over the FaceShifter cell, which needs the crops.",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/faceshifter/a0.json",
+    "predictions/faceshifter/a1_grl_s1.json",
+    "predictions/faceshifter/a1_grl_s2.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py T8.3 --bootstrap"
+  },
+  {
+   "label": "c23 \u2014 95% CI and P(\u0394>0)",
+   "printed": "[-0.041, +0.025], P 0.30",
+   "kind": "gap",
+   "gap": "shipped_faceshifter",
+   "id": "T8.4",
+   "table": "T8",
+   "table_title": "FaceShifter (held out), shipped recipe, 3 seeds each arm",
+   "where": "Supplementary Material \u00a7S3-C (Table S4, unseen manipulation)",
+   "gap_reason": "The shipped-recipe FaceShifter evaluation (June out-of-distribution follow-up) saved no per-video predictions \u2014 this is audit defect D8. In revision 1 the same frozen checkpoints were re-scored post hoc and those scores are released, so the table's two AUC columns and its delta are re-derived above. Its 95% interval and P(delta>0) come from the June run's bootstrap, whose input was never saved; the paper keeps them as published (decision 2026-10-18 \"W4a-2 ruling: published numbers stay where nothing new can be derived\"). The same bootstrap on the released scores gives an interval within a few thousandths of it (P(delta>0) about 0.32 at c23 against the printed 0.30).",
    "artifacts": [
     "predictions/GAPS.md"
    ],
@@ -3447,29 +3477,38 @@
   },
   {
    "label": "c40 \u2014 CAFRL (3-seed)",
-   "printed": 0.758,
-   "kind": "gap",
-   "gap": "shipped_faceshifter",
-   "id": "T8.4",
+   "printed": 0.7575,
+   "kind": "seed_mean",
+   "group": "a1grl",
+   "cell": "c40",
+   "eval_set": "faceshifter",
+   "note": "Post hoc re-evaluation (2026-10-17); v1.0.0 printed 0.758 and could not derive it.",
+   "id": "T8.5",
    "table": "T8",
-   "table_title": "FaceShifter (held out), shipped recipe, seed-pooled",
+   "table_title": "FaceShifter (held out), shipped recipe, 3 seeds each arm",
    "where": "Supplementary Material \u00a7S3-C (Table S4, unseen manipulation)",
-   "gap_reason": "The shipped-recipe FaceShifter evaluation (June out-of-distribution follow-up) saved no per-video predictions \u2014 this is audit defect D8, and the fair-recipe re-check that fixed it is what makes `predictions/faceshifter/` exist. The backbone column of that table is re-derivable (b7's FaceShifter predictions were regenerated from the frozen checkpoints); the CAFRL column and the paired statistics are not. Closing this needs a forward pass of the frozen a0/a1_grl checkpoints over the FaceShifter cell, which needs the crops.",
-   "artifacts": [
-    "predictions/GAPS.md"
+   "runs": [
+    "a0",
+    "a1_grl_s1",
+    "a1_grl_s2"
    ],
-   "command": "\u2014"
+   "artifacts": [
+    "predictions/faceshifter/a0.json",
+    "predictions/faceshifter/a1_grl_s1.json",
+    "predictions/faceshifter/a1_grl_s2.json"
+   ],
+   "command": "python verify/claim.py T8.5"
   },
   {
    "label": "c40 \u2014 backbone (3-seed)",
-   "printed": 0.732,
+   "printed": 0.7318,
    "kind": "seed_mean",
    "group": "b7",
    "cell": "c40",
    "eval_set": "faceshifter",
-   "id": "T8.5",
+   "id": "T8.6",
    "table": "T8",
-   "table_title": "FaceShifter (held out), shipped recipe, seed-pooled",
+   "table_title": "FaceShifter (held out), shipped recipe, 3 seeds each arm",
    "where": "Supplementary Material \u00a7S3-C (Table S4, unseen manipulation)",
    "runs": [
     "b7_effnet_b0_mq_fliponly",
@@ -3481,18 +3520,39 @@
     "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s1.json",
     "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s2.json"
    ],
-   "command": "python verify/claim.py T8.5"
+   "command": "python verify/claim.py T8.6"
   },
   {
-   "label": "c40 \u2014 paired \u0394, CI, P(\u0394>0)",
-   "printed": "+0.022 [-0.021, +0.064], P 0.84",
+   "label": "c40 \u2014 paired \u0394 (point estimate)",
+   "printed": "+0.0221",
+   "kind": "contrast",
+   "name": "CAFRL as specified pool - SpatialBase pool (FaceShifter c40, shipped recipe)",
+   "scope": "faceshifter",
+   "id": "T8.7",
+   "table": "T8",
+   "table_title": "FaceShifter (held out), shipped recipe, 3 seeds each arm",
+   "where": "Supplementary Material \u00a7S3-C (Table S4, unseen manipulation)",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/faceshifter/a0.json",
+    "predictions/faceshifter/a1_grl_s1.json",
+    "predictions/faceshifter/a1_grl_s2.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py T8.7 --bootstrap"
+  },
+  {
+   "label": "c40 \u2014 95% CI and P(\u0394>0)",
+   "printed": "[-0.021, +0.064], P 0.84",
    "kind": "gap",
    "gap": "shipped_faceshifter",
-   "id": "T8.6",
+   "id": "T8.8",
    "table": "T8",
-   "table_title": "FaceShifter (held out), shipped recipe, seed-pooled",
+   "table_title": "FaceShifter (held out), shipped recipe, 3 seeds each arm",
    "where": "Supplementary Material \u00a7S3-C (Table S4, unseen manipulation)",
-   "gap_reason": "The shipped-recipe FaceShifter evaluation (June out-of-distribution follow-up) saved no per-video predictions \u2014 this is audit defect D8, and the fair-recipe re-check that fixed it is what makes `predictions/faceshifter/` exist. The backbone column of that table is re-derivable (b7's FaceShifter predictions were regenerated from the frozen checkpoints); the CAFRL column and the paired statistics are not. Closing this needs a forward pass of the frozen a0/a1_grl checkpoints over the FaceShifter cell, which needs the crops.",
+   "gap_reason": "The shipped-recipe FaceShifter evaluation (June out-of-distribution follow-up) saved no per-video predictions \u2014 this is audit defect D8. In revision 1 the same frozen checkpoints were re-scored post hoc and those scores are released, so the table's two AUC columns and its delta are re-derived above. Its 95% interval and P(delta>0) come from the June run's bootstrap, whose input was never saved; the paper keeps them as published (decision 2026-10-18 \"W4a-2 ruling: published numbers stay where nothing new can be derived\"). The same bootstrap on the released scores gives an interval within a few thousandths of it (P(delta>0) about 0.32 at c23 against the printed 0.30).",
    "artifacts": [
     "predictions/GAPS.md"
    ],
@@ -4539,7 +4599,7 @@
   },
   {
    "label": "F3-Net, literature protocol, c40",
-   "printed": 0.86,
+   "printed": "0.860",
    "kind": "cell",
    "run": "b2_f3net_lit",
    "cell": "c40",
@@ -4739,7 +4799,7 @@
   },
   {
    "label": "Synthetic JPEG augmentation at real c40",
-   "printed": 0.89,
+   "printed": "0.890",
    "kind": "cell",
    "run": "p2a_xcep_jpeg",
    "cell": "real_c40",
@@ -4874,7 +4934,7 @@
   },
   {
    "label": "Calibration (evaluation/CALIBRATION.md) \u2014 F3-Net (lit), frame-AUC c23",
-   "printed": 0.985,
+   "printed": "0.9850",
    "kind": "cell",
    "run": "b2_f3net_lit",
    "cell": "c23",
@@ -5002,7 +5062,7 @@
   },
   {
    "label": "F3-Net-mq \u2212 SpatialBase at c40 \u2014 \u0394 and CI",
-   "printed": "-0.0040 [-0.0151, +0.0068]",
+   "printed": "-0.0039 [-0.0151, +0.0068]",
    "kind": "contrast",
    "name": "F3-Net-mq - SpatialBase (descriptive)",
    "id": "AppC.31",
@@ -5018,7 +5078,7 @@
   },
   {
    "label": "FreqNet-mq \u2212 SpatialBase at c40 \u2014 \u0394 and CI",
-   "printed": "-0.0804 [-0.1084, -0.0543]",
+   "printed": "-0.0803 [-0.1084, -0.0543]",
    "kind": "contrast",
    "name": "FreqNet-mq - SpatialBase (descriptive)",
    "id": "AppC.32",
@@ -5050,51 +5110,52 @@
   },
   {
    "label": "F3-Net-mq \u2212 SpatialBase at AUC_comp \u2014 \u0394 and CI",
-   "printed": "-0.0002 [-0.0073, +0.0066]",
-   "kind": "text",
-   "artifact": "predictions/ffpp/b5_f3net_mq.json",
-   "check": "none",
-   "note": "The AUC_comp endpoint of the same paired bootstrap (10k replicates, seed 0, sorted-key order), computed with the released harness's `paired_auc_comp_delta`; the contrast checker pins level-wise deltas only, so this endpoint is recorded rather than asserted.",
+   "printed": "-0.0001 [-0.0073, +0.0066]",
+   "kind": "contrast",
+   "name": "F3-Net-mq - SpatialBase (descriptive, AUC_comp)",
    "id": "AppC.34",
    "table": "AppC",
    "table_title": "Baseline reproduction and the augmentation confound",
    "where": "Supplementary Material \u00a7S2",
    "artifacts": [
-    "predictions/ffpp/b5_f3net_mq.json"
+    "verify/expected.json",
+    "predictions/ffpp/b5_f3net_mq.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
    ],
-   "command": "python verify/claim.py AppC.34"
+   "command": "python verify/claim.py AppC.34 --bootstrap"
   },
   {
    "label": "FreqNet-mq \u2212 SpatialBase at AUC_comp \u2014 \u0394 and CI",
-   "printed": "-0.0493 [-0.0671, -0.0330]",
-   "kind": "text",
-   "artifact": "predictions/ffpp/b6_freqnet_mq.json",
-   "check": "none",
-   "note": "As above, for the FreqNet arm.",
+   "printed": "-0.0492 [-0.0671, -0.0330]",
+   "kind": "contrast",
+   "name": "FreqNet-mq - SpatialBase (descriptive, AUC_comp)",
+   "note": "The interval endpoint -0.0671 stays as published (decision 2026-10-18 'W4a-2 ruling: published numbers stay where nothing new can be derived'); the verify contrast re-derives it from the released scores.",
    "id": "AppC.35",
    "table": "AppC",
    "table_title": "Baseline reproduction and the augmentation confound",
    "where": "Supplementary Material \u00a7S2",
    "artifacts": [
-    "predictions/ffpp/b6_freqnet_mq.json"
+    "verify/expected.json",
+    "predictions/ffpp/b6_freqnet_mq.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
    ],
-   "command": "python verify/claim.py AppC.35"
+   "command": "python verify/claim.py AppC.35 --bootstrap"
   },
   {
    "label": "F3-Net-mq \u2212 Xception-mq at AUC_comp \u2014 \u0394 and CI",
    "printed": "-0.0057 [-0.0124, +0.0007]",
-   "kind": "text",
-   "artifact": "predictions/ffpp/b5_f3net_mq.json",
-   "check": "none",
-   "note": "As above, for the augmentation-matched Xception pair.",
+   "kind": "contrast",
+   "name": "F3-Net-mq - Xception-mq (descriptive, augmentation-matched, AUC_comp)",
    "id": "AppC.36",
    "table": "AppC",
    "table_title": "Baseline reproduction and the augmentation confound",
    "where": "Supplementary Material \u00a7S2",
    "artifacts": [
-    "predictions/ffpp/b5_f3net_mq.json"
+    "verify/expected.json",
+    "predictions/ffpp/b5_f3net_mq.json",
+    "predictions/ffpp/b4_xception_mq.json"
    ],
-   "command": "python verify/claim.py AppC.36"
+   "command": "python verify/claim.py AppC.36 --bootstrap"
   },
   {
    "label": "Clean-anchored drop, SpatialBase (0.016)",
@@ -5104,7 +5165,7 @@
    "id": "X1.1",
    "table": "X1",
    "table_title": "Key numbers in the running text",
-   "where": "Sections VII-D, VIII and IX; Supplementary Material \u00a7S3",
+   "where": "Sections IV-F, V-A, VII-E, VIII and IX; Supplementary Material \u00a7S3",
    "artifacts": [
     "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
    ],
@@ -5118,7 +5179,7 @@
    "id": "X1.2",
    "table": "X1",
    "table_title": "Key numbers in the running text",
-   "where": "Sections VII-D, VIII and IX; Supplementary Material \u00a7S3",
+   "where": "Sections IV-F, V-A, VII-E, VIII and IX; Supplementary Material \u00a7S3",
    "runs": [
     "trunk_recipe_s42",
     "trunk_recipe_s1",
@@ -5139,7 +5200,7 @@
    "id": "X1.3",
    "table": "X1",
    "table_title": "Key numbers in the running text",
-   "where": "Sections VII-D, VIII and IX; Supplementary Material \u00a7S3",
+   "where": "Sections IV-F, V-A, VII-E, VIII and IX; Supplementary Material \u00a7S3",
    "artifacts": [
     "predictions/ffpp/f1_none_fair_s42.json"
    ],
@@ -5153,7 +5214,7 @@
    "id": "X1.4",
    "table": "X1",
    "table_title": "Key numbers in the running text",
-   "where": "Sections VII-D, VIII and IX; Supplementary Material \u00a7S3",
+   "where": "Sections IV-F, V-A, VII-E, VIII and IX; Supplementary Material \u00a7S3",
    "artifacts": [
     "predictions/ffpp/f2_spatres_full_s42.json"
    ],
@@ -5167,7 +5228,7 @@
    "id": "X1.5",
    "table": "X1",
    "table_title": "Key numbers in the running text",
-   "where": "Sections VII-D, VIII and IX; Supplementary Material \u00a7S3",
+   "where": "Sections IV-F, V-A, VII-E, VIII and IX; Supplementary Material \u00a7S3",
    "artifacts": [
     "predictions/ffpp/a0.json"
    ],
@@ -5183,7 +5244,7 @@
    "id": "X1.6",
    "table": "X1",
    "table_title": "Key numbers in the running text",
-   "where": "Sections VII-D, VIII and IX; Supplementary Material \u00a7S3",
+   "where": "Sections IV-F, V-A, VII-E, VIII and IX; Supplementary Material \u00a7S3",
    "runs": [
     "f1_none_fair_s42",
     "f1_none_fair_s1",
@@ -5206,7 +5267,7 @@
    "id": "X1.7",
    "table": "X1",
    "table_title": "Key numbers in the running text",
-   "where": "Sections VII-D, VIII and IX; Supplementary Material \u00a7S3",
+   "where": "Sections IV-F, V-A, VII-E, VIII and IX; Supplementary Material \u00a7S3",
    "runs": [
     "f1_none_fair_s42",
     "f1_none_fair_s1",
@@ -5229,7 +5290,7 @@
    "id": "X1.8",
    "table": "X1",
    "table_title": "Key numbers in the running text",
-   "where": "Sections VII-D, VIII and IX; Supplementary Material \u00a7S3",
+   "where": "Sections IV-F, V-A, VII-E, VIII and IX; Supplementary Material \u00a7S3",
    "runs": [
     "f2_spatres_full_s42",
     "f2_spatres_full_s1",
@@ -5252,7 +5313,7 @@
    "id": "X1.9",
    "table": "X1",
    "table_title": "Key numbers in the running text",
-   "where": "Sections VII-D, VIII and IX; Supplementary Material \u00a7S3",
+   "where": "Sections IV-F, V-A, VII-E, VIII and IX; Supplementary Material \u00a7S3",
    "runs": [
     "f2_spatres_full_s42",
     "f2_spatres_full_s1",
@@ -5275,7 +5336,7 @@
    "id": "X1.10",
    "table": "X1",
    "table_title": "Key numbers in the running text",
-   "where": "Sections VII-D, VIII and IX; Supplementary Material \u00a7S3",
+   "where": "Sections IV-F, V-A, VII-E, VIII and IX; Supplementary Material \u00a7S3",
    "runs": [
     "b7_effnet_b0_mq_fliponly",
     "b7_effnet_b0_mq_fliponly_s1",
@@ -5298,7 +5359,7 @@
    "id": "X1.11",
    "table": "X1",
    "table_title": "Key numbers in the running text",
-   "where": "Sections VII-D, VIII and IX; Supplementary Material \u00a7S3",
+   "where": "Sections IV-F, V-A, VII-E, VIII and IX; Supplementary Material \u00a7S3",
    "runs": [
     "b7_effnet_b0_mq_fliponly",
     "b7_effnet_b0_mq_fliponly_s1",
@@ -5320,7 +5381,7 @@
    "id": "X1.12",
    "table": "X1",
    "table_title": "Key numbers in the running text",
-   "where": "Sections VII-D, VIII and IX; Supplementary Material \u00a7S3",
+   "where": "Sections IV-F, V-A, VII-E, VIII and IX; Supplementary Material \u00a7S3",
    "artifacts": [
     "verify/expected.json",
     "predictions/faceshifter/f1_none_fair_s42.json",
@@ -5334,14 +5395,14 @@
   },
   {
    "label": "Fair variants sit below the backbone: Fair-W pool \u0394 \u2248 -0.032 at c40",
-   "printed": "-0.0318",
+   "printed": "-0.0317",
    "kind": "contrast",
    "name": "Fair-W pool - SpatialBase pool (FaceShifter)",
    "scope": "faceshifter",
    "id": "X1.13",
    "table": "X1",
    "table_title": "Key numbers in the running text",
-   "where": "Sections VII-D, VIII and IX; Supplementary Material \u00a7S3",
+   "where": "Sections IV-F, V-A, VII-E, VIII and IX; Supplementary Material \u00a7S3",
    "artifacts": [
     "verify/expected.json",
     "predictions/faceshifter/f2_spatres_full_s42.json",
@@ -5355,14 +5416,14 @@
   },
   {
    "label": "Sign-inconsistent single-seed leans: Fair-N +0.022",
-   "printed": "+0.0220",
+   "printed": "+0.0222",
    "kind": "contrast",
    "name": "Fair-N s42 - SpatialBase pool (FaceShifter, single seed)",
    "scope": "faceshifter",
    "id": "X1.14",
    "table": "X1",
    "table_title": "Key numbers in the running text",
-   "where": "Sections VII-D, VIII and IX; Supplementary Material \u00a7S3",
+   "where": "Sections IV-F, V-A, VII-E, VIII and IX; Supplementary Material \u00a7S3",
    "artifacts": [
     "verify/expected.json",
     "predictions/faceshifter/f1_none_fair_s42.json",
@@ -5374,14 +5435,14 @@
   },
   {
    "label": "Sign-inconsistent single-seed leans: Fair-W -0.023",
-   "printed": "-0.0227",
+   "printed": "-0.0226",
    "kind": "contrast",
    "name": "Fair-W s42 - SpatialBase pool (FaceShifter, single seed)",
    "scope": "faceshifter",
    "id": "X1.15",
    "table": "X1",
    "table_title": "Key numbers in the running text",
-   "where": "Sections VII-D, VIII and IX; Supplementary Material \u00a7S3",
+   "where": "Sections IV-F, V-A, VII-E, VIII and IX; Supplementary Material \u00a7S3",
    "artifacts": [
     "verify/expected.json",
     "predictions/faceshifter/f2_spatres_full_s42.json",
@@ -5401,7 +5462,7 @@
    "id": "X1.16",
    "table": "X1",
    "table_title": "Key numbers in the running text",
-   "where": "Sections VII-D, VIII and IX; Supplementary Material \u00a7S3",
+   "where": "Sections IV-F, V-A, VII-E, VIII and IX; Supplementary Material \u00a7S3",
    "gap_reason": "Same cause: the Xception FaceShifter numbers come from the June follow-up and were never persisted as predictions.",
    "artifacts": [
     "predictions/GAPS.md"
@@ -5418,7 +5479,7 @@
    "id": "X1.17",
    "table": "X1",
    "table_title": "Key numbers in the running text",
-   "where": "Sections VII-D, VIII and IX; Supplementary Material \u00a7S3",
+   "where": "Sections IV-F, V-A, VII-E, VIII and IX; Supplementary Material \u00a7S3",
    "gap_reason": "Compute accounting is recorded in the internal campaign journal, which is not part of this release, and no audited ledger of total consumed compute was kept -- the paper says so rather than reconstructing one. What is released is every run's configuration, its per-epoch curve and its selected epoch, which is what a reader would need to price it.",
    "artifacts": [
     "predictions/GAPS.md"
@@ -5436,7 +5497,7 @@
    "id": "M1.1",
    "table": "M1",
    "table_title": "Mechanism claims, from the released training curves",
-   "where": "Sections VI\u2013VIII and Fig. 4",
+   "where": "Sections VI\u2013VIII and Fig. 3",
    "artifacts": [
     "curves/f2_spatres_full_s42.json"
    ],
@@ -5452,7 +5513,7 @@
    "id": "M1.2",
    "table": "M1",
    "table_title": "Mechanism claims, from the released training curves",
-   "where": "Sections VI\u2013VIII and Fig. 4",
+   "where": "Sections VI\u2013VIII and Fig. 3",
    "artifacts": [
     "curves/f2_spatres_full_s42.json"
    ],
@@ -5460,7 +5521,7 @@
   },
   {
    "label": "\u03b3 at the selected epoch (Fair-W)",
-   "printed": 0.14,
+   "printed": "0.140",
    "kind": "curve",
    "run": "f2_spatres_full_s42",
    "tag": "diag/residual_gamma",
@@ -5468,7 +5529,7 @@
    "id": "M1.3",
    "table": "M1",
    "table_title": "Mechanism claims, from the released training curves",
-   "where": "Sections VI\u2013VIII and Fig. 4",
+   "where": "Sections VI\u2013VIII and Fig. 3",
    "artifacts": [
     "curves/f2_spatres_full_s42.json"
    ],
@@ -5486,7 +5547,7 @@
    "id": "M1.4",
    "table": "M1",
    "table_title": "Mechanism claims, from the released training curves",
-   "where": "Sections VI\u2013VIII and Fig. 4",
+   "where": "Sections VI\u2013VIII and Fig. 3",
    "artifacts": [
     "curves/f2_spatres_full_s42.json"
    ],
@@ -5503,7 +5564,7 @@
    "id": "M1.5",
    "table": "M1",
    "table_title": "Mechanism claims, from the released training curves",
-   "where": "Sections VI\u2013VIII and Fig. 4",
+   "where": "Sections VI\u2013VIII and Fig. 3",
    "artifacts": [
     "curves/f2_spatres_full_s42.json"
    ],
@@ -5518,7 +5579,7 @@
    "id": "M1.6",
    "table": "M1",
    "table_title": "Mechanism claims, from the released training curves",
-   "where": "Sections VI\u2013VIII and Fig. 4",
+   "where": "Sections VI\u2013VIII and Fig. 3",
    "artifacts": [
     "probes/p1_compression_estimator.json"
    ],
@@ -5536,7 +5597,7 @@
    "id": "M1.7",
    "table": "M1",
    "table_title": "Mechanism claims, from the released training curves",
-   "where": "Sections VI\u2013VIII and Fig. 4",
+   "where": "Sections VI\u2013VIII and Fig. 3",
    "artifacts": [
     "curves/a0.json"
    ],
@@ -5554,7 +5615,7 @@
    "id": "M1.8",
    "table": "M1",
    "table_title": "Mechanism claims, from the released training curves",
-   "where": "Sections VI\u2013VIII and Fig. 4",
+   "where": "Sections VI\u2013VIII and Fig. 3",
    "artifacts": [
     "curves/a0.json"
    ],
@@ -5570,7 +5631,7 @@
    "id": "M1.9",
    "table": "M1",
    "table_title": "Mechanism claims, from the released training curves",
-   "where": "Sections VI\u2013VIII and Fig. 4",
+   "where": "Sections VI\u2013VIII and Fig. 3",
    "artifacts": [
     "probes/band_energy.json"
    ],
@@ -5623,7 +5684,7 @@
   },
   {
    "label": "Fair-N \u2212 CAFRL\u2212adv (s42) \u2014 clustered CI upper",
-   "printed": 0.058,
+   "printed": "+0.0580",
    "kind": "scalar",
    "source": "evaluation/analysis/cluster_bootstrap.json",
    "key": "contrasts.C2.schemes.source.ci_hi",
@@ -5653,7 +5714,7 @@
   },
   {
    "label": "Fair-N \u2212 SpatialBase (s42) \u2014 clustered CI upper",
-   "printed": 0.008,
+   "printed": "+0.0080",
    "kind": "scalar",
    "source": "evaluation/analysis/cluster_bootstrap.json",
    "key": "contrasts.C3.schemes.source.ci_hi",
@@ -5863,7 +5924,7 @@
   },
   {
    "label": "FaceShifter: Fair-W pool \u2212 SpatialBase pool \u2014 clustered CI upper",
-   "printed": -0.007,
+   "printed": "-0.0070",
    "kind": "scalar",
    "source": "evaluation/analysis/cluster_bootstrap.json",
    "key": "contrasts.F2.schemes.source.ci_hi",
@@ -6193,7 +6254,7 @@
   },
   {
    "label": "TOST worst case over the four cluster units (Fair-W)",
-   "printed": 0.01,
+   "printed": "0.010",
    "kind": "scalar",
    "source": "evaluation/analysis/equivalence.json",
    "key": "contrasts.C6.worst_p_tost_conditional",
@@ -6378,7 +6439,7 @@
   },
   {
    "label": "p, STOP-gate contrast (cluster unit)",
-   "printed": 0.0002,
+   "printed": "0.00020",
    "kind": "scalar",
    "source": "evaluation/analysis/multiplicity.json",
    "key": "members.C1.p",
@@ -6480,13 +6541,13 @@
     "predictions/p2_probe/*.json",
     "predictions/GAPS.md"
    ],
-   "caveat": "Three groups of cells carry the reported statistics only, with the reason stated: the cross-dataset cells, the JPEG-augmentation probe, and the shipped-recipe FaceShifter cells (predictions/GAPS.md)."
+   "caveat": "Three groups of cells of the original analyses carry the reported statistics only, with the reason stated: the cross-dataset cells, the JPEG-augmentation probe, and the shipped-recipe FaceShifter cells, of which only the 95% interval and P(\u0394>0) remain; their AUCs and \u0394 now have per-video scores from a post hoc re-evaluation of the same checkpoints (predictions/GAPS.md)."
   },
   {
    "id": "R2",
    "claim": "The frozen pre-registered decision rules, verbatim, with their git history",
    "quote": "All decision rules were pre-registered (git-tagged before results)",
-   "where": "Reproducibility statement; Section IV-C; Abstract",
+   "where": "Reproducibility statement; Section IV-F; Abstract",
    "artifacts": [
     "preregistration/PREREGISTRATION-A1.md",
     "preregistration/STOP-GATE.md",
@@ -6511,7 +6572,7 @@
    "id": "R4",
    "claim": "Configurations for every arm in the tables",
    "quote": "configurations for every arm",
-   "where": "Reproducibility statement",
+   "where": "Supplementary Material \u00a7S16 (what is released)",
    "artifacts": [
     "configs/runs/*.yaml",
     "configs/launch/*.yaml",
@@ -6536,20 +6597,20 @@
    "id": "R6",
    "claim": "The figure-generation scripts",
    "quote": "the figure-generation scripts are released",
-   "where": "Reproducibility statement",
+   "where": "Release README (the revised manuscript no longer names the figure scripts)",
    "artifacts": [
     "figures/make_figures.py",
     "figures/figure_data.json",
     "figures/fig1_architecture.tex",
     "figures/fig3_campaign_flow.tex"
    ],
-   "caveat": "One plotted series \u2014 the shipped spatial-residual run's per-epoch \u03b3 in Fig. 4(a) \u2014 is published as data because it was read from per-epoch checkpoints that are archival only (figures/README.md)."
+   "caveat": "One plotted series \u2014 the shipped spatial-residual run's per-epoch \u03b3 in Fig. 3(a) \u2014 is published as data because it was read from per-epoch checkpoints that are archival only (figures/README.md)."
   },
   {
    "id": "R7",
    "claim": "The multi-CRF re-encode pipeline, with exact commands and encoder versions",
    "quote": "The multi-CRF re-encode pipeline is scripted from the public FaceForensics++ distribution",
-   "where": "Reproducibility statement; Data availability",
+   "where": "Data availability; Supplementary Material \u00a7S15",
    "artifacts": [
     "pipeline/crf/*.py",
     "pipeline/faces/*.py",
@@ -6573,7 +6634,7 @@
    "id": "R9",
    "claim": "Checkpoint and selector provenance, and the per-epoch validation curves behind it",
    "quote": "checkpoint/selector provenance",
-   "where": "Reproducibility statement; Section IV-A",
+   "where": "Reproducibility statement; Supplementary Material \u00a7S16",
    "artifacts": [
     "curves/*.json",
     "curves/selection.json",
@@ -6597,7 +6658,7 @@
    "id": "R11",
    "claim": "A check anyone can run: the paper's tables re-derived from the released artifacts",
    "quote": "released in full so the comparison can be re-adjudicated",
-   "where": "Contribution C3",
+   "where": "Contribution C1",
    "artifacts": [
     "verify/verify.py",
     "verify/expected.json",
@@ -6620,20 +6681,23 @@
   {
    "id": "R13",
    "claim": "Model checkpoints for every released run",
-   "quote": "(Data availability: the archival deposit)",
-   "where": "Release README; Data availability",
+   "quote": "The archival deposit, which adds the model checkpoints and the crop coordinates to that tagged tree",
+   "where": "Reproducibility statement; Supplementary Material \u00a7S16",
    "artifacts": [],
    "status": "pending",
-   "pending_reason": "In the archival deposit, DOI 10.5281/zenodo.22032529 -- 37 checkpoints, 6.0 GB, one per released run per selection rule, each with its own SHA-256 in the deposit's checkpoints-manifest.json. Not in git, and not checkable from this tree: verifying it means downloading the deposit and comparing digests."
+   "pending_reason": "In the archival deposit, version DOI 10.5281/zenodo.23466627 -- the 37 checkpoints of v1.0.0 (6.0 GB, one per released run per selection rule, carried unchanged from the v1 deposit, DOI 10.5281/zenodo.22032529, each with its own SHA-256 in checkpoints-manifest.json) plus the selected best.pt of each of the 26 Revision-1 runs (checkpoints-r1-manifest.json). Not in git, and not checkable from this tree: verifying it means downloading the deposit and comparing digests."
   },
   {
    "id": "R14",
    "claim": "Per-video crop coordinates for byte-identical crop regeneration",
-   "quote": "(Data availability: crop coordinates for regeneration)",
-   "where": "Data availability",
+   "quote": "What we do release makes the evaluation crops of the main analyses reconstructible byte for byte",
+   "where": "Data availability; Reproducibility statement; Supplementary Material \u00a7S16",
    "artifacts": [],
    "status": "pending",
-   "pending_reason": "In the archival deposit, DOI 10.5281/zenodo.22032529 -- 48,294 per-video meta.json (~7 GB raw, compressed in crop-coordinates.tar.zst). The crops themselves are not redistributable under the FF++/DFD agreements; these are the coordinates that regenerate them."
+   "pending_reason": "In the archival deposit, version DOI 10.5281/zenodo.23466627 (carried unchanged from the v1 deposit, DOI 10.5281/zenodo.22032529; v2 adds no crop coordinates) -- 48,294 per-video meta.json (~7 GB raw, compressed in crop-coordinates.tar.zst). The crops themselves are not redistributable under the FF++/DFD agreements; these are the coordinates that regenerate them."
   }
+ ],
+ "continued_in": [
+  "claims_map_r1.json"
  ]
 }

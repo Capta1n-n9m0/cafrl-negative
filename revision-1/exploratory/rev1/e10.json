@@ -1,0 +1,1775 @@
+{
+ "header": "Exploratory / descriptive, not registered (prereg §11)",
+ "block": "e10",
+ "created_utc": "2026-10-15T00:04:11+00:00",
+ "plan": "docs/phases/phase6-w5-plan.md (commit e278d6e)",
+ "estimands": {
+  "primary": "mean over seeds of per-seed video AUC",
+  "ensemble": "AUC of the per-video mean score over seeds (secondary)"
+ },
+ "b": 10000,
+ "rng_seed": 0,
+ "interval": "95 % percentile (phase6_stats._ci); point = un-resampled; no p-value",
+ "cluster_rule": "FF++ source identity (phase6_stats.cluster_labels, 'source')",
+ "checks": [
+  {
+   "argv": [
+    "e10",
+    "${RUNS_ROOT}/phase6_build/w5/e10/f1_none_fair_s42"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "e10",
+    "${RUNS_ROOT}/phase6_build/w5/e10/f1_none_fair_s1"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "e10",
+    "${RUNS_ROOT}/phase6_build/w5/e10/f1_none_fair_s2"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "e10",
+    "${RUNS_ROOT}/phase6_build/w5/e10/f2_spatres_full_s42"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "e10",
+    "${RUNS_ROOT}/phase6_build/w5/e10/f2_spatres_full_s1"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "e10",
+    "${RUNS_ROOT}/phase6_build/w5/e10/f2_spatres_full_s2"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "e10",
+    "${RUNS_ROOT}/phase6_build/w5/e10/r1_fairn_grl_s42"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "e10",
+    "${RUNS_ROOT}/phase6_build/w5/e10/r1_fairn_grl_s1"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "e10",
+    "${RUNS_ROOT}/phase6_build/w5/e10/r1_fairn_grl_s2"
+   ],
+   "ok": true
+  }
+ ],
+ "weights": {
+  "FairN-EMA": "EMA (published best.pt, EMA selection)",
+  "FairN-raw": "raw (re-selected under the baselines' rule, plan §4.5)",
+  "F2-EMA": "EMA (published best.pt, EMA selection)",
+  "F2-raw": "raw (re-selected under the baselines' rule, plan §4.5)",
+  "E1-EMA": "EMA (published best.pt, EMA selection)",
+  "E1-raw": "raw (re-selected under the baselines' rule, plan §4.5)",
+  "b7": "raw (baseline's own best.pt; no EMA)",
+  "TrunkCtrl": "raw (baseline's own best.pt; no EMA)"
+ },
+ "arm_rng_order": [
+  "FairN-EMA",
+  "FairN-raw",
+  "F2-EMA",
+  "F2-raw",
+  "E1-EMA",
+  "E1-raw",
+  "b7",
+  "TrunkCtrl"
+ ],
+ "n_videos": 700,
+ "n_clusters": 140,
+ "n_redraws": 0,
+ "selections": {
+  "f1_none_fair_s42": {
+   "selected_epoch": 4,
+   "margin": 0.000803571428571348,
+   "n_epochs": 30
+  },
+  "f1_none_fair_s1": {
+   "selected_epoch": 11,
+   "margin": 7.653061224477398e-05,
+   "n_epochs": 30
+  },
+  "f1_none_fair_s2": {
+   "selected_epoch": 8,
+   "margin": 0.0030038265306124856,
+   "n_epochs": 30
+  },
+  "f2_spatres_full_s42": {
+   "selected_epoch": 16,
+   "margin": 0.001262755102040769,
+   "n_epochs": 30
+  },
+  "f2_spatres_full_s1": {
+   "selected_epoch": 13,
+   "margin": 0.00010204081632647632,
+   "n_epochs": 30
+  },
+  "f2_spatres_full_s2": {
+   "selected_epoch": 9,
+   "margin": 0.000573979591836693,
+   "n_epochs": 30
+  },
+  "r1_fairn_grl_s42": {
+   "selected_epoch": 4,
+   "margin": 0.004808673469387736,
+   "n_epochs": 30
+  },
+  "r1_fairn_grl_s1": {
+   "selected_epoch": 8,
+   "margin": 0.004483418367347114,
+   "n_epochs": 30
+  },
+  "r1_fairn_grl_s2": {
+   "selected_epoch": 23,
+   "margin": 0.00022321428571414614,
+   "n_epochs": 30
+  }
+ },
+ "bootstrap": {
+  "c40": {
+   "arms": {
+    "FairN-EMA": {
+     "weights": "ema",
+     "primary": {
+      "point": 0.9562840136054422,
+      "ci_lo": 0.9391538052721088,
+      "ci_hi": 0.9707866709183673
+     },
+     "ensemble": {
+      "point": 0.9641836734693877,
+      "ci_lo": 0.9441581632653061,
+      "ci_hi": 0.9755612244897959
+     },
+     "per_seed": [
+      0.9585841836734694,
+      0.9566581632653062,
+      0.953609693877551
+     ],
+     "k": 3
+    },
+    "FairN-raw": {
+     "weights": "raw",
+     "primary": {
+      "point": 0.9528316326530613,
+      "ci_lo": 0.9354377125850339,
+      "ci_hi": 0.967921237244898
+     },
+     "ensemble": {
+      "point": 0.9632908163265306,
+      "ci_lo": 0.9412748724489796,
+      "ci_hi": 0.9742219387755102
+     },
+     "per_seed": [
+      0.9451020408163265,
+      0.9544005102040817,
+      0.9589923469387756
+     ],
+     "k": 3
+    },
+    "F2-EMA": {
+     "weights": "ema",
+     "primary": {
+      "point": 0.9618622448979591,
+      "ci_lo": 0.9470395408163265,
+      "ci_hi": 0.9747070578231293
+     },
+     "ensemble": {
+      "point": 0.9673086734693878,
+      "ci_lo": 0.9506878188775509,
+      "ci_hi": 0.9780357142857142
+     },
+     "per_seed": [
+      0.964515306122449,
+      0.9601785714285714,
+      0.9608928571428571
+     ],
+     "k": 3
+    },
+    "F2-raw": {
+     "weights": "raw",
+     "primary": {
+      "point": 0.9493239795918367,
+      "ci_lo": 0.9295532525510204,
+      "ci_hi": 0.9665563350340136
+     },
+     "ensemble": {
+      "point": 0.9591198979591836,
+      "ci_lo": 0.9362366071428572,
+      "ci_hi": 0.9716836734693878
+     },
+     "per_seed": [
+      0.9594260204081633,
+      0.9410331632653062,
+      0.9475127551020408
+     ],
+     "k": 3
+    },
+    "E1-EMA": {
+     "weights": "ema",
+     "primary": {
+      "point": 0.9649617346938776,
+      "ci_lo": 0.9513561862244898,
+      "ci_hi": 0.9771598639455782
+     },
+     "ensemble": {
+      "point": 0.9711352040816327,
+      "ci_lo": 0.9552168367346939,
+      "ci_hi": 0.9808928571428571
+     },
+     "per_seed": [
+      0.9616836734693878,
+      0.9681122448979592,
+      0.9650892857142858
+     ],
+     "k": 3
+    },
+    "E1-raw": {
+     "weights": "raw",
+     "primary": {
+      "point": 0.9534396258503403,
+      "ci_lo": 0.9368960459183673,
+      "ci_hi": 0.9680867346938774
+     },
+     "ensemble": {
+      "point": 0.962780612244898,
+      "ci_lo": 0.9424614158163265,
+      "ci_hi": 0.9740819515306123
+     },
+     "per_seed": [
+      0.9481122448979592,
+      0.953890306122449,
+      0.9583163265306123
+     ],
+     "k": 3
+    },
+    "b7": {
+     "weights": "baseline",
+     "primary": {
+      "point": 0.9565221088435374,
+      "ci_lo": 0.9400803571428572,
+      "ci_hi": 0.9703700042517007
+     },
+     "ensemble": {
+      "point": 0.9651275510204081,
+      "ci_lo": 0.9454327168367347,
+      "ci_hi": 0.9755742984693878
+     },
+     "per_seed": [
+      0.9590051020408163,
+      0.9613647959183673,
+      0.9491964285714286
+     ],
+     "k": 3
+    },
+    "TrunkCtrl": {
+     "weights": "baseline",
+     "primary": {
+      "point": 0.9535884353741496,
+      "ci_lo": 0.9373550170068027,
+      "ci_hi": 0.9676914328231293
+     },
+     "ensemble": {
+      "point": 0.9628188775510204,
+      "ci_lo": 0.9435197704081633,
+      "ci_hi": 0.9736862244897959
+     },
+     "per_seed": [
+      0.949094387755102,
+      0.9565816326530612,
+      0.9550892857142858
+     ],
+     "k": 3
+    }
+   },
+   "contrasts": [
+    {
+     "id": "C1",
+     "name": "Fair-N-raw − b7",
+     "weights": {
+      "FairN-raw": 1.0,
+      "b7": -1.0
+     },
+     "levels": [
+      "c40"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.003690476190476133,
+      "ci_lo": -0.015744260204081695,
+      "ci_hi": 0.009294323979591944
+     },
+     "ensemble": {
+      "point": -0.001836734693877573,
+      "ci_lo": -0.0168000637755103,
+      "ci_hi": 0.011582270408163255
+     }
+    },
+    {
+     "id": "C2",
+     "name": "F2-raw − b7",
+     "weights": {
+      "F2-raw": 1.0,
+      "b7": -1.0
+     },
+     "levels": [
+      "c40"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.007198129251700713,
+      "ci_lo": -0.021399447278911497,
+      "ci_hi": 0.006858099489795981
+     },
+     "ensemble": {
+      "point": -0.006007653061224527,
+      "ci_lo": -0.0219008290816327,
+      "ci_hi": 0.007386160714285725
+     }
+    },
+    {
+     "id": "C3",
+     "name": "E1-raw − Fair-N-raw",
+     "weights": {
+      "E1-raw": 1.0,
+      "FairN-raw": -1.0
+     },
+     "levels": [
+      "c40"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": 0.0006079931972789998,
+      "ci_lo": -0.011254357993197402,
+      "ci_hi": 0.012844600340136117
+     },
+     "ensemble": {
+      "point": -0.0005102040816326037,
+      "ci_lo": -0.013610331632652996,
+      "ci_hi": 0.014019770408163285
+     }
+    },
+    {
+     "id": "C4",
+     "name": "Fair-N-raw − Fair-N-EMA",
+     "weights": {
+      "FairN-raw": 1.0,
+      "FairN-EMA": -1.0
+     },
+     "levels": [
+      "c40"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.0034523809523809845,
+      "ci_lo": -0.01468994472789119,
+      "ci_hi": 0.007304634353741504
+     },
+     "ensemble": {
+      "point": -0.0008928571428571397,
+      "ci_lo": -0.015114795918367289,
+      "ci_hi": 0.009834502551020351
+     }
+    },
+    {
+     "id": "C5",
+     "name": "F2-raw − F2-EMA",
+     "weights": {
+      "F2-raw": 1.0,
+      "F2-EMA": -1.0
+     },
+     "levels": [
+      "c40"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.012538265306122454,
+      "ci_lo": -0.02537861394557805,
+      "ci_hi": -2.5510204081591326e-05
+     },
+     "ensemble": {
+      "point": -0.008188775510204138,
+      "ci_lo": -0.025015625,
+      "ci_hi": 0.0015816326530612157
+     }
+    },
+    {
+     "id": "C6",
+     "name": "E1-raw − E1-EMA",
+     "weights": {
+      "E1-raw": 1.0,
+      "E1-EMA": -1.0
+     },
+     "levels": [
+      "c40"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.011522108843537326,
+      "ci_lo": -0.0221269132653061,
+      "ci_hi": -0.0020662202380953305
+     },
+     "ensemble": {
+      "point": -0.008354591836734704,
+      "ci_lo": -0.022806760204081653,
+      "ci_hi": 0.0007152423469388241
+     }
+    }
+   ]
+  },
+  "AUC_comp": {
+   "arms": {
+    "FairN-EMA": {
+     "weights": "ema",
+     "primary": {
+      "point": 0.967470238095238,
+      "ci_lo": 0.9538550170068028,
+      "ci_hi": 0.9790561755952382
+     },
+     "ensemble": {
+      "point": 0.9746588010204081,
+      "ci_lo": 0.9589631696428571,
+      "ci_hi": 0.9832239317602041
+     },
+     "per_seed": [
+      0.9713934948979591,
+      0.9651275510204081,
+      0.965889668367347
+     ],
+     "k": 3
+    },
+    "FairN-raw": {
+     "weights": "raw",
+     "primary": {
+      "point": 0.9667899659863947,
+      "ci_lo": 0.9536521311649659,
+      "ci_hi": 0.9779794323979594
+     },
+     "ensemble": {
+      "point": 0.974610969387755,
+      "ci_lo": 0.9584374202806123,
+      "ci_hi": 0.9826851084183673
+     },
+     "per_seed": [
+      0.9621045918367347,
+      0.9679017857142858,
+      0.9703635204081633
+     ],
+     "k": 3
+    },
+    "F2-EMA": {
+     "weights": "ema",
+     "primary": {
+      "point": 0.9719175170068028,
+      "ci_lo": 0.958473187712585,
+      "ci_hi": 0.9825893920068028
+     },
+     "ensemble": {
+      "point": 0.9764445153061225,
+      "ci_lo": 0.9619354272959184,
+      "ci_hi": 0.9851212531887755
+     },
+     "per_seed": [
+      0.9739732142857143,
+      0.9700797193877552,
+      0.9716996173469388
+     ],
+     "k": 3
+    },
+    "F2-raw": {
+     "weights": "raw",
+     "primary": {
+      "point": 0.9637542517006803,
+      "ci_lo": 0.9474050542091836,
+      "ci_hi": 0.9771333705357143
+     },
+     "ensemble": {
+      "point": 0.9710235969387756,
+      "ci_lo": 0.952907844387755,
+      "ci_hi": 0.9807878667091836
+     },
+     "per_seed": [
+      0.9697257653061224,
+      0.956390306122449,
+      0.9651466836734695
+     ],
+     "k": 3
+    },
+    "E1-EMA": {
+     "weights": "ema",
+     "primary": {
+      "point": 0.9747725340136054,
+      "ci_lo": 0.9637477412840136,
+      "ci_hi": 0.9842708599064626
+     },
+     "ensemble": {
+      "point": 0.9793813775510205,
+      "ci_lo": 0.9669354272959184,
+      "ci_hi": 0.9870025510204081
+     },
+     "per_seed": [
+      0.9737244897959184,
+      0.9766294642857143,
+      0.9739636479591837
+     ],
+     "k": 3
+    },
+    "E1-raw": {
+     "weights": "raw",
+     "primary": {
+      "point": 0.9673618197278913,
+      "ci_lo": 0.9548999521683673,
+      "ci_hi": 0.9783846460459185
+     },
+     "ensemble": {
+      "point": 0.9743431122448979,
+      "ci_lo": 0.9590227997448979,
+      "ci_hi": 0.9829053730867346
+     },
+     "per_seed": [
+      0.96625,
+      0.9673660714285715,
+      0.968469387755102
+     ],
+     "k": 3
+    },
+    "b7": {
+     "weights": "baseline",
+     "primary": {
+      "point": 0.9688222789115646,
+      "ci_lo": 0.9559905665391155,
+      "ci_hi": 0.9793945312500001
+     },
+     "ensemble": {
+      "point": 0.9753826530612245,
+      "ci_lo": 0.9599488201530613,
+      "ci_hi": 0.983361049107143
+     },
+     "per_seed": [
+      0.9709119897959184,
+      0.9721364795918367,
+      0.9634183673469389
+     ],
+     "k": 3
+    },
+    "TrunkCtrl": {
+     "weights": "baseline",
+     "primary": {
+      "point": 0.9673628826530611,
+      "ci_lo": 0.9545503560799319,
+      "ci_hi": 0.9784599808673469
+     },
+     "ensemble": {
+      "point": 0.9740816326530611,
+      "ci_lo": 0.9586345663265305,
+      "ci_hi": 0.9827617187500001
+     },
+     "per_seed": [
+      0.9661670918367347,
+      0.9704017857142857,
+      0.9655197704081633
+     ],
+     "k": 3
+    }
+   },
+   "contrasts": [
+    {
+     "id": "C1",
+     "name": "Fair-N-raw − b7",
+     "weights": {
+      "FairN-raw": 1.0,
+      "b7": -1.0
+     },
+     "levels": [
+      "c28",
+      "c32",
+      "c36",
+      "c40"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.0020323129251699212,
+      "ci_lo": -0.010169244260204146,
+      "ci_hi": 0.006747767857143126
+     },
+     "ensemble": {
+      "point": -0.0007716836734694699,
+      "ci_lo": -0.010976004464285804,
+      "ci_hi": 0.008594387755102094
+     }
+    },
+    {
+     "id": "C2",
+     "name": "F2-raw − b7",
+     "weights": {
+      "F2-raw": 1.0,
+      "b7": -1.0
+     },
+     "levels": [
+      "c28",
+      "c32",
+      "c36",
+      "c40"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.005068027210884285,
+      "ci_lo": -0.017041905824829895,
+      "ci_hi": 0.004808806335033995
+     },
+     "ensemble": {
+      "point": -0.004359056122448912,
+      "ci_lo": -0.01581425382653064,
+      "ci_hi": 0.005481664540816328
+     }
+    },
+    {
+     "id": "C3",
+     "name": "E1-raw − Fair-N-raw",
+     "weights": {
+      "E1-raw": 1.0,
+      "FairN-raw": -1.0
+     },
+     "levels": [
+      "c28",
+      "c32",
+      "c36",
+      "c40"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": 0.0005718537414965974,
+      "ci_lo": -0.006720928996598813,
+      "ci_hi": 0.007825627125850313
+     },
+     "ensemble": {
+      "point": -0.000267857142857153,
+      "ci_lo": -0.00851761798469385,
+      "ci_hi": 0.009400829081632847
+     }
+    },
+    {
+     "id": "C4",
+     "name": "Fair-N-raw − Fair-N-EMA",
+     "weights": {
+      "FairN-raw": 1.0,
+      "FairN-EMA": -1.0
+     },
+     "levels": [
+      "c28",
+      "c32",
+      "c36",
+      "c40"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.0006802721088433605,
+      "ci_lo": -0.00869812925170065,
+      "ci_hi": 0.007459927721088484
+     },
+     "ensemble": {
+      "point": -4.783163265309476e-05,
+      "ci_lo": -0.00987587691326529,
+      "ci_hi": 0.00917729591836736
+     }
+    },
+    {
+     "id": "C5",
+     "name": "F2-raw − F2-EMA",
+     "weights": {
+      "F2-raw": 1.0,
+      "F2-EMA": -1.0
+     },
+     "levels": [
+      "c28",
+      "c32",
+      "c36",
+      "c40"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.008163265306122547,
+      "ci_lo": -0.01848331207482989,
+      "ci_hi": 0.0006686862244896797
+     },
+     "ensemble": {
+      "point": -0.0054209183673469274,
+      "ci_lo": -0.016827566964285764,
+      "ci_hi": 0.0018084343112245518
+     }
+    },
+    {
+     "id": "C6",
+     "name": "E1-raw − E1-EMA",
+     "weights": {
+      "E1-raw": 1.0,
+      "E1-EMA": -1.0
+     },
+     "levels": [
+      "c28",
+      "c32",
+      "c36",
+      "c40"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.0074107142857141595,
+      "ci_lo": -0.01353231292517009,
+      "ci_hi": -0.0018568239795917528
+     },
+     "ensemble": {
+      "point": -0.0050382653061226135,
+      "ci_lo": -0.013980389030612246,
+      "ci_hi": 0.0007940848214285051
+     }
+    }
+   ]
+  }
+ },
+ "points_per_run": {
+  "FairN-EMA": {
+   "f1_none_fair_s42": {
+    "FF++ c0": {
+     "auc": 0.9940943877551021,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c18": {
+     "auc": 0.9901020408163266,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c23": {
+     "auc": 0.9880739795918367,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c23": {
+     "auc": 0.8281209032364656,
+     "source": "stored `video_auc`"
+    },
+    "DFD c40": {
+     "auc": 0.6830079268445985,
+     "source": "stored `video_auc`"
+    },
+    "Celeb-DF v2": {
+     "auc": 0.6675974884335758,
+     "source": "stored `video_auc`"
+    },
+    "FaceShifter c23": {
+     "auc": 0.8031122448979592,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c40": {
+     "auc": 0.7650510204081633,
+     "source": "recomputed (phase6_stats.auc)"
+    }
+   },
+   "f1_none_fair_s1": {
+    "FF++ c0": {
+     "auc": 0.9951785714285715,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c18": {
+     "auc": 0.9823724489795919,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c23": {
+     "auc": 0.9878954081632653,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c23": {
+     "auc": 0.7516710305616314,
+     "source": "stored `video_auc`"
+    },
+    "DFD c40": {
+     "auc": 0.6689608542459081,
+     "source": "stored `video_auc`"
+    },
+    "Celeb-DF v2": {
+     "auc": 0.5708526107072042,
+     "source": "stored `video_auc`"
+    },
+    "FaceShifter c23": {
+     "auc": 0.8270918367346939,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c40": {
+     "auc": 0.7119387755102041,
+     "source": "recomputed (phase6_stats.auc)"
+    }
+   },
+   "f1_none_fair_s2": {
+    "FF++ c0": {
+     "auc": 0.9920025510204081,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c18": {
+     "auc": 0.9888392857142857,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c23": {
+     "auc": 0.9862117346938776,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c23": {
+     "auc": 0.7958334680214495,
+     "source": "stored `video_auc`"
+    },
+    "DFD c40": {
+     "auc": 0.6263985116065239,
+     "source": "stored `video_auc`"
+    },
+    "Celeb-DF v2": {
+     "auc": 0.7034534038334435,
+     "source": "stored `video_auc`"
+    },
+    "FaceShifter c23": {
+     "auc": 0.7673469387755102,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c40": {
+     "auc": 0.6556122448979592,
+     "source": "recomputed (phase6_stats.auc)"
+    }
+   }
+  },
+  "FairN-raw": {
+   "f1_none_fair_s42": {
+    "FF++ c0": {
+     "auc": 0.9928443877551021,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c18": {
+     "auc": 0.9877295918367347,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c23": {
+     "auc": 0.985140306122449,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c23": {
+     "auc": 0.8467949615869492,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c40": {
+     "auc": 0.6549101899641191,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "Celeb-DF v2": {
+     "auc": 0.6580634500991408,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c23": {
+     "auc": 0.8259693877551021,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c40": {
+     "auc": 0.706530612244898,
+     "source": "recomputed (phase6_stats.auc)"
+    }
+   },
+   "f1_none_fair_s1": {
+    "FF++ c0": {
+     "auc": 0.9938137755102041,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c18": {
+     "auc": 0.988890306122449,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c23": {
+     "auc": 0.986938775510204,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c23": {
+     "auc": 0.7716165447290255,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c40": {
+     "auc": 0.6474673246630104,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "Celeb-DF v2": {
+     "auc": 0.6541804362194316,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c23": {
+     "auc": 0.8273469387755102,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c40": {
+     "auc": 0.7087755102040816,
+     "source": "recomputed (phase6_stats.auc)"
+    }
+   },
+   "f1_none_fair_s2": {
+    "FF++ c0": {
+     "auc": 0.9937755102040816,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c18": {
+     "auc": 0.990204081632653,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c23": {
+     "auc": 0.9866326530612245,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c23": {
+     "auc": 0.8019725523577603,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c40": {
+     "auc": 0.6613833008286013,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "Celeb-DF v2": {
+     "auc": 0.701487111698612,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c23": {
+     "auc": 0.7914795918367347,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c40": {
+     "auc": 0.7279081632653062,
+     "source": "recomputed (phase6_stats.auc)"
+    }
+   }
+  },
+  "F2-EMA": {
+   "f2_spatres_full_s42": {
+    "FF++ c0": {
+     "auc": 0.9928826530612245,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c18": {
+     "auc": 0.9901658163265306,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c23": {
+     "auc": 0.9894132653061225,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c23": {
+     "auc": 0.8336278513474199,
+     "source": "stored `video_auc`"
+    },
+    "DFD c40": {
+     "auc": 0.6489910962175984,
+     "source": "stored `video_auc`"
+    },
+    "Celeb-DF v2": {
+     "auc": 0.6838565763384006,
+     "source": "stored `video_auc`"
+    },
+    "FaceShifter c23": {
+     "auc": 0.7861224489795918,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c40": {
+     "auc": 0.7203061224489796,
+     "source": "recomputed (phase6_stats.auc)"
+    }
+   },
+   "f2_spatres_full_s1": {
+    "FF++ c0": {
+     "auc": 0.9930994897959183,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c18": {
+     "auc": 0.9898341836734694,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c23": {
+     "auc": 0.9864158163265306,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c23": {
+     "auc": 0.8587633475923152,
+     "source": "stored `video_auc`"
+    },
+    "DFD c40": {
+     "auc": 0.6891290527654164,
+     "source": "stored `video_auc`"
+    },
+    "Celeb-DF v2": {
+     "auc": 0.69849636483807,
+     "source": "stored `video_auc`"
+    },
+    "FaceShifter c23": {
+     "auc": 0.7731122448979592,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c40": {
+     "auc": 0.7343877551020408,
+     "source": "recomputed (phase6_stats.auc)"
+    }
+   },
+   "f2_spatres_full_s2": {
+    "FF++ c0": {
+     "auc": 0.9943239795918367,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c18": {
+     "auc": 0.9898341836734694,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c23": {
+     "auc": 0.9871938775510204,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c23": {
+     "auc": 0.8129891423419928,
+     "source": "stored `video_auc`"
+    },
+    "DFD c40": {
+     "auc": 0.6552172788690509,
+     "source": "stored `video_auc`"
+    },
+    "Celeb-DF v2": {
+     "auc": 0.6600793126239259,
+     "source": "stored `video_auc`"
+    },
+    "FaceShifter c23": {
+     "auc": 0.7451020408163266,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c40": {
+     "auc": 0.666734693877551,
+     "source": "recomputed (phase6_stats.auc)"
+    }
+   }
+  },
+  "F2-raw": {
+   "f2_spatres_full_s42": {
+    "FF++ c0": {
+     "auc": 0.9924744897959183,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c18": {
+     "auc": 0.9893877551020408,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c23": {
+     "auc": 0.9869897959183673,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c23": {
+     "auc": 0.8473884872189957,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c40": {
+     "auc": 0.6758676608445484,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "Celeb-DF v2": {
+     "auc": 0.6812458691341705,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c23": {
+     "auc": 0.8122448979591836,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c40": {
+     "auc": 0.7353571428571428,
+     "source": "recomputed (phase6_stats.auc)"
+    }
+   },
+   "f2_spatres_full_s1": {
+    "FF++ c0": {
+     "auc": 0.9912117346938776,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c18": {
+     "auc": 0.9862372448979592,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c23": {
+     "auc": 0.9839285714285714,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c23": {
+     "auc": 0.8347340897417939,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c40": {
+     "auc": 0.6593019204729529,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "Celeb-DF v2": {
+     "auc": 0.6877891606080635,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c23": {
+     "auc": 0.7758163265306123,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c40": {
+     "auc": 0.6987244897959184,
+     "source": "recomputed (phase6_stats.auc)"
+    }
+   },
+   "f2_spatres_full_s2": {
+    "FF++ c0": {
+     "auc": 0.9913775510204081,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c18": {
+     "auc": 0.986109693877551,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c23": {
+     "auc": 0.9843112244897959,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c23": {
+     "auc": 0.8399698657788026,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c40": {
+     "auc": 0.6403315482668334,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "Celeb-DF v2": {
+     "auc": 0.7022802379378718,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c23": {
+     "auc": 0.8370918367346939,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c40": {
+     "auc": 0.684795918367347,
+     "source": "recomputed (phase6_stats.auc)"
+    }
+   }
+  },
+  "E1-EMA": {
+   "r1_fairn_grl_s42": {
+    "FF++ c0": {
+     "auc": 0.9940816326530613,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c18": {
+     "auc": 0.9896811224489795,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c23": {
+     "auc": 0.9878571428571429,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c23": {
+     "auc": 0.8313731722822632,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c40": {
+     "auc": 0.6559194529148304,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "Celeb-DF v2": {
+     "auc": 0.6869134170522141,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c23": {
+     "auc": 0.7723469387755102,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c40": {
+     "auc": 0.7454081632653061,
+     "source": "recomputed (phase6_stats.auc)"
+    }
+   },
+   "r1_fairn_grl_s1": {
+    "FF++ c0": {
+     "auc": 0.9929846938775511,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c18": {
+     "auc": 0.991454081632653,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c23": {
+     "auc": 0.9894005102040816,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c23": {
+     "auc": 0.8617040381293077,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c40": {
+     "auc": 0.6686744175187935,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "Celeb-DF v2": {
+     "auc": 0.6925809649702578,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c23": {
+     "auc": 0.8114795918367347,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c40": {
+     "auc": 0.7968367346938775,
+     "source": "recomputed (phase6_stats.auc)"
+    }
+   },
+   "r1_fairn_grl_s2": {
+    "FF++ c0": {
+     "auc": 0.9928571428571429,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c18": {
+     "auc": 0.9904464285714286,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c23": {
+     "auc": 0.9876147959183673,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c23": {
+     "auc": 0.8593577711451363,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c40": {
+     "auc": 0.6876977670506176,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "Celeb-DF v2": {
+     "auc": 0.689920687376074,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c23": {
+     "auc": 0.7756632653061224,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c40": {
+     "auc": 0.7086224489795918,
+     "source": "recomputed (phase6_stats.auc)"
+    }
+   }
+  },
+  "E1-raw": {
+   "r1_fairn_grl_s42": {
+    "FF++ c0": {
+     "auc": 0.9933418367346939,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c18": {
+     "auc": 0.9897576530612245,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c23": {
+     "auc": 0.9878698979591837,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c23": {
+     "auc": 0.8248551653790482,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c40": {
+     "auc": 0.6343433146206644,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "Celeb-DF v2": {
+     "auc": 0.6780568407138137,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c23": {
+     "auc": 0.8258163265306122,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c40": {
+     "auc": 0.7087244897959184,
+     "source": "recomputed (phase6_stats.auc)"
+    }
+   },
+   "r1_fairn_grl_s1": {
+    "FF++ c0": {
+     "auc": 0.9936224489795918,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c18": {
+     "auc": 0.9905867346938776,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c23": {
+     "auc": 0.9864668367346939,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c23": {
+     "auc": 0.7743956095265803,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c40": {
+     "auc": 0.6181053153318177,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "Celeb-DF v2": {
+     "auc": 0.6769993390614673,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c23": {
+     "auc": 0.7886734693877551,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c40": {
+     "auc": 0.6580102040816327,
+     "source": "recomputed (phase6_stats.auc)"
+    }
+   },
+   "r1_fairn_grl_s2": {
+    "FF++ c0": {
+     "auc": 0.9938520408163265,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c18": {
+     "auc": 0.9830484693877551,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c23": {
+     "auc": 0.9861224489795918,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c23": {
+     "auc": 0.727966820031535,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c40": {
+     "auc": 0.6489973816630211,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "Celeb-DF v2": {
+     "auc": 0.666044282881692,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c23": {
+     "auc": 0.7838265306122449,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c40": {
+     "auc": 0.7559183673469387,
+     "source": "recomputed (phase6_stats.auc)"
+    }
+   }
+  },
+  "b7": {
+   "b7_effnet_b0_mq_fliponly": {
+    "FF++ c0": {
+     "auc": 0.9919132653061224,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c18": {
+     "auc": 0.989234693877551,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c23": {
+     "auc": 0.986670918367347,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c23": {
+     "auc": 0.8041464185531982,
+     "source": "stored `video_auc`"
+    },
+    "DFD c40": {
+     "auc": 0.6460602828091272,
+     "source": "stored `video_auc`"
+    },
+    "Celeb-DF v2": {
+     "auc": 0.6990416391275612,
+     "source": "stored `video_auc`"
+    },
+    "FaceShifter c23": {
+     "auc": 0.8082142857142857,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c40": {
+     "auc": 0.7176020408163265,
+     "source": "recomputed (phase6_stats.auc)"
+    }
+   },
+   "b7_effnet_b0_mq_fliponly_s1": {
+    "FF++ c0": {
+     "auc": 0.9925765306122449,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c18": {
+     "auc": 0.9897831632653061,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c23": {
+     "auc": 0.9873469387755102,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c23": {
+     "auc": 0.8232514788755159,
+     "source": "stored `video_auc`"
+    },
+    "DFD c40": {
+     "auc": 0.6407077770714135,
+     "source": "stored `video_auc`"
+    },
+    "Celeb-DF v2": {
+     "auc": 0.6874256444150695,
+     "source": "stored `video_auc`"
+    },
+    "FaceShifter c23": {
+     "auc": 0.8411224489795919,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c40": {
+     "auc": 0.7468877551020409,
+     "source": "recomputed (phase6_stats.auc)"
+    }
+   },
+   "b7_effnet_b0_mq_fliponly_s2": {
+    "FF++ c0": {
+     "auc": 0.990969387755102,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c18": {
+     "auc": 0.987780612244898,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c23": {
+     "auc": 0.9838520408163265,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c23": {
+     "auc": 0.8473579579126574,
+     "source": "stored `video_auc`"
+    },
+    "DFD c40": {
+     "auc": 0.664578102944821,
+     "source": "stored `video_auc`"
+    },
+    "Celeb-DF v2": {
+     "auc": 0.6713317911434236,
+     "source": "stored `video_auc`"
+    },
+    "FaceShifter c23": {
+     "auc": 0.8195408163265306,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FaceShifter c40": {
+     "auc": 0.7308163265306122,
+     "source": "recomputed (phase6_stats.auc)"
+    }
+   }
+  },
+  "TrunkCtrl": {
+   "trunk_recipe_s42": {
+    "FF++ c0": {
+     "auc": 0.9913010204081633,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c18": {
+     "auc": 0.9880102040816326,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c23": {
+     "auc": 0.986109693877551,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c23": {
+     "auc": null,
+     "source": "absent"
+    },
+    "DFD c40": {
+     "auc": null,
+     "source": "absent"
+    },
+    "Celeb-DF v2": {
+     "auc": null,
+     "source": "absent"
+    },
+    "FaceShifter c23": {
+     "auc": null,
+     "source": "absent"
+    },
+    "FaceShifter c40": {
+     "auc": null,
+     "source": "absent"
+    }
+   },
+   "trunk_recipe_s1": {
+    "FF++ c0": {
+     "auc": 0.9927168367346939,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c18": {
+     "auc": 0.989859693877551,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c23": {
+     "auc": 0.9879846938775511,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c23": {
+     "auc": null,
+     "source": "absent"
+    },
+    "DFD c40": {
+     "auc": null,
+     "source": "absent"
+    },
+    "Celeb-DF v2": {
+     "auc": null,
+     "source": "absent"
+    },
+    "FaceShifter c23": {
+     "auc": null,
+     "source": "absent"
+    },
+    "FaceShifter c40": {
+     "auc": null,
+     "source": "absent"
+    }
+   },
+   "trunk_recipe_s2": {
+    "FF++ c0": {
+     "auc": 0.9920025510204081,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c18": {
+     "auc": 0.9878826530612245,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "FF++ c23": {
+     "auc": 0.9848979591836735,
+     "source": "recomputed (phase6_stats.auc)"
+    },
+    "DFD c23": {
+     "auc": null,
+     "source": "absent"
+    },
+    "DFD c40": {
+     "auc": null,
+     "source": "absent"
+    },
+    "Celeb-DF v2": {
+     "auc": null,
+     "source": "absent"
+    },
+    "FaceShifter c23": {
+     "auc": null,
+     "source": "absent"
+    },
+    "FaceShifter c40": {
+     "auc": null,
+     "source": "absent"
+    }
+   }
+  }
+ },
+ "points_per_arm_mean": {
+  "FairN-EMA": {
+   "FF++ c0": 0.9937585034013606,
+   "FF++ c18": 0.9871045918367347,
+   "FF++ c23": 0.9873937074829932,
+   "DFD c23": 0.7918751339398488,
+   "DFD c40": 0.6594557642323435,
+   "Celeb-DF v2": 0.6473011676580744,
+   "FaceShifter c23": 0.7991836734693877,
+   "FaceShifter c40": 0.7108673469387755
+  },
+  "FairN-raw": {
+   "FF++ c0": 0.9934778911564627,
+   "FF++ c18": 0.9889413265306123,
+   "FF++ c23": 0.9862372448979592,
+   "DFD c23": 0.8067946862245784,
+   "DFD c40": 0.6545869384852435,
+   "Celeb-DF v2": 0.671243666005728,
+   "FaceShifter c23": 0.8149319727891157,
+   "FaceShifter c40": 0.7144047619047619
+  },
+  "F2-EMA": {
+   "FF++ c0": 0.9934353741496599,
+   "FF++ c18": 0.9899447278911565,
+   "FF++ c23": 0.9876743197278911,
+   "DFD c23": 0.8351267804272426,
+   "DFD c40": 0.6644458092840219,
+   "Celeb-DF v2": 0.6808107512667988,
+   "FaceShifter c23": 0.7681122448979592,
+   "FaceShifter c40": 0.7071428571428572
+  },
+  "F2-raw": {
+   "FF++ c0": 0.991687925170068,
+   "FF++ c18": 0.9872448979591836,
+   "FF++ c23": 0.985076530612245,
+   "DFD c23": 0.8406974809131974,
+   "DFD c40": 0.6585003765281116,
+   "Celeb-DF v2": 0.6904384225600353,
+   "FaceShifter c23": 0.8083843537414966,
+   "FaceShifter c40": 0.7062925170068027
+  },
+  "E1-EMA": {
+   "FF++ c0": 0.9933078231292517,
+   "FF++ c18": 0.9905272108843537,
+   "FF++ c23": 0.9882908163265306,
+   "DFD c23": 0.8508116605189024,
+   "DFD c40": 0.6707638791614139,
+   "Celeb-DF v2": 0.6898050231328486,
+   "FaceShifter c23": 0.7864965986394559,
+   "FaceShifter c40": 0.7502891156462584
+  },
+  "E1-raw": {
+   "FF++ c0": 0.9936054421768707,
+   "FF++ c18": 0.9877976190476191,
+   "FF++ c23": 0.9868197278911565,
+   "DFD c23": 0.7757391983123879,
+   "DFD c40": 0.6338153372051677,
+   "Celeb-DF v2": 0.673700154218991,
+   "FaceShifter c23": 0.799438775510204,
+   "FaceShifter c40": 0.7075510204081633
+  },
+  "b7": {
+   "FF++ c0": 0.9918197278911564,
+   "FF++ c18": 0.9889328231292517,
+   "FF++ c23": 0.9859566326530612,
+   "DFD c23": 0.8249186184471239,
+   "DFD c40": 0.6504487209417872,
+   "Celeb-DF v2": 0.6859330248953515,
+   "FaceShifter c23": 0.8229591836734694,
+   "FaceShifter c40": 0.7317687074829932
+  },
+  "TrunkCtrl": {
+   "FF++ c0": 0.9920068027210885,
+   "FF++ c18": 0.9885841836734693,
+   "FF++ c23": 0.9863307823129253,
+   "DFD c23": null,
+   "DFD c40": null,
+   "Celeb-DF v2": null,
+   "FaceShifter c23": null,
+   "FaceShifter c40": null
+  }
+ },
+ "missing_runs": [],
+ "missing_arms": [],
+ "missing_cells": [
+  {
+   "arm": "TrunkCtrl",
+   "run": "trunk_recipe_s42",
+   "weights": "baseline",
+   "set": "DFD c23",
+   "reason": "not available: `cross_dataset.dfd_c23` absent from runs/trunk_recipe_s42/report.json; this published run was never evaluated on that set (its report carries no such cell), and W5 E10 re-evaluates only the CAFRL-family raw snapshots (plan §4.5)"
+  },
+  {
+   "arm": "TrunkCtrl",
+   "run": "trunk_recipe_s42",
+   "weights": "baseline",
+   "set": "DFD c40",
+   "reason": "not available: `cross_dataset.dfd_c40` absent from runs/trunk_recipe_s42/report.json; this published run was never evaluated on that set (its report carries no such cell), and W5 E10 re-evaluates only the CAFRL-family raw snapshots (plan §4.5)"
+  },
+  {
+   "arm": "TrunkCtrl",
+   "run": "trunk_recipe_s42",
+   "weights": "baseline",
+   "set": "Celeb-DF v2",
+   "reason": "not available: `cross_dataset.celebdf_v2` absent from runs/trunk_recipe_s42/report.json; this published run was never evaluated on that set (its report carries no such cell), and W5 E10 re-evaluates only the CAFRL-family raw snapshots (plan §4.5)"
+  },
+  {
+   "arm": "TrunkCtrl",
+   "run": "trunk_recipe_s42",
+   "weights": "baseline",
+   "set": "FaceShifter c23",
+   "reason": "not available: no file runs/trunk_recipe_s42/faceshifter_preds.json; no FaceShifter per-video predictions of this published run exist (never evaluated on FaceShifter), and W5 E10 re-evaluates only the CAFRL-family raw snapshots (plan §4.5)"
+  },
+  {
+   "arm": "TrunkCtrl",
+   "run": "trunk_recipe_s42",
+   "weights": "baseline",
+   "set": "FaceShifter c40",
+   "reason": "not available: no file runs/trunk_recipe_s42/faceshifter_preds.json; no FaceShifter per-video predictions of this published run exist (never evaluated on FaceShifter), and W5 E10 re-evaluates only the CAFRL-family raw snapshots (plan §4.5)"
+  },
+  {
+   "arm": "TrunkCtrl",
+   "run": "trunk_recipe_s1",
+   "weights": "baseline",
+   "set": "DFD c23",
+   "reason": "not available: `cross_dataset.dfd_c23` absent from runs/trunk_recipe_s1/report.json; this published run was never evaluated on that set (its report carries no such cell), and W5 E10 re-evaluates only the CAFRL-family raw snapshots (plan §4.5)"
+  },
+  {
+   "arm": "TrunkCtrl",
+   "run": "trunk_recipe_s1",
+   "weights": "baseline",
+   "set": "DFD c40",
+   "reason": "not available: `cross_dataset.dfd_c40` absent from runs/trunk_recipe_s1/report.json; this published run was never evaluated on that set (its report carries no such cell), and W5 E10 re-evaluates only the CAFRL-family raw snapshots (plan §4.5)"
+  },
+  {
+   "arm": "TrunkCtrl",
+   "run": "trunk_recipe_s1",
+   "weights": "baseline",
+   "set": "Celeb-DF v2",
+   "reason": "not available: `cross_dataset.celebdf_v2` absent from runs/trunk_recipe_s1/report.json; this published run was never evaluated on that set (its report carries no such cell), and W5 E10 re-evaluates only the CAFRL-family raw snapshots (plan §4.5)"
+  },
+  {
+   "arm": "TrunkCtrl",
+   "run": "trunk_recipe_s1",
+   "weights": "baseline",
+   "set": "FaceShifter c23",
+   "reason": "not available: no file runs/trunk_recipe_s1/faceshifter_preds.json; no FaceShifter per-video predictions of this published run exist (never evaluated on FaceShifter), and W5 E10 re-evaluates only the CAFRL-family raw snapshots (plan §4.5)"
+  },
+  {
+   "arm": "TrunkCtrl",
+   "run": "trunk_recipe_s1",
+   "weights": "baseline",
+   "set": "FaceShifter c40",
+   "reason": "not available: no file runs/trunk_recipe_s1/faceshifter_preds.json; no FaceShifter per-video predictions of this published run exist (never evaluated on FaceShifter), and W5 E10 re-evaluates only the CAFRL-family raw snapshots (plan §4.5)"
+  },
+  {
+   "arm": "TrunkCtrl",
+   "run": "trunk_recipe_s2",
+   "weights": "baseline",
+   "set": "DFD c23",
+   "reason": "not available: `cross_dataset.dfd_c23` absent from runs/trunk_recipe_s2/report.json; this published run was never evaluated on that set (its report carries no such cell), and W5 E10 re-evaluates only the CAFRL-family raw snapshots (plan §4.5)"
+  },
+  {
+   "arm": "TrunkCtrl",
+   "run": "trunk_recipe_s2",
+   "weights": "baseline",
+   "set": "DFD c40",
+   "reason": "not available: `cross_dataset.dfd_c40` absent from runs/trunk_recipe_s2/report.json; this published run was never evaluated on that set (its report carries no such cell), and W5 E10 re-evaluates only the CAFRL-family raw snapshots (plan §4.5)"
+  },
+  {
+   "arm": "TrunkCtrl",
+   "run": "trunk_recipe_s2",
+   "weights": "baseline",
+   "set": "Celeb-DF v2",
+   "reason": "not available: `cross_dataset.celebdf_v2` absent from runs/trunk_recipe_s2/report.json; this published run was never evaluated on that set (its report carries no such cell), and W5 E10 re-evaluates only the CAFRL-family raw snapshots (plan §4.5)"
+  },
+  {
+   "arm": "TrunkCtrl",
+   "run": "trunk_recipe_s2",
+   "weights": "baseline",
+   "set": "FaceShifter c23",
+   "reason": "not available: no file runs/trunk_recipe_s2/faceshifter_preds.json; no FaceShifter per-video predictions of this published run exist (never evaluated on FaceShifter), and W5 E10 re-evaluates only the CAFRL-family raw snapshots (plan §4.5)"
+  },
+  {
+   "arm": "TrunkCtrl",
+   "run": "trunk_recipe_s2",
+   "weights": "baseline",
+   "set": "FaceShifter c40",
+   "reason": "not available: no file runs/trunk_recipe_s2/faceshifter_preds.json; no FaceShifter per-video predictions of this published run exist (never evaluated on FaceShifter), and W5 E10 re-evaluates only the CAFRL-family raw snapshots (plan §4.5)"
+  }
+ ],
+ "auc_comp": "equal-weight mean over ['c28', 'c32', 'c36', 'c40'] (phase6_stats.COMP_LEVELS)"
+}

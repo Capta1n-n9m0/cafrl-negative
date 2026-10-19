@@ -1,0 +1,42 @@
+{
+  "note": "W5b (POST HOC) curriculum retrain configs; plan docs/phases/phase6-w5b-plan.md. sha256 of each YAML file (bytes). Checked by src/tests/test_phase6x_configs.py.",
+  "parent": {
+    "config": "configs/phase6/r1_abl_curriculum_s42.yaml",
+    "sha256": "81e3eb7f272322c578cfd7792eb8700d4d75e438791fd671817a85c64634450c",
+    "manifest": "configs/phase6/MANIFEST.json"
+  },
+  "configs": [
+    {
+      "variant": "V1",
+      "run": "r1x_abl_curriculum_rerun_s42",
+      "config": "configs/phase6x/r1x_abl_curriculum_rerun_s42.yaml",
+      "trainer": "cafrl",
+      "seed": 42,
+      "parent": "configs/phase6/r1_abl_curriculum_s42.yaml",
+      "declared_diff": {},
+      "sha256": "a52ca49059ad0dd8c8d371d84404c47c07ff6165bcd64cac9bb7e0892adf4ff4"
+    },
+    {
+      "variant": "V2",
+      "run": "r1x_abl_curriculum_nostop_s42",
+      "config": "configs/phase6x/r1x_abl_curriculum_nostop_s42.yaml",
+      "trainer": "cafrl",
+      "seed": 42,
+      "parent": "configs/phase6/r1_abl_curriculum_s42.yaml",
+      "declared_diff": {},
+      "sha256": "68628cb7f3deed859739aad01469522ffbd1bb5516b26446dfd4f870cd67300f"
+    },
+    {
+      "variant": "V3",
+      "run": "r1x_abl_curriculum_emafix_s42",
+      "config": "configs/phase6x/r1x_abl_curriculum_emafix_s42.yaml",
+      "trainer": "cafrl",
+      "seed": 42,
+      "parent": "configs/phase6/r1_abl_curriculum_s42.yaml",
+      "declared_diff": {
+        "train.ema_own_bn_stats": true
+      },
+      "sha256": "d140e4aa4169f3f8a3a5a1514c4a72ed8f86d4ddf7118a41f63c7349491f3ea7"
+    }
+  ]
+}

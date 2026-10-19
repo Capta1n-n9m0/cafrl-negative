@@ -193,7 +193,7 @@ def fig2(data: dict) -> Path:
     fig, axes = plt.subplots(1, 2, figsize=(7.1, 2.75), sharey=True)
     for ax, arms, title in zip(
         axes, (PANEL_A, PANEL_B),
-        ("(a)  Shipped recipe — the falsification (seed 42)",
+        ("(a)  Shipped recipe — the STOP-gate result (seed 42)",
          "(b)  Fair recipe — the re-test (3-seed means)"),
     ):
         for arm in arms:
@@ -272,7 +272,7 @@ def fig4(data: dict) -> Path:
     ax2.set_xlabel("Epoch")
     ax2.set_ylim(0.45, 1.0)
     ax2.set_xlim(1, 30)
-    ax2.set_title("(b)  …yet the signal is real (redundancy)", fontsize=8, loc="left", color=INK, pad=8)
+    ax2.set_title("(b)  The standalone head is discriminative", fontsize=8, loc="left", color=INK, pad=8)
     ax2.legend(loc="lower right")
 
     fig.tight_layout(h_pad=2.0)

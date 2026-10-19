@@ -1,0 +1,1024 @@
+{
+ "schema": "w4b_s3_ladder_table/1",
+ "script": "src/scripts/w4b/s3_ladder_table.py",
+ "source_file": "runs/phase6_build/ladder_stats.json",
+ "source_sha256": "72b197ddda606809d3f02f9ddd6cf2e04f4940edc46f3b1f18f1430e98671e25",
+ "source_meta": {
+  "created_utc": "2026-10-10T17:57:18Z",
+  "script": "src/scripts/phase6_data/ladder_stats.py",
+  "status": "final",
+  "split": "test",
+  "n_videos_per_level": 700,
+  "frames": "32 selected_indices per video (the c18/c28 meta.json list)",
+  "psnr_definition": "per-crop PSNR on uint8 RGB 256x256: 10*log10(255^2/MSE), MSE over all pixels and 3 channels; level value = arithmetic mean of per-crop dB; reference = the c0 PNG crop; sd uses ddof=1",
+  "ssim_definition": "skimage.metrics.structural_similarity on BT.601 luma (0.299R+0.587G+0.114B, float64, unrounded), data_range 255, gaussian_weights=True, sigma 1.5, use_sample_covariance=False",
+  "bitrate_definition": "per video: file_bytes*8/duration_s (ffprobe format.duration), kbps; also stream bit_rate (stream_bitrate_kbps)",
+  "ffmpeg_version": "ffmpeg version 4.2.2 Copyright (c) 2000-2019 the FFmpeg developers",
+  "x264_settings": "libx264 -crf N -preset medium -pix_fmt yuv420p -fps_mode passthrough -an",
+  "official_alignment": "official c23/c40 video frames warped on the fly with c0 landmarks at the same indices (no PNG written)",
+  "frame_count_parity": {
+   "c23_official": {
+    "n_checked": 700,
+    "n_mismatch": 0,
+    "mismatched": []
+   },
+   "c40_official": {
+    "n_checked": 700,
+    "n_mismatch": 0,
+    "mismatched": []
+   }
+  },
+  "errors": []
+ },
+ "reference": "c0 PNG crop (psnr_definition); c0 has no row",
+ "rows": [
+  {
+   "level": "c18",
+   "source": "ours",
+   "crf": 18,
+   "n_videos": 700,
+   "bitrate_kbps_mean": 1602.2384822613833,
+   "bitrate_kbps_median": 963.7644498287452,
+   "bitrate_kbps_p10": 600.0257853736089,
+   "bitrate_kbps_p90": 3537.1153904021303,
+   "psnr_db_mean": 41.170650350800244,
+   "psnr_db_sd": 0.989665497078613,
+   "psnr_n_crops": 22400,
+   "ssim_mean": 0.9885265368731879,
+   "ssim_sd": 0.0030304410710299194,
+   "keys": {
+    "bitrate": "levels.c18.bitrate_kbps.mean",
+    "psnr": "levels.c18.psnr_db.mean",
+    "ssim": "levels.c18.ssim.mean"
+   }
+  },
+  {
+   "level": "c23_official",
+   "source": "official",
+   "crf": null,
+   "n_videos": 700,
+   "bitrate_kbps_mean": 885.3695921763275,
+   "bitrate_kbps_median": 553.7584554262239,
+   "bitrate_kbps_p10": 312.0429323557926,
+   "bitrate_kbps_p90": 2004.9966804798257,
+   "psnr_db_mean": 39.88288130255291,
+   "psnr_db_sd": 1.7124573583581555,
+   "psnr_n_crops": 22400,
+   "ssim_mean": 0.9826484859614808,
+   "ssim_sd": 0.005597971496425144,
+   "keys": {
+    "bitrate": "levels.c23_official.bitrate_kbps.mean",
+    "psnr": "levels.c23_official.psnr_db.mean",
+    "ssim": "levels.c23_official.ssim.mean"
+   }
+  },
+  {
+   "level": "x23",
+   "source": "ours",
+   "crf": 23,
+   "n_videos": 700,
+   "bitrate_kbps_mean": 881.7870681533134,
+   "bitrate_kbps_median": 539.5187184643225,
+   "bitrate_kbps_p10": 315.34774855754637,
+   "bitrate_kbps_p90": 2031.4210169169344,
+   "psnr_db_mean": 39.34589154285032,
+   "psnr_db_sd": 1.3275950898275932,
+   "psnr_n_crops": 22400,
+   "ssim_mean": 0.9822076378667962,
+   "ssim_sd": 0.005331563073839037,
+   "keys": {
+    "bitrate": "levels.x23.bitrate_kbps.mean",
+    "psnr": "levels.x23.psnr_db.mean",
+    "ssim": "levels.x23.ssim.mean"
+   }
+  },
+  {
+   "level": "c28",
+   "source": "ours",
+   "crf": 28,
+   "n_videos": 700,
+   "bitrate_kbps_mean": 457.17509157041235,
+   "bitrate_kbps_median": 289.80003920825436,
+   "bitrate_kbps_p10": 156.03681744754581,
+   "bitrate_kbps_p90": 1054.1315999276717,
+   "psnr_db_mean": 37.10409017276566,
+   "psnr_db_sd": 1.616022636967707,
+   "psnr_n_crops": 22400,
+   "ssim_mean": 0.9711284712087626,
+   "ssim_sd": 0.00924939933193853,
+   "keys": {
+    "bitrate": "levels.c28.bitrate_kbps.mean",
+    "psnr": "levels.c28.psnr_db.mean",
+    "ssim": "levels.c28.ssim.mean"
+   }
+  },
+  {
+   "level": "c32",
+   "source": "ours",
+   "crf": 32,
+   "n_videos": 700,
+   "bitrate_kbps_mean": 269.70148050884785,
+   "bitrate_kbps_median": 179.27351437821687,
+   "bitrate_kbps_p10": 94.30813089221574,
+   "bitrate_kbps_p90": 639.7450832961282,
+   "psnr_db_mean": 35.16319016902,
+   "psnr_db_sd": 1.781785412475363,
+   "psnr_n_crops": 22400,
+   "ssim_mean": 0.9570503821295532,
+   "ssim_sd": 0.014062648262341914,
+   "keys": {
+    "bitrate": "levels.c32.bitrate_kbps.mean",
+    "psnr": "levels.c32.psnr_db.mean",
+    "ssim": "levels.c32.ssim.mean"
+   }
+  },
+  {
+   "level": "c36",
+   "source": "ours",
+   "crf": 36,
+   "n_videos": 700,
+   "bitrate_kbps_mean": 167.35493988611918,
+   "bitrate_kbps_median": 114.98558858562157,
+   "bitrate_kbps_p10": 59.840234282409924,
+   "bitrate_kbps_p90": 374.573368391746,
+   "psnr_db_mean": 33.08902439895623,
+   "psnr_db_sd": 1.8953387677115396,
+   "psnr_n_crops": 22400,
+   "ssim_mean": 0.936516557914234,
+   "ssim_sd": 0.020792547365747184,
+   "keys": {
+    "bitrate": "levels.c36.bitrate_kbps.mean",
+    "psnr": "levels.c36.psnr_db.mean",
+    "ssim": "levels.c36.ssim.mean"
+   }
+  },
+  {
+   "level": "c40_official",
+   "source": "official",
+   "crf": null,
+   "n_videos": 700,
+   "bitrate_kbps_mean": 112.8314867952415,
+   "bitrate_kbps_median": 79.39829760581104,
+   "bitrate_kbps_p10": 41.83261533464575,
+   "bitrate_kbps_p90": 246.22832790211444,
+   "psnr_db_mean": 30.69985259809656,
+   "psnr_db_sd": 1.973065129076041,
+   "psnr_n_crops": 22400,
+   "ssim_mean": 0.9061601877012241,
+   "ssim_sd": 0.029826055215198745,
+   "keys": {
+    "bitrate": "levels.c40_official.bitrate_kbps.mean",
+    "psnr": "levels.c40_official.psnr_db.mean",
+    "ssim": "levels.c40_official.ssim.mean"
+   }
+  },
+  {
+   "level": "x40",
+   "source": "ours",
+   "crf": 40,
+   "n_videos": 700,
+   "bitrate_kbps_mean": 108.67574932950221,
+   "bitrate_kbps_median": 76.4467580481427,
+   "bitrate_kbps_p10": 40.30840038659437,
+   "bitrate_kbps_p90": 236.9480934782935,
+   "psnr_db_mean": 30.914981898826362,
+   "psnr_db_sd": 1.953137573014884,
+   "psnr_n_crops": 22400,
+   "ssim_mean": 0.9076329611190113,
+   "ssim_sd": 0.029253925526852877,
+   "keys": {
+    "bitrate": "levels.x40.bitrate_kbps.mean",
+    "psnr": "levels.x40.psnr_db.mean",
+    "ssim": "levels.x40.ssim.mean"
+   }
+  }
+ ],
+ "per_set": {
+  "c18": {
+   "real": {
+    "level": "c18",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 1558.4530987756448,
+    "bitrate_kbps_median": 955.8062208916292,
+    "bitrate_kbps_p10": 592.1924330336507,
+    "bitrate_kbps_p90": 3388.9788413750757,
+    "psnr_db_mean": 41.470372202729756,
+    "psnr_db_sd": 0.9078730622575868,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9889699939589585,
+    "ssim_sd": 0.0026046686847232547,
+    "keys": {
+     "bitrate": "levels.c18.per_set.real.bitrate_kbps.mean",
+     "psnr": "levels.c18.per_set.real.psnr_db.mean",
+     "ssim": "levels.c18.per_set.real.ssim.mean"
+    }
+   },
+   "Deepfakes": {
+    "level": "c18",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 1605.9827600949375,
+    "bitrate_kbps_median": 953.2345001582678,
+    "bitrate_kbps_p10": 597.4088367269985,
+    "bitrate_kbps_p90": 3547.3596890776194,
+    "psnr_db_mean": 41.26987520594261,
+    "psnr_db_sd": 0.9032695572000531,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9889180594421705,
+    "ssim_sd": 0.002511129747265277,
+    "keys": {
+     "bitrate": "levels.c18.per_set.Deepfakes.bitrate_kbps.mean",
+     "psnr": "levels.c18.per_set.Deepfakes.psnr_db.mean",
+     "ssim": "levels.c18.per_set.Deepfakes.ssim.mean"
+    }
+   },
+   "Face2Face": {
+    "level": "c18",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 1591.1905521229212,
+    "bitrate_kbps_median": 977.433674072691,
+    "bitrate_kbps_p10": 604.277614837486,
+    "bitrate_kbps_p90": 3458.9386412187146,
+    "psnr_db_mean": 41.15455289601327,
+    "psnr_db_sd": 1.0205962953692889,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9890767686907355,
+    "ssim_sd": 0.0027067658592107987,
+    "keys": {
+     "bitrate": "levels.c18.per_set.Face2Face.bitrate_kbps.mean",
+     "psnr": "levels.c18.per_set.Face2Face.psnr_db.mean",
+     "ssim": "levels.c18.per_set.Face2Face.ssim.mean"
+    }
+   },
+   "FaceSwap": {
+    "level": "c18",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 1673.0614100789307,
+    "bitrate_kbps_median": 995.0962972434119,
+    "bitrate_kbps_p10": 633.3893109404373,
+    "bitrate_kbps_p90": 3641.9505269457622,
+    "psnr_db_mean": 40.658316430780374,
+    "psnr_db_sd": 0.9442963877937312,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9860335478054133,
+    "ssim_sd": 0.003428682334944748,
+    "keys": {
+     "bitrate": "levels.c18.per_set.FaceSwap.bitrate_kbps.mean",
+     "psnr": "levels.c18.per_set.FaceSwap.psnr_db.mean",
+     "ssim": "levels.c18.per_set.FaceSwap.ssim.mean"
+    }
+   },
+   "NeuralTextures": {
+    "level": "c18",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 1582.5045902344827,
+    "bitrate_kbps_median": 963.1405001830041,
+    "bitrate_kbps_p10": 581.4851239200765,
+    "bitrate_kbps_p90": 3503.4373336083363,
+    "psnr_db_mean": 41.300135018535194,
+    "psnr_db_sd": 0.9722895375105775,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9896343144686617,
+    "ssim_sd": 0.002378419473337226,
+    "keys": {
+     "bitrate": "levels.c18.per_set.NeuralTextures.bitrate_kbps.mean",
+     "psnr": "levels.c18.per_set.NeuralTextures.psnr_db.mean",
+     "ssim": "levels.c18.per_set.NeuralTextures.ssim.mean"
+    }
+   }
+  },
+  "c23_official": {
+   "real": {
+    "level": "c23_official",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 874.9391529055807,
+    "bitrate_kbps_median": 558.2288420462473,
+    "bitrate_kbps_p10": 319.458143340548,
+    "bitrate_kbps_p90": 1961.4862079243917,
+    "psnr_db_mean": 39.914262541252164,
+    "psnr_db_sd": 1.7014687890741698,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9828840957763281,
+    "ssim_sd": 0.0051128100857584305,
+    "keys": {
+     "bitrate": "levels.c23_official.per_set.real.bitrate_kbps.mean",
+     "psnr": "levels.c23_official.per_set.real.psnr_db.mean",
+     "ssim": "levels.c23_official.per_set.real.ssim.mean"
+    }
+   },
+   "Deepfakes": {
+    "level": "c23_official",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 901.7126862053422,
+    "bitrate_kbps_median": 561.5254920691484,
+    "bitrate_kbps_p10": 317.98468453014976,
+    "bitrate_kbps_p90": 2007.6053382014036,
+    "psnr_db_mean": 40.028314497588994,
+    "psnr_db_sd": 1.616066178159682,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.983452682751537,
+    "ssim_sd": 0.004643799804865259,
+    "keys": {
+     "bitrate": "levels.c23_official.per_set.Deepfakes.bitrate_kbps.mean",
+     "psnr": "levels.c23_official.per_set.Deepfakes.psnr_db.mean",
+     "ssim": "levels.c23_official.per_set.Deepfakes.ssim.mean"
+    }
+   },
+   "Face2Face": {
+    "level": "c23_official",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 876.6598474377641,
+    "bitrate_kbps_median": 533.7700837975757,
+    "bitrate_kbps_p10": 304.6404112115192,
+    "bitrate_kbps_p90": 1948.2764349004694,
+    "psnr_db_mean": 39.99401536585526,
+    "psnr_db_sd": 1.673016879673789,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9833388246885382,
+    "ssim_sd": 0.0050720111066946995,
+    "keys": {
+     "bitrate": "levels.c23_official.per_set.Face2Face.bitrate_kbps.mean",
+     "psnr": "levels.c23_official.per_set.Face2Face.psnr_db.mean",
+     "ssim": "levels.c23_official.per_set.Face2Face.ssim.mean"
+    }
+   },
+   "FaceSwap": {
+    "level": "c23_official",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 922.8280837007475,
+    "bitrate_kbps_median": 566.8816513906936,
+    "bitrate_kbps_p10": 328.84953320885563,
+    "bitrate_kbps_p90": 2061.09152346407,
+    "psnr_db_mean": 39.11507694463314,
+    "psnr_db_sd": 1.6516230440267423,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9785946098454752,
+    "ssim_sd": 0.006321749244840998,
+    "keys": {
+     "bitrate": "levels.c23_official.per_set.FaceSwap.bitrate_kbps.mean",
+     "psnr": "levels.c23_official.per_set.FaceSwap.psnr_db.mean",
+     "ssim": "levels.c23_official.per_set.FaceSwap.ssim.mean"
+    }
+   },
+   "NeuralTextures": {
+    "level": "c23_official",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 850.7081906322036,
+    "bitrate_kbps_median": 532.6300554785021,
+    "bitrate_kbps_p10": 307.59776367336065,
+    "bitrate_kbps_p90": 1878.9553187684305,
+    "psnr_db_mean": 40.362737163434986,
+    "psnr_db_sd": 1.666492587074781,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.984972216745526,
+    "ssim_sd": 0.004505697544542859,
+    "keys": {
+     "bitrate": "levels.c23_official.per_set.NeuralTextures.bitrate_kbps.mean",
+     "psnr": "levels.c23_official.per_set.NeuralTextures.psnr_db.mean",
+     "ssim": "levels.c23_official.per_set.NeuralTextures.ssim.mean"
+    }
+   }
+  },
+  "x23": {
+   "real": {
+    "level": "x23",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 878.4119405152453,
+    "bitrate_kbps_median": 543.5374505684626,
+    "bitrate_kbps_p10": 319.56718223045686,
+    "bitrate_kbps_p90": 1929.4381441063479,
+    "psnr_db_mean": 39.59775536074533,
+    "psnr_db_sd": 1.2808558621252792,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.98274980759481,
+    "ssim_sd": 0.004841526285917721,
+    "keys": {
+     "bitrate": "levels.x23.per_set.real.bitrate_kbps.mean",
+     "psnr": "levels.x23.per_set.real.psnr_db.mean",
+     "ssim": "levels.x23.per_set.real.ssim.mean"
+    }
+   },
+   "Deepfakes": {
+    "level": "x23",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 893.44622733199,
+    "bitrate_kbps_median": 539.7728165494959,
+    "bitrate_kbps_p10": 318.1337403078647,
+    "bitrate_kbps_p90": 2024.2480789011618,
+    "psnr_db_mean": 39.46107677772023,
+    "psnr_db_sd": 1.2233929211143082,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.982958781306475,
+    "ssim_sd": 0.004407108558007055,
+    "keys": {
+     "bitrate": "levels.x23.per_set.Deepfakes.bitrate_kbps.mean",
+     "psnr": "levels.x23.per_set.Deepfakes.psnr_db.mean",
+     "ssim": "levels.x23.per_set.Deepfakes.ssim.mean"
+    }
+   },
+   "Face2Face": {
+    "level": "x23",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 872.0883703892586,
+    "bitrate_kbps_median": 528.8558468695544,
+    "bitrate_kbps_p10": 312.6299895443336,
+    "bitrate_kbps_p90": 1968.825971420032,
+    "psnr_db_mean": 39.36005413379853,
+    "psnr_db_sd": 1.3282648888715287,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9828098599273838,
+    "ssim_sd": 0.0048380386630341955,
+    "keys": {
+     "bitrate": "levels.x23.per_set.Face2Face.bitrate_kbps.mean",
+     "psnr": "levels.x23.per_set.Face2Face.psnr_db.mean",
+     "ssim": "levels.x23.per_set.Face2Face.ssim.mean"
+    }
+   },
+   "FaceSwap": {
+    "level": "x23",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 915.1129148365793,
+    "bitrate_kbps_median": 550.230982642124,
+    "bitrate_kbps_p10": 328.0586013363029,
+    "bitrate_kbps_p90": 2098.0276561032365,
+    "psnr_db_mean": 38.68231821822083,
+    "psnr_db_sd": 1.288899653193605,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.978163650923195,
+    "ssim_sd": 0.005980803866759816,
+    "keys": {
+     "bitrate": "levels.x23.per_set.FaceSwap.bitrate_kbps.mean",
+     "psnr": "levels.x23.per_set.FaceSwap.psnr_db.mean",
+     "ssim": "levels.x23.per_set.FaceSwap.ssim.mean"
+    }
+   },
+   "NeuralTextures": {
+    "level": "x23",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 849.8758876934945,
+    "bitrate_kbps_median": 519.029101074896,
+    "bitrate_kbps_p10": 304.17355968970963,
+    "bitrate_kbps_p90": 1945.2335775075862,
+    "psnr_db_mean": 39.62825322376667,
+    "psnr_db_sd": 1.2861536325063272,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9843560895821174,
+    "ssim_sd": 0.004232981060722468,
+    "keys": {
+     "bitrate": "levels.x23.per_set.NeuralTextures.bitrate_kbps.mean",
+     "psnr": "levels.x23.per_set.NeuralTextures.psnr_db.mean",
+     "ssim": "levels.x23.per_set.NeuralTextures.ssim.mean"
+    }
+   }
+  },
+  "c28": {
+   "real": {
+    "level": "c28",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 461.6612116740656,
+    "bitrate_kbps_median": 304.98861688958925,
+    "bitrate_kbps_p10": 163.00547492349742,
+    "bitrate_kbps_p90": 1040.2798825248358,
+    "psnr_db_mean": 37.2283034480012,
+    "psnr_db_sd": 1.613935450419666,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9713778153683874,
+    "ssim_sd": 0.008942345320695754,
+    "keys": {
+     "bitrate": "levels.c28.per_set.real.bitrate_kbps.mean",
+     "psnr": "levels.c28.per_set.real.psnr_db.mean",
+     "ssim": "levels.c28.per_set.real.ssim.mean"
+    }
+   },
+   "Deepfakes": {
+    "level": "c28",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 466.3836281385651,
+    "bitrate_kbps_median": 303.3359294154877,
+    "bitrate_kbps_p10": 161.8973586862576,
+    "bitrate_kbps_p90": 1092.439245863436,
+    "psnr_db_mean": 37.1981618817671,
+    "psnr_db_sd": 1.5202865352712664,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9722809554952652,
+    "ssim_sd": 0.00794047939624801,
+    "keys": {
+     "bitrate": "levels.c28.per_set.Deepfakes.bitrate_kbps.mean",
+     "psnr": "levels.c28.per_set.Deepfakes.psnr_db.mean",
+     "ssim": "levels.c28.per_set.Deepfakes.ssim.mean"
+    }
+   },
+   "Face2Face": {
+    "level": "c28",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 450.70359014348924,
+    "bitrate_kbps_median": 282.52070982556495,
+    "bitrate_kbps_p10": 154.7541497200525,
+    "bitrate_kbps_p90": 1022.0355017376996,
+    "psnr_db_mean": 37.16955142310542,
+    "psnr_db_sd": 1.5993276802657848,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9718715080510455,
+    "ssim_sd": 0.008589273319062153,
+    "keys": {
+     "bitrate": "levels.c28.per_set.Face2Face.bitrate_kbps.mean",
+     "psnr": "levels.c28.per_set.Face2Face.psnr_db.mean",
+     "ssim": "levels.c28.per_set.Face2Face.ssim.mean"
+    }
+   },
+   "FaceSwap": {
+    "level": "c28",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 472.256251599799,
+    "bitrate_kbps_median": 301.3203500680304,
+    "bitrate_kbps_p10": 163.788042940358,
+    "bitrate_kbps_p90": 1082.7055801813708,
+    "psnr_db_mean": 36.41767258837721,
+    "psnr_db_sd": 1.5557989511135633,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9652409778133794,
+    "ssim_sd": 0.010062072542255466,
+    "keys": {
+     "bitrate": "levels.c28.per_set.FaceSwap.bitrate_kbps.mean",
+     "psnr": "levels.c28.per_set.FaceSwap.psnr_db.mean",
+     "ssim": "levels.c28.per_set.FaceSwap.ssim.mean"
+    }
+   },
+   "NeuralTextures": {
+    "level": "c28",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 434.87077629614265,
+    "bitrate_kbps_median": 278.0488522884882,
+    "bitrate_kbps_p10": 148.55806100665262,
+    "bitrate_kbps_p90": 971.2677734999613,
+    "psnr_db_mean": 37.50676152257732,
+    "psnr_db_sd": 1.5822563564285181,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9748710993157348,
+    "ssim_sd": 0.007692335764988952,
+    "keys": {
+     "bitrate": "levels.c28.per_set.NeuralTextures.bitrate_kbps.mean",
+     "psnr": "levels.c28.per_set.NeuralTextures.psnr_db.mean",
+     "ssim": "levels.c28.per_set.NeuralTextures.ssim.mean"
+    }
+   }
+  },
+  "c32": {
+   "real": {
+    "level": "c32",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 273.01388388692936,
+    "bitrate_kbps_median": 185.1106206229851,
+    "bitrate_kbps_p10": 96.85324693941672,
+    "bitrate_kbps_p90": 640.721310532714,
+    "psnr_db_mean": 35.222020540763396,
+    "psnr_db_sd": 1.8135193315160767,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9568860911756991,
+    "ssim_sd": 0.014140171829384854,
+    "keys": {
+     "bitrate": "levels.c32.per_set.real.bitrate_kbps.mean",
+     "psnr": "levels.c32.per_set.real.psnr_db.mean",
+     "ssim": "levels.c32.per_set.real.ssim.mean"
+    }
+   },
+   "Deepfakes": {
+    "level": "c32",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 275.2538275157987,
+    "bitrate_kbps_median": 184.14422918607752,
+    "bitrate_kbps_p10": 95.86692848050991,
+    "bitrate_kbps_p90": 665.0914740426854,
+    "psnr_db_mean": 35.23254965074976,
+    "psnr_db_sd": 1.7006540548887472,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9585499214026055,
+    "ssim_sd": 0.01237296758175868,
+    "keys": {
+     "bitrate": "levels.c32.per_set.Deepfakes.bitrate_kbps.mean",
+     "psnr": "levels.c32.per_set.Deepfakes.psnr_db.mean",
+     "ssim": "levels.c32.per_set.Deepfakes.ssim.mean"
+    }
+   },
+   "Face2Face": {
+    "level": "c32",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 265.5624862262664,
+    "bitrate_kbps_median": 169.85459760703915,
+    "bitrate_kbps_p10": 90.82964179778665,
+    "bitrate_kbps_p90": 613.2989239151999,
+    "psnr_db_mean": 35.2555367111695,
+    "psnr_db_sd": 1.7651123134304572,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.957930644727784,
+    "ssim_sd": 0.013404813495255859,
+    "keys": {
+     "bitrate": "levels.c32.per_set.Face2Face.bitrate_kbps.mean",
+     "psnr": "levels.c32.per_set.Face2Face.psnr_db.mean",
+     "ssim": "levels.c32.per_set.Face2Face.ssim.mean"
+    }
+   },
+   "FaceSwap": {
+    "level": "c32",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 277.6596450669161,
+    "bitrate_kbps_median": 185.4080164319249,
+    "bitrate_kbps_p10": 98.45179732257837,
+    "bitrate_kbps_p90": 642.9342517510522,
+    "psnr_db_mean": 34.523309798929326,
+    "psnr_db_sd": 1.698569867901715,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9495567240920776,
+    "ssim_sd": 0.014858920019830383,
+    "keys": {
+     "bitrate": "levels.c32.per_set.FaceSwap.bitrate_kbps.mean",
+     "psnr": "levels.c32.per_set.FaceSwap.psnr_db.mean",
+     "ssim": "levels.c32.per_set.FaceSwap.ssim.mean"
+    }
+   },
+   "NeuralTextures": {
+    "level": "c32",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 257.01755984832886,
+    "bitrate_kbps_median": 170.52926579086636,
+    "bitrate_kbps_p10": 90.84608131063379,
+    "bitrate_kbps_p90": 568.2400715208106,
+    "psnr_db_mean": 35.58253414348799,
+    "psnr_db_sd": 1.7585686074141793,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9623285292495999,
+    "ssim_sd": 0.01218080526202653,
+    "keys": {
+     "bitrate": "levels.c32.per_set.NeuralTextures.bitrate_kbps.mean",
+     "psnr": "levels.c32.per_set.NeuralTextures.psnr_db.mean",
+     "ssim": "levels.c32.per_set.NeuralTextures.ssim.mean"
+    }
+   }
+  },
+  "c36": {
+   "real": {
+    "level": "c36",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 169.57174323476642,
+    "bitrate_kbps_median": 117.72180326823218,
+    "bitrate_kbps_p10": 61.720409924701244,
+    "bitrate_kbps_p90": 376.03555791577026,
+    "psnr_db_mean": 33.1060963445109,
+    "psnr_db_sd": 1.9585456056893613,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.935735130108206,
+    "ssim_sd": 0.021394845840851752,
+    "keys": {
+     "bitrate": "levels.c36.per_set.real.bitrate_kbps.mean",
+     "psnr": "levels.c36.per_set.real.psnr_db.mean",
+     "ssim": "levels.c36.per_set.real.ssim.mean"
+    }
+   },
+   "Deepfakes": {
+    "level": "c36",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 170.1944374852883,
+    "bitrate_kbps_median": 117.34452881647799,
+    "bitrate_kbps_p10": 60.923180840898226,
+    "bitrate_kbps_p90": 397.22305774233416,
+    "psnr_db_mean": 33.13896052539776,
+    "psnr_db_sd": 1.8196204501715303,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9383084400768934,
+    "ssim_sd": 0.0187168048339455,
+    "keys": {
+     "bitrate": "levels.c36.per_set.Deepfakes.bitrate_kbps.mean",
+     "psnr": "levels.c36.per_set.Deepfakes.psnr_db.mean",
+     "ssim": "levels.c36.per_set.Deepfakes.ssim.mean"
+    }
+   },
+   "Face2Face": {
+    "level": "c36",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 164.88853075615037,
+    "bitrate_kbps_median": 113.01863077953175,
+    "bitrate_kbps_p10": 58.6106180292098,
+    "bitrate_kbps_p90": 361.20338326782,
+    "psnr_db_mean": 33.19915124193803,
+    "psnr_db_sd": 1.8778048900436246,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.937749966221345,
+    "ssim_sd": 0.02006325807045109,
+    "keys": {
+     "bitrate": "levels.c36.per_set.Face2Face.bitrate_kbps.mean",
+     "psnr": "levels.c36.per_set.Face2Face.psnr_db.mean",
+     "ssim": "levels.c36.per_set.Face2Face.ssim.mean"
+    }
+   },
+   "FaceSwap": {
+    "level": "c36",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 171.59360397442583,
+    "bitrate_kbps_median": 116.36401009130226,
+    "bitrate_kbps_p10": 60.97857066294059,
+    "bitrate_kbps_p90": 387.17091880132125,
+    "psnr_db_mean": 32.50606306463432,
+    "psnr_db_sd": 1.8008985340843071,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9271017746805336,
+    "ssim_sd": 0.021530867325667287,
+    "keys": {
+     "bitrate": "levels.c36.per_set.FaceSwap.bitrate_kbps.mean",
+     "psnr": "levels.c36.per_set.FaceSwap.psnr_db.mean",
+     "ssim": "levels.c36.per_set.FaceSwap.ssim.mean"
+    }
+   },
+   "NeuralTextures": {
+    "level": "c36",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 160.526383979965,
+    "bitrate_kbps_median": 111.61670649868142,
+    "bitrate_kbps_p10": 59.12314847348836,
+    "bitrate_kbps_p90": 354.5180230231771,
+    "psnr_db_mean": 33.49485081830011,
+    "psnr_db_sd": 1.8785311242878784,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9436874784841925,
+    "ssim_sd": 0.018504863290176195,
+    "keys": {
+     "bitrate": "levels.c36.per_set.NeuralTextures.bitrate_kbps.mean",
+     "psnr": "levels.c36.per_set.NeuralTextures.psnr_db.mean",
+     "ssim": "levels.c36.per_set.NeuralTextures.ssim.mean"
+    }
+   }
+  },
+  "c40_official": {
+   "real": {
+    "level": "c40_official",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 113.06848393570688,
+    "bitrate_kbps_median": 80.75408491322221,
+    "bitrate_kbps_p10": 42.7860426595876,
+    "bitrate_kbps_p90": 241.64469515067117,
+    "psnr_db_mean": 30.526619449475312,
+    "psnr_db_sd": 2.1122541256093195,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9033165395428854,
+    "ssim_sd": 0.03120278344040827,
+    "keys": {
+     "bitrate": "levels.c40_official.per_set.real.bitrate_kbps.mean",
+     "psnr": "levels.c40_official.per_set.real.psnr_db.mean",
+     "ssim": "levels.c40_official.per_set.real.ssim.mean"
+    }
+   },
+   "Deepfakes": {
+    "level": "c40_official",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 114.26868544578603,
+    "bitrate_kbps_median": 79.90140008613525,
+    "bitrate_kbps_p10": 42.52740527345441,
+    "bitrate_kbps_p90": 254.93593391176464,
+    "psnr_db_mean": 30.807197828218406,
+    "psnr_db_sd": 1.8967739713604308,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9086786071666753,
+    "ssim_sd": 0.0271916258415787,
+    "keys": {
+     "bitrate": "levels.c40_official.per_set.Deepfakes.bitrate_kbps.mean",
+     "psnr": "levels.c40_official.per_set.Deepfakes.psnr_db.mean",
+     "ssim": "levels.c40_official.per_set.Deepfakes.ssim.mean"
+    }
+   },
+   "Face2Face": {
+    "level": "c40_official",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 111.64821885745907,
+    "bitrate_kbps_median": 78.55247934963279,
+    "bitrate_kbps_p10": 40.749441997396545,
+    "bitrate_kbps_p90": 234.2151202749142,
+    "psnr_db_mean": 30.842977824908992,
+    "psnr_db_sd": 1.9336953759994084,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9082736526980093,
+    "ssim_sd": 0.02927311544914083,
+    "keys": {
+     "bitrate": "levels.c40_official.per_set.Face2Face.bitrate_kbps.mean",
+     "psnr": "levels.c40_official.per_set.Face2Face.psnr_db.mean",
+     "ssim": "levels.c40_official.per_set.Face2Face.ssim.mean"
+    }
+   },
+   "FaceSwap": {
+    "level": "c40_official",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 115.33193367013914,
+    "bitrate_kbps_median": 80.19642217006367,
+    "bitrate_kbps_p10": 42.322503393994914,
+    "bitrate_kbps_p90": 252.87265957706012,
+    "psnr_db_mean": 30.24710472400406,
+    "psnr_db_sd": 1.8630566952790233,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.8951150444675906,
+    "ssim_sd": 0.03020040675911592,
+    "keys": {
+     "bitrate": "levels.c40_official.per_set.FaceSwap.bitrate_kbps.mean",
+     "psnr": "levels.c40_official.per_set.FaceSwap.psnr_db.mean",
+     "ssim": "levels.c40_official.per_set.FaceSwap.ssim.mean"
+    }
+   },
+   "NeuralTextures": {
+    "level": "c40_official",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 109.84011206711644,
+    "bitrate_kbps_median": 79.16730817388715,
+    "bitrate_kbps_p10": 41.67935103216607,
+    "bitrate_kbps_p90": 229.38794610345767,
+    "psnr_db_mean": 31.075363163876013,
+    "psnr_db_sd": 1.9469931071413755,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9154170946309598,
+    "ssim_sd": 0.027205746283470437,
+    "keys": {
+     "bitrate": "levels.c40_official.per_set.NeuralTextures.bitrate_kbps.mean",
+     "psnr": "levels.c40_official.per_set.NeuralTextures.psnr_db.mean",
+     "ssim": "levels.c40_official.per_set.NeuralTextures.ssim.mean"
+    }
+   }
+  },
+  "x40": {
+   "real": {
+    "level": "x40",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 110.21262986404093,
+    "bitrate_kbps_median": 77.4759497208425,
+    "bitrate_kbps_p10": 41.79367469399768,
+    "bitrate_kbps_p90": 239.6783045711071,
+    "psnr_db_mean": 30.89287669128579,
+    "psnr_db_sd": 2.046777362361734,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9060195678066708,
+    "ssim_sd": 0.030535131690208245,
+    "keys": {
+     "bitrate": "levels.x40.per_set.real.bitrate_kbps.mean",
+     "psnr": "levels.x40.per_set.real.psnr_db.mean",
+     "ssim": "levels.x40.per_set.real.ssim.mean"
+    }
+   },
+   "Deepfakes": {
+    "level": "x40",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 109.89917148477959,
+    "bitrate_kbps_median": 76.78299560999022,
+    "bitrate_kbps_p10": 40.99503735402418,
+    "bitrate_kbps_p90": 239.74626115795246,
+    "psnr_db_mean": 30.9615845239214,
+    "psnr_db_sd": 1.8762331699936254,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9097763239060687,
+    "ssim_sd": 0.026741029972907178,
+    "keys": {
+     "bitrate": "levels.x40.per_set.Deepfakes.bitrate_kbps.mean",
+     "psnr": "levels.x40.per_set.Deepfakes.psnr_db.mean",
+     "ssim": "levels.x40.per_set.Deepfakes.ssim.mean"
+    }
+   },
+   "Face2Face": {
+    "level": "x40",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 107.23015144980657,
+    "bitrate_kbps_median": 75.6043185904351,
+    "bitrate_kbps_p10": 39.166589240083795,
+    "bitrate_kbps_p90": 229.00356859990453,
+    "psnr_db_mean": 31.04321837445624,
+    "psnr_db_sd": 1.9382495592444935,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9094969568742692,
+    "ssim_sd": 0.028589336565943514,
+    "keys": {
+     "bitrate": "levels.x40.per_set.Face2Face.bitrate_kbps.mean",
+     "psnr": "levels.x40.per_set.Face2Face.psnr_db.mean",
+     "ssim": "levels.x40.per_set.Face2Face.ssim.mean"
+    }
+   },
+   "FaceSwap": {
+    "level": "x40",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 110.90058833957531,
+    "bitrate_kbps_median": 77.90335022276622,
+    "bitrate_kbps_p10": 40.27711472020979,
+    "bitrate_kbps_p90": 239.97339870056368,
+    "psnr_db_mean": 30.389725708522786,
+    "psnr_db_sd": 1.8460169114566523,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.8962520256397025,
+    "ssim_sd": 0.02966162983471553,
+    "keys": {
+     "bitrate": "levels.x40.per_set.FaceSwap.bitrate_kbps.mean",
+     "psnr": "levels.x40.per_set.FaceSwap.psnr_db.mean",
+     "ssim": "levels.x40.per_set.FaceSwap.ssim.mean"
+    }
+   },
+   "NeuralTextures": {
+    "level": "x40",
+    "source": null,
+    "crf": null,
+    "n_videos": 140,
+    "bitrate_kbps_mean": 105.13620550930857,
+    "bitrate_kbps_median": 74.6776790190984,
+    "bitrate_kbps_p10": 39.83365263329154,
+    "bitrate_kbps_p90": 223.5673372317994,
+    "psnr_db_mean": 31.287504195945623,
+    "psnr_db_sd": 1.9414251459903256,
+    "psnr_n_crops": 4480,
+    "ssim_mean": 0.9166199313683452,
+    "ssim_sd": 0.02672215338240155,
+    "keys": {
+     "bitrate": "levels.x40.per_set.NeuralTextures.bitrate_kbps.mean",
+     "psnr": "levels.x40.per_set.NeuralTextures.psnr_db.mean",
+     "ssim": "levels.x40.per_set.NeuralTextures.ssim.mean"
+    }
+   }
+  }
+ },
+ "latex_rows": [
+  "c18 & ours (libx264) & 18 & 1602 [964] & 41.17 $\\pm$ 0.99 & 0.9885 $\\pm$ 0.0030 \\\\",
+  "c23 (distributed) & FF++ distributed & as distributed & 885 [554] & 39.88 $\\pm$ 1.71 & 0.9826 $\\pm$ 0.0056 \\\\",
+  "x23 (ours) & ours (libx264) & 23 & 882 [540] & 39.35 $\\pm$ 1.33 & 0.9822 $\\pm$ 0.0053 \\\\",
+  "c28 & ours (libx264) & 28 & 457 [290] & 37.10 $\\pm$ 1.62 & 0.9711 $\\pm$ 0.0092 \\\\",
+  "c32 & ours (libx264) & 32 & 270 [179] & 35.16 $\\pm$ 1.78 & 0.9571 $\\pm$ 0.0141 \\\\",
+  "c36 & ours (libx264) & 36 & 167 [115] & 33.09 $\\pm$ 1.90 & 0.9365 $\\pm$ 0.0208 \\\\",
+  "c40 (distributed) & FF++ distributed & as distributed & 113 [79] & 30.70 $\\pm$ 1.97 & 0.9062 $\\pm$ 0.0298 \\\\",
+  "x40 (ours) & ours (libx264) & 40 & 109 [76] & 30.91 $\\pm$ 1.95 & 0.9076 $\\pm$ 0.0293 \\\\"
+ ]
+}

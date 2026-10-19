@@ -17,7 +17,7 @@ augmentation-matched spatial control, **SpatialBase** in the paper),
 **TrunkCtrl**), `F1`/`f1_none_fair_*` (**Fair-N**) and
 `F2`/`f2_spatres_full_*` (**Fair-W**) — the two fair frequency re-tests.
 All of them appear in `configs/RUNS.md` with their launch commands, and in
-Table 1 of the paper. The identifiers are left as the frozen text wrote
+Table S28 of the paper's Supplementary Material. The identifiers are left as the frozen text wrote
 them. They also cross-reference source files and internal
 analysis documents that are not part of this release; those references are
 left intact rather than rewritten, because the point of the excerpt is what

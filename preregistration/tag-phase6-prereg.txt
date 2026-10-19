@@ -1,0 +1,51 @@
+$ git show --stat phase6-prereg
+
+tag phase6-prereg
+Tagger: Abbas Aliyev <alievabbas1@gmail.com>
+Date:   Sun Oct 11 12:20:18 2026 +0000
+
+Phase 6 pre-registration approved at C1 (2026-10-11)
+
+commit 40e6b1bf80a6636cc19235ec28dfb13571984532
+Author: Abbas Aliyev <alievabbas1@gmail.com>
+Date:   Sun Oct 11 12:19:35 2026 +0000
+
+    docs(exp3): W7-P — apply the C1 ruling: official JPEG targets, prereg approved (verifier: PASS-with-notes)
+    
+    At C1 on 2026-10-11 the user approved the W0 pre-registration and all of its
+    recommendations (decision "C1: the W0 pre-registration and all its
+    recommendations are approved"). Only one registered default flips: the
+    c23/c40 JPEG targets move to the official encodes (QF c23 60, c40 10).
+    
+    - Run plan step 0b: jpeg_calibration.official-targets.json was copied over
+      jpeg_calibration.json. The new sha256 is a7286bbd…2ec19; it was f14c3b9c…8fbc2,
+      which stays visible as history.
+    - PREREGISTRATION-R1.md: the status is approved. The header Machinery row,
+      §1, §13 (a new column records each row's outcome at C1), §15 (the JPEG
+      switch is closed), and dated notes that every "pending C1" marker is resolved.
+    - phase6.md: the Gate A hash, step 0b marked done, Amendment 14.
+    - test_real_alternative_file now pins the copied file (bytes, sha256, the QFs,
+      derived_from = the old hash). It fails against the old file by construction
+      (lesson W0-5), so it is updated in this same pre-tag commit.
+    
+    No pinned code, launcher or config changed: the Machinery table matches 12/12.
+    test_phase6*: 415 passed. The dry run lists 23 pending. Frozen artifacts: 58/58.
+    Verifier: PASS-with-notes, 4 NITs (steps/W7-P.verifier.md).
+    This commit is the target for tag phase6-prereg; the session agent creates the tag.
+    
+
+ experiments/exp3-cafrl/docs/phases/phase6.md       |  19 ++-
+ .../runs/phase6_build/PREREGISTRATION-R1.md        |  88 +++++++-----
+ .../exp3-cafrl/runs/phase6_build/journal.md        |  14 ++
+ .../runs/phase6_build/jpeg_calibration.json        |  59 ++++++--
+ .../runs/phase6_build/steps/W7-P.builder.brief.md  | 148 +++++++++++++++++++++
+ .../runs/phase6_build/steps/W7-P.builder.md        | 123 +++++++++++++++++
+ .../runs/phase6_build/steps/W7-P.ledger.md         |  10 ++
+ .../exp3-cafrl/runs/phase6_build/steps/W7-P.md     |  46 +++++++
+ .../runs/phase6_build/steps/W7-P.verifier.brief.md | 115 ++++++++++++++++
+ .../runs/phase6_build/steps/W7-P.verifier.md       | 104 +++++++++++++++
+ .../runs/phase6_build/steps/W7-_common.md          |  61 +++++++++
+ .../src/tests/test_phase6_jpeg_official_targets.py |  36 ++---
+ 12 files changed, 761 insertions(+), 62 deletions(-)
+
+[2 tooling trailer line(s) removed from the quoted commit message by the release build; commit hash, dates, author, subject, body and diffstat are unmodified.]

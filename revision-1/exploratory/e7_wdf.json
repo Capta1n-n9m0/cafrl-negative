@@ -1,0 +1,1817 @@
+{
+ "header": "Exploratory / descriptive, not registered (prereg §11)",
+ "block": "e7_wdf",
+ "created_utc": "2026-10-14T17:36:57+00:00",
+ "plan": "docs/phases/phase6-w5-plan.md (commit e278d6e)",
+ "estimands": {
+  "primary": "mean over seeds of per-seed video AUC",
+  "ensemble": "AUC of the per-video mean score over seeds (secondary)"
+ },
+ "b": 10000,
+ "rng_seed": 0,
+ "interval": "95 % percentile (phase6_stats._ci); point = un-resampled; no p-value",
+ "cluster_rule": "WildDeepfake: the tar id (real and fake tar with the same id share a cluster)",
+ "checks": [
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/r1_fairn_grl_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/r1_fairn_grl_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/r1_fairn_grl_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/f1_none_fair_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/f1_none_fair_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/f1_none_fair_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/b7_effnet_b0_mq_fliponly.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/b7_effnet_b0_mq_fliponly_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/b7_effnet_b0_mq_fliponly_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/r1_sb_noc40_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/r1_sb_noc40_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/r1_sb_noc40_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/r1_sb_c23only_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/r1_sb_c23only_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/r1_sb_c23only_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/r1_sb_jpeg_all_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/r1_sb_jpeg_all_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/r1_sb_jpeg_all_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/r1_sb_jpeg_noc40_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/r1_sb_jpeg_noc40_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/r1_sb_jpeg_noc40_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/r1_sb_noc36c40_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/r1_sb_noc36c40_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/r1_sb_noc36c40_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/f2_spatres_full_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/f2_spatres_full_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/f2_spatres_full_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/trunk_recipe_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/trunk_recipe_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/trunk_recipe_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/a0.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/a1_grl_s1.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/a1_grl_s2.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/a1_none_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/cafrl_spatres_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/b1_xception_lit.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/b1_xception_lit_fliponly.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/b2_f3net_lit.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/b2_f3net_lit_fliponly.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/b3_freqnet_lit.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/b4_xception_mq.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/b4b_xception_mq_fliponly.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/b5_f3net_mq.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/b6_freqnet_mq.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/p2a_xcep_jpeg.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/r1_abl_curriculum_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/r1_abl_lrbb_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/r1_abl_lrfreq_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/r1_abl_aux_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  },
+  {
+   "argv": [
+    "external",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/preds/r1_abl_ep50_s42.json",
+    "--manifest",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/crops_manifest.tsv",
+    "--exclusions",
+    "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv"
+   ],
+   "ok": true
+  }
+ ],
+ "weights": {
+  "A1": "ema",
+  "A2": "ema",
+  "A3": "raw",
+  "A4": "raw",
+  "A5": "raw",
+  "A6": "raw",
+  "A7": "raw",
+  "A8": "raw",
+  "A9": "ema",
+  "A10": "raw",
+  "A11": "ema",
+  "A12": "ema",
+  "A13": "ema",
+  "A14": "raw",
+  "A15": "raw",
+  "A16": "raw",
+  "A17": "raw",
+  "A18": "raw",
+  "A19": "raw",
+  "A20": "raw",
+  "A21": "raw",
+  "A22": "raw",
+  "A23": "raw",
+  "A24": "ema",
+  "A25": "ema",
+  "A26": "ema",
+  "A27": "ema",
+  "A28": "ema"
+ },
+ "selection": "best.pt",
+ "missing_runs": [],
+ "missing_arms": [],
+ "exclusions": {
+  "cells": {
+   "wdf": {
+    "file": "runs/phase6_build/w5/e7_wdf/exclusions.tsv",
+    "level": null,
+    "n": 0,
+    "by_class_reason": {},
+    "data_manifest": "runs/phase6_build/w5/e7_wdf/data_manifest.json",
+    "data_manifest_counts": {
+     "counts": {
+      "fake": {
+       "attempted": 410,
+       "excluded": {},
+       "extracted": 410,
+       "n_crops": 13120
+      },
+      "real": {
+       "attempted": 396,
+       "excluded": {},
+       "extracted": 396,
+       "n_crops": 12644
+      }
+     },
+     "exclusion_rules": {
+      "no face": "no frame with a detection",
+      "unreadable": "no frame readable by cv2.imread"
+     },
+     "exclusions": {
+      "n_rows": 0,
+      "path": "${RUNS_ROOT}/phase6_build/w5/e7_wdf/exclusions.tsv",
+      "sha256": "882c9f02367fd61ac05fcbf2ea4ec57412cf76a999a7829318ed7db7f57bc3ba"
+     }
+    },
+    "by_class": {
+     "real": {
+      "excluded": 0,
+      "attempted": 396,
+      "attempted_source": "data manifest",
+      "fraction": 0.0
+     },
+     "fake": {
+      "excluded": 0,
+      "attempted": 410,
+      "attempted_source": "data manifest",
+      "fraction": 0.0
+     }
+    },
+    "degraded_data": false,
+    "problems": []
+   }
+  },
+  "unused_files": []
+ },
+ "stated_limitation": "Stated limitation (plan §2.2): the clusters are the best available, not true identities: DFDC actors recur across many real videos of a zip and the metadata has no actor id; the WildDeepfake real–fake tar-id link is an assumption. The intervals of these two sets may therefore be too narrow.",
+ "preds_meta": [
+  {
+   "arm": "A1",
+   "run": "r1_fairn_grl_s42",
+   "set": "wdf",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A1",
+   "run": "r1_fairn_grl_s1",
+   "set": "wdf",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A1",
+   "run": "r1_fairn_grl_s2",
+   "set": "wdf",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A2",
+   "run": "f1_none_fair_s42",
+   "set": "wdf",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A2",
+   "run": "f1_none_fair_s1",
+   "set": "wdf",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A2",
+   "run": "f1_none_fair_s2",
+   "set": "wdf",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A3",
+   "run": "b7_effnet_b0_mq_fliponly",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A3",
+   "run": "b7_effnet_b0_mq_fliponly_s1",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A3",
+   "run": "b7_effnet_b0_mq_fliponly_s2",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A4",
+   "run": "r1_sb_noc40_s42",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A4",
+   "run": "r1_sb_noc40_s1",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A4",
+   "run": "r1_sb_noc40_s2",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A5",
+   "run": "r1_sb_c23only_s42",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A5",
+   "run": "r1_sb_c23only_s1",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A5",
+   "run": "r1_sb_c23only_s2",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A6",
+   "run": "r1_sb_jpeg_all_s42",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A6",
+   "run": "r1_sb_jpeg_all_s1",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A6",
+   "run": "r1_sb_jpeg_all_s2",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A7",
+   "run": "r1_sb_jpeg_noc40_s42",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A7",
+   "run": "r1_sb_jpeg_noc40_s1",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A7",
+   "run": "r1_sb_jpeg_noc40_s2",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A8",
+   "run": "r1_sb_noc36c40_s42",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A8",
+   "run": "r1_sb_noc36c40_s1",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A8",
+   "run": "r1_sb_noc36c40_s2",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A9",
+   "run": "f2_spatres_full_s42",
+   "set": "wdf",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A9",
+   "run": "f2_spatres_full_s1",
+   "set": "wdf",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A9",
+   "run": "f2_spatres_full_s2",
+   "set": "wdf",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A10",
+   "run": "trunk_recipe_s42",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A10",
+   "run": "trunk_recipe_s1",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A10",
+   "run": "trunk_recipe_s2",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A11",
+   "run": "a0",
+   "set": "wdf",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A11",
+   "run": "a1_grl_s1",
+   "set": "wdf",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A11",
+   "run": "a1_grl_s2",
+   "set": "wdf",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A12",
+   "run": "a1_none_s42",
+   "set": "wdf",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A13",
+   "run": "cafrl_spatres_s42",
+   "set": "wdf",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A14",
+   "run": "b1_xception_lit",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A15",
+   "run": "b1_xception_lit_fliponly",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A16",
+   "run": "b2_f3net_lit",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A17",
+   "run": "b2_f3net_lit_fliponly",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A18",
+   "run": "b3_freqnet_lit",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A19",
+   "run": "b4_xception_mq",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A20",
+   "run": "b4b_xception_mq_fliponly",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A21",
+   "run": "b5_f3net_mq",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A22",
+   "run": "b6_freqnet_mq",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A23",
+   "run": "p2a_xcep_jpeg",
+   "set": "wdf",
+   "weights": "raw",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A24",
+   "run": "r1_abl_curriculum_s42",
+   "set": "wdf",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A25",
+   "run": "r1_abl_lrbb_s42",
+   "set": "wdf",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A26",
+   "run": "r1_abl_lrfreq_s42",
+   "set": "wdf",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A27",
+   "run": "r1_abl_aux_s42",
+   "set": "wdf",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  },
+  {
+   "arm": "A28",
+   "run": "r1_abl_ep50_s42",
+   "set": "wdf",
+   "weights": "ema",
+   "selection": "best.pt",
+   "manifest_sha256": "d4de2cc5d0ffd4818a9a8c7d4628eee7f9c0dcd08c4b6616c25e1447a349b346"
+  }
+ ],
+ "cells": {
+  "wdf": {
+   "cell": "wdf",
+   "n_videos": 806,
+   "n_per_class": {
+    "real": 396,
+    "fake": 410
+   },
+   "n_clusters": 115,
+   "n_redraws": 0,
+   "b": 10000,
+   "rng_seed": 0,
+   "scheme": "seed+map",
+   "arm_rng_order": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6",
+    "A7",
+    "A8",
+    "A9",
+    "A10",
+    "A11",
+    "A12",
+    "A13",
+    "A14",
+    "A15",
+    "A16",
+    "A17",
+    "A18",
+    "A19",
+    "A20",
+    "A21",
+    "A22",
+    "A23",
+    "A24",
+    "A25",
+    "A26",
+    "A27",
+    "A28"
+   ],
+   "engine": "describe.hierarchical_bootstrap_clusters (copy, per-key cluster map)",
+   "arms": {
+    "A1": {
+     "runs": [
+      "r1_fairn_grl_s42",
+      "r1_fairn_grl_s1",
+      "r1_fairn_grl_s2"
+     ],
+     "primary": {
+      "point": 0.7121581670362157,
+      "ci_lo": 0.6337405908956559,
+      "ci_hi": 0.7773601283407059
+     },
+     "ensemble": {
+      "point": 0.722450110864745,
+      "ci_lo": 0.638368923785845,
+      "ci_hi": 0.7847362315969415
+     },
+     "per_seed": [
+      0.6981522542498152,
+      0.7121951219512195,
+      0.7261271249076127
+     ],
+     "k": 3
+    },
+    "A2": {
+     "runs": [
+      "f1_none_fair_s42",
+      "f1_none_fair_s1",
+      "f1_none_fair_s2"
+     ],
+     "primary": {
+      "point": 0.6935616325860229,
+      "ci_lo": 0.6134660074658044,
+      "ci_hi": 0.7655034709231778
+     },
+     "ensemble": {
+      "point": 0.7142707563439271,
+      "ci_lo": 0.6229280444686425,
+      "ci_hi": 0.7811263951688459
+     },
+     "per_seed": [
+      0.7083333333333334,
+      0.6599285538309928,
+      0.7124230105937424
+     ],
+     "k": 3
+    },
+    "A3": {
+     "runs": [
+      "b7_effnet_b0_mq_fliponly",
+      "b7_effnet_b0_mq_fliponly_s1",
+      "b7_effnet_b0_mq_fliponly_s2"
+     ],
+     "primary": {
+      "point": 0.706354192329802,
+      "ci_lo": 0.6248866396767961,
+      "ci_hi": 0.7739191685706739
+     },
+     "ensemble": {
+      "point": 0.7182126139443212,
+      "ci_lo": 0.6309102715626804,
+      "ci_hi": 0.7826953592476272
+     },
+     "per_seed": [
+      0.713679477703868,
+      0.6923380142892338,
+      0.7130450849963045
+     ],
+     "k": 3
+    },
+    "A4": {
+     "runs": [
+      "r1_sb_noc40_s42",
+      "r1_sb_noc40_s1",
+      "r1_sb_noc40_s2"
+     ],
+     "primary": {
+      "point": 0.7104233390818756,
+      "ci_lo": 0.6267095930010858,
+      "ci_hi": 0.7806374496053272
+     },
+     "ensemble": {
+      "point": 0.7211320522296132,
+      "ci_lo": 0.6317667231825443,
+      "ci_hi": 0.788893984327294
+     },
+     "per_seed": [
+      0.6873922148312392,
+      0.7294592264104459,
+      0.7144185760039419
+     ],
+     "k": 3
+    },
+    "A5": {
+     "runs": [
+      "r1_sb_c23only_s42",
+      "r1_sb_c23only_s1",
+      "r1_sb_c23only_s2"
+     ],
+     "primary": {
+      "point": 0.7255892255892257,
+      "ci_lo": 0.6520894582818482,
+      "ci_hi": 0.7897252417060955
+     },
+     "ensemble": {
+      "point": 0.7329637841832963,
+      "ci_lo": 0.6531454592314782,
+      "ci_hi": 0.7964236307097747
+     },
+     "per_seed": [
+      0.7192781473269279,
+      0.7545639320029564,
+      0.7029255974377926
+     ],
+     "k": 3
+    },
+    "A6": {
+     "runs": [
+      "r1_sb_jpeg_all_s42",
+      "r1_sb_jpeg_all_s1",
+      "r1_sb_jpeg_all_s2"
+     ],
+     "primary": {
+      "point": 0.7271721277818838,
+      "ci_lo": 0.6485449680210998,
+      "ci_hi": 0.7927856150621004
+     },
+     "ensemble": {
+      "point": 0.734109386548411,
+      "ci_lo": 0.6518528782109132,
+      "ci_hi": 0.7983340400460672
+     },
+     "per_seed": [
+      0.7219327420546933,
+      0.7481892091648189,
+      0.7113944321261394
+     ],
+     "k": 3
+    },
+    "A7": {
+     "runs": [
+      "r1_sb_jpeg_noc40_s42",
+      "r1_sb_jpeg_noc40_s1",
+      "r1_sb_jpeg_noc40_s2"
+     ],
+     "primary": {
+      "point": 0.7118112014453478,
+      "ci_lo": 0.6320959270862718,
+      "ci_hi": 0.7778521100969226
+     },
+     "ensemble": {
+      "point": 0.7200849963045085,
+      "ci_lo": 0.6349731477607167,
+      "ci_hi": 0.785236851469271
+     },
+     "per_seed": [
+      0.6937361419068736,
+      0.7025683665927568,
+      0.739129095836413
+     ],
+     "k": 3
+    },
+    "A8": {
+     "runs": [
+      "r1_sb_noc36c40_s42",
+      "r1_sb_noc36c40_s1",
+      "r1_sb_noc36c40_s2"
+     ],
+     "primary": {
+      "point": 0.7348382195943172,
+      "ci_lo": 0.6523102467415063,
+      "ci_hi": 0.8036775432222159
+     },
+     "ensemble": {
+      "point": 0.744130327666913,
+      "ci_lo": 0.6570165566195355,
+      "ci_hi": 0.810705322078298
+     },
+     "per_seed": [
+      0.719130327666913,
+      0.7718773096821877,
+      0.7135070214338507
+     ],
+     "k": 3
+    },
+    "A9": {
+     "runs": [
+      "f2_spatres_full_s42",
+      "f2_spatres_full_s1",
+      "f2_spatres_full_s2"
+     ],
+     "primary": {
+      "point": 0.7043524677671019,
+      "ci_lo": 0.6176671657314265,
+      "ci_hi": 0.7759066763824772
+     },
+     "ensemble": {
+      "point": 0.7096883468834688,
+      "ci_lo": 0.6198970380020941,
+      "ci_hi": 0.7805350457752028
+     },
+     "per_seed": [
+      0.7163279132791328,
+      0.7226040896772604,
+      0.6741254003449125
+     ],
+     "k": 3
+    },
+    "A10": {
+     "runs": [
+      "trunk_recipe_s42",
+      "trunk_recipe_s1",
+      "trunk_recipe_s2"
+     ],
+     "primary": {
+      "point": 0.7080767019791411,
+      "ci_lo": 0.6272146062538017,
+      "ci_hi": 0.7760149632948459
+     },
+     "ensemble": {
+      "point": 0.7147634885439763,
+      "ci_lo": 0.6292109966573795,
+      "ci_hi": 0.7829159289228019
+     },
+     "per_seed": [
+      0.7163155949741316,
+      0.6858585858585858,
+      0.7220559251047056
+     ],
+     "k": 3
+    },
+    "A11": {
+     "runs": [
+      "a0",
+      "a1_grl_s1",
+      "a1_grl_s2"
+     ],
+     "primary": {
+      "point": 0.694237086310257,
+      "ci_lo": 0.6153698566805363,
+      "ci_hi": 0.7585805983698155
+     },
+     "ensemble": {
+      "point": 0.6990576496674058,
+      "ci_lo": 0.6164372704486798,
+      "ci_hi": 0.7635158889372201
+     },
+     "per_seed": [
+      0.6787447647203745,
+      0.704650160137965,
+      0.6993163340724317
+     ],
+     "k": 3
+    },
+    "A12": {
+     "runs": [
+      "a1_none_s42"
+     ],
+     "primary": {
+      "point": 0.6218157181571816,
+      "ci_lo": 0.5420166004568506,
+      "ci_hi": 0.6899051535116868
+     },
+     "ensemble": {
+      "point": 0.6218157181571816,
+      "ci_lo": 0.5420166004568506,
+      "ci_hi": 0.6899051535116868
+     },
+     "per_seed": [
+      0.6218157181571816
+     ],
+     "k": 1
+    },
+    "A13": {
+     "runs": [
+      "cafrl_spatres_s42"
+     ],
+     "primary": {
+      "point": 0.7458795269770879,
+      "ci_lo": 0.6668075320068888,
+      "ci_hi": 0.8098588506236448
+     },
+     "ensemble": {
+      "point": 0.7458795269770879,
+      "ci_lo": 0.6668075320068888,
+      "ci_hi": 0.8098588506236448
+     },
+     "per_seed": [
+      0.7458795269770879
+     ],
+     "k": 1
+    },
+    "A14": {
+     "runs": [
+      "b1_xception_lit"
+     ],
+     "primary": {
+      "point": 0.760039418576004,
+      "ci_lo": 0.6902313632093503,
+      "ci_hi": 0.8180458881875351
+     },
+     "ensemble": {
+      "point": 0.760039418576004,
+      "ci_lo": 0.6902313632093503,
+      "ci_hi": 0.8180458881875351
+     },
+     "per_seed": [
+      0.760039418576004
+     ],
+     "k": 1
+    },
+    "A15": {
+     "runs": [
+      "b1_xception_lit_fliponly"
+     ],
+     "primary": {
+      "point": 0.750080068982508,
+      "ci_lo": 0.6852743361299816,
+      "ci_hi": 0.8070683691021009
+     },
+     "ensemble": {
+      "point": 0.750080068982508,
+      "ci_lo": 0.6852743361299816,
+      "ci_hi": 0.8070683691021009
+     },
+     "per_seed": [
+      0.750080068982508
+     ],
+     "k": 1
+    },
+    "A16": {
+     "runs": [
+      "b2_f3net_lit"
+     ],
+     "primary": {
+      "point": 0.7858031534860803,
+      "ci_lo": 0.7222214737884899,
+      "ci_hi": 0.8396370288208849
+     },
+     "ensemble": {
+      "point": 0.7858031534860803,
+      "ci_lo": 0.7222214737884899,
+      "ci_hi": 0.8396370288208849
+     },
+     "per_seed": [
+      0.7858031534860803
+     ],
+     "k": 1
+    },
+    "A17": {
+     "runs": [
+      "b2_f3net_lit_fliponly"
+     ],
+     "primary": {
+      "point": 0.7460027100271003,
+      "ci_lo": 0.6746030885212664,
+      "ci_hi": 0.808038387029965
+     },
+     "ensemble": {
+      "point": 0.7460027100271003,
+      "ci_lo": 0.6746030885212664,
+      "ci_hi": 0.808038387029965
+     },
+     "per_seed": [
+      0.7460027100271003
+     ],
+     "k": 1
+    },
+    "A18": {
+     "runs": [
+      "b3_freqnet_lit"
+     ],
+     "primary": {
+      "point": 0.6929108154717911,
+      "ci_lo": 0.6246962386530225,
+      "ci_hi": 0.7516063434215742
+     },
+     "ensemble": {
+      "point": 0.6929108154717911,
+      "ci_lo": 0.6246962386530225,
+      "ci_hi": 0.7516063434215742
+     },
+     "per_seed": [
+      0.6929108154717911
+     ],
+     "k": 1
+    },
+    "A19": {
+     "runs": [
+      "b4_xception_mq"
+     ],
+     "primary": {
+      "point": 0.7479120473022912,
+      "ci_lo": 0.6688644813184764,
+      "ci_hi": 0.8138320367040333
+     },
+     "ensemble": {
+      "point": 0.7479120473022912,
+      "ci_lo": 0.6688644813184764,
+      "ci_hi": 0.8138320367040333
+     },
+     "per_seed": [
+      0.7479120473022912
+     ],
+     "k": 1
+    },
+    "A20": {
+     "runs": [
+      "b4b_xception_mq_fliponly"
+     ],
+     "primary": {
+      "point": 0.7522665681202266,
+      "ci_lo": 0.6759138121414199,
+      "ci_hi": 0.8138073570993851
+     },
+     "ensemble": {
+      "point": 0.7522665681202266,
+      "ci_lo": 0.6759138121414199,
+      "ci_hi": 0.8138073570993851
+     },
+     "per_seed": [
+      0.7522665681202266
+     ],
+     "k": 1
+    },
+    "A21": {
+     "runs": [
+      "b5_f3net_mq"
+     ],
+     "primary": {
+      "point": 0.751539788125154,
+      "ci_lo": 0.6766265329115078,
+      "ci_hi": 0.8113191466409033
+     },
+     "ensemble": {
+      "point": 0.751539788125154,
+      "ci_lo": 0.6766265329115078,
+      "ci_hi": 0.8113191466409033
+     },
+     "per_seed": [
+      0.751539788125154
+     ],
+     "k": 1
+    },
+    "A22": {
+     "runs": [
+      "b6_freqnet_mq"
+     ],
+     "primary": {
+      "point": 0.7001293422025129,
+      "ci_lo": 0.6282262685600583,
+      "ci_hi": 0.7617326606207336
+     },
+     "ensemble": {
+      "point": 0.7001293422025129,
+      "ci_lo": 0.6282262685600583,
+      "ci_hi": 0.7617326606207336
+     },
+     "per_seed": [
+      0.7001293422025129
+     ],
+     "k": 1
+    },
+    "A23": {
+     "runs": [
+      "p2a_xcep_jpeg"
+     ],
+     "primary": {
+      "point": 0.8211012564671101,
+      "ci_lo": 0.7545781017820492,
+      "ci_hi": 0.8745114477710058
+     },
+     "ensemble": {
+      "point": 0.8211012564671101,
+      "ci_lo": 0.7545781017820492,
+      "ci_hi": 0.8745114477710058
+     },
+     "per_seed": [
+      0.8211012564671101
+     ],
+     "k": 1
+    },
+    "A24": {
+     "runs": [
+      "r1_abl_curriculum_s42"
+     ],
+     "primary": {
+      "point": 0.739129095836413,
+      "ci_lo": 0.6661488466598935,
+      "ci_hi": 0.8012809686099669
+     },
+     "ensemble": {
+      "point": 0.739129095836413,
+      "ci_lo": 0.6661488466598935,
+      "ci_hi": 0.8012809686099669
+     },
+     "per_seed": [
+      0.739129095836413
+     ],
+     "k": 1
+    },
+    "A25": {
+     "runs": [
+      "r1_abl_lrbb_s42"
+     ],
+     "primary": {
+      "point": 0.7053153486080316,
+      "ci_lo": 0.6260338352422219,
+      "ci_hi": 0.770852999506672
+     },
+     "ensemble": {
+      "point": 0.7053153486080316,
+      "ci_lo": 0.6260338352422219,
+      "ci_hi": 0.770852999506672
+     },
+     "per_seed": [
+      0.7053153486080316
+     ],
+     "k": 1
+    },
+    "A26": {
+     "runs": [
+      "r1_abl_lrfreq_s42"
+     ],
+     "primary": {
+      "point": 0.7383653609263365,
+      "ci_lo": 0.6658059595435492,
+      "ci_hi": 0.7983613348896467
+     },
+     "ensemble": {
+      "point": 0.7383653609263365,
+      "ci_lo": 0.6658059595435492,
+      "ci_hi": 0.7983613348896467
+     },
+     "per_seed": [
+      0.7383653609263365
+     ],
+     "k": 1
+    },
+    "A27": {
+     "runs": [
+      "r1_abl_aux_s42"
+     ],
+     "primary": {
+      "point": 0.7122628726287263,
+      "ci_lo": 0.6316295021043472,
+      "ci_hi": 0.7779933484462203
+     },
+     "ensemble": {
+      "point": 0.7122628726287263,
+      "ci_lo": 0.6316295021043472,
+      "ci_hi": 0.7779933484462203
+     },
+     "per_seed": [
+      0.7122628726287263
+     ],
+     "k": 1
+    },
+    "A28": {
+     "runs": [
+      "r1_abl_ep50_s42"
+     ],
+     "primary": {
+      "point": 0.738069721606307,
+      "ci_lo": 0.6613746981577325,
+      "ci_hi": 0.8004723243594817
+     },
+     "ensemble": {
+      "point": 0.738069721606307,
+      "ci_lo": 0.6613746981577325,
+      "ci_hi": 0.8004723243594817
+     },
+     "per_seed": [
+      0.738069721606307
+     ],
+     "k": 1
+    }
+   },
+   "contrasts": [
+    {
+     "id": "D1",
+     "name": "E1 − Fair-N",
+     "weights": {
+      "A1": 1.0,
+      "A2": -1.0
+     },
+     "levels": [
+      "wdf"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": 0.018596534450192825,
+      "ci_lo": -0.022757597518392885,
+      "ci_hi": 0.0661313285418819
+     },
+     "ensemble": {
+      "point": 0.00817935452081786,
+      "ci_lo": -0.0280087172430632,
+      "ci_hi": 0.05708411730846329
+     }
+    },
+    {
+     "id": "D2",
+     "name": "Fair-N − b7",
+     "weights": {
+      "A2": 1.0,
+      "A3": -1.0
+     },
+     "levels": [
+      "wdf"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.01279255974377913,
+      "ci_lo": -0.05764775250542012,
+      "ci_hi": 0.024771822579105984
+     },
+     "ensemble": {
+      "point": -0.003941857600394116,
+      "ci_lo": -0.04994885424858533,
+      "ci_hi": 0.02949093092236713
+     }
+    },
+    {
+     "id": "D3",
+     "name": "F2 − b7",
+     "weights": {
+      "A9": 1.0,
+      "A3": -1.0
+     },
+     "levels": [
+      "wdf"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.0020017245627000912,
+      "ci_lo": -0.039605108735191345,
+      "ci_hi": 0.03347135210310002
+     },
+     "ensemble": {
+      "point": -0.008524267060852408,
+      "ci_lo": -0.045546414822413284,
+      "ci_hi": 0.03179138713490701
+     }
+    },
+    {
+     "id": "D4",
+     "name": "b7 − anchor",
+     "weights": {
+      "A3": 1.0,
+      "A5": -1.0
+     },
+     "levels": [
+      "wdf"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.01923503325942366,
+      "ci_lo": -0.07133007543833939,
+      "ci_hi": 0.027352294091704914
+     },
+     "ensemble": {
+      "point": -0.014751170238975098,
+      "ci_lo": -0.07180976410241251,
+      "ci_hi": 0.03378811954767911
+     }
+    },
+    {
+     "id": "D5",
+     "name": "½[(b7 − E3a) + (E2a − E3b)] (T4 form)",
+     "weights": {
+      "A3": 0.5,
+      "A6": -0.5,
+      "A4": 0.5,
+      "A7": -0.5
+     },
+     "levels": [
+      "wdf"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": -0.011102898907776992,
+      "ci_lo": -0.0480389901416107,
+      "ci_hi": 0.025859370150647168
+     },
+     "ensemble": {
+      "point": -0.007424858339492524,
+      "ci_lo": -0.04761531748837072,
+      "ci_hi": 0.029747002934106714
+     }
+    },
+    {
+     "id": "D6",
+     "name": "½[(b7 − E2a) + (E3a − E3b)] (T5 form)",
+     "weights": {
+      "A3": 0.5,
+      "A4": -0.5,
+      "A6": 0.5,
+      "A7": -0.5
+     },
+     "levels": [
+      "wdf"
+     ],
+     "estimable": true,
+     "primary": {
+      "point": 0.005645889792231185,
+      "ci_lo": -0.021436398207227016,
+      "ci_hi": 0.03299805710070813
+     },
+     "ensemble": {
+      "point": 0.005552475979305249,
+      "ci_lo": -0.022623927704342173,
+      "ci_hi": 0.034972840945875314
+     }
+    }
+   ]
+  }
+ }
+}

@@ -19,7 +19,7 @@ prints a CI-style pass/fail line per check.
    at its printed precision. The stored per-cell AUC is checked against the
    recomputed one too, so a tampered score array cannot pass.
 2. **5 derived values** — three-seed means and the real-CRF-versus-JPEG gap.
-3. **11 adjudicated contrasts** — the paper's headline table, recomputed
+3. **20 adjudicated contrasts** — the paper's headline table, recomputed
    end to end: seeds pooled by video key, then a 10,000-replicate paired video
    bootstrap (RNG seed 0).
 4. **Figure regeneration** — the prediction-driven figures are rebuilt from
@@ -35,18 +35,19 @@ Deterministic quantities — AUCs, means, differences — must match the manuscr
 at **printed precision**: half a unit in the last digit the paper prints. There is
 no slack; they are exact functions of the released scores.
 
-Bootstrap quantities — the deltas and their intervals — are Monte-Carlo estimates.
-They are reproducible to the digit *given the same input order and RNG seed*,
-which is why both are pinned here, and the checks are run at the same settings the
-paper used. Each quantity is still allowed the looser of the manuscript's own printed
-precision and a Monte-Carlo budget: 0.0005 for the point estimate, which is
-stable at ten thousand replicates and does reproduce the published values, and
-0.001 for the interval endpoints, which wobble at roughly half that. One
-endpoint in the published contrast table — the lower bound of the STOP-gate row —
-recomputes 0.0005 away from its printed value for exactly this reason; nothing
-else in the table differs at all. A check that fails these tolerances is a real
-disagreement, not rounding. The verdict (does the interval exclude zero) is
-checked separately and admits no tolerance.
+Every contrast's Δ is the **point estimate** — the plain difference of the two
+arms' AUCs, which is what the paper prints since its revision (version 1.0.0 of
+this repository printed and checked the bootstrap mean instead; both are in the
+re-derived tables). It is deterministic, so it is held to printed precision with
+no slack. The interval endpoints are Monte-Carlo estimates: reproducible to the
+digit *given the same input order and RNG seed*, which is why both are pinned here
+and the checks run at the settings the paper used, but each endpoint is still
+allowed the looser of the manuscript's printed precision and a Monte-Carlo budget
+of 0.001. One endpoint in the published contrast table — the lower bound of
+the STOP-gate row — recomputes 0.0005 away from its printed value for exactly this
+reason. A check that fails these tolerances is a real disagreement, not rounding.
+The verdict (does the interval exclude zero) is checked separately and admits no
+tolerance.
 
 One contrast is deliberately asymmetric, and `expected.json` says so where it is
 defined: the architecture-share row compares the single frozen backbone run with
@@ -57,4 +58,6 @@ side receives it, so the asymmetry is recorded rather than quietly evened out.
 `expected.json` is the machine-readable form of everything the paper prints that
 this repository can check, generated from the release manifest. Reading it
 alongside the claims map (`../CLAIMS-MAP.md`) tells you
-which artifact stands behind which cell.
+which artifact stands behind which cell. The numbers the revision added are mapped
+in `../CLAIMS-MAP-R1.md` (rows in `claims_map_r1.json`, which `claims_map.json`
+names as its continuation); `verify.py` and `claim.py` check both.

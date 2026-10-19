@@ -221,6 +221,214 @@
    "selected_epoch": 9,
    "selected_metric": 0.9431823979591837,
    "weights": "raw"
+  },
+  {
+   "run": "r1_fairn_grl_s42",
+   "n_epochs": 30,
+   "n_series": 60,
+   "selected_epoch": 4,
+   "selected_metric": 0.9809311224489796,
+   "weights": "EMA"
+  },
+  {
+   "run": "r1_fairn_grl_s1",
+   "n_epochs": 30,
+   "n_series": 60,
+   "selected_epoch": 3,
+   "selected_metric": 0.9775446428571428,
+   "weights": "EMA"
+  },
+  {
+   "run": "r1_fairn_grl_s2",
+   "n_epochs": 30,
+   "n_series": 60,
+   "selected_epoch": 6,
+   "selected_metric": 0.9776211734693878,
+   "weights": "EMA"
+  },
+  {
+   "run": "r1_sb_noc40_s42",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 15,
+   "selected_metric": 0.9782780612244898,
+   "weights": "raw"
+  },
+  {
+   "run": "r1_sb_noc40_s1",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 9,
+   "selected_metric": 0.9795153061224489,
+   "weights": "raw"
+  },
+  {
+   "run": "r1_sb_noc40_s2",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 18,
+   "selected_metric": 0.9787053571428571,
+   "weights": "raw"
+  },
+  {
+   "run": "r1_sb_noc36c40_s42",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 13,
+   "selected_metric": 0.9872002551020408,
+   "weights": "raw"
+  },
+  {
+   "run": "r1_sb_noc36c40_s1",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 12,
+   "selected_metric": 0.9870025510204081,
+   "weights": "raw"
+  },
+  {
+   "run": "r1_sb_noc36c40_s2",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 2,
+   "selected_metric": 0.9847704081632652,
+   "weights": "raw"
+  },
+  {
+   "run": "r1_sb_jpeg_all_s42",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 22,
+   "selected_metric": 0.9432589285714286,
+   "weights": "raw"
+  },
+  {
+   "run": "r1_sb_jpeg_all_s1",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 13,
+   "selected_metric": 0.9360395408163265,
+   "weights": "raw"
+  },
+  {
+   "run": "r1_sb_jpeg_all_s2",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 23,
+   "selected_metric": 0.9360522959183675,
+   "weights": "raw"
+  },
+  {
+   "run": "r1_sb_jpeg_noc40_s42",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 10,
+   "selected_metric": 0.9560714285714285,
+   "weights": "raw"
+  },
+  {
+   "run": "r1_sb_jpeg_noc40_s1",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 9,
+   "selected_metric": 0.9490497448979592,
+   "weights": "raw"
+  },
+  {
+   "run": "r1_sb_jpeg_noc40_s2",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 9,
+   "selected_metric": 0.958718112244898,
+   "weights": "raw"
+  },
+  {
+   "run": "r1_sb_c23only_s42",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 19,
+   "selected_metric": 0.9281951530612245,
+   "weights": "raw"
+  },
+  {
+   "run": "r1_sb_c23only_s1",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 14,
+   "selected_metric": 0.9346237244897959,
+   "weights": "raw"
+  },
+  {
+   "run": "r1_sb_c23only_s2",
+   "n_epochs": 30,
+   "n_series": 5,
+   "selected_epoch": 20,
+   "selected_metric": 0.9241581632653061,
+   "weights": "raw"
+  },
+  {
+   "run": "r1_abl_lrbb_s42",
+   "n_epochs": 30,
+   "n_series": 34,
+   "selected_epoch": 5,
+   "selected_metric": 0.9514094387755101,
+   "weights": "EMA"
+  },
+  {
+   "run": "r1_abl_lrfreq_s42",
+   "n_epochs": 30,
+   "n_series": 34,
+   "selected_epoch": 8,
+   "selected_metric": 0.9791645408163265,
+   "weights": "EMA"
+  },
+  {
+   "run": "r1_abl_aux_s42",
+   "n_epochs": 30,
+   "n_series": 34,
+   "selected_epoch": 15,
+   "selected_metric": 0.9795471938775511,
+   "weights": "EMA"
+  },
+  {
+   "run": "r1_abl_ep50_s42",
+   "n_epochs": 50,
+   "n_series": 34,
+   "selected_epoch": 8,
+   "selected_metric": 0.9777869897959184,
+   "weights": "EMA"
+  },
+  {
+   "run": "r1_abl_curriculum_s42",
+   "n_epochs": 14,
+   "n_series": 34,
+   "selected_epoch": 13,
+   "selected_metric": 0.9612882653061224,
+   "weights": "EMA"
+  },
+  {
+   "run": "r1x_abl_curriculum_rerun_s42",
+   "n_epochs": 30,
+   "n_series": 34,
+   "selected_epoch": 29,
+   "selected_metric": 0.9672130102040816,
+   "weights": "EMA"
+  },
+  {
+   "run": "r1x_abl_curriculum_nostop_s42",
+   "n_epochs": 30,
+   "n_series": 34,
+   "selected_epoch": 27,
+   "selected_metric": 0.9681377551020409,
+   "weights": "EMA"
+  },
+  {
+   "run": "r1x_abl_curriculum_emafix_s42",
+   "n_epochs": 30,
+   "n_series": 34,
+   "selected_epoch": 27,
+   "selected_metric": 0.9665051020408164,
+   "weights": "EMA"
   }
  ],
  "runs_without_curves": []

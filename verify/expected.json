@@ -2,7 +2,7 @@
  "schema": "cafrl-negative/expected/v1",
  "note": "What the manuscript prints, and what to recompute to check it. Cell values are video-AUCs at the manuscript's printed precision; contrasts are paired video-bootstrap results. Generated from the release manifest \u2014 see verify/README.md.",
  "paper": {
-  "title": "Data Diversity, Not Frequency Invariance: A Controlled and Self-Audited Study of Compression-Robust Deepfake Detection",
+  "title": "A Controlled Audit of a Negative Result: Training Recipe, H.264 Compression Levels and a Frequency-Stream Deepfake Detector",
   "venue": "IEEE Access"
  },
  "bootstrap": {
@@ -13,7 +13,6 @@
  },
  "tolerances": {
   "deterministic": "printed_precision",
-  "bootstrap_delta_abs": 0.0005,
   "bootstrap_ci_abs": 0.001
  },
  "cells": [
@@ -726,7 +725,7 @@
  ],
  "derived": [
   {
-   "name": "Table 5, row TrunkCtrl: trunk-recipe control, 3-seed mean c40",
+   "name": "Table 2, row TrunkCtrl: trunk-recipe control, 3-seed mean c40",
    "kind": "seed_mean",
    "runs": [
     "trunk_recipe_s42",
@@ -738,7 +737,7 @@
    "expect": 0.9536
   },
   {
-   "name": "Table 7: SpatialBase 3-seed mean c40",
+   "name": "Section VII-D and Table S1: SpatialBase 3-seed mean c40",
    "kind": "seed_mean",
    "runs": [
     "b7_effnet_b0_mq_fliponly",
@@ -750,7 +749,7 @@
    "expect": 0.9565
   },
   {
-   "name": "Table 7: Fair-N 3-seed mean c40",
+   "name": "Section VII-D and Table S1: Fair-N 3-seed mean c40",
    "kind": "seed_mean",
    "runs": [
     "f1_none_fair_s42",
@@ -762,7 +761,7 @@
    "expect": 0.9563
   },
   {
-   "name": "Table 7: Fair-W 3-seed mean c40",
+   "name": "Section VII-D and Table S1: Fair-W 3-seed mean c40",
    "kind": "seed_mean",
    "runs": [
     "f2_spatres_full_s42",
@@ -800,7 +799,7 @@
    ],
    "level": "c40",
    "expect": {
-    "delta": -0.004,
+    "delta": -0.0039,
     "ci_lo": -0.0151,
     "ci_hi": 0.0068
    },
@@ -816,7 +815,7 @@
    ],
    "level": "c40",
    "expect": {
-    "delta": -0.0804,
+    "delta": -0.0803,
     "ci_lo": -0.1084,
     "ci_hi": -0.0543
    },
@@ -837,6 +836,54 @@
     "ci_hi": -0.0029
    },
    "verdict": "excludes zero in the negative direction - frequency on the strongest trunk does not beat that trunk"
+  },
+  {
+   "name": "F3-Net-mq - SpatialBase (descriptive, AUC_comp)",
+   "a": [
+    "b5_f3net_mq"
+   ],
+   "b": [
+    "b7_effnet_b0_mq_fliponly"
+   ],
+   "level": "auc_comp",
+   "expect": {
+    "delta": -0.0001,
+    "ci_lo": -0.0073,
+    "ci_hi": 0.0066
+   },
+   "verdict": "includes zero"
+  },
+  {
+   "name": "FreqNet-mq - SpatialBase (descriptive, AUC_comp)",
+   "a": [
+    "b6_freqnet_mq"
+   ],
+   "b": [
+    "b7_effnet_b0_mq_fliponly"
+   ],
+   "level": "auc_comp",
+   "expect": {
+    "delta": -0.0492,
+    "ci_lo": -0.0671,
+    "ci_hi": -0.033
+   },
+   "verdict": "excludes zero in the negative direction"
+  },
+  {
+   "name": "F3-Net-mq - Xception-mq (descriptive, augmentation-matched, AUC_comp)",
+   "a": [
+    "b5_f3net_mq"
+   ],
+   "b": [
+    "b4_xception_mq"
+   ],
+   "level": "auc_comp",
+   "expect": {
+    "delta": -0.0057,
+    "ci_lo": -0.0124,
+    "ci_hi": 0.0007
+   },
+   "verdict": "includes zero"
   },
   {
    "name": "SpatialBase - CAFRL as specified (STOP-gate)",
@@ -896,7 +943,7 @@
    ],
    "level": "c40",
    "expect": {
-    "delta": 0.0056,
+    "delta": 0.0055,
     "ci_lo": -0.0022,
     "ci_hi": 0.0134
    },
@@ -916,7 +963,7 @@
    ],
    "level": "c40",
    "expect": {
-    "delta": -0.001,
+    "delta": -0.0009,
     "ci_lo": -0.0066,
     "ci_hi": 0.0045
    },
@@ -972,11 +1019,123 @@
    ],
    "level": "c40",
    "expect": {
-    "delta": 0.049,
+    "delta": 0.0489,
     "ci_lo": 0.0294,
     "ci_hi": 0.0705
    },
    "verdict": "significant - the recipe cost"
+  },
+  {
+   "name": "Fair-N pool - TrunkCtrl pool (3v3, post hoc)",
+   "a": [
+    "f1_none_fair_s42",
+    "f1_none_fair_s1",
+    "f1_none_fair_s2"
+   ],
+   "b": [
+    "trunk_recipe_s42",
+    "trunk_recipe_s1",
+    "trunk_recipe_s2"
+   ],
+   "level": "c40",
+   "expect": {
+    "delta": 0.0014,
+    "ci_lo": -0.0051,
+    "ci_hi": 0.0078
+   },
+   "verdict": "includes zero - post hoc, outside the family"
+  },
+  {
+   "name": "SpatialBase pool - TrunkCtrl pool (3v3, caption reading)",
+   "a": [
+    "b7_effnet_b0_mq_fliponly",
+    "b7_effnet_b0_mq_fliponly_s1",
+    "b7_effnet_b0_mq_fliponly_s2"
+   ],
+   "b": [
+    "trunk_recipe_s42",
+    "trunk_recipe_s1",
+    "trunk_recipe_s2"
+   ],
+   "level": "c40",
+   "expect": {
+    "delta": 0.002
+   },
+   "verdict": "point estimate only (printed as 'about +0.002')"
+  },
+  {
+   "name": "Fair-N pool - SpatialBase pool (3v3, AUC_comp)",
+   "a": [
+    "f1_none_fair_s42",
+    "f1_none_fair_s1",
+    "f1_none_fair_s2"
+   ],
+   "b": [
+    "b7_effnet_b0_mq_fliponly",
+    "b7_effnet_b0_mq_fliponly_s1",
+    "b7_effnet_b0_mq_fliponly_s2"
+   ],
+   "level": "auc_comp",
+   "expect": {
+    "delta": -0.0007,
+    "ci_lo": -0.0046,
+    "ci_hi": 0.0029
+   },
+   "verdict": "includes zero"
+  },
+  {
+   "name": "Fair-W pool - SpatialBase pool (3v3, AUC_comp)",
+   "a": [
+    "f2_spatres_full_s42",
+    "f2_spatres_full_s1",
+    "f2_spatres_full_s2"
+   ],
+   "b": [
+    "b7_effnet_b0_mq_fliponly",
+    "b7_effnet_b0_mq_fliponly_s1",
+    "b7_effnet_b0_mq_fliponly_s2"
+   ],
+   "level": "auc_comp",
+   "expect": {
+    "delta": 0.0011,
+    "ci_lo": -0.004,
+    "ci_hi": 0.0053
+   },
+   "verdict": "includes zero"
+  },
+  {
+   "name": "Fair-N pool - TrunkCtrl pool (3v3, post hoc, AUC_comp)",
+   "a": [
+    "f1_none_fair_s42",
+    "f1_none_fair_s1",
+    "f1_none_fair_s2"
+   ],
+   "b": [
+    "trunk_recipe_s42",
+    "trunk_recipe_s1",
+    "trunk_recipe_s2"
+   ],
+   "level": "auc_comp",
+   "expect": {
+    "delta": 0.0006,
+    "ci_lo": -0.0031,
+    "ci_hi": 0.0043
+   },
+   "verdict": "includes zero - post hoc, outside the family"
+  },
+  {
+   "name": "CAFRL-adv - SpatialBase (c0, cell difference)",
+   "a": [
+    "a1_none_s42"
+   ],
+   "b": [
+    "b7_effnet_b0_mq_fliponly"
+   ],
+   "level": "c0",
+   "expect": {
+    "delta": 0.0004
+   },
+   "verdict": "point estimate only (a descriptive cell difference)"
   }
  ],
  "seed_level": "c40",
@@ -1042,7 +1201,7 @@
     ],
     "level": "c40",
     "expect": {
-     "delta": -0.0318,
+     "delta": -0.0317,
      "ci_lo": -0.0575,
      "ci_hi": -0.0065
     },
@@ -1060,7 +1219,7 @@
     ],
     "level": "c40",
     "expect": {
-     "delta": 0.022,
+     "delta": 0.0222,
      "ci_lo": -0.0062,
      "ci_hi": 0.0508
     },
@@ -1078,11 +1237,47 @@
     ],
     "level": "c40",
     "expect": {
-     "delta": -0.0227,
+     "delta": -0.0226,
      "ci_lo": -0.0537,
      "ci_hi": 0.0081
     },
     "verdict": "includes zero - the opposite-signed lean of the same pair"
+   },
+   {
+    "name": "CAFRL as specified pool - SpatialBase pool (FaceShifter c23, shipped recipe)",
+    "a": [
+     "a0",
+     "a1_grl_s1",
+     "a1_grl_s2"
+    ],
+    "b": [
+     "b7_effnet_b0_mq_fliponly",
+     "b7_effnet_b0_mq_fliponly_s1",
+     "b7_effnet_b0_mq_fliponly_s2"
+    ],
+    "level": "c23",
+    "expect": {
+     "delta": -0.008
+    },
+    "verdict": "point estimate only; the printed interval is the June run's"
+   },
+   {
+    "name": "CAFRL as specified pool - SpatialBase pool (FaceShifter c40, shipped recipe)",
+    "a": [
+     "a0",
+     "a1_grl_s1",
+     "a1_grl_s2"
+    ],
+    "b": [
+     "b7_effnet_b0_mq_fliponly",
+     "b7_effnet_b0_mq_fliponly_s1",
+     "b7_effnet_b0_mq_fliponly_s2"
+    ],
+    "level": "c40",
+    "expect": {
+     "delta": 0.0221
+    },
+    "verdict": "point estimate only; the printed interval is the June run's"
    }
   ]
  },

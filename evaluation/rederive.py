@@ -37,7 +37,7 @@ sys.path.insert(0, str(HERE.parent))   # so `evaluation/src` resolves as `src.�
 
 from release_io import COMP_LEVELS, FFPP_LEVELS, Predictions, align  # noqa: E402
 from src.evaluation.metrics import (  # noqa: E402
-    bootstrap_ci, crf_slope, paired_auc_delta, seed_band, video_auc,
+    bootstrap_ci, crf_slope, paired_auc_comp_delta, paired_auc_delta, seed_band, video_auc,
 )
 
 DEFAULT_SPEC = HERE.parent / "verify" / "expected.json"
@@ -102,20 +102,47 @@ def seeds(preds: Predictions, spec: dict[str, Any]) -> dict[str, Any]:
 # Contrasts: the paired video bootstrap, pooled over seeds where an arm has them
 # ---------------------------------------------------------------------------
 
-def _one_contrast(job: dict[str, Any]) -> dict[str, Any]:
-    preds = Predictions(job["root"])
-    level, boot = job["level"], job["bootstrap"]
-    a = preds.pool(job["a"], level)
-    b = preds.pool(job["b"], level)
-    sa, sb, y = align(a, b)
-    res = paired_auc_delta(sa, sb, y, b=boot["b"], seed=boot["seed"])
+def _paired(preds: Predictions, a_runs: list[str], b_runs: list[str], level: str,
+            boot: dict[str, Any], eval_set: str = "ffpp") -> dict[str, Any]:
+    """One paired contrast A - B: the point estimate (the un-resampled difference,
+    which is what the paper prints) and the paired video bootstrap around it.
+
+    ``level`` is one CRF level, or ``auc_comp`` — the mean over c28-c40, re-sampled
+    jointly through the harness's ``paired_auc_comp_delta``."""
+    if level == "auc_comp":
+        per_a, per_b, labels, keys = {}, {}, None, None
+        auc_a, auc_b = [], []
+        for lv in COMP_LEVELS:
+            a = preds.pool(a_runs, lv, eval_set)
+            b = preds.pool(b_runs, lv, eval_set)
+            sa, sb, y = align(a, b)
+            k = [kk for kk in a["keys"] if kk in set(b["keys"])]
+            if keys is None:
+                keys, labels = k, y
+            elif k != keys or not np.array_equal(y, labels):
+                raise ValueError(f"{lv}: video set differs across the compressed levels")
+            per_a[lv], per_b[lv] = sa, sb
+            auc_a.append(video_auc(sa, k, y))
+            auc_b.append(video_auc(sb, k, y))
+        res = paired_auc_comp_delta(per_a, per_b, labels, list(COMP_LEVELS),
+                                    b=boot["b"], seed=boot["seed"])
+        n, aa, ab = len(labels), float(np.mean(auc_a)), float(np.mean(auc_b))
+    else:
+        a = preds.pool(a_runs, level, eval_set)
+        b = preds.pool(b_runs, level, eval_set)
+        sa, sb, y = align(a, b)
+        k = [kk for kk in a["keys"] if kk in set(b["keys"])]
+        res = paired_auc_delta(sa, sb, y, b=boot["b"], seed=boot["seed"])
+        n, aa, ab = len(y), float(video_auc(sa, k, y)), float(video_auc(sb, k, y))
     return {
-        "name": job["name"],
-        "a": job["a"], "b": job["b"], "level": level,
-        "n_videos": int(len(y)),
-        "auc_a": float(video_auc(sa, a["keys"], y)),
-        "auc_b": float(video_auc(sb, b["keys"], y)),
-        "delta": res["delta_mean"],
+        "n_videos": int(n),
+        "auc_a": aa,
+        "auc_b": ab,
+        # The paper prints the point estimate (decision 2026-10-17, "every delta is
+        # printed as a point estimate"); v1.0.0 printed the bootstrap mean, which
+        # is kept beside it.
+        "delta": aa - ab,
+        "delta_boot_mean": res["delta_mean"],
         "ci_lo": res["ci_lo"],
         "ci_hi": res["ci_hi"],
         "p_delta_gt_0": res["p_delta_gt_0"],
@@ -123,6 +150,13 @@ def _one_contrast(job: dict[str, Any]) -> dict[str, Any]:
         "b": res["b"],
         "seed": boot["seed"],
     }
+
+
+def _one_contrast(job: dict[str, Any]) -> dict[str, Any]:
+    preds = Predictions(job["root"])
+    out = _paired(preds, job["a"], job["b"], job["level"], job["bootstrap"],
+                  job.get("eval_set", "ffpp"))
+    return {"name": job["name"], "a": job["a"], "b": job["b"], "level": job["level"], **out}
 
 
 def contrasts(preds: Predictions, spec: dict[str, Any], jobs: int = 1,
@@ -177,15 +211,9 @@ def faceshifter(preds: Predictions, spec: dict[str, Any], jobs: int = 1,
     ]
     results = []
     for w in work:
-        preds_local = Predictions(w["root"])
-        a = preds_local.pool(w["a"], w["level"], "faceshifter")
-        b = preds_local.pool(w["b"], w["level"], "faceshifter")
-        sa, sb, y = align(a, b)
-        res = paired_auc_delta(sa, sb, y, b=w["bootstrap"]["b"], seed=w["bootstrap"]["seed"])
-        results.append({"name": w["name"], "level": w["level"], "delta": res["delta_mean"],
-                        "ci_lo": res["ci_lo"], "ci_hi": res["ci_hi"],
-                        "p_delta_gt_0": res["p_delta_gt_0"],
-                        "excludes_zero": res["excludes_zero"]})
+        out = _paired(Predictions(w["root"]), w["a"], w["b"], w["level"], w["bootstrap"],
+                      "faceshifter")
+        results.append({"name": w["name"], "level": w["level"], **out})
     return {"per_run": per_run, "contrasts": results}
 
 
@@ -239,11 +267,14 @@ def _md_seeds(res: dict[str, Any]) -> str:
 
 def _md_contrasts(res: list[dict[str, Any]]) -> str:
     lines = ["## The adjudicated contrasts (10k paired video bootstrap)", "",
-             "| contrast | Δ | 95% CI | P(Δ>0) | CI excludes 0 |",
-             "|---|---|---|---|---|"]
+             "Δ is the point estimate (the un-resampled difference, what the paper "
+             "prints); the bootstrap mean is shown beside it.", "",
+             "| contrast | level | Δ | bootstrap mean | 95% CI | P(Δ>0) | CI excludes 0 |",
+             "|---|---|---|---|---|---|---|"]
     for r in res:
         lines.append(
-            f"| {r['name']} | {r['delta']:+.4f} | [{r['ci_lo']:+.4f}, {r['ci_hi']:+.4f}] | "
+            f"| {r['name']} | {r['level']} | {r['delta']:+.4f} | {r['delta_boot_mean']:+.4f} | "
+            f"[{r['ci_lo']:+.4f}, {r['ci_hi']:+.4f}] | "
             f"{r['p_delta_gt_0']:.2f} | {'yes' if r['excludes_zero'] else 'no'} |")
     return "\n".join(lines)
 

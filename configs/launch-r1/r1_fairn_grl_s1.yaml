@@ -1,0 +1,43 @@
+# Phase 6 (Revision 1, W0) — E1 r1_fairn_grl_s1: Fair-N + the adversarial (GRL) loss, ramp from step 0.
+#
+# Parent: configs/phase5/f1_none_fair_s1.yaml (Fair-N, seed 1); its body is repeated below.
+# Diff vs the resolved parent (the declared line-set, nothing else):
+#   model.invariance_arm  : none -> grl              the component under test
+#   train.grl_ramp        : phase_anchored -> from_step0
+#                           DANN ramp λ = λmax·(2/(1+e^(−10p)) − 1), p = step/T over all 30
+#                           epochs from step 0 (L1: the default ramp is anchored at
+#                           phase_bounds, λ = 0 for epochs 1–10 in flat mode)
+#   train.val_raw         : false -> true            log raw AND EMA val AUC (kickoff §3)
+#   train.step_log_detail : false -> true            per-step λ / est_pm1 / disc_bal_acc line
+#                           every step_log_every (default 50) steps; read-only, numerics
+#                           bit-equal (2b test). Estimator/adversary health for W7.
+# Stated, not changed (equal to the parent):
+#   loss.grl_lambda_max 0.5 (= a0 and the original CAFRL; written out explicitly);
+#   train.lr_disc 2e-4 (Fair-N's YAML; a0 used 1e-4 — S0 m3: "Fair-N's exact configuration"
+#   governs); data.batch_size 32 (default); train.step_log_every 50 (default).
+# Why: decision "Revision 1 W0: adversary tested as designed, ramp from step 0".
+#
+# Run: python -m src.train --config configs/phase6/r1_fairn_grl_s1.yaml --name r1_fairn_grl_s1
+#      (one GPU, no torchrun; never the max-epochs or subset-fraction flags; via runs/phase6_build/launch.sh)
+# Eval: python -m src.scripts.eval_battery --run r1_fairn_grl_s1 --bn-routing clean
+#       python -m src.scripts.eval_faceshifter --run r1_fairn_grl_s1
+# Selection: unchanged trainer rule = EMA weights, best mean val AUC over c23 + c40 (Fair-N's).
+# Every diff below is checked against the resolved parent by src/tests/test_phase6_configs.py.
+model:
+  invariance_arm: grl
+train:
+  curriculum: flat
+  lr_freq: 0.0002
+  lr_backbone: 0.0002
+  lr_disc: 0.0002
+  epochs: 30
+  seed: 1
+  grl_ramp: from_step0
+  val_raw: true
+  step_log_detail: true
+loss:
+  w_cons: 0.0
+  w_phase: 0.0
+  w_circ_rel: 0.0
+  w_div: 0.0
+  grl_lambda_max: 0.5

@@ -1,0 +1,37 @@
+{
+ "header": "Exploratory / descriptive, not registered (prereg §11)",
+ "block": "e10b",
+ "created_utc": "2026-10-14T18:38:59+00:00",
+ "source": "runs/phase6_build/w5/e10b/cost_table.json",
+ "checks": [
+  {
+   "argv": [
+    "costs",
+    "${RUNS_ROOT}/phase6_build/w5/e10b/cost_table.json",
+    "--mode",
+    "gpu_full"
+   ],
+   "ok": true
+  }
+ ],
+ "n_rows": 11,
+ "no_bootstrap": true,
+ "notes": {
+  "schema": "w5_cost_table/1",
+  "mode": "gpu_full",
+  "device": "cuda:0",
+  "device_name": "NVIDIA A100-PCIE-40GB",
+  "torch": "2.5.1",
+  "input_shape": [
+   1,
+   3,
+   256,
+   256
+  ],
+  "dtype": "float32",
+  "flops_note": "FlopCounterMode, batch 1, 3x256x256, fp32: matmul/conv/attention only, 2 FLOPs per multiply-add; FFT, elementwise, pooling and normalisation not counted",
+  "latency_protocol": "fp32 no_grad, 20 warm-up + 100 timed, cuda sync per call, median/IQR ms",
+  "created_utc": "2026-10-14T18:34:48+00:00",
+  "git_commit": "9cf0c45dd29406b644496730b905ed0ad550e8ca"
+ }
+}

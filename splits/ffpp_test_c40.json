@@ -8,7 +8,7 @@
  "n_real": 140,
  "pooling_key": "(video_id, method)",
  "keys_sha256": "546d683418bd64331c7a9a2e78ae246ba9e3a2846873cdf3527d318e4cc1dd5c",
- "derived_from": "runs/b7_effnet_b0_mq_fliponly/report.json (cross-checked against 26 released FF++ runs)",
+ "derived_from": "runs/b7_effnet_b0_mq_fliponly/report.json (cross-checked against 52 released FF++ runs)",
  "videos": [
   {
    "video_id": "000_003",

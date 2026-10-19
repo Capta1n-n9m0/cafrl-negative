@@ -1,0 +1,235 @@
+{
+  "note": "Phase 6 (Revision 1, W0) campaign configs, builder 2d. Order = W7 queue (runs/phase6_build/launch_queue.txt, kickoff \u00a73). sha256 is checked by src/tests/test_phase6_configs.py; any edit after the phase6-prereg tag must update it with a dated note.",
+  "configs": [
+    {
+      "queue_index": 1,
+      "run": "r1_fairn_grl_s42",
+      "arm": "E1",
+      "trainer": "cafrl",
+      "seed": 42,
+      "config": "configs/phase6/r1_fairn_grl_s42.yaml",
+      "parent": "configs/phase5/f1_none_fair_s42.yaml",
+      "sha256": "ab271f5c27915654cb7aaa12974ebcb7ae29c6e820d756ca40821543293a0b88"
+    },
+    {
+      "queue_index": 2,
+      "run": "r1_fairn_grl_s1",
+      "arm": "E1",
+      "trainer": "cafrl",
+      "seed": 1,
+      "config": "configs/phase6/r1_fairn_grl_s1.yaml",
+      "parent": "configs/phase5/f1_none_fair_s1.yaml",
+      "sha256": "fbe2fd8a3216cb7dfda078d4221cf25cde2e79e3a0cba7d1578b6b3fe21c6daf"
+    },
+    {
+      "queue_index": 3,
+      "run": "r1_fairn_grl_s2",
+      "arm": "E1",
+      "trainer": "cafrl",
+      "seed": 2,
+      "config": "configs/phase6/r1_fairn_grl_s2.yaml",
+      "parent": "configs/phase5/f1_none_fair_s2.yaml",
+      "sha256": "2c793cbdb7c104470c614d8b12bba3ea6deaff7ff023567ac636d596e6000ad5"
+    },
+    {
+      "queue_index": 4,
+      "run": "r1_sb_noc40_s42",
+      "arm": "E2a",
+      "trainer": "baseline",
+      "seed": 42,
+      "config": "configs/phase6/r1_sb_noc40_s42.yaml",
+      "parent": "b7 recipe: train_baseline --model effnet_b0 --protocol mq --no-aug --seed 42 (runs/b7_effnet_b0_mq_fliponly)",
+      "sha256": "10d828f4918a89946509c2c9a46a9b0a3118b3a3b6820f7cbd6ecbded8d88dc6"
+    },
+    {
+      "queue_index": 5,
+      "run": "r1_sb_noc40_s1",
+      "arm": "E2a",
+      "trainer": "baseline",
+      "seed": 1,
+      "config": "configs/phase6/r1_sb_noc40_s1.yaml",
+      "parent": "b7 recipe: train_baseline --model effnet_b0 --protocol mq --no-aug --seed 1 (runs/b7_effnet_b0_mq_fliponly_s1)",
+      "sha256": "9be2df5c655957c5cb8078e3e8d3f2727e11e927fd0218cf9854e06128b0fb44"
+    },
+    {
+      "queue_index": 6,
+      "run": "r1_sb_noc40_s2",
+      "arm": "E2a",
+      "trainer": "baseline",
+      "seed": 2,
+      "config": "configs/phase6/r1_sb_noc40_s2.yaml",
+      "parent": "b7 recipe: train_baseline --model effnet_b0 --protocol mq --no-aug --seed 2 (runs/b7_effnet_b0_mq_fliponly_s2)",
+      "sha256": "0639393d01138e9237f5382d87c822efa655ad85f30c38f5cf2cf307cdeae877"
+    },
+    {
+      "queue_index": 7,
+      "run": "r1_sb_noc36c40_s42",
+      "arm": "E2b",
+      "trainer": "baseline",
+      "seed": 42,
+      "config": "configs/phase6/r1_sb_noc36c40_s42.yaml",
+      "parent": "b7 recipe: train_baseline --model effnet_b0 --protocol mq --no-aug --seed 42 (runs/b7_effnet_b0_mq_fliponly)",
+      "sha256": "5ffbc7db39a080ea4f1fa4c8d9abcafefcf0c5d474336791a1f21a03fd257744"
+    },
+    {
+      "queue_index": 8,
+      "run": "r1_sb_noc36c40_s1",
+      "arm": "E2b",
+      "trainer": "baseline",
+      "seed": 1,
+      "config": "configs/phase6/r1_sb_noc36c40_s1.yaml",
+      "parent": "b7 recipe: train_baseline --model effnet_b0 --protocol mq --no-aug --seed 1 (runs/b7_effnet_b0_mq_fliponly_s1)",
+      "sha256": "3edec11220436c6b055190dcd68bb73365284845436b07c845214e97117882e5"
+    },
+    {
+      "queue_index": 9,
+      "run": "r1_sb_noc36c40_s2",
+      "arm": "E2b",
+      "trainer": "baseline",
+      "seed": 2,
+      "config": "configs/phase6/r1_sb_noc36c40_s2.yaml",
+      "parent": "b7 recipe: train_baseline --model effnet_b0 --protocol mq --no-aug --seed 2 (runs/b7_effnet_b0_mq_fliponly_s2)",
+      "sha256": "98e21ff6125d16a0c053d58a4ee9b67c4d442a1e8a94dc890d1be70df7886d56"
+    },
+    {
+      "queue_index": 10,
+      "run": "r1_sb_jpeg_all_s42",
+      "arm": "E3a",
+      "trainer": "baseline",
+      "seed": 42,
+      "config": "configs/phase6/r1_sb_jpeg_all_s42.yaml",
+      "parent": "b7 recipe: train_baseline --model effnet_b0 --protocol mq --no-aug --seed 42 (runs/b7_effnet_b0_mq_fliponly)",
+      "sha256": "e6cf238954794d91604413086b6dd7e9b04bcdae874d744815c9e94b4b676dd6"
+    },
+    {
+      "queue_index": 11,
+      "run": "r1_sb_jpeg_all_s1",
+      "arm": "E3a",
+      "trainer": "baseline",
+      "seed": 1,
+      "config": "configs/phase6/r1_sb_jpeg_all_s1.yaml",
+      "parent": "b7 recipe: train_baseline --model effnet_b0 --protocol mq --no-aug --seed 1 (runs/b7_effnet_b0_mq_fliponly_s1)",
+      "sha256": "6b8fed00b7c95c2c1d278402d793c3e235a5aa256fe859caf85d25718cb8612c"
+    },
+    {
+      "queue_index": 12,
+      "run": "r1_sb_jpeg_all_s2",
+      "arm": "E3a",
+      "trainer": "baseline",
+      "seed": 2,
+      "config": "configs/phase6/r1_sb_jpeg_all_s2.yaml",
+      "parent": "b7 recipe: train_baseline --model effnet_b0 --protocol mq --no-aug --seed 2 (runs/b7_effnet_b0_mq_fliponly_s2)",
+      "sha256": "5c3d4a4cbd3364248dcf3da094eb172f5d498f200d8b395a7e307d79634ccff4"
+    },
+    {
+      "queue_index": 13,
+      "run": "r1_sb_jpeg_noc40_s42",
+      "arm": "E3b",
+      "trainer": "baseline",
+      "seed": 42,
+      "config": "configs/phase6/r1_sb_jpeg_noc40_s42.yaml",
+      "parent": "b7 recipe: train_baseline --model effnet_b0 --protocol mq --no-aug --seed 42 (runs/b7_effnet_b0_mq_fliponly)",
+      "sha256": "1ab4412f8cf22ccfc6fe2b7721cdc95310b4e123c7fc43fb375eeb7a073618c3"
+    },
+    {
+      "queue_index": 14,
+      "run": "r1_sb_jpeg_noc40_s1",
+      "arm": "E3b",
+      "trainer": "baseline",
+      "seed": 1,
+      "config": "configs/phase6/r1_sb_jpeg_noc40_s1.yaml",
+      "parent": "b7 recipe: train_baseline --model effnet_b0 --protocol mq --no-aug --seed 1 (runs/b7_effnet_b0_mq_fliponly_s1)",
+      "sha256": "e79800164d21a2c352f28e2caee1739ab9f3026a93425999b0e8d61a3d4a9727"
+    },
+    {
+      "queue_index": 15,
+      "run": "r1_sb_jpeg_noc40_s2",
+      "arm": "E3b",
+      "trainer": "baseline",
+      "seed": 2,
+      "config": "configs/phase6/r1_sb_jpeg_noc40_s2.yaml",
+      "parent": "b7 recipe: train_baseline --model effnet_b0 --protocol mq --no-aug --seed 2 (runs/b7_effnet_b0_mq_fliponly_s2)",
+      "sha256": "1d115db25fa3b31b2203242c0c2d0c2d423823f80b735eac648e8e87ebc051b7"
+    },
+    {
+      "queue_index": 16,
+      "run": "r1_sb_c23only_s42",
+      "arm": "anchor",
+      "trainer": "baseline",
+      "seed": 42,
+      "config": "configs/phase6/r1_sb_c23only_s42.yaml",
+      "parent": "b7 recipe: train_baseline --model effnet_b0 --protocol mq --no-aug --seed 42 (runs/b7_effnet_b0_mq_fliponly)",
+      "sha256": "68bdc98386768d7ae4e034f3d11cde1c1723b648730ceb171ecd9194454737a7"
+    },
+    {
+      "queue_index": 17,
+      "run": "r1_sb_c23only_s1",
+      "arm": "anchor",
+      "trainer": "baseline",
+      "seed": 1,
+      "config": "configs/phase6/r1_sb_c23only_s1.yaml",
+      "parent": "b7 recipe: train_baseline --model effnet_b0 --protocol mq --no-aug --seed 1 (runs/b7_effnet_b0_mq_fliponly_s1)",
+      "sha256": "d6ce0b0fde2c7367aec295df7b4ab8b79a25598cd755acc5e39e715bf0214464"
+    },
+    {
+      "queue_index": 18,
+      "run": "r1_sb_c23only_s2",
+      "arm": "anchor",
+      "trainer": "baseline",
+      "seed": 2,
+      "config": "configs/phase6/r1_sb_c23only_s2.yaml",
+      "parent": "b7 recipe: train_baseline --model effnet_b0 --protocol mq --no-aug --seed 2 (runs/b7_effnet_b0_mq_fliponly_s2)",
+      "sha256": "d0036a0e257401f1857cf13ae67f27aa239fcee2553ea63266131bd871aa188b"
+    },
+    {
+      "queue_index": 19,
+      "run": "r1_abl_curriculum_s42",
+      "arm": "E13",
+      "trainer": "cafrl",
+      "seed": 42,
+      "config": "configs/phase6/r1_abl_curriculum_s42.yaml",
+      "parent": "configs/phase5/f1_none_fair_s42.yaml",
+      "sha256": "81e3eb7f272322c578cfd7792eb8700d4d75e438791fd671817a85c64634450c"
+    },
+    {
+      "queue_index": 20,
+      "run": "r1_abl_lrbb_s42",
+      "arm": "E13",
+      "trainer": "cafrl",
+      "seed": 42,
+      "config": "configs/phase6/r1_abl_lrbb_s42.yaml",
+      "parent": "configs/phase5/f1_none_fair_s42.yaml",
+      "sha256": "a0a94c60870a83e8123a3baf983e8d3553e82ddb4d1257ab17c85d6bed42f040"
+    },
+    {
+      "queue_index": 21,
+      "run": "r1_abl_lrfreq_s42",
+      "arm": "E13",
+      "trainer": "cafrl",
+      "seed": 42,
+      "config": "configs/phase6/r1_abl_lrfreq_s42.yaml",
+      "parent": "configs/phase5/f1_none_fair_s42.yaml",
+      "sha256": "d53559d0ea62be19bd2acb6e6dc1054688db863e4ca07200ef86df8488342ee8"
+    },
+    {
+      "queue_index": 22,
+      "run": "r1_abl_aux_s42",
+      "arm": "E13",
+      "trainer": "cafrl",
+      "seed": 42,
+      "config": "configs/phase6/r1_abl_aux_s42.yaml",
+      "parent": "configs/phase5/f1_none_fair_s42.yaml",
+      "sha256": "b4d21002cb73a8605669e812ede60f52055df1c4dd15b025af6458b23dd9deaf"
+    },
+    {
+      "queue_index": 23,
+      "run": "r1_abl_ep50_s42",
+      "arm": "E13",
+      "trainer": "cafrl",
+      "seed": 42,
+      "config": "configs/phase6/r1_abl_ep50_s42.yaml",
+      "parent": "configs/phase5/f1_none_fair_s42.yaml",
+      "sha256": "b81da9ddf2e6db1c17e007ad75eeb73b0eaddfdc1dcbde11611980713038259f"
+    }
+  ]
+}

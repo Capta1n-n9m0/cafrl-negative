@@ -1,0 +1,32 @@
+# Phase 6x (W5b, POST HOC) — V2 r1x_abl_curriculum_nostop_s42: identical config, no stop rule, all 30 epochs.
+#
+# Parent: configs/phase6/r1_abl_curriculum_s42.yaml (frozen; sha256 81e3eb7f272322c578cfd7792eb8700d4d75e438791fd671817a85c64634450c,
+#   = its entry in configs/phase6/MANIFEST.json). Body = the parent's body with the diff below.
+# Diff vs the parent (YAML body and resolved config; the declared line-set, nothing else):
+#   (none) — the YAML body below is byte-identical to the parent's body.
+# Stop rule (V2; NOT a config key, it lives in the W5b monitor/watcher): none: NaN/inf (ANOMALY) still stops the run; DIVERGED is recorded and the run continues.
+# Run name / output dir: not config keys; set by --name (runs/<name> -> ~/sdd/exp3-cafrl-runs/<name>).
+# Why: decision 'C2: the curriculum ablation is retrained, post hoc, in three variants' (2026-10-16).
+# POST HOC: never replaces the registered r1_abl_curriculum_s42 row; no p-value, no verdict.
+#
+# Run: python -m src.train --config configs/phase6x/r1x_abl_curriculum_nostop_s42.yaml --name r1x_abl_curriculum_nostop_s42
+#      (one GPU, no torchrun; never --max-epochs / --subset-fraction / --resume / --deterministic;
+#      launched by src/scripts/w5b_launch.py per docs/phases/phase6-w5b-plan.md §4)
+# Selection: unchanged trainer rule = EMA weights, best mean val AUC over c23 + c40 (strict >).
+# Checked by src/tests/test_phase6x_configs.py.
+model:
+  invariance_arm: none
+train:
+  curriculum: baby_step
+  lr_freq: 0.0002
+  lr_backbone: 0.0002
+  lr_disc: 0.0002
+  epochs: 30
+  seed: 42
+  phase_bounds: [10, 25]
+  val_raw: true
+loss:
+  w_cons: 0.0
+  w_phase: 0.0
+  w_circ_rel: 0.0
+  w_div: 0.0

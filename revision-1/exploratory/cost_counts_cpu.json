@@ -1,0 +1,152 @@
+{
+  "schema": "w5_cost_table/1",
+  "mode": "cpu_counts",
+  "device": "cpu",
+  "device_name": "cpu",
+  "torch": "2.5.1",
+  "input_shape": [
+    1,
+    3,
+    256,
+    256
+  ],
+  "dtype": "float32",
+  "flops_note": "FlopCounterMode, batch 1, 3x256x256, fp32: matmul/conv/attention only, 2 FLOPs per multiply-add; FFT, elementwise, pooling and normalisation not counted",
+  "latency_protocol": null,
+  "created_utc": "2026-10-14T14:30:13+00:00",
+  "git_commit": "500a5de7adcc9892a3077a2564e8f58b27cfc625",
+  "rows": [
+    {
+      "run": "a0",
+      "arm": "A11",
+      "weights": "ema",
+      "model": "cafrl:cmam",
+      "checkpoint": "${RUNS_ROOT}/a0/best.pt",
+      "checkpoint_sha256": "723c02d2d5a87a5ba81c823053a178786f2cc881f24f15830439022ef0dc33f2",
+      "params_total": 11971561,
+      "params_deployed": 11967721,
+      "flops": 8904240384,
+      "gflops": 8.904240384
+    },
+    {
+      "run": "f1_none_fair_s42",
+      "arm": "A2",
+      "weights": "ema",
+      "model": "cafrl:cmam",
+      "checkpoint": "${RUNS_ROOT}/f1_none_fair_s42/best.pt",
+      "checkpoint_sha256": "212ad3e29becd8a4fbda27859d00369f970d915d914b777342f9b45bf44ebd3a",
+      "params_total": 10652643,
+      "params_deployed": 10648803,
+      "flops": 8901606656,
+      "gflops": 8.901606656
+    },
+    {
+      "run": "f2_spatres_full_s42",
+      "arm": "A9",
+      "weights": "ema",
+      "model": "cafrl:spatial_residual_full",
+      "checkpoint": "${RUNS_ROOT}/f2_spatres_full_s42/best.pt",
+      "checkpoint_sha256": "b3ec965fde46a78da15ffbb53cc8cd3cdc8c017c81e8acbebab0e743401c7c98",
+      "params_total": 9628081,
+      "params_deployed": 9624241,
+      "flops": 8933198080,
+      "gflops": 8.93319808
+    },
+    {
+      "run": "r1_fairn_grl_s42",
+      "arm": "A1",
+      "weights": "ema",
+      "model": "cafrl:cmam",
+      "checkpoint": "${RUNS_ROOT}/r1_fairn_grl_s42/best.pt",
+      "checkpoint_sha256": "870ded7bf183619cdc428b8dd90f1cfc1b91fb819eac9e2d08d30fbce3f430de",
+      "params_total": 11971561,
+      "params_deployed": 11967721,
+      "flops": 8904240384,
+      "gflops": 8.904240384
+    },
+    {
+      "run": "a1_none_s42",
+      "arm": "A12",
+      "weights": "ema",
+      "model": "cafrl:cmam",
+      "checkpoint": "${RUNS_ROOT}/a1_none_s42/best.pt",
+      "checkpoint_sha256": "663e215e40449a8ee96bcc4f14cae78f3759a6c6f5035413b2472ac27e40c4f9",
+      "params_total": 10652643,
+      "params_deployed": 10648803,
+      "flops": 8901606656,
+      "gflops": 8.901606656
+    },
+    {
+      "run": "cafrl_spatres_s42",
+      "arm": "A13",
+      "weights": "ema",
+      "model": "cafrl:spatial_residual",
+      "checkpoint": "${RUNS_ROOT}/cafrl_spatres_s42/best.pt",
+      "checkpoint_sha256": "1f9cfa938d30c5d82ad25229287484447c65dfc1348238ac48c0f66d8eb94d2a",
+      "params_total": 10288055,
+      "params_deployed": 10284215,
+      "flops": 8851943168,
+      "gflops": 8.851943168
+    },
+    {
+      "run": "trunk_recipe_s42",
+      "arm": "A10",
+      "weights": "raw",
+      "model": "baseline:cafrl_trunk",
+      "checkpoint": "${RUNS_ROOT}/trunk_recipe_s42/best.pt",
+      "checkpoint_sha256": "becbf68f8b48de635a3daf6c02f75d765885983447d6bdac55ff4b5bf117e4d2",
+      "params_total": 3677821,
+      "params_deployed": 3677821,
+      "flops": 962172416,
+      "gflops": 0.962172416
+    },
+    {
+      "run": "b7_effnet_b0_mq_fliponly",
+      "arm": "A3",
+      "weights": "raw",
+      "model": "baseline:effnet_b0",
+      "checkpoint": "${RUNS_ROOT}/b7_effnet_b0_mq_fliponly/best.pt",
+      "checkpoint_sha256": "c5769ea29ee820f3185dd2e4d607a77f9933d782f9a5763049d523554c367ea2",
+      "params_total": 4008829,
+      "params_deployed": 4008829,
+      "flops": 1004117504,
+      "gflops": 1.004117504
+    },
+    {
+      "run": "b1_xception_lit",
+      "arm": "A14",
+      "weights": "raw",
+      "model": "baseline:xception",
+      "checkpoint": "${RUNS_ROOT}/b1_xception_lit/best.pt",
+      "checkpoint_sha256": "85bb71d3d228b77f58180cc8241f196ca3f25d678fa6a7df314fa230504b6271",
+      "params_total": 20809001,
+      "params_deployed": 20809001,
+      "flops": 11901475648,
+      "gflops": 11.901475648
+    },
+    {
+      "run": "b2_f3net_lit",
+      "arm": "A16",
+      "weights": "raw",
+      "model": "baseline:f3net",
+      "checkpoint": "${RUNS_ROOT}/b2_f3net_lit/best.pt",
+      "checkpoint_sha256": "63b0ee04240a8481f7f60bf5c8d75430a41bd0fd1b910c89586667c19edb06bb",
+      "params_total": 21007337,
+      "params_deployed": 21007337,
+      "flops": 12762523840,
+      "gflops": 12.76252384
+    },
+    {
+      "run": "b3_freqnet_lit",
+      "arm": "A18",
+      "weights": "raw",
+      "model": "baseline:freqnet",
+      "checkpoint": "${RUNS_ROOT}/b3_freqnet_lit/best.pt",
+      "checkpoint_sha256": "15051bbf64b12d349499fbb5d9b28a976e1d584ae96551c70252764e114eb1d2",
+      "params_total": 5086273,
+      "params_deployed": 5086273,
+      "flops": 2959082496,
+      "gflops": 2.959082496
+    }
+  ]
+}

@@ -16,7 +16,8 @@ Seven groups of checks, in order:
 3. the adjudicated contrast table, recomputed end to end: seed pooling by video
    key, then the 10,000-replicate paired video bootstrap at the pinned RNG seed;
 4. the held-out-manipulation contrasts, recomputed the same way;
-5. every row of `../CLAIMS-MAP.md` — each mapped artifact must exist, and each
+5. every row of `../CLAIMS-MAP.md` and `../CLAIMS-MAP-R1.md` (Revision 1) — each
+   mapped artifact must exist, and each
    mapped number must come back out of it;
 6. the prediction-driven figures, rebuilt from `../predictions/` and `../curves/`
    and compared against the released `figures/figure_data.json`;
@@ -90,6 +91,24 @@ def printed_tolerance(expected: float) -> float:
     text = repr(float(expected))
     decimals = len(text.split(".", 1)[1].rstrip("0")) if "." in text else 4
     return 0.5 * 10 ** (-max(decimals, 1))
+
+
+def _excess(res: dict[str, Any], exp: dict[str, Any], tol_ci: float) -> tuple[float, str]:
+    """How far a re-derived contrast falls outside what the paper prints.
+
+    Δ (the point estimate) is deterministic: half a unit in its printed last place.
+    Interval endpoints are Monte-Carlo: the looser of `tol_ci` and that precision."""
+    worst, worst_key = 0.0, ""
+    for key in ("delta", "ci_lo", "ci_hi"):
+        if key not in exp:
+            continue
+        allowed = printed_tolerance(exp[key])
+        if key != "delta":
+            allowed = max(allowed, tol_ci)
+        excess = abs(res[key] - exp[key]) - allowed
+        if excess > worst:
+            worst, worst_key = excess, key
+    return worst, worst_key
 
 
 # ---------------------------------------------------------------------------
@@ -176,26 +195,20 @@ def check_derived(preds: Predictions, spec: dict[str, Any], rep: Report) -> None
 def check_contrasts(preds: Predictions, spec: dict[str, Any], rep: Report,
                     jobs: int, fast: bool) -> list[dict[str, Any]]:
     t0 = time.time()
-    tol_delta = float(spec["tolerances"]["bootstrap_delta_abs"])
     tol_ci = float(spec["tolerances"]["bootstrap_ci_abs"])
     results = rederive.contrasts(preds, spec, jobs=jobs, b_override=1000 if fast else None)
     by_name = {c["name"]: c for c in spec["contrasts"]}
     for res in results:
         exp = by_name[res["name"]]["expect"]
-        # Each quantity is allowed the looser of its Monte-Carlo tolerance and the
-        # precision the manuscript actually prints it to.
-        budget = {"delta": tol_delta, "ci_lo": tol_ci, "ci_hi": tol_ci}
-        worst, worst_key = 0.0, ""
-        for key, allowed in budget.items():
-            if key not in exp:
-                continue
-            allowed = max(allowed, printed_tolerance(exp[key]))
-            excess = abs(res[key] - exp[key]) - allowed
-            if excess > worst:
-                worst, worst_key = excess, key
-        detail = (f"{res['name']}: Δ {res['delta']:+.4f} "
+        # Δ is the point estimate — deterministic, so it must agree at the precision
+        # the paper prints it. Each interval endpoint is a Monte-Carlo quantity and is
+        # allowed the looser of its Monte-Carlo tolerance and the printed precision.
+        worst, worst_key = _excess(res, exp, tol_ci)
+        detail = (f"{res['name']} [{res['level']}]: Δ {res['delta']:+.4f} "
                   f"CI [{res['ci_lo']:+.4f}, {res['ci_hi']:+.4f}] "
-                  f"(paper Δ {exp['delta']:+.4f} CI [{exp['ci_lo']:+.4f}, {exp['ci_hi']:+.4f}])")
+                  f"(paper Δ {exp['delta']:+.4f}"
+                  + (f" CI [{exp['ci_lo']:+.4f}, {exp['ci_hi']:+.4f}])" if "ci_lo" in exp else
+                     "; interval not printed from this bootstrap)"))
         if fast:
             rep.add("SKIP", "contrasts", f"{detail} — --fast, replicate count reduced")
         elif worst > 0:
@@ -205,6 +218,8 @@ def check_contrasts(preds: Predictions, spec: dict[str, Any], rep: Report,
             rep.add("PASS", "contrasts", detail)
         # The verdict must survive too: a matching point estimate with a different
         # significance call would still be a disagreement with the paper.
+        if "ci_lo" not in exp:
+            continue
         expected_excl = not (exp["ci_lo"] <= 0.0 <= exp["ci_hi"])
         if res["excludes_zero"] != expected_excl and not fast:
             rep.add("FAIL", "contrasts",
@@ -231,7 +246,6 @@ def check_faceshifter(preds: Predictions, spec: dict[str, Any], rep: Report,
         return
     res = rederive.faceshifter(preds, spec, jobs=jobs, b_override=1000 if fast else None)
     got = {c["name"]: c for c in res["contrasts"]}
-    tol_delta = float(spec["tolerances"]["bootstrap_delta_abs"])
     tol_ci = float(spec["tolerances"]["bootstrap_ci_abs"])
     for decl in declared:
         exp = decl.get("expect")
@@ -243,17 +257,15 @@ def check_faceshifter(preds: Predictions, spec: dict[str, Any], rep: Report,
             continue
         detail = (f"{decl['name']}: Δ {actual['delta']:+.4f} "
                   f"CI [{actual['ci_lo']:+.4f}, {actual['ci_hi']:+.4f}]")
-        worst = 0.0
-        for key, allowed in (("delta", tol_delta), ("ci_lo", tol_ci), ("ci_hi", tol_ci)):
-            if key in exp:
-                allowed = max(allowed, printed_tolerance(exp[key]))
-                worst = max(worst, abs(actual[key] - exp[key]) - allowed)
+        worst, _ = _excess(actual, exp, tol_ci)
         if fast:
             rep.add("SKIP", "faceshifter", f"{detail} — --fast")
         elif worst > 0:
             rep.add("FAIL", "faceshifter", f"{detail}; exceeds tolerance by {worst:.5f}")
         else:
             rep.add("PASS", "faceshifter", detail)
+        if "ci_lo" not in exp:
+            continue
         expected_excl = not (exp["ci_lo"] <= 0.0 <= exp["ci_hi"])
         if not fast and actual["excludes_zero"] != expected_excl:
             rep.add("FAIL", "faceshifter", f"{decl['name']}: verdict differs from the paper")
@@ -267,7 +279,8 @@ def check_faceshifter(preds: Predictions, spec: dict[str, Any], rep: Report,
 # ---------------------------------------------------------------------------
 
 def check_claims_map(rep: Report) -> None:
-    """Every row of CLAIMS-MAP.md: its artifacts exist and its number returns."""
+    """Every row of CLAIMS-MAP.md and CLAIMS-MAP-R1.md: its artifacts exist and its
+    number returns."""
     t0 = time.time()
     try:
         if str(HERE) not in sys.path:       # `python -I` does not add the script's dir
@@ -294,6 +307,11 @@ def check_claims_map(rep: Report) -> None:
         rep.add("FAIL", "claims-map", "CLAIMS-MAP.md is missing")
     else:
         rep.add("PASS", "claims-map", "CLAIMS-MAP.md present")
+    if (HERE / "claims_map_r1.json").is_file():
+        if not (ROOT / "CLAIMS-MAP-R1.md").is_file():
+            rep.add("FAIL", "claims-map", "CLAIMS-MAP-R1.md is missing")
+        else:
+            rep.add("PASS", "claims-map", "CLAIMS-MAP-R1.md present")
     rep.group_summary("claims-map", t0)
 
 

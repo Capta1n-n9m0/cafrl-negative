@@ -178,6 +178,21 @@ def load_config(overrides: Path | str | None = None) -> Config:
             f"override file {override_path} must contain a top-level mapping, "
             f"got {type(data).__name__}"
         )
+    # A dumped run config (Phase 6) may carry top-level run-metadata records:
+    # ``provenance`` (git commit, CLI, ...; src/train.py and train_baseline) and,
+    # for SpatialBase runs, ``baseline`` / ``baseline_run`` (train_baseline's
+    # resolved hyper-parameters and run options). They are metadata, not Config
+    # fields: skip them so a run's own config.yaml still loads (eval_battery /
+    # eval_faceshifter read it). Only these exact names, and only as mappings;
+    # every other unknown key stays a hard error (typo protection).
+    for meta_key in RUN_METADATA_KEYS:
+        if meta_key in data:
+            if not isinstance(data[meta_key], dict):
+                raise TypeError(
+                    f"'{meta_key}' in {override_path} must be a mapping, got "
+                    f"{type(data[meta_key]).__name__}"
+                )
+    data = {k: v for k, v in data.items() if k not in RUN_METADATA_KEYS}
     _merge_into(cfg, data, "")
     return cfg
 
@@ -185,6 +200,16 @@ def load_config(overrides: Path | str | None = None) -> Config:
 # ---------------------------------------------------------------------------
 # Dump (resolved)
 # ---------------------------------------------------------------------------
+
+# Top-level key of the run-provenance record in a dumped config.yaml.
+PROVENANCE_KEY = "provenance"
+
+# Top-level run-metadata blocks ``load_config`` skips (whitelist by name):
+# the provenance record, and train_baseline's ``baseline:`` / ``baseline_run:``
+# blocks (S2 2c fixer, finding 1: eval of new SpatialBase runs).
+RUN_METADATA_KEYS: frozenset[str] = frozenset(
+    {PROVENANCE_KEY, "baseline", "baseline_run"}
+)
 
 # Path fields are resolved (``~`` expanded) on dump for reproducibility.
 _PATH_FIELDS = {f.name for f in dataclasses.fields(PathsConfig)}
@@ -225,13 +250,24 @@ def to_dict(cfg: Config, *, resolve_paths: bool = False) -> dict[str, Any]:
     return plain
 
 
-def dump_config(cfg: Config, run_dir: Path | str, filename: str = "config.yaml") -> Path:
-    """Write the fully-resolved config as YAML into ``run_dir`` and return the path."""
+def dump_config(
+    cfg: Config, run_dir: Path | str, filename: str = "config.yaml",
+    *, provenance: dict[str, Any] | None = None,
+) -> Path:
+    """Write the fully-resolved config as YAML into ``run_dir`` and return the path.
+
+    ``provenance`` (optional, Phase 6) is appended as a top-level ``provenance:``
+    mapping (git commit, dirty flag, CLI). ``load_config`` skips that key, so the
+    file still round-trips. Without it the output is exactly the old dump.
+    """
     run_dir = Path(run_dir)
     run_dir.mkdir(parents=True, exist_ok=True)
     out_path = run_dir / filename
+    plain = to_dict(cfg, resolve_paths=True)
+    if provenance is not None:
+        if PROVENANCE_KEY in plain:  # pragma: no cover - Config has no such field
+            raise KeyError(f"Config already has a '{PROVENANCE_KEY}' section")
+        plain[PROVENANCE_KEY] = dict(provenance)
     with out_path.open("w") as fh:
-        yaml.safe_dump(
-            to_dict(cfg, resolve_paths=True), fh, sort_keys=False, default_flow_style=False
-        )
+        yaml.safe_dump(plain, fh, sort_keys=False, default_flow_style=False)
     return out_path

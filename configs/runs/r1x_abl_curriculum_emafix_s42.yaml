@@ -1,0 +1,133 @@
+paths:
+  faces_root: ${FACES_ROOT}
+  celebdf_root: ${CELEBDF_FACES_ROOT}
+  crf_video_root: ${CRF_VIDEO_ROOT}
+  dataset_root: ${DATASET_ROOT}
+  splits_dir: ${SPLITS_DIR}
+  metadata_csv: ${METADATA_CSV}
+  runs_root: ${RUNS_ROOT}
+data:
+  levels:
+  - c0
+  - c23
+  - c28
+  - c32
+  - c36
+  - c40
+  frames_per_video: 32
+  methods:
+  - Deepfakes
+  - Face2Face
+  - FaceSwap
+  - NeuralTextures
+  quality_mix:
+  - 0.3
+  - 0.4
+  - 0.3
+  paired_fraction: 0.25
+  real_oversample: 4
+  batch_size: 32
+  num_workers: 8
+  bin_levels:
+  - c0
+  - c23
+  - c28
+  - c32
+  - c36
+  - c40
+  soft_label_eps: 0.1
+model:
+  dct:
+    block: 8
+    band_sizes:
+    - 6
+    - 10
+    - 20
+    - 28
+    band_channels: 64
+    coeff_norm: log1p
+    layout: channelized
+  phase:
+    window: 32
+    channels:
+    - 64
+    - 128
+    - 256
+    head_pairs: 32
+  estimator:
+    emb_dim: 64
+    num_bins: 6
+    joint_training: true
+  fusion:
+    kind: cmam
+    stream_dim: 256
+  discriminator:
+    hidden: 1024
+    dropout: 0.5
+    spectral_norm: true
+  invariance_arm: none
+  backbone: efficientnet_b0
+  backbone_full_head: false
+  conditioning: estimated
+  fusion_conditioning: estimated
+loss:
+  cls_smoothing: 0.05
+  w_crf: 0.2
+  w_div: 0.0
+  w_freq_aux: 0.0
+  div_s_max: 0.3
+  w_cons: 0.0
+  w_phase: 0.0
+  w_circ_rel: 0.0
+  grl_lambda_max: 0.5
+  hsic_ratio:
+  - 1.0
+  - 5.0
+  hsic_sigma: median
+  hsic_cka: false
+train:
+  lr_freq: 0.0002
+  lr_backbone: 0.0002
+  lr_disc: 0.0002
+  weight_decay: 0.0001
+  epochs: 30
+  phase_bounds:
+  - 10
+  - 25
+  curriculum: baby_step
+  ema_decay: 0.999
+  grad_clip: 1.0
+  amp: bf16
+  seed: 42
+  grl_ramp: phase_anchored
+  step_log_every: 50
+  step_log_detail: false
+  val_raw: true
+  ema_own_bn_stats: true
+eval:
+  bootstrap_b: 10000
+  frames_per_video: 32
+  ci: 0.95
+provenance:
+  git_commit: 564b17c8bfae3bc434c094ed917222203f3ae4fc
+  git_dirty: false
+  git_dirty_count: 0
+  git_dirty_paths: []
+  config_file: configs/phase6x/r1x_abl_curriculum_emafix_s42.yaml
+  config_file_sha256: d140e4aa4169f3f8a3a5a1514c4a72ed8f86d4ddf7118a41f63c7349491f3ea7
+  argv:
+  - ${REPO}/src/train.py
+  - --config
+  - configs/phase6x/r1x_abl_curriculum_emafix_s42.yaml
+  - --name
+  - r1x_abl_curriculum_emafix_s42
+  cli:
+    name: r1x_abl_curriculum_emafix_s42
+    resume: null
+    subset_fraction: 1.0
+    max_epochs: null
+    deterministic: false
+    aug: false
+  world_size: 1
+  torch_version: 2.5.1
+  created_utc: '2026-10-16T20:53:32+00:00'

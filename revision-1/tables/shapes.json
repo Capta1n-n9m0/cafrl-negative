@@ -1,0 +1,4188 @@
+{
+ "schema": "w4b_s3_shapes/1",
+ "what": "dry CPU shape trace, random init, no checkpoint, no data; batch traced at 2, reported as B",
+ "script": "src/scripts/w4b/s3_shape_trace.py",
+ "git_head": "adc9e5054055fd5fc0b323707b462efa95288464",
+ "torch": "2.5.1",
+ "config_sha256": {
+  "as_specified": "d28f60938d2631b924cbccb70251aab554df4938bc258ed87c286b4b53dbe2b8",
+  "fair_e1": "ab271f5c27915654cb7aaa12974ebcb7ae29c6e820d756ca40821543293a0b88",
+  "fair_n": "b7897688f0931b5182f131dc2e6f213275f82f769601960acbadaf513247ee6b",
+  "fair_w": "3e0a389e89c6a057d9e01b23eee7c7886ea1dec3d8bc089280bed0d4c2d3be3b"
+ },
+ "arms": {
+  "as_specified": {
+   "config": "configs/phase5/a1_grl_s1.yaml",
+   "model_cfg": {
+    "invariance_arm": "grl",
+    "fusion_kind": "cmam",
+    "backbone_full_head": false,
+    "conditioning": "estimated",
+    "fusion_conditioning": "estimated"
+   },
+   "trace_batch": 2,
+   "input_hw": 256,
+   "stages": [
+    {
+     "module": "input",
+     "class": "Tensor",
+     "label": "raw RGB in [0, 1]",
+     "in": null,
+     "out": [
+      "B",
+      3,
+      256,
+      256
+     ],
+     "out_fmt": "B\u00d73\u00d7256\u00d7256"
+    },
+    {
+     "module": "src.models.prep.rgb_to_y",
+     "class": "function",
+     "label": "BT.601 luma",
+     "in": [
+      [
+       "B",
+       3,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      "B",
+      1,
+      256,
+      256
+     ],
+     "out_fmt": "B\u00d71\u00d7256\u00d7256"
+    },
+    {
+     "module": "dct.transform",
+     "class": "BlockDCTStream.transform",
+     "label": "8x8 block DCT, zigzag, sign*log1p (coeffs); raw band energies",
+     "in": [
+      [
+       "B",
+       1,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       64,
+       32,
+       32
+      ],
+      [
+       "B",
+       64
+      ]
+     ],
+     "out_fmt": "(B\u00d764\u00d732\u00d732; B\u00d764)"
+    },
+    {
+     "module": "estimator.stem",
+     "class": "Sequential",
+     "label": "estimator: RGB conv stem",
+     "in": [
+      [
+       "B",
+       3,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      16,
+      16
+     ],
+     "out_fmt": "B\u00d7256\u00d716\u00d716"
+    },
+    {
+     "module": "estimator.gap",
+     "class": "AdaptiveAvgPool2d",
+     "label": "estimator: global average pool",
+     "in": [
+      [
+       "B",
+       256,
+       16,
+       16
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      1,
+      1
+     ],
+     "out_fmt": "B\u00d7256\u00d71\u00d71"
+    },
+    {
+     "module": "estimator.fc1",
+     "class": "Linear",
+     "label": "estimator: fc1 (stem features + log1p band energies)",
+     "in": [
+      [
+       "B",
+       320
+      ]
+     ],
+     "out": [
+      "B",
+      512
+     ],
+     "out_fmt": "B\u00d7512"
+    },
+    {
+     "module": "estimator.fc_emb",
+     "class": "Linear",
+     "label": "estimator: quality embedding q_emb",
+     "in": [
+      [
+       "B",
+       512
+      ]
+     ],
+     "out": [
+      "B",
+      64
+     ],
+     "out_fmt": "B\u00d764"
+    },
+    {
+     "module": "estimator.head",
+     "class": "Linear",
+     "label": "estimator: 6-bin CRF logits",
+     "in": [
+      [
+       "B",
+       64
+      ]
+     ],
+     "out": [
+      "B",
+      6
+     ],
+     "out_fmt": "B\u00d76"
+    },
+    {
+     "module": "estimator",
+     "class": "CompressionEstimator",
+     "label": "compression estimator (crf_logits, q_emb)",
+     "in": [
+      [
+       "B",
+       3,
+       256,
+       256
+      ],
+      [
+       "B",
+       64
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       6
+      ],
+      [
+       "B",
+       64
+      ]
+     ],
+     "out_fmt": "(B\u00d76; B\u00d764)"
+    },
+    {
+     "module": "band_gate.film",
+     "class": "FiLMGenerator",
+     "label": "band gate: FiLM generator (delta_gamma, beta)",
+     "in": [
+      [
+       "B",
+       64
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       4
+      ],
+      [
+       "B",
+       4
+      ]
+     ],
+     "out_fmt": "(B\u00d74; B\u00d74)"
+    },
+    {
+     "module": "band_gate",
+     "class": "ConditionedBandGate",
+     "label": "band gate g = softplus((1 + delta_gamma) * b + beta)",
+     "in": [],
+     "out": [
+      "B",
+      4
+     ],
+     "out_fmt": "B\u00d74"
+    },
+    {
+     "module": "dct.bands.0",
+     "class": "_BandConvBlock",
+     "label": "block-DCT: band 0 conv block (6 coefficients)",
+     "in": [
+      [
+       "B",
+       6,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      64,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d764\u00d732\u00d732"
+    },
+    {
+     "module": "dct.bands.1",
+     "class": "_BandConvBlock",
+     "label": "block-DCT: band 1 conv block (10 coefficients)",
+     "in": [
+      [
+       "B",
+       10,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      64,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d764\u00d732\u00d732"
+    },
+    {
+     "module": "dct.bands.2",
+     "class": "_BandConvBlock",
+     "label": "block-DCT: band 2 conv block (20 coefficients)",
+     "in": [
+      [
+       "B",
+       20,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      64,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d764\u00d732\u00d732"
+    },
+    {
+     "module": "dct.bands.3",
+     "class": "_BandConvBlock",
+     "label": "block-DCT: band 3 conv block (28 coefficients)",
+     "in": [
+      [
+       "B",
+       28,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      64,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d764\u00d732\u00d732"
+    },
+    {
+     "module": "dct.fuse",
+     "class": "Conv2d",
+     "label": "block-DCT: 1x1 fuse -> F_dct",
+     "in": [
+      [
+       "B",
+       256,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d7256\u00d732\u00d732"
+    },
+    {
+     "module": "phase.convs.0",
+     "class": "Conv2d",
+     "label": "FFT-phase: first conv (input = windowed sin/cos phase map)",
+     "in": [
+      [
+       "B",
+       2,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      "B",
+      64,
+      128,
+      128
+     ],
+     "out_fmt": "B\u00d764\u00d7128\u00d7128"
+    },
+    {
+     "module": "phase.convs.5",
+     "class": "Conv2d",
+     "label": "FFT-phase: last conv",
+     "in": [
+      [
+       "B",
+       256,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d7256\u00d732\u00d732"
+    },
+    {
+     "module": "phase.phase_head",
+     "class": "Conv2d",
+     "label": "FFT-phase: bare phase head (cos | sin pairs)",
+     "in": [
+      [
+       "B",
+       256,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      64,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d764\u00d732\u00d732"
+    },
+    {
+     "module": "phase",
+     "class": "PhaseStream",
+     "label": "FFT-phase stream (F_phase, phase_head)",
+     "in": [
+      [
+       "B",
+       1,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       256,
+       32,
+       32
+      ],
+      [
+       "B",
+       64,
+       32,
+       32
+      ]
+     ],
+     "out_fmt": "(B\u00d7256\u00d732\u00d732; B\u00d764\u00d732\u00d732)"
+    },
+    {
+     "module": "backbone.backbone",
+     "class": "EfficientNetFeatures",
+     "label": "spatial trunk: EfficientNet-B0 (features_only stages)",
+     "in": [
+      [
+       "B",
+       3,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       16,
+       128,
+       128
+      ],
+      [
+       "B",
+       24,
+       64,
+       64
+      ],
+      [
+       "B",
+       40,
+       32,
+       32
+      ],
+      [
+       "B",
+       112,
+       16,
+       16
+      ],
+      [
+       "B",
+       320,
+       8,
+       8
+      ]
+     ],
+     "out_fmt": "(B\u00d716\u00d7128\u00d7128; B\u00d724\u00d764\u00d764; B\u00d740\u00d732\u00d732; B\u00d7112\u00d716\u00d716; B\u00d7320\u00d78\u00d78)"
+    },
+    {
+     "module": "backbone.proj",
+     "class": "Conv2d",
+     "label": "spatial trunk: 1x1 projection -> F_spat",
+     "in": [
+      [
+       "B",
+       320,
+       8,
+       8
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7256\u00d78\u00d78"
+    },
+    {
+     "module": "backbone",
+     "class": "SpatialBackbone",
+     "label": "spatial stream output",
+     "in": [
+      [
+       "B",
+       3,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7256\u00d78\u00d78"
+    },
+    {
+     "module": "fusion.align_dct",
+     "class": "_StreamAlignment",
+     "label": "fusion: align F_dct 32x32 -> 8x8",
+     "in": [
+      [
+       "B",
+       256,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7256\u00d78\u00d78"
+    },
+    {
+     "module": "fusion.align_phase",
+     "class": "_StreamAlignment",
+     "label": "fusion: align F_phase 32x32 -> 8x8",
+     "in": [
+      [
+       "B",
+       256,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7256\u00d78\u00d78"
+    },
+    {
+     "module": "fusion.zfreq_proj",
+     "class": "Conv2d",
+     "label": "fusion: z_freq projection (pre-pool)",
+     "in": [
+      [
+       "B",
+       512,
+       8,
+       8
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7256\u00d78\u00d78"
+    },
+    {
+     "module": "fusion.fc_avg",
+     "class": "Linear",
+     "label": "CMAM: shared bottleneck on concatenated GAP vectors",
+     "in": [
+      [
+       "B",
+       768
+      ]
+     ],
+     "out": [
+      "B",
+      192
+     ],
+     "out_fmt": "B\u00d7192"
+    },
+    {
+     "module": "fusion.fc_max",
+     "class": "Linear",
+     "label": "CMAM: shared bottleneck on concatenated GMP vectors",
+     "in": [
+      [
+       "B",
+       768
+      ]
+     ],
+     "out": [
+      "B",
+      192
+     ],
+     "out_fmt": "B\u00d7192"
+    },
+    {
+     "module": "fusion.head_avg.0",
+     "class": "Linear",
+     "label": "CMAM: per-stream excitation (avg path), stream 0",
+     "in": [
+      [
+       "B",
+       192
+      ]
+     ],
+     "out": [
+      "B",
+      256
+     ],
+     "out_fmt": "B\u00d7256"
+    },
+    {
+     "module": "fusion.head_max.0",
+     "class": "Linear",
+     "label": "CMAM: per-stream excitation (max path), stream 0",
+     "in": [
+      [
+       "B",
+       192
+      ]
+     ],
+     "out": [
+      "B",
+      256
+     ],
+     "out_fmt": "B\u00d7256"
+    },
+    {
+     "module": "fusion.fusion_film",
+     "class": "FiLMGenerator",
+     "label": "CMAM: FiLM fusion gate (delta_gamma, beta)",
+     "in": [
+      [
+       "B",
+       64
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       768
+      ],
+      [
+       "B",
+       768
+      ]
+     ],
+     "out_fmt": "(B\u00d7768; B\u00d7768)"
+    },
+    {
+     "module": "fusion.spatial_attn.0",
+     "class": "_SpatialAttention",
+     "label": "CMAM: per-stream spatial attention, stream 0",
+     "in": [
+      [
+       "B",
+       256,
+       8,
+       8
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7256\u00d78\u00d78"
+    },
+    {
+     "module": "fusion.he_cleanup",
+     "class": "_HeCleanup",
+     "label": "fusion: SE + spatial-gate cleanup of the concatenated map",
+     "in": [
+      [
+       "B",
+       768,
+       8,
+       8
+      ]
+     ],
+     "out": [
+      "B",
+      768,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7768\u00d78\u00d78"
+    },
+    {
+     "module": "fusion.classifier",
+     "class": "_Classifier",
+     "label": "classifier head GAP -> 512 -> 256 -> 1",
+     "in": [
+      [
+       "B",
+       768,
+       8,
+       8
+      ]
+     ],
+     "out": [
+      "B",
+      1
+     ],
+     "out_fmt": "B\u00d71"
+    },
+    {
+     "module": "fusion",
+     "class": "FusionModule",
+     "label": "fusion output (logit, z_freq, stream_feats)",
+     "in": [
+      [
+       "B",
+       256,
+       8,
+       8
+      ],
+      [
+       "B",
+       256,
+       32,
+       32
+      ],
+      [
+       "B",
+       256,
+       32,
+       32
+      ],
+      [
+       "B",
+       64
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       1
+      ],
+      [
+       "B",
+       256
+      ],
+      [
+       [
+        "B",
+        256
+       ],
+       [
+        "B",
+        256
+       ],
+       [
+        "B",
+        256
+       ]
+      ]
+     ],
+     "out_fmt": "(B\u00d71; B\u00d7256; (B\u00d7256; B\u00d7256; B\u00d7256))"
+    },
+    {
+     "module": "grl",
+     "class": "GradientReversal",
+     "label": "gradient reversal layer (identity forward)",
+     "in": [
+      [
+       "B",
+       256
+      ]
+     ],
+     "out": [
+      "B",
+      256
+     ],
+     "out_fmt": "B\u00d7256"
+    },
+    {
+     "module": "discriminator.net.0",
+     "class": "ParametrizedLinear",
+     "label": "discriminator: first spectral-norm linear",
+     "in": [
+      [
+       "B",
+       256
+      ]
+     ],
+     "out": [
+      "B",
+      1024
+     ],
+     "out_fmt": "B\u00d71024"
+    },
+    {
+     "module": "discriminator",
+     "class": "CompressionDiscriminator",
+     "label": "discriminator logits (6 CRF bins)",
+     "in": [
+      [
+       "B",
+       256
+      ]
+     ],
+     "out": [
+      "B",
+      6
+     ],
+     "out_fmt": "B\u00d76"
+    }
+   ],
+   "absent": [
+    "backbone.backbone.conv_head",
+    "fusion.spatial_head",
+    "fusion.freq_head"
+   ],
+   "outputs": {
+    "logit": [
+     "B",
+     1
+    ],
+    "crf_logits": [
+     "B",
+     6
+    ],
+    "q_emb": [
+     "B",
+     64
+    ],
+    "band_gates": [
+     "B",
+     4
+    ],
+    "z_freq": [
+     "B",
+     256
+    ],
+    "stream_feats": [
+     [
+      "B",
+      256
+     ],
+     [
+      "B",
+      256
+     ],
+     [
+      "B",
+      256
+     ]
+    ],
+    "phase_head": [
+     "B",
+     64,
+     32,
+     32
+    ],
+    "disc_logits": [
+     "B",
+     6
+    ]
+   },
+   "outputs_fmt": {
+    "logit": "B\u00d71",
+    "crf_logits": "B\u00d76",
+    "q_emb": "B\u00d764",
+    "band_gates": "B\u00d74",
+    "z_freq": "B\u00d7256",
+    "stream_feats": "(B\u00d7256; B\u00d7256; B\u00d7256)",
+    "phase_head": "B\u00d764\u00d732\u00d732",
+    "disc_logits": "B\u00d76"
+   },
+   "param_counts": {
+    "backbone": 3595388,
+    "proj": 82176,
+    "dct": 254976,
+    "phase": 1164864,
+    "estimator": 1370790,
+    "band_gate": 4684,
+    "fusion": 4179765,
+    "discriminator": 1318918
+   },
+   "param_total": 11971561
+  },
+  "fair_e1": {
+   "config": "configs/phase6/r1_fairn_grl_s42.yaml",
+   "model_cfg": {
+    "invariance_arm": "grl",
+    "fusion_kind": "cmam",
+    "backbone_full_head": false,
+    "conditioning": "estimated",
+    "fusion_conditioning": "estimated"
+   },
+   "trace_batch": 2,
+   "input_hw": 256,
+   "stages": [
+    {
+     "module": "input",
+     "class": "Tensor",
+     "label": "raw RGB in [0, 1]",
+     "in": null,
+     "out": [
+      "B",
+      3,
+      256,
+      256
+     ],
+     "out_fmt": "B\u00d73\u00d7256\u00d7256"
+    },
+    {
+     "module": "src.models.prep.rgb_to_y",
+     "class": "function",
+     "label": "BT.601 luma",
+     "in": [
+      [
+       "B",
+       3,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      "B",
+      1,
+      256,
+      256
+     ],
+     "out_fmt": "B\u00d71\u00d7256\u00d7256"
+    },
+    {
+     "module": "dct.transform",
+     "class": "BlockDCTStream.transform",
+     "label": "8x8 block DCT, zigzag, sign*log1p (coeffs); raw band energies",
+     "in": [
+      [
+       "B",
+       1,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       64,
+       32,
+       32
+      ],
+      [
+       "B",
+       64
+      ]
+     ],
+     "out_fmt": "(B\u00d764\u00d732\u00d732; B\u00d764)"
+    },
+    {
+     "module": "estimator.stem",
+     "class": "Sequential",
+     "label": "estimator: RGB conv stem",
+     "in": [
+      [
+       "B",
+       3,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      16,
+      16
+     ],
+     "out_fmt": "B\u00d7256\u00d716\u00d716"
+    },
+    {
+     "module": "estimator.gap",
+     "class": "AdaptiveAvgPool2d",
+     "label": "estimator: global average pool",
+     "in": [
+      [
+       "B",
+       256,
+       16,
+       16
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      1,
+      1
+     ],
+     "out_fmt": "B\u00d7256\u00d71\u00d71"
+    },
+    {
+     "module": "estimator.fc1",
+     "class": "Linear",
+     "label": "estimator: fc1 (stem features + log1p band energies)",
+     "in": [
+      [
+       "B",
+       320
+      ]
+     ],
+     "out": [
+      "B",
+      512
+     ],
+     "out_fmt": "B\u00d7512"
+    },
+    {
+     "module": "estimator.fc_emb",
+     "class": "Linear",
+     "label": "estimator: quality embedding q_emb",
+     "in": [
+      [
+       "B",
+       512
+      ]
+     ],
+     "out": [
+      "B",
+      64
+     ],
+     "out_fmt": "B\u00d764"
+    },
+    {
+     "module": "estimator.head",
+     "class": "Linear",
+     "label": "estimator: 6-bin CRF logits",
+     "in": [
+      [
+       "B",
+       64
+      ]
+     ],
+     "out": [
+      "B",
+      6
+     ],
+     "out_fmt": "B\u00d76"
+    },
+    {
+     "module": "estimator",
+     "class": "CompressionEstimator",
+     "label": "compression estimator (crf_logits, q_emb)",
+     "in": [
+      [
+       "B",
+       3,
+       256,
+       256
+      ],
+      [
+       "B",
+       64
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       6
+      ],
+      [
+       "B",
+       64
+      ]
+     ],
+     "out_fmt": "(B\u00d76; B\u00d764)"
+    },
+    {
+     "module": "band_gate.film",
+     "class": "FiLMGenerator",
+     "label": "band gate: FiLM generator (delta_gamma, beta)",
+     "in": [
+      [
+       "B",
+       64
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       4
+      ],
+      [
+       "B",
+       4
+      ]
+     ],
+     "out_fmt": "(B\u00d74; B\u00d74)"
+    },
+    {
+     "module": "band_gate",
+     "class": "ConditionedBandGate",
+     "label": "band gate g = softplus((1 + delta_gamma) * b + beta)",
+     "in": [],
+     "out": [
+      "B",
+      4
+     ],
+     "out_fmt": "B\u00d74"
+    },
+    {
+     "module": "dct.bands.0",
+     "class": "_BandConvBlock",
+     "label": "block-DCT: band 0 conv block (6 coefficients)",
+     "in": [
+      [
+       "B",
+       6,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      64,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d764\u00d732\u00d732"
+    },
+    {
+     "module": "dct.bands.1",
+     "class": "_BandConvBlock",
+     "label": "block-DCT: band 1 conv block (10 coefficients)",
+     "in": [
+      [
+       "B",
+       10,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      64,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d764\u00d732\u00d732"
+    },
+    {
+     "module": "dct.bands.2",
+     "class": "_BandConvBlock",
+     "label": "block-DCT: band 2 conv block (20 coefficients)",
+     "in": [
+      [
+       "B",
+       20,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      64,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d764\u00d732\u00d732"
+    },
+    {
+     "module": "dct.bands.3",
+     "class": "_BandConvBlock",
+     "label": "block-DCT: band 3 conv block (28 coefficients)",
+     "in": [
+      [
+       "B",
+       28,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      64,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d764\u00d732\u00d732"
+    },
+    {
+     "module": "dct.fuse",
+     "class": "Conv2d",
+     "label": "block-DCT: 1x1 fuse -> F_dct",
+     "in": [
+      [
+       "B",
+       256,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d7256\u00d732\u00d732"
+    },
+    {
+     "module": "phase.convs.0",
+     "class": "Conv2d",
+     "label": "FFT-phase: first conv (input = windowed sin/cos phase map)",
+     "in": [
+      [
+       "B",
+       2,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      "B",
+      64,
+      128,
+      128
+     ],
+     "out_fmt": "B\u00d764\u00d7128\u00d7128"
+    },
+    {
+     "module": "phase.convs.5",
+     "class": "Conv2d",
+     "label": "FFT-phase: last conv",
+     "in": [
+      [
+       "B",
+       256,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d7256\u00d732\u00d732"
+    },
+    {
+     "module": "phase.phase_head",
+     "class": "Conv2d",
+     "label": "FFT-phase: bare phase head (cos | sin pairs)",
+     "in": [
+      [
+       "B",
+       256,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      64,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d764\u00d732\u00d732"
+    },
+    {
+     "module": "phase",
+     "class": "PhaseStream",
+     "label": "FFT-phase stream (F_phase, phase_head)",
+     "in": [
+      [
+       "B",
+       1,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       256,
+       32,
+       32
+      ],
+      [
+       "B",
+       64,
+       32,
+       32
+      ]
+     ],
+     "out_fmt": "(B\u00d7256\u00d732\u00d732; B\u00d764\u00d732\u00d732)"
+    },
+    {
+     "module": "backbone.backbone",
+     "class": "EfficientNetFeatures",
+     "label": "spatial trunk: EfficientNet-B0 (features_only stages)",
+     "in": [
+      [
+       "B",
+       3,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       16,
+       128,
+       128
+      ],
+      [
+       "B",
+       24,
+       64,
+       64
+      ],
+      [
+       "B",
+       40,
+       32,
+       32
+      ],
+      [
+       "B",
+       112,
+       16,
+       16
+      ],
+      [
+       "B",
+       320,
+       8,
+       8
+      ]
+     ],
+     "out_fmt": "(B\u00d716\u00d7128\u00d7128; B\u00d724\u00d764\u00d764; B\u00d740\u00d732\u00d732; B\u00d7112\u00d716\u00d716; B\u00d7320\u00d78\u00d78)"
+    },
+    {
+     "module": "backbone.proj",
+     "class": "Conv2d",
+     "label": "spatial trunk: 1x1 projection -> F_spat",
+     "in": [
+      [
+       "B",
+       320,
+       8,
+       8
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7256\u00d78\u00d78"
+    },
+    {
+     "module": "backbone",
+     "class": "SpatialBackbone",
+     "label": "spatial stream output",
+     "in": [
+      [
+       "B",
+       3,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7256\u00d78\u00d78"
+    },
+    {
+     "module": "fusion.align_dct",
+     "class": "_StreamAlignment",
+     "label": "fusion: align F_dct 32x32 -> 8x8",
+     "in": [
+      [
+       "B",
+       256,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7256\u00d78\u00d78"
+    },
+    {
+     "module": "fusion.align_phase",
+     "class": "_StreamAlignment",
+     "label": "fusion: align F_phase 32x32 -> 8x8",
+     "in": [
+      [
+       "B",
+       256,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7256\u00d78\u00d78"
+    },
+    {
+     "module": "fusion.zfreq_proj",
+     "class": "Conv2d",
+     "label": "fusion: z_freq projection (pre-pool)",
+     "in": [
+      [
+       "B",
+       512,
+       8,
+       8
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7256\u00d78\u00d78"
+    },
+    {
+     "module": "fusion.fc_avg",
+     "class": "Linear",
+     "label": "CMAM: shared bottleneck on concatenated GAP vectors",
+     "in": [
+      [
+       "B",
+       768
+      ]
+     ],
+     "out": [
+      "B",
+      192
+     ],
+     "out_fmt": "B\u00d7192"
+    },
+    {
+     "module": "fusion.fc_max",
+     "class": "Linear",
+     "label": "CMAM: shared bottleneck on concatenated GMP vectors",
+     "in": [
+      [
+       "B",
+       768
+      ]
+     ],
+     "out": [
+      "B",
+      192
+     ],
+     "out_fmt": "B\u00d7192"
+    },
+    {
+     "module": "fusion.head_avg.0",
+     "class": "Linear",
+     "label": "CMAM: per-stream excitation (avg path), stream 0",
+     "in": [
+      [
+       "B",
+       192
+      ]
+     ],
+     "out": [
+      "B",
+      256
+     ],
+     "out_fmt": "B\u00d7256"
+    },
+    {
+     "module": "fusion.head_max.0",
+     "class": "Linear",
+     "label": "CMAM: per-stream excitation (max path), stream 0",
+     "in": [
+      [
+       "B",
+       192
+      ]
+     ],
+     "out": [
+      "B",
+      256
+     ],
+     "out_fmt": "B\u00d7256"
+    },
+    {
+     "module": "fusion.fusion_film",
+     "class": "FiLMGenerator",
+     "label": "CMAM: FiLM fusion gate (delta_gamma, beta)",
+     "in": [
+      [
+       "B",
+       64
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       768
+      ],
+      [
+       "B",
+       768
+      ]
+     ],
+     "out_fmt": "(B\u00d7768; B\u00d7768)"
+    },
+    {
+     "module": "fusion.spatial_attn.0",
+     "class": "_SpatialAttention",
+     "label": "CMAM: per-stream spatial attention, stream 0",
+     "in": [
+      [
+       "B",
+       256,
+       8,
+       8
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7256\u00d78\u00d78"
+    },
+    {
+     "module": "fusion.he_cleanup",
+     "class": "_HeCleanup",
+     "label": "fusion: SE + spatial-gate cleanup of the concatenated map",
+     "in": [
+      [
+       "B",
+       768,
+       8,
+       8
+      ]
+     ],
+     "out": [
+      "B",
+      768,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7768\u00d78\u00d78"
+    },
+    {
+     "module": "fusion.classifier",
+     "class": "_Classifier",
+     "label": "classifier head GAP -> 512 -> 256 -> 1",
+     "in": [
+      [
+       "B",
+       768,
+       8,
+       8
+      ]
+     ],
+     "out": [
+      "B",
+      1
+     ],
+     "out_fmt": "B\u00d71"
+    },
+    {
+     "module": "fusion",
+     "class": "FusionModule",
+     "label": "fusion output (logit, z_freq, stream_feats)",
+     "in": [
+      [
+       "B",
+       256,
+       8,
+       8
+      ],
+      [
+       "B",
+       256,
+       32,
+       32
+      ],
+      [
+       "B",
+       256,
+       32,
+       32
+      ],
+      [
+       "B",
+       64
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       1
+      ],
+      [
+       "B",
+       256
+      ],
+      [
+       [
+        "B",
+        256
+       ],
+       [
+        "B",
+        256
+       ],
+       [
+        "B",
+        256
+       ]
+      ]
+     ],
+     "out_fmt": "(B\u00d71; B\u00d7256; (B\u00d7256; B\u00d7256; B\u00d7256))"
+    },
+    {
+     "module": "grl",
+     "class": "GradientReversal",
+     "label": "gradient reversal layer (identity forward)",
+     "in": [
+      [
+       "B",
+       256
+      ]
+     ],
+     "out": [
+      "B",
+      256
+     ],
+     "out_fmt": "B\u00d7256"
+    },
+    {
+     "module": "discriminator.net.0",
+     "class": "ParametrizedLinear",
+     "label": "discriminator: first spectral-norm linear",
+     "in": [
+      [
+       "B",
+       256
+      ]
+     ],
+     "out": [
+      "B",
+      1024
+     ],
+     "out_fmt": "B\u00d71024"
+    },
+    {
+     "module": "discriminator",
+     "class": "CompressionDiscriminator",
+     "label": "discriminator logits (6 CRF bins)",
+     "in": [
+      [
+       "B",
+       256
+      ]
+     ],
+     "out": [
+      "B",
+      6
+     ],
+     "out_fmt": "B\u00d76"
+    }
+   ],
+   "absent": [
+    "backbone.backbone.conv_head",
+    "fusion.spatial_head",
+    "fusion.freq_head"
+   ],
+   "outputs": {
+    "logit": [
+     "B",
+     1
+    ],
+    "crf_logits": [
+     "B",
+     6
+    ],
+    "q_emb": [
+     "B",
+     64
+    ],
+    "band_gates": [
+     "B",
+     4
+    ],
+    "z_freq": [
+     "B",
+     256
+    ],
+    "stream_feats": [
+     [
+      "B",
+      256
+     ],
+     [
+      "B",
+      256
+     ],
+     [
+      "B",
+      256
+     ]
+    ],
+    "phase_head": [
+     "B",
+     64,
+     32,
+     32
+    ],
+    "disc_logits": [
+     "B",
+     6
+    ]
+   },
+   "outputs_fmt": {
+    "logit": "B\u00d71",
+    "crf_logits": "B\u00d76",
+    "q_emb": "B\u00d764",
+    "band_gates": "B\u00d74",
+    "z_freq": "B\u00d7256",
+    "stream_feats": "(B\u00d7256; B\u00d7256; B\u00d7256)",
+    "phase_head": "B\u00d764\u00d732\u00d732",
+    "disc_logits": "B\u00d76"
+   },
+   "param_counts": {
+    "backbone": 3595388,
+    "proj": 82176,
+    "dct": 254976,
+    "phase": 1164864,
+    "estimator": 1370790,
+    "band_gate": 4684,
+    "fusion": 4179765,
+    "discriminator": 1318918
+   },
+   "param_total": 11971561
+  },
+  "fair_n": {
+   "config": "configs/phase5/f1_none_fair_s42.yaml",
+   "model_cfg": {
+    "invariance_arm": "none",
+    "fusion_kind": "cmam",
+    "backbone_full_head": false,
+    "conditioning": "estimated",
+    "fusion_conditioning": "estimated"
+   },
+   "trace_batch": 2,
+   "input_hw": 256,
+   "stages": [
+    {
+     "module": "input",
+     "class": "Tensor",
+     "label": "raw RGB in [0, 1]",
+     "in": null,
+     "out": [
+      "B",
+      3,
+      256,
+      256
+     ],
+     "out_fmt": "B\u00d73\u00d7256\u00d7256"
+    },
+    {
+     "module": "src.models.prep.rgb_to_y",
+     "class": "function",
+     "label": "BT.601 luma",
+     "in": [
+      [
+       "B",
+       3,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      "B",
+      1,
+      256,
+      256
+     ],
+     "out_fmt": "B\u00d71\u00d7256\u00d7256"
+    },
+    {
+     "module": "dct.transform",
+     "class": "BlockDCTStream.transform",
+     "label": "8x8 block DCT, zigzag, sign*log1p (coeffs); raw band energies",
+     "in": [
+      [
+       "B",
+       1,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       64,
+       32,
+       32
+      ],
+      [
+       "B",
+       64
+      ]
+     ],
+     "out_fmt": "(B\u00d764\u00d732\u00d732; B\u00d764)"
+    },
+    {
+     "module": "estimator.stem",
+     "class": "Sequential",
+     "label": "estimator: RGB conv stem",
+     "in": [
+      [
+       "B",
+       3,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      16,
+      16
+     ],
+     "out_fmt": "B\u00d7256\u00d716\u00d716"
+    },
+    {
+     "module": "estimator.gap",
+     "class": "AdaptiveAvgPool2d",
+     "label": "estimator: global average pool",
+     "in": [
+      [
+       "B",
+       256,
+       16,
+       16
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      1,
+      1
+     ],
+     "out_fmt": "B\u00d7256\u00d71\u00d71"
+    },
+    {
+     "module": "estimator.fc1",
+     "class": "Linear",
+     "label": "estimator: fc1 (stem features + log1p band energies)",
+     "in": [
+      [
+       "B",
+       320
+      ]
+     ],
+     "out": [
+      "B",
+      512
+     ],
+     "out_fmt": "B\u00d7512"
+    },
+    {
+     "module": "estimator.fc_emb",
+     "class": "Linear",
+     "label": "estimator: quality embedding q_emb",
+     "in": [
+      [
+       "B",
+       512
+      ]
+     ],
+     "out": [
+      "B",
+      64
+     ],
+     "out_fmt": "B\u00d764"
+    },
+    {
+     "module": "estimator.head",
+     "class": "Linear",
+     "label": "estimator: 6-bin CRF logits",
+     "in": [
+      [
+       "B",
+       64
+      ]
+     ],
+     "out": [
+      "B",
+      6
+     ],
+     "out_fmt": "B\u00d76"
+    },
+    {
+     "module": "estimator",
+     "class": "CompressionEstimator",
+     "label": "compression estimator (crf_logits, q_emb)",
+     "in": [
+      [
+       "B",
+       3,
+       256,
+       256
+      ],
+      [
+       "B",
+       64
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       6
+      ],
+      [
+       "B",
+       64
+      ]
+     ],
+     "out_fmt": "(B\u00d76; B\u00d764)"
+    },
+    {
+     "module": "band_gate.film",
+     "class": "FiLMGenerator",
+     "label": "band gate: FiLM generator (delta_gamma, beta)",
+     "in": [
+      [
+       "B",
+       64
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       4
+      ],
+      [
+       "B",
+       4
+      ]
+     ],
+     "out_fmt": "(B\u00d74; B\u00d74)"
+    },
+    {
+     "module": "band_gate",
+     "class": "ConditionedBandGate",
+     "label": "band gate g = softplus((1 + delta_gamma) * b + beta)",
+     "in": [],
+     "out": [
+      "B",
+      4
+     ],
+     "out_fmt": "B\u00d74"
+    },
+    {
+     "module": "dct.bands.0",
+     "class": "_BandConvBlock",
+     "label": "block-DCT: band 0 conv block (6 coefficients)",
+     "in": [
+      [
+       "B",
+       6,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      64,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d764\u00d732\u00d732"
+    },
+    {
+     "module": "dct.bands.1",
+     "class": "_BandConvBlock",
+     "label": "block-DCT: band 1 conv block (10 coefficients)",
+     "in": [
+      [
+       "B",
+       10,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      64,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d764\u00d732\u00d732"
+    },
+    {
+     "module": "dct.bands.2",
+     "class": "_BandConvBlock",
+     "label": "block-DCT: band 2 conv block (20 coefficients)",
+     "in": [
+      [
+       "B",
+       20,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      64,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d764\u00d732\u00d732"
+    },
+    {
+     "module": "dct.bands.3",
+     "class": "_BandConvBlock",
+     "label": "block-DCT: band 3 conv block (28 coefficients)",
+     "in": [
+      [
+       "B",
+       28,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      64,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d764\u00d732\u00d732"
+    },
+    {
+     "module": "dct.fuse",
+     "class": "Conv2d",
+     "label": "block-DCT: 1x1 fuse -> F_dct",
+     "in": [
+      [
+       "B",
+       256,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d7256\u00d732\u00d732"
+    },
+    {
+     "module": "phase.convs.0",
+     "class": "Conv2d",
+     "label": "FFT-phase: first conv (input = windowed sin/cos phase map)",
+     "in": [
+      [
+       "B",
+       2,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      "B",
+      64,
+      128,
+      128
+     ],
+     "out_fmt": "B\u00d764\u00d7128\u00d7128"
+    },
+    {
+     "module": "phase.convs.5",
+     "class": "Conv2d",
+     "label": "FFT-phase: last conv",
+     "in": [
+      [
+       "B",
+       256,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d7256\u00d732\u00d732"
+    },
+    {
+     "module": "phase.phase_head",
+     "class": "Conv2d",
+     "label": "FFT-phase: bare phase head (cos | sin pairs)",
+     "in": [
+      [
+       "B",
+       256,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      64,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d764\u00d732\u00d732"
+    },
+    {
+     "module": "phase",
+     "class": "PhaseStream",
+     "label": "FFT-phase stream (F_phase, phase_head)",
+     "in": [
+      [
+       "B",
+       1,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       256,
+       32,
+       32
+      ],
+      [
+       "B",
+       64,
+       32,
+       32
+      ]
+     ],
+     "out_fmt": "(B\u00d7256\u00d732\u00d732; B\u00d764\u00d732\u00d732)"
+    },
+    {
+     "module": "backbone.backbone",
+     "class": "EfficientNetFeatures",
+     "label": "spatial trunk: EfficientNet-B0 (features_only stages)",
+     "in": [
+      [
+       "B",
+       3,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       16,
+       128,
+       128
+      ],
+      [
+       "B",
+       24,
+       64,
+       64
+      ],
+      [
+       "B",
+       40,
+       32,
+       32
+      ],
+      [
+       "B",
+       112,
+       16,
+       16
+      ],
+      [
+       "B",
+       320,
+       8,
+       8
+      ]
+     ],
+     "out_fmt": "(B\u00d716\u00d7128\u00d7128; B\u00d724\u00d764\u00d764; B\u00d740\u00d732\u00d732; B\u00d7112\u00d716\u00d716; B\u00d7320\u00d78\u00d78)"
+    },
+    {
+     "module": "backbone.proj",
+     "class": "Conv2d",
+     "label": "spatial trunk: 1x1 projection -> F_spat",
+     "in": [
+      [
+       "B",
+       320,
+       8,
+       8
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7256\u00d78\u00d78"
+    },
+    {
+     "module": "backbone",
+     "class": "SpatialBackbone",
+     "label": "spatial stream output",
+     "in": [
+      [
+       "B",
+       3,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7256\u00d78\u00d78"
+    },
+    {
+     "module": "fusion.align_dct",
+     "class": "_StreamAlignment",
+     "label": "fusion: align F_dct 32x32 -> 8x8",
+     "in": [
+      [
+       "B",
+       256,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7256\u00d78\u00d78"
+    },
+    {
+     "module": "fusion.align_phase",
+     "class": "_StreamAlignment",
+     "label": "fusion: align F_phase 32x32 -> 8x8",
+     "in": [
+      [
+       "B",
+       256,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7256\u00d78\u00d78"
+    },
+    {
+     "module": "fusion.zfreq_proj",
+     "class": "Conv2d",
+     "label": "fusion: z_freq projection (pre-pool)",
+     "in": [
+      [
+       "B",
+       512,
+       8,
+       8
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7256\u00d78\u00d78"
+    },
+    {
+     "module": "fusion.fc_avg",
+     "class": "Linear",
+     "label": "CMAM: shared bottleneck on concatenated GAP vectors",
+     "in": [
+      [
+       "B",
+       768
+      ]
+     ],
+     "out": [
+      "B",
+      192
+     ],
+     "out_fmt": "B\u00d7192"
+    },
+    {
+     "module": "fusion.fc_max",
+     "class": "Linear",
+     "label": "CMAM: shared bottleneck on concatenated GMP vectors",
+     "in": [
+      [
+       "B",
+       768
+      ]
+     ],
+     "out": [
+      "B",
+      192
+     ],
+     "out_fmt": "B\u00d7192"
+    },
+    {
+     "module": "fusion.head_avg.0",
+     "class": "Linear",
+     "label": "CMAM: per-stream excitation (avg path), stream 0",
+     "in": [
+      [
+       "B",
+       192
+      ]
+     ],
+     "out": [
+      "B",
+      256
+     ],
+     "out_fmt": "B\u00d7256"
+    },
+    {
+     "module": "fusion.head_max.0",
+     "class": "Linear",
+     "label": "CMAM: per-stream excitation (max path), stream 0",
+     "in": [
+      [
+       "B",
+       192
+      ]
+     ],
+     "out": [
+      "B",
+      256
+     ],
+     "out_fmt": "B\u00d7256"
+    },
+    {
+     "module": "fusion.fusion_film",
+     "class": "FiLMGenerator",
+     "label": "CMAM: FiLM fusion gate (delta_gamma, beta)",
+     "in": [
+      [
+       "B",
+       64
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       768
+      ],
+      [
+       "B",
+       768
+      ]
+     ],
+     "out_fmt": "(B\u00d7768; B\u00d7768)"
+    },
+    {
+     "module": "fusion.spatial_attn.0",
+     "class": "_SpatialAttention",
+     "label": "CMAM: per-stream spatial attention, stream 0",
+     "in": [
+      [
+       "B",
+       256,
+       8,
+       8
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7256\u00d78\u00d78"
+    },
+    {
+     "module": "fusion.he_cleanup",
+     "class": "_HeCleanup",
+     "label": "fusion: SE + spatial-gate cleanup of the concatenated map",
+     "in": [
+      [
+       "B",
+       768,
+       8,
+       8
+      ]
+     ],
+     "out": [
+      "B",
+      768,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7768\u00d78\u00d78"
+    },
+    {
+     "module": "fusion.classifier",
+     "class": "_Classifier",
+     "label": "classifier head GAP -> 512 -> 256 -> 1",
+     "in": [
+      [
+       "B",
+       768,
+       8,
+       8
+      ]
+     ],
+     "out": [
+      "B",
+      1
+     ],
+     "out_fmt": "B\u00d71"
+    },
+    {
+     "module": "fusion",
+     "class": "FusionModule",
+     "label": "fusion output (logit, z_freq, stream_feats)",
+     "in": [
+      [
+       "B",
+       256,
+       8,
+       8
+      ],
+      [
+       "B",
+       256,
+       32,
+       32
+      ],
+      [
+       "B",
+       256,
+       32,
+       32
+      ],
+      [
+       "B",
+       64
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       1
+      ],
+      [
+       "B",
+       256
+      ],
+      [
+       [
+        "B",
+        256
+       ],
+       [
+        "B",
+        256
+       ],
+       [
+        "B",
+        256
+       ]
+      ]
+     ],
+     "out_fmt": "(B\u00d71; B\u00d7256; (B\u00d7256; B\u00d7256; B\u00d7256))"
+    }
+   ],
+   "absent": [
+    "backbone.backbone.conv_head",
+    "fusion.spatial_head",
+    "fusion.freq_head",
+    "grl",
+    "discriminator.net.0",
+    "discriminator"
+   ],
+   "outputs": {
+    "logit": [
+     "B",
+     1
+    ],
+    "crf_logits": [
+     "B",
+     6
+    ],
+    "q_emb": [
+     "B",
+     64
+    ],
+    "band_gates": [
+     "B",
+     4
+    ],
+    "z_freq": [
+     "B",
+     256
+    ],
+    "stream_feats": [
+     [
+      "B",
+      256
+     ],
+     [
+      "B",
+      256
+     ],
+     [
+      "B",
+      256
+     ]
+    ],
+    "phase_head": [
+     "B",
+     64,
+     32,
+     32
+    ]
+   },
+   "outputs_fmt": {
+    "logit": "B\u00d71",
+    "crf_logits": "B\u00d76",
+    "q_emb": "B\u00d764",
+    "band_gates": "B\u00d74",
+    "z_freq": "B\u00d7256",
+    "stream_feats": "(B\u00d7256; B\u00d7256; B\u00d7256)",
+    "phase_head": "B\u00d764\u00d732\u00d732"
+   },
+   "param_counts": {
+    "backbone": 3595388,
+    "proj": 82176,
+    "dct": 254976,
+    "phase": 1164864,
+    "estimator": 1370790,
+    "band_gate": 4684,
+    "fusion": 4179765
+   },
+   "param_total": 10652643
+  },
+  "fair_w": {
+   "config": "configs/phase5/f2_spatres_full_s42.yaml",
+   "model_cfg": {
+    "invariance_arm": "none",
+    "fusion_kind": "spatial_residual_full",
+    "backbone_full_head": true,
+    "conditioning": "estimated",
+    "fusion_conditioning": "estimated"
+   },
+   "trace_batch": 2,
+   "input_hw": 256,
+   "stages": [
+    {
+     "module": "input",
+     "class": "Tensor",
+     "label": "raw RGB in [0, 1]",
+     "in": null,
+     "out": [
+      "B",
+      3,
+      256,
+      256
+     ],
+     "out_fmt": "B\u00d73\u00d7256\u00d7256"
+    },
+    {
+     "module": "src.models.prep.rgb_to_y",
+     "class": "function",
+     "label": "BT.601 luma",
+     "in": [
+      [
+       "B",
+       3,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      "B",
+      1,
+      256,
+      256
+     ],
+     "out_fmt": "B\u00d71\u00d7256\u00d7256"
+    },
+    {
+     "module": "dct.transform",
+     "class": "BlockDCTStream.transform",
+     "label": "8x8 block DCT, zigzag, sign*log1p (coeffs); raw band energies",
+     "in": [
+      [
+       "B",
+       1,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       64,
+       32,
+       32
+      ],
+      [
+       "B",
+       64
+      ]
+     ],
+     "out_fmt": "(B\u00d764\u00d732\u00d732; B\u00d764)"
+    },
+    {
+     "module": "estimator.stem",
+     "class": "Sequential",
+     "label": "estimator: RGB conv stem",
+     "in": [
+      [
+       "B",
+       3,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      16,
+      16
+     ],
+     "out_fmt": "B\u00d7256\u00d716\u00d716"
+    },
+    {
+     "module": "estimator.gap",
+     "class": "AdaptiveAvgPool2d",
+     "label": "estimator: global average pool",
+     "in": [
+      [
+       "B",
+       256,
+       16,
+       16
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      1,
+      1
+     ],
+     "out_fmt": "B\u00d7256\u00d71\u00d71"
+    },
+    {
+     "module": "estimator.fc1",
+     "class": "Linear",
+     "label": "estimator: fc1 (stem features + log1p band energies)",
+     "in": [
+      [
+       "B",
+       320
+      ]
+     ],
+     "out": [
+      "B",
+      512
+     ],
+     "out_fmt": "B\u00d7512"
+    },
+    {
+     "module": "estimator.fc_emb",
+     "class": "Linear",
+     "label": "estimator: quality embedding q_emb",
+     "in": [
+      [
+       "B",
+       512
+      ]
+     ],
+     "out": [
+      "B",
+      64
+     ],
+     "out_fmt": "B\u00d764"
+    },
+    {
+     "module": "estimator.head",
+     "class": "Linear",
+     "label": "estimator: 6-bin CRF logits",
+     "in": [
+      [
+       "B",
+       64
+      ]
+     ],
+     "out": [
+      "B",
+      6
+     ],
+     "out_fmt": "B\u00d76"
+    },
+    {
+     "module": "estimator",
+     "class": "CompressionEstimator",
+     "label": "compression estimator (crf_logits, q_emb)",
+     "in": [
+      [
+       "B",
+       3,
+       256,
+       256
+      ],
+      [
+       "B",
+       64
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       6
+      ],
+      [
+       "B",
+       64
+      ]
+     ],
+     "out_fmt": "(B\u00d76; B\u00d764)"
+    },
+    {
+     "module": "band_gate.film",
+     "class": "FiLMGenerator",
+     "label": "band gate: FiLM generator (delta_gamma, beta)",
+     "in": [
+      [
+       "B",
+       64
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       4
+      ],
+      [
+       "B",
+       4
+      ]
+     ],
+     "out_fmt": "(B\u00d74; B\u00d74)"
+    },
+    {
+     "module": "band_gate",
+     "class": "ConditionedBandGate",
+     "label": "band gate g = softplus((1 + delta_gamma) * b + beta)",
+     "in": [],
+     "out": [
+      "B",
+      4
+     ],
+     "out_fmt": "B\u00d74"
+    },
+    {
+     "module": "dct.bands.0",
+     "class": "_BandConvBlock",
+     "label": "block-DCT: band 0 conv block (6 coefficients)",
+     "in": [
+      [
+       "B",
+       6,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      64,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d764\u00d732\u00d732"
+    },
+    {
+     "module": "dct.bands.1",
+     "class": "_BandConvBlock",
+     "label": "block-DCT: band 1 conv block (10 coefficients)",
+     "in": [
+      [
+       "B",
+       10,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      64,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d764\u00d732\u00d732"
+    },
+    {
+     "module": "dct.bands.2",
+     "class": "_BandConvBlock",
+     "label": "block-DCT: band 2 conv block (20 coefficients)",
+     "in": [
+      [
+       "B",
+       20,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      64,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d764\u00d732\u00d732"
+    },
+    {
+     "module": "dct.bands.3",
+     "class": "_BandConvBlock",
+     "label": "block-DCT: band 3 conv block (28 coefficients)",
+     "in": [
+      [
+       "B",
+       28,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      64,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d764\u00d732\u00d732"
+    },
+    {
+     "module": "dct.fuse",
+     "class": "Conv2d",
+     "label": "block-DCT: 1x1 fuse -> F_dct",
+     "in": [
+      [
+       "B",
+       256,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d7256\u00d732\u00d732"
+    },
+    {
+     "module": "phase.convs.0",
+     "class": "Conv2d",
+     "label": "FFT-phase: first conv (input = windowed sin/cos phase map)",
+     "in": [
+      [
+       "B",
+       2,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      "B",
+      64,
+      128,
+      128
+     ],
+     "out_fmt": "B\u00d764\u00d7128\u00d7128"
+    },
+    {
+     "module": "phase.convs.5",
+     "class": "Conv2d",
+     "label": "FFT-phase: last conv",
+     "in": [
+      [
+       "B",
+       256,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d7256\u00d732\u00d732"
+    },
+    {
+     "module": "phase.phase_head",
+     "class": "Conv2d",
+     "label": "FFT-phase: bare phase head (cos | sin pairs)",
+     "in": [
+      [
+       "B",
+       256,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      64,
+      32,
+      32
+     ],
+     "out_fmt": "B\u00d764\u00d732\u00d732"
+    },
+    {
+     "module": "phase",
+     "class": "PhaseStream",
+     "label": "FFT-phase stream (F_phase, phase_head)",
+     "in": [
+      [
+       "B",
+       1,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       256,
+       32,
+       32
+      ],
+      [
+       "B",
+       64,
+       32,
+       32
+      ]
+     ],
+     "out_fmt": "(B\u00d7256\u00d732\u00d732; B\u00d764\u00d732\u00d732)"
+    },
+    {
+     "module": "backbone.backbone.conv_head",
+     "class": "Conv2d",
+     "label": "spatial trunk: conv_head 320 -> 1280 (full trunk only)",
+     "in": [
+      [
+       "B",
+       320,
+       8,
+       8
+      ]
+     ],
+     "out": [
+      "B",
+      1280,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d71280\u00d78\u00d78"
+    },
+    {
+     "module": "backbone.proj",
+     "class": "Conv2d",
+     "label": "spatial trunk: 1x1 projection -> F_spat",
+     "in": [
+      [
+       "B",
+       1280,
+       8,
+       8
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7256\u00d78\u00d78"
+    },
+    {
+     "module": "backbone",
+     "class": "SpatialBackbone",
+     "label": "spatial stream output",
+     "in": [
+      [
+       "B",
+       3,
+       256,
+       256
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       256,
+       8,
+       8
+      ],
+      [
+       "B",
+       1280
+      ]
+     ],
+     "out_fmt": "(B\u00d7256\u00d78\u00d78; B\u00d71280)"
+    },
+    {
+     "module": "fusion.align_dct",
+     "class": "_StreamAlignment",
+     "label": "fusion: align F_dct 32x32 -> 8x8",
+     "in": [
+      [
+       "B",
+       256,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7256\u00d78\u00d78"
+    },
+    {
+     "module": "fusion.align_phase",
+     "class": "_StreamAlignment",
+     "label": "fusion: align F_phase 32x32 -> 8x8",
+     "in": [
+      [
+       "B",
+       256,
+       32,
+       32
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7256\u00d78\u00d78"
+    },
+    {
+     "module": "fusion.zfreq_proj",
+     "class": "Conv2d",
+     "label": "fusion: z_freq projection (pre-pool)",
+     "in": [
+      [
+       "B",
+       512,
+       8,
+       8
+      ]
+     ],
+     "out": [
+      "B",
+      256,
+      8,
+      8
+     ],
+     "out_fmt": "B\u00d7256\u00d78\u00d78"
+    },
+    {
+     "module": "fusion.spatial_head",
+     "class": "Linear",
+     "label": "residual fusion: spatial logit head",
+     "in": [
+      [
+       "B",
+       1280
+      ]
+     ],
+     "out": [
+      "B",
+      1
+     ],
+     "out_fmt": "B\u00d71"
+    },
+    {
+     "module": "fusion.freq_head",
+     "class": "Linear",
+     "label": "residual fusion: frequency logit head",
+     "in": [
+      [
+       "B",
+       256
+      ]
+     ],
+     "out": [
+      "B",
+      1
+     ],
+     "out_fmt": "B\u00d71"
+    },
+    {
+     "module": "fusion",
+     "class": "FusionModule",
+     "label": "fusion output (logit, z_freq, stream_feats)",
+     "in": [
+      [
+       "B",
+       256,
+       8,
+       8
+      ],
+      [
+       "B",
+       256,
+       32,
+       32
+      ],
+      [
+       "B",
+       256,
+       32,
+       32
+      ],
+      [
+       "B",
+       64
+      ]
+     ],
+     "out": [
+      [
+       "B",
+       1
+      ],
+      [
+       "B",
+       256
+      ],
+      [
+       [
+        "B",
+        256
+       ],
+       [
+        "B",
+        256
+       ],
+       [
+        "B",
+        256
+       ]
+      ]
+     ],
+     "out_fmt": "(B\u00d71; B\u00d7256; (B\u00d7256; B\u00d7256; B\u00d7256))"
+    }
+   ],
+   "absent": [
+    "fusion.fc_avg",
+    "fusion.fc_max",
+    "fusion.head_avg.0",
+    "fusion.head_max.0",
+    "fusion.fusion_film",
+    "fusion.spatial_attn.0",
+    "fusion.he_cleanup",
+    "fusion.classifier",
+    "grl",
+    "discriminator.net.0",
+    "discriminator"
+   ],
+   "outputs": {
+    "logit": [
+     "B",
+     1
+    ],
+    "crf_logits": [
+     "B",
+     6
+    ],
+    "q_emb": [
+     "B",
+     64
+    ],
+    "band_gates": [
+     "B",
+     4
+    ],
+    "z_freq": [
+     "B",
+     256
+    ],
+    "stream_feats": [
+     [
+      "B",
+      256
+     ],
+     [
+      "B",
+      256
+     ],
+     [
+      "B",
+      256
+     ]
+    ],
+    "phase_head": [
+     "B",
+     64,
+     32,
+     32
+    ],
+    "freq_logit": [
+     "B",
+     1
+    ]
+   },
+   "outputs_fmt": {
+    "logit": "B\u00d71",
+    "crf_logits": "B\u00d76",
+    "q_emb": "B\u00d764",
+    "band_gates": "B\u00d74",
+    "z_freq": "B\u00d7256",
+    "stream_feats": "(B\u00d7256; B\u00d7256; B\u00d7256)",
+    "phase_head": "B\u00d764\u00d732\u00d732",
+    "freq_logit": "B\u00d71"
+   },
+   "param_counts": {
+    "backbone": 4007548,
+    "proj": 327936,
+    "dct": 254976,
+    "phase": 1164864,
+    "estimator": 1370790,
+    "band_gate": 4684,
+    "fusion": 2497283
+   },
+   "param_total": 9628081
+  }
+ },
+ "gradient_reach": {
+  "as_specified": {
+   "config": "configs/phase5/a1_grl_s1.yaml",
+   "mode": "graph",
+   "lambda": 0.5,
+   "reach": {
+    "cls": [
+     "DCT stream",
+     "band gate",
+     "estimator",
+     "fusion: CMAM/cleanup/classifier",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "phase stream",
+     "trunk (EfficientNet-B0)",
+     "trunk 1x1 proj"
+    ],
+    "crf": [
+     "estimator"
+    ],
+    "div": [
+     "DCT stream",
+     "band gate",
+     "estimator",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "phase stream",
+     "trunk (EfficientNet-B0)",
+     "trunk 1x1 proj"
+    ],
+    "cons": [
+     "DCT stream",
+     "band gate",
+     "estimator",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "fusion: zfreq_proj",
+     "phase stream"
+    ],
+    "phase_geo": [
+     "phase head",
+     "phase stream"
+    ],
+    "circ": [
+     "phase head",
+     "phase stream"
+    ],
+    "freq_aux": [],
+    "adv": [
+     "DCT stream",
+     "band gate",
+     "discriminator",
+     "estimator",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "fusion: zfreq_proj",
+     "phase stream"
+    ]
+   },
+   "zero_init_params_perturbed": [
+    "estimator.stem.0.1.bias",
+    "estimator.stem.0.4.bias",
+    "estimator.stem.1.1.bias",
+    "estimator.stem.1.4.bias",
+    "estimator.stem.2.1.bias",
+    "estimator.stem.2.4.bias",
+    "estimator.stem.3.1.bias",
+    "estimator.stem.3.4.bias",
+    "band_gate.film.fc2.weight",
+    "band_gate.film.fc2.bias",
+    "phase.norms.0.clean.bias",
+    "phase.norms.0.compressed.bias",
+    "phase.norms.1.clean.bias",
+    "phase.norms.1.compressed.bias",
+    "phase.norms.2.clean.bias",
+    "phase.norms.2.compressed.bias",
+    "phase.norms.3.clean.bias",
+    "phase.norms.3.compressed.bias",
+    "phase.norms.4.clean.bias",
+    "phase.norms.4.compressed.bias",
+    "phase.norms.5.clean.bias",
+    "phase.norms.5.compressed.bias",
+    "backbone.backbone.bn1.bias",
+    "backbone.backbone.blocks.0.0.bn1.bias",
+    "backbone.backbone.blocks.0.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.0.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.0.0.bn2.bias",
+    "backbone.backbone.blocks.1.0.bn1.bias",
+    "backbone.backbone.blocks.1.0.bn2.bias",
+    "backbone.backbone.blocks.1.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.1.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.1.0.bn3.bias",
+    "backbone.backbone.blocks.1.1.bn1.bias",
+    "backbone.backbone.blocks.1.1.bn2.bias",
+    "backbone.backbone.blocks.1.1.se.conv_reduce.bias",
+    "backbone.backbone.blocks.1.1.se.conv_expand.bias",
+    "backbone.backbone.blocks.1.1.bn3.bias",
+    "backbone.backbone.blocks.2.0.bn1.bias",
+    "backbone.backbone.blocks.2.0.bn2.bias",
+    "backbone.backbone.blocks.2.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.2.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.2.0.bn3.bias",
+    "backbone.backbone.blocks.2.1.bn1.bias",
+    "backbone.backbone.blocks.2.1.bn2.bias",
+    "backbone.backbone.blocks.2.1.se.conv_reduce.bias",
+    "backbone.backbone.blocks.2.1.se.conv_expand.bias",
+    "backbone.backbone.blocks.2.1.bn3.bias",
+    "backbone.backbone.blocks.3.0.bn1.bias",
+    "backbone.backbone.blocks.3.0.bn2.bias",
+    "backbone.backbone.blocks.3.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.3.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.3.0.bn3.bias",
+    "backbone.backbone.blocks.3.1.bn1.bias",
+    "backbone.backbone.blocks.3.1.bn2.bias",
+    "backbone.backbone.blocks.3.1.se.conv_reduce.bias",
+    "backbone.backbone.blocks.3.1.se.conv_expand.bias",
+    "backbone.backbone.blocks.3.1.bn3.bias",
+    "backbone.backbone.blocks.3.2.bn1.bias",
+    "backbone.backbone.blocks.3.2.bn2.bias",
+    "backbone.backbone.blocks.3.2.se.conv_reduce.bias",
+    "backbone.backbone.blocks.3.2.se.conv_expand.bias",
+    "backbone.backbone.blocks.3.2.bn3.bias",
+    "backbone.backbone.blocks.4.0.bn1.bias",
+    "backbone.backbone.blocks.4.0.bn2.bias",
+    "backbone.backbone.blocks.4.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.4.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.4.0.bn3.bias",
+    "backbone.backbone.blocks.4.1.bn1.bias",
+    "backbone.backbone.blocks.4.1.bn2.bias",
+    "backbone.backbone.blocks.4.1.se.conv_reduce.bias",
+    "backbone.backbone.blocks.4.1.se.conv_expand.bias",
+    "backbone.backbone.blocks.4.1.bn3.bias",
+    "backbone.backbone.blocks.4.2.bn1.bias",
+    "backbone.backbone.blocks.4.2.bn2.bias",
+    "backbone.backbone.blocks.4.2.se.conv_reduce.bias",
+    "backbone.backbone.blocks.4.2.se.conv_expand.bias",
+    "backbone.backbone.blocks.4.2.bn3.bias",
+    "backbone.backbone.blocks.5.0.bn1.bias",
+    "backbone.backbone.blocks.5.0.bn2.bias",
+    "backbone.backbone.blocks.5.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.5.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.5.0.bn3.bias",
+    "backbone.backbone.blocks.5.1.bn1.bias",
+    "backbone.backbone.blocks.5.1.bn2.bias",
+    "backbone.backbone.blocks.5.1.se.conv_reduce.bias",
+    "backbone.backbone.blocks.5.1.se.conv_expand.bias",
+    "backbone.backbone.blocks.5.1.bn3.bias",
+    "backbone.backbone.blocks.5.2.bn1.bias",
+    "backbone.backbone.blocks.5.2.bn2.bias",
+    "backbone.backbone.blocks.5.2.se.conv_reduce.bias",
+    "backbone.backbone.blocks.5.2.se.conv_expand.bias",
+    "backbone.backbone.blocks.5.2.bn3.bias",
+    "backbone.backbone.blocks.5.3.bn1.bias",
+    "backbone.backbone.blocks.5.3.bn2.bias",
+    "backbone.backbone.blocks.5.3.se.conv_reduce.bias",
+    "backbone.backbone.blocks.5.3.se.conv_expand.bias",
+    "backbone.backbone.blocks.5.3.bn3.bias",
+    "backbone.backbone.blocks.6.0.bn1.bias",
+    "backbone.backbone.blocks.6.0.bn2.bias",
+    "backbone.backbone.blocks.6.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.6.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.6.0.bn3.bias",
+    "fusion.align_dct.norm1.clean.bias",
+    "fusion.align_dct.norm1.compressed.bias",
+    "fusion.align_dct.norm2.clean.bias",
+    "fusion.align_dct.norm2.compressed.bias",
+    "fusion.align_phase.norm1.clean.bias",
+    "fusion.align_phase.norm1.compressed.bias",
+    "fusion.align_phase.norm2.clean.bias",
+    "fusion.align_phase.norm2.compressed.bias",
+    "fusion.fusion_film.fc2.weight",
+    "fusion.fusion_film.fc2.bias"
+   ],
+   "note": "raw term (unit weight); a term whose config weight is 0 contributes zero gradient in training"
+  },
+  "fair_e1": {
+   "config": "configs/phase6/r1_fairn_grl_s42.yaml",
+   "mode": "graph",
+   "lambda": 0.5,
+   "reach": {
+    "cls": [
+     "DCT stream",
+     "band gate",
+     "estimator",
+     "fusion: CMAM/cleanup/classifier",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "phase stream",
+     "trunk (EfficientNet-B0)",
+     "trunk 1x1 proj"
+    ],
+    "crf": [
+     "estimator"
+    ],
+    "div": [
+     "DCT stream",
+     "band gate",
+     "estimator",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "phase stream",
+     "trunk (EfficientNet-B0)",
+     "trunk 1x1 proj"
+    ],
+    "cons": [
+     "DCT stream",
+     "band gate",
+     "estimator",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "fusion: zfreq_proj",
+     "phase stream"
+    ],
+    "phase_geo": [
+     "phase head",
+     "phase stream"
+    ],
+    "circ": [
+     "phase head",
+     "phase stream"
+    ],
+    "freq_aux": [],
+    "adv": [
+     "DCT stream",
+     "band gate",
+     "discriminator",
+     "estimator",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "fusion: zfreq_proj",
+     "phase stream"
+    ]
+   },
+   "zero_init_params_perturbed": [
+    "estimator.stem.0.1.bias",
+    "estimator.stem.0.4.bias",
+    "estimator.stem.1.1.bias",
+    "estimator.stem.1.4.bias",
+    "estimator.stem.2.1.bias",
+    "estimator.stem.2.4.bias",
+    "estimator.stem.3.1.bias",
+    "estimator.stem.3.4.bias",
+    "band_gate.film.fc2.weight",
+    "band_gate.film.fc2.bias",
+    "phase.norms.0.clean.bias",
+    "phase.norms.0.compressed.bias",
+    "phase.norms.1.clean.bias",
+    "phase.norms.1.compressed.bias",
+    "phase.norms.2.clean.bias",
+    "phase.norms.2.compressed.bias",
+    "phase.norms.3.clean.bias",
+    "phase.norms.3.compressed.bias",
+    "phase.norms.4.clean.bias",
+    "phase.norms.4.compressed.bias",
+    "phase.norms.5.clean.bias",
+    "phase.norms.5.compressed.bias",
+    "backbone.backbone.bn1.bias",
+    "backbone.backbone.blocks.0.0.bn1.bias",
+    "backbone.backbone.blocks.0.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.0.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.0.0.bn2.bias",
+    "backbone.backbone.blocks.1.0.bn1.bias",
+    "backbone.backbone.blocks.1.0.bn2.bias",
+    "backbone.backbone.blocks.1.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.1.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.1.0.bn3.bias",
+    "backbone.backbone.blocks.1.1.bn1.bias",
+    "backbone.backbone.blocks.1.1.bn2.bias",
+    "backbone.backbone.blocks.1.1.se.conv_reduce.bias",
+    "backbone.backbone.blocks.1.1.se.conv_expand.bias",
+    "backbone.backbone.blocks.1.1.bn3.bias",
+    "backbone.backbone.blocks.2.0.bn1.bias",
+    "backbone.backbone.blocks.2.0.bn2.bias",
+    "backbone.backbone.blocks.2.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.2.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.2.0.bn3.bias",
+    "backbone.backbone.blocks.2.1.bn1.bias",
+    "backbone.backbone.blocks.2.1.bn2.bias",
+    "backbone.backbone.blocks.2.1.se.conv_reduce.bias",
+    "backbone.backbone.blocks.2.1.se.conv_expand.bias",
+    "backbone.backbone.blocks.2.1.bn3.bias",
+    "backbone.backbone.blocks.3.0.bn1.bias",
+    "backbone.backbone.blocks.3.0.bn2.bias",
+    "backbone.backbone.blocks.3.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.3.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.3.0.bn3.bias",
+    "backbone.backbone.blocks.3.1.bn1.bias",
+    "backbone.backbone.blocks.3.1.bn2.bias",
+    "backbone.backbone.blocks.3.1.se.conv_reduce.bias",
+    "backbone.backbone.blocks.3.1.se.conv_expand.bias",
+    "backbone.backbone.blocks.3.1.bn3.bias",
+    "backbone.backbone.blocks.3.2.bn1.bias",
+    "backbone.backbone.blocks.3.2.bn2.bias",
+    "backbone.backbone.blocks.3.2.se.conv_reduce.bias",
+    "backbone.backbone.blocks.3.2.se.conv_expand.bias",
+    "backbone.backbone.blocks.3.2.bn3.bias",
+    "backbone.backbone.blocks.4.0.bn1.bias",
+    "backbone.backbone.blocks.4.0.bn2.bias",
+    "backbone.backbone.blocks.4.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.4.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.4.0.bn3.bias",
+    "backbone.backbone.blocks.4.1.bn1.bias",
+    "backbone.backbone.blocks.4.1.bn2.bias",
+    "backbone.backbone.blocks.4.1.se.conv_reduce.bias",
+    "backbone.backbone.blocks.4.1.se.conv_expand.bias",
+    "backbone.backbone.blocks.4.1.bn3.bias",
+    "backbone.backbone.blocks.4.2.bn1.bias",
+    "backbone.backbone.blocks.4.2.bn2.bias",
+    "backbone.backbone.blocks.4.2.se.conv_reduce.bias",
+    "backbone.backbone.blocks.4.2.se.conv_expand.bias",
+    "backbone.backbone.blocks.4.2.bn3.bias",
+    "backbone.backbone.blocks.5.0.bn1.bias",
+    "backbone.backbone.blocks.5.0.bn2.bias",
+    "backbone.backbone.blocks.5.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.5.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.5.0.bn3.bias",
+    "backbone.backbone.blocks.5.1.bn1.bias",
+    "backbone.backbone.blocks.5.1.bn2.bias",
+    "backbone.backbone.blocks.5.1.se.conv_reduce.bias",
+    "backbone.backbone.blocks.5.1.se.conv_expand.bias",
+    "backbone.backbone.blocks.5.1.bn3.bias",
+    "backbone.backbone.blocks.5.2.bn1.bias",
+    "backbone.backbone.blocks.5.2.bn2.bias",
+    "backbone.backbone.blocks.5.2.se.conv_reduce.bias",
+    "backbone.backbone.blocks.5.2.se.conv_expand.bias",
+    "backbone.backbone.blocks.5.2.bn3.bias",
+    "backbone.backbone.blocks.5.3.bn1.bias",
+    "backbone.backbone.blocks.5.3.bn2.bias",
+    "backbone.backbone.blocks.5.3.se.conv_reduce.bias",
+    "backbone.backbone.blocks.5.3.se.conv_expand.bias",
+    "backbone.backbone.blocks.5.3.bn3.bias",
+    "backbone.backbone.blocks.6.0.bn1.bias",
+    "backbone.backbone.blocks.6.0.bn2.bias",
+    "backbone.backbone.blocks.6.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.6.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.6.0.bn3.bias",
+    "fusion.align_dct.norm1.clean.bias",
+    "fusion.align_dct.norm1.compressed.bias",
+    "fusion.align_dct.norm2.clean.bias",
+    "fusion.align_dct.norm2.compressed.bias",
+    "fusion.align_phase.norm1.clean.bias",
+    "fusion.align_phase.norm1.compressed.bias",
+    "fusion.align_phase.norm2.clean.bias",
+    "fusion.align_phase.norm2.compressed.bias",
+    "fusion.fusion_film.fc2.weight",
+    "fusion.fusion_film.fc2.bias"
+   ],
+   "note": "raw term (unit weight); a term whose config weight is 0 contributes zero gradient in training"
+  },
+  "fair_n": {
+   "config": "configs/phase5/f1_none_fair_s42.yaml",
+   "mode": "graph",
+   "lambda": 0.5,
+   "reach": {
+    "cls": [
+     "DCT stream",
+     "band gate",
+     "estimator",
+     "fusion: CMAM/cleanup/classifier",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "phase stream",
+     "trunk (EfficientNet-B0)",
+     "trunk 1x1 proj"
+    ],
+    "crf": [
+     "estimator"
+    ],
+    "div": [
+     "DCT stream",
+     "band gate",
+     "estimator",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "phase stream",
+     "trunk (EfficientNet-B0)",
+     "trunk 1x1 proj"
+    ],
+    "cons": [
+     "DCT stream",
+     "band gate",
+     "estimator",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "fusion: zfreq_proj",
+     "phase stream"
+    ],
+    "phase_geo": [
+     "phase head",
+     "phase stream"
+    ],
+    "circ": [
+     "phase head",
+     "phase stream"
+    ],
+    "freq_aux": [],
+    "adv": []
+   },
+   "zero_init_params_perturbed": [
+    "estimator.stem.0.1.bias",
+    "estimator.stem.0.4.bias",
+    "estimator.stem.1.1.bias",
+    "estimator.stem.1.4.bias",
+    "estimator.stem.2.1.bias",
+    "estimator.stem.2.4.bias",
+    "estimator.stem.3.1.bias",
+    "estimator.stem.3.4.bias",
+    "band_gate.film.fc2.weight",
+    "band_gate.film.fc2.bias",
+    "phase.norms.0.clean.bias",
+    "phase.norms.0.compressed.bias",
+    "phase.norms.1.clean.bias",
+    "phase.norms.1.compressed.bias",
+    "phase.norms.2.clean.bias",
+    "phase.norms.2.compressed.bias",
+    "phase.norms.3.clean.bias",
+    "phase.norms.3.compressed.bias",
+    "phase.norms.4.clean.bias",
+    "phase.norms.4.compressed.bias",
+    "phase.norms.5.clean.bias",
+    "phase.norms.5.compressed.bias",
+    "backbone.backbone.bn1.bias",
+    "backbone.backbone.blocks.0.0.bn1.bias",
+    "backbone.backbone.blocks.0.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.0.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.0.0.bn2.bias",
+    "backbone.backbone.blocks.1.0.bn1.bias",
+    "backbone.backbone.blocks.1.0.bn2.bias",
+    "backbone.backbone.blocks.1.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.1.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.1.0.bn3.bias",
+    "backbone.backbone.blocks.1.1.bn1.bias",
+    "backbone.backbone.blocks.1.1.bn2.bias",
+    "backbone.backbone.blocks.1.1.se.conv_reduce.bias",
+    "backbone.backbone.blocks.1.1.se.conv_expand.bias",
+    "backbone.backbone.blocks.1.1.bn3.bias",
+    "backbone.backbone.blocks.2.0.bn1.bias",
+    "backbone.backbone.blocks.2.0.bn2.bias",
+    "backbone.backbone.blocks.2.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.2.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.2.0.bn3.bias",
+    "backbone.backbone.blocks.2.1.bn1.bias",
+    "backbone.backbone.blocks.2.1.bn2.bias",
+    "backbone.backbone.blocks.2.1.se.conv_reduce.bias",
+    "backbone.backbone.blocks.2.1.se.conv_expand.bias",
+    "backbone.backbone.blocks.2.1.bn3.bias",
+    "backbone.backbone.blocks.3.0.bn1.bias",
+    "backbone.backbone.blocks.3.0.bn2.bias",
+    "backbone.backbone.blocks.3.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.3.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.3.0.bn3.bias",
+    "backbone.backbone.blocks.3.1.bn1.bias",
+    "backbone.backbone.blocks.3.1.bn2.bias",
+    "backbone.backbone.blocks.3.1.se.conv_reduce.bias",
+    "backbone.backbone.blocks.3.1.se.conv_expand.bias",
+    "backbone.backbone.blocks.3.1.bn3.bias",
+    "backbone.backbone.blocks.3.2.bn1.bias",
+    "backbone.backbone.blocks.3.2.bn2.bias",
+    "backbone.backbone.blocks.3.2.se.conv_reduce.bias",
+    "backbone.backbone.blocks.3.2.se.conv_expand.bias",
+    "backbone.backbone.blocks.3.2.bn3.bias",
+    "backbone.backbone.blocks.4.0.bn1.bias",
+    "backbone.backbone.blocks.4.0.bn2.bias",
+    "backbone.backbone.blocks.4.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.4.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.4.0.bn3.bias",
+    "backbone.backbone.blocks.4.1.bn1.bias",
+    "backbone.backbone.blocks.4.1.bn2.bias",
+    "backbone.backbone.blocks.4.1.se.conv_reduce.bias",
+    "backbone.backbone.blocks.4.1.se.conv_expand.bias",
+    "backbone.backbone.blocks.4.1.bn3.bias",
+    "backbone.backbone.blocks.4.2.bn1.bias",
+    "backbone.backbone.blocks.4.2.bn2.bias",
+    "backbone.backbone.blocks.4.2.se.conv_reduce.bias",
+    "backbone.backbone.blocks.4.2.se.conv_expand.bias",
+    "backbone.backbone.blocks.4.2.bn3.bias",
+    "backbone.backbone.blocks.5.0.bn1.bias",
+    "backbone.backbone.blocks.5.0.bn2.bias",
+    "backbone.backbone.blocks.5.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.5.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.5.0.bn3.bias",
+    "backbone.backbone.blocks.5.1.bn1.bias",
+    "backbone.backbone.blocks.5.1.bn2.bias",
+    "backbone.backbone.blocks.5.1.se.conv_reduce.bias",
+    "backbone.backbone.blocks.5.1.se.conv_expand.bias",
+    "backbone.backbone.blocks.5.1.bn3.bias",
+    "backbone.backbone.blocks.5.2.bn1.bias",
+    "backbone.backbone.blocks.5.2.bn2.bias",
+    "backbone.backbone.blocks.5.2.se.conv_reduce.bias",
+    "backbone.backbone.blocks.5.2.se.conv_expand.bias",
+    "backbone.backbone.blocks.5.2.bn3.bias",
+    "backbone.backbone.blocks.5.3.bn1.bias",
+    "backbone.backbone.blocks.5.3.bn2.bias",
+    "backbone.backbone.blocks.5.3.se.conv_reduce.bias",
+    "backbone.backbone.blocks.5.3.se.conv_expand.bias",
+    "backbone.backbone.blocks.5.3.bn3.bias",
+    "backbone.backbone.blocks.6.0.bn1.bias",
+    "backbone.backbone.blocks.6.0.bn2.bias",
+    "backbone.backbone.blocks.6.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.6.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.6.0.bn3.bias",
+    "fusion.align_dct.norm1.clean.bias",
+    "fusion.align_dct.norm1.compressed.bias",
+    "fusion.align_dct.norm2.clean.bias",
+    "fusion.align_dct.norm2.compressed.bias",
+    "fusion.align_phase.norm1.clean.bias",
+    "fusion.align_phase.norm1.compressed.bias",
+    "fusion.align_phase.norm2.clean.bias",
+    "fusion.align_phase.norm2.compressed.bias",
+    "fusion.fusion_film.fc2.weight",
+    "fusion.fusion_film.fc2.bias"
+   ],
+   "note": "raw term (unit weight); a term whose config weight is 0 contributes zero gradient in training"
+  },
+  "fair_w": {
+   "config": "configs/phase5/f2_spatres_full_s42.yaml",
+   "mode": "graph",
+   "lambda": 0.5,
+   "reach": {
+    "cls": [
+     "DCT stream",
+     "band gate",
+     "estimator",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "fusion: freq_head",
+     "fusion: residual gamma",
+     "fusion: spatial_head",
+     "fusion: zfreq_proj",
+     "phase stream",
+     "trunk (EfficientNet-B0)"
+    ],
+    "crf": [
+     "estimator"
+    ],
+    "div": [
+     "DCT stream",
+     "band gate",
+     "estimator",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "phase stream",
+     "trunk (EfficientNet-B0)",
+     "trunk 1x1 proj"
+    ],
+    "cons": [
+     "DCT stream",
+     "band gate",
+     "estimator",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "fusion: zfreq_proj",
+     "phase stream"
+    ],
+    "phase_geo": [
+     "phase head",
+     "phase stream"
+    ],
+    "circ": [
+     "phase head",
+     "phase stream"
+    ],
+    "freq_aux": [
+     "DCT stream",
+     "band gate",
+     "estimator",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "fusion: freq_head",
+     "fusion: zfreq_proj",
+     "phase stream"
+    ],
+    "adv": []
+   },
+   "zero_init_params_perturbed": [
+    "estimator.stem.0.1.bias",
+    "estimator.stem.0.4.bias",
+    "estimator.stem.1.1.bias",
+    "estimator.stem.1.4.bias",
+    "estimator.stem.2.1.bias",
+    "estimator.stem.2.4.bias",
+    "estimator.stem.3.1.bias",
+    "estimator.stem.3.4.bias",
+    "band_gate.film.fc2.weight",
+    "band_gate.film.fc2.bias",
+    "phase.norms.0.clean.bias",
+    "phase.norms.0.compressed.bias",
+    "phase.norms.1.clean.bias",
+    "phase.norms.1.compressed.bias",
+    "phase.norms.2.clean.bias",
+    "phase.norms.2.compressed.bias",
+    "phase.norms.3.clean.bias",
+    "phase.norms.3.compressed.bias",
+    "phase.norms.4.clean.bias",
+    "phase.norms.4.compressed.bias",
+    "phase.norms.5.clean.bias",
+    "phase.norms.5.compressed.bias",
+    "backbone.backbone.bn1.bias",
+    "backbone.backbone.blocks.0.0.bn1.bias",
+    "backbone.backbone.blocks.0.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.0.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.0.0.bn2.bias",
+    "backbone.backbone.blocks.1.0.bn1.bias",
+    "backbone.backbone.blocks.1.0.bn2.bias",
+    "backbone.backbone.blocks.1.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.1.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.1.0.bn3.bias",
+    "backbone.backbone.blocks.1.1.bn1.bias",
+    "backbone.backbone.blocks.1.1.bn2.bias",
+    "backbone.backbone.blocks.1.1.se.conv_reduce.bias",
+    "backbone.backbone.blocks.1.1.se.conv_expand.bias",
+    "backbone.backbone.blocks.1.1.bn3.bias",
+    "backbone.backbone.blocks.2.0.bn1.bias",
+    "backbone.backbone.blocks.2.0.bn2.bias",
+    "backbone.backbone.blocks.2.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.2.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.2.0.bn3.bias",
+    "backbone.backbone.blocks.2.1.bn1.bias",
+    "backbone.backbone.blocks.2.1.bn2.bias",
+    "backbone.backbone.blocks.2.1.se.conv_reduce.bias",
+    "backbone.backbone.blocks.2.1.se.conv_expand.bias",
+    "backbone.backbone.blocks.2.1.bn3.bias",
+    "backbone.backbone.blocks.3.0.bn1.bias",
+    "backbone.backbone.blocks.3.0.bn2.bias",
+    "backbone.backbone.blocks.3.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.3.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.3.0.bn3.bias",
+    "backbone.backbone.blocks.3.1.bn1.bias",
+    "backbone.backbone.blocks.3.1.bn2.bias",
+    "backbone.backbone.blocks.3.1.se.conv_reduce.bias",
+    "backbone.backbone.blocks.3.1.se.conv_expand.bias",
+    "backbone.backbone.blocks.3.1.bn3.bias",
+    "backbone.backbone.blocks.3.2.bn1.bias",
+    "backbone.backbone.blocks.3.2.bn2.bias",
+    "backbone.backbone.blocks.3.2.se.conv_reduce.bias",
+    "backbone.backbone.blocks.3.2.se.conv_expand.bias",
+    "backbone.backbone.blocks.3.2.bn3.bias",
+    "backbone.backbone.blocks.4.0.bn1.bias",
+    "backbone.backbone.blocks.4.0.bn2.bias",
+    "backbone.backbone.blocks.4.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.4.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.4.0.bn3.bias",
+    "backbone.backbone.blocks.4.1.bn1.bias",
+    "backbone.backbone.blocks.4.1.bn2.bias",
+    "backbone.backbone.blocks.4.1.se.conv_reduce.bias",
+    "backbone.backbone.blocks.4.1.se.conv_expand.bias",
+    "backbone.backbone.blocks.4.1.bn3.bias",
+    "backbone.backbone.blocks.4.2.bn1.bias",
+    "backbone.backbone.blocks.4.2.bn2.bias",
+    "backbone.backbone.blocks.4.2.se.conv_reduce.bias",
+    "backbone.backbone.blocks.4.2.se.conv_expand.bias",
+    "backbone.backbone.blocks.4.2.bn3.bias",
+    "backbone.backbone.blocks.5.0.bn1.bias",
+    "backbone.backbone.blocks.5.0.bn2.bias",
+    "backbone.backbone.blocks.5.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.5.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.5.0.bn3.bias",
+    "backbone.backbone.blocks.5.1.bn1.bias",
+    "backbone.backbone.blocks.5.1.bn2.bias",
+    "backbone.backbone.blocks.5.1.se.conv_reduce.bias",
+    "backbone.backbone.blocks.5.1.se.conv_expand.bias",
+    "backbone.backbone.blocks.5.1.bn3.bias",
+    "backbone.backbone.blocks.5.2.bn1.bias",
+    "backbone.backbone.blocks.5.2.bn2.bias",
+    "backbone.backbone.blocks.5.2.se.conv_reduce.bias",
+    "backbone.backbone.blocks.5.2.se.conv_expand.bias",
+    "backbone.backbone.blocks.5.2.bn3.bias",
+    "backbone.backbone.blocks.5.3.bn1.bias",
+    "backbone.backbone.blocks.5.3.bn2.bias",
+    "backbone.backbone.blocks.5.3.se.conv_reduce.bias",
+    "backbone.backbone.blocks.5.3.se.conv_expand.bias",
+    "backbone.backbone.blocks.5.3.bn3.bias",
+    "backbone.backbone.blocks.6.0.bn1.bias",
+    "backbone.backbone.blocks.6.0.bn2.bias",
+    "backbone.backbone.blocks.6.0.se.conv_reduce.bias",
+    "backbone.backbone.blocks.6.0.se.conv_expand.bias",
+    "backbone.backbone.blocks.6.0.bn3.bias",
+    "backbone.backbone.bn2.bias",
+    "fusion.residual_gamma",
+    "fusion.align_dct.norm1.clean.bias",
+    "fusion.align_dct.norm1.compressed.bias",
+    "fusion.align_dct.norm2.clean.bias",
+    "fusion.align_dct.norm2.compressed.bias",
+    "fusion.align_phase.norm1.clean.bias",
+    "fusion.align_phase.norm1.compressed.bias",
+    "fusion.align_phase.norm2.clean.bias",
+    "fusion.align_phase.norm2.compressed.bias"
+   ],
+   "note": "raw term (unit weight); a term whose config weight is 0 contributes zero gradient in training"
+  }
+ },
+ "gradient_reach_at_init": {
+  "as_specified": {
+   "config": "configs/phase5/a1_grl_s1.yaml",
+   "mode": "init",
+   "lambda": 0.5,
+   "reach": {
+    "cls": [
+     "DCT stream",
+     "band gate",
+     "fusion: CMAM/cleanup/classifier",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "phase stream",
+     "trunk (EfficientNet-B0)",
+     "trunk 1x1 proj"
+    ],
+    "crf": [
+     "estimator"
+    ],
+    "div": [
+     "DCT stream",
+     "band gate",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "phase stream"
+    ],
+    "cons": [
+     "DCT stream",
+     "band gate",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "fusion: zfreq_proj",
+     "phase stream"
+    ],
+    "phase_geo": [
+     "phase head",
+     "phase stream"
+    ],
+    "circ": [
+     "phase head",
+     "phase stream"
+    ],
+    "freq_aux": [],
+    "adv": [
+     "DCT stream",
+     "band gate",
+     "discriminator",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "fusion: zfreq_proj",
+     "phase stream"
+    ]
+   },
+   "zero_init_params_perturbed": [],
+   "note": "raw term (unit weight); a term whose config weight is 0 contributes zero gradient in training"
+  },
+  "fair_e1": {
+   "config": "configs/phase6/r1_fairn_grl_s42.yaml",
+   "mode": "init",
+   "lambda": 0.5,
+   "reach": {
+    "cls": [
+     "DCT stream",
+     "band gate",
+     "fusion: CMAM/cleanup/classifier",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "phase stream",
+     "trunk (EfficientNet-B0)",
+     "trunk 1x1 proj"
+    ],
+    "crf": [
+     "estimator"
+    ],
+    "div": [
+     "DCT stream",
+     "band gate",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "phase stream"
+    ],
+    "cons": [
+     "DCT stream",
+     "band gate",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "fusion: zfreq_proj",
+     "phase stream"
+    ],
+    "phase_geo": [
+     "phase head",
+     "phase stream"
+    ],
+    "circ": [
+     "phase head",
+     "phase stream"
+    ],
+    "freq_aux": [],
+    "adv": [
+     "DCT stream",
+     "band gate",
+     "discriminator",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "fusion: zfreq_proj",
+     "phase stream"
+    ]
+   },
+   "zero_init_params_perturbed": [],
+   "note": "raw term (unit weight); a term whose config weight is 0 contributes zero gradient in training"
+  },
+  "fair_n": {
+   "config": "configs/phase5/f1_none_fair_s42.yaml",
+   "mode": "init",
+   "lambda": 0.5,
+   "reach": {
+    "cls": [
+     "DCT stream",
+     "band gate",
+     "fusion: CMAM/cleanup/classifier",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "phase stream",
+     "trunk (EfficientNet-B0)",
+     "trunk 1x1 proj"
+    ],
+    "crf": [
+     "estimator"
+    ],
+    "div": [
+     "DCT stream",
+     "band gate",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "phase stream"
+    ],
+    "cons": [
+     "DCT stream",
+     "band gate",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "fusion: zfreq_proj",
+     "phase stream"
+    ],
+    "phase_geo": [
+     "phase head",
+     "phase stream"
+    ],
+    "circ": [
+     "phase head",
+     "phase stream"
+    ],
+    "freq_aux": [],
+    "adv": []
+   },
+   "zero_init_params_perturbed": [],
+   "note": "raw term (unit weight); a term whose config weight is 0 contributes zero gradient in training"
+  },
+  "fair_w": {
+   "config": "configs/phase5/f2_spatres_full_s42.yaml",
+   "mode": "init",
+   "lambda": 0.5,
+   "reach": {
+    "cls": [
+     "fusion: residual gamma",
+     "fusion: spatial_head",
+     "trunk (EfficientNet-B0)"
+    ],
+    "crf": [
+     "estimator"
+    ],
+    "div": [
+     "DCT stream",
+     "band gate",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "phase stream"
+    ],
+    "cons": [
+     "DCT stream",
+     "band gate",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "fusion: zfreq_proj",
+     "phase stream"
+    ],
+    "phase_geo": [
+     "phase head",
+     "phase stream"
+    ],
+    "circ": [
+     "phase head",
+     "phase stream"
+    ],
+    "freq_aux": [
+     "DCT stream",
+     "band gate",
+     "fusion: align_dct",
+     "fusion: align_phase",
+     "fusion: freq_head",
+     "fusion: zfreq_proj",
+     "phase stream"
+    ],
+    "adv": []
+   },
+   "zero_init_params_perturbed": [],
+   "note": "raw term (unit weight); a term whose config weight is 0 contributes zero gradient in training"
+  }
+ },
+ "as_specified_equals_fair_e1_architecture": true
+}

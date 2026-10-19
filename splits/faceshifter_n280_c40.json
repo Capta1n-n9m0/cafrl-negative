@@ -8,7 +8,7 @@
  "n_real": 140,
  "pooling_key": "(video_id, method)",
  "keys_sha256": "0802701eaba02ff4160a95d7df1362bbf99d8dcb96b3b6806228bb24d5a7e252",
- "derived_from": "the 9 released faceshifter_preds.json files (identical)",
+ "derived_from": "the 35 released faceshifter_preds.json files (identical)",
  "videos": [
   {
    "video_id": "000_003",

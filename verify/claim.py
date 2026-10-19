@@ -1,8 +1,10 @@
 """Check one claim from `CLAIMS-MAP.md` — or all of them — against this release.
 
 `../CLAIMS-MAP.md` maps every number the paper prints, and every present-tense
-claim it makes about this release, to the artifact that carries it. This tool is
-the executable half of that map: it takes a row's id and recomputes the number
+claim it makes about this release, to the artifact that carries it;
+`../CLAIMS-MAP-R1.md` does the same for the numbers Revision 1 of the manuscript
+adds (row ids `R1.<file>-<region>.<n>`). This tool is the executable half of both
+maps: it takes a row's id and recomputes the number
 from the released artifacts.
 
     python claim.py --list                 # every mapped claim, one line each
@@ -25,6 +27,7 @@ from __future__ import annotations
 import argparse
 import fnmatch
 import json
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -56,10 +59,34 @@ class ClaimError(RuntimeError):
 def printed_tolerance(printed: Any) -> float:
     """Half a unit in the last place the paper prints."""
     text = str(printed).strip().lstrip("+")
+    if "e" in text.lower():                       # 4.2e-3: two significant figures
+        mant, exp = text.lower().split("e")
+        decimals = len(mant.split(".", 1)[1]) if "." in mant else 0
+        return 0.5 * 10 ** (int(exp) - decimals)
     if "." not in text:
         return 0.5
     decimals = len(text.split(".", 1)[1].rstrip("0")) or 1
     return 0.5 * 10 ** (-decimals)
+
+
+def rounds_to_printed(value: float, printed: Any) -> bool:
+    """True when `value`, rounded half-up at the printed precision, IS the printed
+    number — the convention the paper's numbers were printed with. It differs from
+    the half-unit test only exactly on a rounding boundary (e.g. 0.0035 -> 0.004)."""
+    from decimal import ROUND_HALF_UP, Decimal
+    text = str(printed).strip().lstrip("+")
+    try:
+        if "e" in text.lower():
+            mant, exp = text.lower().split("e")
+            dec = len(mant.split(".", 1)[1]) if "." in mant else 0
+            q = Decimal(repr(float(value))).scaleb(-int(exp)).quantize(
+                Decimal(1).scaleb(-dec), ROUND_HALF_UP)
+            return q == Decimal(mant)
+        dec = len(text.split(".", 1)[1]) if "." in text else 0
+        q = Decimal(repr(float(value))).quantize(Decimal(1).scaleb(-dec), ROUND_HALF_UP)
+        return q == Decimal(text)
+    except Exception:                              # noqa: BLE001
+        return False
 
 
 def _cell_value(preds: Predictions, run: str, cell: str, eval_set: str = "ffpp_test",
@@ -83,14 +110,23 @@ def _group_values(preds: Predictions, runs: list[str], cell: str,
     return [_cell_value(preds, r, cell, eval_set, metric) for r in runs]
 
 
-def _drop(preds: Predictions, run: str | None, runs: list[str] | None) -> float:
-    """Clean-anchored drop: AUC(c23) - AUC_comp (seed-averaged for a group)."""
+def _drop(preds: Predictions, run: str | None, runs: list[str] | None,
+          anchor: str = "c23") -> float:
+    """Clean-anchored drop: AUC(anchor) - AUC_comp, anchor c23 unless the row
+    says c0 (seed-averaged for a group)."""
     if runs:
-        c23 = float(np.mean([_cell_value(preds, r, "c23") for r in runs]))
+        top = float(np.mean([_cell_value(preds, r, anchor) for r in runs]))
         comp = float(np.mean([_auc_comp(preds, r) for r in runs]))
     else:
-        c23, comp = _cell_value(preds, run, "c23"), _auc_comp(preds, run)
-    return c23 - comp
+        top, comp = _cell_value(preds, run, anchor), _auc_comp(preds, run)
+    return top - comp
+
+
+def _side_value(preds: Predictions, side: dict[str, Any]) -> float:
+    """One side of a difference: one run's cell, or the mean over several runs."""
+    runs = side.get("runs") or [side["run"]]
+    return float(np.mean([_cell_value(preds, r, side["cell"], side.get("eval_set", "ffpp_test"),
+                                      side.get("metric", "video_auc")) for r in runs]))
 
 
 def _curve_value(row: dict[str, Any]) -> float:
@@ -120,19 +156,58 @@ def _curve_value(row: dict[str, Any]) -> float:
     raise ClaimError(f"unknown curve reduction {how!r}")
 
 
+_KEY_PART = re.compile(r'\["([^"]+)"\]|\[(\d+)\]|([^.\[\]]+)')
+
+
 def _dig(obj: Any, key: str) -> Any:
-    for part in key.split("."):
-        if not isinstance(obj, dict) or part not in obj:
-            raise ClaimError(f"key {key!r} not found in the artifact")
-        obj = obj[part]
+    """Follow a dotted key; `[i]` indexes a list and `["a.b"]` names a key that
+    itself contains a dot."""
+    for m in _KEY_PART.finditer(key):
+        name, index = m.group(1) or m.group(3), m.group(2)
+        if index is not None or (isinstance(obj, list) and name.isdigit()):
+            i = int(index if index is not None else name)
+            if not isinstance(obj, list) or i >= len(obj):
+                raise ClaimError(f"key {key!r} not found in the artifact")
+            obj = obj[i]
+        else:
+            if not isinstance(obj, dict) or name not in obj:
+                raise ClaimError(f"key {key!r} not found in the artifact")
+            obj = obj[name]
     return obj
 
 
-def _scalar_value(row: dict[str, Any]) -> float:
-    path = ROOT / row["source"]
+def _load(source: str) -> Any:
+    path = ROOT / source
     if not path.is_file():
-        raise ClaimError(f"missing artifact {row['source']}")
-    return float(_dig(json.loads(path.read_text()), row["key"]))
+        raise ClaimError(f"missing artifact {source}")
+    return json.loads(path.read_text())
+
+
+def _scalar_value(row: dict[str, Any]) -> float:
+    doc = _load(row["source"])
+    value = float(_dig(doc, row["key"]))
+    if row.get("subtract_key"):
+        value -= float(_dig(doc, row["subtract_key"]))
+    return value
+
+
+def _aggregate_value(row: dict[str, Any]) -> float:
+    """A count or extremum over a list in a released file (e.g. the videos of a
+    prediction file): op min | max | count | count_gt."""
+    items = _dig(_load(row["source"]), row["key"])
+    if not isinstance(items, list):
+        raise ClaimError(f"{row['key']!r} in {row['source']} is not a list")
+    vals = [float(x[row["field"]]) for x in items]
+    op = row["op"]
+    if op == "min":
+        return min(vals)
+    if op == "max":
+        return max(vals)
+    if op == "count":
+        return float(len(vals))
+    if op == "count_gt":
+        return float(sum(1 for v in vals if v > float(row["value"])))
+    raise ClaimError(f"unknown aggregate op {op!r}")
 
 
 def _contrast_value(row: dict[str, Any], bootstrap: bool) -> tuple[float, str]:
@@ -145,22 +220,20 @@ def _contrast_value(row: dict[str, Any], bootstrap: bool) -> tuple[float, str]:
             break
     else:
         raise ClaimError(f"contrast {row['name']!r} is not in verify/expected.json")
+    comp = row.get("component", "delta")
     if not bootstrap:
         exp = c.get("expect") or {}
-        if "delta" not in exp:
-            raise ClaimError(f"contrast {row['name']!r} carries no expected delta")
-        return float(exp["delta"]), (
-            f"from verify/expected.json (run `verify.py` — or this tool with "
-            f"--bootstrap — to recompute the {spec['bootstrap']['b']:,}-replicate bootstrap)"
+        if comp not in exp:
+            raise ClaimError(f"contrast {row['name']!r} carries no expected {comp}")
+        return float(exp[comp]), (
+            f"{'point estimate' if comp == 'delta' else comp} from verify/expected.json "
+            f"(run `verify.py` — or this tool with --bootstrap — to recompute it)"
         )
-    preds = Predictions()
+    import rederive                                          # noqa: PLC0415
     set_dir = "faceshifter" if row.get("scope") == "faceshifter" else "ffpp"
-    a = preds.pool(c["a"], c["level"], set_dir)
-    b = preds.pool(c["b"], c["level"], set_dir)
-    sa, sb, y = align(a, b)
-    res = paired_auc_delta(sa, sb, y, b=spec["bootstrap"]["b"], seed=spec["bootstrap"]["seed"])
-    return float(res["delta_mean"]), (
-        f"recomputed: Δ {res['delta_mean']:+.4f} "
+    res = rederive._paired(Predictions(), c["a"], c["b"], c["level"], spec["bootstrap"], set_dir)
+    return float(res[comp]), (
+        f"recomputed: Δ {res['delta']:+.4f} (point) "
         f"CI [{res['ci_lo']:+.4f}, {res['ci_hi']:+.4f}], "
         f"{'excludes' if res['excludes_zero'] else 'includes'} zero"
     )
@@ -185,12 +258,14 @@ def value_of(row: dict[str, Any], preds: Predictions, bootstrap: bool = False
                              row.get("eval_set", "ffpp_test"))
         return float(seed_band(vals)["half_width"]), "95% t half-width over the seed group"
     if kind == "drop":
-        return _drop(preds, row.get("run"), row.get("runs")), "AUC(c23) - AUC_comp"
+        anchor = row.get("anchor", "c23")
+        return (_drop(preds, row.get("run"), row.get("runs"), anchor),
+                f"AUC({anchor}) - AUC_comp")
     if kind == "difference":
-        m, s = row["minuend"], row["subtrahend"]
-        a = _cell_value(preds, m["run"], m["cell"], m.get("eval_set", "ffpp_test"))
-        b = _cell_value(preds, s["run"], s["cell"], s.get("eval_set", "ffpp_test"))
-        return a - b, "difference of two released cells"
+        return (_side_value(preds, row["minuend"]) - _side_value(preds, row["subtrahend"]),
+                "difference of released cells")
+    if kind == "aggregate":
+        return _aggregate_value(row), f"{row['op']} of {row['field']} over {row['key']} in {row['source']}"
     if kind == "curve":
         return _curve_value(row), f"{row.get('reduce', 'final')} of {row['tag']} in curves/"
     if kind == "contrast":
@@ -221,10 +296,25 @@ def resolve_artifacts(patterns: list[str]) -> tuple[list[str], list[str]]:
 # ---------------------------------------------------------------------------
 
 def load_map() -> dict[str, Any]:
+    """`claims_map.json` plus every continuation file it names (`continued_in`;
+    revision 1: `claims_map_r1.json`, the rows of `../CLAIMS-MAP-R1.md`)."""
     path = HERE / "claims_map.json"
     if not path.is_file():
         raise ClaimError("verify/claims_map.json is missing — this release is incomplete")
-    return json.loads(path.read_text())
+    doc = json.loads(path.read_text())
+    seen = {r["id"] for r in doc["rows"]} | {c["id"] for c in doc["release_claims"]}
+    for name in doc.get("continued_in", []):
+        part = HERE / name
+        if not part.is_file():
+            raise ClaimError(f"verify/{name} is missing — this release is incomplete")
+        extra = json.loads(part.read_text())
+        for r in extra["rows"] + extra.get("release_claims", []):
+            if r["id"] in seen:
+                raise ClaimError(f"verify/{name}: id {r['id']} is already declared")
+            seen.add(r["id"])
+        doc["rows"] += extra["rows"]
+        doc["release_claims"] += extra.get("release_claims", [])
+    return doc
 
 
 def check_row(row: dict[str, Any], preds: Predictions, bootstrap: bool = False
@@ -261,6 +351,9 @@ def check_row(row: dict[str, Any], preds: Predictions, bootstrap: bool = False
         out["status"] = "RECORDED"
         out["detail"] = "no re-derivation defined for this row"
         return out
+    if row.get("scale") is not None:            # e.g. AUC points = AUC x 100
+        value = value * float(row["scale"])
+        how += f" (x {row['scale']})"
     out["value"] = value
     printed = row.get("printed")
     text = str(printed).replace(",", "")
@@ -273,7 +366,7 @@ def check_row(row: dict[str, Any], preds: Predictions, bootstrap: bool = False
         out["detail"] = f"{how}: {value:.6f}"
         return out
     tol = printed_tolerance(text)
-    ok = abs(value - target) < tol
+    ok = abs(value - target) < tol or rounds_to_printed(value, text)
     if ok:
         out["status"] = "OK"
         out["detail"] = f"{how}: {value:.6f} vs paper {printed} (±{tol:g})"

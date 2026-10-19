@@ -1,0 +1,32 @@
+# Phase 6 (Revision 1, W0) — E13 r1_abl_lrfreq_s42: Fair-N with ONE change reverted to a0 — frequency-path learning rate reverted to a0's 1e-4.
+#
+# Parent: configs/phase5/f1_none_fair_s42.yaml (Fair-N, seed 42; invariance_arm none, so no
+# adversary and no λ ramp). Its body is repeated below with the one change.
+# Diff vs the resolved parent (the declared line-set, nothing else):
+#   train.lr_freq         : 2e-4 -> 1e-4           a0's value
+#   train.val_raw         : false -> true            log raw AND EMA val AUC (kickoff §3)
+# Why: decision "Revision 1 W0: five-arm recipe ablation" (3).
+# Not reverted (stated in the paper): batch 32 on one GPU (a0: 2 GPUs), lr_disc (moot: no disc).
+# E13 is descriptive (one seed, no test).
+#
+# Run: python -m src.train --config configs/phase6/r1_abl_lrfreq_s42.yaml --name r1_abl_lrfreq_s42
+#      (one GPU, no torchrun; never the max-epochs or subset-fraction flags; via runs/phase6_build/launch.sh)
+# Eval: python -m src.scripts.eval_battery --run r1_abl_lrfreq_s42 --bn-routing clean
+#       python -m src.scripts.eval_faceshifter --run r1_abl_lrfreq_s42
+# Selection: unchanged trainer rule = EMA weights, best mean val AUC over c23 + c40 (Fair-N's).
+# Every diff below is checked against the resolved parent by src/tests/test_phase6_configs.py.
+model:
+  invariance_arm: none
+train:
+  curriculum: flat
+  lr_freq: 0.0001
+  lr_backbone: 0.0002
+  lr_disc: 0.0002
+  epochs: 30
+  seed: 42
+  val_raw: true
+loss:
+  w_cons: 0.0
+  w_phase: 0.0
+  w_circ_rel: 0.0
+  w_div: 0.0

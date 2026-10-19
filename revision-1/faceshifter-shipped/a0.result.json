@@ -1,0 +1,93 @@
+{
+  "label": "post hoc: IEEE Access Revision 1, wave W4a-2 stage S0 (decision 2026-10-17 'W4a-1 ruling: Table S4 gets 4 decimals from a post hoc GPU evaluation'); not a registered result",
+  "mode": "full",
+  "smoke_cap_per_class": null,
+  "run": "a0",
+  "probe": "faceshifter_unseen_manipulation",
+  "weights": "ema",
+  "weights_check": {
+    "loaded_state_fingerprint": "74b3ed358c774d0b84378c67898dde5f3c6ade70a8de7b3604822af2f8afbf1d",
+    "ema_fingerprint": "74b3ed358c774d0b84378c67898dde5f3c6ade70a8de7b3604822af2f8afbf1d",
+    "raw_fingerprint": "672b5b3500fb492671d5f1c3ef041db8263ce6b15ce051e058c2e2ec2611a1b1",
+    "loaded_equals_ema": true,
+    "ema_differs_from_raw": true
+  },
+  "selector": "ema_best_by_val_auc(best.pt)",
+  "checkpoint": {
+    "path": "${RUNS_ROOT}/a0/best.pt",
+    "realpath": "${HOME}/sdd/exp3-cafrl-runs/a0/best.pt",
+    "sha256_before": "723c02d2d5a87a5ba81c823053a178786f2cc881f24f15830439022ef0dc33f2",
+    "sha256_after": "723c02d2d5a87a5ba81c823053a178786f2cc881f24f15830439022ef0dc33f2",
+    "unchanged": true,
+    "epoch": 34,
+    "best_metric": 0.9464540816326531
+  },
+  "test_list": {
+    "path": "${SPLITS_DIR}/test.json",
+    "sha256": "886f5a0da623c25820692e0d8dc33d197ddb1db527a7f1cfcb9bcbca60fe4f40",
+    "official_path": "${HOME}/Projects/FinetuneCV/config/splits/ffpp_official_splits/test.json",
+    "official_sha256": "886f5a0da623c25820692e0d8dc33d197ddb1db527a7f1cfcb9bcbca60fe4f40",
+    "config_splits_dir": "${SPLITS_DIR}"
+  },
+  "levels": {
+    "c23": {
+      "n_videos": 280,
+      "n_pos_fake": 140,
+      "n_neg_real": 140,
+      "auc_mann_whitney_from_csv": 0.8196428571428571,
+      "preds_file": "preds_c23.csv",
+      "preds_sha256": "f2ca75434b7350a191d391ba5dc08a71fb95c2240ff3cee625e5ec302a5e6845",
+      "auc": 0.8196428571428572,
+      "auc_abs_diff_driver_vs_mw": 1.1102230246251565e-16,
+      "auc_4dp": 0.8196,
+      "auc_3dp": 0.82
+    },
+    "c40": {
+      "n_videos": 280,
+      "n_pos_fake": 140,
+      "n_neg_real": 140,
+      "auc_mann_whitney_from_csv": 0.7506122448979592,
+      "preds_file": "preds_c40.csv",
+      "preds_sha256": "4daf55b3974bcfb140942247579462a86b3320606a3a78a2cb1a3e4668538100",
+      "auc": 0.7506122448979592,
+      "auc_abs_diff_driver_vs_mw": 0.0,
+      "auc_4dp": 0.7506,
+      "auc_3dp": 0.751
+    }
+  },
+  "driver": "src.scripts.eval_faceshifter.evaluate_faceshifter (imported, unchanged)",
+  "driver_provenance": {
+    "ckpt": "${RUNS_ROOT}/a0/best.pt",
+    "selector": "ema_best_by_val_auc(best.pt)",
+    "model": "cafrl:cmam",
+    "arm": "grl",
+    "baseline": false,
+    "levels": [
+      "c23",
+      "c40"
+    ],
+    "method": "FaceShifter",
+    "n_frames": 32,
+    "aggregate": "mean_pool",
+    "pooling_key": "(video_id, method)",
+    "date": "2026-10-17T22:47:36",
+    "harness": "Evaluator.evaluate(return_preds=True) with cfg.data.methods=('FaceShifter',); identical frame-select/pool/AUC as eval_battery.py"
+  },
+  "code_sha256": {
+    "wrapper": "22f55d5a20b8c90a164dbdb642b4280ca97dbd6a6300d8f1dfacdf5a3a913460",
+    "driver": "bf4c7061d36feb506ebca9334c0c678177d3df91ee56f3cd1b58aa69b9589ca2"
+  },
+  "git": {
+    "commit": "c460907d980f733bbc667d74937ed1aa066a7147",
+    "tracked_changes_under_exp_dir": false,
+    "status_porcelain": []
+  },
+  "env": {
+    "torch": "2.5.1",
+    "python": "3.11.15",
+    "device": "cuda:0",
+    "gpu": "NVIDIA A100-PCIE-40GB"
+  },
+  "started": "2026-10-17T22:46:56+00:00",
+  "finished": "2026-10-17T22:47:36+00:00"
+}

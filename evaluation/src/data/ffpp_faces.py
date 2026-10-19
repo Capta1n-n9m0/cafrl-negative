@@ -9,12 +9,18 @@ always see one consistent input.
 Frame availability is asymmetric by design: c0/c23/c40 carry all frames (eval
 re-derives the 32 via the linspace-over-available rule); the generated levels
 (c18/c28/c32/c36) store only 32 frames whose indices the index records.
+
+JPEG arms (Phase 6 E3): with ``jpeg_level_to_qf`` set, a train-mode fetch at level
+``L != c0`` loads the **c0** crop at the planned frame and re-encodes it as JPEG at
+``jpeg_level_to_qf[L]`` before any augmentation, flip and ``to_tensor``
+(``src/data/jpeg_levels.py``). Without it (the default, and always in eval mode)
+the path is unchanged.
 """
 
 from __future__ import annotations
 
 import json
-from collections.abc import Callable, Sequence
+from collections.abc import Callable, Mapping, Sequence
 from pathlib import Path
 from typing import Any
 
@@ -26,6 +32,7 @@ from torch.utils.data import Dataset
 from src.config.defaults import Config
 from src.data.frame_select import select_frames
 from src.data.index import load_index
+from src.data.jpeg_levels import jpeg_roundtrip
 from src.data.sample_spec import SampleSpec
 from src.data.splits import video_split
 from src.data.transforms import maybe_flip, to_tensor
@@ -51,6 +58,10 @@ class FFppFacesDataset(Dataset):
             Phase-5 baselines (``src/baselines/augment.py``); CAFRL always leaves
             this ``None`` so its data path is bit-identical to before this param
             existed. The eval/val path (``training=False``) NEVER augments.
+        jpeg_level_to_qf: optional ``level -> QF`` map (c0 -> None) for the
+            Phase-6 JPEG arms; train mode only (refused with ``training=False``
+            so a val/test set can never be JPEG-coded by accident). ``None``
+            (default) leaves the load path bit-identical to before.
     """
 
     def __init__(
@@ -60,12 +71,23 @@ class FFppFacesDataset(Dataset):
         levels: Sequence[str],
         training: bool,
         frame_augmentor: Callable[[np.ndarray], np.ndarray] | None = None,
+        jpeg_level_to_qf: Mapping[str, int | None] | None = None,
     ) -> None:
         self.cfg = cfg
         self.split = split
         self.levels = tuple(levels)
         self.training = training
         self.frame_augmentor = frame_augmentor
+        if jpeg_level_to_qf is not None and not training:
+            raise ValueError("jpeg_level_to_qf is a train-mode option only")
+        self.jpeg_level_to_qf: dict[str, int | None] | None = (
+            dict(jpeg_level_to_qf) if jpeg_level_to_qf is not None else None
+        )
+        if self.jpeg_level_to_qf is not None:
+            missing = [lvl for lvl in levels
+                       if lvl != "c0" and self.jpeg_level_to_qf.get(lvl) is None]
+            if missing:
+                raise ValueError(f"JPEG map has no QF for levels {missing}")
         self.faces_root = cfg.paths.resolved("faces_root")
         self.bin_levels = tuple(cfg.data.bin_levels)
         self.frames_per_video = cfg.data.frames_per_video
@@ -137,13 +159,30 @@ class FFppFacesDataset(Dataset):
         except ValueError:
             return -1
 
+    def jpeg_qf(self, level: str) -> int | None:
+        """QF applied to a train crop at ``level`` (None: no JPEG, load as is)."""
+        if (not self.training or self.jpeg_level_to_qf is None
+                or level == "c0"):
+            return None
+        return self.jpeg_level_to_qf[level]
+
+    def source_level(self, level: str) -> str:
+        """Level dir the crop for ``level`` is read from (c0 for JPEG views)."""
+        return "c0" if self.jpeg_qf(level) is not None else level
+
     def _load_image(self, set_name: str, video_id: str, level: str,
                     frame_idx: int) -> np.ndarray:
-        png = self.faces_root / level / set_name / video_id / f"{frame_idx:04d}.png"
+        qf = self.jpeg_qf(level)
+        src_level = "c0" if qf is not None else level
+        png = self.faces_root / src_level / set_name / video_id / f"{frame_idx:04d}.png"
         bgr = cv2.imread(str(png))
         if bgr is None:
             raise FileNotFoundError(f"crop not found: {png}")
         rgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)  # HWC uint8
+        # JPEG arms: the c0 crop is re-encoded at the level's calibrated QF on the
+        # stored uint8 RGB crop, before augmentation, flip and to_tensor (S0 M6).
+        if qf is not None:
+            rgb = jpeg_roundtrip(rgb, qf)
         # Baseline-only augmentation: applied on the uint8 numpy RGB crop, BEFORE
         # to_tensor (and before maybe_flip). Train-mode only. When the augmentor
         # is None (CAFRL's default, and the eval/val path), this branch is skipped
@@ -172,11 +211,17 @@ class FFppFacesDataset(Dataset):
         """Load one crop named by a ``SampleSpec`` (train mode)."""
         label = 0 if spec.set in ("real", "actors") else 1
         method = "" if label == 0 else spec.set
-        return self._make_record(
+        rec = self._make_record(
             video_id=spec.video_id, set_name=spec.set, label=label,
             method=method, level=spec.level, frame_idx=spec.frame_idx,
             flip=spec.flip,
         )
+        # Provenance for the per-epoch fetched-level / (level, QF) counters. The
+        # shared ``collate`` ignores these keys, so the CAFRL batch is unchanged.
+        rec["level"] = spec.level
+        rec["src_level"] = self.source_level(spec.level)
+        rec["jpeg_qf"] = self.jpeg_qf(spec.level)
+        return rec
 
     # -- Dataset protocol (eval mode) --------------------------------------
 

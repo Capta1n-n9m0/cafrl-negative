@@ -1,0 +1,3568 @@
+{
+  "provenance": {
+    "script": "src/scripts/phase6_secondaries.py",
+    "script_sha256": "f20dee582935fe5b9c6e8e353d077a9e7152aa3afc251673579c8b50584b909a",
+    "engine": "src/evaluation/phase6_stats.py",
+    "engine_sha256": "a301d024befa13e4001b7aa471e914cded6c0f6ca1fa9b446b753c86cbabb074",
+    "inputs": {
+      "runs/phase6_build/stats/confirmatory.json": "d92fceefa67e7ffa385ddbbb7d68792a34358f11f78e5dcd44b1dd79b4fb6f76",
+      "runs/phase6_build/stats/e13_descriptive.json": "0d33f90198d43b283765227a07ac818e251afff83a6a2338b88f25b1b5bc01e0",
+      "runs/phase6_build/stats/symsel_secondary.json": "91f4cba640ee0ea57967ff5d7d4e135416797840cb224105ed2705fcdc7a43aa",
+      "runs/phase6_build/stats/manifest.json": "442e77b84d7af57025aa182e03563cf0c57258b277fdda29bf3fbc9333603cd1",
+      "runs/phase6_build/stats/manifest_e2b.json": "5a2802c43db0d56641fd2b98a06f63a29277cf0b5985bd81d66e00a38f26cd12",
+      "runs/phase6_build/stats/manifest_symsel.json": "da554884bae6b56ba3f278aa453a89a778454fd0cbc9af1ea920a70336151fed"
+    },
+    "b": 10000,
+    "rng_seed": 0,
+    "units": "0-1 AUC scale in this JSON; the markdown prints points = x 100; R unitless"
+  },
+  "item1_sensitivity": {
+    "label": "secondary (prereg §6.1): calibrated sensitivity test, never the verdict",
+    "source": {
+      "runs/phase6_build/stats/confirmatory.json": "d92fceefa67e7ffa385ddbbb7d68792a34358f11f78e5dcd44b1dd79b4fb6f76"
+    },
+    "note": "carried verbatim from confirmatory.json key sensitivity_calibrated_t (no re-run). §6.1 registers this test with its own p-values and Holm column; they are the only p-values in this file. The verdict is always the primary reading.",
+    "multiplicity": "Holm over 5 sensitivity p-values at family alpha 0.05",
+    "tests": [
+      {
+        "test_id": "T1",
+        "contrast": "E1 - Fair-N, test AUC at c40",
+        "levels": [
+          "c40"
+        ],
+        "estimable": true,
+        "estimate": 0.008677721088435342,
+        "se": 0.0023547974264306343,
+        "t": 3.6851242450986104,
+        "df": 3.7759201558088953,
+        "p_two_sided": 0.02334847433455114,
+        "p_holm": 0.07004542300365342,
+        "reading": "no detectable difference",
+        "primary_reading": "no detectable difference",
+        "agrees_with_primary": true
+      },
+      {
+        "test_id": "T2",
+        "contrast": "E1 - Fair-N, AUC_comp (mean of c28, c32, c36, c40)",
+        "levels": [
+          "c28",
+          "c32",
+          "c36",
+          "c40"
+        ],
+        "estimable": true,
+        "estimate": 0.007302295918367396,
+        "se": 0.0021824760671516055,
+        "t": 3.345876744434487,
+        "df": 2.847900514541449,
+        "p_two_sided": 0.04772026348311882,
+        "p_holm": 0.09544052696623764,
+        "reading": "no detectable difference",
+        "primary_reading": "no detectable difference",
+        "agrees_with_primary": true
+      },
+      {
+        "test_id": "T3",
+        "contrast": "E2a - b7 at c40 (R = 1 iff E2a = b7)",
+        "levels": [
+          "c40"
+        ],
+        "estimable": true,
+        "estimate": -0.011228741496598693,
+        "se": 0.004423264725994309,
+        "t": -2.5385642036323244,
+        "df": 3.4029155843314913,
+        "p_two_sided": 0.07492403623031309,
+        "p_holm": 0.09544052696623764,
+        "reading": "no detectable difference",
+        "primary_reading": "no detectable difference",
+        "agrees_with_primary": true
+      },
+      {
+        "test_id": "T4",
+        "contrast": "E3 codec effect = 1/2[(H264all - JPEGall) + (H264noc40 - JPEGnoc40)] at c40",
+        "levels": [
+          "c40"
+        ],
+        "estimable": true,
+        "estimate": 0.07478316326530599,
+        "se": 0.0027155980363660977,
+        "t": 27.53837727964252,
+        "df": 6.152330388421654,
+        "p_two_sided": 1.1184502274587921e-07,
+        "p_holm": 5.592251137293961e-07,
+        "reading": "helps (real H.264 training data beats PSNR-matched JPEG)",
+        "primary_reading": "helps (real H.264 training data beats PSNR-matched JPEG)",
+        "agrees_with_primary": true
+      },
+      {
+        "test_id": "T5",
+        "contrast": "E3 c40-exposure effect = 1/2[(H264all - H264noc40) + (JPEGall - JPEGnoc40)] at c40",
+        "levels": [
+          "c40"
+        ],
+        "estimable": true,
+        "estimate": 0.018830782312925176,
+        "se": 0.0027155980363660977,
+        "t": 6.934303995197964,
+        "df": 6.152330388421654,
+        "p_two_sided": 0.00039958579203281584,
+        "p_holm": 0.0015983431681312634,
+        "reading": "helps (training with the c40-level data raises c40 AUC)",
+        "primary_reading": "helps (training with the c40-level data raises c40 AUC)",
+        "agrees_with_primary": true
+      }
+    ]
+  },
+  "item2_ensemble": {
+    "label": "secondary (prereg §6.2): ensemble estimand, from the same draws",
+    "source": {
+      "runs/phase6_build/stats/confirmatory.json": "d92fceefa67e7ffa385ddbbb7d68792a34358f11f78e5dcd44b1dd79b4fb6f76"
+    },
+    "note": "carried from confirmatory.json tests[].secondary_ensemble and interaction_descriptive.secondary_ensemble (same draws as the primary). p fields stripped: §6.2 rows are not part of any family.",
+    "has_ensemble_row": {
+      "T1": true,
+      "T2": true,
+      "T3": true,
+      "T4": true,
+      "T5": true,
+      "X45": true
+    },
+    "tests": [
+      {
+        "test_id": "T1",
+        "name": "E1 - Fair-N, test AUC at c40",
+        "estimand": "ensemble",
+        "levels": [
+          "c40"
+        ],
+        "weights": {
+          "E1": 1.0,
+          "FairN": -1.0
+        },
+        "estimate": 0.0069515306122449605,
+        "ci_lo": -0.0020411352040816564,
+        "ci_hi": 0.01932429846938775,
+        "ci_level": 0.95,
+        "se": 0.005344147050987782,
+        "boot_mean": 0.007747059948979592,
+        "b": 10000,
+        "estimable": true
+      },
+      {
+        "test_id": "T2",
+        "name": "E1 - Fair-N, AUC_comp (mean of c28, c32, c36, c40)",
+        "estimand": "ensemble",
+        "levels": [
+          "c28",
+          "c32",
+          "c36",
+          "c40"
+        ],
+        "weights": {
+          "E1": 1.0,
+          "FairN": -1.0
+        },
+        "estimate": 0.004722576530612366,
+        "ci_lo": -0.0014355867346938828,
+        "ci_hi": 0.014499441964285651,
+        "ci_level": 0.95,
+        "se": 0.003936988541835923,
+        "boot_mean": 0.005350103954081633,
+        "b": 10000,
+        "estimable": true
+      },
+      {
+        "test_id": "T3",
+        "name": "E2 retention R = (E2a - anchor) / (b7 - anchor) at c40, vs R = 1",
+        "estimand": "ensemble",
+        "levels": [
+          "c40"
+        ],
+        "weights": {
+          "E2a": 1.0,
+          "anchor": -1.0
+        },
+        "estimate": 0.8716206848745325,
+        "ci_lo": 0.7235195245395992,
+        "ci_hi": 1.0458303338571173,
+        "ci_level": 0.95,
+        "se": 0.07953490838218437,
+        "boot_mean": 0.879317385261938,
+        "b": 10000,
+        "numerator": {
+          "estimate": 0.08019132653061223,
+          "ci_lo": 0.05600733418367344,
+          "ci_hi": 0.10960459183673465
+        },
+        "denominator": {
+          "estimate": 0.09200255102040811,
+          "ci_lo": 0.06638934948979583,
+          "ci_hi": 0.1230625
+        },
+        "n_ratio_nan_set_to_null": 0,
+        "n_ratio_nonfinite": 0,
+        "estimable": true
+      },
+      {
+        "test_id": "T4",
+        "name": "E3 codec effect = 1/2[(H264all - JPEGall) + (H264noc40 - JPEGnoc40)] at c40",
+        "estimand": "ensemble",
+        "levels": [
+          "c40"
+        ],
+        "weights": {
+          "b7": 0.5,
+          "E3a": -0.5,
+          "E2a": 0.5,
+          "E3b": -0.5
+        },
+        "estimate": 0.0691645408163265,
+        "ci_lo": 0.046594068877551034,
+        "ci_hi": 0.09715656887755088,
+        "ci_level": 0.95,
+        "se": 0.012978005156623104,
+        "boot_mean": 0.07117603890306122,
+        "b": 10000,
+        "estimable": true
+      },
+      {
+        "test_id": "T5",
+        "name": "E3 c40-exposure effect = 1/2[(H264all - H264noc40) + (JPEGall - JPEGnoc40)] at c40",
+        "estimand": "ensemble",
+        "levels": [
+          "c40"
+        ],
+        "weights": {
+          "b7": 0.5,
+          "E2a": -0.5,
+          "E3a": 0.5,
+          "E3b": -0.5
+        },
+        "estimate": 0.017544642857142856,
+        "ci_lo": 0.004967315051020465,
+        "ci_hi": 0.031173628826530624,
+        "ci_level": 0.95,
+        "se": 0.006520394606554787,
+        "boot_mean": 0.017669314413265306,
+        "b": 10000,
+        "estimable": true
+      }
+    ],
+    "interaction": {
+      "test_id": "X45",
+      "name": "codec x exposure interaction = (H264all - JPEGall) - (H264noc40 - JPEGnoc40), c40",
+      "estimand": "ensemble",
+      "levels": [
+        "c40"
+      ],
+      "weights": {
+        "b7": 1.0,
+        "E3a": -1.0,
+        "E2a": -1.0,
+        "E3b": 1.0
+      },
+      "estimate": -0.011466836734693953,
+      "ci_lo": -0.03687595663265305,
+      "ci_hi": 0.011097257653061228,
+      "ci_level": 0.95,
+      "se": 0.012117787957070017,
+      "boot_mean": -0.012375105867346938,
+      "b": 10000,
+      "estimable": true
+    }
+  },
+  "item3_symsel": {
+    "label": "secondary (symmetric-selection control, prereg §6.3)",
+    "source": {
+      "runs/phase6_build/stats/symsel_secondary.json": "91f4cba640ee0ea57967ff5d7d4e135416797840cb224105ed2705fcdc7a43aa",
+      "runs/phase6_build/stats/confirmatory.json": "d92fceefa67e7ffa385ddbbb7d68792a34358f11f78e5dcd44b1dd79b4fb6f76",
+      "runs/phase6_build/stats/manifest_symsel.json": "da554884bae6b56ba3f278aa453a89a778454fd0cbc9af1ea920a70336151fed"
+    },
+    "T3": {
+      "symsel": {
+        "estimable": true,
+        "R": 0.9438008839264924,
+        "ci_lo": 0.7944168540708797,
+        "ci_hi": 1.1329549418908316,
+        "ci_level": 0.95,
+        "sentence": "With b7 re-selected on c23 + c36, R was 0.94 ([0.79, 1.13])"
+      },
+      "primary_beside": {
+        "R": 0.884813328681088,
+        "ci_lo": 0.7548119207520501,
+        "ci_hi": 1.0279821864511585,
+        "estimable": true
+      }
+    },
+    "T5": {
+      "symsel": {
+        "estimate": 0.01578443877551028,
+        "ci_lo": 0.0037689200680272638,
+        "ci_hi": 0.027334343112244856,
+        "ci_level": 0.95,
+        "sentence": "With b7 re-selected on c23 + c36, the c40-exposure effect was 1.58 pt ([0.38, 2.73]; secondary, symmetric-selection control)"
+      },
+      "primary_beside": {
+        "estimate": 0.018830782312925176,
+        "ci_lo": 0.007926764455782297,
+        "ci_hi": 0.029785501700680273
+      }
+    },
+    "direction_known_in_advance": "Direction known in advance (prereg §6.3; steps/S0.md M5): the no-c40 arms lose c40 selection while the published b7 and the anchor keep it, which lowers measured retention.",
+    "note": "Only T3 and T5 (estimate and 95 % interval) are carried from symsel_secondary.json, beside the primary T3/T5 of confirmatory.json, never replacing them (W5 plan §7). None of its p-values, Holm values, readings or other rows is reported; they are not a second confirmatory family."
+  },
+  "item4_interaction": {
+    "label": "descriptive (prereg §6.4), not tested",
+    "source": {
+      "runs/phase6_build/stats/confirmatory.json": "d92fceefa67e7ffa385ddbbb7d68792a34358f11f78e5dcd44b1dd79b4fb6f76"
+    },
+    "note": "carried from confirmatory.json interaction_descriptive; p fields stripped",
+    "primary": {
+      "test_id": "X45",
+      "name": "codec x exposure interaction = (H264all - JPEGall) - (H264noc40 - JPEGnoc40), c40",
+      "estimand": "primary",
+      "levels": [
+        "c40"
+      ],
+      "weights": {
+        "b7": 1.0,
+        "E3a": -1.0,
+        "E2a": -1.0,
+        "E3b": 1.0
+      },
+      "estimate": -0.015204081632652966,
+      "ci_lo": -0.035940476190476106,
+      "ci_hi": 0.0054722576530611255,
+      "ci_level": 0.95,
+      "se": 0.010469364972798151,
+      "boot_mean": -0.014892615646258503,
+      "b": 10000,
+      "estimable": true
+    },
+    "ensemble": {
+      "test_id": "X45",
+      "name": "codec x exposure interaction = (H264all - JPEGall) - (H264noc40 - JPEGnoc40), c40",
+      "estimand": "ensemble",
+      "levels": [
+        "c40"
+      ],
+      "weights": {
+        "b7": 1.0,
+        "E3a": -1.0,
+        "E2a": -1.0,
+        "E3b": 1.0
+      },
+      "estimate": -0.011466836734693953,
+      "ci_lo": -0.03687595663265305,
+      "ci_hi": 0.011097257653061228,
+      "ci_level": 0.95,
+      "se": 0.012117787957070017,
+      "boot_mean": -0.012375105867346938,
+      "b": 10000,
+      "estimable": true
+    },
+    "sentence_prereg_9": "The codec effect with and without c40 exposure differed by −1.52 pt ([−3.59, 0.55]; descriptive, not tested)."
+  },
+  "item5_e2b": {
+    "label": "secondary (prereg §6.5), no p-value, outside Holm",
+    "source": {
+      "runs/phase6_build/stats/manifest_e2b.json": "5a2802c43db0d56641fd2b98a06f63a29277cf0b5985bd81d66e00a38f26cd12"
+    },
+    "manifest": "runs/phase6_build/stats/manifest_e2b.json",
+    "runs": {
+      "E2b": [
+        "runs/r1_sb_noc36c40_s42/report.json",
+        "runs/r1_sb_noc36c40_s1/report.json",
+        "runs/r1_sb_noc36c40_s2/report.json"
+      ],
+      "E2a": [
+        "runs/r1_sb_noc40_s42/report.json",
+        "runs/r1_sb_noc40_s1/report.json",
+        "runs/r1_sb_noc40_s2/report.json"
+      ],
+      "b7": [
+        "runs/b7_effnet_b0_mq_fliponly/report.json",
+        "runs/b7_effnet_b0_mq_fliponly_s1/report.json",
+        "runs/b7_effnet_b0_mq_fliponly_s2/report.json"
+      ]
+    },
+    "bootstrap": {
+      "b": 10000,
+      "rng_seed": 0,
+      "scheme": "seed+source",
+      "cluster": "source",
+      "n_units": 140,
+      "n_videos": 700,
+      "n_redraws": 0,
+      "arm_rng_order": [
+        "E2b",
+        "E2a",
+        "b7"
+      ]
+    },
+    "contrasts": [
+      {
+        "contrast": "E2b-E2a@c40",
+        "name": "E2b - E2a, test AUC at c40",
+        "primary": {
+          "test_id": "E2b-E2a@c40",
+          "name": "E2b - E2a, test AUC at c40",
+          "estimand": "primary",
+          "levels": [
+            "c40"
+          ],
+          "weights": {
+            "E2b": 1.0,
+            "E2a": -1.0
+          },
+          "estimate": -0.00795493197278907,
+          "ci_lo": -0.031744260204081574,
+          "ci_hi": 0.011713754251700827,
+          "ci_level": 0.95,
+          "se": 0.0110307899053085,
+          "boot_mean": -0.008107808673469385,
+          "b": 10000,
+          "estimable": true
+        },
+        "ensemble": {
+          "test_id": "E2b-E2a@c40",
+          "name": "E2b - E2a, test AUC at c40",
+          "estimand": "ensemble",
+          "levels": [
+            "c40"
+          ],
+          "weights": {
+            "E2b": 1.0,
+            "E2a": -1.0
+          },
+          "estimate": -0.000306122448979651,
+          "ci_lo": -0.030651466836734666,
+          "ci_hi": 0.01403125000000002,
+          "ci_level": 0.95,
+          "se": 0.010603204303367633,
+          "boot_mean": -0.0031204974489795925,
+          "b": 10000,
+          "estimable": true
+        }
+      },
+      {
+        "contrast": "E2b-b7@c40",
+        "name": "E2b - b7, test AUC at c40",
+        "primary": {
+          "test_id": "E2b-b7@c40",
+          "name": "E2b - b7, test AUC at c40",
+          "estimand": "primary",
+          "levels": [
+            "c40"
+          ],
+          "weights": {
+            "E2b": 1.0,
+            "b7": -1.0
+          },
+          "estimate": -0.019183673469387763,
+          "ci_lo": -0.0446854804421769,
+          "ci_hi": 0.002649447278911667,
+          "ci_level": 0.95,
+          "se": 0.012051515568690987,
+          "boot_mean": -0.019320056972789115,
+          "b": 10000,
+          "estimable": true
+        },
+        "ensemble": {
+          "test_id": "E2b-b7@c40",
+          "name": "E2b - b7, test AUC at c40",
+          "estimand": "ensemble",
+          "levels": [
+            "c40"
+          ],
+          "weights": {
+            "E2b": 1.0,
+            "b7": -1.0
+          },
+          "estimate": -0.01211734693877553,
+          "ci_lo": -0.04244993622448975,
+          "ci_hi": 0.004719706632653071,
+          "ci_level": 0.95,
+          "se": 0.011609714439327979,
+          "boot_mean": -0.01458990943877551,
+          "b": 10000,
+          "estimable": true
+        }
+      },
+      {
+        "contrast": "E2b-E2a@c36",
+        "name": "E2b - E2a, test AUC at c36",
+        "primary": {
+          "test_id": "E2b-E2a@c36",
+          "name": "E2b - E2a, test AUC at c36",
+          "estimand": "primary",
+          "levels": [
+            "c36"
+          ],
+          "weights": {
+            "E2b": 1.0,
+            "E2a": -1.0
+          },
+          "estimate": 0.0013350340136054628,
+          "ci_lo": -0.011211734693877595,
+          "ci_hi": 0.012147108843537424,
+          "ci_level": 0.95,
+          "se": 0.005992719619109488,
+          "boot_mean": 0.0012650612244897962,
+          "b": 10000,
+          "estimable": true
+        },
+        "ensemble": {
+          "test_id": "E2b-E2a@c36",
+          "name": "E2b - E2a, test AUC at c36",
+          "estimand": "ensemble",
+          "levels": [
+            "c36"
+          ],
+          "weights": {
+            "E2b": 1.0,
+            "E2a": -1.0
+          },
+          "estimate": 0.00329081632653061,
+          "ci_lo": -0.011033482142857145,
+          "ci_hi": 0.012781249999999937,
+          "ci_level": 0.95,
+          "se": 0.005669044207047541,
+          "boot_mean": 0.002806788265306122,
+          "b": 10000,
+          "estimable": true
+        }
+      },
+      {
+        "contrast": "E2b-b7@c36",
+        "name": "E2b - b7, test AUC at c36",
+        "primary": {
+          "test_id": "E2b-b7@c36",
+          "name": "E2b - b7, test AUC at c36",
+          "estimand": "primary",
+          "levels": [
+            "c36"
+          ],
+          "weights": {
+            "E2b": 1.0,
+            "b7": -1.0
+          },
+          "estimate": 0.008227040816326525,
+          "ci_lo": -0.005289540816326366,
+          "ci_hi": 0.020858949829932073,
+          "ci_level": 0.95,
+          "se": 0.0065858451757938915,
+          "boot_mean": 0.008185852465986394,
+          "b": 10000,
+          "estimable": true
+        },
+        "ensemble": {
+          "test_id": "E2b-b7@c36",
+          "name": "E2b - b7, test AUC at c36",
+          "estimand": "ensemble",
+          "levels": [
+            "c36"
+          ],
+          "weights": {
+            "E2b": 1.0,
+            "b7": -1.0
+          },
+          "estimate": 0.0072576530612245005,
+          "ci_lo": -0.006517857142857131,
+          "ci_hi": 0.020191326530612286,
+          "ci_level": 0.95,
+          "se": 0.0064114906883297,
+          "boot_mean": 0.007691339285714284,
+          "b": 10000,
+          "estimable": true
+        }
+      }
+    ],
+    "per_arm": {
+      "E2b": {
+        "weights": "plain",
+        "k": 3,
+        "c36": {
+          "primary": {
+            "estimate": 0.9730017006802721,
+            "ci_lo": 0.9566365858843536,
+            "ci_hi": 0.9854891581632653,
+            "ci_level": 0.95,
+            "b": 10000
+          },
+          "ensemble": {
+            "estimate": 0.9800637755102041,
+            "ci_lo": 0.9617598852040816,
+            "ci_hi": 0.9884824617346939,
+            "ci_level": 0.95,
+            "b": 10000
+          },
+          "per_seed": [
+            0.9795535714285715,
+            0.9775765306122449,
+            0.961875
+          ]
+        },
+        "c40": {
+          "primary": {
+            "estimate": 0.9373384353741496,
+            "ci_lo": 0.9095811011904763,
+            "ci_hi": 0.9603069727891157,
+            "ci_level": 0.95,
+            "b": 10000
+          },
+          "ensemble": {
+            "estimate": 0.9530102040816326,
+            "ci_lo": 0.9184948979591837,
+            "ci_hi": 0.9675264668367347,
+            "ci_level": 0.95,
+            "b": 10000
+          },
+          "per_seed": [
+            0.9511224489795919,
+            0.944438775510204,
+            0.9164540816326531
+          ]
+        }
+      },
+      "E2a": {
+        "weights": "plain",
+        "k": 3,
+        "c36": {
+          "primary": {
+            "estimate": 0.9716666666666667,
+            "ci_lo": 0.958609375,
+            "ci_hi": 0.9824323979591837,
+            "ci_level": 0.95,
+            "b": 10000
+          },
+          "ensemble": {
+            "estimate": 0.9767729591836735,
+            "ci_lo": 0.9617720025510204,
+            "ci_hi": 0.985484693877551,
+            "ci_level": 0.95,
+            "b": 10000
+          },
+          "per_seed": [
+            0.9669897959183673,
+            0.9747959183673469,
+            0.9732142857142857
+          ]
+        },
+        "c40": {
+          "primary": {
+            "estimate": 0.9452933673469387,
+            "ci_lo": 0.9260575042517006,
+            "ci_hi": 0.9621387117346938,
+            "ci_level": 0.95,
+            "b": 10000
+          },
+          "ensemble": {
+            "estimate": 0.9533163265306123,
+            "ci_lo": 0.9315427295918367,
+            "ci_hi": 0.967641581632653,
+            "ci_level": 0.95,
+            "b": 10000
+          },
+          "per_seed": [
+            0.9408673469387755,
+            0.9459693877551021,
+            0.9490433673469387
+          ]
+        }
+      },
+      "b7": {
+        "weights": "plain",
+        "k": 3,
+        "c36": {
+          "primary": {
+            "estimate": 0.9647746598639456,
+            "ci_lo": 0.9496164965986393,
+            "ci_hi": 0.9772920918367346,
+            "ci_level": 0.95,
+            "b": 10000
+          },
+          "ensemble": {
+            "estimate": 0.9728061224489796,
+            "ci_lo": 0.9546552933673469,
+            "ci_hi": 0.981938775510204,
+            "ci_level": 0.95,
+            "b": 10000
+          },
+          "per_seed": [
+            0.9677933673469388,
+            0.9682270408163265,
+            0.9583035714285715
+          ]
+        },
+        "c40": {
+          "primary": {
+            "estimate": 0.9565221088435374,
+            "ci_lo": 0.9399914965986395,
+            "ci_hi": 0.9706803784013606,
+            "ci_level": 0.95,
+            "b": 10000
+          },
+          "ensemble": {
+            "estimate": 0.9651275510204081,
+            "ci_lo": 0.9453571428571429,
+            "ci_hi": 0.9758294005102041,
+            "ci_level": 0.95,
+            "b": 10000
+          },
+          "per_seed": [
+            0.9590051020408163,
+            0.9613647959183673,
+            0.9491964285714286
+          ]
+        }
+      }
+    },
+    "note": "E2b = SpatialBase on c0-c32 (r1_sb_noc36c40_s{42,1,2}), plain weights, selector c23 + c32 (prereg §1). Contrasts fixed before any number: E2b - E2a and E2b - b7 at c40 and at c36, both estimands. Arm order E2b, E2a, b7 (RNG order), so the draws differ from confirmatory.json's."
+  },
+  "item6_other_test_sets": {
+    "label": "exploratory (prereg §6.6)",
+    "source": {
+      "runs/phase6_build/stats/manifest.json": "442e77b84d7af57025aa182e03563cf0c57258b277fdda29bf3fbc9333603cd1",
+      "runs/phase6_build/stats/manifest_e2b.json": "5a2802c43db0d56641fd2b98a06f63a29277cf0b5985bd81d66e00a38f26cd12"
+    },
+    "per_arm": {
+      "dfd_c23": {
+        "E1": {
+          "weights": "EMA",
+          "k": 3,
+          "runs": [
+            "runs/r1_fairn_grl_s42",
+            "runs/r1_fairn_grl_s1",
+            "runs/r1_fairn_grl_s2"
+          ],
+          "field": "report.json cross_dataset.dfd_c23.video_auc",
+          "n_videos": [
+            3431,
+            3431,
+            3431
+          ],
+          "per_seed": [
+            0.8313731722822633,
+            0.8617040381293077,
+            0.8593577711451363
+          ],
+          "mean": 0.8508116605189024,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.8603858904321154
+        },
+        "FairN": {
+          "weights": "EMA",
+          "k": 3,
+          "runs": [
+            "runs/f1_none_fair_s42",
+            "runs/f1_none_fair_s1",
+            "runs/f1_none_fair_s2"
+          ],
+          "field": "report.json cross_dataset.dfd_c23.video_auc",
+          "n_videos": [
+            3431,
+            3431,
+            3431
+          ],
+          "per_seed": [
+            0.8281209032364656,
+            0.7516710305616314,
+            0.7958334680214495
+          ],
+          "mean": 0.7918751339398488,
+          "per_video_in_every_seed": false,
+          "ensemble": null,
+          "ensemble_note": "not computable: the report carries no per-video predictions for this cell"
+        },
+        "b7": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/b7_effnet_b0_mq_fliponly",
+            "runs/b7_effnet_b0_mq_fliponly_s1",
+            "runs/b7_effnet_b0_mq_fliponly_s2"
+          ],
+          "field": "report.json cross_dataset.dfd_c23.video_auc",
+          "n_videos": [
+            3431,
+            3431,
+            3431
+          ],
+          "per_seed": [
+            0.8041464185531982,
+            0.8232514788755159,
+            0.8473579579126574
+          ],
+          "mean": 0.8249186184471239,
+          "per_video_in_every_seed": false,
+          "ensemble": null,
+          "ensemble_note": "not computable: the report carries no per-video predictions for this cell"
+        },
+        "E2a": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_noc40_s42",
+            "runs/r1_sb_noc40_s1",
+            "runs/r1_sb_noc40_s2"
+          ],
+          "field": "report.json cross_dataset.dfd_c23.video_auc",
+          "n_videos": [
+            3431,
+            3431,
+            3431
+          ],
+          "per_seed": [
+            0.8560516268528595,
+            0.8305111683385952,
+            0.8495614554936588
+          ],
+          "mean": 0.8453747502283712,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.8576382528616735
+        },
+        "anchor": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_c23only_s42",
+            "runs/r1_sb_c23only_s1",
+            "runs/r1_sb_c23only_s2"
+          ],
+          "field": "report.json cross_dataset.dfd_c23.video_auc",
+          "n_videos": [
+            3431,
+            3431,
+            3431
+          ],
+          "per_seed": [
+            0.9389620395013307,
+            0.915946534205394,
+            0.9071352376437123
+          ],
+          "mean": 0.9206812704501456,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.9295096275065459
+        },
+        "E3a": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_jpeg_all_s42",
+            "runs/r1_sb_jpeg_all_s1",
+            "runs/r1_sb_jpeg_all_s2"
+          ],
+          "field": "report.json cross_dataset.dfd_c23.video_auc",
+          "n_videos": [
+            3431,
+            3431,
+            3431
+          ],
+          "per_seed": [
+            0.803684887275026,
+            0.823718397678336,
+            0.808977232320838
+          ],
+          "mean": 0.8121268390914,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.826844957815682
+        },
+        "E3b": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_jpeg_noc40_s42",
+            "runs/r1_sb_jpeg_noc40_s1",
+            "runs/r1_sb_jpeg_noc40_s2"
+          ],
+          "field": "report.json cross_dataset.dfd_c23.video_auc",
+          "n_videos": [
+            3431,
+            3431,
+            3431
+          ],
+          "per_seed": [
+            0.8348202901361608,
+            0.7897392797238714,
+            0.8737936434392521
+          ],
+          "mean": 0.8327844044330948,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.8524249248440312
+        },
+        "E2b": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_noc36c40_s42",
+            "runs/r1_sb_noc36c40_s1",
+            "runs/r1_sb_noc36c40_s2"
+          ],
+          "field": "report.json cross_dataset.dfd_c23.video_auc",
+          "n_videos": [
+            3431,
+            3431,
+            3431
+          ],
+          "per_seed": [
+            0.8774670373283624,
+            0.8887278617633009,
+            0.889415669076686
+          ],
+          "mean": 0.8852035227227831,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": 0.8954299424253199
+        },
+        "E13:abl_curriculum": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_curriculum_s42"
+          ],
+          "field": "report.json cross_dataset.dfd_c23.video_auc",
+          "n_videos": [
+            3431
+          ],
+          "per_seed": [
+            0.8959794699394084
+          ],
+          "mean": 0.8959794699394084,
+          "per_video_in_every_seed": true,
+          "flag": "stopped at epoch 14 (divergence)",
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "E13:abl_lrbb": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_lrbb_s42"
+          ],
+          "field": "report.json cross_dataset.dfd_c23.video_auc",
+          "n_videos": [
+            3431
+          ],
+          "per_seed": [
+            0.8483339977947065
+          ],
+          "mean": 0.8483339977947065,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "E13:abl_lrfreq": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_lrfreq_s42"
+          ],
+          "field": "report.json cross_dataset.dfd_c23.video_auc",
+          "n_videos": [
+            3431
+          ],
+          "per_seed": [
+            0.8440141009478452
+          ],
+          "mean": 0.8440141009478452,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "E13:abl_aux": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_aux_s42"
+          ],
+          "field": "report.json cross_dataset.dfd_c23.video_auc",
+          "n_videos": [
+            3431
+          ],
+          "per_seed": [
+            0.8550684036046132
+          ],
+          "mean": 0.8550684036046132,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "E13:abl_ep50": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_ep50_s42"
+          ],
+          "field": "report.json cross_dataset.dfd_c23.video_auc",
+          "n_videos": [
+            3431
+          ],
+          "per_seed": [
+            0.8420090438580423
+          ],
+          "mean": 0.8420090438580423,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "b7_symsel": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/phase6_build/symsel/b7_symsel_42",
+            "runs/phase6_build/symsel/b7_symsel_1",
+            "runs/phase6_build/symsel/b7_symsel_2"
+          ],
+          "field": "report.json cross_dataset.dfd_c23.video_auc",
+          "n_videos": [
+            3431,
+            3431,
+            3431
+          ],
+          "per_seed": [
+            0.8588953419461894,
+            0.8688101831399212,
+            0.8473579579126574
+          ],
+          "mean": 0.8583544943329228,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": 0.8737900517561534
+        }
+      },
+      "dfd_c40": {
+        "E1": {
+          "weights": "EMA",
+          "k": 3,
+          "runs": [
+            "runs/r1_fairn_grl_s42",
+            "runs/r1_fairn_grl_s1",
+            "runs/r1_fairn_grl_s2"
+          ],
+          "field": "report.json cross_dataset.dfd_c40.video_auc",
+          "n_videos": [
+            3431,
+            3431,
+            3431
+          ],
+          "per_seed": [
+            0.6559194529148304,
+            0.6686744175187935,
+            0.6876977670506176
+          ],
+          "mean": 0.6707638791614139,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": 0.6751888327389097
+        },
+        "FairN": {
+          "weights": "EMA",
+          "k": 3,
+          "runs": [
+            "runs/f1_none_fair_s42",
+            "runs/f1_none_fair_s1",
+            "runs/f1_none_fair_s2"
+          ],
+          "field": "report.json cross_dataset.dfd_c40.video_auc",
+          "n_videos": [
+            3431,
+            3431,
+            3431
+          ],
+          "per_seed": [
+            0.6830079268445985,
+            0.6689608542459081,
+            0.6263985116065239
+          ],
+          "mean": 0.6594557642323435,
+          "per_video_in_every_seed": false,
+          "ensemble": null,
+          "ensemble_note": "not computable: the report carries no per-video predictions for this cell"
+        },
+        "b7": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/b7_effnet_b0_mq_fliponly",
+            "runs/b7_effnet_b0_mq_fliponly_s1",
+            "runs/b7_effnet_b0_mq_fliponly_s2"
+          ],
+          "field": "report.json cross_dataset.dfd_c40.video_auc",
+          "n_videos": [
+            3431,
+            3431,
+            3431
+          ],
+          "per_seed": [
+            0.6460602828091272,
+            0.6407077770714135,
+            0.664578102944821
+          ],
+          "mean": 0.6504487209417872,
+          "per_video_in_every_seed": false,
+          "ensemble": null,
+          "ensemble_note": "not computable: the report carries no per-video predictions for this cell"
+        },
+        "E2a": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_noc40_s42",
+            "runs/r1_sb_noc40_s1",
+            "runs/r1_sb_noc40_s2"
+          ],
+          "field": "report.json cross_dataset.dfd_c40.video_auc",
+          "n_videos": [
+            3431,
+            3431,
+            3431
+          ],
+          "per_seed": [
+            0.6762259312336354,
+            0.6573848596190661,
+            0.6586967218708359
+          ],
+          "mean": 0.6641025042411791,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": 0.6720263557705777
+        },
+        "anchor": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_c23only_s42",
+            "runs/r1_sb_c23only_s1",
+            "runs/r1_sb_c23only_s2"
+          ],
+          "field": "report.json cross_dataset.dfd_c40.video_auc",
+          "n_videos": [
+            3431,
+            3431,
+            3431
+          ],
+          "per_seed": [
+            0.6962935626263824,
+            0.65792002040076,
+            0.7293307616882347
+          ],
+          "mean": 0.6945147815717924,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.7098252287004213
+        },
+        "E3a": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_jpeg_all_s42",
+            "runs/r1_sb_jpeg_all_s1",
+            "runs/r1_sb_jpeg_all_s2"
+          ],
+          "field": "report.json cross_dataset.dfd_c40.video_auc",
+          "n_videos": [
+            3431,
+            3431,
+            3431
+          ],
+          "per_seed": [
+            0.5875032774108275,
+            0.5341308665653812,
+            0.5502745841728892
+          ],
+          "mean": 0.5573029093830327,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": 0.5662261467346213
+        },
+        "E3b": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_jpeg_noc40_s42",
+            "runs/r1_sb_jpeg_noc40_s1",
+            "runs/r1_sb_jpeg_noc40_s2"
+          ],
+          "field": "report.json cross_dataset.dfd_c40.video_auc",
+          "n_videos": [
+            3431,
+            3431,
+            3431
+          ],
+          "per_seed": [
+            0.530085733475564,
+            0.527943294507239,
+            0.5800702892382399
+          ],
+          "mean": 0.5460331057403477,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.5561191504951135
+        },
+        "E2b": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_noc36c40_s42",
+            "runs/r1_sb_noc36c40_s1",
+            "runs/r1_sb_noc36c40_s2"
+          ],
+          "field": "report.json cross_dataset.dfd_c40.video_auc",
+          "n_videos": [
+            3431,
+            3431,
+            3431
+          ],
+          "per_seed": [
+            0.6936195545594621,
+            0.6707764500522589,
+            0.6941304714802404
+          ],
+          "mean": 0.6861754920306539,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.6988014553499916
+        },
+        "E13:abl_curriculum": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_curriculum_s42"
+          ],
+          "field": "report.json cross_dataset.dfd_c40.video_auc",
+          "n_videos": [
+            3431
+          ],
+          "per_seed": [
+            0.6853200728393332
+          ],
+          "mean": 0.6853200728393332,
+          "per_video_in_every_seed": true,
+          "flag": "stopped at epoch 14 (divergence)",
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "E13:abl_lrbb": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_lrbb_s42"
+          ],
+          "field": "report.json cross_dataset.dfd_c40.video_auc",
+          "n_videos": [
+            3431
+          ],
+          "per_seed": [
+            0.6451713412422195
+          ],
+          "mean": 0.6451713412422195,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "E13:abl_lrfreq": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_lrfreq_s42"
+          ],
+          "field": "report.json cross_dataset.dfd_c40.video_auc",
+          "n_videos": [
+            3431
+          ],
+          "per_seed": [
+            0.6622515902176919
+          ],
+          "mean": 0.6622515902176919,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "E13:abl_aux": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_aux_s42"
+          ],
+          "field": "report.json cross_dataset.dfd_c40.video_auc",
+          "n_videos": [
+            3431
+          ],
+          "per_seed": [
+            0.6658773943057457
+          ],
+          "mean": 0.6658773943057457,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "E13:abl_ep50": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_ep50_s42"
+          ],
+          "field": "report.json cross_dataset.dfd_c40.video_auc",
+          "n_videos": [
+            3431
+          ],
+          "per_seed": [
+            0.6406664727157793
+          ],
+          "mean": 0.6406664727157793,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "b7_symsel": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/phase6_build/symsel/b7_symsel_42",
+            "runs/phase6_build/symsel/b7_symsel_1",
+            "runs/phase6_build/symsel/b7_symsel_2"
+          ],
+          "field": "report.json cross_dataset.dfd_c40.video_auc",
+          "n_videos": [
+            3431,
+            3431,
+            3431
+          ],
+          "per_seed": [
+            0.6444619838302427,
+            0.6689357124642178,
+            0.664578102944821
+          ],
+          "mean": 0.6593252664130939,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.6704289547124678
+        }
+      },
+      "celebdf_v2": {
+        "E1": {
+          "weights": "EMA",
+          "k": 3,
+          "runs": [
+            "runs/r1_fairn_grl_s42",
+            "runs/r1_fairn_grl_s1",
+            "runs/r1_fairn_grl_s2"
+          ],
+          "field": "report.json cross_dataset.celebdf_v2.video_auc",
+          "n_videos": [
+            518,
+            518,
+            518
+          ],
+          "per_seed": [
+            0.6869134170522142,
+            0.6925809649702578,
+            0.689920687376074
+          ],
+          "mean": 0.6898050231328487,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.6966787838730998
+        },
+        "FairN": {
+          "weights": "EMA",
+          "k": 3,
+          "runs": [
+            "runs/f1_none_fair_s42",
+            "runs/f1_none_fair_s1",
+            "runs/f1_none_fair_s2"
+          ],
+          "field": "report.json cross_dataset.celebdf_v2.video_auc",
+          "n_videos": [
+            518,
+            518,
+            518
+          ],
+          "per_seed": [
+            0.6675974884335758,
+            0.5708526107072042,
+            0.7034534038334435
+          ],
+          "mean": 0.6473011676580744,
+          "per_video_in_every_seed": false,
+          "ensemble": null,
+          "ensemble_note": "not computable: the report carries no per-video predictions for this cell"
+        },
+        "b7": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/b7_effnet_b0_mq_fliponly",
+            "runs/b7_effnet_b0_mq_fliponly_s1",
+            "runs/b7_effnet_b0_mq_fliponly_s2"
+          ],
+          "field": "report.json cross_dataset.celebdf_v2.video_auc",
+          "n_videos": [
+            518,
+            518,
+            518
+          ],
+          "per_seed": [
+            0.6990416391275612,
+            0.6874256444150695,
+            0.6713317911434236
+          ],
+          "mean": 0.6859330248953515,
+          "per_video_in_every_seed": false,
+          "ensemble": null,
+          "ensemble_note": "not computable: the report carries no per-video predictions for this cell"
+        },
+        "E2a": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_noc40_s42",
+            "runs/r1_sb_noc40_s1",
+            "runs/r1_sb_noc40_s2"
+          ],
+          "field": "report.json cross_dataset.celebdf_v2.video_auc",
+          "n_videos": [
+            518,
+            518,
+            518
+          ],
+          "per_seed": [
+            0.6768175809649702,
+            0.6916886979510906,
+            0.7186384666226041
+          ],
+          "mean": 0.695714915179555,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": 0.7054692663582287
+        },
+        "anchor": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_c23only_s42",
+            "runs/r1_sb_c23only_s1",
+            "runs/r1_sb_c23only_s2"
+          ],
+          "field": "report.json cross_dataset.celebdf_v2.video_auc",
+          "n_videos": [
+            518,
+            518,
+            518
+          ],
+          "per_seed": [
+            0.6603602115003304,
+            0.6976206212822207,
+            0.7294117647058824
+          ],
+          "mean": 0.6957975324961444,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.7170687376074025
+        },
+        "E3a": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_jpeg_all_s42",
+            "runs/r1_sb_jpeg_all_s1",
+            "runs/r1_sb_jpeg_all_s2"
+          ],
+          "field": "report.json cross_dataset.celebdf_v2.video_auc",
+          "n_videos": [
+            518,
+            518,
+            518
+          ],
+          "per_seed": [
+            0.6950760079312625,
+            0.729296100462657,
+            0.6360376734963649
+          ],
+          "mean": 0.6868032606300948,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.6943489755452743
+        },
+        "E3b": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_jpeg_noc40_s42",
+            "runs/r1_sb_jpeg_noc40_s1",
+            "runs/r1_sb_jpeg_noc40_s2"
+          ],
+          "field": "report.json cross_dataset.celebdf_v2.video_auc",
+          "n_videos": [
+            518,
+            518,
+            518
+          ],
+          "per_seed": [
+            0.7427957699933906,
+            0.725561797752809,
+            0.7518175809649703
+          ],
+          "mean": 0.7400583829037233,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.7590383344348975
+        },
+        "E2b": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_noc36c40_s42",
+            "runs/r1_sb_noc36c40_s1",
+            "runs/r1_sb_noc36c40_s2"
+          ],
+          "field": "report.json cross_dataset.celebdf_v2.video_auc",
+          "n_videos": [
+            518,
+            518,
+            518
+          ],
+          "per_seed": [
+            0.6922009253139458,
+            0.7081791143423662,
+            0.6757766027759418
+          ],
+          "mean": 0.6920522141440847,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.7088730998017184
+        },
+        "E13:abl_curriculum": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_curriculum_s42"
+          ],
+          "field": "report.json cross_dataset.celebdf_v2.video_auc",
+          "n_videos": [
+            518
+          ],
+          "per_seed": [
+            0.7141440846001322
+          ],
+          "mean": 0.7141440846001322,
+          "per_video_in_every_seed": true,
+          "flag": "stopped at epoch 14 (divergence)",
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "E13:abl_lrbb": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_lrbb_s42"
+          ],
+          "field": "report.json cross_dataset.celebdf_v2.video_auc",
+          "n_videos": [
+            518
+          ],
+          "per_seed": [
+            0.7057997356245869
+          ],
+          "mean": 0.7057997356245869,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "E13:abl_lrfreq": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_lrfreq_s42"
+          ],
+          "field": "report.json cross_dataset.celebdf_v2.video_auc",
+          "n_videos": [
+            518
+          ],
+          "per_seed": [
+            0.650743555849306
+          ],
+          "mean": 0.650743555849306,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "E13:abl_aux": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_aux_s42"
+          ],
+          "field": "report.json cross_dataset.celebdf_v2.video_auc",
+          "n_videos": [
+            518
+          ],
+          "per_seed": [
+            0.6839061467283544
+          ],
+          "mean": 0.6839061467283544,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "E13:abl_ep50": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_ep50_s42"
+          ],
+          "field": "report.json cross_dataset.celebdf_v2.video_auc",
+          "n_videos": [
+            518
+          ],
+          "per_seed": [
+            0.6280733641771316
+          ],
+          "mean": 0.6280733641771316,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "b7_symsel": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/phase6_build/symsel/b7_symsel_42",
+            "runs/phase6_build/symsel/b7_symsel_1",
+            "runs/phase6_build/symsel/b7_symsel_2"
+          ],
+          "field": "report.json cross_dataset.celebdf_v2.video_auc",
+          "n_videos": [
+            518,
+            518,
+            518
+          ],
+          "per_seed": [
+            0.6788830138797091,
+            0.6486285525446134,
+            0.6713317911434236
+          ],
+          "mean": 0.6662811191892487,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.6771645736946464
+        }
+      },
+      "faceshifter_c23": {
+        "E1": {
+          "weights": "EMA",
+          "k": 3,
+          "runs": [
+            "runs/r1_fairn_grl_s42",
+            "runs/r1_fairn_grl_s1",
+            "runs/r1_fairn_grl_s2"
+          ],
+          "field": "faceshifter_preds.json cells.c23.auc",
+          "n_videos": [
+            280,
+            280,
+            280
+          ],
+          "per_seed": [
+            0.7723469387755101,
+            0.8114795918367348,
+            0.7756632653061224
+          ],
+          "mean": 0.7864965986394559,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.7989285714285714
+        },
+        "FairN": {
+          "weights": "EMA",
+          "k": 3,
+          "runs": [
+            "runs/f1_none_fair_s42",
+            "runs/f1_none_fair_s1",
+            "runs/f1_none_fair_s2"
+          ],
+          "field": "faceshifter_preds.json cells.c23.auc",
+          "n_videos": [
+            280,
+            280,
+            280
+          ],
+          "per_seed": [
+            0.8031122448979592,
+            0.8270918367346939,
+            0.7673469387755102
+          ],
+          "mean": 0.7991836734693877,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": 0.809438775510204
+        },
+        "b7": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/b7_effnet_b0_mq_fliponly",
+            "runs/b7_effnet_b0_mq_fliponly_s1",
+            "runs/b7_effnet_b0_mq_fliponly_s2"
+          ],
+          "field": "faceshifter_preds.json cells.c23.auc",
+          "n_videos": [
+            280,
+            280,
+            280
+          ],
+          "per_seed": [
+            0.8082142857142857,
+            0.8411224489795918,
+            0.8195408163265306
+          ],
+          "mean": 0.8229591836734693,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.8380102040816326
+        },
+        "E2a": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_noc40_s42",
+            "runs/r1_sb_noc40_s1",
+            "runs/r1_sb_noc40_s2"
+          ],
+          "field": "faceshifter_preds.json cells.c23.auc",
+          "n_videos": [
+            280,
+            280,
+            280
+          ],
+          "per_seed": [
+            0.837295918367347,
+            0.7682142857142857,
+            0.7885714285714285
+          ],
+          "mean": 0.7980272108843538,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.8120918367346939
+        },
+        "anchor": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_c23only_s42",
+            "runs/r1_sb_c23only_s1",
+            "runs/r1_sb_c23only_s2"
+          ],
+          "field": "faceshifter_preds.json cells.c23.auc",
+          "n_videos": [
+            280,
+            280,
+            280
+          ],
+          "per_seed": [
+            0.8090306122448979,
+            0.841530612244898,
+            0.8256122448979593
+          ],
+          "mean": 0.825391156462585,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.8413265306122449
+        },
+        "E3a": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_jpeg_all_s42",
+            "runs/r1_sb_jpeg_all_s1",
+            "runs/r1_sb_jpeg_all_s2"
+          ],
+          "field": "faceshifter_preds.json cells.c23.auc",
+          "n_videos": [
+            280,
+            280,
+            280
+          ],
+          "per_seed": [
+            0.7926530612244898,
+            0.8024489795918367,
+            0.7901020408163265
+          ],
+          "mean": 0.7950680272108843,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": 0.8161224489795919
+        },
+        "E3b": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_jpeg_noc40_s42",
+            "runs/r1_sb_jpeg_noc40_s1",
+            "runs/r1_sb_jpeg_noc40_s2"
+          ],
+          "field": "faceshifter_preds.json cells.c23.auc",
+          "n_videos": [
+            280,
+            280,
+            280
+          ],
+          "per_seed": [
+            0.7714285714285715,
+            0.8201020408163265,
+            0.791326530612245
+          ],
+          "mean": 0.7942857142857144,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.8130612244897959
+        },
+        "E2b": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_noc36c40_s42",
+            "runs/r1_sb_noc36c40_s1",
+            "runs/r1_sb_noc36c40_s2"
+          ],
+          "field": "faceshifter_preds.json cells.c23.auc",
+          "n_videos": [
+            280,
+            280,
+            280
+          ],
+          "per_seed": [
+            0.8314795918367347,
+            0.8572959183673469,
+            0.8283163265306123
+          ],
+          "mean": 0.8390306122448979,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.8535714285714285
+        },
+        "E13:abl_curriculum": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_curriculum_s42"
+          ],
+          "field": "faceshifter_preds.json cells.c23.auc",
+          "n_videos": [
+            280
+          ],
+          "per_seed": [
+            0.8592346938775511
+          ],
+          "mean": 0.8592346938775511,
+          "per_video_in_every_seed": true,
+          "flag": "stopped at epoch 14 (divergence)",
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "E13:abl_lrbb": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_lrbb_s42"
+          ],
+          "field": "faceshifter_preds.json cells.c23.auc",
+          "n_videos": [
+            280
+          ],
+          "per_seed": [
+            0.765765306122449
+          ],
+          "mean": 0.765765306122449,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "E13:abl_lrfreq": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_lrfreq_s42"
+          ],
+          "field": "faceshifter_preds.json cells.c23.auc",
+          "n_videos": [
+            280
+          ],
+          "per_seed": [
+            0.8108163265306123
+          ],
+          "mean": 0.8108163265306123,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "E13:abl_aux": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_aux_s42"
+          ],
+          "field": "faceshifter_preds.json cells.c23.auc",
+          "n_videos": [
+            280
+          ],
+          "per_seed": [
+            0.8276020408163265
+          ],
+          "mean": 0.8276020408163265,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "E13:abl_ep50": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_ep50_s42"
+          ],
+          "field": "faceshifter_preds.json cells.c23.auc",
+          "n_videos": [
+            280
+          ],
+          "per_seed": [
+            0.8230102040816327
+          ],
+          "mean": 0.8230102040816327,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "b7_symsel": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/phase6_build/symsel/b7_symsel_42",
+            "runs/phase6_build/symsel/b7_symsel_1",
+            "runs/phase6_build/symsel/b7_symsel_2"
+          ],
+          "field": "faceshifter_preds.json cells.c23.auc",
+          "n_videos": [
+            280,
+            280,
+            280
+          ],
+          "per_seed": [
+            0.8229591836734694,
+            0.8039795918367347,
+            0.8195408163265306
+          ],
+          "mean": 0.8154931972789116,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": 0.8321428571428572
+        }
+      },
+      "faceshifter_c40": {
+        "E1": {
+          "weights": "EMA",
+          "k": 3,
+          "runs": [
+            "runs/r1_fairn_grl_s42",
+            "runs/r1_fairn_grl_s1",
+            "runs/r1_fairn_grl_s2"
+          ],
+          "field": "faceshifter_preds.json cells.c40.auc",
+          "n_videos": [
+            280,
+            280,
+            280
+          ],
+          "per_seed": [
+            0.7454081632653061,
+            0.7968367346938775,
+            0.7086224489795919
+          ],
+          "mean": 0.7502891156462584,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.7532142857142857
+        },
+        "FairN": {
+          "weights": "EMA",
+          "k": 3,
+          "runs": [
+            "runs/f1_none_fair_s42",
+            "runs/f1_none_fair_s1",
+            "runs/f1_none_fair_s2"
+          ],
+          "field": "faceshifter_preds.json cells.c40.auc",
+          "n_videos": [
+            280,
+            280,
+            280
+          ],
+          "per_seed": [
+            0.7650510204081633,
+            0.7119387755102041,
+            0.6556122448979593
+          ],
+          "mean": 0.7108673469387755,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.7103571428571429
+        },
+        "b7": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/b7_effnet_b0_mq_fliponly",
+            "runs/b7_effnet_b0_mq_fliponly_s1",
+            "runs/b7_effnet_b0_mq_fliponly_s2"
+          ],
+          "field": "faceshifter_preds.json cells.c40.auc",
+          "n_videos": [
+            280,
+            280,
+            280
+          ],
+          "per_seed": [
+            0.7176020408163264,
+            0.7468877551020408,
+            0.7308163265306122
+          ],
+          "mean": 0.7317687074829932,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.7428571428571429
+        },
+        "E2a": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_noc40_s42",
+            "runs/r1_sb_noc40_s1",
+            "runs/r1_sb_noc40_s2"
+          ],
+          "field": "faceshifter_preds.json cells.c40.auc",
+          "n_videos": [
+            280,
+            280,
+            280
+          ],
+          "per_seed": [
+            0.8112244897959183,
+            0.7700510204081633,
+            0.8012244897959184
+          ],
+          "mean": 0.7941666666666668,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.8060714285714285
+        },
+        "anchor": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_c23only_s42",
+            "runs/r1_sb_c23only_s1",
+            "runs/r1_sb_c23only_s2"
+          ],
+          "field": "faceshifter_preds.json cells.c40.auc",
+          "n_videos": [
+            280,
+            280,
+            280
+          ],
+          "per_seed": [
+            0.7467857142857143,
+            0.7544387755102041,
+            0.7436734693877552
+          ],
+          "mean": 0.7482993197278912,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.7681122448979592
+        },
+        "E3a": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_jpeg_all_s42",
+            "runs/r1_sb_jpeg_all_s1",
+            "runs/r1_sb_jpeg_all_s2"
+          ],
+          "field": "faceshifter_preds.json cells.c40.auc",
+          "n_videos": [
+            280,
+            280,
+            280
+          ],
+          "per_seed": [
+            0.7398979591836735,
+            0.7048979591836735,
+            0.666734693877551
+          ],
+          "mean": 0.703843537414966,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": 0.7218877551020408
+        },
+        "E3b": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_jpeg_noc40_s42",
+            "runs/r1_sb_jpeg_noc40_s1",
+            "runs/r1_sb_jpeg_noc40_s2"
+          ],
+          "field": "faceshifter_preds.json cells.c40.auc",
+          "n_videos": [
+            280,
+            280,
+            280
+          ],
+          "per_seed": [
+            0.7209183673469388,
+            0.7233163265306122,
+            0.7019897959183673
+          ],
+          "mean": 0.7154081632653061,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": 0.7287244897959184
+        },
+        "E2b": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/r1_sb_noc36c40_s42",
+            "runs/r1_sb_noc36c40_s1",
+            "runs/r1_sb_noc36c40_s2"
+          ],
+          "field": "faceshifter_preds.json cells.c40.auc",
+          "n_videos": [
+            280,
+            280,
+            280
+          ],
+          "per_seed": [
+            0.7895918367346938,
+            0.818469387755102,
+            0.766887755102041
+          ],
+          "mean": 0.7916496598639456,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 2.220446049250313e-16,
+          "ensemble": 0.8160204081632653
+        },
+        "E13:abl_curriculum": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_curriculum_s42"
+          ],
+          "field": "faceshifter_preds.json cells.c40.auc",
+          "n_videos": [
+            280
+          ],
+          "per_seed": [
+            0.8023469387755102
+          ],
+          "mean": 0.8023469387755102,
+          "per_video_in_every_seed": true,
+          "flag": "stopped at epoch 14 (divergence)",
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "E13:abl_lrbb": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_lrbb_s42"
+          ],
+          "field": "faceshifter_preds.json cells.c40.auc",
+          "n_videos": [
+            280
+          ],
+          "per_seed": [
+            0.7735204081632653
+          ],
+          "mean": 0.7735204081632653,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "E13:abl_lrfreq": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_lrfreq_s42"
+          ],
+          "field": "faceshifter_preds.json cells.c40.auc",
+          "n_videos": [
+            280
+          ],
+          "per_seed": [
+            0.7354591836734694
+          ],
+          "mean": 0.7354591836734694,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "E13:abl_aux": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_aux_s42"
+          ],
+          "field": "faceshifter_preds.json cells.c40.auc",
+          "n_videos": [
+            280
+          ],
+          "per_seed": [
+            0.7025510204081633
+          ],
+          "mean": 0.7025510204081633,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "E13:abl_ep50": {
+          "weights": "EMA",
+          "k": 1,
+          "runs": [
+            "runs/r1_abl_ep50_s42"
+          ],
+          "field": "faceshifter_preds.json cells.c40.auc",
+          "n_videos": [
+            280
+          ],
+          "per_seed": [
+            0.7942346938775511
+          ],
+          "mean": 0.7942346938775511,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 1.1102230246251565e-16,
+          "ensemble": null,
+          "ensemble_note": "k = 1: the ensemble is the single run"
+        },
+        "b7_symsel": {
+          "weights": "plain",
+          "k": 3,
+          "runs": [
+            "runs/phase6_build/symsel/b7_symsel_42",
+            "runs/phase6_build/symsel/b7_symsel_1",
+            "runs/phase6_build/symsel/b7_symsel_2"
+          ],
+          "field": "faceshifter_preds.json cells.c40.auc",
+          "n_videos": [
+            280,
+            280,
+            280
+          ],
+          "per_seed": [
+            0.7441836734693877,
+            0.743061224489796,
+            0.7308163265306122
+          ],
+          "mean": 0.7393537414965987,
+          "per_video_in_every_seed": true,
+          "stored_vs_engine_auc_max_absdiff": 0.0,
+          "ensemble": 0.7536224489795919
+        }
+      }
+    },
+    "contrasts": {
+      "dfd_c23": {
+        "ran": false,
+        "arms_without_per_video_predictions": [
+          "FairN",
+          "b7"
+        ],
+        "reason": "not run: arm(s) FairN, b7 carry no per-video predictions for this cell in their report.json (published runs, older schema), so the engine cannot resample them; T1/T2 need Fair-N and T3/T4/T5 need b7. Per-arm AUCs only.",
+        "cluster": "none used (no contrast ran). The engine's 'source' scheme does not parse these keys (DFD/Celeb-DF video ids are not '{target}_{source}'; phase6_stats.cluster_labels raises) and the engine has no fallback."
+      },
+      "dfd_c40": {
+        "ran": false,
+        "arms_without_per_video_predictions": [
+          "FairN",
+          "b7"
+        ],
+        "reason": "not run: arm(s) FairN, b7 carry no per-video predictions for this cell in their report.json (published runs, older schema), so the engine cannot resample them; T1/T2 need Fair-N and T3/T4/T5 need b7. Per-arm AUCs only.",
+        "cluster": "none used (no contrast ran). The engine's 'source' scheme does not parse these keys (DFD/Celeb-DF video ids are not '{target}_{source}'; phase6_stats.cluster_labels raises) and the engine has no fallback."
+      },
+      "celebdf_v2": {
+        "ran": false,
+        "arms_without_per_video_predictions": [
+          "FairN",
+          "b7"
+        ],
+        "reason": "not run: arm(s) FairN, b7 carry no per-video predictions for this cell in their report.json (published runs, older schema), so the engine cannot resample them; T1/T2 need Fair-N and T3/T4/T5 need b7. Per-arm AUCs only.",
+        "cluster": "none used (no contrast ran). The engine's 'source' scheme does not parse these keys (DFD/Celeb-DF video ids are not '{target}_{source}'; phase6_stats.cluster_labels raises) and the engine has no fallback."
+      },
+      "faceshifter_c23": {
+        "ran": true,
+        "cluster": "engine 'source' scheme (FF++ keys '{target}_{source}'), 140 clusters, 280 videos",
+        "bootstrap": {
+          "b": 10000,
+          "rng_seed": 0,
+          "scheme": "seed+source",
+          "cluster": "source",
+          "n_units": 140,
+          "n_videos": 280,
+          "n_redraws": 0,
+          "arm_rng_order": [
+            "E1",
+            "FairN",
+            "b7",
+            "E2a",
+            "anchor",
+            "E3a",
+            "E3b"
+          ]
+        },
+        "contrasts": [
+          {
+            "contrast": "T1",
+            "name": "E1 - Fair-N at FaceShifter c23",
+            "primary": {
+              "test_id": "T1@faceshifter_c23",
+              "name": "E1 - Fair-N, test AUC at c40",
+              "estimand": "primary",
+              "levels": [
+                "c23"
+              ],
+              "weights": {
+                "E1": 1.0,
+                "FairN": -1.0
+              },
+              "estimate": -0.01268707482993181,
+              "ci_lo": -0.05389498299319738,
+              "ci_hi": 0.02869175170068011,
+              "ci_level": 0.95,
+              "se": 0.02099025281919854,
+              "boot_mean": -0.013322472789115648,
+              "b": 10000,
+              "estimable": true
+            },
+            "ensemble": {
+              "test_id": "T1@faceshifter_c23",
+              "name": "E1 - Fair-N, test AUC at c40",
+              "estimand": "ensemble",
+              "levels": [
+                "c23"
+              ],
+              "weights": {
+                "E1": 1.0,
+                "FairN": -1.0
+              },
+              "estimate": -0.010510204081632613,
+              "ci_lo": -0.05699107142857136,
+              "ci_hi": 0.03545918367346934,
+              "ci_level": 0.95,
+              "se": 0.023936565194774245,
+              "boot_mean": -0.011953576530612246,
+              "b": 10000,
+              "estimable": true
+            }
+          },
+          {
+            "contrast": "T3",
+            "name": "E2 retention R = (E2a - anchor) / (b7 - anchor) at FaceShifter c23",
+            "primary": {
+              "test_id": "T3@faceshifter_c23",
+              "name": "E2 retention R = (E2a - anchor) / (b7 - anchor) at c40, vs R = 1",
+              "estimand": "primary",
+              "levels": [
+                "c23"
+              ],
+              "weights": {
+                "E2a": 1.0,
+                "anchor": -1.0
+              },
+              "ci_level": 0.95,
+              "b": 10000,
+              "numerator": {
+                "estimate": -0.027363945578231186,
+                "ci_lo": -0.08115816326530616,
+                "ci_hi": 0.026309523809523786
+              },
+              "denominator": {
+                "estimate": -0.002431972789115555,
+                "ci_lo": -0.045714710884353624,
+                "ci_hi": 0.04102295918367359
+              },
+              "n_ratio_nan_set_to_null": 0,
+              "n_ratio_nonfinite": 6,
+              "estimable": false,
+              "not_estimable_reason": "denominator 95 % interval contains 0; no ratio is quoted"
+            },
+            "ensemble": {
+              "test_id": "T3@faceshifter_c23",
+              "name": "E2 retention R = (E2a - anchor) / (b7 - anchor) at c40, vs R = 1",
+              "estimand": "ensemble",
+              "levels": [
+                "c23"
+              ],
+              "weights": {
+                "E2a": 1.0,
+                "anchor": -1.0
+              },
+              "ci_level": 0.95,
+              "b": 10000,
+              "numerator": {
+                "estimate": -0.029234693877551066,
+                "ci_lo": -0.08872576530612249,
+                "ci_hi": 0.026683673469387718
+              },
+              "denominator": {
+                "estimate": -0.0033163265306123124,
+                "ci_lo": -0.04974489795918369,
+                "ci_hi": 0.04275765306122446
+              },
+              "n_ratio_nan_set_to_null": 0,
+              "n_ratio_nonfinite": 8,
+              "estimable": false,
+              "not_estimable_reason": "denominator 95 % interval contains 0; no ratio is quoted"
+            }
+          },
+          {
+            "contrast": "T4",
+            "name": "E3 codec effect = 1/2[(H264all - JPEGall) + (H264noc40 - JPEGnoc40)] at FaceShifter c23",
+            "primary": {
+              "test_id": "T4@faceshifter_c23",
+              "name": "E3 codec effect = 1/2[(H264all - JPEGall) + (H264noc40 - JPEGnoc40)] at c40",
+              "estimand": "primary",
+              "levels": [
+                "c23"
+              ],
+              "weights": {
+                "b7": 0.5,
+                "E3a": -0.5,
+                "E2a": 0.5,
+                "E3b": -0.5
+              },
+              "estimate": 0.015816326530612268,
+              "ci_lo": -0.025801020408163233,
+              "ci_hi": 0.05554634353741485,
+              "ci_level": 0.95,
+              "se": 0.020672387991701378,
+              "boot_mean": 0.015320559523809521,
+              "b": 10000,
+              "estimable": true
+            },
+            "ensemble": {
+              "test_id": "T4@faceshifter_c23",
+              "name": "E3 codec effect = 1/2[(H264all - JPEGall) + (H264noc40 - JPEGnoc40)] at c40",
+              "estimand": "ensemble",
+              "levels": [
+                "c23"
+              ],
+              "weights": {
+                "b7": 0.5,
+                "E3a": -0.5,
+                "E2a": 0.5,
+                "E3b": -0.5
+              },
+              "estimate": 0.010459183673469374,
+              "ci_lo": -0.03298533163265303,
+              "ci_hi": 0.0546938775510204,
+              "ci_level": 0.95,
+              "se": 0.022164137744745658,
+              "boot_mean": 0.011616933673469387,
+              "b": 10000,
+              "estimable": true
+            }
+          },
+          {
+            "contrast": "T5",
+            "name": "E3 c40-exposure effect = 1/2[(H264all - H264noc40) + (JPEGall - JPEGnoc40)] at FaceShifter c23",
+            "primary": {
+              "test_id": "T5@faceshifter_c23",
+              "name": "E3 c40-exposure effect = 1/2[(H264all - H264noc40) + (JPEGall - JPEGnoc40)] at c40",
+              "estimand": "primary",
+              "levels": [
+                "c23"
+              ],
+              "weights": {
+                "b7": 0.5,
+                "E2a": -0.5,
+                "E3a": 0.5,
+                "E3b": -0.5
+              },
+              "estimate": 0.01285714285714279,
+              "ci_lo": -0.015910714285714358,
+              "ci_hi": 0.041845450680272116,
+              "ci_level": 0.95,
+              "se": 0.014613579316513655,
+              "boot_mean": 0.01286384013605442,
+              "b": 10000,
+              "estimable": true
+            },
+            "ensemble": {
+              "test_id": "T5@faceshifter_c23",
+              "name": "E3 c40-exposure effect = 1/2[(H264all - H264noc40) + (JPEGall - JPEGnoc40)] at c40",
+              "estimand": "ensemble",
+              "levels": [
+                "c23"
+              ],
+              "weights": {
+                "b7": 0.5,
+                "E2a": -0.5,
+                "E3a": 0.5,
+                "E3b": -0.5
+              },
+              "estimate": 0.014489795918367354,
+              "ci_lo": -0.016047193877551005,
+              "ci_hi": 0.046199617346938754,
+              "ci_level": 0.95,
+              "se": 0.01586698057421416,
+              "boot_mean": 0.01403004081632653,
+              "b": 10000,
+              "estimable": true
+            }
+          }
+        ],
+        "not_run": {
+          "T2": "AUC_comp needs the FF++ c28-c40 sweep; FaceShifter has only the c23 and c40 cells"
+        }
+      },
+      "faceshifter_c40": {
+        "ran": true,
+        "cluster": "engine 'source' scheme (FF++ keys '{target}_{source}'), 140 clusters, 280 videos",
+        "bootstrap": {
+          "b": 10000,
+          "rng_seed": 0,
+          "scheme": "seed+source",
+          "cluster": "source",
+          "n_units": 140,
+          "n_videos": 280,
+          "n_redraws": 0,
+          "arm_rng_order": [
+            "E1",
+            "FairN",
+            "b7",
+            "E2a",
+            "anchor",
+            "E3a",
+            "E3b"
+          ]
+        },
+        "contrasts": [
+          {
+            "contrast": "T1",
+            "name": "E1 - Fair-N at FaceShifter c40",
+            "primary": {
+              "test_id": "T1@faceshifter_c40",
+              "name": "E1 - Fair-N, test AUC at c40",
+              "estimand": "primary",
+              "levels": [
+                "c40"
+              ],
+              "weights": {
+                "E1": 1.0,
+                "FairN": -1.0
+              },
+              "estimate": 0.03942176870748293,
+              "ci_lo": -0.02879336734693869,
+              "ci_hi": 0.10945705782312926,
+              "ci_level": 0.95,
+              "se": 0.03530651811440753,
+              "boot_mean": 0.0389345119047619,
+              "b": 10000,
+              "estimable": true
+            },
+            "ensemble": {
+              "test_id": "T1@faceshifter_c40",
+              "name": "E1 - Fair-N, test AUC at c40",
+              "estimand": "ensemble",
+              "levels": [
+                "c40"
+              ],
+              "weights": {
+                "E1": 1.0,
+                "FairN": -1.0
+              },
+              "estimate": 0.042857142857142816,
+              "ci_lo": -0.029948979591836733,
+              "ci_hi": 0.11632780612244892,
+              "ci_level": 0.95,
+              "se": 0.03741971996113061,
+              "boot_mean": 0.04173508163265306,
+              "b": 10000,
+              "estimable": true
+            }
+          },
+          {
+            "contrast": "T3",
+            "name": "E2 retention R = (E2a - anchor) / (b7 - anchor) at FaceShifter c40",
+            "primary": {
+              "test_id": "T3@faceshifter_c40",
+              "name": "E2 retention R = (E2a - anchor) / (b7 - anchor) at c40, vs R = 1",
+              "estimand": "primary",
+              "levels": [
+                "c40"
+              ],
+              "weights": {
+                "E2a": 1.0,
+                "anchor": -1.0
+              },
+              "ci_level": 0.95,
+              "b": 10000,
+              "numerator": {
+                "estimate": 0.045867346938775366,
+                "ci_lo": -0.007487244897959227,
+                "ci_hi": 0.09445620748299309
+              },
+              "denominator": {
+                "estimate": -0.016530612244898046,
+                "ci_lo": -0.07207568027210895,
+                "ci_hi": 0.03756802721088448
+              },
+              "n_ratio_nan_set_to_null": 0,
+              "n_ratio_nonfinite": 1,
+              "estimable": false,
+              "not_estimable_reason": "denominator 95 % interval contains 0; no ratio is quoted"
+            },
+            "ensemble": {
+              "test_id": "T3@faceshifter_c40",
+              "name": "E2 retention R = (E2a - anchor) / (b7 - anchor) at c40, vs R = 1",
+              "estimand": "ensemble",
+              "levels": [
+                "c40"
+              ],
+              "weights": {
+                "E2a": 1.0,
+                "anchor": -1.0
+              },
+              "ci_level": 0.95,
+              "b": 10000,
+              "numerator": {
+                "estimate": 0.0379591836734694,
+                "ci_lo": -0.014491071428571489,
+                "ci_hi": 0.09469387755102032
+              },
+              "denominator": {
+                "estimate": -0.02525510204081627,
+                "ci_lo": -0.08194005102040809,
+                "ci_hi": 0.0373979591836735
+              },
+              "n_ratio_nan_set_to_null": 0,
+              "n_ratio_nonfinite": 5,
+              "estimable": false,
+              "not_estimable_reason": "denominator 95 % interval contains 0; no ratio is quoted"
+            }
+          },
+          {
+            "contrast": "T4",
+            "name": "E3 codec effect = 1/2[(H264all - JPEGall) + (H264noc40 - JPEGnoc40)] at FaceShifter c40",
+            "primary": {
+              "test_id": "T4@faceshifter_c40",
+              "name": "E3 codec effect = 1/2[(H264all - JPEGall) + (H264noc40 - JPEGnoc40)] at c40",
+              "estimand": "primary",
+              "levels": [
+                "c40"
+              ],
+              "weights": {
+                "b7": 0.5,
+                "E3a": -0.5,
+                "E2a": 0.5,
+                "E3b": -0.5
+              },
+              "estimate": 0.05334183673469378,
+              "ci_lo": -0.000757227891156496,
+              "ci_hi": 0.10832653061224481,
+              "ci_level": 0.95,
+              "se": 0.027637283846422587,
+              "boot_mean": 0.05297391241496598,
+              "b": 10000,
+              "estimable": true
+            },
+            "ensemble": {
+              "test_id": "T4@faceshifter_c40",
+              "name": "E3 codec effect = 1/2[(H264all - JPEGall) + (H264noc40 - JPEGnoc40)] at c40",
+              "estimand": "ensemble",
+              "levels": [
+                "c40"
+              ],
+              "weights": {
+                "b7": 0.5,
+                "E3a": -0.5,
+                "E2a": 0.5,
+                "E3b": -0.5
+              },
+              "estimate": 0.04915816326530609,
+              "ci_lo": -0.006609693877550973,
+              "ci_hi": 0.10923533163265306,
+              "ci_level": 0.95,
+              "se": 0.029563544040633924,
+              "boot_mean": 0.05056330357142857,
+              "b": 10000,
+              "estimable": true
+            }
+          },
+          {
+            "contrast": "T5",
+            "name": "E3 c40-exposure effect = 1/2[(H264all - H264noc40) + (JPEGall - JPEGnoc40)] at FaceShifter c40",
+            "primary": {
+              "test_id": "T5@faceshifter_c40",
+              "name": "E3 c40-exposure effect = 1/2[(H264all - H264noc40) + (JPEGall - JPEGnoc40)] at c40",
+              "estimand": "primary",
+              "levels": [
+                "c40"
+              ],
+              "weights": {
+                "b7": 0.5,
+                "E2a": -0.5,
+                "E3a": 0.5,
+                "E3b": -0.5
+              },
+              "estimate": -0.036981292517006825,
+              "ci_lo": -0.07291113945578238,
+              "ci_hi": -0.002489583333333356,
+              "ci_level": 0.95,
+              "se": 0.018064709514308365,
+              "boot_mean": -0.03709114200680272,
+              "b": 10000,
+              "estimable": true
+            },
+            "ensemble": {
+              "test_id": "T5@faceshifter_c40",
+              "name": "E3 c40-exposure effect = 1/2[(H264all - H264noc40) + (JPEGall - JPEGnoc40)] at c40",
+              "estimand": "ensemble",
+              "levels": [
+                "c40"
+              ],
+              "weights": {
+                "b7": 0.5,
+                "E2a": -0.5,
+                "E3a": 0.5,
+                "E3b": -0.5
+              },
+              "estimate": -0.03502551020408162,
+              "ci_lo": -0.077015306122449,
+              "ci_hi": 0.0005867346938775442,
+              "ci_level": 0.95,
+              "se": 0.019799898487619264,
+              "boot_mean": -0.03711533418367347,
+              "b": 10000,
+              "estimable": true
+            }
+          }
+        ],
+        "not_run": {
+          "T2": "AUC_comp needs the FF++ c28-c40 sweep; FaceShifter has only the c23 and c40 cells"
+        }
+      }
+    },
+    "faceshifter_training": {
+      "any_run_trained_on_FaceShifter": false,
+      "distinct_training_method_lists": [
+        [
+          "Deepfakes",
+          "Face2Face",
+          "FaceSwap",
+          "NeuralTextures"
+        ]
+      ],
+      "source": "config.yaml data.methods of every run in item 6",
+      "statement": "No run in item 6 lists FaceShifter among its training methods (src/data/constants.py: FaceShifter is held out as an unseen-method eval)."
+    },
+    "note": "Per-arm AUCs from report.json cross_dataset.<set>.video_auc (DFD, Celeb-DF) and faceshifter_preds.json cells.<lv>.auc (FaceShifter); mean = mean over seeds of per-seed AUC; ensemble = AUC of the per-video mean score (only where every seed has per-video predictions). E13 runs are k = 1 each; abl_curriculum is flagged."
+  },
+  "item7_equivalence": {
+    "label": "post hoc; never confirmatory, never in the abstract",
+    "source": {
+      "runs/phase6_build/stats/manifest.json": "442e77b84d7af57025aa182e03563cf0c57258b277fdda29bf3fbc9333603cd1",
+      "runs/phase6_build/stats/confirmatory.json": "d92fceefa67e7ffa385ddbbb7d68792a34358f11f78e5dcd44b1dd79b4fb6f76"
+    },
+    "bootstrap": {
+      "b": 10000,
+      "rng_seed": 0,
+      "scheme": "seed+source",
+      "cluster": "source",
+      "n_units": 140,
+      "n_videos": 700,
+      "n_redraws": 0,
+      "arm_rng_order": [
+        "E1",
+        "FairN",
+        "b7",
+        "E2a",
+        "anchor",
+        "E3a",
+        "E3b"
+      ]
+    },
+    "margin": 0.01,
+    "interval_level": 0.9,
+    "rule": "inside ±1 pt iff -0.01 <= 90 % lower bound and 90 % upper bound <= 0.01 (0-1 scale); the 90 % percentile interval is phase6_stats._ci(reps, 0.90) on the same replicate array as the 95 % one",
+    "rows": [
+      {
+        "test_id": "T1",
+        "contrast": "E1 - Fair-N, test AUC at c40",
+        "levels": [
+          "c40"
+        ],
+        "estimand": "primary",
+        "estimate": 0.008677721088435342,
+        "ci95": [
+          0.00022076955782303372,
+          0.01876711309523815
+        ],
+        "ci90": [
+          0.0014876700680273084,
+          0.01678592687074841
+        ],
+        "inside_pm1pt": false,
+        "matches_confirmatory_json": {
+          "estimate_absdiff": 0.0,
+          "ci_lo_absdiff": 0.0,
+          "ci_hi_absdiff": 0.0
+        }
+      },
+      {
+        "test_id": "T2",
+        "contrast": "E1 - Fair-N, AUC_comp (mean of c28, c32, c36, c40)",
+        "levels": [
+          "c28",
+          "c32",
+          "c36",
+          "c40"
+        ],
+        "estimand": "primary",
+        "estimate": 0.007302295918367396,
+        "ci95": [
+          0.001175382653061169,
+          0.01450294961734687
+        ],
+        "ci90": [
+          0.0021204825680272155,
+          0.01318664965986383
+        ],
+        "inside_pm1pt": false,
+        "matches_confirmatory_json": {
+          "estimate_absdiff": 0.0,
+          "ci_lo_absdiff": 0.0,
+          "ci_hi_absdiff": 0.0
+        }
+      },
+      {
+        "test_id": "T4",
+        "contrast": "E3 codec effect = 1/2[(H264all - JPEGall) + (H264noc40 - JPEGnoc40)] at c40",
+        "levels": [
+          "c40"
+        ],
+        "estimand": "primary",
+        "estimate": 0.07478316326530599,
+        "ci95": [
+          0.0512286352040815,
+          0.09944323979591839
+        ],
+        "ci90": [
+          0.054757227891156515,
+          0.09560374149659846
+        ],
+        "inside_pm1pt": false,
+        "matches_confirmatory_json": {
+          "estimate_absdiff": 0.0,
+          "ci_lo_absdiff": 0.0,
+          "ci_hi_absdiff": 0.0
+        }
+      },
+      {
+        "test_id": "T5",
+        "contrast": "E3 c40-exposure effect = 1/2[(H264all - H264noc40) + (JPEGall - JPEGnoc40)] at c40",
+        "levels": [
+          "c40"
+        ],
+        "estimand": "primary",
+        "estimate": 0.018830782312925176,
+        "ci95": [
+          0.007926764455782297,
+          0.029785501700680273
+        ],
+        "ci90": [
+          0.009681016156462555,
+          0.02777253401360544
+        ],
+        "inside_pm1pt": false,
+        "matches_confirmatory_json": {
+          "estimate_absdiff": 0.0,
+          "ci_lo_absdiff": 0.0,
+          "ci_hi_absdiff": 0.0
+        }
+      },
+      {
+        "test_id": "E1-FairN@AUC_comp",
+        "duplicates": "T2",
+        "note": "E1 - Fair-N on AUC_comp is T2's contrast at T2's endpoint; the row is T2's row above, not a separate computation."
+      }
+    ]
+  },
+  "item8_e13": {
+    "label": "descriptive (prereg §6.8): one seed, no p-value, no test, no verdict",
+    "source": {
+      "runs/phase6_build/stats/e13_descriptive.json": "0d33f90198d43b283765227a07ac818e251afff83a6a2338b88f25b1b5bc01e0"
+    },
+    "note": "carried from e13_descriptive.json (no re-run); EMA weights (prereg §1). Effect sizes only.",
+    "bootstrap": {
+      "b": 10000,
+      "rng_seed": 0,
+      "scheme": "seed+source",
+      "cluster": "source",
+      "n_units": 140,
+      "n_videos": 700,
+      "n_redraws": 0,
+      "arm_rng_order": [
+        "FairN_s42",
+        "abl_curriculum",
+        "abl_lrbb",
+        "abl_lrfreq",
+        "abl_aux",
+        "abl_ep50"
+      ],
+      "seed_resample": "trivial (one seed per arm); only the shared source-identity cluster resample varies"
+    },
+    "reference": {
+      "arm": "FairN_s42",
+      "run": "runs/f1_none_fair_s42/report.json",
+      "stopped": null,
+      "stopped_flag": null,
+      "auc": {
+        "c40": 0.9585841836734694,
+        "AUC_comp": 0.9713934948979591
+      }
+    },
+    "arms": [
+      {
+        "arm": "abl_curriculum",
+        "change_reverted": "curriculum flat -> baby_step, phase_bounds (10, 25)",
+        "run": "runs/r1_abl_curriculum_s42/report.json",
+        "available": true,
+        "stopped_flag": "stopped at epoch 14 (divergence)",
+        "weights": "EMA",
+        "auc": {
+          "c40": 0.9351147959183673,
+          "AUC_comp": 0.9698852040816326
+        },
+        "delta_vs_FairN_s42": {
+          "c40": {
+            "levels": [
+              "c40"
+            ],
+            "estimate": -0.0234693877551021,
+            "ci_lo": -0.042462372448979636,
+            "ci_hi": -0.005216836734693864,
+            "ci_level": 0.95,
+            "b": 10000,
+            "rng_seed": 0,
+            "run_ablation": "runs/r1_abl_curriculum_s42/report.json",
+            "run_reference": "runs/f1_none_fair_s42/report.json"
+          },
+          "AUC_comp": {
+            "levels": [
+              "c28",
+              "c32",
+              "c36",
+              "c40"
+            ],
+            "estimate": -0.0015082908163265296,
+            "ci_lo": -0.010000239158163277,
+            "ci_hi": 0.007044244260204105,
+            "ci_level": 0.95,
+            "b": 10000,
+            "rng_seed": 0,
+            "run_ablation": "runs/r1_abl_curriculum_s42/report.json",
+            "run_reference": "runs/f1_none_fair_s42/report.json"
+          }
+        },
+        "confound": "confound: with the literal phase_bounds (10, 25) inside Fair-N's 30 epochs, c36/c40 are seen only in epochs 26-30 (at <= 7 % of peak learning rate); baby_step applies its own hard-coded w_cons/w_phase (phase A 0/0 with the backbone frozen, B 0.5/0.3, C 0.3/0.3; lesson L2), so this arm reverts the curriculum together with those weights and cannot separate them. Decision 'Phase 6: E13 curriculum arm keeps the literal phase bounds' (2026-10-10, pending C1)."
+      },
+      {
+        "arm": "abl_lrbb",
+        "change_reverted": "lr_backbone 2e-4 -> 1e-5",
+        "run": "runs/r1_abl_lrbb_s42/report.json",
+        "available": true,
+        "stopped_flag": null,
+        "weights": "EMA",
+        "auc": {
+          "c40": 0.9179209183673469,
+          "AUC_comp": 0.9442538265306122
+        },
+        "delta_vs_FairN_s42": {
+          "c40": {
+            "levels": [
+              "c40"
+            ],
+            "estimate": -0.04066326530612252,
+            "ci_lo": -0.05798469387755101,
+            "ci_hi": -0.024489477040816294,
+            "ci_level": 0.95,
+            "b": 10000,
+            "rng_seed": 0,
+            "run_ablation": "runs/r1_abl_lrbb_s42/report.json",
+            "run_reference": "runs/f1_none_fair_s42/report.json"
+          },
+          "AUC_comp": {
+            "levels": [
+              "c28",
+              "c32",
+              "c36",
+              "c40"
+            ],
+            "estimate": -0.027139668367346936,
+            "ci_lo": -0.03969730548469396,
+            "ci_hi": -0.015816326530612372,
+            "ci_level": 0.95,
+            "b": 10000,
+            "rng_seed": 0,
+            "run_ablation": "runs/r1_abl_lrbb_s42/report.json",
+            "run_reference": "runs/f1_none_fair_s42/report.json"
+          }
+        }
+      },
+      {
+        "arm": "abl_lrfreq",
+        "change_reverted": "lr_freq 2e-4 -> 1e-4",
+        "run": "runs/r1_abl_lrfreq_s42/report.json",
+        "available": true,
+        "stopped_flag": null,
+        "weights": "EMA",
+        "auc": {
+          "c40": 0.96,
+          "AUC_comp": 0.9705899234693878
+        },
+        "delta_vs_FairN_s42": {
+          "c40": {
+            "levels": [
+              "c40"
+            ],
+            "estimate": 0.001415816326530539,
+            "ci_lo": -0.0100255102040816,
+            "ci_hi": 0.013316645408163226,
+            "ci_level": 0.95,
+            "b": 10000,
+            "rng_seed": 0,
+            "run_ablation": "runs/r1_abl_lrfreq_s42/report.json",
+            "run_reference": "runs/f1_none_fair_s42/report.json"
+          },
+          "AUC_comp": {
+            "levels": [
+              "c28",
+              "c32",
+              "c36",
+              "c40"
+            ],
+            "estimate": -0.000803571428571348,
+            "ci_lo": -0.00820479910714278,
+            "ci_hi": 0.007034518494897997,
+            "ci_level": 0.95,
+            "b": 10000,
+            "rng_seed": 0,
+            "run_ablation": "runs/r1_abl_lrfreq_s42/report.json",
+            "run_reference": "runs/f1_none_fair_s42/report.json"
+          }
+        }
+      },
+      {
+        "arm": "abl_aux",
+        "change_reverted": "auxiliary losses back on: w_cons 0.5, w_phase 0.3, w_circ_rel 0.2, w_div 1.0",
+        "run": "runs/r1_abl_aux_s42/report.json",
+        "available": true,
+        "stopped_flag": null,
+        "weights": "EMA",
+        "auc": {
+          "c40": 0.9596173469387755,
+          "AUC_comp": 0.9743494897959184
+        },
+        "delta_vs_FairN_s42": {
+          "c40": {
+            "levels": [
+              "c40"
+            ],
+            "estimate": 0.001033163265306114,
+            "ci_lo": -0.009400510204081614,
+            "ci_hi": 0.011836734693877582,
+            "ci_level": 0.95,
+            "b": 10000,
+            "rng_seed": 0,
+            "run_ablation": "runs/r1_abl_aux_s42/report.json",
+            "run_reference": "runs/f1_none_fair_s42/report.json"
+          },
+          "AUC_comp": {
+            "levels": [
+              "c28",
+              "c32",
+              "c36",
+              "c40"
+            ],
+            "estimate": 0.00295599489795928,
+            "ci_lo": -0.0030935108418368297,
+            "ci_hi": 0.010063855229591743,
+            "ci_level": 0.95,
+            "b": 10000,
+            "rng_seed": 0,
+            "run_ablation": "runs/r1_abl_aux_s42/report.json",
+            "run_reference": "runs/f1_none_fair_s42/report.json"
+          }
+        }
+      },
+      {
+        "arm": "abl_ep50",
+        "change_reverted": "epochs 30 -> 50 (the cosine horizon stretches with it)",
+        "run": "runs/r1_abl_ep50_s42/report.json",
+        "available": true,
+        "stopped_flag": null,
+        "weights": "EMA",
+        "auc": {
+          "c40": 0.9590816326530612,
+          "AUC_comp": 0.9701147959183674
+        },
+        "delta_vs_FairN_s42": {
+          "c40": {
+            "levels": [
+              "c40"
+            ],
+            "estimate": 0.000497448979591808,
+            "ci_lo": -0.010166135204081703,
+            "ci_hi": 0.01054846938775511,
+            "ci_level": 0.95,
+            "b": 10000,
+            "rng_seed": 0,
+            "run_ablation": "runs/r1_abl_ep50_s42/report.json",
+            "run_reference": "runs/f1_none_fair_s42/report.json"
+          },
+          "AUC_comp": {
+            "levels": [
+              "c28",
+              "c32",
+              "c36",
+              "c40"
+            ],
+            "estimate": -0.0012786989795917636,
+            "ci_lo": -0.009254225127550907,
+            "ci_hi": 0.0064828603316325825,
+            "ci_level": 0.95,
+            "b": 10000,
+            "rng_seed": 0,
+            "run_ablation": "runs/r1_abl_ep50_s42/report.json",
+            "run_reference": "runs/f1_none_fair_s42/report.json"
+          }
+        }
+      }
+    ],
+    "sentences_prereg_9": [
+      "In a one-seed ablation, reverting the training curriculum (flat back to the baby-step curriculum, phase bounds 10 and 25) changed c40 AUC by −2.35 pt against Fair-N (fixed-seed interval [−4.25, −0.52]; descriptive). Stopped at epoch 14 (divergence); evaluated from its last saved best.pt (best-validation checkpoint, epoch 13, EMA weights).",
+      "In a one-seed ablation, reverting the backbone learning rate (2e-4 back to 1e-5) changed c40 AUC by −4.07 pt against Fair-N (fixed-seed interval [−5.80, −2.45]; descriptive).",
+      "In a one-seed ablation, reverting the frequency-stream learning rate (2e-4 back to 1e-4) changed c40 AUC by 0.14 pt against Fair-N (fixed-seed interval [−1.00, 1.33]; descriptive).",
+      "In a one-seed ablation, reverting the removal of the auxiliary losses (w_cons 0.5, w_phase 0.3, w_circ_rel 0.2, w_div 1.0 back on) changed c40 AUC by 0.10 pt against Fair-N (fixed-seed interval [−0.94, 1.18]; descriptive).",
+      "In a one-seed ablation, reverting the training length (30 epochs back to 50) changed c40 AUC by 0.05 pt against Fair-N (fixed-seed interval [−1.02, 1.05]; descriptive)."
+    ],
+    "f2_factual_note": "Factual note (W3b-S1.md §6, finding F2, for the user at C2): as the curriculum run ran, epochs 1-10 trained on c0 and c23 only with the backbone frozen; epochs 11-14 trained on c0, c23, c28 and c32; the evaluated best.pt is from epoch 13. So the evaluated model never saw c36 or c40, and had only about 3 epochs with a trainable backbone. The registered phrase 'c36/c40 seen only in epochs 26-30' is literally true but incomplete for the run as it ran; only the user can amend the registered text. Also (W3b-S1 verifier side note): the curriculum run logs a non-zero λ although invariance_arm is none, and its divergence was an EMA validation collapse while raw validation stayed healthy (lesson W7-4)."
+  },
+  "health": {
+    "label": "health logs (prereg §7, §10): validation numbers from the train logs, never test numbers; reported, never used to drop a run",
+    "source": {
+      "logs": "runs/phase6_build/launch_logs/<run>.train.log (r1_*); runs/f1_none_fair_s*/train.log (Fair-N)"
+    },
+    "rows": [
+      {
+        "arm": "E1",
+        "run": "runs/r1_fairn_grl_s42",
+        "log": "runs/phase6_build/launch_logs/r1_fairn_grl_s42.train.log",
+        "selected_epoch": 4,
+        "selected_epoch_source": "best.pt['epoch'] (torch.load, read only)",
+        "best_pt_best_metric": 0.9809311224489796,
+        "epoch_line_found": true,
+        "epoch_line_count_at_selected": 1,
+        "epoch_line_has_BEST_AUC": true,
+        "selected_is_last_BEST_AUC": true,
+        "logged_sel_minus_best_metric": -1.1224489796513026e-06,
+        "lambda": 0.29139,
+        "est_pm1": 0.9531,
+        "disc_bal_acc": 0.16925,
+        "ema_val_auc": {
+          "c23": 0.99149,
+          "c40": 0.97037,
+          "sel": 0.98093
+        },
+        "raw_val_auc": {
+          "c23": 0.99189,
+          "c40": 0.96614,
+          "sel": 0.97901
+        },
+        "raw_val_logged": true,
+        "n_epoch_lines": 30,
+        "min_est_pm1_over_epochs": {
+          "value": 0.8359,
+          "epoch": 3
+        },
+        "est_pm1_below_0.7_at_selected": false,
+        "est_pm1_below_0.7_any_epoch": false
+      },
+      {
+        "arm": "E1",
+        "run": "runs/r1_fairn_grl_s1",
+        "log": "runs/phase6_build/launch_logs/r1_fairn_grl_s1.train.log",
+        "selected_epoch": 3,
+        "selected_epoch_source": "best.pt['epoch'] (torch.load, read only)",
+        "best_pt_best_metric": 0.9775446428571428,
+        "epoch_line_found": true,
+        "epoch_line_count_at_selected": 1,
+        "epoch_line_has_BEST_AUC": true,
+        "selected_is_last_BEST_AUC": true,
+        "logged_sel_minus_best_metric": -4.6428571428558385e-06,
+        "lambda": 0.23106,
+        "est_pm1": 1.0,
+        "disc_bal_acc": 0.16672,
+        "ema_val_auc": {
+          "c23": 0.99102,
+          "c40": 0.96407,
+          "sel": 0.97754
+        },
+        "raw_val_auc": {
+          "c23": 0.99079,
+          "c40": 0.94705,
+          "sel": 0.96892
+        },
+        "raw_val_logged": true,
+        "n_epoch_lines": 30,
+        "min_est_pm1_over_epochs": {
+          "value": 0.9805,
+          "epoch": 6
+        },
+        "est_pm1_below_0.7_at_selected": false,
+        "est_pm1_below_0.7_any_epoch": false
+      },
+      {
+        "arm": "E1",
+        "run": "runs/r1_fairn_grl_s2",
+        "log": "runs/phase6_build/launch_logs/r1_fairn_grl_s2.train.log",
+        "selected_epoch": 6,
+        "selected_epoch_source": "best.pt['epoch'] (torch.load, read only)",
+        "best_pt_best_metric": 0.9776211734693878,
+        "epoch_line_found": true,
+        "epoch_line_count_at_selected": 1,
+        "epoch_line_has_BEST_AUC": true,
+        "selected_is_last_BEST_AUC": true,
+        "logged_sel_minus_best_metric": -1.1734693877718527e-06,
+        "lambda": 0.3808,
+        "est_pm1": 1.0,
+        "disc_bal_acc": 0.16588,
+        "ema_val_auc": {
+          "c23": 0.99172,
+          "c40": 0.96352,
+          "sel": 0.97762
+        },
+        "raw_val_auc": {
+          "c23": 0.98737,
+          "c40": 0.95105,
+          "sel": 0.96921
+        },
+        "raw_val_logged": true,
+        "n_epoch_lines": 30,
+        "min_est_pm1_over_epochs": {
+          "value": 0.3672,
+          "epoch": 2
+        },
+        "est_pm1_below_0.7_at_selected": false,
+        "est_pm1_below_0.7_any_epoch": true
+      },
+      {
+        "arm": "FairN",
+        "run": "runs/f1_none_fair_s42",
+        "log": "runs/f1_none_fair_s42/train.log",
+        "selected_epoch": 5,
+        "selected_epoch_source": "best.pt['epoch'] (torch.load, read only)",
+        "best_pt_best_metric": 0.9770280612244897,
+        "epoch_line_found": true,
+        "epoch_line_count_at_selected": 1,
+        "epoch_line_has_BEST_AUC": true,
+        "selected_is_last_BEST_AUC": true,
+        "logged_sel_minus_best_metric": 1.938775510246238e-06,
+        "lambda": 0.0,
+        "est_pm1": 1.0,
+        "disc_bal_acc": null,
+        "ema_val_auc": {
+          "c23": 0.99009,
+          "c40": 0.96397,
+          "sel": 0.97703
+        },
+        "raw_val_auc": null,
+        "raw_val_logged": false,
+        "n_epoch_lines": 30,
+        "min_est_pm1_over_epochs": {
+          "value": 0.8945,
+          "epoch": 19
+        },
+        "est_pm1_below_0.7_at_selected": false,
+        "est_pm1_below_0.7_any_epoch": false
+      },
+      {
+        "arm": "FairN",
+        "run": "runs/f1_none_fair_s1",
+        "log": "runs/f1_none_fair_s1/train.log",
+        "selected_epoch": 13,
+        "selected_epoch_source": "best.pt['epoch'] (torch.load, read only)",
+        "best_pt_best_metric": 0.9782525510204081,
+        "epoch_line_found": true,
+        "epoch_line_count_at_selected": 1,
+        "epoch_line_has_BEST_AUC": true,
+        "selected_is_last_BEST_AUC": true,
+        "logged_sel_minus_best_metric": -2.551020408136928e-06,
+        "lambda": 0.31757,
+        "est_pm1": 1.0,
+        "disc_bal_acc": null,
+        "ema_val_auc": {
+          "c23": 0.99126,
+          "c40": 0.96524,
+          "sel": 0.97825
+        },
+        "raw_val_auc": null,
+        "raw_val_logged": false,
+        "n_epoch_lines": 30,
+        "min_est_pm1_over_epochs": {
+          "value": 0.9727,
+          "epoch": 8
+        },
+        "est_pm1_below_0.7_at_selected": false,
+        "est_pm1_below_0.7_any_epoch": false
+      },
+      {
+        "arm": "FairN",
+        "run": "runs/f1_none_fair_s2",
+        "log": "runs/f1_none_fair_s2/train.log",
+        "selected_epoch": 12,
+        "selected_epoch_source": "best.pt['epoch'] (torch.load, read only)",
+        "best_pt_best_metric": 0.9767538265306122,
+        "epoch_line_found": true,
+        "epoch_line_count_at_selected": 1,
+        "epoch_line_has_BEST_AUC": true,
+        "selected_is_last_BEST_AUC": true,
+        "logged_sel_minus_best_metric": -3.826530612149881e-06,
+        "lambda": 0.23106,
+        "est_pm1": 1.0,
+        "disc_bal_acc": null,
+        "ema_val_auc": {
+          "c23": 0.98968,
+          "c40": 0.96383,
+          "sel": 0.97675
+        },
+        "raw_val_auc": null,
+        "raw_val_logged": false,
+        "n_epoch_lines": 30,
+        "min_est_pm1_over_epochs": {
+          "value": 0.8438,
+          "epoch": 11
+        },
+        "est_pm1_below_0.7_at_selected": false,
+        "est_pm1_below_0.7_any_epoch": false
+      },
+      {
+        "arm": "E13:abl_curriculum",
+        "run": "runs/r1_abl_curriculum_s42",
+        "log": "runs/phase6_build/launch_logs/r1_abl_curriculum_s42.train.log",
+        "selected_epoch": 13,
+        "selected_epoch_source": "best.pt['epoch'] (torch.load, read only)",
+        "best_pt_best_metric": 0.9612882653061224,
+        "epoch_line_found": true,
+        "epoch_line_count_at_selected": 1,
+        "epoch_line_has_BEST_AUC": true,
+        "selected_is_last_BEST_AUC": true,
+        "logged_sel_minus_best_metric": 1.7346938775419929e-06,
+        "lambda": 0.31757,
+        "est_pm1": 0.0391,
+        "disc_bal_acc": null,
+        "ema_val_auc": {
+          "c23": 0.99185,
+          "c40": 0.93073,
+          "sel": 0.96129
+        },
+        "raw_val_auc": {
+          "c23": 0.98963,
+          "c40": 0.8971,
+          "sel": 0.94337
+        },
+        "raw_val_logged": true,
+        "n_epoch_lines": 14,
+        "min_est_pm1_over_epochs": {
+          "value": 0.0391,
+          "epoch": 13
+        },
+        "flag": "stopped at epoch 14 (divergence)",
+        "est_pm1_below_0.7_at_selected": true,
+        "est_pm1_below_0.7_any_epoch": true
+      },
+      {
+        "arm": "E13:abl_lrbb",
+        "run": "runs/r1_abl_lrbb_s42",
+        "log": "runs/phase6_build/launch_logs/r1_abl_lrbb_s42.train.log",
+        "selected_epoch": 5,
+        "selected_epoch_source": "best.pt['epoch'] (torch.load, read only)",
+        "best_pt_best_metric": 0.9514094387755101,
+        "epoch_line_found": true,
+        "epoch_line_count_at_selected": 1,
+        "epoch_line_has_BEST_AUC": true,
+        "selected_is_last_BEST_AUC": true,
+        "logged_sel_minus_best_metric": 5.612244898811625e-07,
+        "lambda": 0.0,
+        "est_pm1": 0.9492,
+        "disc_bal_acc": null,
+        "ema_val_auc": {
+          "c23": 0.97744,
+          "c40": 0.92538,
+          "sel": 0.95141
+        },
+        "raw_val_auc": {
+          "c23": 0.97555,
+          "c40": 0.92259,
+          "sel": 0.94907
+        },
+        "raw_val_logged": true,
+        "n_epoch_lines": 30,
+        "min_est_pm1_over_epochs": {
+          "value": 0.8867,
+          "epoch": 21
+        },
+        "est_pm1_below_0.7_at_selected": false,
+        "est_pm1_below_0.7_any_epoch": false
+      },
+      {
+        "arm": "E13:abl_lrfreq",
+        "run": "runs/r1_abl_lrfreq_s42",
+        "log": "runs/phase6_build/launch_logs/r1_abl_lrfreq_s42.train.log",
+        "selected_epoch": 8,
+        "selected_epoch_source": "best.pt['epoch'] (torch.load, read only)",
+        "best_pt_best_metric": 0.9791645408163265,
+        "epoch_line_found": true,
+        "epoch_line_count_at_selected": 1,
+        "epoch_line_has_BEST_AUC": true,
+        "selected_is_last_BEST_AUC": true,
+        "logged_sel_minus_best_metric": -4.540816326503716e-06,
+        "lambda": 0.0,
+        "est_pm1": 1.0,
+        "disc_bal_acc": null,
+        "ema_val_auc": {
+          "c23": 0.98972,
+          "c40": 0.96861,
+          "sel": 0.97916
+        },
+        "raw_val_auc": {
+          "c23": 0.98571,
+          "c40": 0.96426,
+          "sel": 0.97499
+        },
+        "raw_val_logged": true,
+        "n_epoch_lines": 30,
+        "min_est_pm1_over_epochs": {
+          "value": 0.8359,
+          "epoch": 17
+        },
+        "est_pm1_below_0.7_at_selected": false,
+        "est_pm1_below_0.7_any_epoch": false
+      },
+      {
+        "arm": "E13:abl_aux",
+        "run": "runs/r1_abl_aux_s42",
+        "log": "runs/phase6_build/launch_logs/r1_abl_aux_s42.train.log",
+        "selected_epoch": 15,
+        "selected_epoch_source": "best.pt['epoch'] (torch.load, read only)",
+        "best_pt_best_metric": 0.9795471938775511,
+        "epoch_line_found": true,
+        "epoch_line_count_at_selected": 1,
+        "epoch_line_has_BEST_AUC": true,
+        "selected_is_last_BEST_AUC": true,
+        "logged_sel_minus_best_metric": 2.806122448961723e-06,
+        "lambda": 0.42414,
+        "est_pm1": 0.0,
+        "disc_bal_acc": null,
+        "ema_val_auc": {
+          "c23": 0.98901,
+          "c40": 0.97009,
+          "sel": 0.97955
+        },
+        "raw_val_auc": {
+          "c23": 0.98848,
+          "c40": 0.96825,
+          "sel": 0.97837
+        },
+        "raw_val_logged": true,
+        "n_epoch_lines": 30,
+        "min_est_pm1_over_epochs": {
+          "value": 0.0,
+          "epoch": 4
+        },
+        "est_pm1_below_0.7_at_selected": true,
+        "est_pm1_below_0.7_any_epoch": true
+      },
+      {
+        "arm": "E13:abl_ep50",
+        "run": "runs/r1_abl_ep50_s42",
+        "log": "runs/phase6_build/launch_logs/r1_abl_ep50_s42.train.log",
+        "selected_epoch": 8,
+        "selected_epoch_source": "best.pt['epoch'] (torch.load, read only)",
+        "best_pt_best_metric": 0.9777869897959184,
+        "epoch_line_found": true,
+        "epoch_line_count_at_selected": 1,
+        "epoch_line_has_BEST_AUC": true,
+        "selected_is_last_BEST_AUC": true,
+        "logged_sel_minus_best_metric": 3.010204081665968e-06,
+        "lambda": 0.0,
+        "est_pm1": 1.0,
+        "disc_bal_acc": null,
+        "ema_val_auc": {
+          "c23": 0.99207,
+          "c40": 0.96351,
+          "sel": 0.97779
+        },
+        "raw_val_auc": {
+          "c23": 0.98847,
+          "c40": 0.9514,
+          "sel": 0.96994
+        },
+        "raw_val_logged": true,
+        "n_epoch_lines": 50,
+        "min_est_pm1_over_epochs": {
+          "value": 0.6289,
+          "epoch": 10
+        },
+        "est_pm1_below_0.7_at_selected": false,
+        "est_pm1_below_0.7_any_epoch": true
+      }
+    ],
+    "keys_used": "EPOCH lines of the train log: λ (GRL schedule value at the end of the epoch), est_pm1 (compression-level estimator ±1-bin accuracy, epoch diagnostics), disc_bal_acc (discriminator balanced accuracy, train-stream monitor), val_auc_c23 / val_auc_c40 / sel (EMA validation), raw_val_auc_c23 / raw_val_auc_c40 / raw_sel (raw-weight validation, logged only when train.val_raw is on)",
+    "selected_epoch_rule": "selected epoch = best.pt['epoch']; checked against the train log: that EPOCH line carries *BEST-AUC*, is the last *BEST-AUC* line, and its logged EMA sel equals best.pt['best_metric'] to the log's 5 decimals",
+    "reference": "est_pm1 >= 0.7 (prereg §7, Phase 5.3 health gate; registered for E1; the flag is shown for every run as a fact)",
+    "lambda_note": "λ is the GRL schedule value the trainer logs on every CAFRL run; the model builds the gradient-reversal discriminator only for GRL arms (src/models/cafrl.py, _GRL_ARMS). Fair-N and the five E13 runs have invariance_arm none (config.yaml), so their λ is logged but no adversarial loss acts; their disc_bal_acc is NaN by design (prereg §8 note).",
+    "sentence_prereg_9_e1_health": "With the adversary, est_pm1 at the selected epoch was 0.9531 / 1.0000 / 1.0000 (Fair-N: 1.0000 / 1.0000 / 1.0000).",
+    "sentence_order": "seeds 42 / 1 / 2"
+  }
+}

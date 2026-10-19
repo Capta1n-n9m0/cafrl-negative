@@ -8,6 +8,19 @@
 % two-column figure* in the Access build and still render its body text at or
 % above the template's 8 pt minimum. Text content unchanged except the
 % pre-registered -> pre-specified grading of the re-tests (M-02's two grades).
+% W4b-1 S4 (2026-10-18): text aligned with the revised manuscript (no
+% "pre-registration" box, no "falsified", no 88 % split, no "capacity-matched",
+% no "redundant"; Fair-W s42 +0.0055 and Fair-N pool -0.0009 as point
+% estimates, tab:contrasts; +7.3 pt labelled post hoc, unpaired as the body).
+% W4b-2 S1b (2026-10-18): verdict box follows the heading "Changing the training
+% recipe removed the deficit"; audit box limited to what the audit recomputed.
+% W4b-2 S1c (2026-10-18): data verdict now T4 (7.48 pt, registered, paired) as the
+% GA, C3 and finding 5; post hoc +7.3 pt and late-validation 0.91--0.98 removed.
+% W4c S3c (2026-10-18): moved to the supplement (Fig. S1); verdict box adds
+% T5 (1.88 pt, raw weights) beside T4, both "registered, paired" as the
+% Conclusion; "these frequency streams" -> "the block-DCT and FFT-phase streams".
+% W6 S2 (2026-10-19): T4 labelled "raw weights" as T5 (main sec:datatests: T3--T5 raw weights).
+% PNG: pdftoppm -r 150 -png -singlefile (reproduces the committed PNG exactly).
 \documentclass[tikz,border=6pt,11pt]{standalone}
 \usetikzlibrary{positioning,arrows.meta,calc}
 
@@ -47,20 +60,20 @@
 
 % ------------------------------------------------------------- row 1 --------
 \node[preblock] (prereg) at (0,0) {%
-  {\head Pre-registration (before any result)}\\[1pt]
-  {\body STOP-gate $+$ paired-$\Delta$ win-rule frozen under a git tag;
-   each re-test's rule journaled before its run.}};
+  {\head Frozen decision rules}\\[1pt]
+  {\body STOP-gate $+$ paired-$\Delta$ win-rule frozen under a git tag
+   before any result; each re-test's rule journaled before its run.}};
 
 \node[runblock] (campaign) at (\colsep,0) {%
   {\head Controlled campaign}\\[1pt]
-  {\body full CAFRL (11.97\,M) vs the capacity-matched
+  {\body full CAFRL (11.97\,M) vs the backbone-matched
    ``SpatialBase'' (4.0\,M) $+$ Xception / F3-Net / FreqNet, identical
    multi-CRF data.\\
    \textit{Confounds ruled out:} augmentation; capacity.}};
 
 \node[stopblock] (stop) at (2*\colsep,0) {%
-  {\head STOP-gate fires --- the thesis is falsified}\\[1pt]
-  {\body SpatialBase beats full CAFRL at every level
+  {\head STOP-gate fires --- the initial configuration fails}\\[1pt]
+  {\body SpatialBase scores above full CAFRL at every level
    (c40: .9590 vs .9224; $\Delta$ +0.0366, CI [+0.020,\,+0.054]).}};
 
 \node[ghost] (ablations) at (3*\colsep,0) {%
@@ -72,38 +85,46 @@
 % ------------------------------------------------------------- row 2 --------
 \node[audblock] (audit) at (0,\rowsep) {%
   {\head Adversarial self-audit of the negative}\\[1pt]
-  {\body measurement reproduces bit-exactly; causal reading unsound.
+  {\body quoted AUCs recompute exactly from stored scores; causal reading unsound.
    Four defects biased \emph{against} frequency: D1 auxiliary-loss
    dominance $\cdot$ D2 $\gamma$ deadlock $\cdot$ D3 optimization
    mismatch $\cdot$ D4 bottlenecked trunk.}};
 
 \node[runblock] (retests) at (\colsep,\rowsep) {%
   {\head Pre-specified fair re-tests (repair D1--D4)}\\[1pt]
-  {\body TrunkCtrl: trunk gap recipe-dominant ($\approx$88\%)\\
+  {\body TrunkCtrl: trunk gap recipe-dominant\\
    Fair-N (no invariance losses):
-   0.9586 $\approx$ SpatialBase 0.9590\\
-   Fair-W (full trunk $+\gamma$-residual): +0.0056, CI incl.\ 0\\[1pt]
+   0.9586 vs SpatialBase 0.9590\\
+   Fair-W (full trunk $+\gamma$-residual): +0.0055, CI incl.\ 0\\[1pt]
    {\color{muted}$\approx$35\,h}}};
 
 \node[runblock] (seeds) at (2*\colsep,\rowsep) {%
   {\head Seed confirmation (3 seeds vs 3 seeds)}\\[1pt]
-  {\body pooled $\Delta$ at c40: Fair-N $-$0.0010 / Fair-W +0.0022,
+  {\body pooled $\Delta$ at c40: Fair-N $-$0.0009 / Fair-W +0.0022,
    both CIs include 0 --- no detectable difference.\\[1pt]
    {\color{muted}$\approx$31\,h}}};
 
 \node[verblock] (verdict) at (3*\colsep,\rowsep) {%
   {\head Verdict}\\[1pt]
-  {\body deficit $=$ recipe artifact ($+3.96$\,pt at c40, s42); frequency
-   informative alone (AUC 0.91--0.98) yet redundant under this fusion;
-   robustness \emph{under single-pass H.264 CRF re-encoding, in corpus}
-   is bought by data diversity (real CRF $\gg$ JPEG, $+7.3$\,pt).}};
+  {\body changing the recipe removed the deficit ($+3.96$\,pt at c40, s42); the
+   block-DCT and FFT-phase streams: no detectable difference; training on real
+   H.264 levels beat PSNR-matched JPEG by 7.48\,pt at c40 (averaged over
+   c40 exposure; T4; raw weights), and including the c40-level data in training raised
+   the mean single-model c40 AUC by 1.88\,pt averaged over codec (T5; raw
+   weights); both registered, paired, \emph{under single-pass H.264 CRF
+   re-encoding, in corpus}.}};
 
 % -------------------------------------------------------------- edges -------
 \draw[flow] (prereg.east) -- (campaign.west);
 \draw[flow] (campaign.east) -- (stop.west);
 \draw[ghostflow] (stop.east) -- (ablations.west);
-% wrap-around: STOP-gate down and back to the audit on row 2
-\draw[flow] (stop.south) -- ++(0,-6mm) -| ($(audit.north)+(0,6mm)$) -- (audit.north);
+% wrap-around: STOP-gate down and back to the audit on row 2. The horizontal
+% leg runs in the clear lane midway between the bottom edge of the tallest
+% row-1 box (campaign) and the top edge of row 2, so no segment crosses a box
+% or its text. Derived from the nodes, not a fixed offset, so it stays clear if
+% the box text ever reflows.
+\coordinate (lane) at ($(campaign.south)!0.5!(campaign.south |- audit.north)$);
+\draw[flow] (stop.south) -- (stop.south |- lane) -| (audit.north);
 \draw[flow] (audit.east) -- (retests.west);
 \draw[flow] (retests.east) -- (seeds.west);
 \draw[flow] (seeds.east) -- (verdict.west);

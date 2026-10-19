@@ -1,0 +1,306 @@
+{
+  "schema": "w5_cost_table/1",
+  "mode": "gpu_full",
+  "device": "cuda:0",
+  "device_name": "NVIDIA A100-PCIE-40GB",
+  "torch": "2.5.1",
+  "input_shape": [
+    1,
+    3,
+    256,
+    256
+  ],
+  "dtype": "float32",
+  "flops_note": "FlopCounterMode, batch 1, 3x256x256, fp32: matmul/conv/attention only, 2 FLOPs per multiply-add; FFT, elementwise, pooling and normalisation not counted",
+  "latency_protocol": "fp32 no_grad, 20 warm-up + 100 timed, cuda sync per call, median/IQR ms",
+  "created_utc": "2026-10-14T18:34:48+00:00",
+  "git_commit": "9cf0c45dd29406b644496730b905ed0ad550e8ca",
+  "rows": [
+    {
+      "run": "a0",
+      "arm": "A11",
+      "weights": "ema",
+      "model": "cafrl:cmam",
+      "checkpoint": "${RUNS_ROOT}/a0/best.pt",
+      "checkpoint_sha256": "723c02d2d5a87a5ba81c823053a178786f2cc881f24f15830439022ef0dc33f2",
+      "params_total": 11971561,
+      "params_deployed": 11967721,
+      "flops": 8904240384,
+      "gflops": 8.904240384,
+      "latency_b1": {
+        "median_ms": 15.473238192498684,
+        "q1_ms": 15.203549526631832,
+        "q3_ms": 15.738521702587605,
+        "iqr_ms": 0.5349721759557724
+      },
+      "latency_b32": {
+        "median_ms": 20.47906257212162,
+        "q1_ms": 20.173811819404364,
+        "q3_ms": 20.613289903849363,
+        "iqr_ms": 0.4394780844449997
+      },
+      "peak_mem_b32_bytes": 637339136,
+      "throughput_fps_b32": 1562.5715233451147
+    },
+    {
+      "run": "f1_none_fair_s42",
+      "arm": "A2",
+      "weights": "ema",
+      "model": "cafrl:cmam",
+      "checkpoint": "${RUNS_ROOT}/f1_none_fair_s42/best.pt",
+      "checkpoint_sha256": "212ad3e29becd8a4fbda27859d00369f970d915d914b777342f9b45bf44ebd3a",
+      "params_total": 10652643,
+      "params_deployed": 10648803,
+      "flops": 8901606656,
+      "gflops": 8.901606656,
+      "latency_b1": {
+        "median_ms": 15.966455452144146,
+        "q1_ms": 15.694036148488522,
+        "q3_ms": 17.894550692290068,
+        "iqr_ms": 2.200514543801546
+      },
+      "latency_b32": {
+        "median_ms": 20.07121779024601,
+        "q1_ms": 19.9637939222157,
+        "q3_ms": 20.31307341530919,
+        "iqr_ms": 0.3492794930934906
+      },
+      "peak_mem_b32_bytes": 636978688,
+      "throughput_fps_b32": 1594.3227926882946
+    },
+    {
+      "run": "f2_spatres_full_s42",
+      "arm": "A9",
+      "weights": "ema",
+      "model": "cafrl:spatial_residual_full",
+      "checkpoint": "${RUNS_ROOT}/f2_spatres_full_s42/best.pt",
+      "checkpoint_sha256": "b3ec965fde46a78da15ffbb53cc8cd3cdc8c017c81e8acbebab0e743401c7c98",
+      "params_total": 9628081,
+      "params_deployed": 9624241,
+      "flops": 8933198080,
+      "gflops": 8.93319808,
+      "latency_b1": {
+        "median_ms": 16.96631032973528,
+        "q1_ms": 14.90325341001153,
+        "q3_ms": 19.957255106419325,
+        "iqr_ms": 5.054001696407795
+      },
+      "latency_b32": {
+        "median_ms": 18.082808703184128,
+        "q1_ms": 17.986522056162357,
+        "q3_ms": 18.404528964310884,
+        "iqr_ms": 0.41800690814852715
+      },
+      "peak_mem_b32_bytes": 700164096,
+      "throughput_fps_b32": 1769.6365938088618
+    },
+    {
+      "run": "r1_fairn_grl_s42",
+      "arm": "A1",
+      "weights": "ema",
+      "model": "cafrl:cmam",
+      "checkpoint": "${RUNS_ROOT}/r1_fairn_grl_s42/best.pt",
+      "checkpoint_sha256": "870ded7bf183619cdc428b8dd90f1cfc1b91fb819eac9e2d08d30fbce3f430de",
+      "params_total": 11971561,
+      "params_deployed": 11967721,
+      "flops": 8904240384,
+      "gflops": 8.904240384,
+      "latency_b1": {
+        "median_ms": 16.017204150557518,
+        "q1_ms": 15.80007467418909,
+        "q3_ms": 16.13794546574354,
+        "iqr_ms": 0.337870791554451
+      },
+      "latency_b32": {
+        "median_ms": 20.545849576592445,
+        "q1_ms": 20.36629943177104,
+        "q3_ms": 20.664081443101168,
+        "iqr_ms": 0.2977820113301277
+      },
+      "peak_mem_b32_bytes": 643032576,
+      "throughput_fps_b32": 1557.4921777124798
+    },
+    {
+      "run": "a1_none_s42",
+      "arm": "A12",
+      "weights": "ema",
+      "model": "cafrl:cmam",
+      "checkpoint": "${RUNS_ROOT}/a1_none_s42/best.pt",
+      "checkpoint_sha256": "663e215e40449a8ee96bcc4f14cae78f3759a6c6f5035413b2472ac27e40c4f9",
+      "params_total": 10652643,
+      "params_deployed": 10648803,
+      "flops": 8901606656,
+      "gflops": 8.901606656,
+      "latency_b1": {
+        "median_ms": 15.427137725055218,
+        "q1_ms": 15.223821625113487,
+        "q3_ms": 15.551105607300997,
+        "iqr_ms": 0.32728398218750954
+      },
+      "latency_b32": {
+        "median_ms": 20.064284093677998,
+        "q1_ms": 19.965240266174078,
+        "q3_ms": 20.146611146628857,
+        "iqr_ms": 0.18137088045477867
+      },
+      "peak_mem_b32_bytes": 643294720,
+      "throughput_fps_b32": 1594.8737493246915
+    },
+    {
+      "run": "cafrl_spatres_s42",
+      "arm": "A13",
+      "weights": "ema",
+      "model": "cafrl:spatial_residual",
+      "checkpoint": "${RUNS_ROOT}/cafrl_spatres_s42/best.pt",
+      "checkpoint_sha256": "1f9cfa938d30c5d82ad25229287484447c65dfc1348238ac48c0f66d8eb94d2a",
+      "params_total": 10288055,
+      "params_deployed": 10284215,
+      "flops": 8851943168,
+      "gflops": 8.851943168,
+      "latency_b1": {
+        "median_ms": 13.750134035944939,
+        "q1_ms": 13.527104165405035,
+        "q3_ms": 14.001020696014166,
+        "iqr_ms": 0.47391653060913086
+      },
+      "latency_b32": {
+        "median_ms": 18.02291627973318,
+        "q1_ms": 17.931017093360424,
+        "q3_ms": 18.236841075122356,
+        "iqr_ms": 0.3058239817619324
+      },
+      "peak_mem_b32_bytes": 640177664,
+      "throughput_fps_b32": 1775.517319357694
+    },
+    {
+      "run": "trunk_recipe_s42",
+      "arm": "A10",
+      "weights": "raw",
+      "model": "baseline:cafrl_trunk",
+      "checkpoint": "${RUNS_ROOT}/trunk_recipe_s42/best.pt",
+      "checkpoint_sha256": "becbf68f8b48de635a3daf6c02f75d765885983447d6bdac55ff4b5bf117e4d2",
+      "params_total": 3677821,
+      "params_deployed": 3677821,
+      "flops": 962172416,
+      "gflops": 0.962172416,
+      "latency_b1": {
+        "median_ms": 7.327615283429623,
+        "q1_ms": 7.054766174405813,
+        "q3_ms": 7.610733155161142,
+        "iqr_ms": 0.5559669807553291
+      },
+      "latency_b32": {
+        "median_ms": 8.351915515959263,
+        "q1_ms": 8.339365012943745,
+        "q3_ms": 8.365585003048182,
+        "iqr_ms": 0.026219990104436874
+      },
+      "peak_mem_b32_bytes": 521329152,
+      "throughput_fps_b32": 3831.456381335848
+    },
+    {
+      "run": "b7_effnet_b0_mq_fliponly",
+      "arm": "A3",
+      "weights": "raw",
+      "model": "baseline:effnet_b0",
+      "checkpoint": "${RUNS_ROOT}/b7_effnet_b0_mq_fliponly/best.pt",
+      "checkpoint_sha256": "c5769ea29ee820f3185dd2e4d607a77f9933d782f9a5763049d523554c367ea2",
+      "params_total": 4008829,
+      "params_deployed": 4008829,
+      "flops": 1004117504,
+      "gflops": 1.004117504,
+      "latency_b1": {
+        "median_ms": 7.563939318060875,
+        "q1_ms": 7.334602996706963,
+        "q3_ms": 7.733572740107775,
+        "iqr_ms": 0.39896974340081215
+      },
+      "latency_b32": {
+        "median_ms": 8.337033912539482,
+        "q1_ms": 8.324927650392056,
+        "q3_ms": 9.596701711416245,
+        "iqr_ms": 1.271774061024189
+      },
+      "peak_mem_b32_bytes": 589773824,
+      "throughput_fps_b32": 3838.295530004953
+    },
+    {
+      "run": "b1_xception_lit",
+      "arm": "A14",
+      "weights": "raw",
+      "model": "baseline:xception",
+      "checkpoint": "${RUNS_ROOT}/b1_xception_lit/best.pt",
+      "checkpoint_sha256": "85bb71d3d228b77f58180cc8241f196ca3f25d678fa6a7df314fa230504b6271",
+      "params_total": 20809001,
+      "params_deployed": 20809001,
+      "flops": 11901475648,
+      "gflops": 11.901475648,
+      "latency_b1": {
+        "median_ms": 5.321551114320755,
+        "q1_ms": 5.129459779709578,
+        "q3_ms": 5.722675938159227,
+        "iqr_ms": 0.5932161584496498
+      },
+      "latency_b32": {
+        "median_ms": 19.418703392148018,
+        "q1_ms": 19.384417217224836,
+        "q3_ms": 19.56431707367301,
+        "iqr_ms": 0.17989985644817352
+      },
+      "peak_mem_b32_bytes": 1049687552,
+      "throughput_fps_b32": 1647.8958122888498
+    },
+    {
+      "run": "b2_f3net_lit",
+      "arm": "A16",
+      "weights": "raw",
+      "model": "baseline:f3net",
+      "checkpoint": "${RUNS_ROOT}/b2_f3net_lit/best.pt",
+      "checkpoint_sha256": "63b0ee04240a8481f7f60bf5c8d75430a41bd0fd1b910c89586667c19edb06bb",
+      "params_total": 21007337,
+      "params_deployed": 21007337,
+      "flops": 12762523840,
+      "gflops": 12.76252384,
+      "latency_b1": {
+        "median_ms": 6.061802618205547,
+        "q1_ms": 5.922827869653702,
+        "q3_ms": 6.205037701874971,
+        "iqr_ms": 0.2822098322212696
+      },
+      "latency_b32": {
+        "median_ms": 22.02483732253313,
+        "q1_ms": 21.892132237553596,
+        "q3_ms": 22.125996183604002,
+        "iqr_ms": 0.2338639460504055
+      },
+      "peak_mem_b32_bytes": 1127027200,
+      "throughput_fps_b32": 1452.9051693499455
+    },
+    {
+      "run": "b3_freqnet_lit",
+      "arm": "A18",
+      "weights": "raw",
+      "model": "baseline:freqnet",
+      "checkpoint": "${RUNS_ROOT}/b3_freqnet_lit/best.pt",
+      "checkpoint_sha256": "15051bbf64b12d349499fbb5d9b28a976e1d584ae96551c70252764e114eb1d2",
+      "params_total": 5086273,
+      "params_deployed": 5086273,
+      "flops": 2959082496,
+      "gflops": 2.959082496,
+      "latency_b1": {
+        "median_ms": 3.4688226878643036,
+        "q1_ms": 3.441173117607832,
+        "q3_ms": 3.495411016047001,
+        "iqr_ms": 0.05423789843916893
+      },
+      "latency_b32": {
+        "median_ms": 16.109080985188484,
+        "q1_ms": 16.094425227493048,
+        "q3_ms": 16.130725387483835,
+        "iqr_ms": 0.036300159990787506
+      },
+      "peak_mem_b32_bytes": 1542705152,
+      "throughput_fps_b32": 1986.457205685566
+    }
+  ]
+}

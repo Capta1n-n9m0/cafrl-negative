@@ -1,0 +1,4023 @@
+{
+  "estimand_primary": "mean over seeds of per-seed video AUC",
+  "estimand_secondary": "AUC of the per-video mean score over seeds (ensemble)",
+  "bootstrap": {
+    "b": 10000,
+    "rng_seed": 0,
+    "scheme": "seed+source",
+    "cluster": "source",
+    "n_units": 140,
+    "n_videos": 700,
+    "n_redraws": 0,
+    "arm_rng_order": [
+      "E1",
+      "FairN",
+      "b7",
+      "E2a",
+      "anchor",
+      "E3a",
+      "E3b"
+    ]
+  },
+  "p_value_rule": "min(1, (2*min(#{T*-T0<=0}, #{T*-T0>=0}) + 1)/(B+1))",
+  "multiplicity": "Holm over 5 tests at family alpha 0.05",
+  "reading_rule": "not estimable (retention, denominator CI contains 0) -> 'not estimable'; Holm-adjusted p < alpha -> the reading of the side of the null with the larger bootstrap mass; else 'no detectable difference'",
+  "tests": [
+    {
+      "test_id": "T1",
+      "name": "E1 - Fair-N, test AUC at c40",
+      "estimand": "primary",
+      "levels": [
+        "c40"
+      ],
+      "weights": {
+        "E1": 1.0,
+        "FairN": -1.0
+      },
+      "estimate": 0.008677721088435342,
+      "null": 0.0,
+      "ci_lo": 0.00022076955782303372,
+      "ci_hi": 0.01876711309523815,
+      "ci_level": 0.95,
+      "se": 0.004698982548360558,
+      "boot_mean": 0.008646835884353743,
+      "n_le_null": 210,
+      "n_ge_null": 9790,
+      "side": "above",
+      "p_two_sided": 0.0420957904209579,
+      "b": 10000,
+      "estimable": true,
+      "p_in_holm": 0.0420957904209579,
+      "p_holm": 0.0841915808419158,
+      "reading": "no detectable difference",
+      "secondary_ensemble": {
+        "test_id": "T1",
+        "name": "E1 - Fair-N, test AUC at c40",
+        "estimand": "ensemble",
+        "levels": [
+          "c40"
+        ],
+        "weights": {
+          "E1": 1.0,
+          "FairN": -1.0
+        },
+        "estimate": 0.0069515306122449605,
+        "null": 0.0,
+        "ci_lo": -0.0020411352040816564,
+        "ci_hi": 0.01932429846938775,
+        "ci_level": 0.95,
+        "se": 0.005344147050987782,
+        "boot_mean": 0.007747059948979592,
+        "n_le_null": 588,
+        "n_ge_null": 9414,
+        "side": "above",
+        "p_two_sided": 0.11768823117688232,
+        "b": 10000,
+        "estimable": true
+      },
+      "mde": {
+        "name": "E1 - Fair-N at c40",
+        "family_variance": "FairN",
+        "endpoint": "c40",
+        "units": "AUC (fraction; x100 = points)",
+        "sum_w2": 2.0,
+        "headline": "mde_as_specified_* with sigma2 floored at d",
+        "sigma2_observed": 6.291378158406347e-06,
+        "floor_binding": true,
+        "sigma2_plugin": 2.087015281970863e-05,
+        "d": 2.087015281970863e-05,
+        "se_true": 0.00373007174369865,
+        "se_boot": 0.005697778704371661,
+        "mde_as_specified_holm_worst_0.01": 0.01781581293410454,
+        "mde_true_variance_holm_worst_0.01": 0.012747335684005856,
+        "actual_alpha_as_specified_holm_worst_0.01": 8.332001452937554e-05,
+        "mde_as_specified_nominal_0.05": 0.014306748634694878,
+        "mde_true_variance_nominal_0.05": 0.010450113859647003,
+        "actual_alpha_as_specified_nominal_0.05": 0.0027544122290596995,
+        "unfloored": {
+          "sigma2_plugin": 6.291378158406347e-06,
+          "d": 2.087015281970863e-05,
+          "se_true": 0.002047987330430594,
+          "se_boot": 0.005097570672287729,
+          "mde_as_specified_holm_worst_0.01": 0.014854101537968898,
+          "mde_true_variance_holm_worst_0.01": 0.006998895402398705,
+          "actual_alpha_as_specified_holm_worst_0.01": 1.441866626095134e-10,
+          "mde_as_specified_nominal_0.05": 0.011714684549710277,
+          "mde_true_variance_nominal_0.05": 0.005737611031816992,
+          "actual_alpha_as_specified_nominal_0.05": 1.069092287808715e-06
+        }
+      }
+    },
+    {
+      "test_id": "T2",
+      "name": "E1 - Fair-N, AUC_comp (mean of c28, c32, c36, c40)",
+      "estimand": "primary",
+      "levels": [
+        "c28",
+        "c32",
+        "c36",
+        "c40"
+      ],
+      "weights": {
+        "E1": 1.0,
+        "FairN": -1.0
+      },
+      "estimate": 0.007302295918367396,
+      "null": 0.0,
+      "ci_lo": 0.001175382653061169,
+      "ci_hi": 0.01450294961734687,
+      "ci_level": 0.95,
+      "se": 0.0034002073189780438,
+      "boot_mean": 0.007301562287414967,
+      "n_le_null": 102,
+      "n_ge_null": 9898,
+      "side": "above",
+      "p_two_sided": 0.020497950204979503,
+      "b": 10000,
+      "estimable": true,
+      "p_in_holm": 0.020497950204979503,
+      "p_holm": 0.061493850614938506,
+      "reading": "no detectable difference",
+      "secondary_ensemble": {
+        "test_id": "T2",
+        "name": "E1 - Fair-N, AUC_comp (mean of c28, c32, c36, c40)",
+        "estimand": "ensemble",
+        "levels": [
+          "c28",
+          "c32",
+          "c36",
+          "c40"
+        ],
+        "weights": {
+          "E1": 1.0,
+          "FairN": -1.0
+        },
+        "estimate": 0.004722576530612366,
+        "null": 0.0,
+        "ci_lo": -0.0014355867346938828,
+        "ci_hi": 0.014499441964285651,
+        "ci_level": 0.95,
+        "se": 0.003936988541835923,
+        "boot_mean": 0.005350103954081633,
+        "n_le_null": 629,
+        "n_ge_null": 9371,
+        "side": "above",
+        "p_two_sided": 0.12588741125887412,
+        "b": 10000,
+        "estimable": true
+      },
+      "mde": {
+        "name": "E1 - Fair-N on AUC_comp",
+        "family_variance": "FairN",
+        "endpoint": "AUC_comp",
+        "units": "AUC (fraction; x100 = points)",
+        "sum_w2": 2.0,
+        "headline": "mde_as_specified_* with sigma2 floored at d",
+        "sigma2_observed": 1.1689163667698878e-05,
+        "floor_binding": true,
+        "sigma2_plugin": 1.2336856011737966e-05,
+        "d": 1.2336856011737966e-05,
+        "se_true": 0.0028678512294908146,
+        "se_boot": 0.004380715113671277,
+        "mde_as_specified_holm_worst_0.01": 0.013697618849761685,
+        "mde_true_variance_holm_worst_0.01": 0.009800739724608841,
+        "actual_alpha_as_specified_holm_worst_0.01": 8.332001452937554e-05,
+        "mde_as_specified_nominal_0.05": 0.01099968833879365,
+        "mde_true_variance_nominal_0.05": 0.008034529612288569,
+        "actual_alpha_as_specified_nominal_0.05": 0.0027544122290596995,
+        "unfloored": {
+          "sigma2_plugin": 1.1689163667698878e-05,
+          "d": 1.2336856011737966e-05,
+          "se_true": 0.0027915543660236887,
+          "se_boot": 0.004347735231488984,
+          "mde_as_specified_holm_worst_0.01": 0.01354845524246,
+          "mde_true_variance_holm_worst_0.01": 0.009539998967572402,
+          "actual_alpha_as_specified_holm_worst_0.01": 6.026979563689139e-05,
+          "mde_as_specified_nominal_0.05": 0.010870835897153036,
+          "mde_true_variance_nominal_0.05": 0.007820777447410684,
+          "actual_alpha_as_specified_nominal_0.05": 0.0022689368769948093
+        }
+      }
+    },
+    {
+      "test_id": "T3",
+      "name": "E2 retention R = (E2a - anchor) / (b7 - anchor) at c40, vs R = 1",
+      "estimand": "primary",
+      "levels": [
+        "c40"
+      ],
+      "weights": {
+        "E2a": 1.0,
+        "anchor": -1.0
+      },
+      "estimate": 0.9438008839264924,
+      "null": 1.0,
+      "ci_lo": 0.7944168540708797,
+      "ci_hi": 1.1329549418908316,
+      "ci_level": 0.95,
+      "se": 0.08603552375413565,
+      "boot_mean": 0.947489276651551,
+      "n_le_null": 7570,
+      "n_ge_null": 2430,
+      "side": "below",
+      "p_two_sided": 0.48605139486051396,
+      "b": 10000,
+      "numerator": {
+        "estimate": 0.08625425170068013,
+        "ci_lo": 0.061649447278911536,
+        "ci_hi": 0.11148076105442167
+      },
+      "denominator": {
+        "estimate": 0.09139030612244903,
+        "ci_lo": 0.06462096088435378,
+        "ci_hi": 0.11916677295918386
+      },
+      "n_ratio_nan_set_to_null": 0,
+      "n_ratio_nonfinite": 0,
+      "estimable": true,
+      "p_in_holm": 0.48605139486051396,
+      "p_holm": 0.48605139486051396,
+      "reading": "no detectable difference",
+      "secondary_ensemble": {
+        "test_id": "T3",
+        "name": "E2 retention R = (E2a - anchor) / (b7 - anchor) at c40, vs R = 1",
+        "estimand": "ensemble",
+        "levels": [
+          "c40"
+        ],
+        "weights": {
+          "E2a": 1.0,
+          "anchor": -1.0
+        },
+        "estimate": 0.9210372106651044,
+        "null": 1.0,
+        "ci_lo": 0.7547112767252624,
+        "ci_hi": 1.175723956935966,
+        "ci_level": 0.95,
+        "se": 0.10579048490656177,
+        "boot_mean": 0.9367573733181518,
+        "n_le_null": 7706,
+        "n_ge_null": 2294,
+        "side": "below",
+        "p_two_sided": 0.45885411458854114,
+        "b": 10000,
+        "numerator": {
+          "estimate": 0.08019132653061223,
+          "ci_lo": 0.05600733418367344,
+          "ci_hi": 0.10960459183673465
+        },
+        "denominator": {
+          "estimate": 0.08706632653061219,
+          "ci_lo": 0.059666454081632576,
+          "ci_hi": 0.11891581632653059
+        },
+        "n_ratio_nan_set_to_null": 0,
+        "n_ratio_nonfinite": 0,
+        "estimable": true
+      },
+      "mde": {
+        "name": "E2 retention R = (E2a - anchor)/(b7 - anchor) at c40 vs R = 1",
+        "family_variance": "b7 (E2a, anchor and b7 all assumed b7-like)",
+        "endpoint": "c40",
+        "units": "R (dimensionless); MDE = 1 - R, lower side",
+        "headline": "by_gap_as_specified (bootstrap-emulated decision rule)",
+        "sigma2_observed": 4.164123238581114e-05,
+        "sigma2_plugin": 4.164123238581114e-05,
+        "d": 1.8889848948067696e-05,
+        "floor_binding": false,
+        "floor_note": "b7's sigma2 at c40 exceeds d, so floored = unfloored for T3",
+        "se_true_numerator": 0.005268853916227016,
+        "se_boot_numerator": 0.006284579178202976,
+        "gap_proxies": {
+          "xception_fliponly": {
+            "mq_run": "b4b_xception_mq_fliponly",
+            "lit_run": "b1_xception_lit_fliponly",
+            "gap": 0.1049617346938776,
+            "sha256": {
+              "b4b_xception_mq_fliponly": "04d26076b2f0aa00b5fb47e92113f1679502db57d5587be6821d13b1b6620270",
+              "b1_xception_lit_fliponly": "7592b6c351a337f7dae4e715f5c12882ff9bb039bcd08a7e097da4e1fbbff345"
+            }
+          },
+          "f3net_aug": {
+            "mq_run": "b5_f3net_mq",
+            "lit_run": "b2_f3net_lit",
+            "gap": 0.09521683673469405,
+            "sha256": {
+              "b5_f3net_mq": "d7d315c1b6375a8552b61504a7d5df9aac65cbed1b0a0b279bf4b7a4897d8b20",
+              "b2_f3net_lit": "e18821616c32f683cd799b3beaba013a66187f0e79989300f3236451f5154b4c"
+            }
+          }
+        },
+        "by_gap_as_specified": [
+          {
+            "gap": 0.01,
+            "p_not_estimable": 0.6475,
+            "type1_at_R1": {
+              "holm_worst_0.01": 0.00025,
+              "nominal_0.05": 0.007
+            },
+            "mde_R_holm_worst_0.01": null,
+            "mde_R_nominal_0.05": null
+          },
+          {
+            "gap": 0.02,
+            "p_not_estimable": 0.059,
+            "type1_at_R1": {
+              "holm_worst_0.01": 0.0005,
+              "nominal_0.05": 0.013
+            },
+            "mde_R_holm_worst_0.01": 1.25,
+            "mde_R_nominal_0.05": 0.88
+          },
+          {
+            "gap": 0.03,
+            "p_not_estimable": 0.0,
+            "type1_at_R1": {
+              "holm_worst_0.01": 0.001,
+              "nominal_0.05": 0.018
+            },
+            "mde_R_holm_worst_0.01": 0.7,
+            "mde_R_nominal_0.05": 0.56
+          },
+          {
+            "gap": 0.05,
+            "p_not_estimable": 0.0,
+            "type1_at_R1": {
+              "holm_worst_0.01": 0.001,
+              "nominal_0.05": 0.018
+            },
+            "mde_R_holm_worst_0.01": 0.42000000000000004,
+            "mde_R_nominal_0.05": 0.33999999999999997
+          },
+          {
+            "gap": 0.075,
+            "p_not_estimable": 0.0,
+            "type1_at_R1": {
+              "holm_worst_0.01": 0.001,
+              "nominal_0.05": 0.018
+            },
+            "mde_R_holm_worst_0.01": 0.28,
+            "mde_R_nominal_0.05": 0.22999999999999998
+          },
+          {
+            "gap": 0.0952,
+            "p_not_estimable": 0.0,
+            "type1_at_R1": {
+              "holm_worst_0.01": 0.001,
+              "nominal_0.05": 0.018
+            },
+            "mde_R_holm_worst_0.01": 0.21999999999999997,
+            "mde_R_nominal_0.05": 0.18000000000000005
+          },
+          {
+            "gap": 0.105,
+            "p_not_estimable": 0.0,
+            "type1_at_R1": {
+              "holm_worst_0.01": 0.001,
+              "nominal_0.05": 0.018
+            },
+            "mde_R_holm_worst_0.01": 0.19999999999999996,
+            "mde_R_nominal_0.05": 0.16000000000000003
+          }
+        ],
+        "by_gap_true_variance": [
+          {
+            "gap": 0.01,
+            "p_not_estimable": 0.51,
+            "type1_at_R1": {
+              "holm_worst_0.01": 0.00275,
+              "nominal_0.05": 0.022
+            },
+            "mde_R_holm_worst_0.01": null,
+            "mde_R_nominal_0.05": null
+          },
+          {
+            "gap": 0.02,
+            "p_not_estimable": 0.02575,
+            "type1_at_R1": {
+              "holm_worst_0.01": 0.00475,
+              "nominal_0.05": 0.03875
+            },
+            "mde_R_holm_worst_0.01": 0.96,
+            "mde_R_nominal_0.05": 0.75
+          },
+          {
+            "gap": 0.03,
+            "p_not_estimable": 0.0,
+            "type1_at_R1": {
+              "holm_worst_0.01": 0.00725,
+              "nominal_0.05": 0.04425
+            },
+            "mde_R_holm_worst_0.01": 0.61,
+            "mde_R_nominal_0.05": 0.49
+          },
+          {
+            "gap": 0.05,
+            "p_not_estimable": 0.0,
+            "type1_at_R1": {
+              "holm_worst_0.01": 0.00725,
+              "nominal_0.05": 0.04425
+            },
+            "mde_R_holm_worst_0.01": 0.37,
+            "mde_R_nominal_0.05": 0.30000000000000004
+          },
+          {
+            "gap": 0.075,
+            "p_not_estimable": 0.0,
+            "type1_at_R1": {
+              "holm_worst_0.01": 0.00725,
+              "nominal_0.05": 0.04425
+            },
+            "mde_R_holm_worst_0.01": 0.25,
+            "mde_R_nominal_0.05": 0.19999999999999996
+          },
+          {
+            "gap": 0.0952,
+            "p_not_estimable": 0.0,
+            "type1_at_R1": {
+              "holm_worst_0.01": 0.00725,
+              "nominal_0.05": 0.04425
+            },
+            "mde_R_holm_worst_0.01": 0.19999999999999996,
+            "mde_R_nominal_0.05": 0.16000000000000003
+          },
+          {
+            "gap": 0.105,
+            "p_not_estimable": 0.0,
+            "type1_at_R1": {
+              "holm_worst_0.01": 0.00725,
+              "nominal_0.05": 0.04425
+            },
+            "mde_R_holm_worst_0.01": 0.18000000000000005,
+            "mde_R_nominal_0.05": 0.14
+          }
+        ],
+        "delta_method_true_variance": [
+          {
+            "gap": 0.01,
+            "mde_R_holm_worst_0.01": 1.8006047646026393,
+            "mde_R_nominal_0.05": 1.476114324809823
+          },
+          {
+            "gap": 0.02,
+            "mde_R_holm_worst_0.01": 0.9003023823013196,
+            "mde_R_nominal_0.05": 0.7380571624049115
+          },
+          {
+            "gap": 0.03,
+            "mde_R_holm_worst_0.01": 0.6002015882008798,
+            "mde_R_nominal_0.05": 0.49203810826994104
+          },
+          {
+            "gap": 0.05,
+            "mde_R_holm_worst_0.01": 0.3601209529205278,
+            "mde_R_nominal_0.05": 0.2952228649619646
+          },
+          {
+            "gap": 0.075,
+            "mde_R_holm_worst_0.01": 0.24008063528035192,
+            "mde_R_nominal_0.05": 0.19681524330797642
+          },
+          {
+            "gap": 0.0952,
+            "mde_R_holm_worst_0.01": 0.18913915594565536,
+            "mde_R_nominal_0.05": 0.15505402571531754
+          },
+          {
+            "gap": 0.105,
+            "mde_R_holm_worst_0.01": 0.17148616805739422,
+            "mde_R_nominal_0.05": 0.14058231664855458
+          }
+        ],
+        "sensitivity_anchor_sigma_x2_as_specified": {
+          "gap": 0.105,
+          "p_not_estimable": 0.0,
+          "type1_at_R1": {
+            "holm_worst_0.01": 0.0015,
+            "nominal_0.05": 0.0165
+          },
+          "mde_R_holm_worst_0.01": 0.19999999999999996,
+          "mde_R_nominal_0.05": 0.16000000000000003
+        },
+        "simulation": {
+          "n_outer": 4000,
+          "n_inner": 2000,
+          "rng_seed": 20261010,
+          "r_step": 0.01
+        },
+        "curves_as_specified": {
+          "0.01": [
+            {
+              "R": 1.0,
+              "power_holm_worst_0.01": 0.00025,
+              "power_nominal_0.05": 0.007
+            },
+            {
+              "R": 0.99,
+              "power_holm_worst_0.01": 0.00025,
+              "power_nominal_0.05": 0.00725
+            },
+            {
+              "R": 0.98,
+              "power_holm_worst_0.01": 0.00025,
+              "power_nominal_0.05": 0.0075
+            },
+            {
+              "R": 0.97,
+              "power_holm_worst_0.01": 0.00025,
+              "power_nominal_0.05": 0.00775
+            },
+            {
+              "R": 0.96,
+              "power_holm_worst_0.01": 0.00025,
+              "power_nominal_0.05": 0.008
+            },
+            {
+              "R": 0.95,
+              "power_holm_worst_0.01": 0.00025,
+              "power_nominal_0.05": 0.008
+            },
+            {
+              "R": 0.94,
+              "power_holm_worst_0.01": 0.00025,
+              "power_nominal_0.05": 0.00875
+            },
+            {
+              "R": 0.93,
+              "power_holm_worst_0.01": 0.00025,
+              "power_nominal_0.05": 0.009
+            },
+            {
+              "R": 0.92,
+              "power_holm_worst_0.01": 0.0005,
+              "power_nominal_0.05": 0.00975
+            },
+            {
+              "R": 0.91,
+              "power_holm_worst_0.01": 0.0005,
+              "power_nominal_0.05": 0.01025
+            },
+            {
+              "R": 0.9,
+              "power_holm_worst_0.01": 0.0005,
+              "power_nominal_0.05": 0.01125
+            },
+            {
+              "R": 0.89,
+              "power_holm_worst_0.01": 0.00075,
+              "power_nominal_0.05": 0.0115
+            },
+            {
+              "R": 0.88,
+              "power_holm_worst_0.01": 0.00075,
+              "power_nominal_0.05": 0.01225
+            },
+            {
+              "R": 0.87,
+              "power_holm_worst_0.01": 0.001,
+              "power_nominal_0.05": 0.01225
+            },
+            {
+              "R": 0.86,
+              "power_holm_worst_0.01": 0.001,
+              "power_nominal_0.05": 0.013
+            },
+            {
+              "R": 0.85,
+              "power_holm_worst_0.01": 0.001,
+              "power_nominal_0.05": 0.01375
+            },
+            {
+              "R": 0.84,
+              "power_holm_worst_0.01": 0.001,
+              "power_nominal_0.05": 0.014
+            },
+            {
+              "R": 0.83,
+              "power_holm_worst_0.01": 0.001,
+              "power_nominal_0.05": 0.0145
+            },
+            {
+              "R": 0.82,
+              "power_holm_worst_0.01": 0.00125,
+              "power_nominal_0.05": 0.015
+            },
+            {
+              "R": 0.81,
+              "power_holm_worst_0.01": 0.00125,
+              "power_nominal_0.05": 0.01575
+            },
+            {
+              "R": 0.8,
+              "power_holm_worst_0.01": 0.0015,
+              "power_nominal_0.05": 0.01675
+            },
+            {
+              "R": 0.79,
+              "power_holm_worst_0.01": 0.00175,
+              "power_nominal_0.05": 0.01725
+            },
+            {
+              "R": 0.78,
+              "power_holm_worst_0.01": 0.002,
+              "power_nominal_0.05": 0.01725
+            },
+            {
+              "R": 0.77,
+              "power_holm_worst_0.01": 0.002,
+              "power_nominal_0.05": 0.01775
+            },
+            {
+              "R": 0.76,
+              "power_holm_worst_0.01": 0.002,
+              "power_nominal_0.05": 0.01825
+            },
+            {
+              "R": 0.75,
+              "power_holm_worst_0.01": 0.00225,
+              "power_nominal_0.05": 0.0195
+            },
+            {
+              "R": 0.74,
+              "power_holm_worst_0.01": 0.0025,
+              "power_nominal_0.05": 0.021
+            },
+            {
+              "R": 0.73,
+              "power_holm_worst_0.01": 0.0025,
+              "power_nominal_0.05": 0.0215
+            },
+            {
+              "R": 0.72,
+              "power_holm_worst_0.01": 0.00275,
+              "power_nominal_0.05": 0.02275
+            },
+            {
+              "R": 0.71,
+              "power_holm_worst_0.01": 0.00275,
+              "power_nominal_0.05": 0.02375
+            },
+            {
+              "R": 0.7,
+              "power_holm_worst_0.01": 0.00325,
+              "power_nominal_0.05": 0.025
+            },
+            {
+              "R": 0.69,
+              "power_holm_worst_0.01": 0.00325,
+              "power_nominal_0.05": 0.02575
+            },
+            {
+              "R": 0.68,
+              "power_holm_worst_0.01": 0.00325,
+              "power_nominal_0.05": 0.0275
+            },
+            {
+              "R": 0.67,
+              "power_holm_worst_0.01": 0.0035,
+              "power_nominal_0.05": 0.02825
+            },
+            {
+              "R": 0.66,
+              "power_holm_worst_0.01": 0.0035,
+              "power_nominal_0.05": 0.02975
+            },
+            {
+              "R": 0.65,
+              "power_holm_worst_0.01": 0.0035,
+              "power_nominal_0.05": 0.03025
+            },
+            {
+              "R": 0.64,
+              "power_holm_worst_0.01": 0.00375,
+              "power_nominal_0.05": 0.032
+            },
+            {
+              "R": 0.63,
+              "power_holm_worst_0.01": 0.00375,
+              "power_nominal_0.05": 0.0325
+            },
+            {
+              "R": 0.62,
+              "power_holm_worst_0.01": 0.004,
+              "power_nominal_0.05": 0.03325
+            },
+            {
+              "R": 0.61,
+              "power_holm_worst_0.01": 0.00425,
+              "power_nominal_0.05": 0.0355
+            },
+            {
+              "R": 0.6,
+              "power_holm_worst_0.01": 0.0045,
+              "power_nominal_0.05": 0.03775
+            },
+            {
+              "R": 0.59,
+              "power_holm_worst_0.01": 0.0045,
+              "power_nominal_0.05": 0.039
+            },
+            {
+              "R": 0.58,
+              "power_holm_worst_0.01": 0.00475,
+              "power_nominal_0.05": 0.041
+            },
+            {
+              "R": 0.57,
+              "power_holm_worst_0.01": 0.00475,
+              "power_nominal_0.05": 0.043
+            },
+            {
+              "R": 0.56,
+              "power_holm_worst_0.01": 0.005,
+              "power_nominal_0.05": 0.04475
+            },
+            {
+              "R": 0.55,
+              "power_holm_worst_0.01": 0.00525,
+              "power_nominal_0.05": 0.04775
+            },
+            {
+              "R": 0.54,
+              "power_holm_worst_0.01": 0.00575,
+              "power_nominal_0.05": 0.0485
+            },
+            {
+              "R": 0.53,
+              "power_holm_worst_0.01": 0.006,
+              "power_nominal_0.05": 0.051
+            },
+            {
+              "R": 0.52,
+              "power_holm_worst_0.01": 0.00675,
+              "power_nominal_0.05": 0.0525
+            },
+            {
+              "R": 0.51,
+              "power_holm_worst_0.01": 0.00675,
+              "power_nominal_0.05": 0.05375
+            },
+            {
+              "R": 0.5,
+              "power_holm_worst_0.01": 0.007,
+              "power_nominal_0.05": 0.05575
+            },
+            {
+              "R": 0.49,
+              "power_holm_worst_0.01": 0.008,
+              "power_nominal_0.05": 0.0575
+            },
+            {
+              "R": 0.48,
+              "power_holm_worst_0.01": 0.0085,
+              "power_nominal_0.05": 0.0585
+            },
+            {
+              "R": 0.47,
+              "power_holm_worst_0.01": 0.0085,
+              "power_nominal_0.05": 0.0605
+            },
+            {
+              "R": 0.46,
+              "power_holm_worst_0.01": 0.009,
+              "power_nominal_0.05": 0.062
+            },
+            {
+              "R": 0.45,
+              "power_holm_worst_0.01": 0.00925,
+              "power_nominal_0.05": 0.064
+            },
+            {
+              "R": 0.44,
+              "power_holm_worst_0.01": 0.01,
+              "power_nominal_0.05": 0.06625
+            },
+            {
+              "R": 0.43,
+              "power_holm_worst_0.01": 0.01025,
+              "power_nominal_0.05": 0.06775
+            },
+            {
+              "R": 0.42,
+              "power_holm_worst_0.01": 0.01075,
+              "power_nominal_0.05": 0.06975
+            },
+            {
+              "R": 0.41,
+              "power_holm_worst_0.01": 0.011,
+              "power_nominal_0.05": 0.071
+            },
+            {
+              "R": 0.4,
+              "power_holm_worst_0.01": 0.01125,
+              "power_nominal_0.05": 0.073
+            },
+            {
+              "R": 0.39,
+              "power_holm_worst_0.01": 0.012,
+              "power_nominal_0.05": 0.07525
+            },
+            {
+              "R": 0.38,
+              "power_holm_worst_0.01": 0.0125,
+              "power_nominal_0.05": 0.07775
+            },
+            {
+              "R": 0.37,
+              "power_holm_worst_0.01": 0.01275,
+              "power_nominal_0.05": 0.07975
+            },
+            {
+              "R": 0.36,
+              "power_holm_worst_0.01": 0.01275,
+              "power_nominal_0.05": 0.08125
+            },
+            {
+              "R": 0.35,
+              "power_holm_worst_0.01": 0.0135,
+              "power_nominal_0.05": 0.08325
+            },
+            {
+              "R": 0.34,
+              "power_holm_worst_0.01": 0.014,
+              "power_nominal_0.05": 0.08475
+            },
+            {
+              "R": 0.33,
+              "power_holm_worst_0.01": 0.0145,
+              "power_nominal_0.05": 0.08675
+            },
+            {
+              "R": 0.32,
+              "power_holm_worst_0.01": 0.0155,
+              "power_nominal_0.05": 0.08775
+            },
+            {
+              "R": 0.31,
+              "power_holm_worst_0.01": 0.016,
+              "power_nominal_0.05": 0.08925
+            },
+            {
+              "R": 0.3,
+              "power_holm_worst_0.01": 0.01675,
+              "power_nominal_0.05": 0.093
+            },
+            {
+              "R": 0.29,
+              "power_holm_worst_0.01": 0.01725,
+              "power_nominal_0.05": 0.09475
+            },
+            {
+              "R": 0.28,
+              "power_holm_worst_0.01": 0.01775,
+              "power_nominal_0.05": 0.0975
+            },
+            {
+              "R": 0.27,
+              "power_holm_worst_0.01": 0.01875,
+              "power_nominal_0.05": 0.099
+            },
+            {
+              "R": 0.26,
+              "power_holm_worst_0.01": 0.01975,
+              "power_nominal_0.05": 0.101
+            },
+            {
+              "R": 0.25,
+              "power_holm_worst_0.01": 0.02025,
+              "power_nominal_0.05": 0.10225
+            },
+            {
+              "R": 0.24,
+              "power_holm_worst_0.01": 0.021,
+              "power_nominal_0.05": 0.10425
+            },
+            {
+              "R": 0.23,
+              "power_holm_worst_0.01": 0.02125,
+              "power_nominal_0.05": 0.10575
+            },
+            {
+              "R": 0.22,
+              "power_holm_worst_0.01": 0.0225,
+              "power_nominal_0.05": 0.108
+            },
+            {
+              "R": 0.21,
+              "power_holm_worst_0.01": 0.02275,
+              "power_nominal_0.05": 0.11125
+            },
+            {
+              "R": 0.2,
+              "power_holm_worst_0.01": 0.02375,
+              "power_nominal_0.05": 0.113
+            },
+            {
+              "R": 0.19,
+              "power_holm_worst_0.01": 0.0245,
+              "power_nominal_0.05": 0.1155
+            },
+            {
+              "R": 0.18,
+              "power_holm_worst_0.01": 0.02525,
+              "power_nominal_0.05": 0.11725
+            },
+            {
+              "R": 0.17,
+              "power_holm_worst_0.01": 0.02625,
+              "power_nominal_0.05": 0.11825
+            },
+            {
+              "R": 0.16,
+              "power_holm_worst_0.01": 0.027,
+              "power_nominal_0.05": 0.122
+            },
+            {
+              "R": 0.15,
+              "power_holm_worst_0.01": 0.0275,
+              "power_nominal_0.05": 0.12525
+            },
+            {
+              "R": 0.14,
+              "power_holm_worst_0.01": 0.02825,
+              "power_nominal_0.05": 0.1275
+            },
+            {
+              "R": 0.13,
+              "power_holm_worst_0.01": 0.029,
+              "power_nominal_0.05": 0.13025
+            },
+            {
+              "R": 0.12,
+              "power_holm_worst_0.01": 0.03025,
+              "power_nominal_0.05": 0.13325
+            },
+            {
+              "R": 0.11,
+              "power_holm_worst_0.01": 0.0315,
+              "power_nominal_0.05": 0.13675
+            },
+            {
+              "R": 0.1,
+              "power_holm_worst_0.01": 0.03275,
+              "power_nominal_0.05": 0.1385
+            },
+            {
+              "R": 0.09,
+              "power_holm_worst_0.01": 0.03475,
+              "power_nominal_0.05": 0.1405
+            },
+            {
+              "R": 0.08,
+              "power_holm_worst_0.01": 0.0355,
+              "power_nominal_0.05": 0.144
+            },
+            {
+              "R": 0.07,
+              "power_holm_worst_0.01": 0.0365,
+              "power_nominal_0.05": 0.1475
+            },
+            {
+              "R": 0.06,
+              "power_holm_worst_0.01": 0.03675,
+              "power_nominal_0.05": 0.1515
+            },
+            {
+              "R": 0.05,
+              "power_holm_worst_0.01": 0.038,
+              "power_nominal_0.05": 0.154
+            },
+            {
+              "R": 0.04,
+              "power_holm_worst_0.01": 0.03925,
+              "power_nominal_0.05": 0.15675
+            },
+            {
+              "R": 0.03,
+              "power_holm_worst_0.01": 0.0405,
+              "power_nominal_0.05": 0.16
+            },
+            {
+              "R": 0.02,
+              "power_holm_worst_0.01": 0.04175,
+              "power_nominal_0.05": 0.161
+            },
+            {
+              "R": 0.01,
+              "power_holm_worst_0.01": 0.04275,
+              "power_nominal_0.05": 0.16225
+            },
+            {
+              "R": -0.0,
+              "power_holm_worst_0.01": 0.04325,
+              "power_nominal_0.05": 0.166
+            },
+            {
+              "R": -0.01,
+              "power_holm_worst_0.01": 0.04375,
+              "power_nominal_0.05": 0.169
+            },
+            {
+              "R": -0.02,
+              "power_holm_worst_0.01": 0.045,
+              "power_nominal_0.05": 0.172
+            },
+            {
+              "R": -0.03,
+              "power_holm_worst_0.01": 0.047,
+              "power_nominal_0.05": 0.175
+            },
+            {
+              "R": -0.04,
+              "power_holm_worst_0.01": 0.0475,
+              "power_nominal_0.05": 0.17675
+            },
+            {
+              "R": -0.05,
+              "power_holm_worst_0.01": 0.0485,
+              "power_nominal_0.05": 0.17875
+            },
+            {
+              "R": -0.06,
+              "power_holm_worst_0.01": 0.0495,
+              "power_nominal_0.05": 0.182
+            },
+            {
+              "R": -0.07,
+              "power_holm_worst_0.01": 0.0505,
+              "power_nominal_0.05": 0.184
+            },
+            {
+              "R": -0.08,
+              "power_holm_worst_0.01": 0.05225,
+              "power_nominal_0.05": 0.18675
+            },
+            {
+              "R": -0.09,
+              "power_holm_worst_0.01": 0.05425,
+              "power_nominal_0.05": 0.19
+            },
+            {
+              "R": -0.1,
+              "power_holm_worst_0.01": 0.0545,
+              "power_nominal_0.05": 0.19075
+            },
+            {
+              "R": -0.11,
+              "power_holm_worst_0.01": 0.05525,
+              "power_nominal_0.05": 0.19425
+            },
+            {
+              "R": -0.12,
+              "power_holm_worst_0.01": 0.0565,
+              "power_nominal_0.05": 0.197
+            },
+            {
+              "R": -0.13,
+              "power_holm_worst_0.01": 0.05725,
+              "power_nominal_0.05": 0.1995
+            },
+            {
+              "R": -0.14,
+              "power_holm_worst_0.01": 0.058,
+              "power_nominal_0.05": 0.20175
+            },
+            {
+              "R": -0.15,
+              "power_holm_worst_0.01": 0.05875,
+              "power_nominal_0.05": 0.20425
+            },
+            {
+              "R": -0.16,
+              "power_holm_worst_0.01": 0.06025,
+              "power_nominal_0.05": 0.20675
+            },
+            {
+              "R": -0.17,
+              "power_holm_worst_0.01": 0.06125,
+              "power_nominal_0.05": 0.2095
+            },
+            {
+              "R": -0.18,
+              "power_holm_worst_0.01": 0.06275,
+              "power_nominal_0.05": 0.2125
+            },
+            {
+              "R": -0.19,
+              "power_holm_worst_0.01": 0.063,
+              "power_nominal_0.05": 0.2145
+            },
+            {
+              "R": -0.2,
+              "power_holm_worst_0.01": 0.06375,
+              "power_nominal_0.05": 0.217
+            },
+            {
+              "R": -0.21,
+              "power_holm_worst_0.01": 0.06525,
+              "power_nominal_0.05": 0.21925
+            },
+            {
+              "R": -0.22,
+              "power_holm_worst_0.01": 0.06625,
+              "power_nominal_0.05": 0.2215
+            },
+            {
+              "R": -0.23,
+              "power_holm_worst_0.01": 0.06725,
+              "power_nominal_0.05": 0.22325
+            },
+            {
+              "R": -0.24,
+              "power_holm_worst_0.01": 0.068,
+              "power_nominal_0.05": 0.2255
+            },
+            {
+              "R": -0.25,
+              "power_holm_worst_0.01": 0.06925,
+              "power_nominal_0.05": 0.2275
+            },
+            {
+              "R": -0.26,
+              "power_holm_worst_0.01": 0.0715,
+              "power_nominal_0.05": 0.229
+            },
+            {
+              "R": -0.27,
+              "power_holm_worst_0.01": 0.0725,
+              "power_nominal_0.05": 0.23125
+            },
+            {
+              "R": -0.28,
+              "power_holm_worst_0.01": 0.07475,
+              "power_nominal_0.05": 0.23375
+            },
+            {
+              "R": -0.29,
+              "power_holm_worst_0.01": 0.075,
+              "power_nominal_0.05": 0.23525
+            },
+            {
+              "R": -0.3,
+              "power_holm_worst_0.01": 0.07575,
+              "power_nominal_0.05": 0.2375
+            },
+            {
+              "R": -0.31,
+              "power_holm_worst_0.01": 0.07725,
+              "power_nominal_0.05": 0.2405
+            },
+            {
+              "R": -0.32,
+              "power_holm_worst_0.01": 0.0785,
+              "power_nominal_0.05": 0.24275
+            },
+            {
+              "R": -0.33,
+              "power_holm_worst_0.01": 0.08075,
+              "power_nominal_0.05": 0.244
+            },
+            {
+              "R": -0.34,
+              "power_holm_worst_0.01": 0.083,
+              "power_nominal_0.05": 0.24625
+            },
+            {
+              "R": -0.35,
+              "power_holm_worst_0.01": 0.08475,
+              "power_nominal_0.05": 0.248
+            },
+            {
+              "R": -0.36,
+              "power_holm_worst_0.01": 0.08625,
+              "power_nominal_0.05": 0.25
+            },
+            {
+              "R": -0.37,
+              "power_holm_worst_0.01": 0.087,
+              "power_nominal_0.05": 0.252
+            },
+            {
+              "R": -0.38,
+              "power_holm_worst_0.01": 0.0875,
+              "power_nominal_0.05": 0.25425
+            },
+            {
+              "R": -0.39,
+              "power_holm_worst_0.01": 0.09,
+              "power_nominal_0.05": 0.257
+            },
+            {
+              "R": -0.4,
+              "power_holm_worst_0.01": 0.0905,
+              "power_nominal_0.05": 0.25775
+            },
+            {
+              "R": -0.41,
+              "power_holm_worst_0.01": 0.09225,
+              "power_nominal_0.05": 0.26
+            },
+            {
+              "R": -0.42,
+              "power_holm_worst_0.01": 0.09375,
+              "power_nominal_0.05": 0.26225
+            },
+            {
+              "R": -0.43,
+              "power_holm_worst_0.01": 0.09425,
+              "power_nominal_0.05": 0.26375
+            },
+            {
+              "R": -0.44,
+              "power_holm_worst_0.01": 0.09575,
+              "power_nominal_0.05": 0.2665
+            },
+            {
+              "R": -0.45,
+              "power_holm_worst_0.01": 0.09725,
+              "power_nominal_0.05": 0.2695
+            },
+            {
+              "R": -0.46,
+              "power_holm_worst_0.01": 0.09775,
+              "power_nominal_0.05": 0.27175
+            },
+            {
+              "R": -0.47,
+              "power_holm_worst_0.01": 0.09875,
+              "power_nominal_0.05": 0.274
+            },
+            {
+              "R": -0.48,
+              "power_holm_worst_0.01": 0.1015,
+              "power_nominal_0.05": 0.27675
+            },
+            {
+              "R": -0.49,
+              "power_holm_worst_0.01": 0.1035,
+              "power_nominal_0.05": 0.2795
+            },
+            {
+              "R": -0.5,
+              "power_holm_worst_0.01": 0.105,
+              "power_nominal_0.05": 0.28175
+            },
+            {
+              "R": -0.51,
+              "power_holm_worst_0.01": 0.1055,
+              "power_nominal_0.05": 0.283
+            },
+            {
+              "R": -0.52,
+              "power_holm_worst_0.01": 0.10625,
+              "power_nominal_0.05": 0.28425
+            },
+            {
+              "R": -0.53,
+              "power_holm_worst_0.01": 0.109,
+              "power_nominal_0.05": 0.2855
+            },
+            {
+              "R": -0.54,
+              "power_holm_worst_0.01": 0.1105,
+              "power_nominal_0.05": 0.2875
+            },
+            {
+              "R": -0.55,
+              "power_holm_worst_0.01": 0.11225,
+              "power_nominal_0.05": 0.28925
+            },
+            {
+              "R": -0.56,
+              "power_holm_worst_0.01": 0.113,
+              "power_nominal_0.05": 0.2905
+            },
+            {
+              "R": -0.57,
+              "power_holm_worst_0.01": 0.11475,
+              "power_nominal_0.05": 0.29225
+            },
+            {
+              "R": -0.58,
+              "power_holm_worst_0.01": 0.116,
+              "power_nominal_0.05": 0.29375
+            },
+            {
+              "R": -0.59,
+              "power_holm_worst_0.01": 0.11825,
+              "power_nominal_0.05": 0.29575
+            },
+            {
+              "R": -0.6,
+              "power_holm_worst_0.01": 0.11975,
+              "power_nominal_0.05": 0.29725
+            },
+            {
+              "R": -0.61,
+              "power_holm_worst_0.01": 0.12075,
+              "power_nominal_0.05": 0.2985
+            },
+            {
+              "R": -0.62,
+              "power_holm_worst_0.01": 0.1215,
+              "power_nominal_0.05": 0.29975
+            },
+            {
+              "R": -0.63,
+              "power_holm_worst_0.01": 0.12325,
+              "power_nominal_0.05": 0.30075
+            },
+            {
+              "R": -0.64,
+              "power_holm_worst_0.01": 0.124,
+              "power_nominal_0.05": 0.30175
+            },
+            {
+              "R": -0.65,
+              "power_holm_worst_0.01": 0.12525,
+              "power_nominal_0.05": 0.30325
+            },
+            {
+              "R": -0.66,
+              "power_holm_worst_0.01": 0.1265,
+              "power_nominal_0.05": 0.304
+            },
+            {
+              "R": -0.67,
+              "power_holm_worst_0.01": 0.127,
+              "power_nominal_0.05": 0.30525
+            },
+            {
+              "R": -0.68,
+              "power_holm_worst_0.01": 0.1285,
+              "power_nominal_0.05": 0.3065
+            },
+            {
+              "R": -0.69,
+              "power_holm_worst_0.01": 0.12825,
+              "power_nominal_0.05": 0.3075
+            },
+            {
+              "R": -0.7,
+              "power_holm_worst_0.01": 0.129,
+              "power_nominal_0.05": 0.30925
+            },
+            {
+              "R": -0.71,
+              "power_holm_worst_0.01": 0.13075,
+              "power_nominal_0.05": 0.3125
+            },
+            {
+              "R": -0.72,
+              "power_holm_worst_0.01": 0.132,
+              "power_nominal_0.05": 0.31275
+            },
+            {
+              "R": -0.73,
+              "power_holm_worst_0.01": 0.13275,
+              "power_nominal_0.05": 0.31375
+            },
+            {
+              "R": -0.74,
+              "power_holm_worst_0.01": 0.1335,
+              "power_nominal_0.05": 0.31475
+            },
+            {
+              "R": -0.75,
+              "power_holm_worst_0.01": 0.1345,
+              "power_nominal_0.05": 0.31625
+            },
+            {
+              "R": -0.76,
+              "power_holm_worst_0.01": 0.1355,
+              "power_nominal_0.05": 0.3175
+            },
+            {
+              "R": -0.77,
+              "power_holm_worst_0.01": 0.136,
+              "power_nominal_0.05": 0.3185
+            },
+            {
+              "R": -0.78,
+              "power_holm_worst_0.01": 0.13675,
+              "power_nominal_0.05": 0.3195
+            },
+            {
+              "R": -0.79,
+              "power_holm_worst_0.01": 0.13725,
+              "power_nominal_0.05": 0.32125
+            },
+            {
+              "R": -0.8,
+              "power_holm_worst_0.01": 0.1375,
+              "power_nominal_0.05": 0.32175
+            },
+            {
+              "R": -0.81,
+              "power_holm_worst_0.01": 0.1385,
+              "power_nominal_0.05": 0.32325
+            },
+            {
+              "R": -0.82,
+              "power_holm_worst_0.01": 0.1395,
+              "power_nominal_0.05": 0.325
+            },
+            {
+              "R": -0.83,
+              "power_holm_worst_0.01": 0.1405,
+              "power_nominal_0.05": 0.32625
+            },
+            {
+              "R": -0.84,
+              "power_holm_worst_0.01": 0.14125,
+              "power_nominal_0.05": 0.32725
+            },
+            {
+              "R": -0.85,
+              "power_holm_worst_0.01": 0.14175,
+              "power_nominal_0.05": 0.3275
+            },
+            {
+              "R": -0.86,
+              "power_holm_worst_0.01": 0.14225,
+              "power_nominal_0.05": 0.328
+            },
+            {
+              "R": -0.87,
+              "power_holm_worst_0.01": 0.143,
+              "power_nominal_0.05": 0.32925
+            },
+            {
+              "R": -0.88,
+              "power_holm_worst_0.01": 0.14375,
+              "power_nominal_0.05": 0.3295
+            },
+            {
+              "R": -0.89,
+              "power_holm_worst_0.01": 0.1445,
+              "power_nominal_0.05": 0.33
+            },
+            {
+              "R": -0.9,
+              "power_holm_worst_0.01": 0.14575,
+              "power_nominal_0.05": 0.3305
+            },
+            {
+              "R": -0.91,
+              "power_holm_worst_0.01": 0.14625,
+              "power_nominal_0.05": 0.331
+            },
+            {
+              "R": -0.92,
+              "power_holm_worst_0.01": 0.1465,
+              "power_nominal_0.05": 0.33175
+            },
+            {
+              "R": -0.93,
+              "power_holm_worst_0.01": 0.147,
+              "power_nominal_0.05": 0.33175
+            },
+            {
+              "R": -0.94,
+              "power_holm_worst_0.01": 0.1475,
+              "power_nominal_0.05": 0.332
+            },
+            {
+              "R": -0.95,
+              "power_holm_worst_0.01": 0.14825,
+              "power_nominal_0.05": 0.33325
+            },
+            {
+              "R": -0.96,
+              "power_holm_worst_0.01": 0.14875,
+              "power_nominal_0.05": 0.3345
+            },
+            {
+              "R": -0.97,
+              "power_holm_worst_0.01": 0.14925,
+              "power_nominal_0.05": 0.33525
+            },
+            {
+              "R": -0.98,
+              "power_holm_worst_0.01": 0.149,
+              "power_nominal_0.05": 0.33575
+            },
+            {
+              "R": -0.99,
+              "power_holm_worst_0.01": 0.15,
+              "power_nominal_0.05": 0.336
+            },
+            {
+              "R": -1.0,
+              "power_holm_worst_0.01": 0.15075,
+              "power_nominal_0.05": 0.336
+            }
+          ],
+          "0.02": [
+            {
+              "R": 1.0,
+              "power_holm_worst_0.01": 0.0005,
+              "power_nominal_0.05": 0.013
+            },
+            {
+              "R": 0.99,
+              "power_holm_worst_0.01": 0.0005,
+              "power_nominal_0.05": 0.01325
+            },
+            {
+              "R": 0.98,
+              "power_holm_worst_0.01": 0.0005,
+              "power_nominal_0.05": 0.014
+            },
+            {
+              "R": 0.97,
+              "power_holm_worst_0.01": 0.00075,
+              "power_nominal_0.05": 0.0155
+            },
+            {
+              "R": 0.96,
+              "power_holm_worst_0.01": 0.001,
+              "power_nominal_0.05": 0.0165
+            },
+            {
+              "R": 0.95,
+              "power_holm_worst_0.01": 0.001,
+              "power_nominal_0.05": 0.0185
+            },
+            {
+              "R": 0.94,
+              "power_holm_worst_0.01": 0.001,
+              "power_nominal_0.05": 0.019
+            },
+            {
+              "R": 0.93,
+              "power_holm_worst_0.01": 0.00125,
+              "power_nominal_0.05": 0.02125
+            },
+            {
+              "R": 0.92,
+              "power_holm_worst_0.01": 0.00125,
+              "power_nominal_0.05": 0.02275
+            },
+            {
+              "R": 0.91,
+              "power_holm_worst_0.01": 0.0015,
+              "power_nominal_0.05": 0.02425
+            },
+            {
+              "R": 0.9,
+              "power_holm_worst_0.01": 0.0015,
+              "power_nominal_0.05": 0.02625
+            },
+            {
+              "R": 0.89,
+              "power_holm_worst_0.01": 0.002,
+              "power_nominal_0.05": 0.02825
+            },
+            {
+              "R": 0.88,
+              "power_holm_worst_0.01": 0.002,
+              "power_nominal_0.05": 0.031
+            },
+            {
+              "R": 0.87,
+              "power_holm_worst_0.01": 0.00275,
+              "power_nominal_0.05": 0.03325
+            },
+            {
+              "R": 0.86,
+              "power_holm_worst_0.01": 0.0035,
+              "power_nominal_0.05": 0.03675
+            },
+            {
+              "R": 0.85,
+              "power_holm_worst_0.01": 0.0045,
+              "power_nominal_0.05": 0.0405
+            },
+            {
+              "R": 0.84,
+              "power_holm_worst_0.01": 0.00525,
+              "power_nominal_0.05": 0.045
+            },
+            {
+              "R": 0.83,
+              "power_holm_worst_0.01": 0.006,
+              "power_nominal_0.05": 0.0485
+            },
+            {
+              "R": 0.82,
+              "power_holm_worst_0.01": 0.00675,
+              "power_nominal_0.05": 0.05375
+            },
+            {
+              "R": 0.81,
+              "power_holm_worst_0.01": 0.00725,
+              "power_nominal_0.05": 0.058
+            },
+            {
+              "R": 0.8,
+              "power_holm_worst_0.01": 0.00825,
+              "power_nominal_0.05": 0.06475
+            },
+            {
+              "R": 0.79,
+              "power_holm_worst_0.01": 0.009,
+              "power_nominal_0.05": 0.069
+            },
+            {
+              "R": 0.78,
+              "power_holm_worst_0.01": 0.00975,
+              "power_nominal_0.05": 0.07425
+            },
+            {
+              "R": 0.77,
+              "power_holm_worst_0.01": 0.01125,
+              "power_nominal_0.05": 0.07975
+            },
+            {
+              "R": 0.76,
+              "power_holm_worst_0.01": 0.0125,
+              "power_nominal_0.05": 0.084
+            },
+            {
+              "R": 0.75,
+              "power_holm_worst_0.01": 0.014,
+              "power_nominal_0.05": 0.08925
+            },
+            {
+              "R": 0.74,
+              "power_holm_worst_0.01": 0.01575,
+              "power_nominal_0.05": 0.09575
+            },
+            {
+              "R": 0.73,
+              "power_holm_worst_0.01": 0.017,
+              "power_nominal_0.05": 0.102
+            },
+            {
+              "R": 0.72,
+              "power_holm_worst_0.01": 0.01975,
+              "power_nominal_0.05": 0.11025
+            },
+            {
+              "R": 0.71,
+              "power_holm_worst_0.01": 0.0215,
+              "power_nominal_0.05": 0.115
+            },
+            {
+              "R": 0.7,
+              "power_holm_worst_0.01": 0.023,
+              "power_nominal_0.05": 0.1235
+            },
+            {
+              "R": 0.69,
+              "power_holm_worst_0.01": 0.02525,
+              "power_nominal_0.05": 0.13225
+            },
+            {
+              "R": 0.68,
+              "power_holm_worst_0.01": 0.02725,
+              "power_nominal_0.05": 0.139
+            },
+            {
+              "R": 0.67,
+              "power_holm_worst_0.01": 0.03,
+              "power_nominal_0.05": 0.147
+            },
+            {
+              "R": 0.66,
+              "power_holm_worst_0.01": 0.032,
+              "power_nominal_0.05": 0.155
+            },
+            {
+              "R": 0.65,
+              "power_holm_worst_0.01": 0.03525,
+              "power_nominal_0.05": 0.16525
+            },
+            {
+              "R": 0.64,
+              "power_holm_worst_0.01": 0.039,
+              "power_nominal_0.05": 0.17375
+            },
+            {
+              "R": 0.63,
+              "power_holm_worst_0.01": 0.0435,
+              "power_nominal_0.05": 0.18275
+            },
+            {
+              "R": 0.62,
+              "power_holm_worst_0.01": 0.04675,
+              "power_nominal_0.05": 0.192
+            },
+            {
+              "R": 0.61,
+              "power_holm_worst_0.01": 0.05075,
+              "power_nominal_0.05": 0.2
+            },
+            {
+              "R": 0.6,
+              "power_holm_worst_0.01": 0.0555,
+              "power_nominal_0.05": 0.21075
+            },
+            {
+              "R": 0.59,
+              "power_holm_worst_0.01": 0.06175,
+              "power_nominal_0.05": 0.2195
+            },
+            {
+              "R": 0.58,
+              "power_holm_worst_0.01": 0.066,
+              "power_nominal_0.05": 0.23025
+            },
+            {
+              "R": 0.57,
+              "power_holm_worst_0.01": 0.07125,
+              "power_nominal_0.05": 0.24325
+            },
+            {
+              "R": 0.56,
+              "power_holm_worst_0.01": 0.076,
+              "power_nominal_0.05": 0.25425
+            },
+            {
+              "R": 0.55,
+              "power_holm_worst_0.01": 0.08,
+              "power_nominal_0.05": 0.2675
+            },
+            {
+              "R": 0.54,
+              "power_holm_worst_0.01": 0.086,
+              "power_nominal_0.05": 0.27975
+            },
+            {
+              "R": 0.53,
+              "power_holm_worst_0.01": 0.092,
+              "power_nominal_0.05": 0.296
+            },
+            {
+              "R": 0.52,
+              "power_holm_worst_0.01": 0.09775,
+              "power_nominal_0.05": 0.31025
+            },
+            {
+              "R": 0.51,
+              "power_holm_worst_0.01": 0.10625,
+              "power_nominal_0.05": 0.3185
+            },
+            {
+              "R": 0.5,
+              "power_holm_worst_0.01": 0.1105,
+              "power_nominal_0.05": 0.32825
+            },
+            {
+              "R": 0.49,
+              "power_holm_worst_0.01": 0.1185,
+              "power_nominal_0.05": 0.34125
+            },
+            {
+              "R": 0.48,
+              "power_holm_worst_0.01": 0.1275,
+              "power_nominal_0.05": 0.351
+            },
+            {
+              "R": 0.47,
+              "power_holm_worst_0.01": 0.13425,
+              "power_nominal_0.05": 0.36425
+            },
+            {
+              "R": 0.46,
+              "power_holm_worst_0.01": 0.1415,
+              "power_nominal_0.05": 0.378
+            },
+            {
+              "R": 0.45,
+              "power_holm_worst_0.01": 0.149,
+              "power_nominal_0.05": 0.39375
+            },
+            {
+              "R": 0.44,
+              "power_holm_worst_0.01": 0.159,
+              "power_nominal_0.05": 0.4065
+            },
+            {
+              "R": 0.43,
+              "power_holm_worst_0.01": 0.166,
+              "power_nominal_0.05": 0.4195
+            },
+            {
+              "R": 0.42,
+              "power_holm_worst_0.01": 0.1745,
+              "power_nominal_0.05": 0.43675
+            },
+            {
+              "R": 0.41,
+              "power_holm_worst_0.01": 0.184,
+              "power_nominal_0.05": 0.454
+            },
+            {
+              "R": 0.4,
+              "power_holm_worst_0.01": 0.191,
+              "power_nominal_0.05": 0.4675
+            },
+            {
+              "R": 0.39,
+              "power_holm_worst_0.01": 0.2015,
+              "power_nominal_0.05": 0.48325
+            },
+            {
+              "R": 0.38,
+              "power_holm_worst_0.01": 0.21,
+              "power_nominal_0.05": 0.49925
+            },
+            {
+              "R": 0.37,
+              "power_holm_worst_0.01": 0.22025,
+              "power_nominal_0.05": 0.51525
+            },
+            {
+              "R": 0.36,
+              "power_holm_worst_0.01": 0.23125,
+              "power_nominal_0.05": 0.53075
+            },
+            {
+              "R": 0.35,
+              "power_holm_worst_0.01": 0.24125,
+              "power_nominal_0.05": 0.5445
+            },
+            {
+              "R": 0.34,
+              "power_holm_worst_0.01": 0.2535,
+              "power_nominal_0.05": 0.55775
+            },
+            {
+              "R": 0.33,
+              "power_holm_worst_0.01": 0.26375,
+              "power_nominal_0.05": 0.57575
+            },
+            {
+              "R": 0.32,
+              "power_holm_worst_0.01": 0.2785,
+              "power_nominal_0.05": 0.58725
+            },
+            {
+              "R": 0.31,
+              "power_holm_worst_0.01": 0.291,
+              "power_nominal_0.05": 0.60075
+            },
+            {
+              "R": 0.3,
+              "power_holm_worst_0.01": 0.2985,
+              "power_nominal_0.05": 0.613
+            },
+            {
+              "R": 0.29,
+              "power_holm_worst_0.01": 0.30825,
+              "power_nominal_0.05": 0.62375
+            },
+            {
+              "R": 0.28,
+              "power_holm_worst_0.01": 0.3205,
+              "power_nominal_0.05": 0.63725
+            },
+            {
+              "R": 0.27,
+              "power_holm_worst_0.01": 0.33,
+              "power_nominal_0.05": 0.6465
+            },
+            {
+              "R": 0.26,
+              "power_holm_worst_0.01": 0.3435,
+              "power_nominal_0.05": 0.658
+            },
+            {
+              "R": 0.25,
+              "power_holm_worst_0.01": 0.3555,
+              "power_nominal_0.05": 0.672
+            },
+            {
+              "R": 0.24,
+              "power_holm_worst_0.01": 0.3685,
+              "power_nominal_0.05": 0.682
+            },
+            {
+              "R": 0.23,
+              "power_holm_worst_0.01": 0.3785,
+              "power_nominal_0.05": 0.69175
+            },
+            {
+              "R": 0.22,
+              "power_holm_worst_0.01": 0.39075,
+              "power_nominal_0.05": 0.70325
+            },
+            {
+              "R": 0.21,
+              "power_holm_worst_0.01": 0.4045,
+              "power_nominal_0.05": 0.71225
+            },
+            {
+              "R": 0.2,
+              "power_holm_worst_0.01": 0.41925,
+              "power_nominal_0.05": 0.7205
+            },
+            {
+              "R": 0.19,
+              "power_holm_worst_0.01": 0.4315,
+              "power_nominal_0.05": 0.731
+            },
+            {
+              "R": 0.18,
+              "power_holm_worst_0.01": 0.4465,
+              "power_nominal_0.05": 0.746
+            },
+            {
+              "R": 0.17,
+              "power_holm_worst_0.01": 0.461,
+              "power_nominal_0.05": 0.758
+            },
+            {
+              "R": 0.16,
+              "power_holm_worst_0.01": 0.4735,
+              "power_nominal_0.05": 0.76675
+            },
+            {
+              "R": 0.15,
+              "power_holm_worst_0.01": 0.48825,
+              "power_nominal_0.05": 0.77475
+            },
+            {
+              "R": 0.14,
+              "power_holm_worst_0.01": 0.5025,
+              "power_nominal_0.05": 0.7845
+            },
+            {
+              "R": 0.13,
+              "power_holm_worst_0.01": 0.5155,
+              "power_nominal_0.05": 0.7935
+            },
+            {
+              "R": 0.12,
+              "power_holm_worst_0.01": 0.53025,
+              "power_nominal_0.05": 0.80375
+            },
+            {
+              "R": 0.11,
+              "power_holm_worst_0.01": 0.5405,
+              "power_nominal_0.05": 0.81225
+            },
+            {
+              "R": 0.1,
+              "power_holm_worst_0.01": 0.55175,
+              "power_nominal_0.05": 0.8215
+            },
+            {
+              "R": 0.09,
+              "power_holm_worst_0.01": 0.56275,
+              "power_nominal_0.05": 0.828
+            },
+            {
+              "R": 0.08,
+              "power_holm_worst_0.01": 0.57275,
+              "power_nominal_0.05": 0.8365
+            },
+            {
+              "R": 0.07,
+              "power_holm_worst_0.01": 0.5855,
+              "power_nominal_0.05": 0.84275
+            },
+            {
+              "R": 0.06,
+              "power_holm_worst_0.01": 0.59525,
+              "power_nominal_0.05": 0.85175
+            },
+            {
+              "R": 0.05,
+              "power_holm_worst_0.01": 0.607,
+              "power_nominal_0.05": 0.859
+            },
+            {
+              "R": 0.04,
+              "power_holm_worst_0.01": 0.6185,
+              "power_nominal_0.05": 0.8655
+            },
+            {
+              "R": 0.03,
+              "power_holm_worst_0.01": 0.629,
+              "power_nominal_0.05": 0.8705
+            },
+            {
+              "R": 0.02,
+              "power_holm_worst_0.01": 0.638,
+              "power_nominal_0.05": 0.8755
+            },
+            {
+              "R": 0.01,
+              "power_holm_worst_0.01": 0.6465,
+              "power_nominal_0.05": 0.8795
+            },
+            {
+              "R": -0.0,
+              "power_holm_worst_0.01": 0.65425,
+              "power_nominal_0.05": 0.8855
+            },
+            {
+              "R": -0.01,
+              "power_holm_worst_0.01": 0.65975,
+              "power_nominal_0.05": 0.889
+            },
+            {
+              "R": -0.02,
+              "power_holm_worst_0.01": 0.66775,
+              "power_nominal_0.05": 0.89075
+            },
+            {
+              "R": -0.03,
+              "power_holm_worst_0.01": 0.67825,
+              "power_nominal_0.05": 0.8935
+            },
+            {
+              "R": -0.04,
+              "power_holm_worst_0.01": 0.69,
+              "power_nominal_0.05": 0.89625
+            },
+            {
+              "R": -0.05,
+              "power_holm_worst_0.01": 0.69725,
+              "power_nominal_0.05": 0.8975
+            },
+            {
+              "R": -0.06,
+              "power_holm_worst_0.01": 0.70725,
+              "power_nominal_0.05": 0.90075
+            },
+            {
+              "R": -0.07,
+              "power_holm_worst_0.01": 0.714,
+              "power_nominal_0.05": 0.904
+            },
+            {
+              "R": -0.08,
+              "power_holm_worst_0.01": 0.72125,
+              "power_nominal_0.05": 0.906
+            },
+            {
+              "R": -0.09,
+              "power_holm_worst_0.01": 0.7305,
+              "power_nominal_0.05": 0.9075
+            },
+            {
+              "R": -0.1,
+              "power_holm_worst_0.01": 0.7385,
+              "power_nominal_0.05": 0.90975
+            },
+            {
+              "R": -0.11,
+              "power_holm_worst_0.01": 0.746,
+              "power_nominal_0.05": 0.91075
+            },
+            {
+              "R": -0.12,
+              "power_holm_worst_0.01": 0.75125,
+              "power_nominal_0.05": 0.913
+            },
+            {
+              "R": -0.13,
+              "power_holm_worst_0.01": 0.7555,
+              "power_nominal_0.05": 0.915
+            },
+            {
+              "R": -0.14,
+              "power_holm_worst_0.01": 0.7595,
+              "power_nominal_0.05": 0.91825
+            },
+            {
+              "R": -0.15,
+              "power_holm_worst_0.01": 0.7665,
+              "power_nominal_0.05": 0.92
+            },
+            {
+              "R": -0.16,
+              "power_holm_worst_0.01": 0.77325,
+              "power_nominal_0.05": 0.92125
+            },
+            {
+              "R": -0.17,
+              "power_holm_worst_0.01": 0.777,
+              "power_nominal_0.05": 0.92375
+            },
+            {
+              "R": -0.18,
+              "power_holm_worst_0.01": 0.779,
+              "power_nominal_0.05": 0.92475
+            },
+            {
+              "R": -0.19,
+              "power_holm_worst_0.01": 0.78175,
+              "power_nominal_0.05": 0.9255
+            },
+            {
+              "R": -0.2,
+              "power_holm_worst_0.01": 0.7855,
+              "power_nominal_0.05": 0.92625
+            },
+            {
+              "R": -0.21,
+              "power_holm_worst_0.01": 0.78925,
+              "power_nominal_0.05": 0.92725
+            },
+            {
+              "R": -0.22,
+              "power_holm_worst_0.01": 0.7935,
+              "power_nominal_0.05": 0.9285
+            },
+            {
+              "R": -0.23,
+              "power_holm_worst_0.01": 0.79525,
+              "power_nominal_0.05": 0.92925
+            },
+            {
+              "R": -0.24,
+              "power_holm_worst_0.01": 0.798,
+              "power_nominal_0.05": 0.93
+            },
+            {
+              "R": -0.25,
+              "power_holm_worst_0.01": 0.8005,
+              "power_nominal_0.05": 0.93125
+            }
+          ],
+          "0.03": [
+            {
+              "R": 1.0,
+              "power_holm_worst_0.01": 0.001,
+              "power_nominal_0.05": 0.018
+            },
+            {
+              "R": 0.99,
+              "power_holm_worst_0.01": 0.001,
+              "power_nominal_0.05": 0.0195
+            },
+            {
+              "R": 0.98,
+              "power_holm_worst_0.01": 0.00075,
+              "power_nominal_0.05": 0.0195
+            },
+            {
+              "R": 0.97,
+              "power_holm_worst_0.01": 0.001,
+              "power_nominal_0.05": 0.0205
+            },
+            {
+              "R": 0.96,
+              "power_holm_worst_0.01": 0.00125,
+              "power_nominal_0.05": 0.02075
+            },
+            {
+              "R": 0.95,
+              "power_holm_worst_0.01": 0.00125,
+              "power_nominal_0.05": 0.02325
+            },
+            {
+              "R": 0.94,
+              "power_holm_worst_0.01": 0.0015,
+              "power_nominal_0.05": 0.0255
+            },
+            {
+              "R": 0.93,
+              "power_holm_worst_0.01": 0.00175,
+              "power_nominal_0.05": 0.0285
+            },
+            {
+              "R": 0.92,
+              "power_holm_worst_0.01": 0.002,
+              "power_nominal_0.05": 0.032
+            },
+            {
+              "R": 0.91,
+              "power_holm_worst_0.01": 0.00275,
+              "power_nominal_0.05": 0.03625
+            },
+            {
+              "R": 0.9,
+              "power_holm_worst_0.01": 0.0045,
+              "power_nominal_0.05": 0.0415
+            },
+            {
+              "R": 0.89,
+              "power_holm_worst_0.01": 0.00575,
+              "power_nominal_0.05": 0.04775
+            },
+            {
+              "R": 0.88,
+              "power_holm_worst_0.01": 0.007,
+              "power_nominal_0.05": 0.0545
+            },
+            {
+              "R": 0.87,
+              "power_holm_worst_0.01": 0.008,
+              "power_nominal_0.05": 0.06275
+            },
+            {
+              "R": 0.86,
+              "power_holm_worst_0.01": 0.0095,
+              "power_nominal_0.05": 0.07
+            },
+            {
+              "R": 0.85,
+              "power_holm_worst_0.01": 0.011,
+              "power_nominal_0.05": 0.07725
+            },
+            {
+              "R": 0.84,
+              "power_holm_worst_0.01": 0.013,
+              "power_nominal_0.05": 0.08425
+            },
+            {
+              "R": 0.83,
+              "power_holm_worst_0.01": 0.0155,
+              "power_nominal_0.05": 0.0935
+            },
+            {
+              "R": 0.82,
+              "power_holm_worst_0.01": 0.0175,
+              "power_nominal_0.05": 0.10275
+            },
+            {
+              "R": 0.81,
+              "power_holm_worst_0.01": 0.021,
+              "power_nominal_0.05": 0.11425
+            },
+            {
+              "R": 0.8,
+              "power_holm_worst_0.01": 0.02375,
+              "power_nominal_0.05": 0.12525
+            },
+            {
+              "R": 0.79,
+              "power_holm_worst_0.01": 0.027,
+              "power_nominal_0.05": 0.138
+            },
+            {
+              "R": 0.78,
+              "power_holm_worst_0.01": 0.031,
+              "power_nominal_0.05": 0.1505
+            },
+            {
+              "R": 0.77,
+              "power_holm_worst_0.01": 0.03525,
+              "power_nominal_0.05": 0.16325
+            },
+            {
+              "R": 0.76,
+              "power_holm_worst_0.01": 0.04075,
+              "power_nominal_0.05": 0.177
+            },
+            {
+              "R": 0.75,
+              "power_holm_worst_0.01": 0.04675,
+              "power_nominal_0.05": 0.191
+            },
+            {
+              "R": 0.74,
+              "power_holm_worst_0.01": 0.05325,
+              "power_nominal_0.05": 0.20275
+            },
+            {
+              "R": 0.73,
+              "power_holm_worst_0.01": 0.062,
+              "power_nominal_0.05": 0.21925
+            },
+            {
+              "R": 0.72,
+              "power_holm_worst_0.01": 0.0695,
+              "power_nominal_0.05": 0.2365
+            },
+            {
+              "R": 0.71,
+              "power_holm_worst_0.01": 0.077,
+              "power_nominal_0.05": 0.25675
+            },
+            {
+              "R": 0.7,
+              "power_holm_worst_0.01": 0.084,
+              "power_nominal_0.05": 0.27425
+            },
+            {
+              "R": 0.69,
+              "power_holm_worst_0.01": 0.09325,
+              "power_nominal_0.05": 0.29525
+            },
+            {
+              "R": 0.68,
+              "power_holm_worst_0.01": 0.10275,
+              "power_nominal_0.05": 0.3165
+            },
+            {
+              "R": 0.67,
+              "power_holm_worst_0.01": 0.11425,
+              "power_nominal_0.05": 0.3315
+            },
+            {
+              "R": 0.66,
+              "power_holm_worst_0.01": 0.12525,
+              "power_nominal_0.05": 0.351
+            },
+            {
+              "R": 0.65,
+              "power_holm_worst_0.01": 0.138,
+              "power_nominal_0.05": 0.36675
+            },
+            {
+              "R": 0.64,
+              "power_holm_worst_0.01": 0.15,
+              "power_nominal_0.05": 0.39075
+            },
+            {
+              "R": 0.63,
+              "power_holm_worst_0.01": 0.163,
+              "power_nominal_0.05": 0.41375
+            },
+            {
+              "R": 0.62,
+              "power_holm_worst_0.01": 0.177,
+              "power_nominal_0.05": 0.43525
+            },
+            {
+              "R": 0.61,
+              "power_holm_worst_0.01": 0.191,
+              "power_nominal_0.05": 0.462
+            },
+            {
+              "R": 0.6,
+              "power_holm_worst_0.01": 0.20275,
+              "power_nominal_0.05": 0.4855
+            },
+            {
+              "R": 0.59,
+              "power_holm_worst_0.01": 0.21925,
+              "power_nominal_0.05": 0.5095
+            },
+            {
+              "R": 0.58,
+              "power_holm_worst_0.01": 0.23625,
+              "power_nominal_0.05": 0.53275
+            },
+            {
+              "R": 0.57,
+              "power_holm_worst_0.01": 0.25675,
+              "power_nominal_0.05": 0.55775
+            },
+            {
+              "R": 0.56,
+              "power_holm_worst_0.01": 0.27425,
+              "power_nominal_0.05": 0.581
+            },
+            {
+              "R": 0.55,
+              "power_holm_worst_0.01": 0.295,
+              "power_nominal_0.05": 0.6045
+            },
+            {
+              "R": 0.54,
+              "power_holm_worst_0.01": 0.31625,
+              "power_nominal_0.05": 0.62675
+            },
+            {
+              "R": 0.53,
+              "power_holm_worst_0.01": 0.3315,
+              "power_nominal_0.05": 0.647
+            },
+            {
+              "R": 0.52,
+              "power_holm_worst_0.01": 0.35075,
+              "power_nominal_0.05": 0.6665
+            },
+            {
+              "R": 0.51,
+              "power_holm_worst_0.01": 0.3665,
+              "power_nominal_0.05": 0.6875
+            },
+            {
+              "R": 0.5,
+              "power_holm_worst_0.01": 0.39075,
+              "power_nominal_0.05": 0.7045
+            },
+            {
+              "R": 0.49,
+              "power_holm_worst_0.01": 0.4135,
+              "power_nominal_0.05": 0.7225
+            },
+            {
+              "R": 0.48,
+              "power_holm_worst_0.01": 0.435,
+              "power_nominal_0.05": 0.74225
+            },
+            {
+              "R": 0.47,
+              "power_holm_worst_0.01": 0.46125,
+              "power_nominal_0.05": 0.7575
+            },
+            {
+              "R": 0.46,
+              "power_holm_worst_0.01": 0.485,
+              "power_nominal_0.05": 0.77425
+            },
+            {
+              "R": 0.45,
+              "power_holm_worst_0.01": 0.50925,
+              "power_nominal_0.05": 0.7945
+            },
+            {
+              "R": 0.44,
+              "power_holm_worst_0.01": 0.53225,
+              "power_nominal_0.05": 0.81275
+            },
+            {
+              "R": 0.43,
+              "power_holm_worst_0.01": 0.55775,
+              "power_nominal_0.05": 0.82725
+            },
+            {
+              "R": 0.42,
+              "power_holm_worst_0.01": 0.581,
+              "power_nominal_0.05": 0.84425
+            },
+            {
+              "R": 0.41,
+              "power_holm_worst_0.01": 0.60425,
+              "power_nominal_0.05": 0.86025
+            },
+            {
+              "R": 0.4,
+              "power_holm_worst_0.01": 0.6265,
+              "power_nominal_0.05": 0.87475
+            },
+            {
+              "R": 0.39,
+              "power_holm_worst_0.01": 0.646,
+              "power_nominal_0.05": 0.88625
+            },
+            {
+              "R": 0.38,
+              "power_holm_worst_0.01": 0.66575,
+              "power_nominal_0.05": 0.898
+            },
+            {
+              "R": 0.37,
+              "power_holm_worst_0.01": 0.6865,
+              "power_nominal_0.05": 0.9115
+            },
+            {
+              "R": 0.36,
+              "power_holm_worst_0.01": 0.70325,
+              "power_nominal_0.05": 0.924
+            },
+            {
+              "R": 0.35,
+              "power_holm_worst_0.01": 0.7215,
+              "power_nominal_0.05": 0.9295
+            },
+            {
+              "R": 0.34,
+              "power_holm_worst_0.01": 0.74125,
+              "power_nominal_0.05": 0.936
+            },
+            {
+              "R": 0.33,
+              "power_holm_worst_0.01": 0.7565,
+              "power_nominal_0.05": 0.94225
+            },
+            {
+              "R": 0.32,
+              "power_holm_worst_0.01": 0.77375,
+              "power_nominal_0.05": 0.948
+            },
+            {
+              "R": 0.31,
+              "power_holm_worst_0.01": 0.794,
+              "power_nominal_0.05": 0.9535
+            },
+            {
+              "R": 0.3,
+              "power_holm_worst_0.01": 0.812,
+              "power_nominal_0.05": 0.95775
+            }
+          ],
+          "0.05": [
+            {
+              "R": 1.0,
+              "power_holm_worst_0.01": 0.001,
+              "power_nominal_0.05": 0.018
+            },
+            {
+              "R": 0.99,
+              "power_holm_worst_0.01": 0.00075,
+              "power_nominal_0.05": 0.0195
+            },
+            {
+              "R": 0.98,
+              "power_holm_worst_0.01": 0.001,
+              "power_nominal_0.05": 0.02075
+            },
+            {
+              "R": 0.97,
+              "power_holm_worst_0.01": 0.00125,
+              "power_nominal_0.05": 0.02325
+            },
+            {
+              "R": 0.96,
+              "power_holm_worst_0.01": 0.0015,
+              "power_nominal_0.05": 0.0275
+            },
+            {
+              "R": 0.95,
+              "power_holm_worst_0.01": 0.00225,
+              "power_nominal_0.05": 0.033
+            },
+            {
+              "R": 0.94,
+              "power_holm_worst_0.01": 0.0045,
+              "power_nominal_0.05": 0.0415
+            },
+            {
+              "R": 0.93,
+              "power_holm_worst_0.01": 0.00625,
+              "power_nominal_0.05": 0.05075
+            },
+            {
+              "R": 0.92,
+              "power_holm_worst_0.01": 0.0085,
+              "power_nominal_0.05": 0.06575
+            },
+            {
+              "R": 0.91,
+              "power_holm_worst_0.01": 0.011,
+              "power_nominal_0.05": 0.07725
+            },
+            {
+              "R": 0.9,
+              "power_holm_worst_0.01": 0.0145,
+              "power_nominal_0.05": 0.09
+            },
+            {
+              "R": 0.89,
+              "power_holm_worst_0.01": 0.01775,
+              "power_nominal_0.05": 0.1075
+            },
+            {
+              "R": 0.88,
+              "power_holm_worst_0.01": 0.02375,
+              "power_nominal_0.05": 0.12525
+            },
+            {
+              "R": 0.87,
+              "power_holm_worst_0.01": 0.03,
+              "power_nominal_0.05": 0.14725
+            },
+            {
+              "R": 0.86,
+              "power_holm_worst_0.01": 0.037,
+              "power_nominal_0.05": 0.16875
+            },
+            {
+              "R": 0.85,
+              "power_holm_worst_0.01": 0.04675,
+              "power_nominal_0.05": 0.191
+            },
+            {
+              "R": 0.84,
+              "power_holm_worst_0.01": 0.058,
+              "power_nominal_0.05": 0.21475
+            },
+            {
+              "R": 0.83,
+              "power_holm_worst_0.01": 0.07175,
+              "power_nominal_0.05": 0.243
+            },
+            {
+              "R": 0.82,
+              "power_holm_worst_0.01": 0.084,
+              "power_nominal_0.05": 0.27425
+            },
+            {
+              "R": 0.81,
+              "power_holm_worst_0.01": 0.1005,
+              "power_nominal_0.05": 0.3085
+            },
+            {
+              "R": 0.8,
+              "power_holm_worst_0.01": 0.1165,
+              "power_nominal_0.05": 0.33725
+            },
+            {
+              "R": 0.79,
+              "power_holm_worst_0.01": 0.138,
+              "power_nominal_0.05": 0.36675
+            },
+            {
+              "R": 0.78,
+              "power_holm_worst_0.01": 0.158,
+              "power_nominal_0.05": 0.40675
+            },
+            {
+              "R": 0.77,
+              "power_holm_worst_0.01": 0.1805,
+              "power_nominal_0.05": 0.444
+            },
+            {
+              "R": 0.76,
+              "power_holm_worst_0.01": 0.20275,
+              "power_nominal_0.05": 0.4855
+            },
+            {
+              "R": 0.75,
+              "power_holm_worst_0.01": 0.22775,
+              "power_nominal_0.05": 0.52575
+            },
+            {
+              "R": 0.74,
+              "power_holm_worst_0.01": 0.26125,
+              "power_nominal_0.05": 0.566
+            },
+            {
+              "R": 0.73,
+              "power_holm_worst_0.01": 0.295,
+              "power_nominal_0.05": 0.605
+            },
+            {
+              "R": 0.72,
+              "power_holm_worst_0.01": 0.32575,
+              "power_nominal_0.05": 0.642
+            },
+            {
+              "R": 0.71,
+              "power_holm_worst_0.01": 0.3575,
+              "power_nominal_0.05": 0.6715
+            },
+            {
+              "R": 0.7,
+              "power_holm_worst_0.01": 0.39075,
+              "power_nominal_0.05": 0.7045
+            },
+            {
+              "R": 0.69,
+              "power_holm_worst_0.01": 0.42725,
+              "power_nominal_0.05": 0.73475
+            },
+            {
+              "R": 0.68,
+              "power_holm_worst_0.01": 0.471,
+              "power_nominal_0.05": 0.76275
+            },
+            {
+              "R": 0.67,
+              "power_holm_worst_0.01": 0.5095,
+              "power_nominal_0.05": 0.79475
+            },
+            {
+              "R": 0.66,
+              "power_holm_worst_0.01": 0.55,
+              "power_nominal_0.05": 0.82225
+            },
+            {
+              "R": 0.65,
+              "power_holm_worst_0.01": 0.5895,
+              "power_nominal_0.05": 0.8505
+            },
+            {
+              "R": 0.64,
+              "power_holm_worst_0.01": 0.627,
+              "power_nominal_0.05": 0.87475
+            },
+            {
+              "R": 0.63,
+              "power_holm_worst_0.01": 0.6595,
+              "power_nominal_0.05": 0.8955
+            },
+            {
+              "R": 0.62,
+              "power_holm_worst_0.01": 0.69125,
+              "power_nominal_0.05": 0.9165
+            },
+            {
+              "R": 0.61,
+              "power_holm_worst_0.01": 0.7225,
+              "power_nominal_0.05": 0.93
+            },
+            {
+              "R": 0.6,
+              "power_holm_worst_0.01": 0.752,
+              "power_nominal_0.05": 0.9415
+            },
+            {
+              "R": 0.59,
+              "power_holm_worst_0.01": 0.78075,
+              "power_nominal_0.05": 0.95
+            },
+            {
+              "R": 0.58,
+              "power_holm_worst_0.01": 0.81275,
+              "power_nominal_0.05": 0.958
+            }
+          ],
+          "0.075": [
+            {
+              "R": 1.0,
+              "power_holm_worst_0.01": 0.001,
+              "power_nominal_0.05": 0.018
+            },
+            {
+              "R": 0.99,
+              "power_holm_worst_0.01": 0.00075,
+              "power_nominal_0.05": 0.0195
+            },
+            {
+              "R": 0.98,
+              "power_holm_worst_0.01": 0.00125,
+              "power_nominal_0.05": 0.02325
+            },
+            {
+              "R": 0.97,
+              "power_holm_worst_0.01": 0.002,
+              "power_nominal_0.05": 0.03075
+            },
+            {
+              "R": 0.96,
+              "power_holm_worst_0.01": 0.0045,
+              "power_nominal_0.05": 0.0415
+            },
+            {
+              "R": 0.95,
+              "power_holm_worst_0.01": 0.0075,
+              "power_nominal_0.05": 0.058
+            },
+            {
+              "R": 0.94,
+              "power_holm_worst_0.01": 0.011,
+              "power_nominal_0.05": 0.07725
+            },
+            {
+              "R": 0.93,
+              "power_holm_worst_0.01": 0.0165,
+              "power_nominal_0.05": 0.099
+            },
+            {
+              "R": 0.92,
+              "power_holm_worst_0.01": 0.02375,
+              "power_nominal_0.05": 0.12525
+            },
+            {
+              "R": 0.91,
+              "power_holm_worst_0.01": 0.0325,
+              "power_nominal_0.05": 0.15675
+            },
+            {
+              "R": 0.9,
+              "power_holm_worst_0.01": 0.04675,
+              "power_nominal_0.05": 0.191
+            },
+            {
+              "R": 0.89,
+              "power_holm_worst_0.01": 0.06575,
+              "power_nominal_0.05": 0.22525
+            },
+            {
+              "R": 0.88,
+              "power_holm_worst_0.01": 0.084,
+              "power_nominal_0.05": 0.27425
+            },
+            {
+              "R": 0.87,
+              "power_holm_worst_0.01": 0.109,
+              "power_nominal_0.05": 0.32425
+            },
+            {
+              "R": 0.86,
+              "power_holm_worst_0.01": 0.138,
+              "power_nominal_0.05": 0.36675
+            },
+            {
+              "R": 0.85,
+              "power_holm_worst_0.01": 0.17025,
+              "power_nominal_0.05": 0.4235
+            },
+            {
+              "R": 0.84,
+              "power_holm_worst_0.01": 0.20275,
+              "power_nominal_0.05": 0.4855
+            },
+            {
+              "R": 0.83,
+              "power_holm_worst_0.01": 0.24725,
+              "power_nominal_0.05": 0.54425
+            },
+            {
+              "R": 0.82,
+              "power_holm_worst_0.01": 0.295,
+              "power_nominal_0.05": 0.605
+            },
+            {
+              "R": 0.81,
+              "power_holm_worst_0.01": 0.341,
+              "power_nominal_0.05": 0.6565
+            },
+            {
+              "R": 0.8,
+              "power_holm_worst_0.01": 0.39075,
+              "power_nominal_0.05": 0.7045
+            },
+            {
+              "R": 0.79,
+              "power_holm_worst_0.01": 0.448,
+              "power_nominal_0.05": 0.74975
+            },
+            {
+              "R": 0.78,
+              "power_holm_worst_0.01": 0.5095,
+              "power_nominal_0.05": 0.79475
+            },
+            {
+              "R": 0.77,
+              "power_holm_worst_0.01": 0.57,
+              "power_nominal_0.05": 0.837
+            },
+            {
+              "R": 0.76,
+              "power_holm_worst_0.01": 0.627,
+              "power_nominal_0.05": 0.87475
+            },
+            {
+              "R": 0.75,
+              "power_holm_worst_0.01": 0.6735,
+              "power_nominal_0.05": 0.904
+            },
+            {
+              "R": 0.74,
+              "power_holm_worst_0.01": 0.7225,
+              "power_nominal_0.05": 0.93
+            },
+            {
+              "R": 0.73,
+              "power_holm_worst_0.01": 0.765,
+              "power_nominal_0.05": 0.946
+            },
+            {
+              "R": 0.72,
+              "power_holm_worst_0.01": 0.81275,
+              "power_nominal_0.05": 0.958
+            }
+          ],
+          "0.0952": [
+            {
+              "R": 1.0,
+              "power_holm_worst_0.01": 0.001,
+              "power_nominal_0.05": 0.018
+            },
+            {
+              "R": 0.99,
+              "power_holm_worst_0.01": 0.001,
+              "power_nominal_0.05": 0.0205
+            },
+            {
+              "R": 0.98,
+              "power_holm_worst_0.01": 0.0015,
+              "power_nominal_0.05": 0.02675
+            },
+            {
+              "R": 0.97,
+              "power_holm_worst_0.01": 0.0035,
+              "power_nominal_0.05": 0.03875
+            },
+            {
+              "R": 0.96,
+              "power_holm_worst_0.01": 0.00775,
+              "power_nominal_0.05": 0.05875
+            },
+            {
+              "R": 0.95,
+              "power_holm_worst_0.01": 0.013,
+              "power_nominal_0.05": 0.0835
+            },
+            {
+              "R": 0.94,
+              "power_holm_worst_0.01": 0.021,
+              "power_nominal_0.05": 0.1145
+            },
+            {
+              "R": 0.93,
+              "power_holm_worst_0.01": 0.031,
+              "power_nominal_0.05": 0.154
+            },
+            {
+              "R": 0.92,
+              "power_holm_worst_0.01": 0.04925,
+              "power_nominal_0.05": 0.1955
+            },
+            {
+              "R": 0.91,
+              "power_holm_worst_0.01": 0.07375,
+              "power_nominal_0.05": 0.24825
+            },
+            {
+              "R": 0.9,
+              "power_holm_worst_0.01": 0.10125,
+              "power_nominal_0.05": 0.31075
+            },
+            {
+              "R": 0.89,
+              "power_holm_worst_0.01": 0.13625,
+              "power_nominal_0.05": 0.36525
+            },
+            {
+              "R": 0.88,
+              "power_holm_worst_0.01": 0.17775,
+              "power_nominal_0.05": 0.43675
+            },
+            {
+              "R": 0.87,
+              "power_holm_worst_0.01": 0.22225,
+              "power_nominal_0.05": 0.5155
+            },
+            {
+              "R": 0.86,
+              "power_holm_worst_0.01": 0.28175,
+              "power_nominal_0.05": 0.5925
+            },
+            {
+              "R": 0.85,
+              "power_holm_worst_0.01": 0.34275,
+              "power_nominal_0.05": 0.6585
+            },
+            {
+              "R": 0.84,
+              "power_holm_worst_0.01": 0.40875,
+              "power_nominal_0.05": 0.71975
+            },
+            {
+              "R": 0.83,
+              "power_holm_worst_0.01": 0.4845,
+              "power_nominal_0.05": 0.77375
+            },
+            {
+              "R": 0.82,
+              "power_holm_worst_0.01": 0.55975,
+              "power_nominal_0.05": 0.83025
+            },
+            {
+              "R": 0.81,
+              "power_holm_worst_0.01": 0.63325,
+              "power_nominal_0.05": 0.8785
+            },
+            {
+              "R": 0.8,
+              "power_holm_worst_0.01": 0.69325,
+              "power_nominal_0.05": 0.91875
+            },
+            {
+              "R": 0.79,
+              "power_holm_worst_0.01": 0.75125,
+              "power_nominal_0.05": 0.9415
+            },
+            {
+              "R": 0.78,
+              "power_holm_worst_0.01": 0.81,
+              "power_nominal_0.05": 0.9575
+            }
+          ],
+          "0.105": [
+            {
+              "R": 1.0,
+              "power_holm_worst_0.01": 0.001,
+              "power_nominal_0.05": 0.018
+            },
+            {
+              "R": 0.99,
+              "power_holm_worst_0.01": 0.00125,
+              "power_nominal_0.05": 0.021
+            },
+            {
+              "R": 0.98,
+              "power_holm_worst_0.01": 0.00175,
+              "power_nominal_0.05": 0.0285
+            },
+            {
+              "R": 0.97,
+              "power_holm_worst_0.01": 0.0055,
+              "power_nominal_0.05": 0.045
+            },
+            {
+              "R": 0.96,
+              "power_holm_worst_0.01": 0.0095,
+              "power_nominal_0.05": 0.07
+            },
+            {
+              "R": 0.95,
+              "power_holm_worst_0.01": 0.0165,
+              "power_nominal_0.05": 0.099
+            },
+            {
+              "R": 0.94,
+              "power_holm_worst_0.01": 0.027,
+              "power_nominal_0.05": 0.138
+            },
+            {
+              "R": 0.93,
+              "power_holm_worst_0.01": 0.04425,
+              "power_nominal_0.05": 0.18275
+            },
+            {
+              "R": 0.92,
+              "power_holm_worst_0.01": 0.0695,
+              "power_nominal_0.05": 0.2365
+            },
+            {
+              "R": 0.91,
+              "power_holm_worst_0.01": 0.09875,
+              "power_nominal_0.05": 0.3055
+            },
+            {
+              "R": 0.9,
+              "power_holm_worst_0.01": 0.138,
+              "power_nominal_0.05": 0.36675
+            },
+            {
+              "R": 0.89,
+              "power_holm_worst_0.01": 0.18275,
+              "power_nominal_0.05": 0.448
+            },
+            {
+              "R": 0.88,
+              "power_holm_worst_0.01": 0.23625,
+              "power_nominal_0.05": 0.53275
+            },
+            {
+              "R": 0.87,
+              "power_holm_worst_0.01": 0.30525,
+              "power_nominal_0.05": 0.617
+            },
+            {
+              "R": 0.86,
+              "power_holm_worst_0.01": 0.3665,
+              "power_nominal_0.05": 0.687
+            },
+            {
+              "R": 0.85,
+              "power_holm_worst_0.01": 0.448,
+              "power_nominal_0.05": 0.74975
+            },
+            {
+              "R": 0.84,
+              "power_holm_worst_0.01": 0.5325,
+              "power_nominal_0.05": 0.813
+            },
+            {
+              "R": 0.83,
+              "power_holm_worst_0.01": 0.61675,
+              "power_nominal_0.05": 0.86725
+            },
+            {
+              "R": 0.82,
+              "power_holm_worst_0.01": 0.687,
+              "power_nominal_0.05": 0.912
+            },
+            {
+              "R": 0.81,
+              "power_holm_worst_0.01": 0.7495,
+              "power_nominal_0.05": 0.94025
+            },
+            {
+              "R": 0.8,
+              "power_holm_worst_0.01": 0.81275,
+              "power_nominal_0.05": 0.958
+            }
+          ]
+        }
+      }
+    },
+    {
+      "test_id": "T4",
+      "name": "E3 codec effect = 1/2[(H264all - JPEGall) + (H264noc40 - JPEGnoc40)] at c40",
+      "estimand": "primary",
+      "levels": [
+        "c40"
+      ],
+      "weights": {
+        "b7": 0.5,
+        "E3a": -0.5,
+        "E2a": 0.5,
+        "E3b": -0.5
+      },
+      "estimate": 0.07173681972789114,
+      "null": 0.0,
+      "ci_lo": 0.047912414965986416,
+      "ci_hi": 0.09661569940476195,
+      "ci_level": 0.95,
+      "se": 0.012514017294886394,
+      "boot_mean": 0.07164444897959184,
+      "n_le_null": 0,
+      "n_ge_null": 10000,
+      "side": "above",
+      "p_two_sided": 9.999000099990002e-05,
+      "b": 10000,
+      "estimable": true,
+      "p_in_holm": 9.999000099990002e-05,
+      "p_holm": 0.0004999500049995,
+      "reading": "helps (real H.264 training data beats PSNR-matched JPEG)",
+      "secondary_ensemble": {
+        "test_id": "T4",
+        "name": "E3 codec effect = 1/2[(H264all - JPEGall) + (H264noc40 - JPEGnoc40)] at c40",
+        "estimand": "ensemble",
+        "levels": [
+          "c40"
+        ],
+        "weights": {
+          "b7": 0.5,
+          "E3a": -0.5,
+          "E2a": 0.5,
+          "E3b": -0.5
+        },
+        "estimate": 0.06669642857142855,
+        "null": 0.0,
+        "ci_lo": 0.04365369897959189,
+        "ci_hi": 0.09447815688775507,
+        "ci_level": 0.95,
+        "se": 0.013053790140501412,
+        "boot_mean": 0.06852105676020408,
+        "n_le_null": 0,
+        "n_ge_null": 10000,
+        "side": "above",
+        "p_two_sided": 9.999000099990002e-05,
+        "b": 10000,
+        "estimable": true
+      },
+      "mde": {
+        "name": "E3 codec effect at c40",
+        "family_variance": "b7",
+        "endpoint": "c40",
+        "units": "AUC (fraction; x100 = points)",
+        "sum_w2": 1.0,
+        "headline": "mde_as_specified_* with sigma2 floored at d",
+        "sigma2_observed": 4.164123238581114e-05,
+        "floor_binding": false,
+        "sigma2_plugin": 4.164123238581114e-05,
+        "d": 1.8889848948067696e-05,
+        "se_true": 0.0037256423332454203,
+        "se_boot": 0.004443868553811104,
+        "mde_as_specified_holm_worst_0.01": 0.014582226538383597,
+        "mde_true_variance_holm_worst_0.01": 0.012732198392873333,
+        "actual_alpha_as_specified_holm_worst_0.01": 0.002123481498922386,
+        "mde_as_specified_nominal_0.05": 0.01184540201385734,
+        "mde_true_variance_nominal_0.05": 0.010437704488796279,
+        "actual_alpha_as_specified_nominal_0.05": 0.01939740732213302,
+        "unfloored": {
+          "sigma2_plugin": 4.164123238581114e-05,
+          "d": 1.8889848948067696e-05,
+          "se_true": 0.0037256423332454203,
+          "se_boot": 0.004443868553811104,
+          "mde_as_specified_holm_worst_0.01": 0.014582226538383597,
+          "mde_true_variance_holm_worst_0.01": 0.012732198392873333,
+          "actual_alpha_as_specified_holm_worst_0.01": 0.002123481498922386,
+          "mde_as_specified_nominal_0.05": 0.01184540201385734,
+          "mde_true_variance_nominal_0.05": 0.010437704488796279,
+          "actual_alpha_as_specified_nominal_0.05": 0.01939740732213302
+        }
+      }
+    },
+    {
+      "test_id": "T5",
+      "name": "E3 c40-exposure effect = 1/2[(H264all - H264noc40) + (JPEGall - JPEGnoc40)] at c40",
+      "estimand": "primary",
+      "levels": [
+        "c40"
+      ],
+      "weights": {
+        "b7": 0.5,
+        "E2a": -0.5,
+        "E3a": 0.5,
+        "E3b": -0.5
+      },
+      "estimate": 0.01578443877551028,
+      "null": 0.0,
+      "ci_lo": 0.0037689200680272638,
+      "ci_hi": 0.027334343112244856,
+      "ci_level": 0.95,
+      "se": 0.005931188833495163,
+      "boot_mean": 0.01568206420068027,
+      "n_le_null": 51,
+      "n_ge_null": 9949,
+      "side": "above",
+      "p_two_sided": 0.010298970102989701,
+      "b": 10000,
+      "estimable": true,
+      "p_in_holm": 0.010298970102989701,
+      "p_holm": 0.041195880411958805,
+      "reading": "helps (training with the c40-level data raises c40 AUC)",
+      "secondary_ensemble": {
+        "test_id": "T5",
+        "name": "E3 c40-exposure effect = 1/2[(H264all - H264noc40) + (JPEGall - JPEGnoc40)] at c40",
+        "estimand": "ensemble",
+        "levels": [
+          "c40"
+        ],
+        "weights": {
+          "b7": 0.5,
+          "E2a": -0.5,
+          "E3a": 0.5,
+          "E3b": -0.5
+        },
+        "estimate": 0.015076530612244898,
+        "null": 0.0,
+        "ci_lo": 0.001236288265306119,
+        "ci_hi": 0.028948022959183677,
+        "ci_level": 0.95,
+        "se": 0.006976465778916271,
+        "boot_mean": 0.015014332270408161,
+        "n_le_null": 189,
+        "n_ge_null": 9811,
+        "side": "above",
+        "p_two_sided": 0.037896210378962104,
+        "b": 10000,
+        "estimable": true
+      },
+      "mde": {
+        "name": "E3 c40-exposure effect at c40",
+        "family_variance": "b7",
+        "endpoint": "c40",
+        "units": "AUC (fraction; x100 = points)",
+        "sum_w2": 1.0,
+        "headline": "mde_as_specified_* with sigma2 floored at d",
+        "sigma2_observed": 4.164123238581114e-05,
+        "floor_binding": false,
+        "sigma2_plugin": 4.164123238581114e-05,
+        "d": 1.8889848948067696e-05,
+        "se_true": 0.0037256423332454203,
+        "se_boot": 0.004443868553811104,
+        "mde_as_specified_holm_worst_0.01": 0.014582226538383597,
+        "mde_true_variance_holm_worst_0.01": 0.012732198392873333,
+        "actual_alpha_as_specified_holm_worst_0.01": 0.002123481498922386,
+        "mde_as_specified_nominal_0.05": 0.01184540201385734,
+        "mde_true_variance_nominal_0.05": 0.010437704488796279,
+        "actual_alpha_as_specified_nominal_0.05": 0.01939740732213302,
+        "unfloored": {
+          "sigma2_plugin": 4.164123238581114e-05,
+          "d": 1.8889848948067696e-05,
+          "se_true": 0.0037256423332454203,
+          "se_boot": 0.004443868553811104,
+          "mde_as_specified_holm_worst_0.01": 0.014582226538383597,
+          "mde_true_variance_holm_worst_0.01": 0.012732198392873333,
+          "actual_alpha_as_specified_holm_worst_0.01": 0.002123481498922386,
+          "mde_as_specified_nominal_0.05": 0.01184540201385734,
+          "mde_true_variance_nominal_0.05": 0.010437704488796279,
+          "actual_alpha_as_specified_nominal_0.05": 0.01939740732213302
+        }
+      }
+    }
+  ],
+  "interaction_descriptive": {
+    "primary": {
+      "test_id": "X45",
+      "name": "codec x exposure interaction = (H264all - JPEGall) - (H264noc40 - JPEGnoc40), c40",
+      "estimand": "primary",
+      "levels": [
+        "c40"
+      ],
+      "weights": {
+        "b7": 1.0,
+        "E3a": -1.0,
+        "E2a": -1.0,
+        "E3b": 1.0
+      },
+      "estimate": -0.02129676870748276,
+      "null": 0.0,
+      "ci_lo": -0.042577593537414936,
+      "ci_hi": 0.00018324829931979029,
+      "ci_level": 0.95,
+      "se": 0.01092834958046645,
+      "boot_mean": -0.02097536649659864,
+      "n_le_null": 9738,
+      "n_ge_null": 262,
+      "side": "below",
+      "p_two_sided": 0.0524947505249475,
+      "b": 10000,
+      "estimable": true
+    },
+    "secondary_ensemble": {
+      "test_id": "X45",
+      "name": "codec x exposure interaction = (H264all - JPEGall) - (H264noc40 - JPEGnoc40), c40",
+      "estimand": "ensemble",
+      "levels": [
+        "c40"
+      ],
+      "weights": {
+        "b7": 1.0,
+        "E3a": -1.0,
+        "E2a": -1.0,
+        "E3b": 1.0
+      },
+      "estimate": -0.016403061224489868,
+      "null": 0.0,
+      "ci_lo": -0.043942602040816195,
+      "ci_hi": 0.007474808673469375,
+      "ci_level": 0.95,
+      "se": 0.012954196598090818,
+      "boot_mean": -0.017685070153061224,
+      "n_le_null": 9200,
+      "n_ge_null": 800,
+      "side": "below",
+      "p_two_sided": 0.16008399160083991,
+      "b": 10000,
+      "estimable": true
+    }
+  },
+  "arm_points": {
+    "E1": {
+      "primary": {
+        "c28": 0.9826445578231292,
+        "c32": 0.9784268707482994,
+        "c36": 0.9730569727891156,
+        "c40": 0.9649617346938776
+      },
+      "ensemble": {
+        "c28": 0.9858035714285714,
+        "c32": 0.9823086734693878,
+        "c36": 0.9782780612244898,
+        "c40": 0.9711352040816327
+      },
+      "per_seed": {
+        "c28": [
+          0.9824234693877552,
+          0.9830357142857142,
+          0.9824744897959183
+        ],
+        "c32": [
+          0.9785586734693877,
+          0.9795790816326531,
+          0.9771428571428571
+        ],
+        "c36": [
+          0.9722321428571429,
+          0.9757908163265306,
+          0.9711479591836735
+        ],
+        "c40": [
+          0.9616836734693878,
+          0.9681122448979592,
+          0.9650892857142858
+        ]
+      }
+    },
+    "FairN": {
+      "primary": {
+        "c28": 0.9768154761904762,
+        "c32": 0.9723426870748298,
+        "c36": 0.964438775510204,
+        "c40": 0.9562840136054422
+      },
+      "ensemble": {
+        "c28": 0.9833418367346939,
+        "c32": 0.9791198979591836,
+        "c36": 0.9719897959183673,
+        "c40": 0.9641836734693877
+      },
+      "per_seed": {
+        "c28": [
+          0.9798086734693877,
+          0.9707653061224489,
+          0.9798724489795918
+        ],
+        "c32": [
+          0.9769642857142857,
+          0.9709438775510204,
+          0.9691198979591836
+        ],
+        "c36": [
+          0.9702168367346938,
+          0.9621428571428572,
+          0.9609566326530612
+        ],
+        "c40": [
+          0.9585841836734694,
+          0.9566581632653062,
+          0.953609693877551
+        ]
+      }
+    },
+    "b7": {
+      "primary": {
+        "c28": 0.9796556122448979,
+        "c32": 0.9727933673469388,
+        "c36": 0.9633460884353742,
+        "c40": 0.9504294217687076
+      },
+      "ensemble": {
+        "c28": 0.9832780612244898,
+        "c32": 0.9776147959183673,
+        "c36": 0.9701020408163266,
+        "c40": 0.9601913265306122
+      },
+      "per_seed": {
+        "c28": [
+          0.9779974489795918,
+          0.9838775510204082,
+          0.9770918367346939
+        ],
+        "c32": [
+          0.9698214285714286,
+          0.9794770408163266,
+          0.9690816326530612
+        ],
+        "c36": [
+          0.9588520408163266,
+          0.9728826530612245,
+          0.9583035714285715
+        ],
+        "c40": [
+          0.9422066326530613,
+          0.9598852040816327,
+          0.9491964285714286
+        ]
+      }
+    },
+    "E2a": {
+      "primary": {
+        "c28": 0.9835969387755101,
+        "c32": 0.9785034013605443,
+        "c36": 0.9716666666666667,
+        "c40": 0.9452933673469387
+      },
+      "ensemble": {
+        "c28": 0.9854209183673469,
+        "c32": 0.9815688775510204,
+        "c36": 0.9767729591836735,
+        "c40": 0.9533163265306123
+      },
+      "per_seed": {
+        "c28": [
+          0.9835331632653062,
+          0.9839923469387755,
+          0.983265306122449
+        ],
+        "c32": [
+          0.9765433673469388,
+          0.9800637755102041,
+          0.9789030612244898
+        ],
+        "c36": [
+          0.9669897959183673,
+          0.9747959183673469,
+          0.9732142857142857
+        ],
+        "c40": [
+          0.9408673469387755,
+          0.9459693877551021,
+          0.9490433673469387
+        ]
+      }
+    },
+    "anchor": {
+      "primary": {
+        "c28": 0.9861904761904762,
+        "c32": 0.9712159863945579,
+        "c36": 0.9300340136054421,
+        "c40": 0.8590391156462586
+      },
+      "ensemble": {
+        "c28": 0.989375,
+        "c32": 0.9788392857142857,
+        "c36": 0.9438647959183674,
+        "c40": 0.873125
+      },
+      "per_seed": {
+        "c28": [
+          0.9897066326530612,
+          0.9857908163265307,
+          0.9830739795918367
+        ],
+        "c32": [
+          0.9764923469387755,
+          0.9678571428571429,
+          0.9692984693877551
+        ],
+        "c36": [
+          0.9348214285714286,
+          0.9232908163265307,
+          0.9319897959183674
+        ],
+        "c40": [
+          0.866454081632653,
+          0.8571938775510204,
+          0.8534693877551021
+        ]
+      }
+    },
+    "E3a": {
+      "primary": {
+        "c28": 0.9673214285714286,
+        "c32": 0.9487627551020408,
+        "c36": 0.9254124149659865,
+        "c40": 0.8893409863945578
+      },
+      "ensemble": {
+        "c28": 0.9720663265306122,
+        "c32": 0.958125,
+        "c36": 0.9377423469387756,
+        "c40": 0.9016964285714286
+      },
+      "per_seed": {
+        "c28": [
+          0.9639285714285715,
+          0.9684948979591836,
+          0.9695408163265307
+        ],
+        "c32": [
+          0.9478188775510205,
+          0.9497066326530612,
+          0.9487627551020408
+        ],
+        "c36": [
+          0.9290688775510204,
+          0.9250127551020408,
+          0.922155612244898
+        ],
+        "c40": [
+          0.8889285714285714,
+          0.8924744897959184,
+          0.8866198979591837
+        ]
+      }
+    },
+    "E3b": {
+      "primary": {
+        "c28": 0.9651785714285714,
+        "c32": 0.9421768707482993,
+        "c36": 0.9104846938775509,
+        "c40": 0.8629081632653062
+      },
+      "ensemble": {
+        "c28": 0.9709438775510204,
+        "c32": 0.9496301020408163,
+        "c36": 0.923265306122449,
+        "c40": 0.8784183673469388
+      },
+      "per_seed": {
+        "c28": [
+          0.9659438775510204,
+          0.9659183673469388,
+          0.9636734693877551
+        ],
+        "c32": [
+          0.9441836734693878,
+          0.9403954081632653,
+          0.9419515306122449
+        ],
+        "c36": [
+          0.9122959183673469,
+          0.9043494897959183,
+          0.9148086734693878
+        ],
+        "c40": [
+          0.8588265306122449,
+          0.862015306122449,
+          0.8678826530612245
+        ]
+      }
+    }
+  },
+  "seed_count_rule": {
+    "min_seeds": 2,
+    "rule": "a test with an arm below min_seeds seeds is not estimable and enters Holm with p = 1 (primary and sensitivity); the arm's AUCs stay in arm_points (descriptive)",
+    "k_by_arm": {
+      "E1": 3,
+      "FairN": 3,
+      "b7": 3,
+      "E2a": 3,
+      "anchor": 3,
+      "E3a": 3,
+      "E3b": 3
+    }
+  },
+  "sensitivity_calibrated_t": {
+    "label": "calibrated sensitivity test (secondary, never the verdict): t = estimate / sqrt(sum_a w_a^2 s_a^2 / k_a), s_a^2 = across-seed variance (ddof 1) of arm a's per-seed endpoint on the full test set, two-sided p from t with Welch-Satterthwaite df (df_a = k_a - 1); T3 = the same test on E2a - b7 at c40, only when T3 is estimable; Holm over the five (not estimable or degenerate -> p = 1); a degenerate test (SE = 0) reads 'degenerate (SE = 0; not evaluable)'",
+    "multiplicity": "Holm over 5 sensitivity p-values at family alpha 0.05",
+    "tests": [
+      {
+        "test_id": "T1",
+        "contrast": "E1 - Fair-N, test AUC at c40",
+        "levels": [
+          "c40"
+        ],
+        "weights": {
+          "E1": 1.0,
+          "FairN": -1.0
+        },
+        "above": "helps (the adversary, ramped from step 0, raises c40 AUC)",
+        "below": "harms (the adversary lowers c40 AUC)",
+        "estimable": true,
+        "estimate": 0.008677721088435342,
+        "per_arm": {
+          "E1": {
+            "k": 3,
+            "mean": 0.9649617346938776,
+            "s2": 1.0343834600166669e-05,
+            "weight": 1.0,
+            "var_term": 3.447944866722223e-06
+          },
+          "FairN": {
+            "k": 3,
+            "mean": 0.9562840136054422,
+            "s2": 6.2913781584063465e-06,
+            "weight": -1.0,
+            "var_term": 2.0971260528021155e-06
+          }
+        },
+        "se": 0.0023547974264306343,
+        "t": 3.6851242450986104,
+        "df": 3.7759201558088953,
+        "p_two_sided": 0.02334847433455114,
+        "side": "above",
+        "p_in_holm": 0.02334847433455114,
+        "p_holm": 0.07004542300365342,
+        "reading": "no detectable difference",
+        "primary_reading": "no detectable difference",
+        "agrees_with_primary": true
+      },
+      {
+        "test_id": "T2",
+        "contrast": "E1 - Fair-N, AUC_comp (mean of c28, c32, c36, c40)",
+        "levels": [
+          "c28",
+          "c32",
+          "c36",
+          "c40"
+        ],
+        "weights": {
+          "E1": 1.0,
+          "FairN": -1.0
+        },
+        "above": "helps (the adversary raises AUC_comp)",
+        "below": "harms (the adversary lowers AUC_comp)",
+        "estimable": true,
+        "estimate": 0.007302295918367396,
+        "per_arm": {
+          "E1": {
+            "k": 3,
+            "mean": 0.9747725340136054,
+            "s2": 2.6004416833697403e-06,
+            "weight": 1.0,
+            "var_term": 8.668138944565801e-07
+          },
+          "FairN": {
+            "k": 3,
+            "mean": 0.9674702380952381,
+            "s2": 1.168916366769888e-05,
+            "weight": -1.0,
+            "var_term": 3.8963878892329596e-06
+          }
+        },
+        "se": 0.0021824760671516055,
+        "t": 3.345876744434487,
+        "df": 2.847900514541449,
+        "p_two_sided": 0.04772026348311882,
+        "side": "above",
+        "p_in_holm": 0.04772026348311882,
+        "p_holm": 0.09544052696623764,
+        "reading": "no detectable difference",
+        "primary_reading": "no detectable difference",
+        "agrees_with_primary": true
+      },
+      {
+        "test_id": "T3",
+        "contrast": "E2a - b7 at c40 (R = 1 iff E2a = b7)",
+        "levels": [
+          "c40"
+        ],
+        "weights": {
+          "E2a": 1.0,
+          "b7": -1.0
+        },
+        "above": "R > 1: training without c40 keeps more than the full c40 gain",
+        "below": "R < 1: training without c40 loses part of the c40 gain",
+        "estimable": true,
+        "estimate": -0.005136054421768899,
+        "per_arm": {
+          "E2a": {
+            "k": 3,
+            "mean": 0.9452933673469387,
+            "s2": 1.7054580122865388e-05,
+            "weight": 1.0,
+            "var_term": 5.684860040955129e-06
+          },
+          "b7": {
+            "k": 3,
+            "mean": 0.9504294217687076,
+            "s2": 7.92731761071776e-05,
+            "weight": -1.0,
+            "var_term": 2.6424392035725866e-05
+          }
+        },
+        "se": 0.005666502631842766,
+        "t": -0.906388782545864,
+        "df": 2.822479798083555,
+        "p_two_sided": 0.4353409166164752,
+        "side": "below",
+        "p_in_holm": 0.4353409166164752,
+        "p_holm": 0.4353409166164752,
+        "reading": "no detectable difference",
+        "primary_reading": "no detectable difference",
+        "agrees_with_primary": true
+      },
+      {
+        "test_id": "T4",
+        "contrast": "E3 codec effect = 1/2[(H264all - JPEGall) + (H264noc40 - JPEGnoc40)] at c40",
+        "levels": [
+          "c40"
+        ],
+        "weights": {
+          "b7": 0.5,
+          "E3a": -0.5,
+          "E2a": 0.5,
+          "E3b": -0.5
+        },
+        "above": "helps (real H.264 training data beats PSNR-matched JPEG)",
+        "below": "harms (PSNR-matched JPEG beats real H.264 training data)",
+        "estimable": true,
+        "estimate": 0.07173681972789114,
+        "per_arm": {
+          "b7": {
+            "k": 3,
+            "mean": 0.9504294217687076,
+            "s2": 7.92731761071776e-05,
+            "weight": 0.5,
+            "var_term": 6.606098008931467e-06
+          },
+          "E3a": {
+            "k": 3,
+            "mean": 0.8893409863945578,
+            "s2": 8.69662597181718e-06,
+            "weight": -0.5,
+            "var_term": 7.24718830984765e-07
+          },
+          "E2a": {
+            "k": 3,
+            "mean": 0.9452933673469387,
+            "s2": 1.7054580122865388e-05,
+            "weight": 0.5,
+            "var_term": 1.4212150102387823e-06
+          },
+          "E3b": {
+            "k": 3,
+            "mean": 0.8629081632653062,
+            "s2": 2.1101233860891166e-05,
+            "weight": -0.5,
+            "var_term": 1.7584361550742638e-06
+          }
+        },
+        "se": 0.0032419851950971764,
+        "t": 22.127435941526834,
+        "df": 4.483567290619895,
+        "p_two_sided": 9.447254149233164e-06,
+        "side": "above",
+        "p_in_holm": 9.447254149233164e-06,
+        "p_holm": 4.723627074616582e-05,
+        "reading": "helps (real H.264 training data beats PSNR-matched JPEG)",
+        "primary_reading": "helps (real H.264 training data beats PSNR-matched JPEG)",
+        "agrees_with_primary": true
+      },
+      {
+        "test_id": "T5",
+        "contrast": "E3 c40-exposure effect = 1/2[(H264all - H264noc40) + (JPEGall - JPEGnoc40)] at c40",
+        "levels": [
+          "c40"
+        ],
+        "weights": {
+          "b7": 0.5,
+          "E2a": -0.5,
+          "E3a": 0.5,
+          "E3b": -0.5
+        },
+        "above": "helps (training with the c40-level data raises c40 AUC)",
+        "below": "harms (training with the c40-level data lowers c40 AUC)",
+        "estimable": true,
+        "estimate": 0.01578443877551028,
+        "per_arm": {
+          "b7": {
+            "k": 3,
+            "mean": 0.9504294217687076,
+            "s2": 7.92731761071776e-05,
+            "weight": 0.5,
+            "var_term": 6.606098008931467e-06
+          },
+          "E2a": {
+            "k": 3,
+            "mean": 0.9452933673469387,
+            "s2": 1.7054580122865388e-05,
+            "weight": -0.5,
+            "var_term": 1.4212150102387823e-06
+          },
+          "E3a": {
+            "k": 3,
+            "mean": 0.8893409863945578,
+            "s2": 8.69662597181718e-06,
+            "weight": 0.5,
+            "var_term": 7.24718830984765e-07
+          },
+          "E3b": {
+            "k": 3,
+            "mean": 0.8629081632653062,
+            "s2": 2.1101233860891166e-05,
+            "weight": -0.5,
+            "var_term": 1.7584361550742638e-06
+          }
+        },
+        "se": 0.0032419851950971764,
+        "t": 4.868757204499556,
+        "df": 4.483567290619895,
+        "p_two_sided": 0.006133646150340045,
+        "side": "above",
+        "p_in_holm": 0.006133646150340045,
+        "p_holm": 0.02453458460136018,
+        "reading": "helps (training with the c40-level data raises c40 AUC)",
+        "primary_reading": "helps (training with the c40-level data raises c40 AUC)",
+        "agrees_with_primary": true
+      }
+    ]
+  },
+  "runs": {
+    "E1": {
+      "k": 3,
+      "runs": [
+        {
+          "report": "runs/r1_fairn_grl_s42/report.json",
+          "stopped": null,
+          "flag": null
+        },
+        {
+          "report": "runs/r1_fairn_grl_s1/report.json",
+          "stopped": null,
+          "flag": null
+        },
+        {
+          "report": "runs/r1_fairn_grl_s2/report.json",
+          "stopped": null,
+          "flag": null
+        }
+      ]
+    },
+    "FairN": {
+      "k": 3,
+      "runs": [
+        {
+          "report": "runs/f1_none_fair_s42/report.json",
+          "stopped": null,
+          "flag": null
+        },
+        {
+          "report": "runs/f1_none_fair_s1/report.json",
+          "stopped": null,
+          "flag": null
+        },
+        {
+          "report": "runs/f1_none_fair_s2/report.json",
+          "stopped": null,
+          "flag": null
+        }
+      ]
+    },
+    "b7": {
+      "k": 3,
+      "runs": [
+        {
+          "report": "runs/phase6_build/symsel/b7_symsel_42/report.json",
+          "stopped": null,
+          "flag": null
+        },
+        {
+          "report": "runs/phase6_build/symsel/b7_symsel_1/report.json",
+          "stopped": null,
+          "flag": null
+        },
+        {
+          "report": "runs/phase6_build/symsel/b7_symsel_2/report.json",
+          "stopped": null,
+          "flag": null
+        }
+      ]
+    },
+    "E2a": {
+      "k": 3,
+      "runs": [
+        {
+          "report": "runs/r1_sb_noc40_s42/report.json",
+          "stopped": null,
+          "flag": null
+        },
+        {
+          "report": "runs/r1_sb_noc40_s1/report.json",
+          "stopped": null,
+          "flag": null
+        },
+        {
+          "report": "runs/r1_sb_noc40_s2/report.json",
+          "stopped": null,
+          "flag": null
+        }
+      ]
+    },
+    "anchor": {
+      "k": 3,
+      "runs": [
+        {
+          "report": "runs/r1_sb_c23only_s42/report.json",
+          "stopped": null,
+          "flag": null
+        },
+        {
+          "report": "runs/r1_sb_c23only_s1/report.json",
+          "stopped": null,
+          "flag": null
+        },
+        {
+          "report": "runs/r1_sb_c23only_s2/report.json",
+          "stopped": null,
+          "flag": null
+        }
+      ]
+    },
+    "E3a": {
+      "k": 3,
+      "runs": [
+        {
+          "report": "runs/r1_sb_jpeg_all_s42/report.json",
+          "stopped": null,
+          "flag": null
+        },
+        {
+          "report": "runs/r1_sb_jpeg_all_s1/report.json",
+          "stopped": null,
+          "flag": null
+        },
+        {
+          "report": "runs/r1_sb_jpeg_all_s2/report.json",
+          "stopped": null,
+          "flag": null
+        }
+      ]
+    },
+    "E3b": {
+      "k": 3,
+      "runs": [
+        {
+          "report": "runs/r1_sb_jpeg_noc40_s42/report.json",
+          "stopped": null,
+          "flag": null
+        },
+        {
+          "report": "runs/r1_sb_jpeg_noc40_s1/report.json",
+          "stopped": null,
+          "flag": null
+        },
+        {
+          "report": "runs/r1_sb_jpeg_noc40_s2/report.json",
+          "stopped": null,
+          "flag": null
+        }
+      ]
+    }
+  },
+  "manifest": {
+    "E1": [
+      "runs/r1_fairn_grl_s42/report.json",
+      "runs/r1_fairn_grl_s1/report.json",
+      "runs/r1_fairn_grl_s2/report.json"
+    ],
+    "FairN": [
+      "runs/f1_none_fair_s42/report.json",
+      "runs/f1_none_fair_s1/report.json",
+      "runs/f1_none_fair_s2/report.json"
+    ],
+    "b7": [
+      "runs/phase6_build/symsel/b7_symsel_42/report.json",
+      "runs/phase6_build/symsel/b7_symsel_1/report.json",
+      "runs/phase6_build/symsel/b7_symsel_2/report.json"
+    ],
+    "E2a": [
+      "runs/r1_sb_noc40_s42/report.json",
+      "runs/r1_sb_noc40_s1/report.json",
+      "runs/r1_sb_noc40_s2/report.json"
+    ],
+    "anchor": [
+      "runs/r1_sb_c23only_s42/report.json",
+      "runs/r1_sb_c23only_s1/report.json",
+      "runs/r1_sb_c23only_s2/report.json"
+    ],
+    "E3a": [
+      "runs/r1_sb_jpeg_all_s42/report.json",
+      "runs/r1_sb_jpeg_all_s1/report.json",
+      "runs/r1_sb_jpeg_all_s2/report.json"
+    ],
+    "E3b": [
+      "runs/r1_sb_jpeg_noc40_s42/report.json",
+      "runs/r1_sb_jpeg_noc40_s1/report.json",
+      "runs/r1_sb_jpeg_noc40_s2/report.json"
+    ]
+  }
+}
