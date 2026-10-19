@@ -33,7 +33,7 @@ Our arms are the literature protocol (c23-trained, standard augmentation),
 single runs at seed 42.
 
 **How to read the residual.** Both reproducible detectors clear their c23
-anchor and land 3.5 and 4.7 frame-AUC points below it at c40. That residual
+anchor and land 3.5 and 4.7 frame-AUC points below their c40 anchor. That residual
 was accepted, before the STOP-gate ran, as reproduction variance against a
 recipe whose exact augmentation parameters, schedule and test-time averaging
 are not published: our c23 sits *above* the anchor, so the models are trained,

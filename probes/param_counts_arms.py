@@ -80,9 +80,10 @@ def main() -> int:
                            if sum(p.numel() for p in m.parameters())},
         }
 
-    # The discriminator is a training-only branch: it consumes the reversed
-    # gradient and is discarded at inference. Recorded so the manuscript's
-    # "10.65 M deployed" is derivable from this file.
+    # The discriminator sits on the gradient-reversal branch and runs in every forward
+    # pass, evaluation included; the prediction does not use its output. Recorded so the
+    # manuscript's "1.32 M discriminator, which the prediction does not use (10.65 M
+    # without it)" is derivable.
     for name, body in arms.items():
         disc = body.get("components", {}).get("discriminator", 0)
         if disc:

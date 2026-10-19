@@ -3,7 +3,7 @@
  "note": "Every manuscript table cell and present-tense release claim, mapped to the artifact that carries it and the command that checks it against that artifact (recomputing the number, reading it back from a shipped file, or stating why it cannot be checked; see Reproducibility tiers in README.md). Generated from the release manifest; checked on every build.",
  "manuscript": {
   "label": "IEEE Access, revision 1",
-  "sha256": "743a6611c06cf91c727975c41867d33f0b306d3e2a04a471f09977898eebe674",
+  "sha256": "80e7fb09c8a1faa2137e4412812f3e284fc39d4d47e4ef525d76cf152e30b59b",
   "note": "Table, figure and section numbers refer to the revised manuscript (revision 1) and its Supplementary Material. The map is regenerated whenever the release is rebuilt; if a manuscript number moves, the build fails until the map and the manuscript agree."
  },
  "comp_levels": [
@@ -239,7 +239,7 @@
    "command": "python verify/claim.py T0.15"
   },
   {
-   "label": "CAFRL as specified \u2014 parameters at inference (discriminator dropped)",
+   "label": "CAFRL as specified \u2014 parameters without the discriminator (which the prediction does not use)",
    "printed": "10.65 M",
    "kind": "params",
    "source": "probes/param_counts_arms.json",
@@ -6685,7 +6685,7 @@
    "where": "Reproducibility statement; Supplementary Material \u00a7S16",
    "artifacts": [],
    "status": "pending",
-   "pending_reason": "In the archival deposit, version DOI 10.5281/zenodo.23466627 -- the 37 checkpoints of v1.0.0 (6.0 GB, one per released run per selection rule, carried unchanged from the v1 deposit, DOI 10.5281/zenodo.22032529, each with its own SHA-256 in checkpoints-manifest.json) plus the selected best.pt of each of the 26 Revision-1 runs (checkpoints-r1-manifest.json). Not in git, and not checkable from this tree: verifying it means downloading the deposit and comparing digests."
+   "pending_reason": "In the archival deposit, version DOI 10.5281/zenodo.23484150 (v2.0.1) -- the 37 checkpoints of v1.0.0 (6.0 GB, one per released run per selection rule, carried unchanged from the v1 deposit, DOI 10.5281/zenodo.22032529, each with its own SHA-256 in checkpoints-manifest.json) plus the selected best.pt of each of the 26 Revision-1 runs (checkpoints-r1-manifest.json), carried unchanged from the v2.0.0 deposit, DOI 10.5281/zenodo.23466627. Not in git, and not checkable from this tree: verifying it means downloading the deposit and comparing digests."
   },
   {
    "id": "R14",
@@ -6694,7 +6694,7 @@
    "where": "Data availability; Reproducibility statement; Supplementary Material \u00a7S16",
    "artifacts": [],
    "status": "pending",
-   "pending_reason": "In the archival deposit, version DOI 10.5281/zenodo.23466627 (carried unchanged from the v1 deposit, DOI 10.5281/zenodo.22032529; v2 adds no crop coordinates) -- 48,294 per-video meta.json (~7 GB raw, compressed in crop-coordinates.tar.zst). The crops themselves are not redistributable under the FF++/DFD agreements; these are the coordinates that regenerate them."
+   "pending_reason": "In the archival deposit, version DOI 10.5281/zenodo.23484150 (v2.0.1; carried unchanged from the v1 deposit, DOI 10.5281/zenodo.22032529, through v2.0.0; neither v2.0.0 nor v2.0.1 adds crop coordinates) -- 48,294 per-video meta.json (~7 GB raw, compressed in crop-coordinates.tar.zst). The crops themselves are not redistributable under the FF++/DFD agreements; these are the coordinates that regenerate them."
   }
  ],
  "continued_in": [

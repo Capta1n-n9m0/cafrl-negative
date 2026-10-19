@@ -7,7 +7,7 @@ compression-robust deepfake detection: CAFRL, which adds block-DCT and
 FFT-phase streams with compression-conditioned band attention, and an
 adversarial compression-invariance loss, to an EfficientNet-B0 face backbone.
 
-Five separate findings: (1) Under the registered rule, CAFRL as specified scored
+Five separate findings follow. (1) Under the registered rule, CAFRL as specified scored
 3.66 AUC points below a backbone-matched EfficientNet-B0 at CRF 40 (paired,
 one seed). (2) After the audit found eight defects, the control's training
 recipe recovered 3.96 points for CAFRL's own components (post-audit
@@ -32,9 +32,9 @@ recomputed from the per-video model scores released here or read back from
 shipped analysis outputs, under decision rules that were frozen before the runs
 they adjudicate; four cannot be re-derived (see *Reproducibility tiers* below).
 
-> **Status.** Version 2.0.0, released with the revised manuscript (revision 1).
+> **Status.** Version 2.0.1, released with the revised manuscript (revision 1).
 > `RELEASE-NOTES.md` lists every change from v1.0.0 and the reviewer comment
-> behind it. Every directory of the layout carries content; the handful of numbers
+> behind it, and the corrections of v2.0.1. Every directory of the layout carries content; the handful of numbers
 > this release cannot re-derive are named individually in `CLAIMS-MAP.md` and
 > summarized under *What is not here yet* below. Last built 2026-10-19.
 
@@ -74,11 +74,11 @@ quantities.
 | `audit/` | The self-audit that tried to kill this paper's own result: the four review passes as they were scoped, the checks they ran, the complete D1–D8 ledger with each defect's closure — and an explicit statement of what "independent" does and does not mean here. |
 | `probes/` | The small design-time measurements the paper cites but no training run produces: the compression estimator's accuracy, the parameter counts, the band-energy premise. |
 | `verify/` | The check described above, `expected.json` (what the paper prints, in machine-readable form), and `claim.py` — the per-claim version of the same check. |
-| `revision-1/` | The analysis outputs the revised manuscript prints: the registered campaign's confirmatory and secondary statistics, the registered minimum detectable effects and ladder statistics, the exploratory analyses (other corpora, unseen codecs, own re-encodes, raw-weight re-selection, cost, frequency-path diagnostics), the curriculum re-runs, the post hoc re-evaluation of the shipped-recipe FaceShifter cells, and the table sources. |
+| `revision-1/` | The analysis outputs the revised manuscript prints: the registered campaign's confirmatory and secondary statistics, the registered minimum detectable effects and ladder statistics, the exploratory analyses (other corpora, unseen codecs, own re-encodes, raw-weight re-selection, cost, frequency-path diagnostics), the curriculum re-runs, the post hoc re-evaluation of the shipped-recipe FaceShifter cells, and the table sources. In the exploratory files that compare arms (`revision-1/exploratory/e7_dfdc.json`, `e7_wdf.json`, `e8.json`, `e9.json`, `e12.json` and the `rev1/` copies), the contrast keys `D1`–`D6` are the contrasts the Supplementary Material labels X1–X6 (D1 = X1, …, D6 = X6); they are not the audit defects D1–D8. |
 | `code/` | `code/ema-own-bn-stats/`: the research code's EMA batch-norm flag used by one curriculum re-run, with its tests — a record of the change, not a standalone package (its README says how far the tests run from here). |
 | `CLAIMS-MAP.md` | One row per manuscript table cell, per load-bearing number in the text, and per present-tense claim this paper makes about this repository — each with the artifact it comes from and how it is checked (recomputed, read back, or why it cannot be; see *Reproducibility tiers*). Generated and re-checked on every build. |
 | `CLAIMS-MAP-R1.md` | The same, for every number the revision added to the paper or its Supplementary Material, with the artifact and the command behind it. |
-| `RELEASE-NOTES.md` | What changed from v1.0.0, each change with the reviewer comment behind it. |
+| `RELEASE-NOTES.md` | What changed from v1.0.0, each change with the reviewer comment behind it, and what v2.0.1 corrected after a language and consistency check of the revised manuscript. |
 | `LICENSE`, `LICENSE-DATA` | MIT for code; CC BY 4.0 (full legal code included) for predictions, splits, rule texts and metadata. Read `LICENSE-DATA` before regenerating crops: derived imagery inherits the source datasets' agreement terms. |
 
 ## What is not here yet
@@ -107,7 +107,7 @@ deposit alongside the crop coordinates: the 37 files (6.0 GB) of v1.0.0, carried
 unchanged, plus the selected `best.pt` of each of the 26 Revision-1 runs. The
 revision adds no crop coordinates.
 
-Archival deposit: **10.5281/zenodo.23466627**
+Archival deposit: **10.5281/zenodo.23484150**
 
 ## Reproducibility tiers
 
@@ -126,10 +126,10 @@ released lockfile. Each value is checked in one of two ways:
   (check group `cells`), 4 derived means and gaps (`derived`),
   20 adjudicated contrasts re-run through the seeded paired
   bootstrap (`contrasts`), the held-out-manipulation contrasts (`faceshifter`),
-  the figures drawn from predictions (`figures`) and 269 rows of
+  the figures drawn from predictions (`figures`) and 272 rows of
   the two claims maps (`claims-map`). Most of these values are in Tables 1, 2
   and 4, Figs. 2 and 3, Tables S1, S2 and S4 and Table S27.
-- **Read back** from a shipped file (2,423 claims-map rows and
+- **Read back** from a shipped file (2,429 claims-map rows and
   11 values of `cells` and `derived`). Most are the revision's
   statistics: Tables 3, 5 and 6, Tables S5–S20, S25 and S26, Fig. S1 and the
   numbers in the text. The check confirms that each printed number is the one
@@ -271,7 +271,7 @@ authors' own preferred mechanism the loser. It did.
 ## Citing this release
 
 Cite the paper. If you use the predictions or the split lists directly, please
-also cite the archival deposit (10.5281/zenodo.23466627).
+also cite the archival deposit (10.5281/zenodo.23484150).
 
 ```
 Abbas Aliyev and Samir Rustamov. A Controlled Audit of a Negative Result: Training Recipe, H.264 Compression Levels and a Frequency-Stream Deepfake Detector. IEEE Access, 2026.

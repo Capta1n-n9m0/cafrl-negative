@@ -55,7 +55,7 @@ split identity lists; see the paper's Data Availability statement and
 - **The bands are wide.** Out of distribution the seed dominates the
   architecture by more than an order of magnitude: Fair-N's three Celeb-DF runs
   read 0.668, 0.571 and 0.703, a 13-point spread from seed alone, against the
-  0.4-point spread the same arm shows at FaceForensics++ c40. With three seeds
+  0.5-point spread the same arm shows at FaceForensics++ c40. With three seeds
   per arm, marginal intervals and no paired contrast, these cells can exclude a
   large effect and nothing finer.
 - **The held-out-manipulation cells do carry per-video scores** and are

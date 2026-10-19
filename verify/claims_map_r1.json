@@ -3,7 +3,7 @@
  "note": "Revision 1: every number the revised manuscript adds, mapped to the artifact that carries it and the command that checks it against that artifact (recomputing the number, reading it back from a shipped file, or stating why it cannot be checked; see Reproducibility tiers in README.md). Continues claims_map.json; checked on every build.",
  "manuscript": {
   "label": "IEEE Access, revision 1",
-  "sha256": "743a6611c06cf91c727975c41867d33f0b306d3e2a04a471f09977898eebe674",
+  "sha256": "80e7fb09c8a1faa2137e4412812f3e284fc39d4d47e4ef525d76cf152e30b59b",
   "note": "Table, figure and section numbers refer to the revised manuscript (revision 1) and its Supplementary Material. The map is regenerated whenever the release is rebuilt; if a manuscript number moves, the build fails until the map and the manuscript agree."
  },
  "comp_levels": [
@@ -14,7 +14,7 @@
  ],
  "rows": [
   {
-   "label": "11.97 \u2014 \u201cfull CAFRL (11.97 M) vs\u201d",
+   "label": "11.97 \u2014 \u201c(11.97 M) vs. the\u201d",
    "printed": "11.97",
    "kind": "scalar",
    "source": "revision-1/tables/shapes.json",
@@ -45,7 +45,7 @@
    "command": "python verify/claim.py R1.fig3-fig-flow.2"
   },
   {
-   "label": "0.9586 \u2014 \u201closses): 0.9586 vs\u201d",
+   "label": "0.9586 \u2014 \u201closses): 0.9586 vs.\u201d",
    "printed": "0.9586",
    "kind": "cell",
    "run": "f1_none_fair_s42",
@@ -213,7 +213,7 @@
    "command": "python verify/claim.py R1.fig3-fig-flow.12 --bootstrap"
   },
   {
-   "label": "7.48 \u2014 \u201cat c40 (averaged over c40 exposure;\u201d",
+   "label": "7.48 \u2014 \u201cat c40 (averaged\u201d",
    "printed": "7.48",
    "kind": "scalar",
    "source": "revision-1/stats/confirmatory.json",
@@ -447,7 +447,7 @@
    "command": "python verify/claim.py R1.main-main-preamble.5"
   },
   {
-   "label": "12.8 \u2014 \u201cthat protocol our reproductions of three published detectors lose 12.8\u201d",
+   "label": "12.8 \u2014 \u201cthose protocols our reproductions of three published detectors lose 12.8\u201d",
    "printed": "12.8",
    "kind": "difference",
    "minuend": {
@@ -473,7 +473,7 @@
    "command": "python verify/claim.py R1.main-sec-intro.1"
   },
   {
-   "label": "13.2 \u2014 \u201c(Xception), 13.2 (F3-Net) and 21.9 (FreqNet) video-AUC points from c23 to c40\u201d",
+   "label": "13.2 \u2014 \u201c(Xception), 13.2 (F3-Net) and 21.9 (FreqNet) points of video-level area under the receiver\u201d",
    "printed": "13.2",
    "kind": "difference",
    "minuend": {
@@ -499,7 +499,7 @@
    "command": "python verify/claim.py R1.main-sec-intro.2"
   },
   {
-   "label": "21.9 \u2014 \u201c(Xception), 13.2 (F3-Net) and 21.9 (FreqNet) video-AUC points from c23 to c40\u201d",
+   "label": "21.9 \u2014 \u201c(Xception), 13.2 (F3-Net) and 21.9 (FreqNet) points of video-level area under the receiver\u201d",
    "printed": "21.9",
    "kind": "difference",
    "minuend": {
@@ -634,7 +634,7 @@
    "command": "python verify/claim.py R1.main-Statistical-reporting.1"
   },
   {
-   "label": "10,000 \u2014 \u201ctwo-sided $p$ comes from the same 10,000 replicates as its interval,\u201d",
+   "label": "10,000 \u2014 \u201ctwo-sided $p$ comes from the same $B = 10{,}000$ replicates as its interval,\u201d",
    "printed": "10000",
    "kind": "scalar",
    "source": "revision-1/recompute.json",
@@ -2279,7 +2279,7 @@
    "command": "python verify/claim.py R1.main-tab-contrasts.12"
   },
   {
-   "label": "-0.0009 \u2014 \u201c\\textbf{Fair-N pool $-$ SpatialBase pool (3v3)} & $\\mathbf{-0.0009}$ & \\ci{-0.0066}{+0.004\u201d",
+   "label": "-0.0009 \u2014 \u201c\\textbf{Fair-N pool $-$ SpatialBase pool (3 vs.\\ 3)} & $\\mathbf{-0.0009}$ & \\ci{-0.0066}{+\u201d",
    "printed": "-0.0009",
    "kind": "contrast",
    "name": "Fair-N pool - SpatialBase pool (3v3)",
@@ -2299,7 +2299,7 @@
    "command": "python verify/claim.py R1.main-tab-contrasts.13 --bootstrap"
   },
   {
-   "label": "-0.0002 \u2014 \u201c\\textbf{Fair-N pool $-$ SpatialBase pool (3v3)} & $\\mathbf{-0.0009}$ & \\ci{-0.0066}{+0.004\u201d",
+   "label": "-0.0002 \u2014 \u201c\\textbf{Fair-N pool $-$ SpatialBase pool (3 vs.\\ 3)} & $\\mathbf{-0.0009}$ & \\ci{-0.0066}{+\u201d",
    "printed": "-0.0002",
    "kind": "scalar",
    "source": "revision-1/recompute.json",
@@ -2314,7 +2314,7 @@
    "command": "python verify/claim.py R1.main-tab-contrasts.14"
   },
   {
-   "label": "-0.0105 \u2014 \u201c\\textbf{Fair-N pool $-$ SpatialBase pool (3v3)} & $\\mathbf{-0.0009}$ & \\ci{-0.0066}{+0.004\u201d",
+   "label": "-0.0105 \u2014 \u201c\\textbf{Fair-N pool $-$ SpatialBase pool (3 vs.\\ 3)} & $\\mathbf{-0.0009}$ & \\ci{-0.0066}{+\u201d",
    "printed": "-0.0105",
    "kind": "scalar",
    "source": "revision-1/recompute.json",
@@ -2329,7 +2329,7 @@
    "command": "python verify/claim.py R1.main-tab-contrasts.15"
   },
   {
-   "label": "+0.0112 \u2014 \u201c\\textbf{Fair-N pool $-$ SpatialBase pool (3v3)} & $\\mathbf{-0.0009}$ & \\ci{-0.0066}{+0.004\u201d",
+   "label": "+0.0112 \u2014 \u201c\\textbf{Fair-N pool $-$ SpatialBase pool (3 vs.\\ 3)} & $\\mathbf{-0.0009}$ & \\ci{-0.0066}{+\u201d",
    "printed": "+0.0112",
    "kind": "scalar",
    "source": "revision-1/recompute.json",
@@ -2344,7 +2344,7 @@
    "command": "python verify/claim.py R1.main-tab-contrasts.16"
   },
   {
-   "label": "+0.0080 \u2014 \u201c\\textbf{Fair-W pool $-$ SpatialBase pool (3v3)} & $\\mathbf{+0.0022}$ & \\ci{-0.0035}{+0.008\u201d",
+   "label": "+0.0080 \u2014 \u201c\\textbf{Fair-W pool $-$ SpatialBase pool (3 vs.\\ 3)} & $\\mathbf{+0.0022}$ & \\ci{-0.0035}{+\u201d",
    "printed": "+0.0080",
    "kind": "scalar",
    "source": "revision-1/recompute.json",
@@ -2359,7 +2359,7 @@
    "command": "python verify/claim.py R1.main-tab-contrasts.17"
   },
   {
-   "label": "+0.0053 \u2014 \u201c\\textbf{Fair-W pool $-$ SpatialBase pool (3v3)} & $\\mathbf{+0.0022}$ & \\ci{-0.0035}{+0.008\u201d",
+   "label": "+0.0053 \u2014 \u201c\\textbf{Fair-W pool $-$ SpatialBase pool (3 vs.\\ 3)} & $\\mathbf{+0.0022}$ & \\ci{-0.0035}{+\u201d",
    "printed": "+0.0053",
    "kind": "scalar",
    "source": "revision-1/recompute.json",
@@ -2374,7 +2374,7 @@
    "command": "python verify/claim.py R1.main-tab-contrasts.18"
   },
   {
-   "label": "-0.0042 \u2014 \u201c\\textbf{Fair-W pool $-$ SpatialBase pool (3v3)} & $\\mathbf{+0.0022}$ & \\ci{-0.0035}{+0.008\u201d",
+   "label": "-0.0042 \u2014 \u201c\\textbf{Fair-W pool $-$ SpatialBase pool (3 vs.\\ 3)} & $\\mathbf{+0.0022}$ & \\ci{-0.0035}{+\u201d",
    "printed": "-0.0042",
    "kind": "scalar",
    "source": "revision-1/recompute.json",
@@ -2389,7 +2389,7 @@
    "command": "python verify/claim.py R1.main-tab-contrasts.19"
   },
   {
-   "label": "+0.0171 \u2014 \u201c\\textbf{Fair-W pool $-$ SpatialBase pool (3v3)} & $\\mathbf{+0.0022}$ & \\ci{-0.0035}{+0.008\u201d",
+   "label": "+0.0171 \u2014 \u201c\\textbf{Fair-W pool $-$ SpatialBase pool (3 vs.\\ 3)} & $\\mathbf{+0.0022}$ & \\ci{-0.0035}{+\u201d",
    "printed": "+0.0171",
    "kind": "scalar",
    "source": "revision-1/recompute.json",
@@ -2512,7 +2512,7 @@
    "command": "python verify/claim.py R1.main-tab-contrasts.27"
   },
   {
-   "label": "+0.0014 \u2014 \u201cFair-N pool $-$ TrunkCtrl pool (3v3) & $+0.0014$ & \\ci{-0.0051}{+0.0078} & post hoc & outs\u201d",
+   "label": "+0.0014 \u2014 \u201cFair-N pool $-$ TrunkCtrl pool (3 vs.\\ 3) & $+0.0014$ & \\ci{-0.0051}{+0.0078} & post hoc &\u201d",
    "printed": "+0.0014",
    "kind": "contrast",
    "name": "Fair-N pool - TrunkCtrl pool (3v3, post hoc)",
@@ -2532,7 +2532,7 @@
    "command": "python verify/claim.py R1.main-tab-contrasts.28 --bootstrap"
   },
   {
-   "label": "-0.0051 \u2014 \u201cFair-N pool $-$ TrunkCtrl pool (3v3) & $+0.0014$ & \\ci{-0.0051}{+0.0078} & post hoc & outs\u201d",
+   "label": "-0.0051 \u2014 \u201cFair-N pool $-$ TrunkCtrl pool (3 vs.\\ 3) & $+0.0014$ & \\ci{-0.0051}{+0.0078} & post hoc &\u201d",
    "printed": "-0.0051",
    "kind": "scalar",
    "source": "revision-1/recompute.json",
@@ -2547,7 +2547,7 @@
    "command": "python verify/claim.py R1.main-tab-contrasts.29"
   },
   {
-   "label": "+0.0078 \u2014 \u201cFair-N pool $-$ TrunkCtrl pool (3v3) & $+0.0014$ & \\ci{-0.0051}{+0.0078} & post hoc & outs\u201d",
+   "label": "+0.0078 \u2014 \u201cFair-N pool $-$ TrunkCtrl pool (3 vs.\\ 3) & $+0.0014$ & \\ci{-0.0051}{+0.0078} & post hoc &\u201d",
    "printed": "+0.0078",
    "kind": "scalar",
    "source": "revision-1/recompute.json",
@@ -2562,7 +2562,7 @@
    "command": "python verify/claim.py R1.main-tab-contrasts.30"
   },
   {
-   "label": "+0.0027 \u2014 \u201cFair-N pool $-$ TrunkCtrl pool (3v3) & $+0.0014$ & \\ci{-0.0051}{+0.0078} & post hoc & outs\u201d",
+   "label": "+0.0027 \u2014 \u201cFair-N pool $-$ TrunkCtrl pool (3 vs.\\ 3) & $+0.0014$ & \\ci{-0.0051}{+0.0078} & post hoc &\u201d",
    "printed": "+0.0027",
    "kind": "scalar",
    "source": "revision-1/recompute.json",
@@ -2577,7 +2577,7 @@
    "command": "python verify/claim.py R1.main-tab-contrasts.31"
   },
   {
-   "label": "-0.0080 \u2014 \u201cFair-N pool $-$ TrunkCtrl pool (3v3) & $+0.0014$ & \\ci{-0.0051}{+0.0078} & post hoc & outs\u201d",
+   "label": "-0.0080 \u2014 \u201cFair-N pool $-$ TrunkCtrl pool (3 vs.\\ 3) & $+0.0014$ & \\ci{-0.0051}{+0.0078} & post hoc &\u201d",
    "printed": "-0.0080",
    "kind": "scalar",
    "source": "revision-1/recompute.json",
@@ -2592,7 +2592,7 @@
    "command": "python verify/claim.py R1.main-tab-contrasts.32"
   },
   {
-   "label": "+0.0135 \u2014 \u201cFair-N pool $-$ TrunkCtrl pool (3v3) & $+0.0014$ & \\ci{-0.0051}{+0.0078} & post hoc & outs\u201d",
+   "label": "+0.0135 \u2014 \u201cFair-N pool $-$ TrunkCtrl pool (3 vs.\\ 3) & $+0.0014$ & \\ci{-0.0051}{+0.0078} & post hoc &\u201d",
    "printed": "+0.0135",
    "kind": "scalar",
    "source": "revision-1/recompute.json",
@@ -3895,7 +3895,7 @@
    "command": "python verify/claim.py R1.main-sec-adversary.20"
   },
   {
-   "label": "0.3672 \u2014 \u201cest\\_pm1 of 0.3672 (epoch~2), below the registered reference of 0.7; the\u201d",
+   "label": "0.3672 \u2014 \u201caccuracy of 0.3672 (epoch~2), below the registered reference of 0.7; the\u201d",
    "printed": "0.3672",
    "kind": "scalar",
    "source": "revision-1/stats/secondaries.null.json",
@@ -3910,7 +3910,7 @@
    "command": "python verify/claim.py R1.main-sec-adversary.21"
   },
   {
-   "label": "2 \u2014 \u201cest\\_pm1 of 0.3672 (epoch~2), below the registered reference of 0.7; the\u201d",
+   "label": "2 \u2014 \u201caccuracy of 0.3672 (epoch~2), below the registered reference of 0.7; the\u201d",
    "printed": "2",
    "kind": "scalar",
    "source": "revision-1/stats/secondaries.null.json",
@@ -4781,6 +4781,114 @@
    "command": "python verify/claim.py R1.main-sec-datatests.37"
   },
   {
+   "label": "0.881 \u2014 \u201cXception-mq, a single seed-42 run, reaches 0.881 and 0.688 at DFD-c23 and\u201d",
+   "printed": "0.881",
+   "kind": "cell",
+   "run": "b4_xception_mq",
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "Table S3 lower block, Xception-mq, seed 42 (stored statistic; no per-video scores)",
+   "id": "R1.main-Limitations.1",
+   "table": "R1.main-Limitations",
+   "table_title": "Revision 1 \u2014 main paper, \u00a7\u201cLimitations\u201d",
+   "where": "main paper, \u00a7\u201cLimitations\u201d",
+   "artifacts": [
+    "predictions/cross_dataset/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py R1.main-Limitations.1"
+  },
+  {
+   "label": "0.688 \u2014 \u201cXception-mq, a single seed-42 run, reaches 0.881 and 0.688 at DFD-c23 and\u201d",
+   "printed": "0.688",
+   "kind": "cell",
+   "run": "b4_xception_mq",
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "Table S3 lower block, Xception-mq, seed 42 (stored statistic; no per-video scores)",
+   "id": "R1.main-Limitations.2",
+   "table": "R1.main-Limitations",
+   "table_title": "Revision 1 \u2014 main paper, \u00a7\u201cLimitations\u201d",
+   "where": "main paper, \u00a7\u201cLimitations\u201d",
+   "artifacts": [
+    "predictions/cross_dataset/b4_xception_mq.json"
+   ],
+   "command": "python verify/claim.py R1.main-Limitations.2"
+  },
+  {
+   "label": "0.825 \u2014 \u201cDFD-c40 against the three-seed means of 0.825 and 0.650 of the 4.0\\,M control,\u201d",
+   "printed": "0.825",
+   "kind": "seed_mean",
+   "runs": [
+    "b7_effnet_b0_mq_fliponly",
+    "b7_effnet_b0_mq_fliponly_s1",
+    "b7_effnet_b0_mq_fliponly_s2"
+   ],
+   "cell": "dfd_c23",
+   "eval_set": "cross_dataset",
+   "note": "Table S3 upper block, SpatialBase 3-seed mean",
+   "id": "R1.main-Limitations.3",
+   "table": "R1.main-Limitations",
+   "table_title": "Revision 1 \u2014 main paper, \u00a7\u201cLimitations\u201d",
+   "where": "main paper, \u00a7\u201cLimitations\u201d",
+   "artifacts": [
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json",
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py R1.main-Limitations.3"
+  },
+  {
+   "label": "0.650 \u2014 \u201cDFD-c40 against the three-seed means of 0.825 and 0.650 of the 4.0\\,M control,\u201d",
+   "printed": "0.650",
+   "kind": "seed_mean",
+   "runs": [
+    "b7_effnet_b0_mq_fliponly",
+    "b7_effnet_b0_mq_fliponly_s1",
+    "b7_effnet_b0_mq_fliponly_s2"
+   ],
+   "cell": "dfd_c40",
+   "eval_set": "cross_dataset",
+   "note": "Table S3 upper block, SpatialBase 3-seed mean",
+   "id": "R1.main-Limitations.4",
+   "table": "R1.main-Limitations",
+   "table_title": "Revision 1 \u2014 main paper, \u00a7\u201cLimitations\u201d",
+   "where": "main paper, \u00a7\u201cLimitations\u201d",
+   "artifacts": [
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly.json",
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/cross_dataset/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py R1.main-Limitations.4"
+  },
+  {
+   "label": "1 \u2014 \u201cfrequency effect here, while at FF++ c40 it is within 1\\,pt of the control,\u201d",
+   "printed": "1",
+   "kind": "difference",
+   "minuend": {
+    "runs": [
+     "b4_xception_mq"
+    ],
+    "cell": "c40"
+   },
+   "subtrahend": {
+    "runs": [
+     "b7_effnet_b0_mq_fliponly"
+    ],
+    "cell": "c40"
+   },
+   "scale": 100,
+   "artifacts": [
+    "predictions/ffpp/b4_xception_mq.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "note": "seed for seed (seed 42 vs. seed 42, sec:standing): the larger of the two Xception-mq c40 gaps to SpatialBase, standard policy 0.89 pt (the augmentation-matched one is 0.41 pt, 0.9631 vs. 0.9590); the printed bound rounds from it",
+   "id": "R1.main-Limitations.5",
+   "table": "R1.main-Limitations",
+   "table_title": "Revision 1 \u2014 main paper, \u00a7\u201cLimitations\u201d",
+   "where": "main paper, \u00a7\u201cLimitations\u201d",
+   "command": "python verify/claim.py R1.main-Limitations.5"
+  },
+  {
    "label": "+0.0366 \u2014 \u201cspecified at c40 was $+0.0366$, 95\\% CI \\ci{+0.020}{+0.054}\u201d",
    "printed": "+0.0366",
    "kind": "scalar",
@@ -5233,7 +5341,7 @@
    "command": "python verify/claim.py R1.main-sec-conclusionfinal.28"
   },
   {
-   "label": "0.061 \u2014 \u201c$p = 0.061$). Its estimator stayed accurate at the selected epochs (est\\_pm1\u201d",
+   "label": "0.061 \u2014 \u201c$p = 0.061$). Its estimator stayed accurate at the selected epochs ($\\pm1$-level accuracy\u201d",
    "printed": "0.061",
    "kind": "scalar",
    "source": "revision-1/stats/confirmatory.json",
@@ -5309,7 +5417,7 @@
    "command": "python verify/claim.py R1.main-sec-conclusionfinal.33"
   },
   {
-   "label": "1.37 \u2014 \u201cand 1.37\\,pt at 80\\,\\% power and $\\alpha = 0.01$, and smaller effects in either direction \u201d",
+   "label": "1.37 \u2014 \u201cand 1.37\\,pt at 80\\% power and $\\alpha = 0.01$, and smaller effects in either direction ar\u201d",
    "printed": "1.37",
    "kind": "scalar",
    "source": "revision-1/registered/mde.json",
@@ -5586,7 +5694,7 @@
    "command": "python verify/claim.py R1.main-tab-appledger.5"
   },
   {
-   "label": "4.0 \u2014 \u201cdiffer in more than width (4.0\\,M vs 3.68\\,M), so this does not isolate\u201d",
+   "label": "4.0 \u2014 \u201cdiffer in more than width (4.0\\,M vs.\\ 3.68\\,M), so this does not isolate\u201d",
    "printed": "4.0",
    "kind": "scalar",
    "source": "probes/param_counts_arms.json",
@@ -5601,7 +5709,7 @@
    "command": "python verify/claim.py R1.main-tab-appledger.6"
   },
   {
-   "label": "3.68 \u2014 \u201cdiffer in more than width (4.0\\,M vs 3.68\\,M), so this does not isolate\u201d",
+   "label": "3.68 \u2014 \u201cdiffer in more than width (4.0\\,M vs.\\ 3.68\\,M), so this does not isolate\u201d",
    "printed": "3.68",
    "kind": "scalar",
    "source": "probes/param_counts_arms.json",
@@ -6251,6 +6359,34 @@
    "command": "python verify/claim.py R1.supp-The-published-frequency-architectures-on-CAFRL.4 --bootstrap"
   },
   {
+   "label": "0.5 \u2014 \u201cagainst the 0.5-point spread the same arm shows at FF++ c40. Out of\u201d",
+   "printed": "0.5",
+   "kind": "difference",
+   "minuend": {
+    "runs": [
+     "f1_none_fair_s42"
+    ],
+    "cell": "c40"
+   },
+   "subtrahend": {
+    "runs": [
+     "f1_none_fair_s2"
+    ],
+    "cell": "c40"
+   },
+   "scale": 100,
+   "artifacts": [
+    "predictions/ffpp/f1_none_fair_s42.json",
+    "predictions/ffpp/f1_none_fair_s2.json"
+   ],
+   "note": "Fair-N's spread over its three seeds at FF++ c40 (Table S1: .9586 / .9567 / .9536), max (seed 42) minus min (seed 2)",
+   "id": "R1.supp-Protocol.1",
+   "table": "R1.supp-Protocol",
+   "table_title": "Revision 1 \u2014 Supplementary Material, \u00a7\u201cProtocol\u201d",
+   "where": "Supplementary Material, \u00a7\u201cProtocol\u201d",
+   "command": "python verify/claim.py R1.supp-Protocol.1"
+  },
+  {
    "label": "-0.0317 \u2014 \u201c$-0.0325$, CI \\ci{-0.0545}{-0.0114}; Fair-W pool $-$ SpatialBase pool $-0.0317$, CI\u201d",
    "printed": "-0.0317",
    "kind": "contrast",
@@ -6565,6 +6701,21 @@
    "command": "python verify/claim.py R1.supp-Unseen-manipulation-FaceShifter-held-out-n-28.20"
   },
   {
+   "label": "10,000 \u2014 \u201ccome from the 10,000-replicate paired video bootstrap on those scores, so {\\mathversion{no\u201d",
+   "printed": "10000",
+   "kind": "scalar",
+   "source": "revision-1/recompute.json",
+   "key": "recipe.b",
+   "id": "R1.supp-tab-appfaceshifter.1",
+   "table": "R1.supp-tab-appfaceshifter",
+   "table_title": "Revision 1 \u2014 Supplementary Material, tab:appfaceshifter",
+   "where": "Supplementary Material, tab:appfaceshifter",
+   "artifacts": [
+    "revision-1/recompute.json"
+   ],
+   "command": "python verify/claim.py R1.supp-tab-appfaceshifter.1"
+  },
+  {
    "label": "0.8216 \u2014 \u201cc23 & 0.8216 & 0.8230 & $-0.0080$ & \\ci{-0.041}{+0.025} & 0.30 \\\\\u201d",
    "printed": "0.8216",
    "kind": "seed_mean",
@@ -6576,7 +6727,7 @@
    "cell": "c23",
    "eval_set": "faceshifter",
    "note": "post hoc re-evaluation, EMA weights (predictions/faceshifter/, evaluation set faceshifter_shipped_posthoc)",
-   "id": "R1.supp-tab-appfaceshifter.1",
+   "id": "R1.supp-tab-appfaceshifter.2",
    "table": "R1.supp-tab-appfaceshifter",
    "table_title": "Revision 1 \u2014 Supplementary Material, tab:appfaceshifter",
    "where": "Supplementary Material, tab:appfaceshifter",
@@ -6585,7 +6736,7 @@
     "predictions/faceshifter/a1_grl_s1.json",
     "predictions/faceshifter/a1_grl_s2.json"
    ],
-   "command": "python verify/claim.py R1.supp-tab-appfaceshifter.1"
+   "command": "python verify/claim.py R1.supp-tab-appfaceshifter.2"
   },
   {
    "label": "0.8230 \u2014 \u201cc23 & 0.8216 & 0.8230 & $-0.0080$ & \\ci{-0.041}{+0.025} & 0.30 \\\\\u201d",
@@ -6598,7 +6749,7 @@
    ],
    "cell": "c23",
    "eval_set": "faceshifter",
-   "id": "R1.supp-tab-appfaceshifter.2",
+   "id": "R1.supp-tab-appfaceshifter.3",
    "table": "R1.supp-tab-appfaceshifter",
    "table_title": "Revision 1 \u2014 Supplementary Material, tab:appfaceshifter",
    "where": "Supplementary Material, tab:appfaceshifter",
@@ -6607,7 +6758,7 @@
     "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s1.json",
     "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s2.json"
    ],
-   "command": "python verify/claim.py R1.supp-tab-appfaceshifter.2"
+   "command": "python verify/claim.py R1.supp-tab-appfaceshifter.3"
   },
   {
    "label": "-0.0080 \u2014 \u201cc23 & 0.8216 & 0.8230 & $-0.0080$ & \\ci{-0.041}{+0.025} & 0.30 \\\\\u201d",
@@ -6615,7 +6766,7 @@
    "kind": "contrast",
    "name": "CAFRL as specified pool - SpatialBase pool (FaceShifter c23, shipped recipe)",
    "scope": "faceshifter",
-   "id": "R1.supp-tab-appfaceshifter.3",
+   "id": "R1.supp-tab-appfaceshifter.4",
    "table": "R1.supp-tab-appfaceshifter",
    "table_title": "Revision 1 \u2014 Supplementary Material, tab:appfaceshifter",
    "where": "Supplementary Material, tab:appfaceshifter",
@@ -6628,7 +6779,7 @@
     "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s1.json",
     "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s2.json"
    ],
-   "command": "python verify/claim.py R1.supp-tab-appfaceshifter.3 --bootstrap"
+   "command": "python verify/claim.py R1.supp-tab-appfaceshifter.4 --bootstrap"
   },
   {
    "label": "0.7575 \u2014 \u201cc40 & 0.7575 & 0.7318 & $+0.0221$ & \\ci{-0.021}{+0.064} & 0.84 \\\\\u201d",
@@ -6642,7 +6793,7 @@
    "cell": "c40",
    "eval_set": "faceshifter",
    "note": "post hoc re-evaluation, EMA weights",
-   "id": "R1.supp-tab-appfaceshifter.4",
+   "id": "R1.supp-tab-appfaceshifter.5",
    "table": "R1.supp-tab-appfaceshifter",
    "table_title": "Revision 1 \u2014 Supplementary Material, tab:appfaceshifter",
    "where": "Supplementary Material, tab:appfaceshifter",
@@ -6651,7 +6802,7 @@
     "predictions/faceshifter/a1_grl_s1.json",
     "predictions/faceshifter/a1_grl_s2.json"
    ],
-   "command": "python verify/claim.py R1.supp-tab-appfaceshifter.4"
+   "command": "python verify/claim.py R1.supp-tab-appfaceshifter.5"
   },
   {
    "label": "0.7318 \u2014 \u201cc40 & 0.7575 & 0.7318 & $+0.0221$ & \\ci{-0.021}{+0.064} & 0.84 \\\\\u201d",
@@ -6664,7 +6815,7 @@
    ],
    "cell": "c40",
    "eval_set": "faceshifter",
-   "id": "R1.supp-tab-appfaceshifter.5",
+   "id": "R1.supp-tab-appfaceshifter.6",
    "table": "R1.supp-tab-appfaceshifter",
    "table_title": "Revision 1 \u2014 Supplementary Material, tab:appfaceshifter",
    "where": "Supplementary Material, tab:appfaceshifter",
@@ -6673,7 +6824,7 @@
     "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s1.json",
     "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s2.json"
    ],
-   "command": "python verify/claim.py R1.supp-tab-appfaceshifter.5"
+   "command": "python verify/claim.py R1.supp-tab-appfaceshifter.6"
   },
   {
    "label": "+0.0221 \u2014 \u201cc40 & 0.7575 & 0.7318 & $+0.0221$ & \\ci{-0.021}{+0.064} & 0.84 \\\\\u201d",
@@ -6681,7 +6832,7 @@
    "kind": "contrast",
    "name": "CAFRL as specified pool - SpatialBase pool (FaceShifter c40, shipped recipe)",
    "scope": "faceshifter",
-   "id": "R1.supp-tab-appfaceshifter.6",
+   "id": "R1.supp-tab-appfaceshifter.7",
    "table": "R1.supp-tab-appfaceshifter",
    "table_title": "Revision 1 \u2014 Supplementary Material, tab:appfaceshifter",
    "where": "Supplementary Material, tab:appfaceshifter",
@@ -6694,7 +6845,7 @@
     "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s1.json",
     "predictions/faceshifter/b7_effnet_b0_mq_fliponly_s2.json"
    ],
-   "command": "python verify/claim.py R1.supp-tab-appfaceshifter.6 --bootstrap"
+   "command": "python verify/claim.py R1.supp-tab-appfaceshifter.7 --bootstrap"
   },
   {
    "label": "-0.0009 \u2014 \u201cFair-N pool $-$ SpatialBase pool (3v3) & $-0.0009$ & \\ci{-0.0066}{+0.0045} & \\ci{-0.0064}{\u201d",
@@ -7093,19 +7244,34 @@
    "command": "python verify/claim.py R1.supp-Equivalence.5"
   },
   {
+   "label": "10,000 \u2014 \u201cthe bootstrap's own achieved significance level saturates at $1/B$ ($B = 10{,}000$ replica\u201d",
+   "printed": "10000",
+   "kind": "scalar",
+   "source": "revision-1/recompute.json",
+   "key": "recipe.b",
+   "id": "R1.supp-Multiplicity.1",
+   "table": "R1.supp-Multiplicity",
+   "table_title": "Revision 1 \u2014 Supplementary Material, \u00a7\u201cMultiplicity\u201d",
+   "where": "Supplementary Material, \u00a7\u201cMultiplicity\u201d",
+   "artifacts": [
+    "revision-1/recompute.json"
+   ],
+   "command": "python verify/claim.py R1.supp-Multiplicity.1"
+  },
+  {
    "label": "4.5 \u2014 \u201c($z \\approx 3.7$ to $4.5$) nothing turns on the approximation; for the borderline rows ---\u201d",
    "printed": "4.5",
    "kind": "scalar",
    "source": "evaluation/analysis/multiplicity.json",
    "key": "members.C8.z",
-   "id": "R1.supp-Multiplicity.1",
+   "id": "R1.supp-Multiplicity.2",
    "table": "R1.supp-Multiplicity",
    "table_title": "Revision 1 \u2014 Supplementary Material, \u00a7\u201cMultiplicity\u201d",
    "where": "Supplementary Material, \u00a7\u201cMultiplicity\u201d",
    "artifacts": [
     "evaluation/analysis/multiplicity.json"
    ],
-   "command": "python verify/claim.py R1.supp-Multiplicity.1"
+   "command": "python verify/claim.py R1.supp-Multiplicity.2"
   },
   {
    "label": "4.2\\times10^{-3} \u2014 \u201cBonferroni threshold is $\\alpha/12 = 4.2\\times10^{-3}$, and the three\u201d",
@@ -7113,21 +7279,6 @@
    "kind": "scalar",
    "source": "revision-1/recompute.json",
    "key": "holm.bonferroni.m12",
-   "id": "R1.supp-Multiplicity.2",
-   "table": "R1.supp-Multiplicity",
-   "table_title": "Revision 1 \u2014 Supplementary Material, \u00a7\u201cMultiplicity\u201d",
-   "where": "Supplementary Material, \u00a7\u201cMultiplicity\u201d",
-   "artifacts": [
-    "revision-1/recompute.json"
-   ],
-   "command": "python verify/claim.py R1.supp-Multiplicity.2"
-  },
-  {
-   "label": "10,000 \u2014 \u201ceach $p$ from the same 10,000 replicates as its interval,\u201d",
-   "printed": "10000",
-   "kind": "scalar",
-   "source": "revision-1/recompute.json",
-   "key": "recipe.b",
    "id": "R1.supp-Multiplicity.3",
    "table": "R1.supp-Multiplicity",
    "table_title": "Revision 1 \u2014 Supplementary Material, \u00a7\u201cMultiplicity\u201d",
@@ -7153,7 +7304,7 @@
    "command": "python verify/claim.py R1.supp-Multiplicity.4"
   },
   {
-   "label": "5.0\\times10^{-3} \u2014 \u201c$5.0\\times10^{-3}$), Fair-N $-$ CAFRL$-$adv and TrunkCtrl pool $-$\u201d",
+   "label": "5.0\\times10^{-3} \u2014 \u201c$5.0\\times10^{-3}$), Fair-N $-$ (CAFRL$-$adv) and TrunkCtrl pool $-$\u201d",
    "printed": "5.0e-3",
    "kind": "scalar",
    "source": "revision-1/recompute.json",
@@ -16643,7 +16794,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.166"
   },
   {
-   "label": "6.36 \u2014 \u201cD1 & 6.36 \\ci{-1.33}{14.82} & 1.86 \\ci{-2.28}{6.61} & 4.25 \\ci{-1.57}{11.51} & 4.06 \\ci{-1\u201d",
+   "label": "6.36 \u2014 \u201cX1 & 6.36 \\ci{-1.33}{14.82} & 1.86 \\ci{-2.28}{6.61} & 4.25 \\ci{-1.57}{11.51} & 4.06 \\ci{-1\u201d",
    "printed": "6.36",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_dfdc.json",
@@ -16660,7 +16811,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.167"
   },
   {
-   "label": "-1.33 \u2014 \u201cD1 & 6.36 \\ci{-1.33}{14.82} & 1.86 \\ci{-2.28}{6.61} & 4.25 \\ci{-1.57}{11.51} & 4.06 \\ci{-1\u201d",
+   "label": "-1.33 \u2014 \u201cX1 & 6.36 \\ci{-1.33}{14.82} & 1.86 \\ci{-2.28}{6.61} & 4.25 \\ci{-1.57}{11.51} & 4.06 \\ci{-1\u201d",
    "printed": "-1.33",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_dfdc.json",
@@ -16677,7 +16828,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.168"
   },
   {
-   "label": "14.82 \u2014 \u201cD1 & 6.36 \\ci{-1.33}{14.82} & 1.86 \\ci{-2.28}{6.61} & 4.25 \\ci{-1.57}{11.51} & 4.06 \\ci{-1\u201d",
+   "label": "14.82 \u2014 \u201cX1 & 6.36 \\ci{-1.33}{14.82} & 1.86 \\ci{-2.28}{6.61} & 4.25 \\ci{-1.57}{11.51} & 4.06 \\ci{-1\u201d",
    "printed": "14.82",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_dfdc.json",
@@ -16694,7 +16845,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.169"
   },
   {
-   "label": "1.86 \u2014 \u201cD1 & 6.36 \\ci{-1.33}{14.82} & 1.86 \\ci{-2.28}{6.61} & 4.25 \\ci{-1.57}{11.51} & 4.06 \\ci{-1\u201d",
+   "label": "1.86 \u2014 \u201cX1 & 6.36 \\ci{-1.33}{14.82} & 1.86 \\ci{-2.28}{6.61} & 4.25 \\ci{-1.57}{11.51} & 4.06 \\ci{-1\u201d",
    "printed": "1.86",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_wdf.json",
@@ -16711,7 +16862,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.170"
   },
   {
-   "label": "-2.28 \u2014 \u201cD1 & 6.36 \\ci{-1.33}{14.82} & 1.86 \\ci{-2.28}{6.61} & 4.25 \\ci{-1.57}{11.51} & 4.06 \\ci{-1\u201d",
+   "label": "-2.28 \u2014 \u201cX1 & 6.36 \\ci{-1.33}{14.82} & 1.86 \\ci{-2.28}{6.61} & 4.25 \\ci{-1.57}{11.51} & 4.06 \\ci{-1\u201d",
    "printed": "-2.28",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_wdf.json",
@@ -16728,7 +16879,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.171"
   },
   {
-   "label": "6.61 \u2014 \u201cD1 & 6.36 \\ci{-1.33}{14.82} & 1.86 \\ci{-2.28}{6.61} & 4.25 \\ci{-1.57}{11.51} & 4.06 \\ci{-1\u201d",
+   "label": "6.61 \u2014 \u201cX1 & 6.36 \\ci{-1.33}{14.82} & 1.86 \\ci{-2.28}{6.61} & 4.25 \\ci{-1.57}{11.51} & 4.06 \\ci{-1\u201d",
    "printed": "6.61",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_wdf.json",
@@ -16745,7 +16896,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.172"
   },
   {
-   "label": "4.25 \u2014 \u201cD1 & 6.36 \\ci{-1.33}{14.82} & 1.86 \\ci{-2.28}{6.61} & 4.25 \\ci{-1.57}{11.51} & 4.06 \\ci{-1\u201d",
+   "label": "4.25 \u2014 \u201cX1 & 6.36 \\ci{-1.33}{14.82} & 1.86 \\ci{-2.28}{6.61} & 4.25 \\ci{-1.57}{11.51} & 4.06 \\ci{-1\u201d",
    "printed": "4.25",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -16762,7 +16913,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.173"
   },
   {
-   "label": "-1.57 \u2014 \u201cD1 & 6.36 \\ci{-1.33}{14.82} & 1.86 \\ci{-2.28}{6.61} & 4.25 \\ci{-1.57}{11.51} & 4.06 \\ci{-1\u201d",
+   "label": "-1.57 \u2014 \u201cX1 & 6.36 \\ci{-1.33}{14.82} & 1.86 \\ci{-2.28}{6.61} & 4.25 \\ci{-1.57}{11.51} & 4.06 \\ci{-1\u201d",
    "printed": "-1.57",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -16779,7 +16930,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.174"
   },
   {
-   "label": "11.51 \u2014 \u201cD1 & 6.36 \\ci{-1.33}{14.82} & 1.86 \\ci{-2.28}{6.61} & 4.25 \\ci{-1.57}{11.51} & 4.06 \\ci{-1\u201d",
+   "label": "11.51 \u2014 \u201cX1 & 6.36 \\ci{-1.33}{14.82} & 1.86 \\ci{-2.28}{6.61} & 4.25 \\ci{-1.57}{11.51} & 4.06 \\ci{-1\u201d",
    "printed": "11.51",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -16796,7 +16947,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.175"
   },
   {
-   "label": "4.06 \u2014 \u201cD1 & 6.36 \\ci{-1.33}{14.82} & 1.86 \\ci{-2.28}{6.61} & 4.25 \\ci{-1.57}{11.51} & 4.06 \\ci{-1\u201d",
+   "label": "4.06 \u2014 \u201cX1 & 6.36 \\ci{-1.33}{14.82} & 1.86 \\ci{-2.28}{6.61} & 4.25 \\ci{-1.57}{11.51} & 4.06 \\ci{-1\u201d",
    "printed": "4.06",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -16813,7 +16964,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.176"
   },
   {
-   "label": "-1.71 \u2014 \u201cD1 & 6.36 \\ci{-1.33}{14.82} & 1.86 \\ci{-2.28}{6.61} & 4.25 \\ci{-1.57}{11.51} & 4.06 \\ci{-1\u201d",
+   "label": "-1.71 \u2014 \u201cX1 & 6.36 \\ci{-1.33}{14.82} & 1.86 \\ci{-2.28}{6.61} & 4.25 \\ci{-1.57}{11.51} & 4.06 \\ci{-1\u201d",
    "printed": "-1.71",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -16830,7 +16981,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.177"
   },
   {
-   "label": "11.51 \u2014 \u201cD1 & 6.36 \\ci{-1.33}{14.82} & 1.86 \\ci{-2.28}{6.61} & 4.25 \\ci{-1.57}{11.51} & 4.06 \\ci{-1\u201d",
+   "label": "11.51 \u2014 \u201cX1 & 6.36 \\ci{-1.33}{14.82} & 1.86 \\ci{-2.28}{6.61} & 4.25 \\ci{-1.57}{11.51} & 4.06 \\ci{-1\u201d",
    "printed": "11.51",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -16847,7 +16998,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.178"
   },
   {
-   "label": "-3.05 \u2014 \u201cD2 & $-3.05$ \\ci{-10.73}{3.51} & $-1.28$ \\ci{-5.76}{2.48} & $-3.86$ \\ci{-11.38}{2.71} & $-\u201d",
+   "label": "-3.05 \u2014 \u201cX2 & $-3.05$ \\ci{-10.73}{3.51} & $-1.28$ \\ci{-5.76}{2.48} & $-3.86$ \\ci{-11.38}{2.71} & $-\u201d",
    "printed": "-3.05",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_dfdc.json",
@@ -16864,7 +17015,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.179"
   },
   {
-   "label": "-10.73 \u2014 \u201cD2 & $-3.05$ \\ci{-10.73}{3.51} & $-1.28$ \\ci{-5.76}{2.48} & $-3.86$ \\ci{-11.38}{2.71} & $-\u201d",
+   "label": "-10.73 \u2014 \u201cX2 & $-3.05$ \\ci{-10.73}{3.51} & $-1.28$ \\ci{-5.76}{2.48} & $-3.86$ \\ci{-11.38}{2.71} & $-\u201d",
    "printed": "-10.73",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_dfdc.json",
@@ -16881,7 +17032,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.180"
   },
   {
-   "label": "3.51 \u2014 \u201cD2 & $-3.05$ \\ci{-10.73}{3.51} & $-1.28$ \\ci{-5.76}{2.48} & $-3.86$ \\ci{-11.38}{2.71} & $-\u201d",
+   "label": "3.51 \u2014 \u201cX2 & $-3.05$ \\ci{-10.73}{3.51} & $-1.28$ \\ci{-5.76}{2.48} & $-3.86$ \\ci{-11.38}{2.71} & $-\u201d",
    "printed": "3.51",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_dfdc.json",
@@ -16898,7 +17049,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.181"
   },
   {
-   "label": "-1.28 \u2014 \u201cD2 & $-3.05$ \\ci{-10.73}{3.51} & $-1.28$ \\ci{-5.76}{2.48} & $-3.86$ \\ci{-11.38}{2.71} & $-\u201d",
+   "label": "-1.28 \u2014 \u201cX2 & $-3.05$ \\ci{-10.73}{3.51} & $-1.28$ \\ci{-5.76}{2.48} & $-3.86$ \\ci{-11.38}{2.71} & $-\u201d",
    "printed": "-1.28",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_wdf.json",
@@ -16915,7 +17066,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.182"
   },
   {
-   "label": "-5.76 \u2014 \u201cD2 & $-3.05$ \\ci{-10.73}{3.51} & $-1.28$ \\ci{-5.76}{2.48} & $-3.86$ \\ci{-11.38}{2.71} & $-\u201d",
+   "label": "-5.76 \u2014 \u201cX2 & $-3.05$ \\ci{-10.73}{3.51} & $-1.28$ \\ci{-5.76}{2.48} & $-3.86$ \\ci{-11.38}{2.71} & $-\u201d",
    "printed": "-5.76",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_wdf.json",
@@ -16932,7 +17083,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.183"
   },
   {
-   "label": "2.48 \u2014 \u201cD2 & $-3.05$ \\ci{-10.73}{3.51} & $-1.28$ \\ci{-5.76}{2.48} & $-3.86$ \\ci{-11.38}{2.71} & $-\u201d",
+   "label": "2.48 \u2014 \u201cX2 & $-3.05$ \\ci{-10.73}{3.51} & $-1.28$ \\ci{-5.76}{2.48} & $-3.86$ \\ci{-11.38}{2.71} & $-\u201d",
    "printed": "2.48",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_wdf.json",
@@ -16949,7 +17100,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.184"
   },
   {
-   "label": "-3.86 \u2014 \u201cD2 & $-3.05$ \\ci{-10.73}{3.51} & $-1.28$ \\ci{-5.76}{2.48} & $-3.86$ \\ci{-11.38}{2.71} & $-\u201d",
+   "label": "-3.86 \u2014 \u201cX2 & $-3.05$ \\ci{-10.73}{3.51} & $-1.28$ \\ci{-5.76}{2.48} & $-3.86$ \\ci{-11.38}{2.71} & $-\u201d",
    "printed": "-3.86",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -16966,7 +17117,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.185"
   },
   {
-   "label": "-11.38 \u2014 \u201cD2 & $-3.05$ \\ci{-10.73}{3.51} & $-1.28$ \\ci{-5.76}{2.48} & $-3.86$ \\ci{-11.38}{2.71} & $-\u201d",
+   "label": "-11.38 \u2014 \u201cX2 & $-3.05$ \\ci{-10.73}{3.51} & $-1.28$ \\ci{-5.76}{2.48} & $-3.86$ \\ci{-11.38}{2.71} & $-\u201d",
    "printed": "-11.38",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -16983,7 +17134,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.186"
   },
   {
-   "label": "2.71 \u2014 \u201cD2 & $-3.05$ \\ci{-10.73}{3.51} & $-1.28$ \\ci{-5.76}{2.48} & $-3.86$ \\ci{-11.38}{2.71} & $-\u201d",
+   "label": "2.71 \u2014 \u201cX2 & $-3.05$ \\ci{-10.73}{3.51} & $-1.28$ \\ci{-5.76}{2.48} & $-3.86$ \\ci{-11.38}{2.71} & $-\u201d",
    "printed": "2.71",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17000,7 +17151,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.187"
   },
   {
-   "label": "-4.03 \u2014 \u201cD2 & $-3.05$ \\ci{-10.73}{3.51} & $-1.28$ \\ci{-5.76}{2.48} & $-3.86$ \\ci{-11.38}{2.71} & $-\u201d",
+   "label": "-4.03 \u2014 \u201cX2 & $-3.05$ \\ci{-10.73}{3.51} & $-1.28$ \\ci{-5.76}{2.48} & $-3.86$ \\ci{-11.38}{2.71} & $-\u201d",
    "printed": "-4.03",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17017,7 +17168,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.188"
   },
   {
-   "label": "-11.62 \u2014 \u201cD2 & $-3.05$ \\ci{-10.73}{3.51} & $-1.28$ \\ci{-5.76}{2.48} & $-3.86$ \\ci{-11.38}{2.71} & $-\u201d",
+   "label": "-11.62 \u2014 \u201cX2 & $-3.05$ \\ci{-10.73}{3.51} & $-1.28$ \\ci{-5.76}{2.48} & $-3.86$ \\ci{-11.38}{2.71} & $-\u201d",
    "printed": "-11.62",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17034,7 +17185,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.189"
   },
   {
-   "label": "2.52 \u2014 \u201cD2 & $-3.05$ \\ci{-10.73}{3.51} & $-1.28$ \\ci{-5.76}{2.48} & $-3.86$ \\ci{-11.38}{2.71} & $-\u201d",
+   "label": "2.52 \u2014 \u201cX2 & $-3.05$ \\ci{-10.73}{3.51} & $-1.28$ \\ci{-5.76}{2.48} & $-3.86$ \\ci{-11.38}{2.71} & $-\u201d",
    "printed": "2.52",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17051,7 +17202,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.190"
   },
   {
-   "label": "1.88 \u2014 \u201cD3 & 1.88 \\ci{-0.90}{4.60} & $-0.20$ \\ci{-3.96}{3.35} & $-0.51$ \\ci{-4.17}{3.16} & $-0.64$\u201d",
+   "label": "1.88 \u2014 \u201cX3 & 1.88 \\ci{-0.90}{4.60} & $-0.20$ \\ci{-3.96}{3.35} & $-0.51$ \\ci{-4.17}{3.16} & $-0.64$\u201d",
    "printed": "1.88",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_dfdc.json",
@@ -17068,7 +17219,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.191"
   },
   {
-   "label": "-0.90 \u2014 \u201cD3 & 1.88 \\ci{-0.90}{4.60} & $-0.20$ \\ci{-3.96}{3.35} & $-0.51$ \\ci{-4.17}{3.16} & $-0.64$\u201d",
+   "label": "-0.90 \u2014 \u201cX3 & 1.88 \\ci{-0.90}{4.60} & $-0.20$ \\ci{-3.96}{3.35} & $-0.51$ \\ci{-4.17}{3.16} & $-0.64$\u201d",
    "printed": "-0.90",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_dfdc.json",
@@ -17085,7 +17236,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.192"
   },
   {
-   "label": "4.60 \u2014 \u201cD3 & 1.88 \\ci{-0.90}{4.60} & $-0.20$ \\ci{-3.96}{3.35} & $-0.51$ \\ci{-4.17}{3.16} & $-0.64$\u201d",
+   "label": "4.60 \u2014 \u201cX3 & 1.88 \\ci{-0.90}{4.60} & $-0.20$ \\ci{-3.96}{3.35} & $-0.51$ \\ci{-4.17}{3.16} & $-0.64$\u201d",
    "printed": "4.60",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_dfdc.json",
@@ -17102,7 +17253,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.193"
   },
   {
-   "label": "-0.20 \u2014 \u201cD3 & 1.88 \\ci{-0.90}{4.60} & $-0.20$ \\ci{-3.96}{3.35} & $-0.51$ \\ci{-4.17}{3.16} & $-0.64$\u201d",
+   "label": "-0.20 \u2014 \u201cX3 & 1.88 \\ci{-0.90}{4.60} & $-0.20$ \\ci{-3.96}{3.35} & $-0.51$ \\ci{-4.17}{3.16} & $-0.64$\u201d",
    "printed": "-0.20",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_wdf.json",
@@ -17119,7 +17270,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.194"
   },
   {
-   "label": "-3.96 \u2014 \u201cD3 & 1.88 \\ci{-0.90}{4.60} & $-0.20$ \\ci{-3.96}{3.35} & $-0.51$ \\ci{-4.17}{3.16} & $-0.64$\u201d",
+   "label": "-3.96 \u2014 \u201cX3 & 1.88 \\ci{-0.90}{4.60} & $-0.20$ \\ci{-3.96}{3.35} & $-0.51$ \\ci{-4.17}{3.16} & $-0.64$\u201d",
    "printed": "-3.96",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_wdf.json",
@@ -17136,7 +17287,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.195"
   },
   {
-   "label": "3.35 \u2014 \u201cD3 & 1.88 \\ci{-0.90}{4.60} & $-0.20$ \\ci{-3.96}{3.35} & $-0.51$ \\ci{-4.17}{3.16} & $-0.64$\u201d",
+   "label": "3.35 \u2014 \u201cX3 & 1.88 \\ci{-0.90}{4.60} & $-0.20$ \\ci{-3.96}{3.35} & $-0.51$ \\ci{-4.17}{3.16} & $-0.64$\u201d",
    "printed": "3.35",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_wdf.json",
@@ -17153,7 +17304,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.196"
   },
   {
-   "label": "-0.51 \u2014 \u201cD3 & 1.88 \\ci{-0.90}{4.60} & $-0.20$ \\ci{-3.96}{3.35} & $-0.51$ \\ci{-4.17}{3.16} & $-0.64$\u201d",
+   "label": "-0.51 \u2014 \u201cX3 & 1.88 \\ci{-0.90}{4.60} & $-0.20$ \\ci{-3.96}{3.35} & $-0.51$ \\ci{-4.17}{3.16} & $-0.64$\u201d",
    "printed": "-0.51",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17170,7 +17321,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.197"
   },
   {
-   "label": "-4.17 \u2014 \u201cD3 & 1.88 \\ci{-0.90}{4.60} & $-0.20$ \\ci{-3.96}{3.35} & $-0.51$ \\ci{-4.17}{3.16} & $-0.64$\u201d",
+   "label": "-4.17 \u2014 \u201cX3 & 1.88 \\ci{-0.90}{4.60} & $-0.20$ \\ci{-3.96}{3.35} & $-0.51$ \\ci{-4.17}{3.16} & $-0.64$\u201d",
    "printed": "-4.17",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17187,7 +17338,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.198"
   },
   {
-   "label": "3.16 \u2014 \u201cD3 & 1.88 \\ci{-0.90}{4.60} & $-0.20$ \\ci{-3.96}{3.35} & $-0.51$ \\ci{-4.17}{3.16} & $-0.64$\u201d",
+   "label": "3.16 \u2014 \u201cX3 & 1.88 \\ci{-0.90}{4.60} & $-0.20$ \\ci{-3.96}{3.35} & $-0.51$ \\ci{-4.17}{3.16} & $-0.64$\u201d",
    "printed": "3.16",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17204,7 +17355,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.199"
   },
   {
-   "label": "-0.64 \u2014 \u201cD3 & 1.88 \\ci{-0.90}{4.60} & $-0.20$ \\ci{-3.96}{3.35} & $-0.51$ \\ci{-4.17}{3.16} & $-0.64$\u201d",
+   "label": "-0.64 \u2014 \u201cX3 & 1.88 \\ci{-0.90}{4.60} & $-0.20$ \\ci{-3.96}{3.35} & $-0.51$ \\ci{-4.17}{3.16} & $-0.64$\u201d",
    "printed": "-0.64",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17221,7 +17372,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.200"
   },
   {
-   "label": "-4.12 \u2014 \u201cD3 & 1.88 \\ci{-0.90}{4.60} & $-0.20$ \\ci{-3.96}{3.35} & $-0.51$ \\ci{-4.17}{3.16} & $-0.64$\u201d",
+   "label": "-4.12 \u2014 \u201cX3 & 1.88 \\ci{-0.90}{4.60} & $-0.20$ \\ci{-3.96}{3.35} & $-0.51$ \\ci{-4.17}{3.16} & $-0.64$\u201d",
    "printed": "-4.12",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17238,7 +17389,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.201"
   },
   {
-   "label": "2.93 \u2014 \u201cD3 & 1.88 \\ci{-0.90}{4.60} & $-0.20$ \\ci{-3.96}{3.35} & $-0.51$ \\ci{-4.17}{3.16} & $-0.64$\u201d",
+   "label": "2.93 \u2014 \u201cX3 & 1.88 \\ci{-0.90}{4.60} & $-0.20$ \\ci{-3.96}{3.35} & $-0.51$ \\ci{-4.17}{3.16} & $-0.64$\u201d",
    "printed": "2.93",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17255,7 +17406,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.202"
   },
   {
-   "label": "-11.68 \u2014 \u201cD4 & $-11.68$ \\ci{-14.98}{-8.57} & $-1.92$ \\ci{-7.13}{2.74} & $-0.99$ \\ci{-6.29}{4.47} & $\u201d",
+   "label": "-11.68 \u2014 \u201cX4 & $-11.68$ \\ci{-14.98}{-8.57} & $-1.92$ \\ci{-7.13}{2.74} & $-0.99$ \\ci{-6.29}{4.47} & $\u201d",
    "printed": "-11.68",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_dfdc.json",
@@ -17272,7 +17423,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.203"
   },
   {
-   "label": "-14.98 \u2014 \u201cD4 & $-11.68$ \\ci{-14.98}{-8.57} & $-1.92$ \\ci{-7.13}{2.74} & $-0.99$ \\ci{-6.29}{4.47} & $\u201d",
+   "label": "-14.98 \u2014 \u201cX4 & $-11.68$ \\ci{-14.98}{-8.57} & $-1.92$ \\ci{-7.13}{2.74} & $-0.99$ \\ci{-6.29}{4.47} & $\u201d",
    "printed": "-14.98",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_dfdc.json",
@@ -17289,7 +17440,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.204"
   },
   {
-   "label": "-8.57 \u2014 \u201cD4 & $-11.68$ \\ci{-14.98}{-8.57} & $-1.92$ \\ci{-7.13}{2.74} & $-0.99$ \\ci{-6.29}{4.47} & $\u201d",
+   "label": "-8.57 \u2014 \u201cX4 & $-11.68$ \\ci{-14.98}{-8.57} & $-1.92$ \\ci{-7.13}{2.74} & $-0.99$ \\ci{-6.29}{4.47} & $\u201d",
    "printed": "-8.57",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_dfdc.json",
@@ -17306,7 +17457,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.205"
   },
   {
-   "label": "-1.92 \u2014 \u201cD4 & $-11.68$ \\ci{-14.98}{-8.57} & $-1.92$ \\ci{-7.13}{2.74} & $-0.99$ \\ci{-6.29}{4.47} & $\u201d",
+   "label": "-1.92 \u2014 \u201cX4 & $-11.68$ \\ci{-14.98}{-8.57} & $-1.92$ \\ci{-7.13}{2.74} & $-0.99$ \\ci{-6.29}{4.47} & $\u201d",
    "printed": "-1.92",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_wdf.json",
@@ -17323,7 +17474,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.206"
   },
   {
-   "label": "-7.13 \u2014 \u201cD4 & $-11.68$ \\ci{-14.98}{-8.57} & $-1.92$ \\ci{-7.13}{2.74} & $-0.99$ \\ci{-6.29}{4.47} & $\u201d",
+   "label": "-7.13 \u2014 \u201cX4 & $-11.68$ \\ci{-14.98}{-8.57} & $-1.92$ \\ci{-7.13}{2.74} & $-0.99$ \\ci{-6.29}{4.47} & $\u201d",
    "printed": "-7.13",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_wdf.json",
@@ -17340,7 +17491,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.207"
   },
   {
-   "label": "2.74 \u2014 \u201cD4 & $-11.68$ \\ci{-14.98}{-8.57} & $-1.92$ \\ci{-7.13}{2.74} & $-0.99$ \\ci{-6.29}{4.47} & $\u201d",
+   "label": "2.74 \u2014 \u201cX4 & $-11.68$ \\ci{-14.98}{-8.57} & $-1.92$ \\ci{-7.13}{2.74} & $-0.99$ \\ci{-6.29}{4.47} & $\u201d",
    "printed": "2.74",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_wdf.json",
@@ -17357,7 +17508,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.208"
   },
   {
-   "label": "-0.99 \u2014 \u201cD4 & $-11.68$ \\ci{-14.98}{-8.57} & $-1.92$ \\ci{-7.13}{2.74} & $-0.99$ \\ci{-6.29}{4.47} & $\u201d",
+   "label": "-0.99 \u2014 \u201cX4 & $-11.68$ \\ci{-14.98}{-8.57} & $-1.92$ \\ci{-7.13}{2.74} & $-0.99$ \\ci{-6.29}{4.47} & $\u201d",
    "printed": "-0.99",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17374,7 +17525,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.209"
   },
   {
-   "label": "-6.29 \u2014 \u201cD4 & $-11.68$ \\ci{-14.98}{-8.57} & $-1.92$ \\ci{-7.13}{2.74} & $-0.99$ \\ci{-6.29}{4.47} & $\u201d",
+   "label": "-6.29 \u2014 \u201cX4 & $-11.68$ \\ci{-14.98}{-8.57} & $-1.92$ \\ci{-7.13}{2.74} & $-0.99$ \\ci{-6.29}{4.47} & $\u201d",
    "printed": "-6.29",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17391,7 +17542,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.210"
   },
   {
-   "label": "4.47 \u2014 \u201cD4 & $-11.68$ \\ci{-14.98}{-8.57} & $-1.92$ \\ci{-7.13}{2.74} & $-0.99$ \\ci{-6.29}{4.47} & $\u201d",
+   "label": "4.47 \u2014 \u201cX4 & $-11.68$ \\ci{-14.98}{-8.57} & $-1.92$ \\ci{-7.13}{2.74} & $-0.99$ \\ci{-6.29}{4.47} & $\u201d",
    "printed": "4.47",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17408,7 +17559,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.211"
   },
   {
-   "label": "-0.48 \u2014 \u201cD4 & $-11.68$ \\ci{-14.98}{-8.57} & $-1.92$ \\ci{-7.13}{2.74} & $-0.99$ \\ci{-6.29}{4.47} & $\u201d",
+   "label": "-0.48 \u2014 \u201cX4 & $-11.68$ \\ci{-14.98}{-8.57} & $-1.92$ \\ci{-7.13}{2.74} & $-0.99$ \\ci{-6.29}{4.47} & $\u201d",
    "printed": "-0.48",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17425,7 +17576,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.212"
   },
   {
-   "label": "-5.57 \u2014 \u201cD4 & $-11.68$ \\ci{-14.98}{-8.57} & $-1.92$ \\ci{-7.13}{2.74} & $-0.99$ \\ci{-6.29}{4.47} & $\u201d",
+   "label": "-5.57 \u2014 \u201cX4 & $-11.68$ \\ci{-14.98}{-8.57} & $-1.92$ \\ci{-7.13}{2.74} & $-0.99$ \\ci{-6.29}{4.47} & $\u201d",
    "printed": "-5.57",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17442,7 +17593,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.213"
   },
   {
-   "label": "4.83 \u2014 \u201cD4 & $-11.68$ \\ci{-14.98}{-8.57} & $-1.92$ \\ci{-7.13}{2.74} & $-0.99$ \\ci{-6.29}{4.47} & $\u201d",
+   "label": "4.83 \u2014 \u201cX4 & $-11.68$ \\ci{-14.98}{-8.57} & $-1.92$ \\ci{-7.13}{2.74} & $-0.99$ \\ci{-6.29}{4.47} & $\u201d",
    "printed": "4.83",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17459,7 +17610,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.214"
   },
   {
-   "label": "-1.66 \u2014 \u201cD5 & $-1.66$ \\ci{-3.68}{0.43} & $-1.11$ \\ci{-4.80}{2.59} & $-2.26$ \\ci{-6.35}{2.02} & $-2.\u201d",
+   "label": "-1.66 \u2014 \u201cX5 & $-1.66$ \\ci{-3.68}{0.43} & $-1.11$ \\ci{-4.80}{2.59} & $-2.26$ \\ci{-6.35}{2.02} & $-2.\u201d",
    "printed": "-1.66",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_dfdc.json",
@@ -17476,7 +17627,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.215"
   },
   {
-   "label": "-3.68 \u2014 \u201cD5 & $-1.66$ \\ci{-3.68}{0.43} & $-1.11$ \\ci{-4.80}{2.59} & $-2.26$ \\ci{-6.35}{2.02} & $-2.\u201d",
+   "label": "-3.68 \u2014 \u201cX5 & $-1.66$ \\ci{-3.68}{0.43} & $-1.11$ \\ci{-4.80}{2.59} & $-2.26$ \\ci{-6.35}{2.02} & $-2.\u201d",
    "printed": "-3.68",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_dfdc.json",
@@ -17493,7 +17644,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.216"
   },
   {
-   "label": "0.43 \u2014 \u201cD5 & $-1.66$ \\ci{-3.68}{0.43} & $-1.11$ \\ci{-4.80}{2.59} & $-2.26$ \\ci{-6.35}{2.02} & $-2.\u201d",
+   "label": "0.43 \u2014 \u201cX5 & $-1.66$ \\ci{-3.68}{0.43} & $-1.11$ \\ci{-4.80}{2.59} & $-2.26$ \\ci{-6.35}{2.02} & $-2.\u201d",
    "printed": "0.43",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_dfdc.json",
@@ -17510,7 +17661,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.217"
   },
   {
-   "label": "-1.11 \u2014 \u201cD5 & $-1.66$ \\ci{-3.68}{0.43} & $-1.11$ \\ci{-4.80}{2.59} & $-2.26$ \\ci{-6.35}{2.02} & $-2.\u201d",
+   "label": "-1.11 \u2014 \u201cX5 & $-1.66$ \\ci{-3.68}{0.43} & $-1.11$ \\ci{-4.80}{2.59} & $-2.26$ \\ci{-6.35}{2.02} & $-2.\u201d",
    "printed": "-1.11",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_wdf.json",
@@ -17527,7 +17678,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.218"
   },
   {
-   "label": "-4.80 \u2014 \u201cD5 & $-1.66$ \\ci{-3.68}{0.43} & $-1.11$ \\ci{-4.80}{2.59} & $-2.26$ \\ci{-6.35}{2.02} & $-2.\u201d",
+   "label": "-4.80 \u2014 \u201cX5 & $-1.66$ \\ci{-3.68}{0.43} & $-1.11$ \\ci{-4.80}{2.59} & $-2.26$ \\ci{-6.35}{2.02} & $-2.\u201d",
    "printed": "-4.80",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_wdf.json",
@@ -17544,7 +17695,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.219"
   },
   {
-   "label": "2.59 \u2014 \u201cD5 & $-1.66$ \\ci{-3.68}{0.43} & $-1.11$ \\ci{-4.80}{2.59} & $-2.26$ \\ci{-6.35}{2.02} & $-2.\u201d",
+   "label": "2.59 \u2014 \u201cX5 & $-1.66$ \\ci{-3.68}{0.43} & $-1.11$ \\ci{-4.80}{2.59} & $-2.26$ \\ci{-6.35}{2.02} & $-2.\u201d",
    "printed": "2.59",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_wdf.json",
@@ -17561,7 +17712,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.220"
   },
   {
-   "label": "-2.26 \u2014 \u201cD5 & $-1.66$ \\ci{-3.68}{0.43} & $-1.11$ \\ci{-4.80}{2.59} & $-2.26$ \\ci{-6.35}{2.02} & $-2.\u201d",
+   "label": "-2.26 \u2014 \u201cX5 & $-1.66$ \\ci{-3.68}{0.43} & $-1.11$ \\ci{-4.80}{2.59} & $-2.26$ \\ci{-6.35}{2.02} & $-2.\u201d",
    "printed": "-2.26",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17578,7 +17729,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.221"
   },
   {
-   "label": "-6.35 \u2014 \u201cD5 & $-1.66$ \\ci{-3.68}{0.43} & $-1.11$ \\ci{-4.80}{2.59} & $-2.26$ \\ci{-6.35}{2.02} & $-2.\u201d",
+   "label": "-6.35 \u2014 \u201cX5 & $-1.66$ \\ci{-3.68}{0.43} & $-1.11$ \\ci{-4.80}{2.59} & $-2.26$ \\ci{-6.35}{2.02} & $-2.\u201d",
    "printed": "-6.35",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17595,7 +17746,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.222"
   },
   {
-   "label": "2.02 \u2014 \u201cD5 & $-1.66$ \\ci{-3.68}{0.43} & $-1.11$ \\ci{-4.80}{2.59} & $-2.26$ \\ci{-6.35}{2.02} & $-2.\u201d",
+   "label": "2.02 \u2014 \u201cX5 & $-1.66$ \\ci{-3.68}{0.43} & $-1.11$ \\ci{-4.80}{2.59} & $-2.26$ \\ci{-6.35}{2.02} & $-2.\u201d",
    "printed": "2.02",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17612,7 +17763,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.223"
   },
   {
-   "label": "-2.27 \u2014 \u201cD5 & $-1.66$ \\ci{-3.68}{0.43} & $-1.11$ \\ci{-4.80}{2.59} & $-2.26$ \\ci{-6.35}{2.02} & $-2.\u201d",
+   "label": "-2.27 \u2014 \u201cX5 & $-1.66$ \\ci{-3.68}{0.43} & $-1.11$ \\ci{-4.80}{2.59} & $-2.26$ \\ci{-6.35}{2.02} & $-2.\u201d",
    "printed": "-2.27",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17629,7 +17780,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.224"
   },
   {
-   "label": "-6.40 \u2014 \u201cD5 & $-1.66$ \\ci{-3.68}{0.43} & $-1.11$ \\ci{-4.80}{2.59} & $-2.26$ \\ci{-6.35}{2.02} & $-2.\u201d",
+   "label": "-6.40 \u2014 \u201cX5 & $-1.66$ \\ci{-3.68}{0.43} & $-1.11$ \\ci{-4.80}{2.59} & $-2.26$ \\ci{-6.35}{2.02} & $-2.\u201d",
    "printed": "-6.40",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17646,7 +17797,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.225"
   },
   {
-   "label": "2.01 \u2014 \u201cD5 & $-1.66$ \\ci{-3.68}{0.43} & $-1.11$ \\ci{-4.80}{2.59} & $-2.26$ \\ci{-6.35}{2.02} & $-2.\u201d",
+   "label": "2.01 \u2014 \u201cX5 & $-1.66$ \\ci{-3.68}{0.43} & $-1.11$ \\ci{-4.80}{2.59} & $-2.26$ \\ci{-6.35}{2.02} & $-2.\u201d",
    "printed": "2.01",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17663,7 +17814,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.226"
   },
   {
-   "label": "-0.84 \u2014 \u201cD6 & $-0.84$ \\ci{-2.38}{0.71} & 0.56 \\ci{-2.14}{3.30} & $-3.15$ \\ci{-6.54}{-0.04} & $-2.97\u201d",
+   "label": "-0.84 \u2014 \u201cX6 & $-0.84$ \\ci{-2.38}{0.71} & 0.56 \\ci{-2.14}{3.30} & $-3.15$ \\ci{-6.54}{-0.04} & $-2.97\u201d",
    "printed": "-0.84",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_dfdc.json",
@@ -17680,7 +17831,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.227"
   },
   {
-   "label": "-2.38 \u2014 \u201cD6 & $-0.84$ \\ci{-2.38}{0.71} & 0.56 \\ci{-2.14}{3.30} & $-3.15$ \\ci{-6.54}{-0.04} & $-2.97\u201d",
+   "label": "-2.38 \u2014 \u201cX6 & $-0.84$ \\ci{-2.38}{0.71} & 0.56 \\ci{-2.14}{3.30} & $-3.15$ \\ci{-6.54}{-0.04} & $-2.97\u201d",
    "printed": "-2.38",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_dfdc.json",
@@ -17697,7 +17848,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.228"
   },
   {
-   "label": "0.71 \u2014 \u201cD6 & $-0.84$ \\ci{-2.38}{0.71} & 0.56 \\ci{-2.14}{3.30} & $-3.15$ \\ci{-6.54}{-0.04} & $-2.97\u201d",
+   "label": "0.71 \u2014 \u201cX6 & $-0.84$ \\ci{-2.38}{0.71} & 0.56 \\ci{-2.14}{3.30} & $-3.15$ \\ci{-6.54}{-0.04} & $-2.97\u201d",
    "printed": "0.71",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_dfdc.json",
@@ -17714,7 +17865,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.229"
   },
   {
-   "label": "0.56 \u2014 \u201cD6 & $-0.84$ \\ci{-2.38}{0.71} & 0.56 \\ci{-2.14}{3.30} & $-3.15$ \\ci{-6.54}{-0.04} & $-2.97\u201d",
+   "label": "0.56 \u2014 \u201cX6 & $-0.84$ \\ci{-2.38}{0.71} & 0.56 \\ci{-2.14}{3.30} & $-3.15$ \\ci{-6.54}{-0.04} & $-2.97\u201d",
    "printed": "0.56",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_wdf.json",
@@ -17731,7 +17882,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.230"
   },
   {
-   "label": "-2.14 \u2014 \u201cD6 & $-0.84$ \\ci{-2.38}{0.71} & 0.56 \\ci{-2.14}{3.30} & $-3.15$ \\ci{-6.54}{-0.04} & $-2.97\u201d",
+   "label": "-2.14 \u2014 \u201cX6 & $-0.84$ \\ci{-2.38}{0.71} & 0.56 \\ci{-2.14}{3.30} & $-3.15$ \\ci{-6.54}{-0.04} & $-2.97\u201d",
    "printed": "-2.14",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_wdf.json",
@@ -17748,7 +17899,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.231"
   },
   {
-   "label": "3.30 \u2014 \u201cD6 & $-0.84$ \\ci{-2.38}{0.71} & 0.56 \\ci{-2.14}{3.30} & $-3.15$ \\ci{-6.54}{-0.04} & $-2.97\u201d",
+   "label": "3.30 \u2014 \u201cX6 & $-0.84$ \\ci{-2.38}{0.71} & 0.56 \\ci{-2.14}{3.30} & $-3.15$ \\ci{-6.54}{-0.04} & $-2.97\u201d",
    "printed": "3.30",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e7_wdf.json",
@@ -17765,7 +17916,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.232"
   },
   {
-   "label": "-3.15 \u2014 \u201cD6 & $-0.84$ \\ci{-2.38}{0.71} & 0.56 \\ci{-2.14}{3.30} & $-3.15$ \\ci{-6.54}{-0.04} & $-2.97\u201d",
+   "label": "-3.15 \u2014 \u201cX6 & $-0.84$ \\ci{-2.38}{0.71} & 0.56 \\ci{-2.14}{3.30} & $-3.15$ \\ci{-6.54}{-0.04} & $-2.97\u201d",
    "printed": "-3.15",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17782,7 +17933,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.233"
   },
   {
-   "label": "-6.54 \u2014 \u201cD6 & $-0.84$ \\ci{-2.38}{0.71} & 0.56 \\ci{-2.14}{3.30} & $-3.15$ \\ci{-6.54}{-0.04} & $-2.97\u201d",
+   "label": "-6.54 \u2014 \u201cX6 & $-0.84$ \\ci{-2.38}{0.71} & 0.56 \\ci{-2.14}{3.30} & $-3.15$ \\ci{-6.54}{-0.04} & $-2.97\u201d",
    "printed": "-6.54",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17799,7 +17950,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.234"
   },
   {
-   "label": "-0.04 \u2014 \u201cD6 & $-0.84$ \\ci{-2.38}{0.71} & 0.56 \\ci{-2.14}{3.30} & $-3.15$ \\ci{-6.54}{-0.04} & $-2.97\u201d",
+   "label": "-0.04 \u2014 \u201cX6 & $-0.84$ \\ci{-2.38}{0.71} & 0.56 \\ci{-2.14}{3.30} & $-3.15$ \\ci{-6.54}{-0.04} & $-2.97\u201d",
    "printed": "-0.04",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17816,7 +17967,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.235"
   },
   {
-   "label": "-2.97 \u2014 \u201cD6 & $-0.84$ \\ci{-2.38}{0.71} & 0.56 \\ci{-2.14}{3.30} & $-3.15$ \\ci{-6.54}{-0.04} & $-2.97\u201d",
+   "label": "-2.97 \u2014 \u201cX6 & $-0.84$ \\ci{-2.38}{0.71} & 0.56 \\ci{-2.14}{3.30} & $-3.15$ \\ci{-6.54}{-0.04} & $-2.97\u201d",
    "printed": "-2.97",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17833,7 +17984,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.236"
   },
   {
-   "label": "-6.46 \u2014 \u201cD6 & $-0.84$ \\ci{-2.38}{0.71} & 0.56 \\ci{-2.14}{3.30} & $-3.15$ \\ci{-6.54}{-0.04} & $-2.97\u201d",
+   "label": "-6.46 \u2014 \u201cX6 & $-0.84$ \\ci{-2.38}{0.71} & 0.56 \\ci{-2.14}{3.30} & $-3.15$ \\ci{-6.54}{-0.04} & $-2.97\u201d",
    "printed": "-6.46",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -17850,7 +18001,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcorpora.237"
   },
   {
-   "label": "0.16 \u2014 \u201cD6 & $-0.84$ \\ci{-2.38}{0.71} & 0.56 \\ci{-2.14}{3.30} & $-3.15$ \\ci{-6.54}{-0.04} & $-2.97\u201d",
+   "label": "0.16 \u2014 \u201cX6 & $-0.84$ \\ci{-2.38}{0.71} & 0.56 \\ci{-2.14}{3.30} & $-3.15$ \\ci{-6.54}{-0.04} & $-2.97\u201d",
    "printed": "0.16",
    "kind": "scalar",
    "source": "revision-1/exploratory/e12.json",
@@ -19004,7 +19155,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.67"
   },
   {
-   "label": "0.28 \u2014 \u201cD1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
+   "label": "0.28 \u2014 \u201cX1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
    "printed": "0.28",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19021,7 +19172,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.68"
   },
   {
-   "label": "-0.17 \u2014 \u201cD1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
+   "label": "-0.17 \u2014 \u201cX1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
    "printed": "-0.17",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19038,7 +19189,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.69"
   },
   {
-   "label": "0.88 \u2014 \u201cD1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
+   "label": "0.88 \u2014 \u201cX1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
    "printed": "0.88",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19055,7 +19206,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.70"
   },
   {
-   "label": "1.10 \u2014 \u201cD1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
+   "label": "1.10 \u2014 \u201cX1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
    "printed": "1.10",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19072,7 +19223,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.71"
   },
   {
-   "label": "-0.15 \u2014 \u201cD1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
+   "label": "-0.15 \u2014 \u201cX1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
    "printed": "-0.15",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19089,7 +19240,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.72"
   },
   {
-   "label": "2.61 \u2014 \u201cD1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
+   "label": "2.61 \u2014 \u201cX1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
    "printed": "2.61",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19106,7 +19257,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.73"
   },
   {
-   "label": "1.21 \u2014 \u201cD1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
+   "label": "1.21 \u2014 \u201cX1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
    "printed": "1.21",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19123,7 +19274,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.74"
   },
   {
-   "label": "-0.49 \u2014 \u201cD1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
+   "label": "-0.49 \u2014 \u201cX1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
    "printed": "-0.49",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19140,7 +19291,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.75"
   },
   {
-   "label": "3.09 \u2014 \u201cD1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
+   "label": "3.09 \u2014 \u201cX1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
    "printed": "3.09",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19157,7 +19308,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.76"
   },
   {
-   "label": "0.63 \u2014 \u201cD1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
+   "label": "0.63 \u2014 \u201cX1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
    "printed": "0.63",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19174,7 +19325,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.77"
   },
   {
-   "label": "-0.37 \u2014 \u201cD1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
+   "label": "-0.37 \u2014 \u201cX1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
    "printed": "-0.37",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19191,7 +19342,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.78"
   },
   {
-   "label": "1.99 \u2014 \u201cD1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
+   "label": "1.99 \u2014 \u201cX1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
    "printed": "1.99",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19208,7 +19359,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.79"
   },
   {
-   "label": "0.96 \u2014 \u201cD1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
+   "label": "0.96 \u2014 \u201cX1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
    "printed": "0.96",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19225,7 +19376,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.80"
   },
   {
-   "label": "-0.45 \u2014 \u201cD1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
+   "label": "-0.45 \u2014 \u201cX1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
    "printed": "-0.45",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19242,7 +19393,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.81"
   },
   {
-   "label": "2.75 \u2014 \u201cD1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
+   "label": "2.75 \u2014 \u201cX1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
    "printed": "2.75",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19259,7 +19410,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.82"
   },
   {
-   "label": "1.22 \u2014 \u201cD1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
+   "label": "1.22 \u2014 \u201cX1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
    "printed": "1.22",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19276,7 +19427,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.83"
   },
   {
-   "label": "-0.81 \u2014 \u201cD1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
+   "label": "-0.81 \u2014 \u201cX1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
    "printed": "-0.81",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19293,7 +19444,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.84"
   },
   {
-   "label": "3.52 \u2014 \u201cD1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
+   "label": "3.52 \u2014 \u201cX1 & 0.28 \\ci{-0.17}{0.88} & 1.10 \\ci{-0.15}{2.61} & 1.21 \\ci{-0.49}{3.09} & 0.63 \\ci{-0.3\u201d",
    "printed": "3.52",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19310,7 +19461,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.85"
   },
   {
-   "label": "-0.10 \u2014 \u201cD2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
+   "label": "-0.10 \u2014 \u201cX2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
    "printed": "-0.10",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19327,7 +19478,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.86"
   },
   {
-   "label": "-0.70 \u2014 \u201cD2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
+   "label": "-0.70 \u2014 \u201cX2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
    "printed": "-0.70",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19344,7 +19495,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.87"
   },
   {
-   "label": "0.44 \u2014 \u201cD2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
+   "label": "0.44 \u2014 \u201cX2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
    "printed": "0.44",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19361,7 +19512,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.88"
   },
   {
-   "label": "-1.06 \u2014 \u201cD2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
+   "label": "-1.06 \u2014 \u201cX2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
    "printed": "-1.06",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19378,7 +19529,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.89"
   },
   {
-   "label": "-2.58 \u2014 \u201cD2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
+   "label": "-2.58 \u2014 \u201cX2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
    "printed": "-2.58",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19395,7 +19546,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.90"
   },
   {
-   "label": "0.25 \u2014 \u201cD2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
+   "label": "0.25 \u2014 \u201cX2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
    "printed": "0.25",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19412,7 +19563,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.91"
   },
   {
-   "label": "-1.45 \u2014 \u201cD2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
+   "label": "-1.45 \u2014 \u201cX2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
    "printed": "-1.45",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19429,7 +19580,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.92"
   },
   {
-   "label": "-3.51 \u2014 \u201cD2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
+   "label": "-3.51 \u2014 \u201cX2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
    "printed": "-3.51",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19446,7 +19597,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.93"
   },
   {
-   "label": "0.37 \u2014 \u201cD2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
+   "label": "0.37 \u2014 \u201cX2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
    "printed": "0.37",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19463,7 +19614,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.94"
   },
   {
-   "label": "-0.57 \u2014 \u201cD2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
+   "label": "-0.57 \u2014 \u201cX2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
    "printed": "-0.57",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19480,7 +19631,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.95"
   },
   {
-   "label": "-1.99 \u2014 \u201cD2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
+   "label": "-1.99 \u2014 \u201cX2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
    "printed": "-1.99",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19497,7 +19648,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.96"
   },
   {
-   "label": "0.42 \u2014 \u201cD2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
+   "label": "0.42 \u2014 \u201cX2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
    "printed": "0.42",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19514,7 +19665,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.97"
   },
   {
-   "label": "-1.35 \u2014 \u201cD2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
+   "label": "-1.35 \u2014 \u201cX2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
    "printed": "-1.35",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19531,7 +19682,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.98"
   },
   {
-   "label": "-3.10 \u2014 \u201cD2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
+   "label": "-3.10 \u2014 \u201cX2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
    "printed": "-3.10",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19548,7 +19699,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.99"
   },
   {
-   "label": "0.18 \u2014 \u201cD2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
+   "label": "0.18 \u2014 \u201cX2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
    "printed": "0.18",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19565,7 +19716,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.100"
   },
   {
-   "label": "-1.97 \u2014 \u201cD2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
+   "label": "-1.97 \u2014 \u201cX2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
    "printed": "-1.97",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19582,7 +19733,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.101"
   },
   {
-   "label": "-4.31 \u2014 \u201cD2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
+   "label": "-4.31 \u2014 \u201cX2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
    "printed": "-4.31",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19599,7 +19750,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.102"
   },
   {
-   "label": "0.22 \u2014 \u201cD2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
+   "label": "0.22 \u2014 \u201cX2 & $-0.10$ \\ci{-0.70}{0.44} & $-1.06$ \\ci{-2.58}{0.25} & $-1.45$ \\ci{-3.51}{0.37} & $-0.\u201d",
    "printed": "0.22",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19616,7 +19767,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.103"
   },
   {
-   "label": "-0.06 \u2014 \u201cD3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
+   "label": "-0.06 \u2014 \u201cX3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
    "printed": "-0.06",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19633,7 +19784,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.104"
   },
   {
-   "label": "-0.84 \u2014 \u201cD3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
+   "label": "-0.84 \u2014 \u201cX3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
    "printed": "-0.84",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19650,7 +19801,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.105"
   },
   {
-   "label": "0.55 \u2014 \u201cD3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
+   "label": "0.55 \u2014 \u201cX3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
    "printed": "0.55",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19667,7 +19818,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.106"
   },
   {
-   "label": "-0.38 \u2014 \u201cD3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
+   "label": "-0.38 \u2014 \u201cX3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
    "printed": "-0.38",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19684,7 +19835,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.107"
   },
   {
-   "label": "-1.57 \u2014 \u201cD3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
+   "label": "-1.57 \u2014 \u201cX3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
    "printed": "-1.57",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19701,7 +19852,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.108"
   },
   {
-   "label": "0.59 \u2014 \u201cD3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
+   "label": "0.59 \u2014 \u201cX3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
    "printed": "0.59",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19718,7 +19869,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.109"
   },
   {
-   "label": "-0.67 \u2014 \u201cD3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
+   "label": "-0.67 \u2014 \u201cX3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
    "printed": "-0.67",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19735,7 +19886,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.110"
   },
   {
-   "label": "-2.35 \u2014 \u201cD3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
+   "label": "-2.35 \u2014 \u201cX3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
    "printed": "-2.35",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19752,7 +19903,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.111"
   },
   {
-   "label": "0.88 \u2014 \u201cD3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
+   "label": "0.88 \u2014 \u201cX3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
    "printed": "0.88",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19769,7 +19920,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.112"
   },
   {
-   "label": "-0.20 \u2014 \u201cD3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
+   "label": "-0.20 \u2014 \u201cX3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
    "printed": "-0.20",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19786,7 +19937,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.113"
   },
   {
-   "label": "-1.05 \u2014 \u201cD3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
+   "label": "-1.05 \u2014 \u201cX3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
    "printed": "-1.05",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19803,7 +19954,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.114"
   },
   {
-   "label": "0.42 \u2014 \u201cD3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
+   "label": "0.42 \u2014 \u201cX3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
    "printed": "0.42",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19820,7 +19971,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.115"
   },
   {
-   "label": "-1.34 \u2014 \u201cD3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
+   "label": "-1.34 \u2014 \u201cX3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
    "printed": "-1.34",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19837,7 +19988,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.116"
   },
   {
-   "label": "-2.82 \u2014 \u201cD3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
+   "label": "-2.82 \u2014 \u201cX3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
    "printed": "-2.82",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19854,7 +20005,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.117"
   },
   {
-   "label": "-0.11 \u2014 \u201cD3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
+   "label": "-0.11 \u2014 \u201cX3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
    "printed": "-0.11",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19871,7 +20022,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.118"
   },
   {
-   "label": "-1.54 \u2014 \u201cD3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
+   "label": "-1.54 \u2014 \u201cX3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
    "printed": "-1.54",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19888,7 +20039,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.119"
   },
   {
-   "label": "-3.32 \u2014 \u201cD3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
+   "label": "-3.32 \u2014 \u201cX3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
    "printed": "-3.32",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19905,7 +20056,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.120"
   },
   {
-   "label": "0.07 \u2014 \u201cD3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
+   "label": "0.07 \u2014 \u201cX3 & $-0.06$ \\ci{-0.84}{0.55} & $-0.38$ \\ci{-1.57}{0.59} & $-0.67$ \\ci{-2.35}{0.88} & $-0.\u201d",
    "printed": "0.07",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19922,7 +20073,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.121"
   },
   {
-   "label": "-0.68 \u2014 \u201cD4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
+   "label": "-0.68 \u2014 \u201cX4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
    "printed": "-0.68",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19939,7 +20090,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.122"
   },
   {
-   "label": "-1.30 \u2014 \u201cD4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
+   "label": "-1.30 \u2014 \u201cX4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
    "printed": "-1.30",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19956,7 +20107,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.123"
   },
   {
-   "label": "-0.17 \u2014 \u201cD4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
+   "label": "-0.17 \u2014 \u201cX4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
    "printed": "-0.17",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19973,7 +20124,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.124"
   },
   {
-   "label": "0.48 \u2014 \u201cD4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
+   "label": "0.48 \u2014 \u201cX4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
    "printed": "0.48",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -19990,7 +20141,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.125"
   },
   {
-   "label": "-0.67 \u2014 \u201cD4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
+   "label": "-0.67 \u2014 \u201cX4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
    "printed": "-0.67",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20007,7 +20158,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.126"
   },
   {
-   "label": "1.62 \u2014 \u201cD4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
+   "label": "1.62 \u2014 \u201cX4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
    "printed": "1.62",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20024,7 +20175,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.127"
   },
   {
-   "label": "5.34 \u2014 \u201cD4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
+   "label": "5.34 \u2014 \u201cX4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
    "printed": "5.34",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20041,7 +20192,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.128"
   },
   {
-   "label": "3.14 \u2014 \u201cD4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
+   "label": "3.14 \u2014 \u201cX4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
    "printed": "3.14",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20058,7 +20209,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.129"
   },
   {
-   "label": "7.65 \u2014 \u201cD4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
+   "label": "7.65 \u2014 \u201cX4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
    "printed": "7.65",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20075,7 +20226,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.130"
   },
   {
-   "label": "-0.64 \u2014 \u201cD4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
+   "label": "-0.64 \u2014 \u201cX4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
    "printed": "-0.64",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20092,7 +20243,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.131"
   },
   {
-   "label": "-1.32 \u2014 \u201cD4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
+   "label": "-1.32 \u2014 \u201cX4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
    "printed": "-1.32",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20109,7 +20260,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.132"
   },
   {
-   "label": "0.03 \u2014 \u201cD4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
+   "label": "0.03 \u2014 \u201cX4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
    "printed": "0.03",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20126,7 +20277,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.133"
   },
   {
-   "label": "1.32 \u2014 \u201cD4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
+   "label": "1.32 \u2014 \u201cX4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
    "printed": "1.32",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20143,7 +20294,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.134"
   },
   {
-   "label": "-0.40 \u2014 \u201cD4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
+   "label": "-0.40 \u2014 \u201cX4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
    "printed": "-0.40",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20160,7 +20311,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.135"
   },
   {
-   "label": "3.19 \u2014 \u201cD4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
+   "label": "3.19 \u2014 \u201cX4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
    "printed": "3.19",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20177,7 +20328,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.136"
   },
   {
-   "label": "3.99 \u2014 \u201cD4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
+   "label": "3.99 \u2014 \u201cX4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
    "printed": "3.99",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20194,7 +20345,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.137"
   },
   {
-   "label": "1.59 \u2014 \u201cD4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
+   "label": "1.59 \u2014 \u201cX4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
    "printed": "1.59",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20211,7 +20362,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.138"
   },
   {
-   "label": "6.43 \u2014 \u201cD4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
+   "label": "6.43 \u2014 \u201cX4 & $-0.68$ \\ci{-1.30}{-0.17} & 0.48 \\ci{-0.67}{1.62} & 5.34 \\ci{3.14}{7.65} & $-0.64$ \\c\u201d",
    "printed": "6.43",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20228,7 +20379,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.139"
   },
   {
-   "label": "0.35 \u2014 \u201cD5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
+   "label": "0.35 \u2014 \u201cX5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
    "printed": "0.35",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20245,7 +20396,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.140"
   },
   {
-   "label": "-0.18 \u2014 \u201cD5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
+   "label": "-0.18 \u2014 \u201cX5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
    "printed": "-0.18",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20262,7 +20413,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.141"
   },
   {
-   "label": "0.91 \u2014 \u201cD5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
+   "label": "0.91 \u2014 \u201cX5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
    "printed": "0.91",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20279,7 +20430,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.142"
   },
   {
-   "label": "1.10 \u2014 \u201cD5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
+   "label": "1.10 \u2014 \u201cX5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
    "printed": "1.10",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20296,7 +20447,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.143"
   },
   {
-   "label": "0.02 \u2014 \u201cD5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
+   "label": "0.02 \u2014 \u201cX5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
    "printed": "0.02",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20313,7 +20464,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.144"
   },
   {
-   "label": "2.21 \u2014 \u201cD5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
+   "label": "2.21 \u2014 \u201cX5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
    "printed": "2.21",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20330,7 +20481,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.145"
   },
   {
-   "label": "3.64 \u2014 \u201cD5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
+   "label": "3.64 \u2014 \u201cX5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
    "printed": "3.64",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20347,7 +20498,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.146"
   },
   {
-   "label": "1.82 \u2014 \u201cD5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
+   "label": "1.82 \u2014 \u201cX5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
    "printed": "1.82",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20364,7 +20515,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.147"
   },
   {
-   "label": "5.49 \u2014 \u201cD5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
+   "label": "5.49 \u2014 \u201cX5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
    "printed": "5.49",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20381,7 +20532,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.148"
   },
   {
-   "label": "0.23 \u2014 \u201cD5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
+   "label": "0.23 \u2014 \u201cX5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
    "printed": "0.23",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20398,7 +20549,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.149"
   },
   {
-   "label": "-0.39 \u2014 \u201cD5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
+   "label": "-0.39 \u2014 \u201cX5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
    "printed": "-0.39",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20415,7 +20566,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.150"
   },
   {
-   "label": "0.93 \u2014 \u201cD5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
+   "label": "0.93 \u2014 \u201cX5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
    "printed": "0.93",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20432,7 +20583,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.151"
   },
   {
-   "label": "0.21 \u2014 \u201cD5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
+   "label": "0.21 \u2014 \u201cX5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
    "printed": "0.21",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20449,7 +20600,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.152"
   },
   {
-   "label": "-1.15 \u2014 \u201cD5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
+   "label": "-1.15 \u2014 \u201cX5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
    "printed": "-1.15",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20466,7 +20617,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.153"
   },
   {
-   "label": "1.63 \u2014 \u201cD5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
+   "label": "1.63 \u2014 \u201cX5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
    "printed": "1.63",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20483,7 +20634,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.154"
   },
   {
-   "label": "0.74 \u2014 \u201cD5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
+   "label": "0.74 \u2014 \u201cX5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
    "printed": "0.74",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20500,7 +20651,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.155"
   },
   {
-   "label": "-1.19 \u2014 \u201cD5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
+   "label": "-1.19 \u2014 \u201cX5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
    "printed": "-1.19",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20517,7 +20668,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.156"
   },
   {
-   "label": "2.72 \u2014 \u201cD5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
+   "label": "2.72 \u2014 \u201cX5 & 0.35 \\ci{-0.18}{0.91} & 1.10 \\ci{0.02}{2.21} & 3.64 \\ci{1.82}{5.49} & 0.23 \\ci{-0.39}\u201d",
    "printed": "2.72",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20534,7 +20685,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.157"
   },
   {
-   "label": "-0.27 \u2014 \u201cD6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
+   "label": "-0.27 \u2014 \u201cX6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
    "printed": "-0.27",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20551,7 +20702,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.158"
   },
   {
-   "label": "-0.59 \u2014 \u201cD6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
+   "label": "-0.59 \u2014 \u201cX6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
    "printed": "-0.59",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20568,7 +20719,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.159"
   },
   {
-   "label": "0.03 \u2014 \u201cD6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
+   "label": "0.03 \u2014 \u201cX6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
    "printed": "0.03",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20585,7 +20736,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.160"
   },
   {
-   "label": "-0.19 \u2014 \u201cD6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
+   "label": "-0.19 \u2014 \u201cX6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
    "printed": "-0.19",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20602,7 +20753,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.161"
   },
   {
-   "label": "-0.69 \u2014 \u201cD6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
+   "label": "-0.69 \u2014 \u201cX6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
    "printed": "-0.69",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20619,7 +20770,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.162"
   },
   {
-   "label": "0.34 \u2014 \u201cD6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
+   "label": "0.34 \u2014 \u201cX6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
    "printed": "0.34",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20636,7 +20787,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.163"
   },
   {
-   "label": "0.46 \u2014 \u201cD6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
+   "label": "0.46 \u2014 \u201cX6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
    "printed": "0.46",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20653,7 +20804,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.164"
   },
   {
-   "label": "-0.45 \u2014 \u201cD6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
+   "label": "-0.45 \u2014 \u201cX6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
    "printed": "-0.45",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20670,7 +20821,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.165"
   },
   {
-   "label": "1.40 \u2014 \u201cD6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
+   "label": "1.40 \u2014 \u201cX6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
    "printed": "1.40",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20687,7 +20838,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.166"
   },
   {
-   "label": "-0.24 \u2014 \u201cD6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
+   "label": "-0.24 \u2014 \u201cX6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
    "printed": "-0.24",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20704,7 +20855,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.167"
   },
   {
-   "label": "-0.66 \u2014 \u201cD6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
+   "label": "-0.66 \u2014 \u201cX6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
    "printed": "-0.66",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20721,7 +20872,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.168"
   },
   {
-   "label": "0.14 \u2014 \u201cD6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
+   "label": "0.14 \u2014 \u201cX6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
    "printed": "0.14",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20738,7 +20889,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.169"
   },
   {
-   "label": "-0.04 \u2014 \u201cD6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
+   "label": "-0.04 \u2014 \u201cX6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
    "printed": "-0.04",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20755,7 +20906,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.170"
   },
   {
-   "label": "-0.79 \u2014 \u201cD6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
+   "label": "-0.79 \u2014 \u201cX6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
    "printed": "-0.79",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20772,7 +20923,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.171"
   },
   {
-   "label": "0.72 \u2014 \u201cD6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
+   "label": "0.72 \u2014 \u201cX6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
    "printed": "0.72",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20789,7 +20940,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.172"
   },
   {
-   "label": "0.48 \u2014 \u201cD6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
+   "label": "0.48 \u2014 \u201cX6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
    "printed": "0.48",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20806,7 +20957,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.173"
   },
   {
-   "label": "-0.61 \u2014 \u201cD6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
+   "label": "-0.61 \u2014 \u201cX6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
    "printed": "-0.61",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20823,7 +20974,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.174"
   },
   {
-   "label": "1.58 \u2014 \u201cD6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
+   "label": "1.58 \u2014 \u201cX6 & $-0.27$ \\ci{-0.59}{0.03} & $-0.19$ \\ci{-0.69}{0.34} & 0.46 \\ci{-0.45}{1.40} & $-0.24$\u201d",
    "printed": "1.58",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20936,7 +21087,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.181"
   },
   {
-   "label": "0 \u2014 \u201cvideos outside $\\pm10$\\,\\% of target & 0 & 0 & 19 & 113 & 96 & 119 \\\\\u201d",
+   "label": "0 \u2014 \u201cvideos outside $\\pm10$\\% of target & 0 & 0 & 19 & 113 & 96 & 119 \\\\\u201d",
    "printed": "0",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20952,7 +21103,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.182"
   },
   {
-   "label": "0 \u2014 \u201cvideos outside $\\pm10$\\,\\% of target & 0 & 0 & 19 & 113 & 96 & 119 \\\\\u201d",
+   "label": "0 \u2014 \u201cvideos outside $\\pm10$\\% of target & 0 & 0 & 19 & 113 & 96 & 119 \\\\\u201d",
    "printed": "0",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20968,7 +21119,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.183"
   },
   {
-   "label": "19 \u2014 \u201cvideos outside $\\pm10$\\,\\% of target & 0 & 0 & 19 & 113 & 96 & 119 \\\\\u201d",
+   "label": "19 \u2014 \u201cvideos outside $\\pm10$\\% of target & 0 & 0 & 19 & 113 & 96 & 119 \\\\\u201d",
    "printed": "19",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -20984,7 +21135,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.184"
   },
   {
-   "label": "113 \u2014 \u201cvideos outside $\\pm10$\\,\\% of target & 0 & 0 & 19 & 113 & 96 & 119 \\\\\u201d",
+   "label": "113 \u2014 \u201cvideos outside $\\pm10$\\% of target & 0 & 0 & 19 & 113 & 96 & 119 \\\\\u201d",
    "printed": "113",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -21000,7 +21151,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.185"
   },
   {
-   "label": "96 \u2014 \u201cvideos outside $\\pm10$\\,\\% of target & 0 & 0 & 19 & 113 & 96 & 119 \\\\\u201d",
+   "label": "96 \u2014 \u201cvideos outside $\\pm10$\\% of target & 0 & 0 & 19 & 113 & 96 & 119 \\\\\u201d",
    "printed": "96",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -21016,7 +21167,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcodecs.186"
   },
   {
-   "label": "119 \u2014 \u201cvideos outside $\\pm10$\\,\\% of target & 0 & 0 & 19 & 113 & 96 & 119 \\\\\u201d",
+   "label": "119 \u2014 \u201cvideos outside $\\pm10$\\% of target & 0 & 0 & 19 & 113 & 96 & 119 \\\\\u201d",
    "printed": "119",
    "kind": "scalar",
    "source": "revision-1/exploratory/e8.json",
@@ -23291,7 +23442,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.133"
   },
   {
-   "label": "0.47 \u2014 \u201cD1 & 0.47 \\ci{-0.08}{1.29} & 1.51 \\ci{0.25}{2.92} & --- & --- \\\\\u201d",
+   "label": "0.47 \u2014 \u201cX1 & 0.47 \\ci{-0.08}{1.29} & 1.51 \\ci{0.25}{2.92} & --- & --- \\\\\u201d",
    "printed": "0.47",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23308,7 +23459,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.134"
   },
   {
-   "label": "-0.08 \u2014 \u201cD1 & 0.47 \\ci{-0.08}{1.29} & 1.51 \\ci{0.25}{2.92} & --- & --- \\\\\u201d",
+   "label": "-0.08 \u2014 \u201cX1 & 0.47 \\ci{-0.08}{1.29} & 1.51 \\ci{0.25}{2.92} & --- & --- \\\\\u201d",
    "printed": "-0.08",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23325,7 +23476,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.135"
   },
   {
-   "label": "1.29 \u2014 \u201cD1 & 0.47 \\ci{-0.08}{1.29} & 1.51 \\ci{0.25}{2.92} & --- & --- \\\\\u201d",
+   "label": "1.29 \u2014 \u201cX1 & 0.47 \\ci{-0.08}{1.29} & 1.51 \\ci{0.25}{2.92} & --- & --- \\\\\u201d",
    "printed": "1.29",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23342,7 +23493,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.136"
   },
   {
-   "label": "1.51 \u2014 \u201cD1 & 0.47 \\ci{-0.08}{1.29} & 1.51 \\ci{0.25}{2.92} & --- & --- \\\\\u201d",
+   "label": "1.51 \u2014 \u201cX1 & 0.47 \\ci{-0.08}{1.29} & 1.51 \\ci{0.25}{2.92} & --- & --- \\\\\u201d",
    "printed": "1.51",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23359,7 +23510,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.137"
   },
   {
-   "label": "0.25 \u2014 \u201cD1 & 0.47 \\ci{-0.08}{1.29} & 1.51 \\ci{0.25}{2.92} & --- & --- \\\\\u201d",
+   "label": "0.25 \u2014 \u201cX1 & 0.47 \\ci{-0.08}{1.29} & 1.51 \\ci{0.25}{2.92} & --- & --- \\\\\u201d",
    "printed": "0.25",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23376,7 +23527,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.138"
   },
   {
-   "label": "2.92 \u2014 \u201cD1 & 0.47 \\ci{-0.08}{1.29} & 1.51 \\ci{0.25}{2.92} & --- & --- \\\\\u201d",
+   "label": "2.92 \u2014 \u201cX1 & 0.47 \\ci{-0.08}{1.29} & 1.51 \\ci{0.25}{2.92} & --- & --- \\\\\u201d",
    "printed": "2.92",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23393,7 +23544,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.139"
   },
   {
-   "label": "-0.30 \u2014 \u201cD2 & $-0.30$ \\ci{-1.13}{0.28} & $-0.56$ \\ci{-2.12}{1.05} & --- & --- \\\\\u201d",
+   "label": "-0.30 \u2014 \u201cX2 & $-0.30$ \\ci{-1.13}{0.28} & $-0.56$ \\ci{-2.12}{1.05} & --- & --- \\\\\u201d",
    "printed": "-0.30",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23410,7 +23561,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.140"
   },
   {
-   "label": "-1.13 \u2014 \u201cD2 & $-0.30$ \\ci{-1.13}{0.28} & $-0.56$ \\ci{-2.12}{1.05} & --- & --- \\\\\u201d",
+   "label": "-1.13 \u2014 \u201cX2 & $-0.30$ \\ci{-1.13}{0.28} & $-0.56$ \\ci{-2.12}{1.05} & --- & --- \\\\\u201d",
    "printed": "-1.13",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23427,7 +23578,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.141"
   },
   {
-   "label": "0.28 \u2014 \u201cD2 & $-0.30$ \\ci{-1.13}{0.28} & $-0.56$ \\ci{-2.12}{1.05} & --- & --- \\\\\u201d",
+   "label": "0.28 \u2014 \u201cX2 & $-0.30$ \\ci{-1.13}{0.28} & $-0.56$ \\ci{-2.12}{1.05} & --- & --- \\\\\u201d",
    "printed": "0.28",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23444,7 +23595,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.142"
   },
   {
-   "label": "-0.56 \u2014 \u201cD2 & $-0.30$ \\ci{-1.13}{0.28} & $-0.56$ \\ci{-2.12}{1.05} & --- & --- \\\\\u201d",
+   "label": "-0.56 \u2014 \u201cX2 & $-0.30$ \\ci{-1.13}{0.28} & $-0.56$ \\ci{-2.12}{1.05} & --- & --- \\\\\u201d",
    "printed": "-0.56",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23461,7 +23612,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.143"
   },
   {
-   "label": "-2.12 \u2014 \u201cD2 & $-0.30$ \\ci{-1.13}{0.28} & $-0.56$ \\ci{-2.12}{1.05} & --- & --- \\\\\u201d",
+   "label": "-2.12 \u2014 \u201cX2 & $-0.30$ \\ci{-1.13}{0.28} & $-0.56$ \\ci{-2.12}{1.05} & --- & --- \\\\\u201d",
    "printed": "-2.12",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23478,7 +23629,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.144"
   },
   {
-   "label": "1.05 \u2014 \u201cD2 & $-0.30$ \\ci{-1.13}{0.28} & $-0.56$ \\ci{-2.12}{1.05} & --- & --- \\\\\u201d",
+   "label": "1.05 \u2014 \u201cX2 & $-0.30$ \\ci{-1.13}{0.28} & $-0.56$ \\ci{-2.12}{1.05} & --- & --- \\\\\u201d",
    "printed": "1.05",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23495,7 +23646,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.145"
   },
   {
-   "label": "0.05 \u2014 \u201cD3 & 0.05 \\ci{-0.47}{0.53} & 0.37 \\ci{-0.99}{1.93} & --- & --- \\\\\u201d",
+   "label": "0.05 \u2014 \u201cX3 & 0.05 \\ci{-0.47}{0.53} & 0.37 \\ci{-0.99}{1.93} & --- & --- \\\\\u201d",
    "printed": "0.05",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23512,7 +23663,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.146"
   },
   {
-   "label": "-0.47 \u2014 \u201cD3 & 0.05 \\ci{-0.47}{0.53} & 0.37 \\ci{-0.99}{1.93} & --- & --- \\\\\u201d",
+   "label": "-0.47 \u2014 \u201cX3 & 0.05 \\ci{-0.47}{0.53} & 0.37 \\ci{-0.99}{1.93} & --- & --- \\\\\u201d",
    "printed": "-0.47",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23529,7 +23680,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.147"
   },
   {
-   "label": "0.53 \u2014 \u201cD3 & 0.05 \\ci{-0.47}{0.53} & 0.37 \\ci{-0.99}{1.93} & --- & --- \\\\\u201d",
+   "label": "0.53 \u2014 \u201cX3 & 0.05 \\ci{-0.47}{0.53} & 0.37 \\ci{-0.99}{1.93} & --- & --- \\\\\u201d",
    "printed": "0.53",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23546,7 +23697,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.148"
   },
   {
-   "label": "0.37 \u2014 \u201cD3 & 0.05 \\ci{-0.47}{0.53} & 0.37 \\ci{-0.99}{1.93} & --- & --- \\\\\u201d",
+   "label": "0.37 \u2014 \u201cX3 & 0.05 \\ci{-0.47}{0.53} & 0.37 \\ci{-0.99}{1.93} & --- & --- \\\\\u201d",
    "printed": "0.37",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23563,7 +23714,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.149"
   },
   {
-   "label": "-0.99 \u2014 \u201cD3 & 0.05 \\ci{-0.47}{0.53} & 0.37 \\ci{-0.99}{1.93} & --- & --- \\\\\u201d",
+   "label": "-0.99 \u2014 \u201cX3 & 0.05 \\ci{-0.47}{0.53} & 0.37 \\ci{-0.99}{1.93} & --- & --- \\\\\u201d",
    "printed": "-0.99",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23580,7 +23731,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.150"
   },
   {
-   "label": "1.93 \u2014 \u201cD3 & 0.05 \\ci{-0.47}{0.53} & 0.37 \\ci{-0.99}{1.93} & --- & --- \\\\\u201d",
+   "label": "1.93 \u2014 \u201cX3 & 0.05 \\ci{-0.47}{0.53} & 0.37 \\ci{-0.99}{1.93} & --- & --- \\\\\u201d",
    "printed": "1.93",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23597,7 +23748,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.151"
   },
   {
-   "label": "-0.72 \u2014 \u201cD4 & $-0.72$ \\ci{-1.23}{-0.32} & 9.37 \\ci{6.53}{12.32} & --- & --- \\\\\u201d",
+   "label": "-0.72 \u2014 \u201cX4 & $-0.72$ \\ci{-1.23}{-0.32} & 9.37 \\ci{6.53}{12.32} & --- & --- \\\\\u201d",
    "printed": "-0.72",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23614,7 +23765,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.152"
   },
   {
-   "label": "-1.23 \u2014 \u201cD4 & $-0.72$ \\ci{-1.23}{-0.32} & 9.37 \\ci{6.53}{12.32} & --- & --- \\\\\u201d",
+   "label": "-1.23 \u2014 \u201cX4 & $-0.72$ \\ci{-1.23}{-0.32} & 9.37 \\ci{6.53}{12.32} & --- & --- \\\\\u201d",
    "printed": "-1.23",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23631,7 +23782,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.153"
   },
   {
-   "label": "-0.32 \u2014 \u201cD4 & $-0.72$ \\ci{-1.23}{-0.32} & 9.37 \\ci{6.53}{12.32} & --- & --- \\\\\u201d",
+   "label": "-0.32 \u2014 \u201cX4 & $-0.72$ \\ci{-1.23}{-0.32} & 9.37 \\ci{6.53}{12.32} & --- & --- \\\\\u201d",
    "printed": "-0.32",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23648,7 +23799,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.154"
   },
   {
-   "label": "9.37 \u2014 \u201cD4 & $-0.72$ \\ci{-1.23}{-0.32} & 9.37 \\ci{6.53}{12.32} & --- & --- \\\\\u201d",
+   "label": "9.37 \u2014 \u201cX4 & $-0.72$ \\ci{-1.23}{-0.32} & 9.37 \\ci{6.53}{12.32} & --- & --- \\\\\u201d",
    "printed": "9.37",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23665,7 +23816,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.155"
   },
   {
-   "label": "6.53 \u2014 \u201cD4 & $-0.72$ \\ci{-1.23}{-0.32} & 9.37 \\ci{6.53}{12.32} & --- & --- \\\\\u201d",
+   "label": "6.53 \u2014 \u201cX4 & $-0.72$ \\ci{-1.23}{-0.32} & 9.37 \\ci{6.53}{12.32} & --- & --- \\\\\u201d",
    "printed": "6.53",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23682,7 +23833,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.156"
   },
   {
-   "label": "12.32 \u2014 \u201cD4 & $-0.72$ \\ci{-1.23}{-0.32} & 9.37 \\ci{6.53}{12.32} & --- & --- \\\\\u201d",
+   "label": "12.32 \u2014 \u201cX4 & $-0.72$ \\ci{-1.23}{-0.32} & 9.37 \\ci{6.53}{12.32} & --- & --- \\\\\u201d",
    "printed": "12.32",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23699,7 +23850,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.157"
   },
   {
-   "label": "0.72 \u2014 \u201cD5 & 0.72 \\ci{0.24}{1.28} & 8.03 \\ci{5.70}{10.52} & --- & --- \\\\\u201d",
+   "label": "0.72 \u2014 \u201cX5 & 0.72 \\ci{0.24}{1.28} & 8.03 \\ci{5.70}{10.52} & --- & --- \\\\\u201d",
    "printed": "0.72",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23716,7 +23867,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.158"
   },
   {
-   "label": "0.24 \u2014 \u201cD5 & 0.72 \\ci{0.24}{1.28} & 8.03 \\ci{5.70}{10.52} & --- & --- \\\\\u201d",
+   "label": "0.24 \u2014 \u201cX5 & 0.72 \\ci{0.24}{1.28} & 8.03 \\ci{5.70}{10.52} & --- & --- \\\\\u201d",
    "printed": "0.24",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23733,7 +23884,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.159"
   },
   {
-   "label": "1.28 \u2014 \u201cD5 & 0.72 \\ci{0.24}{1.28} & 8.03 \\ci{5.70}{10.52} & --- & --- \\\\\u201d",
+   "label": "1.28 \u2014 \u201cX5 & 0.72 \\ci{0.24}{1.28} & 8.03 \\ci{5.70}{10.52} & --- & --- \\\\\u201d",
    "printed": "1.28",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23750,7 +23901,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.160"
   },
   {
-   "label": "8.03 \u2014 \u201cD5 & 0.72 \\ci{0.24}{1.28} & 8.03 \\ci{5.70}{10.52} & --- & --- \\\\\u201d",
+   "label": "8.03 \u2014 \u201cX5 & 0.72 \\ci{0.24}{1.28} & 8.03 \\ci{5.70}{10.52} & --- & --- \\\\\u201d",
    "printed": "8.03",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23767,7 +23918,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.161"
   },
   {
-   "label": "5.70 \u2014 \u201cD5 & 0.72 \\ci{0.24}{1.28} & 8.03 \\ci{5.70}{10.52} & --- & --- \\\\\u201d",
+   "label": "5.70 \u2014 \u201cX5 & 0.72 \\ci{0.24}{1.28} & 8.03 \\ci{5.70}{10.52} & --- & --- \\\\\u201d",
    "printed": "5.70",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23784,7 +23935,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.162"
   },
   {
-   "label": "10.52 \u2014 \u201cD5 & 0.72 \\ci{0.24}{1.28} & 8.03 \\ci{5.70}{10.52} & --- & --- \\\\\u201d",
+   "label": "10.52 \u2014 \u201cX5 & 0.72 \\ci{0.24}{1.28} & 8.03 \\ci{5.70}{10.52} & --- & --- \\\\\u201d",
    "printed": "10.52",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23801,7 +23952,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.163"
   },
   {
-   "label": "-0.25 \u2014 \u201cD6 & $-0.25$ \\ci{-0.58}{0.07} & 0.49 \\ci{-0.78}{1.67} & --- & --- \\\\\u201d",
+   "label": "-0.25 \u2014 \u201cX6 & $-0.25$ \\ci{-0.58}{0.07} & 0.49 \\ci{-0.78}{1.67} & --- & --- \\\\\u201d",
    "printed": "-0.25",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23818,7 +23969,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.164"
   },
   {
-   "label": "-0.58 \u2014 \u201cD6 & $-0.25$ \\ci{-0.58}{0.07} & 0.49 \\ci{-0.78}{1.67} & --- & --- \\\\\u201d",
+   "label": "-0.58 \u2014 \u201cX6 & $-0.25$ \\ci{-0.58}{0.07} & 0.49 \\ci{-0.78}{1.67} & --- & --- \\\\\u201d",
    "printed": "-0.58",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23835,7 +23986,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.165"
   },
   {
-   "label": "0.07 \u2014 \u201cD6 & $-0.25$ \\ci{-0.58}{0.07} & 0.49 \\ci{-0.78}{1.67} & --- & --- \\\\\u201d",
+   "label": "0.07 \u2014 \u201cX6 & $-0.25$ \\ci{-0.58}{0.07} & 0.49 \\ci{-0.78}{1.67} & --- & --- \\\\\u201d",
    "printed": "0.07",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23852,7 +24003,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.166"
   },
   {
-   "label": "0.49 \u2014 \u201cD6 & $-0.25$ \\ci{-0.58}{0.07} & 0.49 \\ci{-0.78}{1.67} & --- & --- \\\\\u201d",
+   "label": "0.49 \u2014 \u201cX6 & $-0.25$ \\ci{-0.58}{0.07} & 0.49 \\ci{-0.78}{1.67} & --- & --- \\\\\u201d",
    "printed": "0.49",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23869,7 +24020,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.167"
   },
   {
-   "label": "-0.78 \u2014 \u201cD6 & $-0.25$ \\ci{-0.58}{0.07} & 0.49 \\ci{-0.78}{1.67} & --- & --- \\\\\u201d",
+   "label": "-0.78 \u2014 \u201cX6 & $-0.25$ \\ci{-0.58}{0.07} & 0.49 \\ci{-0.78}{1.67} & --- & --- \\\\\u201d",
    "printed": "-0.78",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -23886,7 +24037,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpladder.168"
   },
   {
-   "label": "1.67 \u2014 \u201cD6 & $-0.25$ \\ci{-0.58}{0.07} & 0.49 \\ci{-0.78}{1.67} & --- & --- \\\\\u201d",
+   "label": "1.67 \u2014 \u201cX6 & $-0.25$ \\ci{-0.58}{0.07} & 0.49 \\ci{-0.78}{1.67} & --- & --- \\\\\u201d",
    "printed": "1.67",
    "kind": "scalar",
    "source": "revision-1/exploratory/rev1/e9.json",
@@ -27955,7 +28106,7 @@
    "command": "python verify/claim.py R1.supp-tab-appexpcost.88"
   },
   {
-   "label": "0.1109 \u2014 \u201chead logit), averaged per video, then per level and over the seeds, was 0.1109 at c40 and \u201d",
+   "label": "0.1109 \u2014 \u201chead logit, $\\gamma$ Fair-W's learned residual weight, logit $= s + \\gamma f$), averaged p\u201d",
    "printed": "0.1109",
    "kind": "scalar",
    "source": "revision-1/exploratory/e11.json",
@@ -27970,7 +28121,7 @@
    "command": "python verify/claim.py R1.supp-Frequency-path-diagnostics-E11.1"
   },
   {
-   "label": "0.1015 \u2014 \u201chead logit), averaged per video, then per level and over the seeds, was 0.1109 at c40 and \u201d",
+   "label": "0.1015 \u2014 \u201chead logit, $\\gamma$ Fair-W's learned residual weight, logit $= s + \\gamma f$), averaged p\u201d",
    "printed": "0.1015",
    "kind": "scalar",
    "source": "revision-1/exploratory/e11.json",
@@ -27985,7 +28136,7 @@
    "command": "python verify/claim.py R1.supp-Frequency-path-diagnostics-E11.2"
   },
   {
-   "label": "0.1520 \u2014 \u201chead logit), averaged per video, then per level and over the seeds, was 0.1109 at c40 and \u201d",
+   "label": "0.1520 \u2014 \u201chead logit, $\\gamma$ Fair-W's learned residual weight, logit $= s + \\gamma f$), averaged p\u201d",
    "printed": "0.1520",
    "kind": "scalar",
    "source": "revision-1/exploratory/e11.json",
@@ -33381,7 +33532,7 @@
    "command": "python verify/claim.py R1.supp-app-curriculum.4"
   },
   {
-   "label": "0.363 \u2014 \u201cagainst 0.363 / the first run. CAFRL trained in bf16 is not\u201d",
+   "label": "0.363 \u2014 \u201cagainst 0.363 / the first run. CAFRL trained in bfloat16 is not\u201d",
    "printed": "0.363",
    "kind": "scalar",
    "source": "revision-1/curriculum/analysis.json",
@@ -33865,7 +34016,7 @@
    "command": "python verify/claim.py R1.supp-app-curriculum.33"
   },
   {
-   "label": "27 \u2014 \u201cablation (seed 42; raw weights at the EMA-selected epoch 27; the divergence\u201d",
+   "label": "27 \u2014 \u201cstop (seed 42; raw weights at the EMA-selected epoch 27; the divergence\u201d",
    "printed": "27",
    "kind": "scalar",
    "source": "revision-1/curriculum/analysis.json",
@@ -33983,7 +34134,7 @@
    "command": "python verify/claim.py R1.supp-app-curriculum.40"
   },
   {
-   "label": "27 \u2014 \u201cablation (seed 42; raw weights, raw-selected epoch 27; the divergence rule was\u201d",
+   "label": "27 \u2014 \u201cstop (seed 42; raw weights, raw-selected epoch 27; the divergence rule was\u201d",
    "printed": "27",
    "kind": "scalar",
    "source": "revision-1/curriculum/analysis.json",
@@ -34101,7 +34252,7 @@
    "command": "python verify/claim.py R1.supp-app-curriculum.47"
   },
   {
-   "label": "27 \u2014 \u201cof the curriculum ablation (seed 42; EMA weights, selected epoch 27; trained\u201d",
+   "label": "27 \u2014 \u201cits own batch-norm statistics (seed 42; EMA weights, selected epoch 27; trained\u201d",
    "printed": "27",
    "kind": "scalar",
    "source": "revision-1/curriculum/analysis.json",
@@ -34219,7 +34370,7 @@
    "command": "python verify/claim.py R1.supp-app-curriculum.54"
   },
   {
-   "label": "27 \u2014 \u201cof the curriculum ablation (seed 42; raw weights at the EMA-selected epoch 27;\u201d",
+   "label": "27 \u2014 \u201cits own batch-norm statistics (seed 42; raw weights at the EMA-selected epoch 27;\u201d",
    "printed": "27",
    "kind": "scalar",
    "source": "revision-1/curriculum/analysis.json",
@@ -34337,7 +34488,7 @@
    "command": "python verify/claim.py R1.supp-app-curriculum.61"
   },
   {
-   "label": "27 \u2014 \u201cof the curriculum ablation (seed 42; raw weights, raw-selected epoch 27;\u201d",
+   "label": "27 \u2014 \u201cits own batch-norm statistics (seed 42; raw weights, raw-selected epoch 27;\u201d",
    "printed": "27",
    "kind": "scalar",
    "source": "revision-1/curriculum/analysis.json",
@@ -36289,7 +36440,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.2"
   },
   {
-   "label": "340 \u2014 \u201c340 fake; DFD counts are identical at c23 and c40. Cells with three values give c0 $\\cdot$\u201d",
+   "label": "340 \u2014 \u201c340 fake; DFD counts are identical at c23 and c40. Cells with three values give c0; c23; c\u201d",
    "printed": "340",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36304,7 +36455,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.3"
   },
   {
-   "label": "23 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55 $\\cdot$ 55 $\\cdot$ 60 / 509{,}128 & 6 $\\cdot$ 6 $\\cdot$ \u201d",
+   "label": "23 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55; 55; 60 / 509{,}128 & 6; 6; 7 & 219; 213; 191 & 0 \\\\\u201d",
    "printed": "23",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36319,7 +36470,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.4"
   },
   {
-   "label": "2 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55 $\\cdot$ 55 $\\cdot$ 60 / 509{,}128 & 6 $\\cdot$ 6 $\\cdot$ \u201d",
+   "label": "2 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55; 55; 60 / 509{,}128 & 6; 6; 7 & 219; 213; 191 & 0 \\\\\u201d",
    "printed": "2",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36334,7 +36485,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.5"
   },
   {
-   "label": "55 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55 $\\cdot$ 55 $\\cdot$ 60 / 509{,}128 & 6 $\\cdot$ 6 $\\cdot$ \u201d",
+   "label": "55 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55; 55; 60 / 509{,}128 & 6; 6; 7 & 219; 213; 191 & 0 \\\\\u201d",
    "printed": "55",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36349,7 +36500,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.6"
   },
   {
-   "label": "55 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55 $\\cdot$ 55 $\\cdot$ 60 / 509{,}128 & 6 $\\cdot$ 6 $\\cdot$ \u201d",
+   "label": "55 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55; 55; 60 / 509{,}128 & 6; 6; 7 & 219; 213; 191 & 0 \\\\\u201d",
    "printed": "55",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36364,7 +36515,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.7"
   },
   {
-   "label": "60 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55 $\\cdot$ 55 $\\cdot$ 60 / 509{,}128 & 6 $\\cdot$ 6 $\\cdot$ \u201d",
+   "label": "60 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55; 55; 60 / 509{,}128 & 6; 6; 7 & 219; 213; 191 & 0 \\\\\u201d",
    "printed": "60",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36379,7 +36530,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.8"
   },
   {
-   "label": "509,128 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55 $\\cdot$ 55 $\\cdot$ 60 / 509{,}128 & 6 $\\cdot$ 6 $\\cdot$ \u201d",
+   "label": "509,128 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55; 55; 60 / 509{,}128 & 6; 6; 7 & 219; 213; 191 & 0 \\\\\u201d",
    "printed": "509128",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36394,7 +36545,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.9"
   },
   {
-   "label": "6 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55 $\\cdot$ 55 $\\cdot$ 60 / 509{,}128 & 6 $\\cdot$ 6 $\\cdot$ \u201d",
+   "label": "6 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55; 55; 60 / 509{,}128 & 6; 6; 7 & 219; 213; 191 & 0 \\\\\u201d",
    "printed": "6",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36409,7 +36560,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.10"
   },
   {
-   "label": "6 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55 $\\cdot$ 55 $\\cdot$ 60 / 509{,}128 & 6 $\\cdot$ 6 $\\cdot$ \u201d",
+   "label": "6 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55; 55; 60 / 509{,}128 & 6; 6; 7 & 219; 213; 191 & 0 \\\\\u201d",
    "printed": "6",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36424,7 +36575,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.11"
   },
   {
-   "label": "7 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55 $\\cdot$ 55 $\\cdot$ 60 / 509{,}128 & 6 $\\cdot$ 6 $\\cdot$ \u201d",
+   "label": "7 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55; 55; 60 / 509{,}128 & 6; 6; 7 & 219; 213; 191 & 0 \\\\\u201d",
    "printed": "7",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36439,7 +36590,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.12"
   },
   {
-   "label": "219 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55 $\\cdot$ 55 $\\cdot$ 60 / 509{,}128 & 6 $\\cdot$ 6 $\\cdot$ \u201d",
+   "label": "219 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55; 55; 60 / 509{,}128 & 6; 6; 7 & 219; 213; 191 & 0 \\\\\u201d",
    "printed": "219",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36454,7 +36605,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.13"
   },
   {
-   "label": "213 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55 $\\cdot$ 55 $\\cdot$ 60 / 509{,}128 & 6 $\\cdot$ 6 $\\cdot$ \u201d",
+   "label": "213 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55; 55; 60 / 509{,}128 & 6; 6; 7 & 219; 213; 191 & 0 \\\\\u201d",
    "printed": "213",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36469,7 +36620,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.14"
   },
   {
-   "label": "191 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55 $\\cdot$ 55 $\\cdot$ 60 / 509{,}128 & 6 $\\cdot$ 6 $\\cdot$ \u201d",
+   "label": "191 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55; 55; 60 / 509{,}128 & 6; 6; 7 & 219; 213; 191 & 0 \\\\\u201d",
    "printed": "191",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36484,7 +36635,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.15"
   },
   {
-   "label": "0 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55 $\\cdot$ 55 $\\cdot$ 60 / 509{,}128 & 6 $\\cdot$ 6 $\\cdot$ \u201d",
+   "label": "0 \u2014 \u201cFF++ real & 1{,}000 & 23 (2) & 55; 55; 60 / 509{,}128 & 6; 6; 7 & 219; 213; 191 & 0 \\\\\u201d",
    "printed": "0",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36499,7 +36650,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.16"
   },
   {
-   "label": "23 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61 $\\cdot$ 62 $\\cdot$ 66 / 509{,}128 & 6 $\\cdot$ 6 $\\c\u201d",
+   "label": "23 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61; 62; 66 / 509{,}128 & 6; 6; 7 & 219; 213; 197 & 0 \\\u201d",
    "printed": "23",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36514,7 +36665,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.17"
   },
   {
-   "label": "2 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61 $\\cdot$ 62 $\\cdot$ 66 / 509{,}128 & 6 $\\cdot$ 6 $\\c\u201d",
+   "label": "2 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61; 62; 66 / 509{,}128 & 6; 6; 7 & 219; 213; 197 & 0 \\\u201d",
    "printed": "2",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36529,7 +36680,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.18"
   },
   {
-   "label": "61 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61 $\\cdot$ 62 $\\cdot$ 66 / 509{,}128 & 6 $\\cdot$ 6 $\\c\u201d",
+   "label": "61 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61; 62; 66 / 509{,}128 & 6; 6; 7 & 219; 213; 197 & 0 \\\u201d",
    "printed": "61",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36544,7 +36695,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.19"
   },
   {
-   "label": "62 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61 $\\cdot$ 62 $\\cdot$ 66 / 509{,}128 & 6 $\\cdot$ 6 $\\c\u201d",
+   "label": "62 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61; 62; 66 / 509{,}128 & 6; 6; 7 & 219; 213; 197 & 0 \\\u201d",
    "printed": "62",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36559,7 +36710,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.20"
   },
   {
-   "label": "66 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61 $\\cdot$ 62 $\\cdot$ 66 / 509{,}128 & 6 $\\cdot$ 6 $\\c\u201d",
+   "label": "66 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61; 62; 66 / 509{,}128 & 6; 6; 7 & 219; 213; 197 & 0 \\\u201d",
    "printed": "66",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36574,7 +36725,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.21"
   },
   {
-   "label": "509,128 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61 $\\cdot$ 62 $\\cdot$ 66 / 509{,}128 & 6 $\\cdot$ 6 $\\c\u201d",
+   "label": "509,128 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61; 62; 66 / 509{,}128 & 6; 6; 7 & 219; 213; 197 & 0 \\\u201d",
    "printed": "509128",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36589,7 +36740,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.22"
   },
   {
-   "label": "6 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61 $\\cdot$ 62 $\\cdot$ 66 / 509{,}128 & 6 $\\cdot$ 6 $\\c\u201d",
+   "label": "6 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61; 62; 66 / 509{,}128 & 6; 6; 7 & 219; 213; 197 & 0 \\\u201d",
    "printed": "6",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36604,7 +36755,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.23"
   },
   {
-   "label": "6 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61 $\\cdot$ 62 $\\cdot$ 66 / 509{,}128 & 6 $\\cdot$ 6 $\\c\u201d",
+   "label": "6 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61; 62; 66 / 509{,}128 & 6; 6; 7 & 219; 213; 197 & 0 \\\u201d",
    "printed": "6",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36619,7 +36770,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.24"
   },
   {
-   "label": "7 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61 $\\cdot$ 62 $\\cdot$ 66 / 509{,}128 & 6 $\\cdot$ 6 $\\c\u201d",
+   "label": "7 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61; 62; 66 / 509{,}128 & 6; 6; 7 & 219; 213; 197 & 0 \\\u201d",
    "printed": "7",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36634,7 +36785,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.25"
   },
   {
-   "label": "219 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61 $\\cdot$ 62 $\\cdot$ 66 / 509{,}128 & 6 $\\cdot$ 6 $\\c\u201d",
+   "label": "219 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61; 62; 66 / 509{,}128 & 6; 6; 7 & 219; 213; 197 & 0 \\\u201d",
    "printed": "219",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36649,7 +36800,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.26"
   },
   {
-   "label": "213 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61 $\\cdot$ 62 $\\cdot$ 66 / 509{,}128 & 6 $\\cdot$ 6 $\\c\u201d",
+   "label": "213 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61; 62; 66 / 509{,}128 & 6; 6; 7 & 219; 213; 197 & 0 \\\u201d",
    "printed": "213",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36664,7 +36815,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.27"
   },
   {
-   "label": "197 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61 $\\cdot$ 62 $\\cdot$ 66 / 509{,}128 & 6 $\\cdot$ 6 $\\c\u201d",
+   "label": "197 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61; 62; 66 / 509{,}128 & 6; 6; 7 & 219; 213; 197 & 0 \\\u201d",
    "printed": "197",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36679,7 +36830,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.28"
   },
   {
-   "label": "0 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61 $\\cdot$ 62 $\\cdot$ 66 / 509{,}128 & 6 $\\cdot$ 6 $\\c\u201d",
+   "label": "0 \u2014 \u201cFF++ Deepfakes & 1{,}000 & 23 (2) & 61; 62; 66 / 509{,}128 & 6; 6; 7 & 219; 213; 197 & 0 \\\u201d",
    "printed": "0",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36694,7 +36845,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.29"
   },
   {
-   "label": "23 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087 $\\cdot$ 2{,}089 $\\cdot$ 2{,}090 / 509{,}128 & \u201d",
+   "label": "23 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087; 2{,}089; 2{,}090 / 509{,}128 & 13; 14; 14 & 2\u201d",
    "printed": "23",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36709,7 +36860,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.30"
   },
   {
-   "label": "2 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087 $\\cdot$ 2{,}089 $\\cdot$ 2{,}090 / 509{,}128 & \u201d",
+   "label": "2 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087; 2{,}089; 2{,}090 / 509{,}128 & 13; 14; 14 & 2\u201d",
    "printed": "2",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36724,7 +36875,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.31"
   },
   {
-   "label": "2,087 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087 $\\cdot$ 2{,}089 $\\cdot$ 2{,}090 / 509{,}128 & \u201d",
+   "label": "2,087 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087; 2{,}089; 2{,}090 / 509{,}128 & 13; 14; 14 & 2\u201d",
    "printed": "2087",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36739,7 +36890,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.32"
   },
   {
-   "label": "2,089 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087 $\\cdot$ 2{,}089 $\\cdot$ 2{,}090 / 509{,}128 & \u201d",
+   "label": "2,089 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087; 2{,}089; 2{,}090 / 509{,}128 & 13; 14; 14 & 2\u201d",
    "printed": "2089",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36754,7 +36905,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.33"
   },
   {
-   "label": "2,090 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087 $\\cdot$ 2{,}089 $\\cdot$ 2{,}090 / 509{,}128 & \u201d",
+   "label": "2,090 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087; 2{,}089; 2{,}090 / 509{,}128 & 13; 14; 14 & 2\u201d",
    "printed": "2090",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36769,7 +36920,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.34"
   },
   {
-   "label": "509,128 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087 $\\cdot$ 2{,}089 $\\cdot$ 2{,}090 / 509{,}128 & \u201d",
+   "label": "509,128 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087; 2{,}089; 2{,}090 / 509{,}128 & 13; 14; 14 & 2\u201d",
    "printed": "509128",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36784,7 +36935,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.35"
   },
   {
-   "label": "13 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087 $\\cdot$ 2{,}089 $\\cdot$ 2{,}090 / 509{,}128 & \u201d",
+   "label": "13 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087; 2{,}089; 2{,}090 / 509{,}128 & 13; 14; 14 & 2\u201d",
    "printed": "13",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36799,7 +36950,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.36"
   },
   {
-   "label": "14 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087 $\\cdot$ 2{,}089 $\\cdot$ 2{,}090 / 509{,}128 & \u201d",
+   "label": "14 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087; 2{,}089; 2{,}090 / 509{,}128 & 13; 14; 14 & 2\u201d",
    "printed": "14",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36814,7 +36965,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.37"
   },
   {
-   "label": "14 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087 $\\cdot$ 2{,}089 $\\cdot$ 2{,}090 / 509{,}128 & \u201d",
+   "label": "14 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087; 2{,}089; 2{,}090 / 509{,}128 & 13; 14; 14 & 2\u201d",
    "printed": "14",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36829,7 +36980,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.38"
   },
   {
-   "label": "210 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087 $\\cdot$ 2{,}089 $\\cdot$ 2{,}090 / 509{,}128 & \u201d",
+   "label": "210 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087; 2{,}089; 2{,}090 / 509{,}128 & 13; 14; 14 & 2\u201d",
    "printed": "210",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36844,7 +36995,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.39"
   },
   {
-   "label": "203 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087 $\\cdot$ 2{,}089 $\\cdot$ 2{,}090 / 509{,}128 & \u201d",
+   "label": "203 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087; 2{,}089; 2{,}090 / 509{,}128 & 13; 14; 14 & 2\u201d",
    "printed": "203",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36859,7 +37010,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.40"
   },
   {
-   "label": "186 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087 $\\cdot$ 2{,}089 $\\cdot$ 2{,}090 / 509{,}128 & \u201d",
+   "label": "186 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087; 2{,}089; 2{,}090 / 509{,}128 & 13; 14; 14 & 2\u201d",
    "printed": "186",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36874,7 +37025,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.41"
   },
   {
-   "label": "0 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087 $\\cdot$ 2{,}089 $\\cdot$ 2{,}090 / 509{,}128 & \u201d",
+   "label": "0 \u2014 \u201cFF++ Face2Face & 1{,}000 & 23 (2) & 2{,}087; 2{,}089; 2{,}090 / 509{,}128 & 13; 14; 14 & 2\u201d",
    "printed": "0",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36889,7 +37040,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.42"
   },
   {
-   "label": "23 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51 $\\cdot$ 51 $\\cdot$ 55 / 406{,}140 & 5 $\\cdot$ 5 $\\cd\u201d",
+   "label": "23 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51; 51; 55 / 406{,}140 & 5; 5; 6 & 204; 198; 179 & 0 \\\\\u201d",
    "printed": "23",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36904,7 +37055,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.43"
   },
   {
-   "label": "2 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51 $\\cdot$ 51 $\\cdot$ 55 / 406{,}140 & 5 $\\cdot$ 5 $\\cd\u201d",
+   "label": "2 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51; 51; 55 / 406{,}140 & 5; 5; 6 & 204; 198; 179 & 0 \\\\\u201d",
    "printed": "2",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36919,7 +37070,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.44"
   },
   {
-   "label": "51 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51 $\\cdot$ 51 $\\cdot$ 55 / 406{,}140 & 5 $\\cdot$ 5 $\\cd\u201d",
+   "label": "51 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51; 51; 55 / 406{,}140 & 5; 5; 6 & 204; 198; 179 & 0 \\\\\u201d",
    "printed": "51",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36934,7 +37085,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.45"
   },
   {
-   "label": "51 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51 $\\cdot$ 51 $\\cdot$ 55 / 406{,}140 & 5 $\\cdot$ 5 $\\cd\u201d",
+   "label": "51 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51; 51; 55 / 406{,}140 & 5; 5; 6 & 204; 198; 179 & 0 \\\\\u201d",
    "printed": "51",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36949,7 +37100,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.46"
   },
   {
-   "label": "55 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51 $\\cdot$ 51 $\\cdot$ 55 / 406{,}140 & 5 $\\cdot$ 5 $\\cd\u201d",
+   "label": "55 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51; 51; 55 / 406{,}140 & 5; 5; 6 & 204; 198; 179 & 0 \\\\\u201d",
    "printed": "55",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36964,7 +37115,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.47"
   },
   {
-   "label": "406,140 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51 $\\cdot$ 51 $\\cdot$ 55 / 406{,}140 & 5 $\\cdot$ 5 $\\cd\u201d",
+   "label": "406,140 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51; 51; 55 / 406{,}140 & 5; 5; 6 & 204; 198; 179 & 0 \\\\\u201d",
    "printed": "406140",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36979,7 +37130,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.48"
   },
   {
-   "label": "5 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51 $\\cdot$ 51 $\\cdot$ 55 / 406{,}140 & 5 $\\cdot$ 5 $\\cd\u201d",
+   "label": "5 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51; 51; 55 / 406{,}140 & 5; 5; 6 & 204; 198; 179 & 0 \\\\\u201d",
    "printed": "5",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -36994,7 +37145,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.49"
   },
   {
-   "label": "5 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51 $\\cdot$ 51 $\\cdot$ 55 / 406{,}140 & 5 $\\cdot$ 5 $\\cd\u201d",
+   "label": "5 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51; 51; 55 / 406{,}140 & 5; 5; 6 & 204; 198; 179 & 0 \\\\\u201d",
    "printed": "5",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37009,7 +37160,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.50"
   },
   {
-   "label": "6 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51 $\\cdot$ 51 $\\cdot$ 55 / 406{,}140 & 5 $\\cdot$ 5 $\\cd\u201d",
+   "label": "6 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51; 51; 55 / 406{,}140 & 5; 5; 6 & 204; 198; 179 & 0 \\\\\u201d",
    "printed": "6",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37024,7 +37175,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.51"
   },
   {
-   "label": "204 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51 $\\cdot$ 51 $\\cdot$ 55 / 406{,}140 & 5 $\\cdot$ 5 $\\cd\u201d",
+   "label": "204 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51; 51; 55 / 406{,}140 & 5; 5; 6 & 204; 198; 179 & 0 \\\\\u201d",
    "printed": "204",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37039,7 +37190,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.52"
   },
   {
-   "label": "198 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51 $\\cdot$ 51 $\\cdot$ 55 / 406{,}140 & 5 $\\cdot$ 5 $\\cd\u201d",
+   "label": "198 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51; 51; 55 / 406{,}140 & 5; 5; 6 & 204; 198; 179 & 0 \\\\\u201d",
    "printed": "198",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37054,7 +37205,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.53"
   },
   {
-   "label": "179 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51 $\\cdot$ 51 $\\cdot$ 55 / 406{,}140 & 5 $\\cdot$ 5 $\\cd\u201d",
+   "label": "179 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51; 51; 55 / 406{,}140 & 5; 5; 6 & 204; 198; 179 & 0 \\\\\u201d",
    "printed": "179",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37069,7 +37220,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.54"
   },
   {
-   "label": "0 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51 $\\cdot$ 51 $\\cdot$ 55 / 406{,}140 & 5 $\\cdot$ 5 $\\cd\u201d",
+   "label": "0 \u2014 \u201cFF++ FaceSwap & 1{,}000 & 23 (2) & 51; 51; 55 / 406{,}140 & 5; 5; 6 & 204; 198; 179 & 0 \\\\\u201d",
    "printed": "0",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37084,7 +37235,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.55"
   },
   {
-   "label": "23 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50 $\\cdot$ 50 $\\cdot$ 55 / 406{,}137 & 5 $\\cdot$ \u201d",
+   "label": "23 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50; 50; 55 / 406{,}137 & 5; 5; 6 & 211; 202; 186 \u201d",
    "printed": "23",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37099,7 +37250,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.56"
   },
   {
-   "label": "2 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50 $\\cdot$ 50 $\\cdot$ 55 / 406{,}137 & 5 $\\cdot$ \u201d",
+   "label": "2 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50; 50; 55 / 406{,}137 & 5; 5; 6 & 211; 202; 186 \u201d",
    "printed": "2",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37114,7 +37265,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.57"
   },
   {
-   "label": "50 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50 $\\cdot$ 50 $\\cdot$ 55 / 406{,}137 & 5 $\\cdot$ \u201d",
+   "label": "50 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50; 50; 55 / 406{,}137 & 5; 5; 6 & 211; 202; 186 \u201d",
    "printed": "50",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37129,7 +37280,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.58"
   },
   {
-   "label": "50 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50 $\\cdot$ 50 $\\cdot$ 55 / 406{,}137 & 5 $\\cdot$ \u201d",
+   "label": "50 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50; 50; 55 / 406{,}137 & 5; 5; 6 & 211; 202; 186 \u201d",
    "printed": "50",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37144,7 +37295,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.59"
   },
   {
-   "label": "55 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50 $\\cdot$ 50 $\\cdot$ 55 / 406{,}137 & 5 $\\cdot$ \u201d",
+   "label": "55 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50; 50; 55 / 406{,}137 & 5; 5; 6 & 211; 202; 186 \u201d",
    "printed": "55",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37159,7 +37310,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.60"
   },
   {
-   "label": "406,137 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50 $\\cdot$ 50 $\\cdot$ 55 / 406{,}137 & 5 $\\cdot$ \u201d",
+   "label": "406,137 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50; 50; 55 / 406{,}137 & 5; 5; 6 & 211; 202; 186 \u201d",
    "printed": "406137",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37174,7 +37325,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.61"
   },
   {
-   "label": "5 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50 $\\cdot$ 50 $\\cdot$ 55 / 406{,}137 & 5 $\\cdot$ \u201d",
+   "label": "5 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50; 50; 55 / 406{,}137 & 5; 5; 6 & 211; 202; 186 \u201d",
    "printed": "5",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37189,7 +37340,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.62"
   },
   {
-   "label": "5 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50 $\\cdot$ 50 $\\cdot$ 55 / 406{,}137 & 5 $\\cdot$ \u201d",
+   "label": "5 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50; 50; 55 / 406{,}137 & 5; 5; 6 & 211; 202; 186 \u201d",
    "printed": "5",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37204,7 +37355,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.63"
   },
   {
-   "label": "6 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50 $\\cdot$ 50 $\\cdot$ 55 / 406{,}137 & 5 $\\cdot$ \u201d",
+   "label": "6 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50; 50; 55 / 406{,}137 & 5; 5; 6 & 211; 202; 186 \u201d",
    "printed": "6",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37219,7 +37370,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.64"
   },
   {
-   "label": "211 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50 $\\cdot$ 50 $\\cdot$ 55 / 406{,}137 & 5 $\\cdot$ \u201d",
+   "label": "211 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50; 50; 55 / 406{,}137 & 5; 5; 6 & 211; 202; 186 \u201d",
    "printed": "211",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37234,7 +37385,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.65"
   },
   {
-   "label": "202 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50 $\\cdot$ 50 $\\cdot$ 55 / 406{,}137 & 5 $\\cdot$ \u201d",
+   "label": "202 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50; 50; 55 / 406{,}137 & 5; 5; 6 & 211; 202; 186 \u201d",
    "printed": "202",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37249,7 +37400,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.66"
   },
   {
-   "label": "186 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50 $\\cdot$ 50 $\\cdot$ 55 / 406{,}137 & 5 $\\cdot$ \u201d",
+   "label": "186 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50; 50; 55 / 406{,}137 & 5; 5; 6 & 211; 202; 186 \u201d",
    "printed": "186",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37264,7 +37415,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.67"
   },
   {
-   "label": "0 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50 $\\cdot$ 50 $\\cdot$ 55 / 406{,}137 & 5 $\\cdot$ \u201d",
+   "label": "0 \u2014 \u201cFF++ NeuralTextures & 1{,}000 & 23 (2) & 50; 50; 55 / 406{,}137 & 5; 5; 6 & 211; 202; 186 \u201d",
    "printed": "0",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37279,7 +37430,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.68"
   },
   {
-   "label": "23 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56 $\\cdot$ 56 $\\cdot$ 61 / 509{,}128 & 6 $\\cdot$ 6 $\u201d",
+   "label": "23 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56; 56; 61 / 509{,}128 & 6; 6; 7 & 224; 215; 190 & 0\u201d",
    "printed": "23",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37294,7 +37445,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.69"
   },
   {
-   "label": "2 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56 $\\cdot$ 56 $\\cdot$ 61 / 509{,}128 & 6 $\\cdot$ 6 $\u201d",
+   "label": "2 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56; 56; 61 / 509{,}128 & 6; 6; 7 & 224; 215; 190 & 0\u201d",
    "printed": "2",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37309,7 +37460,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.70"
   },
   {
-   "label": "56 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56 $\\cdot$ 56 $\\cdot$ 61 / 509{,}128 & 6 $\\cdot$ 6 $\u201d",
+   "label": "56 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56; 56; 61 / 509{,}128 & 6; 6; 7 & 224; 215; 190 & 0\u201d",
    "printed": "56",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37324,7 +37475,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.71"
   },
   {
-   "label": "56 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56 $\\cdot$ 56 $\\cdot$ 61 / 509{,}128 & 6 $\\cdot$ 6 $\u201d",
+   "label": "56 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56; 56; 61 / 509{,}128 & 6; 6; 7 & 224; 215; 190 & 0\u201d",
    "printed": "56",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37339,7 +37490,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.72"
   },
   {
-   "label": "61 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56 $\\cdot$ 56 $\\cdot$ 61 / 509{,}128 & 6 $\\cdot$ 6 $\u201d",
+   "label": "61 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56; 56; 61 / 509{,}128 & 6; 6; 7 & 224; 215; 190 & 0\u201d",
    "printed": "61",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37354,7 +37505,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.73"
   },
   {
-   "label": "509,128 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56 $\\cdot$ 56 $\\cdot$ 61 / 509{,}128 & 6 $\\cdot$ 6 $\u201d",
+   "label": "509,128 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56; 56; 61 / 509{,}128 & 6; 6; 7 & 224; 215; 190 & 0\u201d",
    "printed": "509128",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37369,7 +37520,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.74"
   },
   {
-   "label": "6 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56 $\\cdot$ 56 $\\cdot$ 61 / 509{,}128 & 6 $\\cdot$ 6 $\u201d",
+   "label": "6 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56; 56; 61 / 509{,}128 & 6; 6; 7 & 224; 215; 190 & 0\u201d",
    "printed": "6",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37384,7 +37535,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.75"
   },
   {
-   "label": "6 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56 $\\cdot$ 56 $\\cdot$ 61 / 509{,}128 & 6 $\\cdot$ 6 $\u201d",
+   "label": "6 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56; 56; 61 / 509{,}128 & 6; 6; 7 & 224; 215; 190 & 0\u201d",
    "printed": "6",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37399,7 +37550,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.76"
   },
   {
-   "label": "7 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56 $\\cdot$ 56 $\\cdot$ 61 / 509{,}128 & 6 $\\cdot$ 6 $\u201d",
+   "label": "7 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56; 56; 61 / 509{,}128 & 6; 6; 7 & 224; 215; 190 & 0\u201d",
    "printed": "7",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37414,7 +37565,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.77"
   },
   {
-   "label": "224 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56 $\\cdot$ 56 $\\cdot$ 61 / 509{,}128 & 6 $\\cdot$ 6 $\u201d",
+   "label": "224 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56; 56; 61 / 509{,}128 & 6; 6; 7 & 224; 215; 190 & 0\u201d",
    "printed": "224",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37429,7 +37580,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.78"
   },
   {
-   "label": "215 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56 $\\cdot$ 56 $\\cdot$ 61 / 509{,}128 & 6 $\\cdot$ 6 $\u201d",
+   "label": "215 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56; 56; 61 / 509{,}128 & 6; 6; 7 & 224; 215; 190 & 0\u201d",
    "printed": "215",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37444,7 +37595,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.79"
   },
   {
-   "label": "190 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56 $\\cdot$ 56 $\\cdot$ 61 / 509{,}128 & 6 $\\cdot$ 6 $\u201d",
+   "label": "190 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56; 56; 61 / 509{,}128 & 6; 6; 7 & 224; 215; 190 & 0\u201d",
    "printed": "190",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37459,7 +37610,7 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.80"
   },
   {
-   "label": "0 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56 $\\cdot$ 56 $\\cdot$ 61 / 509{,}128 & 6 $\\cdot$ 6 $\u201d",
+   "label": "0 \u2014 \u201cFF++ FaceShifter & 1{,}000 & 23 (2) & 56; 56; 61 / 509{,}128 & 6; 6; 7 & 224; 215; 190 & 0\u201d",
    "printed": "0",
    "kind": "scalar",
    "source": "revision-1/tables/face_track_counts.json",
@@ -37894,11 +38045,12 @@
    "command": "python verify/claim.py R1.supp-tab-appfacetracks.109"
   },
   {
-   "label": "4.0 \u2014 \u201cthe backbone-matched, smaller control & 4.0\\,M & fair & 3 &\u201d",
-   "printed": "4.0",
+   "label": "1.32 \u2014 \u201c--- and include every trained parameter, among them CAFRL's 1.32\\,M\u201d",
+   "printed": "1.32",
    "kind": "scalar",
    "source": "probes/param_counts_arms.json",
-   "key": "arms.SpatialBase.millions",
+   "key": "arms.CAFRL as specified.components.discriminator",
+   "scale": 1e-06,
    "id": "R1.supp-tab-notation.1",
    "table": "R1.supp-tab-notation",
    "table_title": "Revision 1 \u2014 Supplementary Material, tab:notation",
@@ -37909,11 +38061,11 @@
    "command": "python verify/claim.py R1.supp-tab-notation.1"
   },
   {
-   "label": "11.97 \u2014 \u201c\\textbf{E1} & Fair-N $+$ the GRL adversary & 11.97\\,M & fair & 3 &\u201d",
-   "printed": "11.97",
+   "label": "10.65 \u2014 \u201cdiscriminator, which the prediction does not use (10.65\\,M without it). The last\u201d",
+   "printed": "10.65",
    "kind": "scalar",
    "source": "revision-1/tables/shapes.json",
-   "key": "arms.as_specified.param_total",
+   "key": "arms.fair_n.param_total",
    "scale": 1e-06,
    "id": "R1.supp-tab-notation.2",
    "table": "R1.supp-tab-notation",
@@ -37925,20 +38077,53 @@
    "command": "python verify/claim.py R1.supp-tab-notation.2"
   },
   {
-   "label": "10.65 \u2014 \u201cshipped value & 10.65\\,M & fair & 1 &\u201d",
-   "printed": "10.65",
+   "label": "4.0 \u2014 \u201cthe backbone-matched, smaller control & 4.0\\,M & fair & 3 &\u201d",
+   "printed": "4.0",
+   "kind": "scalar",
+   "source": "probes/param_counts_arms.json",
+   "key": "arms.SpatialBase.millions",
+   "id": "R1.supp-tab-notation.3",
+   "table": "R1.supp-tab-notation",
+   "table_title": "Revision 1 \u2014 Supplementary Material, tab:notation",
+   "where": "Supplementary Material, tab:notation",
+   "artifacts": [
+    "probes/param_counts_arms.json"
+   ],
+   "command": "python verify/claim.py R1.supp-tab-notation.3"
+  },
+  {
+   "label": "11.97 \u2014 \u201c\\textbf{E1} & Fair-N $+$ the GRL adversary & 11.97\\,M & fair & 3 &\u201d",
+   "printed": "11.97",
    "kind": "scalar",
    "source": "revision-1/tables/shapes.json",
-   "key": "arms.fair_n.param_total",
+   "key": "arms.as_specified.param_total",
    "scale": 1e-06,
-   "id": "R1.supp-tab-notation.3",
+   "id": "R1.supp-tab-notation.4",
    "table": "R1.supp-tab-notation",
    "table_title": "Revision 1 \u2014 Supplementary Material, tab:notation",
    "where": "Supplementary Material, tab:notation",
    "artifacts": [
     "revision-1/tables/shapes.json"
    ],
-   "command": "python verify/claim.py R1.supp-tab-notation.3"
+   "command": "python verify/claim.py R1.supp-tab-notation.4"
+  },
+  {
+   "label": "53 \u2014 \u201cselected epoch (53 runs); the evaluation harness (paired bootstrap, seed\u201d",
+   "printed": "53",
+   "kind": "aggregate",
+   "source": "curves/selection.json",
+   "key": "runs",
+   "field": "selected_epoch",
+   "op": "count",
+   "note": "the released runs with a configuration, validation curve and selected epoch (27 of v1.0.0 plus 26 of Revision 1)",
+   "id": "R1.supp-app-repro.1",
+   "table": "R1.supp-app-repro",
+   "table_title": "Revision 1 \u2014 Supplementary Material, app:repro",
+   "where": "Supplementary Material, app:repro",
+   "artifacts": [
+    "curves/selection.json"
+   ],
+   "command": "python verify/claim.py R1.supp-app-repro.1"
   }
  ],
  "release_claims": []

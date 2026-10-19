@@ -20,6 +20,7 @@
 % T5 (1.88 pt, raw weights) beside T4, both "registered, paired" as the
 % Conclusion; "these frequency streams" -> "the block-DCT and FFT-phase streams".
 % W6 S2 (2026-10-19): T4 labelled "raw weights" as T5 (main sec:datatests: T3--T5 raw weights).
+% W8 R2 (2026-10-19): "e.g.," before the four named arm families (A-026); every bare "vs" -> "vs." (A-027).
 % PNG: pdftoppm -r 150 -png -singlefile (reproduces the committed PNG exactly).
 \documentclass[tikz,border=6pt,11pt]{standalone}
 \usetikzlibrary{positioning,arrows.meta,calc}
@@ -66,7 +67,7 @@
 
 \node[runblock] (campaign) at (\colsep,0) {%
   {\head Controlled campaign}\\[1pt]
-  {\body full CAFRL (11.97\,M) vs the backbone-matched
+  {\body full CAFRL (11.97\,M) vs.\ the backbone-matched
    ``SpatialBase'' (4.0\,M) $+$ Xception / F3-Net / FreqNet, identical
    multi-CRF data.\\
    \textit{Confounds ruled out:} augmentation; capacity.}};
@@ -74,11 +75,11 @@
 \node[stopblock] (stop) at (2*\colsep,0) {%
   {\head STOP-gate fires --- the initial configuration fails}\\[1pt]
   {\body SpatialBase scores above full CAFRL at every level
-   (c40: .9590 vs .9224; $\Delta$ +0.0366, CI [+0.020,\,+0.054]).}};
+   (c40: .9590 vs.\ .9224; $\Delta$ +0.0366, CI [+0.020,\,+0.054]).}};
 
 \node[ghost] (ablations) at (3*\colsep,0) {%
   {\head\color{ink2} Planned ablation campaign}\\[1pt]
-  {\body six arm families, 38 runs --- GRL-vs-HSIC bake-off, conditioning,
+  {\body six arm families, 38 runs --- e.g., GRL-vs-HSIC bake-off, conditioning,
    fusion, curriculum --- \textbf{never run} per the frozen rule.\\[1pt]
    \color{freq!70!black}\textbf{$\approx$270\,h of training saved}}};
 
@@ -94,12 +95,12 @@
   {\head Pre-specified fair re-tests (repair D1--D4)}\\[1pt]
   {\body TrunkCtrl: trunk gap recipe-dominant\\
    Fair-N (no invariance losses):
-   0.9586 vs SpatialBase 0.9590\\
+   0.9586 vs.\ SpatialBase 0.9590\\
    Fair-W (full trunk $+\gamma$-residual): +0.0055, CI incl.\ 0\\[1pt]
    {\color{muted}$\approx$35\,h}}};
 
 \node[runblock] (seeds) at (2*\colsep,\rowsep) {%
-  {\head Seed confirmation (3 seeds vs 3 seeds)}\\[1pt]
+  {\head Seed confirmation (3 seeds vs.\ 3 seeds)}\\[1pt]
   {\body pooled $\Delta$ at c40: Fair-N $-$0.0009 / Fair-W +0.0022,
    both CIs include 0 --- no detectable difference.\\[1pt]
    {\color{muted}$\approx$31\,h}}};

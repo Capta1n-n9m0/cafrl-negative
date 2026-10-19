@@ -1,5 +1,64 @@
 # Release notes
 
+## v2.0.1 — corrections to the revised manuscript
+
+This version goes with the corrected revised manuscript. After v2.0.0 was
+released, a language and consistency check of the manuscript and its
+Supplementary Material found unclear wording, labels used for two different
+things, and one misprinted number. The manuscript was corrected and frozen again.
+No result changed. No data, run, checkpoint, per-video prediction, analysis
+output or statistic of v2.0.0 changed, and every number the paper prints keeps
+its value except one misprint in the text (item 1), whose source values are
+unchanged.
+
+Archival deposit of this version: **10.5281/zenodo.23484150** (version DOI).
+The v2.0.0 deposit (DOI 10.5281/zenodo.23466627) and the v1.0.0 deposit
+(DOI 10.5281/zenodo.22032529) stay published unchanged.
+
+### Changed
+
+1. **`evaluation/OOD-PROTOCOL.md`**: "the 0.4-point spread the same arm shows at
+   FaceForensics++ c40" now reads "0.5-point spread". Fair-N's three c40 video
+   AUCs are 0.9586, 0.9567 and 0.9536 (Supplementary Material, Table S1): a
+   spread of 0.0050, that is 0.5 points. The values did not change; the text
+   misprinted their spread.
+2. **`evaluation/CALIBRATION.md`**: "land 3.5 and 4.7 frame-AUC points below it
+   at c40" could be read as "below the c23 anchor". The two detectors land that
+   far below their c40 anchor, and the sentence now says so, as the
+   Supplementary Material does. Same numbers.
+3. **`README.md`**: the summary paragraph follows the corrected abstract ("Five
+   separate findings follow."). The `revision-1/` entry adds a note: the
+   Supplementary Material now labels its six exploratory contrasts X1–X6, so
+   that they no longer share labels with the audit defects D1–D8. The JSON keys
+   of the exploratory files keep the names `D1`–`D6` (D1 = X1, …, D6 = X6).
+4. **`figures/fig3_campaign_flow.tex`** (Fig. S1 of the Supplementary Material):
+   the figure names four of the six arm families, so it now marks them as
+   examples ("e.g."), and "vs" is written "vs.". The figure was rebuilt from
+   this source; it shows the same numbers.
+5. **`CLAIMS-MAP.md`, `CLAIMS-MAP-R1.md` and their JSON files in `verify/`**:
+   regenerated against the corrected manuscript; they record its new SHA-256.
+   The Revision-1 map gains 9 rows, one per number of the corrected text that
+   it did not yet check (the five values of the corrected sentence on trunk
+   scale, the 0.5-point spread, the 1.32 M discriminator, the 10,000 bootstrap
+   replicates and the 53 released runs), so `make verify` now passes 2879
+   checks instead of 2870.
+6. **Parameter counts**: the `CLAIMS-MAP.md` label of CAFRL's 10.65 M count and
+   the comment in `probes/param_counts_arms.py` now use the paper's wording: the
+   counts include CAFRL's 1.32 M discriminator, which the prediction does not
+   use (10.65 M without it). The discriminator still runs in every forward
+   pass, evaluation included; the prediction does not use its output. No count
+   changed.
+
+### Deposit
+
+The v2.0.1 Zenodo version keeps every file of the v2.0.0 version unchanged:
+`checkpoints.tar` (the 37 checkpoints of the 27 v1.0.0 runs) and its manifest,
+`crop-coordinates.tar.zst`, and the 26 per-run `<run>.best.pt` files of the
+Revision-1 runs with their manifest. Three files differ: the source tarball
+`cafrl-negative-v2.0.1.tar.gz` takes the place of `cafrl-negative-v2.0.0.tar.gz`
+(which stays in the v2.0.0 record), and `README-DEPOSIT.md` and `SHA256SUMS` are
+written for this version. It adds no checkpoints and no crop coordinates.
+
 ## v2.0.0 — the revised manuscript (IEEE Access, revision 1)
 
 This version goes with the revised manuscript, *A Controlled Audit of a Negative
@@ -10,7 +69,7 @@ the reviewer comment behind it as a ledger ID: `AE.1` is the associate editor,
 Where a v1.0.0 value or text changed, the entry also names the decision
 that changed it (date and title).
 
-Archival deposit of this version: **10.5281/zenodo.23466627** (version DOI).
+Archival deposit of v2.0.0: 10.5281/zenodo.23466627 (version DOI).
 The v1.0.0 deposit, DOI 10.5281/zenodo.22032529, stays published unchanged.
 
 Nothing in v1.0.0 was removed. The v1.0.0 files that changed are listed under
