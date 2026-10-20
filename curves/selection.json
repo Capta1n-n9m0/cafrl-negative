@@ -2,9 +2,9 @@
  "schema": "cafrl-negative/selection/v1",
  "rule": "Best-by-validation on the selection metric sel = 0.5 * (video-AUC at c23 + video-AUC at c40), computed on the official FF++ validation split after every epoch; the checkpoint of the epoch with the highest sel is kept. CAFRL arms evaluate the EMA weights, baseline and control arms the raw weights (they train no EMA). No test-split quantity enters selection.",
  "metric_tag": "sel_metric",
- "validation_split": "Official FF++ validation split (70 identity pairs), c23 and c40.",
+ "validation_split": "Official FF++ validation split (70 identity pairs), c23 and c40 (c23 and c36, or c23 and c32, for the nine runs named in fixed_before_runs).",
  "tie_break": "Strict improvement (>) \u2014 on an exact tie the earlier epoch is kept.",
- "fixed_before_runs": "Yes for every released run: the rule is the trainer's, written in src/training/trainer.py and src/scripts/train_baseline.py before the campaign; no run selects on anything else and no arm has its own rule.",
+ "fixed_before_runs": "Yes for every released run: the rule is the trainer's, written in src/training/trainer.py and src/scripts/train_baseline.py before the campaign. Every released run uses it except the nine runs of the Revision-1 arms E2a, E2b and E3b, trained without c40, which select on c23 and c36 (r1_sb_noc40_*, r1_sb_jpeg_noc40_*) or on c23 and c32 (r1_sb_noc36c40_*) instead, as their registered design states; each run's curve file states the rule that run used.",
  "runs": [
   {
    "run": "a0",

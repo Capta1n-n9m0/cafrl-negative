@@ -21,6 +21,9 @@
 % Conclusion; "these frequency streams" -> "the block-DCT and FFT-phase streams".
 % W6 S2 (2026-10-19): T4 labelled "raw weights" as T5 (main sec:datatests: T3--T5 raw weights).
 % W8 R2 (2026-10-19): "e.g.," before the four named arm families (A-026); every bare "vs" -> "vs." (A-027).
+% W8 V1b (2026-10-20): audit box "biased the comparison against frequency" (main Section VI);
+% verdict box "the control's training recipe recovered 3.96 pt for CAFRL's own components" (abstract (2)).
+% W8 V1b fixer (2026-10-20): verdict box names the control: "SpatialBase's training recipe" (the campaign box's name).
 % PNG: pdftoppm -r 150 -png -singlefile (reproduces the committed PNG exactly).
 \documentclass[tikz,border=6pt,11pt]{standalone}
 \usetikzlibrary{positioning,arrows.meta,calc}
@@ -87,12 +90,12 @@
 \node[audblock] (audit) at (0,\rowsep) {%
   {\head Adversarial self-audit of the negative}\\[1pt]
   {\body quoted AUCs recompute exactly from stored scores; causal reading unsound.
-   Four defects biased \emph{against} frequency: D1 auxiliary-loss
+   Four defects biased the comparison \emph{against} frequency: D1 auxiliary-loss
    dominance $\cdot$ D2 $\gamma$ deadlock $\cdot$ D3 optimization
-   mismatch $\cdot$ D4 bottlenecked trunk.}};
+   mismatch $\cdot$ D4 narrow trunk.}};
 
 \node[runblock] (retests) at (\colsep,\rowsep) {%
-  {\head Pre-specified fair re-tests (repair D1--D4)}\\[1pt]
+  {\head Pre-specified fair re-tests (3 of 4; \mbox{repair D1--D4})}\\[1pt]
   {\body TrunkCtrl: trunk gap recipe-dominant\\
    Fair-N (no invariance losses):
    0.9586 vs.\ SpatialBase 0.9590\\
@@ -107,7 +110,8 @@
 
 \node[verblock] (verdict) at (3*\colsep,\rowsep) {%
   {\head Verdict}\\[1pt]
-  {\body changing the recipe removed the deficit ($+3.96$\,pt at c40, s42); the
+  {\body SpatialBase's training recipe recovered 3.96\,pt for CAFRL's own
+   components (c40, s42); the
    block-DCT and FFT-phase streams: no detectable difference; training on real
    H.264 levels beat PSNR-matched JPEG by 7.48\,pt at c40 (averaged over
    c40 exposure; T4; raw weights), and including the c40-level data in training raised

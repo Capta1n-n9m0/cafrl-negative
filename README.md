@@ -32,11 +32,11 @@ recomputed from the per-video model scores released here or read back from
 shipped analysis outputs, under decision rules that were frozen before the runs
 they adjudicate; four cannot be re-derived (see *Reproducibility tiers* below).
 
-> **Status.** Version 2.0.1, released with the revised manuscript (revision 1).
+> **Status.** Version 2.0.2, released with the revised manuscript (revision 1).
 > `RELEASE-NOTES.md` lists every change from v1.0.0 and the reviewer comment
-> behind it, and the corrections of v2.0.1. Every directory of the layout carries content; the handful of numbers
+> behind it, and the corrections of v2.0.1 and v2.0.2. Every directory of the layout carries content; the handful of numbers
 > this release cannot re-derive are named individually in `CLAIMS-MAP.md` and
-> summarized under *What is not here yet* below. Last built 2026-10-19.
+> summarized under *What is not here yet* below. Last built 2026-10-20.
 
 ## Check it yourself
 
@@ -78,7 +78,7 @@ quantities.
 | `code/` | `code/ema-own-bn-stats/`: the research code's EMA batch-norm flag used by one curriculum re-run, with its tests — a record of the change, not a standalone package (its README says how far the tests run from here). |
 | `CLAIMS-MAP.md` | One row per manuscript table cell, per load-bearing number in the text, and per present-tense claim this paper makes about this repository — each with the artifact it comes from and how it is checked (recomputed, read back, or why it cannot be; see *Reproducibility tiers*). Generated and re-checked on every build. |
 | `CLAIMS-MAP-R1.md` | The same, for every number the revision added to the paper or its Supplementary Material, with the artifact and the command behind it. |
-| `RELEASE-NOTES.md` | What changed from v1.0.0, each change with the reviewer comment behind it, and what v2.0.1 corrected after a language and consistency check of the revised manuscript. |
+| `RELEASE-NOTES.md` | What changed from v1.0.0, each change with the reviewer comment behind it, what v2.0.1 corrected after a language and consistency check of the revised manuscript, and what v2.0.2 corrected after a check of how fully the manuscript answers the reviews. |
 | `LICENSE`, `LICENSE-DATA` | MIT for code; CC BY 4.0 (full legal code included) for predictions, splits, rule texts and metadata. Read `LICENSE-DATA` before regenerating crops: derived imagery inherits the source datasets' agreement terms. |
 
 ## What is not here yet
@@ -107,7 +107,7 @@ deposit alongside the crop coordinates: the 37 files (6.0 GB) of v1.0.0, carried
 unchanged, plus the selected `best.pt` of each of the 26 Revision-1 runs. The
 revision adds no crop coordinates.
 
-Archival deposit: **10.5281/zenodo.23484150**
+Archival deposit: **10.5281/zenodo.23497508**
 
 ## Reproducibility tiers
 
@@ -126,10 +126,10 @@ released lockfile. Each value is checked in one of two ways:
   (check group `cells`), 4 derived means and gaps (`derived`),
   20 adjudicated contrasts re-run through the seeded paired
   bootstrap (`contrasts`), the held-out-manipulation contrasts (`faceshifter`),
-  the figures drawn from predictions (`figures`) and 272 rows of
+  the figures drawn from predictions (`figures`) and 291 rows of
   the two claims maps (`claims-map`). Most of these values are in Tables 1, 2
   and 4, Figs. 2 and 3, Tables S1, S2 and S4 and Table S27.
-- **Read back** from a shipped file (2,429 claims-map rows and
+- **Read back** from a shipped file (2,435 claims-map rows and
   11 values of `cells` and `derived`). Most are the revision's
   statistics: Tables 3, 5 and 6, Tables S5–S20, S25 and S26, Fig. S1 and the
   numbers in the text. The check confirms that each printed number is the one
@@ -271,7 +271,7 @@ authors' own preferred mechanism the loser. It did.
 ## Citing this release
 
 Cite the paper. If you use the predictions or the split lists directly, please
-also cite the archival deposit (10.5281/zenodo.23484150).
+also cite the archival deposit (10.5281/zenodo.23497508).
 
 ```
 Abbas Aliyev and Samir Rustamov. A Controlled Audit of a Negative Result: Training Recipe, H.264 Compression Levels and a Frequency-Stream Deepfake Detector. IEEE Access, 2026.

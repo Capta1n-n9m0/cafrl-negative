@@ -10,14 +10,18 @@ of the 53 released runs.
 > Best-by-validation on the selection metric sel = 0.5 * (video-AUC at c23 + video-AUC at c40), computed on the official FF++ validation split after every epoch; the checkpoint of the epoch with the highest sel is kept. CAFRL arms evaluate the EMA weights, baseline and control arms the raw weights (they train no EMA). No test-split quantity enters selection.
 
 The rule is the trainer's, not a per-arm choice: it lives in the training code
-that predates the campaign, and no released run selects on anything else. No
-test-split quantity enters selection. `selection.json` states the rule once and
-lists every run's outcome.
+that predates the campaign. Every released run uses it except the nine runs of
+the Revision-1 arms E2a, E2b and E3b, trained without c40, which select on c23
+and c36 (E2a, `r1_sb_noc40_*`, and E3b, `r1_sb_jpeg_noc40_*`) or on c23 and c32
+(E2b, `r1_sb_noc36c40_*`) instead (Supplementary Material §S5-A). Each run's curve
+file states the rule that run used. No test-split quantity enters selection.
+`selection.json` states the rule once, names these exceptions and lists every
+run's outcome.
 
 ## What is in a curve file
 
 `<run>.json` carries a single `epochs` axis and every epoch-level scalar the run
-logged: the validation AUCs at c23 and c40, the selection metric itself, training
+logged: the validation AUCs at its two selection levels, the selection metric itself, training
 losses, learning rates, and — for CAFRL arms — the diagnostics the paper's
 mechanism section reads (residual gate γ, compression-estimator accuracy, band
 gates, standalone frequency-head AUC). Per-batch (step-indexed) series are not

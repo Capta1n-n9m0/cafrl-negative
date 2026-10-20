@@ -1,5 +1,73 @@
 # Release notes
 
+## v2.0.2 — text corrections to the revised manuscript
+
+This version goes with the revised manuscript as corrected once more. After
+v2.0.1 was released, a check of how fully the manuscript answers the reviews
+found sentences that said more, or less, than the evidence. The manuscript was
+corrected and frozen again. No result changed. No data, run, checkpoint,
+per-video prediction, analysis output or statistic changed, and every number
+the paper prints keeps its value.
+
+Archival deposit of this version: **10.5281/zenodo.23497508** (version DOI).
+The v2.0.1 deposit (DOI 10.5281/zenodo.23484150), the v2.0.0 deposit
+(DOI 10.5281/zenodo.23466627) and the v1.0.0 deposit
+(DOI 10.5281/zenodo.22032529) stay published unchanged.
+
+### What the manuscript corrected
+
+1. **The checkpoint selection rule.** The manuscript said that one rule selected
+   the checkpoint of every arm. That was not true of three Revision-1 arms. The
+   rule keeps the epoch with the best mean validation AUC at c23 and c40. Arms
+   E2a, E2b and E3b, trained without c40 data, do not select on c40: E2a and E3b
+   select on c23 and c36, and E2b on c23 and c32 (Supplementary Material
+   §S5-A). Every sentence that states the rule now says this. The runs and their selected epochs did
+   not change; the released configurations and curve files always recorded the
+   rule each run used.
+2. **An internal variable name** (the compression-level estimator's accuracy
+   within one level) was printed in the text and in Table S10. It is replaced by
+   plain words ("the ±1-level accuracy").
+3. **Several sentences reworded** so that they say no more than the evidence:
+   the practical advice and the compression lesson now name the H.264 levels and
+   say they hold on FaceForensics++-derived test data; a one-seed check is called
+   one; a sentence that called the JPEG re-encode the only difference between
+   two arms now lists their other differences; a sentence on the effect of the
+   recipe notes that TrunkCtrl also lacks the frequency stream; the audit
+   ledger's wording of defects D3 and D4 is more precise; the Introduction
+   counts three re-tests that repaired defects and a fourth, evaluation-only,
+   that retired D5; judgemental phrases are replaced by neutral ones.
+4. **Fig. S1** (the campaign diagram): the audit box says the defects biased the
+   comparison against frequency and calls the trunk "narrow"; the re-test box
+   says three of its four re-tests repaired D1–D4; the verdict box says that
+   SpatialBase's training recipe recovered 3.96 points for CAFRL's own
+   components, as the abstract does.
+
+### Changed in this release
+
+1. **`curves/README.md` and `curves/selection.json`**: they said that no
+   released run selects on anything other than c23 and c40. They now name the
+   nine runs of arms E2a, E2b and E3b and the levels each selects on, as the
+   manuscript does. Each run's curve file already stated its own rule and is
+   unchanged.
+2. **`figures/fig3_campaign_flow.tex`** (Fig. S1): the corrected source.
+3. **`CLAIMS-MAP.md`, `CLAIMS-MAP-R1.md` and their JSON files in `verify/`**:
+   regenerated against the corrected manuscript; they record its new SHA-256.
+   The Revision-1 map now has 2,378 rows (2,353 in v2.0.1). The 25 new rows
+   check numbers that were already printed and have not changed, most of them
+   in the main paper's Table 4. v2.0.1's map did not list them. No checked
+   value changed. `make verify` reports
+   2,904 checks passed, 0 failed and 6 skipped (2,879 in v2.0.1).
+4. **`README.md`**: the version, the deposit DOI, this file's entry and the
+   counts of checked numbers.
+
+### Deposit
+
+The v2.0.2 Zenodo version keeps every file of the v2.0.1 version unchanged
+except three: the source tarball `cafrl-negative-v2.0.2.tar.gz` takes the place
+of `cafrl-negative-v2.0.1.tar.gz` (which stays in the v2.0.1 record), and
+`README-DEPOSIT.md` and `SHA256SUMS` are written for this version. It adds no
+checkpoints and no crop coordinates.
+
 ## v2.0.1 — corrections to the revised manuscript
 
 This version goes with the corrected revised manuscript. After v2.0.0 was
@@ -11,7 +79,7 @@ output or statistic of v2.0.0 changed, and every number the paper prints keeps
 its value except one misprint in the text (item 1), whose source values are
 unchanged.
 
-Archival deposit of this version: **10.5281/zenodo.23484150** (version DOI).
+Archival deposit of v2.0.1: 10.5281/zenodo.23484150 (version DOI).
 The v2.0.0 deposit (DOI 10.5281/zenodo.23466627) and the v1.0.0 deposit
 (DOI 10.5281/zenodo.22032529) stay published unchanged.
 

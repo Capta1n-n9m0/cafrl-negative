@@ -2,7 +2,7 @@
 
 *A Controlled Audit of a Negative Result: Training Recipe, H.264 Compression Levels and a Frequency-Stream Deepfake Detector* (IEEE Access, revision 1).
 
-**Revision 1:** the numbers the revised manuscript adds are mapped in [`CLAIMS-MAP-R1.md`](CLAIMS-MAP-R1.md) (2353 rows), checked by the same build and the same `verify/claim.py`.
+**Revision 1:** the numbers the revised manuscript adds are mapped in [`CLAIMS-MAP-R1.md`](CLAIMS-MAP-R1.md) (2378 rows), checked by the same build and the same `verify/claim.py`.
 
 One row per manuscript table cell, per load-bearing number in the running text,
 and per present-tense claim the paper makes about this repository. Each row
@@ -788,8 +788,8 @@ The present-tense claims the manuscript makes about this repository.
 - `R1` — Three groups of cells of the original analyses carry the reported statistics only, with the reason stated: the cross-dataset cells, the JPEG-augmentation probe, and the shipped-recipe FaceShifter cells, of which only the 95% interval and P(Δ>0) remain; their AUCs and Δ now have per-video scores from a post hoc re-evaluation of the same checkpoints (predictions/GAPS.md).
 - `R2` — The repository was private during the campaign, so the timeline is author-controlled version-control evidence, not third-party registration — history-excerpts.md says so in those words.
 - `R6` — One plotted series — the shipped spatial-residual run's per-epoch γ in Fig. 3(a) — is published as data because it was read from per-epoch checkpoints that are archival only (figures/README.md).
-- `R13` — **pending.** In the archival deposit, version DOI 10.5281/zenodo.23484150 (v2.0.1) -- the 37 checkpoints of v1.0.0 (6.0 GB, one per released run per selection rule, carried unchanged from the v1 deposit, DOI 10.5281/zenodo.22032529, each with its own SHA-256 in checkpoints-manifest.json) plus the selected best.pt of each of the 26 Revision-1 runs (checkpoints-r1-manifest.json), carried unchanged from the v2.0.0 deposit, DOI 10.5281/zenodo.23466627. Not in git, and not checkable from this tree: verifying it means downloading the deposit and comparing digests.
-- `R14` — **pending.** In the archival deposit, version DOI 10.5281/zenodo.23484150 (v2.0.1; carried unchanged from the v1 deposit, DOI 10.5281/zenodo.22032529, through v2.0.0; neither v2.0.0 nor v2.0.1 adds crop coordinates) -- 48,294 per-video meta.json (~7 GB raw, compressed in crop-coordinates.tar.zst). The crops themselves are not redistributable under the FF++/DFD agreements; these are the coordinates that regenerate them.
+- `R13` — **pending.** In the archival deposit, version DOI 10.5281/zenodo.23497508 (v2.0.2) -- the 37 checkpoints of v1.0.0 (6.0 GB, one per released run per selection rule, carried unchanged from the v1 deposit, DOI 10.5281/zenodo.22032529, each with its own SHA-256 in checkpoints-manifest.json) plus the selected best.pt of each of the 26 Revision-1 runs (checkpoints-r1-manifest.json), carried unchanged from the v2.0.0 deposit, DOI 10.5281/zenodo.23466627. Not in git, and not checkable from this tree: verifying it means downloading the deposit and comparing digests.
+- `R14` — **pending.** In the archival deposit, version DOI 10.5281/zenodo.23497508 (v2.0.2; carried unchanged from the v1 deposit, DOI 10.5281/zenodo.22032529, through v2.0.0 and v2.0.1; no version after v1.0.0 adds crop coordinates) -- 48,294 per-video meta.json (~7 GB raw, compressed in crop-coordinates.tar.zst). The crops themselves are not redistributable under the FF++/DFD agreements; these are the coordinates that regenerate them.
 
 ---
 

@@ -3,7 +3,7 @@
  "note": "Revision 1: every number the revised manuscript adds, mapped to the artifact that carries it and the command that checks it against that artifact (recomputing the number, reading it back from a shipped file, or stating why it cannot be checked; see Reproducibility tiers in README.md). Continues claims_map.json; checked on every build.",
  "manuscript": {
   "label": "IEEE Access, revision 1",
-  "sha256": "80e7fb09c8a1faa2137e4412812f3e284fc39d4d47e4ef525d76cf152e30b59b",
+  "sha256": "34105efe71a5c124c76588399c5b389235e75c33a9996140c36169cef0da23da",
   "note": "Table, figure and section numbers refer to the revised manuscript (revision 1) and its Supplementary Material. The map is regenerated whenever the release is rebuilt; if a manuscript number moves, the build fails until the map and the manuscript agree."
  },
  "comp_levels": [
@@ -196,8 +196,8 @@
    "command": "python verify/claim.py R1.fig3-fig-flow.11 --bootstrap"
   },
   {
-   "label": "+3.96 \u2014 \u201c(+ at c40, s42);\u201d",
-   "printed": "+3.96",
+   "label": "3.96 \u2014 \u201crecipe recovered\u201d",
+   "printed": "3.96",
    "kind": "contrast",
    "name": "Fair-N - CAFRL\u2212adv (what the fair recipe bought)",
    "scale": 100,
@@ -213,7 +213,7 @@
    "command": "python verify/claim.py R1.fig3-fig-flow.12 --bootstrap"
   },
   {
-   "label": "7.48 \u2014 \u201cat c40 (averaged\u201d",
+   "label": "7.48 \u2014 \u201cJPEG by at c40\u201d",
    "printed": "7.48",
    "kind": "scalar",
    "source": "revision-1/stats/confirmatory.json",
@@ -229,7 +229,7 @@
    "command": "python verify/claim.py R1.fig3-fig-flow.13"
   },
   {
-   "label": "1.88 \u2014 \u201cby averaged over\u201d",
+   "label": "1.88 \u2014 \u201caveraged over\u201d",
    "printed": "1.88",
    "kind": "scalar",
    "source": "revision-1/stats/confirmatory.json",
@@ -2113,56 +2113,61 @@
    "command": "python verify/claim.py R1.main-tab-contrasts.1"
   },
   {
-   "label": "+0.0182 \u2014 \u201cSpatialBase $-$ CAFRL as specified (s42) & $+0.0366$ & \\ci{+0.020}{+0.054} & registered & \u201d",
-   "printed": "+0.0182",
-   "kind": "scalar",
-   "source": "revision-1/recompute.json",
-   "key": "contrasts.C1.c40.boot.seed+source.primary.ci_lo",
+   "label": "+0.020 \u2014 \u201cSpatialBase $-$ CAFRL as specified (s42) & $+0.0366$ & \\ci{+0.020}{+0.054} & registered & \u201d",
+   "printed": "+0.020",
+   "kind": "contrast",
+   "name": "SpatialBase - CAFRL as specified (STOP-gate)",
+   "component": "ci_lo",
    "id": "R1.main-tab-contrasts.2",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
    "artifacts": [
-    "revision-1/recompute.json"
+    "verify/expected.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json",
+    "predictions/ffpp/a0.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.2"
+   "command": "python verify/claim.py R1.main-tab-contrasts.2 --bootstrap"
   },
   {
-   "label": "+0.0569 \u2014 \u201cSpatialBase $-$ CAFRL as specified (s42) & $+0.0366$ & \\ci{+0.020}{+0.054} & registered & \u201d",
-   "printed": "+0.0569",
-   "kind": "scalar",
-   "source": "revision-1/recompute.json",
-   "key": "contrasts.C1.c40.boot.seed+source.primary.ci_hi",
+   "label": "+0.054 \u2014 \u201cSpatialBase $-$ CAFRL as specified (s42) & $+0.0366$ & \\ci{+0.020}{+0.054} & registered & \u201d",
+   "printed": "+0.054",
+   "kind": "contrast",
+   "name": "SpatialBase - CAFRL as specified (STOP-gate)",
+   "component": "ci_hi",
    "id": "R1.main-tab-contrasts.3",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
    "artifacts": [
-    "revision-1/recompute.json"
+    "verify/expected.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json",
+    "predictions/ffpp/a0.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.3"
+   "command": "python verify/claim.py R1.main-tab-contrasts.3 --bootstrap"
   },
   {
-   "label": "+0.0396 \u2014 \u201cFair-N $-$ CAFRL$-$adv (s42) & $+0.0396$ & \\ci{+0.0231}{+0.0570} & pre-\\zb specified & sig\u201d",
-   "printed": "+0.0396",
-   "kind": "scalar",
-   "source": "revision-1/recompute.json",
-   "key": "contrasts.C2.c40.boot.seed+source.primary.delta",
+   "label": "+0.0366 \u2014 \u201cSpatialBase $-$ CAFRL as specified (s42) & $+0.0366$ & \\ci{+0.020}{+0.054} & registered & \u201d",
+   "printed": "+0.0366",
+   "kind": "contrast",
+   "name": "SpatialBase - CAFRL as specified (STOP-gate)",
    "id": "R1.main-tab-contrasts.4",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
    "artifacts": [
-    "revision-1/recompute.json"
+    "verify/expected.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json",
+    "predictions/ffpp/a0.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.4"
+   "command": "python verify/claim.py R1.main-tab-contrasts.4 --bootstrap"
   },
   {
-   "label": "+0.0222 \u2014 \u201cFair-N $-$ CAFRL$-$adv (s42) & $+0.0396$ & \\ci{+0.0231}{+0.0570} & pre-\\zb specified & sig\u201d",
-   "printed": "+0.0222",
+   "label": "+0.0182 \u2014 \u201cSpatialBase $-$ CAFRL as specified (s42) & $+0.0366$ & \\ci{+0.020}{+0.054} & registered & \u201d",
+   "printed": "+0.0182",
    "kind": "scalar",
    "source": "revision-1/recompute.json",
-   "key": "contrasts.C2.c40.boot.seed+source.primary.ci_lo",
+   "key": "contrasts.C1.c40.boot.seed+source.primary.ci_lo",
    "id": "R1.main-tab-contrasts.5",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
@@ -2173,11 +2178,11 @@
    "command": "python verify/claim.py R1.main-tab-contrasts.5"
   },
   {
-   "label": "+0.0580 \u2014 \u201cFair-N $-$ CAFRL$-$adv (s42) & $+0.0396$ & \\ci{+0.0231}{+0.0570} & pre-\\zb specified & sig\u201d",
-   "printed": "+0.0580",
+   "label": "+0.0569 \u2014 \u201cSpatialBase $-$ CAFRL as specified (s42) & $+0.0366$ & \\ci{+0.020}{+0.054} & registered & \u201d",
+   "printed": "+0.0569",
    "kind": "scalar",
    "source": "revision-1/recompute.json",
-   "key": "contrasts.C2.c40.boot.seed+source.primary.ci_hi",
+   "key": "contrasts.C1.c40.boot.seed+source.primary.ci_hi",
    "id": "R1.main-tab-contrasts.6",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
@@ -2188,11 +2193,11 @@
    "command": "python verify/claim.py R1.main-tab-contrasts.6"
   },
   {
-   "label": "-0.0004 \u2014 \u201cFair-N $-$ SpatialBase (s42) & $-0.0004$ & \\ci{-0.0092}{+0.0080} & pre-\\zb specified & no \u201d",
-   "printed": "-0.0004",
+   "label": "+0.0396 \u2014 \u201cFair-N $-$ CAFRL$-$adv (s42) & $+0.0396$ & \\ci{+0.0231}{+0.0570} & pre-\\zb specified & sig\u201d",
+   "printed": "+0.0396",
    "kind": "scalar",
    "source": "revision-1/recompute.json",
-   "key": "contrasts.C3.c40.boot.seed+source.primary.delta",
+   "key": "contrasts.C2.c40.boot.seed+source.primary.delta",
    "id": "R1.main-tab-contrasts.7",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
@@ -2203,57 +2208,61 @@
    "command": "python verify/claim.py R1.main-tab-contrasts.7"
   },
   {
-   "label": "-0.0095 \u2014 \u201cFair-N $-$ SpatialBase (s42) & $-0.0004$ & \\ci{-0.0092}{+0.0080} & pre-\\zb specified & no \u201d",
-   "printed": "-0.0095",
-   "kind": "scalar",
-   "source": "revision-1/recompute.json",
-   "key": "contrasts.C3.c40.boot.seed+source.primary.ci_lo",
+   "label": "+0.0231 \u2014 \u201cFair-N $-$ CAFRL$-$adv (s42) & $+0.0396$ & \\ci{+0.0231}{+0.0570} & pre-\\zb specified & sig\u201d",
+   "printed": "+0.0231",
+   "kind": "contrast",
+   "name": "Fair-N - CAFRL\u2212adv (what the fair recipe bought)",
+   "component": "ci_lo",
    "id": "R1.main-tab-contrasts.8",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
    "artifacts": [
-    "revision-1/recompute.json"
+    "verify/expected.json",
+    "predictions/ffpp/f1_none_fair_s42.json",
+    "predictions/ffpp/a1_none_s42.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.8"
+   "command": "python verify/claim.py R1.main-tab-contrasts.8 --bootstrap"
   },
   {
-   "label": "+0.0055 \u2014 \u201cFair-W $-$ SpatialBase (s42) & $+0.0055$ & \\ci{-0.0022}{+0.0134} & pre-\\zb specified & no \u201d",
-   "printed": "+0.0055",
-   "kind": "scalar",
-   "source": "revision-1/recompute.json",
-   "key": "contrasts.C4.c40.boot.seed+source.primary.delta",
+   "label": "+0.0570 \u2014 \u201cFair-N $-$ CAFRL$-$adv (s42) & $+0.0396$ & \\ci{+0.0231}{+0.0570} & pre-\\zb specified & sig\u201d",
+   "printed": "+0.0570",
+   "kind": "contrast",
+   "name": "Fair-N - CAFRL\u2212adv (what the fair recipe bought)",
+   "component": "ci_hi",
    "id": "R1.main-tab-contrasts.9",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
    "artifacts": [
-    "revision-1/recompute.json"
+    "verify/expected.json",
+    "predictions/ffpp/f1_none_fair_s42.json",
+    "predictions/ffpp/a1_none_s42.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.9"
+   "command": "python verify/claim.py R1.main-tab-contrasts.9 --bootstrap"
   },
   {
-   "label": "+0.0055 \u2014 \u201cFair-W $-$ SpatialBase (s42) & $+0.0055$ & \\ci{-0.0022}{+0.0134} & pre-\\zb specified & no \u201d",
-   "printed": "+0.0055",
+   "label": "+0.0396 \u2014 \u201cFair-N $-$ CAFRL$-$adv (s42) & $+0.0396$ & \\ci{+0.0231}{+0.0570} & pre-\\zb specified & sig\u201d",
+   "printed": "+0.0396",
    "kind": "contrast",
-   "name": "Fair-W - SpatialBase (single seed)",
+   "name": "Fair-N - CAFRL\u2212adv (what the fair recipe bought)",
    "id": "R1.main-tab-contrasts.10",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
    "artifacts": [
     "verify/expected.json",
-    "predictions/ffpp/f2_spatres_full_s42.json",
-    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+    "predictions/ffpp/f1_none_fair_s42.json",
+    "predictions/ffpp/a1_none_s42.json"
    ],
    "command": "python verify/claim.py R1.main-tab-contrasts.10 --bootstrap"
   },
   {
-   "label": "-0.0026 \u2014 \u201cFair-W $-$ SpatialBase (s42) & $+0.0055$ & \\ci{-0.0022}{+0.0134} & pre-\\zb specified & no \u201d",
-   "printed": "-0.0026",
+   "label": "+0.0222 \u2014 \u201cFair-N $-$ CAFRL$-$adv (s42) & $+0.0396$ & \\ci{+0.0231}{+0.0570} & pre-\\zb specified & sig\u201d",
+   "printed": "+0.0222",
    "kind": "scalar",
    "source": "revision-1/recompute.json",
-   "key": "contrasts.C4.c40.boot.seed+source.primary.ci_lo",
+   "key": "contrasts.C2.c40.boot.seed+source.primary.ci_lo",
    "id": "R1.main-tab-contrasts.11",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
@@ -2264,11 +2273,11 @@
    "command": "python verify/claim.py R1.main-tab-contrasts.11"
   },
   {
-   "label": "+0.0137 \u2014 \u201cFair-W $-$ SpatialBase (s42) & $+0.0055$ & \\ci{-0.0022}{+0.0134} & pre-\\zb specified & no \u201d",
-   "printed": "+0.0137",
+   "label": "+0.0580 \u2014 \u201cFair-N $-$ CAFRL$-$adv (s42) & $+0.0396$ & \\ci{+0.0231}{+0.0570} & pre-\\zb specified & sig\u201d",
+   "printed": "+0.0580",
    "kind": "scalar",
    "source": "revision-1/recompute.json",
-   "key": "contrasts.C4.c40.boot.seed+source.primary.ci_hi",
+   "key": "contrasts.C2.c40.boot.seed+source.primary.ci_hi",
    "id": "R1.main-tab-contrasts.12",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
@@ -2279,11 +2288,199 @@
    "command": "python verify/claim.py R1.main-tab-contrasts.12"
   },
   {
+   "label": "-0.0004 \u2014 \u201cFair-N $-$ SpatialBase (s42) & $-0.0004$ & \\ci{-0.0092}{+0.0080} & pre-\\zb specified & no \u201d",
+   "printed": "-0.0004",
+   "kind": "scalar",
+   "source": "revision-1/recompute.json",
+   "key": "contrasts.C3.c40.boot.seed+source.primary.delta",
+   "id": "R1.main-tab-contrasts.13",
+   "table": "R1.main-tab-contrasts",
+   "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
+   "where": "main paper, tab:contrasts",
+   "artifacts": [
+    "revision-1/recompute.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-contrasts.13"
+  },
+  {
+   "label": "-0.0092 \u2014 \u201cFair-N $-$ SpatialBase (s42) & $-0.0004$ & \\ci{-0.0092}{+0.0080} & pre-\\zb specified & no \u201d",
+   "printed": "-0.0092",
+   "kind": "contrast",
+   "name": "Fair-N - SpatialBase (single seed)",
+   "component": "ci_lo",
+   "id": "R1.main-tab-contrasts.14",
+   "table": "R1.main-tab-contrasts",
+   "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
+   "where": "main paper, tab:contrasts",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/ffpp/f1_none_fair_s42.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-contrasts.14 --bootstrap"
+  },
+  {
+   "label": "+0.0080 \u2014 \u201cFair-N $-$ SpatialBase (s42) & $-0.0004$ & \\ci{-0.0092}{+0.0080} & pre-\\zb specified & no \u201d",
+   "printed": "+0.0080",
+   "kind": "scalar",
+   "source": "revision-1/recompute.json",
+   "key": "contrasts.C3.c40.boot.seed+source.primary.ci_hi",
+   "id": "R1.main-tab-contrasts.15",
+   "table": "R1.main-tab-contrasts",
+   "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
+   "where": "main paper, tab:contrasts",
+   "artifacts": [
+    "revision-1/recompute.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-contrasts.15"
+  },
+  {
+   "label": "-0.0004 \u2014 \u201cFair-N $-$ SpatialBase (s42) & $-0.0004$ & \\ci{-0.0092}{+0.0080} & pre-\\zb specified & no \u201d",
+   "printed": "-0.0004",
+   "kind": "contrast",
+   "name": "Fair-N - SpatialBase (single seed)",
+   "id": "R1.main-tab-contrasts.16",
+   "table": "R1.main-tab-contrasts",
+   "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
+   "where": "main paper, tab:contrasts",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/ffpp/f1_none_fair_s42.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-contrasts.16 --bootstrap"
+  },
+  {
+   "label": "-0.0095 \u2014 \u201cFair-N $-$ SpatialBase (s42) & $-0.0004$ & \\ci{-0.0092}{+0.0080} & pre-\\zb specified & no \u201d",
+   "printed": "-0.0095",
+   "kind": "scalar",
+   "source": "revision-1/recompute.json",
+   "key": "contrasts.C3.c40.boot.seed+source.primary.ci_lo",
+   "id": "R1.main-tab-contrasts.17",
+   "table": "R1.main-tab-contrasts",
+   "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
+   "where": "main paper, tab:contrasts",
+   "artifacts": [
+    "revision-1/recompute.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-contrasts.17"
+  },
+  {
+   "label": "+0.0055 \u2014 \u201cFair-W $-$ SpatialBase (s42) & $+0.0055$ & \\ci{-0.0022}{+0.0134} & pre-\\zb specified & no \u201d",
+   "printed": "+0.0055",
+   "kind": "scalar",
+   "source": "revision-1/recompute.json",
+   "key": "contrasts.C4.c40.boot.seed+source.primary.delta",
+   "id": "R1.main-tab-contrasts.18",
+   "table": "R1.main-tab-contrasts",
+   "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
+   "where": "main paper, tab:contrasts",
+   "artifacts": [
+    "revision-1/recompute.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-contrasts.18"
+  },
+  {
+   "label": "-0.0022 \u2014 \u201cFair-W $-$ SpatialBase (s42) & $+0.0055$ & \\ci{-0.0022}{+0.0134} & pre-\\zb specified & no \u201d",
+   "printed": "-0.0022",
+   "kind": "contrast",
+   "name": "Fair-W - SpatialBase (single seed)",
+   "component": "ci_lo",
+   "id": "R1.main-tab-contrasts.19",
+   "table": "R1.main-tab-contrasts",
+   "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
+   "where": "main paper, tab:contrasts",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/ffpp/f2_spatres_full_s42.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-contrasts.19 --bootstrap"
+  },
+  {
+   "label": "+0.0134 \u2014 \u201cFair-W $-$ SpatialBase (s42) & $+0.0055$ & \\ci{-0.0022}{+0.0134} & pre-\\zb specified & no \u201d",
+   "printed": "+0.0134",
+   "kind": "contrast",
+   "name": "Fair-W - SpatialBase (single seed)",
+   "component": "ci_hi",
+   "id": "R1.main-tab-contrasts.20",
+   "table": "R1.main-tab-contrasts",
+   "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
+   "where": "main paper, tab:contrasts",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/ffpp/f2_spatres_full_s42.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-contrasts.20 --bootstrap"
+  },
+  {
+   "label": "0.93 \u2014 \u201cFair-W $-$ SpatialBase (s42) & $+0.0055$ & \\ci{-0.0022}{+0.0134} & pre-\\zb specified & no \u201d",
+   "printed": "0.93",
+   "kind": "scalar",
+   "source": "evaluation/analysis/cluster_bootstrap.json",
+   "key": "contrasts.C4.schemes.video.p_delta_gt_0",
+   "id": "R1.main-tab-contrasts.21",
+   "table": "R1.main-tab-contrasts",
+   "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
+   "where": "main paper, tab:contrasts",
+   "artifacts": [
+    "evaluation/analysis/cluster_bootstrap.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-contrasts.21"
+  },
+  {
+   "label": "+0.0055 \u2014 \u201cFair-W $-$ SpatialBase (s42) & $+0.0055$ & \\ci{-0.0022}{+0.0134} & pre-\\zb specified & no \u201d",
+   "printed": "+0.0055",
+   "kind": "contrast",
+   "name": "Fair-W - SpatialBase (single seed)",
+   "id": "R1.main-tab-contrasts.22",
+   "table": "R1.main-tab-contrasts",
+   "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
+   "where": "main paper, tab:contrasts",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/ffpp/f2_spatres_full_s42.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-contrasts.22 --bootstrap"
+  },
+  {
+   "label": "-0.0026 \u2014 \u201cFair-W $-$ SpatialBase (s42) & $+0.0055$ & \\ci{-0.0022}{+0.0134} & pre-\\zb specified & no \u201d",
+   "printed": "-0.0026",
+   "kind": "scalar",
+   "source": "revision-1/recompute.json",
+   "key": "contrasts.C4.c40.boot.seed+source.primary.ci_lo",
+   "id": "R1.main-tab-contrasts.23",
+   "table": "R1.main-tab-contrasts",
+   "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
+   "where": "main paper, tab:contrasts",
+   "artifacts": [
+    "revision-1/recompute.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-contrasts.23"
+  },
+  {
+   "label": "+0.0137 \u2014 \u201cFair-W $-$ SpatialBase (s42) & $+0.0055$ & \\ci{-0.0022}{+0.0134} & pre-\\zb specified & no \u201d",
+   "printed": "+0.0137",
+   "kind": "scalar",
+   "source": "revision-1/recompute.json",
+   "key": "contrasts.C4.c40.boot.seed+source.primary.ci_hi",
+   "id": "R1.main-tab-contrasts.24",
+   "table": "R1.main-tab-contrasts",
+   "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
+   "where": "main paper, tab:contrasts",
+   "artifacts": [
+    "revision-1/recompute.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-contrasts.24"
+  },
+  {
    "label": "-0.0009 \u2014 \u201c\\textbf{Fair-N pool $-$ SpatialBase pool (3 vs.\\ 3)} & $\\mathbf{-0.0009}$ & \\ci{-0.0066}{+\u201d",
    "printed": "-0.0009",
    "kind": "contrast",
    "name": "Fair-N pool - SpatialBase pool (3v3)",
-   "id": "R1.main-tab-contrasts.13",
+   "id": "R1.main-tab-contrasts.25",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
@@ -2296,7 +2493,49 @@
     "predictions/ffpp/b7_effnet_b0_mq_fliponly_s1.json",
     "predictions/ffpp/b7_effnet_b0_mq_fliponly_s2.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.13 --bootstrap"
+   "command": "python verify/claim.py R1.main-tab-contrasts.25 --bootstrap"
+  },
+  {
+   "label": "-0.0066 \u2014 \u201c\\textbf{Fair-N pool $-$ SpatialBase pool (3 vs.\\ 3)} & $\\mathbf{-0.0009}$ & \\ci{-0.0066}{+\u201d",
+   "printed": "-0.0066",
+   "kind": "contrast",
+   "name": "Fair-N pool - SpatialBase pool (3v3)",
+   "component": "ci_lo",
+   "id": "R1.main-tab-contrasts.26",
+   "table": "R1.main-tab-contrasts",
+   "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
+   "where": "main paper, tab:contrasts",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/ffpp/f1_none_fair_s42.json",
+    "predictions/ffpp/f1_none_fair_s1.json",
+    "predictions/ffpp/f1_none_fair_s2.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-contrasts.26 --bootstrap"
+  },
+  {
+   "label": "+0.0045 \u2014 \u201c\\textbf{Fair-N pool $-$ SpatialBase pool (3 vs.\\ 3)} & $\\mathbf{-0.0009}$ & \\ci{-0.0066}{+\u201d",
+   "printed": "+0.0045",
+   "kind": "contrast",
+   "name": "Fair-N pool - SpatialBase pool (3v3)",
+   "component": "ci_hi",
+   "id": "R1.main-tab-contrasts.27",
+   "table": "R1.main-tab-contrasts",
+   "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
+   "where": "main paper, tab:contrasts",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/ffpp/f1_none_fair_s42.json",
+    "predictions/ffpp/f1_none_fair_s1.json",
+    "predictions/ffpp/f1_none_fair_s2.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-contrasts.27 --bootstrap"
   },
   {
    "label": "-0.0002 \u2014 \u201c\\textbf{Fair-N pool $-$ SpatialBase pool (3 vs.\\ 3)} & $\\mathbf{-0.0009}$ & \\ci{-0.0066}{+\u201d",
@@ -2304,14 +2543,14 @@
    "kind": "scalar",
    "source": "revision-1/recompute.json",
    "key": "contrasts.C5.c40.boot.seed+source.primary.delta",
-   "id": "R1.main-tab-contrasts.14",
+   "id": "R1.main-tab-contrasts.28",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
    "artifacts": [
     "revision-1/recompute.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.14"
+   "command": "python verify/claim.py R1.main-tab-contrasts.28"
   },
   {
    "label": "-0.0105 \u2014 \u201c\\textbf{Fair-N pool $-$ SpatialBase pool (3 vs.\\ 3)} & $\\mathbf{-0.0009}$ & \\ci{-0.0066}{+\u201d",
@@ -2319,14 +2558,14 @@
    "kind": "scalar",
    "source": "revision-1/recompute.json",
    "key": "contrasts.C5.c40.boot.seed+source.primary.ci_lo",
-   "id": "R1.main-tab-contrasts.15",
+   "id": "R1.main-tab-contrasts.29",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
    "artifacts": [
     "revision-1/recompute.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.15"
+   "command": "python verify/claim.py R1.main-tab-contrasts.29"
   },
   {
    "label": "+0.0112 \u2014 \u201c\\textbf{Fair-N pool $-$ SpatialBase pool (3 vs.\\ 3)} & $\\mathbf{-0.0009}$ & \\ci{-0.0066}{+\u201d",
@@ -2334,29 +2573,55 @@
    "kind": "scalar",
    "source": "revision-1/recompute.json",
    "key": "contrasts.C5.c40.boot.seed+source.primary.ci_hi",
-   "id": "R1.main-tab-contrasts.16",
+   "id": "R1.main-tab-contrasts.30",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
    "artifacts": [
     "revision-1/recompute.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.16"
+   "command": "python verify/claim.py R1.main-tab-contrasts.30"
   },
   {
-   "label": "+0.0080 \u2014 \u201c\\textbf{Fair-W pool $-$ SpatialBase pool (3 vs.\\ 3)} & $\\mathbf{+0.0022}$ & \\ci{-0.0035}{+\u201d",
-   "printed": "+0.0080",
-   "kind": "scalar",
-   "source": "revision-1/recompute.json",
-   "key": "contrasts.C3.c40.boot.seed+source.primary.ci_hi",
-   "id": "R1.main-tab-contrasts.17",
+   "label": "+0.0022 \u2014 \u201c\\textbf{Fair-W pool $-$ SpatialBase pool (3 vs.\\ 3)} & $\\mathbf{+0.0022}$ & \\ci{-0.0035}{+\u201d",
+   "printed": "+0.0022",
+   "kind": "contrast",
+   "name": "Fair-W pool - SpatialBase pool (3v3)",
+   "id": "R1.main-tab-contrasts.31",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
    "artifacts": [
-    "revision-1/recompute.json"
+    "verify/expected.json",
+    "predictions/ffpp/f2_spatres_full_s42.json",
+    "predictions/ffpp/f2_spatres_full_s1.json",
+    "predictions/ffpp/f2_spatres_full_s2.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly_s2.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.17"
+   "command": "python verify/claim.py R1.main-tab-contrasts.31 --bootstrap"
+  },
+  {
+   "label": "-0.0035 \u2014 \u201c\\textbf{Fair-W pool $-$ SpatialBase pool (3 vs.\\ 3)} & $\\mathbf{+0.0022}$ & \\ci{-0.0035}{+\u201d",
+   "printed": "-0.0035",
+   "kind": "contrast",
+   "name": "Fair-W pool - SpatialBase pool (3v3)",
+   "component": "ci_lo",
+   "id": "R1.main-tab-contrasts.32",
+   "table": "R1.main-tab-contrasts",
+   "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
+   "where": "main paper, tab:contrasts",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/ffpp/f2_spatres_full_s42.json",
+    "predictions/ffpp/f2_spatres_full_s1.json",
+    "predictions/ffpp/f2_spatres_full_s2.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly_s1.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly_s2.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-contrasts.32 --bootstrap"
   },
   {
    "label": "+0.0053 \u2014 \u201c\\textbf{Fair-W pool $-$ SpatialBase pool (3 vs.\\ 3)} & $\\mathbf{+0.0022}$ & \\ci{-0.0035}{+\u201d",
@@ -2364,14 +2629,14 @@
    "kind": "scalar",
    "source": "revision-1/recompute.json",
    "key": "contrasts.C6.c40.boot.seed+source.primary.delta",
-   "id": "R1.main-tab-contrasts.18",
+   "id": "R1.main-tab-contrasts.33",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
    "artifacts": [
     "revision-1/recompute.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.18"
+   "command": "python verify/claim.py R1.main-tab-contrasts.33"
   },
   {
    "label": "-0.0042 \u2014 \u201c\\textbf{Fair-W pool $-$ SpatialBase pool (3 vs.\\ 3)} & $\\mathbf{+0.0022}$ & \\ci{-0.0035}{+\u201d",
@@ -2379,14 +2644,14 @@
    "kind": "scalar",
    "source": "revision-1/recompute.json",
    "key": "contrasts.C6.c40.boot.seed+source.primary.ci_lo",
-   "id": "R1.main-tab-contrasts.19",
+   "id": "R1.main-tab-contrasts.34",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
    "artifacts": [
     "revision-1/recompute.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.19"
+   "command": "python verify/claim.py R1.main-tab-contrasts.34"
   },
   {
    "label": "+0.0171 \u2014 \u201c\\textbf{Fair-W pool $-$ SpatialBase pool (3 vs.\\ 3)} & $\\mathbf{+0.0022}$ & \\ci{-0.0035}{+\u201d",
@@ -2394,14 +2659,70 @@
    "kind": "scalar",
    "source": "revision-1/recompute.json",
    "key": "contrasts.C6.c40.boot.seed+source.primary.ci_hi",
-   "id": "R1.main-tab-contrasts.20",
+   "id": "R1.main-tab-contrasts.35",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
    "artifacts": [
     "revision-1/recompute.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.20"
+   "command": "python verify/claim.py R1.main-tab-contrasts.35"
+  },
+  {
+   "label": "-0.0038 \u2014 \u201cSpatialBase (s42) $-$ TrunkCtrl pool & $-0.0038$ & \\ci{-0.0116}{+0.0039} & pre-\\zb specifi\u201d",
+   "printed": "-0.0038",
+   "kind": "contrast",
+   "name": "SpatialBase - TrunkCtrl (architecture share, pooled)",
+   "id": "R1.main-tab-contrasts.36",
+   "table": "R1.main-tab-contrasts",
+   "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
+   "where": "main paper, tab:contrasts",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json",
+    "predictions/ffpp/trunk_recipe_s42.json",
+    "predictions/ffpp/trunk_recipe_s1.json",
+    "predictions/ffpp/trunk_recipe_s2.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-contrasts.36 --bootstrap"
+  },
+  {
+   "label": "-0.0116 \u2014 \u201cSpatialBase (s42) $-$ TrunkCtrl pool & $-0.0038$ & \\ci{-0.0116}{+0.0039} & pre-\\zb specifi\u201d",
+   "printed": "-0.0116",
+   "kind": "contrast",
+   "name": "SpatialBase - TrunkCtrl (architecture share, pooled)",
+   "component": "ci_lo",
+   "id": "R1.main-tab-contrasts.37",
+   "table": "R1.main-tab-contrasts",
+   "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
+   "where": "main paper, tab:contrasts",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json",
+    "predictions/ffpp/trunk_recipe_s42.json",
+    "predictions/ffpp/trunk_recipe_s1.json",
+    "predictions/ffpp/trunk_recipe_s2.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-contrasts.37 --bootstrap"
+  },
+  {
+   "label": "+0.0039 \u2014 \u201cSpatialBase (s42) $-$ TrunkCtrl pool & $-0.0038$ & \\ci{-0.0116}{+0.0039} & pre-\\zb specifi\u201d",
+   "printed": "+0.0039",
+   "kind": "contrast",
+   "name": "SpatialBase - TrunkCtrl (architecture share, pooled)",
+   "component": "ci_hi",
+   "id": "R1.main-tab-contrasts.38",
+   "table": "R1.main-tab-contrasts",
+   "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
+   "where": "main paper, tab:contrasts",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json",
+    "predictions/ffpp/trunk_recipe_s42.json",
+    "predictions/ffpp/trunk_recipe_s1.json",
+    "predictions/ffpp/trunk_recipe_s2.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-contrasts.38 --bootstrap"
   },
   {
    "label": "+0.0054 \u2014 \u201cSpatialBase (s42) $-$ TrunkCtrl pool & $-0.0038$ & \\ci{-0.0116}{+0.0039} & pre-\\zb specifi\u201d",
@@ -2409,14 +2730,14 @@
    "kind": "scalar",
    "source": "revision-1/recompute.json",
    "key": "contrasts.C7.c40.boot.seed+source.primary.delta",
-   "id": "R1.main-tab-contrasts.21",
+   "id": "R1.main-tab-contrasts.39",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
    "artifacts": [
     "revision-1/recompute.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.21"
+   "command": "python verify/claim.py R1.main-tab-contrasts.39"
   },
   {
    "label": "-0.0040 \u2014 \u201cSpatialBase (s42) $-$ TrunkCtrl pool & $-0.0038$ & \\ci{-0.0116}{+0.0039} & pre-\\zb specifi\u201d",
@@ -2424,14 +2745,14 @@
    "kind": "scalar",
    "source": "revision-1/recompute.json",
    "key": "contrasts.C7.c40.boot.seed+source.primary.ci_lo",
-   "id": "R1.main-tab-contrasts.22",
+   "id": "R1.main-tab-contrasts.40",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
    "artifacts": [
     "revision-1/recompute.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.22"
+   "command": "python verify/claim.py R1.main-tab-contrasts.40"
   },
   {
    "label": "+0.0156 \u2014 \u201cSpatialBase (s42) $-$ TrunkCtrl pool & $-0.0038$ & \\ci{-0.0116}{+0.0039} & pre-\\zb specifi\u201d",
@@ -2439,21 +2760,21 @@
    "kind": "scalar",
    "source": "revision-1/recompute.json",
    "key": "contrasts.C7.c40.boot.seed+source.primary.ci_hi",
-   "id": "R1.main-tab-contrasts.23",
+   "id": "R1.main-tab-contrasts.41",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
    "artifacts": [
     "revision-1/recompute.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.23"
+   "command": "python verify/claim.py R1.main-tab-contrasts.41"
   },
   {
    "label": "+0.0489 \u2014 \u201cTrunkCtrl pool $-$ spatial-residual (s42) & $+0.0489$ & \\ci{+0.0294}{+0.0705} & pre-\\zb sp\u201d",
    "printed": "+0.0489",
    "kind": "contrast",
    "name": "TrunkCtrl - spatial-residual (recipe share, pooled)",
-   "id": "R1.main-tab-contrasts.24",
+   "id": "R1.main-tab-contrasts.42",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
@@ -2464,7 +2785,45 @@
     "predictions/ffpp/trunk_recipe_s2.json",
     "predictions/ffpp/cafrl_spatres_s42.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.24 --bootstrap"
+   "command": "python verify/claim.py R1.main-tab-contrasts.42 --bootstrap"
+  },
+  {
+   "label": "+0.0294 \u2014 \u201cTrunkCtrl pool $-$ spatial-residual (s42) & $+0.0489$ & \\ci{+0.0294}{+0.0705} & pre-\\zb sp\u201d",
+   "printed": "+0.0294",
+   "kind": "contrast",
+   "name": "TrunkCtrl - spatial-residual (recipe share, pooled)",
+   "component": "ci_lo",
+   "id": "R1.main-tab-contrasts.43",
+   "table": "R1.main-tab-contrasts",
+   "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
+   "where": "main paper, tab:contrasts",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/ffpp/trunk_recipe_s42.json",
+    "predictions/ffpp/trunk_recipe_s1.json",
+    "predictions/ffpp/trunk_recipe_s2.json",
+    "predictions/ffpp/cafrl_spatres_s42.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-contrasts.43 --bootstrap"
+  },
+  {
+   "label": "+0.0705 \u2014 \u201cTrunkCtrl pool $-$ spatial-residual (s42) & $+0.0489$ & \\ci{+0.0294}{+0.0705} & pre-\\zb sp\u201d",
+   "printed": "+0.0705",
+   "kind": "contrast",
+   "name": "TrunkCtrl - spatial-residual (recipe share, pooled)",
+   "component": "ci_hi",
+   "id": "R1.main-tab-contrasts.44",
+   "table": "R1.main-tab-contrasts",
+   "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
+   "where": "main paper, tab:contrasts",
+   "artifacts": [
+    "verify/expected.json",
+    "predictions/ffpp/trunk_recipe_s42.json",
+    "predictions/ffpp/trunk_recipe_s1.json",
+    "predictions/ffpp/trunk_recipe_s2.json",
+    "predictions/ffpp/cafrl_spatres_s42.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-contrasts.44 --bootstrap"
   },
   {
    "label": "+0.0397 \u2014 \u201cTrunkCtrl pool $-$ spatial-residual (s42) & $+0.0489$ & \\ci{+0.0294}{+0.0705} & pre-\\zb sp\u201d",
@@ -2472,14 +2831,14 @@
    "kind": "scalar",
    "source": "revision-1/recompute.json",
    "key": "contrasts.C8.c40.boot.seed+source.primary.delta",
-   "id": "R1.main-tab-contrasts.25",
+   "id": "R1.main-tab-contrasts.45",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
    "artifacts": [
     "revision-1/recompute.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.25"
+   "command": "python verify/claim.py R1.main-tab-contrasts.45"
   },
   {
    "label": "+0.0196 \u2014 \u201cTrunkCtrl pool $-$ spatial-residual (s42) & $+0.0489$ & \\ci{+0.0294}{+0.0705} & pre-\\zb sp\u201d",
@@ -2487,14 +2846,14 @@
    "kind": "scalar",
    "source": "revision-1/recompute.json",
    "key": "contrasts.C8.c40.boot.seed+source.primary.ci_lo",
-   "id": "R1.main-tab-contrasts.26",
+   "id": "R1.main-tab-contrasts.46",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
    "artifacts": [
     "revision-1/recompute.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.26"
+   "command": "python verify/claim.py R1.main-tab-contrasts.46"
   },
   {
    "label": "+0.0625 \u2014 \u201cTrunkCtrl pool $-$ spatial-residual (s42) & $+0.0489$ & \\ci{+0.0294}{+0.0705} & pre-\\zb sp\u201d",
@@ -2502,21 +2861,21 @@
    "kind": "scalar",
    "source": "revision-1/recompute.json",
    "key": "contrasts.C8.c40.boot.seed+source.primary.ci_hi",
-   "id": "R1.main-tab-contrasts.27",
+   "id": "R1.main-tab-contrasts.47",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
    "artifacts": [
     "revision-1/recompute.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.27"
+   "command": "python verify/claim.py R1.main-tab-contrasts.47"
   },
   {
    "label": "+0.0014 \u2014 \u201cFair-N pool $-$ TrunkCtrl pool (3 vs.\\ 3) & $+0.0014$ & \\ci{-0.0051}{+0.0078} & post hoc &\u201d",
    "printed": "+0.0014",
    "kind": "contrast",
    "name": "Fair-N pool - TrunkCtrl pool (3v3, post hoc)",
-   "id": "R1.main-tab-contrasts.28",
+   "id": "R1.main-tab-contrasts.48",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
@@ -2529,7 +2888,7 @@
     "predictions/ffpp/trunk_recipe_s1.json",
     "predictions/ffpp/trunk_recipe_s2.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.28 --bootstrap"
+   "command": "python verify/claim.py R1.main-tab-contrasts.48 --bootstrap"
   },
   {
    "label": "-0.0051 \u2014 \u201cFair-N pool $-$ TrunkCtrl pool (3 vs.\\ 3) & $+0.0014$ & \\ci{-0.0051}{+0.0078} & post hoc &\u201d",
@@ -2537,14 +2896,14 @@
    "kind": "scalar",
    "source": "revision-1/recompute.json",
    "key": "R1_11.c40.boot.fixed+video.ensemble.ci_lo",
-   "id": "R1.main-tab-contrasts.29",
+   "id": "R1.main-tab-contrasts.49",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
    "artifacts": [
     "revision-1/recompute.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.29"
+   "command": "python verify/claim.py R1.main-tab-contrasts.49"
   },
   {
    "label": "+0.0078 \u2014 \u201cFair-N pool $-$ TrunkCtrl pool (3 vs.\\ 3) & $+0.0014$ & \\ci{-0.0051}{+0.0078} & post hoc &\u201d",
@@ -2552,14 +2911,14 @@
    "kind": "scalar",
    "source": "revision-1/recompute.json",
    "key": "R1_11.c40.boot.fixed+video.ensemble.ci_hi",
-   "id": "R1.main-tab-contrasts.30",
+   "id": "R1.main-tab-contrasts.50",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
    "artifacts": [
     "revision-1/recompute.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.30"
+   "command": "python verify/claim.py R1.main-tab-contrasts.50"
   },
   {
    "label": "+0.0027 \u2014 \u201cFair-N pool $-$ TrunkCtrl pool (3 vs.\\ 3) & $+0.0014$ & \\ci{-0.0051}{+0.0078} & post hoc &\u201d",
@@ -2567,14 +2926,14 @@
    "kind": "scalar",
    "source": "revision-1/recompute.json",
    "key": "R1_11.c40.boot.seed+source.primary.delta",
-   "id": "R1.main-tab-contrasts.31",
+   "id": "R1.main-tab-contrasts.51",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
    "artifacts": [
     "revision-1/recompute.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.31"
+   "command": "python verify/claim.py R1.main-tab-contrasts.51"
   },
   {
    "label": "-0.0080 \u2014 \u201cFair-N pool $-$ TrunkCtrl pool (3 vs.\\ 3) & $+0.0014$ & \\ci{-0.0051}{+0.0078} & post hoc &\u201d",
@@ -2582,14 +2941,14 @@
    "kind": "scalar",
    "source": "revision-1/recompute.json",
    "key": "R1_11.c40.boot.seed+source.primary.ci_lo",
-   "id": "R1.main-tab-contrasts.32",
+   "id": "R1.main-tab-contrasts.52",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
    "artifacts": [
     "revision-1/recompute.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.32"
+   "command": "python verify/claim.py R1.main-tab-contrasts.52"
   },
   {
    "label": "+0.0135 \u2014 \u201cFair-N pool $-$ TrunkCtrl pool (3 vs.\\ 3) & $+0.0014$ & \\ci{-0.0051}{+0.0078} & post hoc &\u201d",
@@ -2597,14 +2956,14 @@
    "kind": "scalar",
    "source": "revision-1/recompute.json",
    "key": "R1_11.c40.boot.seed+source.primary.ci_hi",
-   "id": "R1.main-tab-contrasts.33",
+   "id": "R1.main-tab-contrasts.53",
    "table": "R1.main-tab-contrasts",
    "table_title": "Revision 1 \u2014 main paper, tab:contrasts",
    "where": "main paper, tab:contrasts",
    "artifacts": [
     "revision-1/recompute.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-contrasts.33"
+   "command": "python verify/claim.py R1.main-tab-contrasts.53"
   },
   {
    "label": "-0.37 \u2014 \u201cFair-N $-$ SpatialBase at c40 was $-0.37$\\,pt \\ci{-1.57}{0.93} and Fair-W\u201d",
@@ -3805,7 +4164,7 @@
    "command": "python verify/claim.py R1.main-sec-adversary.14"
   },
   {
-   "label": "0.9531 \u2014 \u201cest\\_pm1 at the selected epoch was 0.9531 / 1.0000 / 1.0000 (Fair-N: 1.0000 /\u201d",
+   "label": "0.9531 \u2014 \u201cthe $\\pm1$-level accuracy at the selected epoch was 0.9531 / 1.0000 / 1.0000 (Fair-N: 1.00\u201d",
    "printed": "0.9531",
    "kind": "scalar",
    "source": "revision-1/stats/secondaries.null.json",
@@ -3820,7 +4179,7 @@
    "command": "python verify/claim.py R1.main-sec-adversary.15"
   },
   {
-   "label": "1.0000 \u2014 \u201cest\\_pm1 at the selected epoch was 0.9531 / 1.0000 / 1.0000 (Fair-N: 1.0000 /\u201d",
+   "label": "1.0000 \u2014 \u201cthe $\\pm1$-level accuracy at the selected epoch was 0.9531 / 1.0000 / 1.0000 (Fair-N: 1.00\u201d",
    "printed": "1.0000",
    "kind": "scalar",
    "source": "revision-1/stats/secondaries.null.json",
@@ -3835,7 +4194,7 @@
    "command": "python verify/claim.py R1.main-sec-adversary.16"
   },
   {
-   "label": "1.0000 \u2014 \u201cest\\_pm1 at the selected epoch was 0.9531 / 1.0000 / 1.0000 (Fair-N: 1.0000 /\u201d",
+   "label": "1.0000 \u2014 \u201cthe $\\pm1$-level accuracy at the selected epoch was 0.9531 / 1.0000 / 1.0000 (Fair-N: 1.00\u201d",
    "printed": "1.0000",
    "kind": "scalar",
    "source": "revision-1/stats/secondaries.null.json",
@@ -3850,7 +4209,7 @@
    "command": "python verify/claim.py R1.main-sec-adversary.17"
   },
   {
-   "label": "1.0000 \u2014 \u201cest\\_pm1 at the selected epoch was 0.9531 / 1.0000 / 1.0000 (Fair-N: 1.0000 /\u201d",
+   "label": "1.0000 \u2014 \u201cthe $\\pm1$-level accuracy at the selected epoch was 0.9531 / 1.0000 / 1.0000 (Fair-N: 1.00\u201d",
    "printed": "1.0000",
    "kind": "scalar",
    "source": "revision-1/stats/secondaries.null.json",
@@ -4889,6 +5248,126 @@
    "command": "python verify/claim.py R1.main-Limitations.5"
   },
   {
+   "label": "0.0397 \u2014 \u201cthe 0.0451 trunk gap (TrunkCtrl 0.0397 above the shipped-recipe arm, the\u201d",
+   "printed": "0.0397",
+   "kind": "scalar",
+   "source": "revision-1/recompute.json",
+   "key": "contrasts.C8.c40.boot.seed+source.primary.delta",
+   "id": "R1.main-tab-appledger.1",
+   "table": "R1.main-tab-appledger",
+   "table_title": "Revision 1 \u2014 main paper, tab:appledger",
+   "where": "main paper, tab:appledger",
+   "artifacts": [
+    "revision-1/recompute.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-appledger.1"
+  },
+  {
+   "label": "0.0054 \u2014 \u201conly difference whose interval excludes zero, and 0.0054 below\u201d",
+   "printed": "0.0054",
+   "kind": "difference",
+   "minuend": {
+    "runs": [
+     "b7_effnet_b0_mq_fliponly"
+    ],
+    "cell": "c40"
+   },
+   "subtrahend": {
+    "runs": [
+     "trunk_recipe_s42",
+     "trunk_recipe_s1",
+     "trunk_recipe_s2"
+    ],
+    "cell": "c40"
+   },
+   "id": "R1.main-tab-appledger.2",
+   "table": "R1.main-tab-appledger",
+   "table_title": "Revision 1 \u2014 main paper, tab:appledger",
+   "where": "main paper, tab:appledger",
+   "artifacts": [
+    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json",
+    "predictions/ffpp/trunk_recipe_s42.json",
+    "predictions/ffpp/trunk_recipe_s1.json",
+    "predictions/ffpp/trunk_recipe_s2.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-appledger.2"
+  },
+  {
+   "label": "+0.0054 \u2014 \u201c$-0.0038$, CI \\ci{-0.0116}{+0.0039}, and $+0.0054$ \\ci{-0.0040}{+0.0156}\u201d",
+   "printed": "+0.0054",
+   "kind": "scalar",
+   "source": "revision-1/recompute.json",
+   "key": "contrasts.C7.c40.boot.seed+source.primary.delta",
+   "id": "R1.main-tab-appledger.3",
+   "table": "R1.main-tab-appledger",
+   "table_title": "Revision 1 \u2014 main paper, tab:appledger",
+   "where": "main paper, tab:appledger",
+   "artifacts": [
+    "revision-1/recompute.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-appledger.3"
+  },
+  {
+   "label": "-0.0040 \u2014 \u201c$-0.0038$, CI \\ci{-0.0116}{+0.0039}, and $+0.0054$ \\ci{-0.0040}{+0.0156}\u201d",
+   "printed": "-0.0040",
+   "kind": "scalar",
+   "source": "revision-1/recompute.json",
+   "key": "contrasts.C7.c40.boot.seed+source.primary.ci_lo",
+   "id": "R1.main-tab-appledger.4",
+   "table": "R1.main-tab-appledger",
+   "table_title": "Revision 1 \u2014 main paper, tab:appledger",
+   "where": "main paper, tab:appledger",
+   "artifacts": [
+    "revision-1/recompute.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-appledger.4"
+  },
+  {
+   "label": "+0.0156 \u2014 \u201c$-0.0038$, CI \\ci{-0.0116}{+0.0039}, and $+0.0054$ \\ci{-0.0040}{+0.0156}\u201d",
+   "printed": "+0.0156",
+   "kind": "scalar",
+   "source": "revision-1/recompute.json",
+   "key": "contrasts.C7.c40.boot.seed+source.primary.ci_hi",
+   "id": "R1.main-tab-appledger.5",
+   "table": "R1.main-tab-appledger",
+   "table_title": "Revision 1 \u2014 main paper, tab:appledger",
+   "where": "main paper, tab:appledger",
+   "artifacts": [
+    "revision-1/recompute.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-appledger.5"
+  },
+  {
+   "label": "4.0 \u2014 \u201cdiffer in more than width (4.0\\,M vs.\\ 3.68\\,M), so this does not isolate\u201d",
+   "printed": "4.0",
+   "kind": "scalar",
+   "source": "probes/param_counts_arms.json",
+   "key": "arms.SpatialBase.millions",
+   "id": "R1.main-tab-appledger.6",
+   "table": "R1.main-tab-appledger",
+   "table_title": "Revision 1 \u2014 main paper, tab:appledger",
+   "where": "main paper, tab:appledger",
+   "artifacts": [
+    "probes/param_counts_arms.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-appledger.6"
+  },
+  {
+   "label": "3.68 \u2014 \u201cdiffer in more than width (4.0\\,M vs.\\ 3.68\\,M), so this does not isolate\u201d",
+   "printed": "3.68",
+   "kind": "scalar",
+   "source": "probes/param_counts_arms.json",
+   "key": "arms.TrunkCtrl.millions",
+   "id": "R1.main-tab-appledger.7",
+   "table": "R1.main-tab-appledger",
+   "table_title": "Revision 1 \u2014 main paper, tab:appledger",
+   "where": "main paper, tab:appledger",
+   "artifacts": [
+    "probes/param_counts_arms.json"
+   ],
+   "command": "python verify/claim.py R1.main-tab-appledger.7"
+  },
+  {
    "label": "+0.0366 \u2014 \u201cspecified at c40 was $+0.0366$, 95\\% CI \\ci{+0.020}{+0.054}\u201d",
    "printed": "+0.0366",
    "kind": "scalar",
@@ -5185,19 +5664,65 @@
    "command": "python verify/claim.py R1.main-sec-conclusionfinal.18"
   },
   {
+   "label": "4.0 \u2014 \u201cof one 4.0\\,M trunk, without a hyperparameter search of their own. Across seeds the design\u201d",
+   "printed": "4.0",
+   "kind": "scalar",
+   "source": "probes/param_counts_arms.json",
+   "key": "arms.SpatialBase.millions",
+   "id": "R1.main-sec-conclusionfinal.19",
+   "table": "R1.main-sec-conclusionfinal",
+   "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
+   "where": "main paper, sec:conclusionfinal",
+   "artifacts": [
+    "probes/param_counts_arms.json"
+   ],
+   "command": "python verify/claim.py R1.main-sec-conclusionfinal.19"
+  },
+  {
+   "label": "1.5 \u2014 \u201c1.5--1.7\\,pt, so a smaller gain, including one the size of the fairest\u201d",
+   "printed": "1.5",
+   "kind": "scalar",
+   "source": "evaluation/analysis/mde.json",
+   "key": "seed_level.pairs.Fair-N vs SpatialBase.mde_power80",
+   "scale": 100,
+   "id": "R1.main-sec-conclusionfinal.20",
+   "table": "R1.main-sec-conclusionfinal",
+   "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
+   "where": "main paper, sec:conclusionfinal",
+   "artifacts": [
+    "evaluation/analysis/mde.json"
+   ],
+   "command": "python verify/claim.py R1.main-sec-conclusionfinal.20"
+  },
+  {
+   "label": "1.7 \u2014 \u201c1.5--1.7\\,pt, so a smaller gain, including one the size of the fairest\u201d",
+   "printed": "1.7",
+   "kind": "scalar",
+   "source": "evaluation/analysis/mde.json",
+   "key": "headline_two_level_mde_power80_pt",
+   "id": "R1.main-sec-conclusionfinal.21",
+   "table": "R1.main-sec-conclusionfinal",
+   "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
+   "where": "main paper, sec:conclusionfinal",
+   "artifacts": [
+    "evaluation/analysis/mde.json"
+   ],
+   "command": "python verify/claim.py R1.main-sec-conclusionfinal.21"
+  },
+  {
    "label": "0.919 \u2014 \u201cdetectable (CAFRL$-$adv 0.919 against the full model's 0.922 at c40) and\u201d",
    "printed": "0.919",
    "kind": "cell",
    "run": "a1_none_s42",
    "cell": "c40",
-   "id": "R1.main-sec-conclusionfinal.19",
+   "id": "R1.main-sec-conclusionfinal.22",
    "table": "R1.main-sec-conclusionfinal",
    "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
    "where": "main paper, sec:conclusionfinal",
    "artifacts": [
     "predictions/ffpp/a1_none_s42.json"
    ],
-   "command": "python verify/claim.py R1.main-sec-conclusionfinal.19"
+   "command": "python verify/claim.py R1.main-sec-conclusionfinal.22"
   },
   {
    "label": "0.922 \u2014 \u201cdetectable (CAFRL$-$adv 0.919 against the full model's 0.922 at c40) and\u201d",
@@ -5205,14 +5730,14 @@
    "kind": "cell",
    "run": "a0",
    "cell": "c40",
-   "id": "R1.main-sec-conclusionfinal.20",
+   "id": "R1.main-sec-conclusionfinal.23",
    "table": "R1.main-sec-conclusionfinal",
    "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
    "where": "main paper, sec:conclusionfinal",
    "artifacts": [
     "predictions/ffpp/a0.json"
    ],
-   "command": "python verify/claim.py R1.main-sec-conclusionfinal.20"
+   "command": "python verify/claim.py R1.main-sec-conclusionfinal.23"
   },
   {
    "label": "0.88 \u2014 \u201c$0.88 \\rightarrow {\\approx}0.4$; D6). Restored at the fair recipe (E1,\u201d",
@@ -5220,14 +5745,14 @@
    "kind": "scalar",
    "source": "probes/p1_compression_estimator.json",
    "key": "pm1_acc",
-   "id": "R1.main-sec-conclusionfinal.21",
+   "id": "R1.main-sec-conclusionfinal.24",
    "table": "R1.main-sec-conclusionfinal",
    "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
    "where": "main paper, sec:conclusionfinal",
    "artifacts": [
     "probes/p1_compression_estimator.json"
    ],
-   "command": "python verify/claim.py R1.main-sec-conclusionfinal.21"
+   "command": "python verify/claim.py R1.main-sec-conclusionfinal.24"
   },
   {
    "label": "0.87 \u2014 \u201cdifference in detection: $\\Delta = 0.87$\\,pt at c40 (\\ci{0.02}{1.88}, Holm\u201d",
@@ -5236,53 +5761,6 @@
    "source": "revision-1/stats/confirmatory.json",
    "key": "tests[0].estimate",
    "scale": 100,
-   "id": "R1.main-sec-conclusionfinal.22",
-   "table": "R1.main-sec-conclusionfinal",
-   "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
-   "where": "main paper, sec:conclusionfinal",
-   "artifacts": [
-    "revision-1/stats/confirmatory.json"
-   ],
-   "command": "python verify/claim.py R1.main-sec-conclusionfinal.22"
-  },
-  {
-   "label": "0.02 \u2014 \u201cdifference in detection: $\\Delta = 0.87$\\,pt at c40 (\\ci{0.02}{1.88}, Holm\u201d",
-   "printed": "0.02",
-   "kind": "scalar",
-   "source": "revision-1/stats/confirmatory.json",
-   "key": "tests[0].ci_lo",
-   "scale": 100,
-   "id": "R1.main-sec-conclusionfinal.23",
-   "table": "R1.main-sec-conclusionfinal",
-   "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
-   "where": "main paper, sec:conclusionfinal",
-   "artifacts": [
-    "revision-1/stats/confirmatory.json"
-   ],
-   "command": "python verify/claim.py R1.main-sec-conclusionfinal.23"
-  },
-  {
-   "label": "1.88 \u2014 \u201cdifference in detection: $\\Delta = 0.87$\\,pt at c40 (\\ci{0.02}{1.88}, Holm\u201d",
-   "printed": "1.88",
-   "kind": "scalar",
-   "source": "revision-1/stats/confirmatory.json",
-   "key": "tests[0].ci_hi",
-   "scale": 100,
-   "id": "R1.main-sec-conclusionfinal.24",
-   "table": "R1.main-sec-conclusionfinal",
-   "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
-   "where": "main paper, sec:conclusionfinal",
-   "artifacts": [
-    "revision-1/stats/confirmatory.json"
-   ],
-   "command": "python verify/claim.py R1.main-sec-conclusionfinal.24"
-  },
-  {
-   "label": "0.084 \u2014 \u201c$p = 0.084$) and $0.73$\\,pt on \\auccomp{} (\\ci{0.12}{1.45}, Holm\u201d",
-   "printed": "0.084",
-   "kind": "scalar",
-   "source": "revision-1/stats/confirmatory.json",
-   "key": "tests[0].p_holm",
    "id": "R1.main-sec-conclusionfinal.25",
    "table": "R1.main-sec-conclusionfinal",
    "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
@@ -5293,11 +5771,11 @@
    "command": "python verify/claim.py R1.main-sec-conclusionfinal.25"
   },
   {
-   "label": "0.73 \u2014 \u201c$p = 0.084$) and $0.73$\\,pt on \\auccomp{} (\\ci{0.12}{1.45}, Holm\u201d",
-   "printed": "0.73",
+   "label": "0.02 \u2014 \u201cdifference in detection: $\\Delta = 0.87$\\,pt at c40 (\\ci{0.02}{1.88}, Holm\u201d",
+   "printed": "0.02",
    "kind": "scalar",
    "source": "revision-1/stats/confirmatory.json",
-   "key": "tests[1].estimate",
+   "key": "tests[0].ci_lo",
    "scale": 100,
    "id": "R1.main-sec-conclusionfinal.26",
    "table": "R1.main-sec-conclusionfinal",
@@ -5309,11 +5787,11 @@
    "command": "python verify/claim.py R1.main-sec-conclusionfinal.26"
   },
   {
-   "label": "0.12 \u2014 \u201c$p = 0.084$) and $0.73$\\,pt on \\auccomp{} (\\ci{0.12}{1.45}, Holm\u201d",
-   "printed": "0.12",
+   "label": "1.88 \u2014 \u201cdifference in detection: $\\Delta = 0.87$\\,pt at c40 (\\ci{0.02}{1.88}, Holm\u201d",
+   "printed": "1.88",
    "kind": "scalar",
    "source": "revision-1/stats/confirmatory.json",
-   "key": "tests[1].ci_lo",
+   "key": "tests[0].ci_hi",
    "scale": 100,
    "id": "R1.main-sec-conclusionfinal.27",
    "table": "R1.main-sec-conclusionfinal",
@@ -5325,12 +5803,11 @@
    "command": "python verify/claim.py R1.main-sec-conclusionfinal.27"
   },
   {
-   "label": "1.45 \u2014 \u201c$p = 0.084$) and $0.73$\\,pt on \\auccomp{} (\\ci{0.12}{1.45}, Holm\u201d",
-   "printed": "1.45",
+   "label": "0.084 \u2014 \u201c$p = 0.084$) and $0.73$\\,pt on \\auccomp{} (\\ci{0.12}{1.45}, Holm\u201d",
+   "printed": "0.084",
    "kind": "scalar",
    "source": "revision-1/stats/confirmatory.json",
-   "key": "tests[1].ci_hi",
-   "scale": 100,
+   "key": "tests[0].p_holm",
    "id": "R1.main-sec-conclusionfinal.28",
    "table": "R1.main-sec-conclusionfinal",
    "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
@@ -5341,11 +5818,12 @@
    "command": "python verify/claim.py R1.main-sec-conclusionfinal.28"
   },
   {
-   "label": "0.061 \u2014 \u201c$p = 0.061$). Its estimator stayed accurate at the selected epochs ($\\pm1$-level accuracy\u201d",
-   "printed": "0.061",
+   "label": "0.73 \u2014 \u201c$p = 0.084$) and $0.73$\\,pt on \\auccomp{} (\\ci{0.12}{1.45}, Holm\u201d",
+   "printed": "0.73",
    "kind": "scalar",
    "source": "revision-1/stats/confirmatory.json",
-   "key": "tests[1].p_holm",
+   "key": "tests[1].estimate",
+   "scale": 100,
    "id": "R1.main-sec-conclusionfinal.29",
    "table": "R1.main-sec-conclusionfinal",
    "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
@@ -5356,19 +5834,66 @@
    "command": "python verify/claim.py R1.main-sec-conclusionfinal.29"
   },
   {
+   "label": "0.12 \u2014 \u201c$p = 0.084$) and $0.73$\\,pt on \\auccomp{} (\\ci{0.12}{1.45}, Holm\u201d",
+   "printed": "0.12",
+   "kind": "scalar",
+   "source": "revision-1/stats/confirmatory.json",
+   "key": "tests[1].ci_lo",
+   "scale": 100,
+   "id": "R1.main-sec-conclusionfinal.30",
+   "table": "R1.main-sec-conclusionfinal",
+   "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
+   "where": "main paper, sec:conclusionfinal",
+   "artifacts": [
+    "revision-1/stats/confirmatory.json"
+   ],
+   "command": "python verify/claim.py R1.main-sec-conclusionfinal.30"
+  },
+  {
+   "label": "1.45 \u2014 \u201c$p = 0.084$) and $0.73$\\,pt on \\auccomp{} (\\ci{0.12}{1.45}, Holm\u201d",
+   "printed": "1.45",
+   "kind": "scalar",
+   "source": "revision-1/stats/confirmatory.json",
+   "key": "tests[1].ci_hi",
+   "scale": 100,
+   "id": "R1.main-sec-conclusionfinal.31",
+   "table": "R1.main-sec-conclusionfinal",
+   "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
+   "where": "main paper, sec:conclusionfinal",
+   "artifacts": [
+    "revision-1/stats/confirmatory.json"
+   ],
+   "command": "python verify/claim.py R1.main-sec-conclusionfinal.31"
+  },
+  {
+   "label": "0.061 \u2014 \u201c$p = 0.061$). Its estimator stayed accurate at the selected epochs ($\\pm1$-level accuracy\u201d",
+   "printed": "0.061",
+   "kind": "scalar",
+   "source": "revision-1/stats/confirmatory.json",
+   "key": "tests[1].p_holm",
+   "id": "R1.main-sec-conclusionfinal.32",
+   "table": "R1.main-sec-conclusionfinal",
+   "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
+   "where": "main paper, sec:conclusionfinal",
+   "artifacts": [
+    "revision-1/stats/confirmatory.json"
+   ],
+   "command": "python verify/claim.py R1.main-sec-conclusionfinal.32"
+  },
+  {
    "label": "0.9531 \u2014 \u201c0.9531 / 1.0000 / 1.0000), although one seed fell below the registered\u201d",
    "printed": "0.9531",
    "kind": "scalar",
    "source": "revision-1/stats/secondaries.null.json",
    "key": "health.rows[0].est_pm1",
-   "id": "R1.main-sec-conclusionfinal.30",
+   "id": "R1.main-sec-conclusionfinal.33",
    "table": "R1.main-sec-conclusionfinal",
    "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
    "where": "main paper, sec:conclusionfinal",
    "artifacts": [
     "revision-1/stats/secondaries.null.json"
    ],
-   "command": "python verify/claim.py R1.main-sec-conclusionfinal.30"
+   "command": "python verify/claim.py R1.main-sec-conclusionfinal.33"
   },
   {
    "label": "1.0000 \u2014 \u201c0.9531 / 1.0000 / 1.0000), although one seed fell below the registered\u201d",
@@ -5376,14 +5901,14 @@
    "kind": "scalar",
    "source": "revision-1/stats/secondaries.null.json",
    "key": "health.rows[1].est_pm1",
-   "id": "R1.main-sec-conclusionfinal.31",
+   "id": "R1.main-sec-conclusionfinal.34",
    "table": "R1.main-sec-conclusionfinal",
    "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
    "where": "main paper, sec:conclusionfinal",
    "artifacts": [
     "revision-1/stats/secondaries.null.json"
    ],
-   "command": "python verify/claim.py R1.main-sec-conclusionfinal.31"
+   "command": "python verify/claim.py R1.main-sec-conclusionfinal.34"
   },
   {
    "label": "1.0000 \u2014 \u201c0.9531 / 1.0000 / 1.0000), although one seed fell below the registered\u201d",
@@ -5391,14 +5916,14 @@
    "kind": "scalar",
    "source": "revision-1/stats/secondaries.null.json",
    "key": "health.rows[2].est_pm1",
-   "id": "R1.main-sec-conclusionfinal.32",
+   "id": "R1.main-sec-conclusionfinal.35",
    "table": "R1.main-sec-conclusionfinal",
    "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
    "where": "main paper, sec:conclusionfinal",
    "artifacts": [
     "revision-1/stats/secondaries.null.json"
    ],
-   "command": "python verify/claim.py R1.main-sec-conclusionfinal.32"
+   "command": "python verify/claim.py R1.main-sec-conclusionfinal.35"
   },
   {
    "label": "1.78 \u2014 \u201carm at one strength ($\\lambda_{\\max} = 0.5$); these tests detect about 1.78\u201d",
@@ -5407,14 +5932,14 @@
    "source": "revision-1/registered/mde.json",
    "key": "tests_by_id.T1[\"mde_as_specified_holm_worst_0.01\"]",
    "scale": 100,
-   "id": "R1.main-sec-conclusionfinal.33",
+   "id": "R1.main-sec-conclusionfinal.36",
    "table": "R1.main-sec-conclusionfinal",
    "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
    "where": "main paper, sec:conclusionfinal",
    "artifacts": [
     "revision-1/registered/mde.json"
    ],
-   "command": "python verify/claim.py R1.main-sec-conclusionfinal.33"
+   "command": "python verify/claim.py R1.main-sec-conclusionfinal.36"
   },
   {
    "label": "1.37 \u2014 \u201cand 1.37\\,pt at 80\\% power and $\\alpha = 0.01$, and smaller effects in either direction ar\u201d",
@@ -5423,14 +5948,14 @@
    "source": "revision-1/registered/mde.json",
    "key": "tests_by_id.T2[\"mde_as_specified_holm_worst_0.01\"]",
    "scale": 100,
-   "id": "R1.main-sec-conclusionfinal.34",
+   "id": "R1.main-sec-conclusionfinal.37",
    "table": "R1.main-sec-conclusionfinal",
    "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
    "where": "main paper, sec:conclusionfinal",
    "artifacts": [
     "revision-1/registered/mde.json"
    ],
-   "command": "python verify/claim.py R1.main-sec-conclusionfinal.34"
+   "command": "python verify/claim.py R1.main-sec-conclusionfinal.37"
   },
   {
    "label": "7.48 \u2014 \u201cgave a higher mean single-model c40 AUC by 7.48\\,pt averaged over c40\u201d",
@@ -5439,53 +5964,6 @@
    "source": "revision-1/stats/confirmatory.json",
    "key": "tests[3].estimate",
    "scale": 100,
-   "id": "R1.main-sec-conclusionfinal.35",
-   "table": "R1.main-sec-conclusionfinal",
-   "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
-   "where": "main paper, sec:conclusionfinal",
-   "artifacts": [
-    "revision-1/stats/confirmatory.json"
-   ],
-   "command": "python verify/claim.py R1.main-sec-conclusionfinal.35"
-  },
-  {
-   "label": "5.12 \u2014 \u201cexposure (\\ci{5.12}{9.94}, Holm $p = 0.00050$; T4), and including the\u201d",
-   "printed": "5.12",
-   "kind": "scalar",
-   "source": "revision-1/stats/confirmatory.json",
-   "key": "tests[3].ci_lo",
-   "scale": 100,
-   "id": "R1.main-sec-conclusionfinal.36",
-   "table": "R1.main-sec-conclusionfinal",
-   "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
-   "where": "main paper, sec:conclusionfinal",
-   "artifacts": [
-    "revision-1/stats/confirmatory.json"
-   ],
-   "command": "python verify/claim.py R1.main-sec-conclusionfinal.36"
-  },
-  {
-   "label": "9.94 \u2014 \u201cexposure (\\ci{5.12}{9.94}, Holm $p = 0.00050$; T4), and including the\u201d",
-   "printed": "9.94",
-   "kind": "scalar",
-   "source": "revision-1/stats/confirmatory.json",
-   "key": "tests[3].ci_hi",
-   "scale": 100,
-   "id": "R1.main-sec-conclusionfinal.37",
-   "table": "R1.main-sec-conclusionfinal",
-   "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
-   "where": "main paper, sec:conclusionfinal",
-   "artifacts": [
-    "revision-1/stats/confirmatory.json"
-   ],
-   "command": "python verify/claim.py R1.main-sec-conclusionfinal.37"
-  },
-  {
-   "label": "0.00050 \u2014 \u201cexposure (\\ci{5.12}{9.94}, Holm $p = 0.00050$; T4), and including the\u201d",
-   "printed": "0.00050",
-   "kind": "scalar",
-   "source": "revision-1/stats/confirmatory.json",
-   "key": "tests[3].p_holm",
    "id": "R1.main-sec-conclusionfinal.38",
    "table": "R1.main-sec-conclusionfinal",
    "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
@@ -5496,11 +5974,11 @@
    "command": "python verify/claim.py R1.main-sec-conclusionfinal.38"
   },
   {
-   "label": "1.88 \u2014 \u201cc40-level data raised it by 1.88\\,pt averaged over codec (\\ci{0.79}{2.98},\u201d",
-   "printed": "1.88",
+   "label": "5.12 \u2014 \u201cexposure (\\ci{5.12}{9.94}, Holm $p = 0.00050$; T4), and including the\u201d",
+   "printed": "5.12",
    "kind": "scalar",
    "source": "revision-1/stats/confirmatory.json",
-   "key": "tests[4].estimate",
+   "key": "tests[3].ci_lo",
    "scale": 100,
    "id": "R1.main-sec-conclusionfinal.39",
    "table": "R1.main-sec-conclusionfinal",
@@ -5512,11 +5990,11 @@
    "command": "python verify/claim.py R1.main-sec-conclusionfinal.39"
   },
   {
-   "label": "0.79 \u2014 \u201cc40-level data raised it by 1.88\\,pt averaged over codec (\\ci{0.79}{2.98},\u201d",
-   "printed": "0.79",
+   "label": "9.94 \u2014 \u201cexposure (\\ci{5.12}{9.94}, Holm $p = 0.00050$; T4), and including the\u201d",
+   "printed": "9.94",
    "kind": "scalar",
    "source": "revision-1/stats/confirmatory.json",
-   "key": "tests[4].ci_lo",
+   "key": "tests[3].ci_hi",
    "scale": 100,
    "id": "R1.main-sec-conclusionfinal.40",
    "table": "R1.main-sec-conclusionfinal",
@@ -5528,12 +6006,11 @@
    "command": "python verify/claim.py R1.main-sec-conclusionfinal.40"
   },
   {
-   "label": "2.98 \u2014 \u201cc40-level data raised it by 1.88\\,pt averaged over codec (\\ci{0.79}{2.98},\u201d",
-   "printed": "2.98",
+   "label": "0.00050 \u2014 \u201cexposure (\\ci{5.12}{9.94}, Holm $p = 0.00050$; T4), and including the\u201d",
+   "printed": "0.00050",
    "kind": "scalar",
    "source": "revision-1/stats/confirmatory.json",
-   "key": "tests[4].ci_hi",
-   "scale": 100,
+   "key": "tests[3].p_holm",
    "id": "R1.main-sec-conclusionfinal.41",
    "table": "R1.main-sec-conclusionfinal",
    "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
@@ -5544,11 +6021,12 @@
    "command": "python verify/claim.py R1.main-sec-conclusionfinal.41"
   },
   {
-   "label": "0.0020 \u2014 \u201cHolm $p = 0.0020$; T5); both registered, paired, three seeds per arm\u201d",
-   "printed": "0.0020",
+   "label": "1.88 \u2014 \u201cc40-level data raised it by 1.88\\,pt averaged over codec (\\ci{0.79}{2.98},\u201d",
+   "printed": "1.88",
    "kind": "scalar",
    "source": "revision-1/stats/confirmatory.json",
-   "key": "tests[4].p_holm",
+   "key": "tests[4].estimate",
+   "scale": 100,
    "id": "R1.main-sec-conclusionfinal.42",
    "table": "R1.main-sec-conclusionfinal",
    "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
@@ -5559,11 +6037,12 @@
    "command": "python verify/claim.py R1.main-sec-conclusionfinal.42"
   },
   {
-   "label": "0.88 \u2014 \u201ckept $R = 0.88$ \\ci{0.75}{1.03} of its c40 gain (T3), not detectably below 1,\u201d",
-   "printed": "0.88",
+   "label": "0.79 \u2014 \u201cc40-level data raised it by 1.88\\,pt averaged over codec (\\ci{0.79}{2.98},\u201d",
+   "printed": "0.79",
    "kind": "scalar",
    "source": "revision-1/stats/confirmatory.json",
-   "key": "tests[2].estimate",
+   "key": "tests[4].ci_lo",
+   "scale": 100,
    "id": "R1.main-sec-conclusionfinal.43",
    "table": "R1.main-sec-conclusionfinal",
    "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
@@ -5574,11 +6053,12 @@
    "command": "python verify/claim.py R1.main-sec-conclusionfinal.43"
   },
   {
-   "label": "0.75 \u2014 \u201ckept $R = 0.88$ \\ci{0.75}{1.03} of its c40 gain (T3), not detectably below 1,\u201d",
-   "printed": "0.75",
+   "label": "2.98 \u2014 \u201cc40-level data raised it by 1.88\\,pt averaged over codec (\\ci{0.79}{2.98},\u201d",
+   "printed": "2.98",
    "kind": "scalar",
    "source": "revision-1/stats/confirmatory.json",
-   "key": "tests[2].ci_lo",
+   "key": "tests[4].ci_hi",
+   "scale": 100,
    "id": "R1.main-sec-conclusionfinal.44",
    "table": "R1.main-sec-conclusionfinal",
    "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
@@ -5589,11 +6069,11 @@
    "command": "python verify/claim.py R1.main-sec-conclusionfinal.44"
   },
   {
-   "label": "1.03 \u2014 \u201ckept $R = 0.88$ \\ci{0.75}{1.03} of its c40 gain (T3), not detectably below 1,\u201d",
-   "printed": "1.03",
+   "label": "0.0020 \u2014 \u201cHolm $p = 0.0020$; T5); both registered, paired, three seeds per arm\u201d",
+   "printed": "0.0020",
    "kind": "scalar",
    "source": "revision-1/stats/confirmatory.json",
-   "key": "tests[2].ci_hi",
+   "key": "tests[4].p_holm",
    "id": "R1.main-sec-conclusionfinal.45",
    "table": "R1.main-sec-conclusionfinal",
    "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
@@ -5604,124 +6084,113 @@
    "command": "python verify/claim.py R1.main-sec-conclusionfinal.45"
   },
   {
-   "label": "0.0397 \u2014 \u201cthe 0.0451 trunk gap (TrunkCtrl 0.0397 above the shipped-recipe arm, the\u201d",
-   "printed": "0.0397",
+   "label": "0.88 \u2014 \u201ckept $R = 0.88$ \\ci{0.75}{1.03} of its c40 gain (T3), not detectably below 1,\u201d",
+   "printed": "0.88",
    "kind": "scalar",
-   "source": "revision-1/recompute.json",
-   "key": "contrasts.C8.c40.boot.seed+source.primary.delta",
-   "id": "R1.main-tab-appledger.1",
-   "table": "R1.main-tab-appledger",
-   "table_title": "Revision 1 \u2014 main paper, tab:appledger",
-   "where": "main paper, tab:appledger",
+   "source": "revision-1/stats/confirmatory.json",
+   "key": "tests[2].estimate",
+   "id": "R1.main-sec-conclusionfinal.46",
+   "table": "R1.main-sec-conclusionfinal",
+   "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
+   "where": "main paper, sec:conclusionfinal",
    "artifacts": [
-    "revision-1/recompute.json"
+    "revision-1/stats/confirmatory.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-appledger.1"
+   "command": "python verify/claim.py R1.main-sec-conclusionfinal.46"
   },
   {
-   "label": "0.0054 \u2014 \u201conly difference whose interval excludes zero, and 0.0054 below\u201d",
-   "printed": "0.0054",
+   "label": "0.75 \u2014 \u201ckept $R = 0.88$ \\ci{0.75}{1.03} of its c40 gain (T3), not detectably below 1,\u201d",
+   "printed": "0.75",
+   "kind": "scalar",
+   "source": "revision-1/stats/confirmatory.json",
+   "key": "tests[2].ci_lo",
+   "id": "R1.main-sec-conclusionfinal.47",
+   "table": "R1.main-sec-conclusionfinal",
+   "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
+   "where": "main paper, sec:conclusionfinal",
+   "artifacts": [
+    "revision-1/stats/confirmatory.json"
+   ],
+   "command": "python verify/claim.py R1.main-sec-conclusionfinal.47"
+  },
+  {
+   "label": "1.03 \u2014 \u201ckept $R = 0.88$ \\ci{0.75}{1.03} of its c40 gain (T3), not detectably below 1,\u201d",
+   "printed": "1.03",
+   "kind": "scalar",
+   "source": "revision-1/stats/confirmatory.json",
+   "key": "tests[2].ci_hi",
+   "id": "R1.main-sec-conclusionfinal.48",
+   "table": "R1.main-sec-conclusionfinal",
+   "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
+   "where": "main paper, sec:conclusionfinal",
+   "artifacts": [
+    "revision-1/stats/confirmatory.json"
+   ],
+   "command": "python verify/claim.py R1.main-sec-conclusionfinal.48"
+  },
+  {
+   "label": "13 \u2014 \u201cmulti-level-trained arms drop 13--19 points across the same two levels on near-domain DFD,\u201d",
+   "printed": "13",
    "kind": "difference",
    "minuend": {
     "runs": [
-     "b7_effnet_b0_mq_fliponly"
+     "f1_none_fair_s42",
+     "f1_none_fair_s1",
+     "f1_none_fair_s2"
     ],
-    "cell": "c40"
+    "cell": "dfd_c23",
+    "eval_set": "cross_dataset"
    },
    "subtrahend": {
     "runs": [
-     "trunk_recipe_s42",
-     "trunk_recipe_s1",
-     "trunk_recipe_s2"
+     "f1_none_fair_s42",
+     "f1_none_fair_s1",
+     "f1_none_fair_s2"
     ],
-    "cell": "c40"
+    "cell": "dfd_c40",
+    "eval_set": "cross_dataset"
    },
-   "id": "R1.main-tab-appledger.2",
-   "table": "R1.main-tab-appledger",
-   "table_title": "Revision 1 \u2014 main paper, tab:appledger",
-   "where": "main paper, tab:appledger",
+   "scale": 100,
+   "note": "the low end of the DFD c23 - c40 drop over the multi-level-trained arms of Table S3: Fair-N, 3-seed means 0.792 - 0.659 (stored statistics; no per-video scores)",
+   "id": "R1.main-sec-conclusionfinal.49",
+   "table": "R1.main-sec-conclusionfinal",
+   "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
+   "where": "main paper, sec:conclusionfinal",
    "artifacts": [
-    "predictions/ffpp/b7_effnet_b0_mq_fliponly.json",
-    "predictions/ffpp/trunk_recipe_s42.json",
-    "predictions/ffpp/trunk_recipe_s1.json",
-    "predictions/ffpp/trunk_recipe_s2.json"
+    "predictions/cross_dataset/f1_none_fair_s42.json",
+    "predictions/cross_dataset/f1_none_fair_s1.json",
+    "predictions/cross_dataset/f1_none_fair_s2.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-appledger.2"
+   "command": "python verify/claim.py R1.main-sec-conclusionfinal.49"
   },
   {
-   "label": "+0.0054 \u2014 \u201c$-0.0038$, CI \\ci{-0.0116}{+0.0039}, and $+0.0054$ \\ci{-0.0040}{+0.0156}\u201d",
-   "printed": "+0.0054",
-   "kind": "scalar",
-   "source": "revision-1/recompute.json",
-   "key": "contrasts.C7.c40.boot.seed+source.primary.delta",
-   "id": "R1.main-tab-appledger.3",
-   "table": "R1.main-tab-appledger",
-   "table_title": "Revision 1 \u2014 main paper, tab:appledger",
-   "where": "main paper, tab:appledger",
+   "label": "19 \u2014 \u201cmulti-level-trained arms drop 13--19 points across the same two levels on near-domain DFD,\u201d",
+   "printed": "19",
+   "kind": "difference",
+   "minuend": {
+    "runs": [
+     "b4_xception_mq"
+    ],
+    "cell": "dfd_c23",
+    "eval_set": "cross_dataset"
+   },
+   "subtrahend": {
+    "runs": [
+     "b4_xception_mq"
+    ],
+    "cell": "dfd_c40",
+    "eval_set": "cross_dataset"
+   },
+   "scale": 100,
+   "note": "the high end of the DFD c23 - c40 drop over the multi-level-trained arms of Table S3: Xception-mq, seed 42, 0.881 - 0.688 (stored statistics; no per-video scores)",
+   "id": "R1.main-sec-conclusionfinal.50",
+   "table": "R1.main-sec-conclusionfinal",
+   "table_title": "Revision 1 \u2014 main paper, sec:conclusionfinal",
+   "where": "main paper, sec:conclusionfinal",
    "artifacts": [
-    "revision-1/recompute.json"
+    "predictions/cross_dataset/b4_xception_mq.json"
    ],
-   "command": "python verify/claim.py R1.main-tab-appledger.3"
-  },
-  {
-   "label": "-0.0040 \u2014 \u201c$-0.0038$, CI \\ci{-0.0116}{+0.0039}, and $+0.0054$ \\ci{-0.0040}{+0.0156}\u201d",
-   "printed": "-0.0040",
-   "kind": "scalar",
-   "source": "revision-1/recompute.json",
-   "key": "contrasts.C7.c40.boot.seed+source.primary.ci_lo",
-   "id": "R1.main-tab-appledger.4",
-   "table": "R1.main-tab-appledger",
-   "table_title": "Revision 1 \u2014 main paper, tab:appledger",
-   "where": "main paper, tab:appledger",
-   "artifacts": [
-    "revision-1/recompute.json"
-   ],
-   "command": "python verify/claim.py R1.main-tab-appledger.4"
-  },
-  {
-   "label": "+0.0156 \u2014 \u201c$-0.0038$, CI \\ci{-0.0116}{+0.0039}, and $+0.0054$ \\ci{-0.0040}{+0.0156}\u201d",
-   "printed": "+0.0156",
-   "kind": "scalar",
-   "source": "revision-1/recompute.json",
-   "key": "contrasts.C7.c40.boot.seed+source.primary.ci_hi",
-   "id": "R1.main-tab-appledger.5",
-   "table": "R1.main-tab-appledger",
-   "table_title": "Revision 1 \u2014 main paper, tab:appledger",
-   "where": "main paper, tab:appledger",
-   "artifacts": [
-    "revision-1/recompute.json"
-   ],
-   "command": "python verify/claim.py R1.main-tab-appledger.5"
-  },
-  {
-   "label": "4.0 \u2014 \u201cdiffer in more than width (4.0\\,M vs.\\ 3.68\\,M), so this does not isolate\u201d",
-   "printed": "4.0",
-   "kind": "scalar",
-   "source": "probes/param_counts_arms.json",
-   "key": "arms.SpatialBase.millions",
-   "id": "R1.main-tab-appledger.6",
-   "table": "R1.main-tab-appledger",
-   "table_title": "Revision 1 \u2014 main paper, tab:appledger",
-   "where": "main paper, tab:appledger",
-   "artifacts": [
-    "probes/param_counts_arms.json"
-   ],
-   "command": "python verify/claim.py R1.main-tab-appledger.6"
-  },
-  {
-   "label": "3.68 \u2014 \u201cdiffer in more than width (4.0\\,M vs.\\ 3.68\\,M), so this does not isolate\u201d",
-   "printed": "3.68",
-   "kind": "scalar",
-   "source": "probes/param_counts_arms.json",
-   "key": "arms.TrunkCtrl.millions",
-   "id": "R1.main-tab-appledger.7",
-   "table": "R1.main-tab-appledger",
-   "table_title": "Revision 1 \u2014 main paper, tab:appledger",
-   "where": "main paper, tab:appledger",
-   "artifacts": [
-    "probes/param_counts_arms.json"
-   ],
-   "command": "python verify/claim.py R1.main-tab-appledger.7"
+   "command": "python verify/claim.py R1.main-sec-conclusionfinal.50"
   },
   {
    "label": "+0.53 \u2014 \u201cthat difference is not tested. Fair-W's $+0.53$\\,pt seed-mean lean is\u201d",

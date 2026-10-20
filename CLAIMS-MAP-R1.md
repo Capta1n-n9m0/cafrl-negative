@@ -31,9 +31,9 @@ python verify/claim.py --all               # every cheap row of both maps
 python verify/verify.py --jobs 4           # the whole check
 ```
 
-2353 rows. **2353 are checked against the paper on every build:**
-70 are recomputed from the per-video scores in `predictions/` and
-the curves in `curves/`, and 2283 are read back from a shipped file,
+2378 rows. **2378 are checked against the paper on every build:**
+89 are recomputed from the per-video scores in `predictions/` and
+the curves in `curves/`, and 2289 are read back from a shipped file,
 most of them from the analysis outputs under `revision-1/` (the check confirms
 that the printed number is the one in that file, without recomputing it). 0 are *recorded* rather
 than asserted (the release holds the artifact but defines no numeric
@@ -68,9 +68,9 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores.
 | `R1.fig3-fig-flow.9` | +0.054 — “[+0.020, +0.054]).” | +0.054 | 0.0540 | `verify/expected.json` +2 | `python verify/claim.py R1.fig3-fig-flow.9 --bootstrap` |
 | `R1.fig3-fig-flow.10` | −0.0009 — “Fair-N −0.0009 /” | -0.0009 | -0.0009 | `verify/expected.json` +6 | `python verify/claim.py R1.fig3-fig-flow.10 --bootstrap` |
 | `R1.fig3-fig-flow.11` | +0.0022 — “Fair-W +0.0022, both” | +0.0022 | 0.0022 | `verify/expected.json` +6 | `python verify/claim.py R1.fig3-fig-flow.11 --bootstrap` |
-| `R1.fig3-fig-flow.12` | +3.96 — “(+ at c40, s42);” | +3.96 | 3.9600 | `verify/expected.json` +2 | `python verify/claim.py R1.fig3-fig-flow.12 --bootstrap` |
-| `R1.fig3-fig-flow.13` | 7.48 — “at c40 (averaged” | 7.48 | 7.4783 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.fig3-fig-flow.13` |
-| `R1.fig3-fig-flow.14` | 1.88 — “by averaged over” | 1.88 | 1.8831 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.fig3-fig-flow.14` |
+| `R1.fig3-fig-flow.12` | 3.96 — “recipe recovered” | 3.96 | 3.9600 | `verify/expected.json` +2 | `python verify/claim.py R1.fig3-fig-flow.12 --bootstrap` |
+| `R1.fig3-fig-flow.13` | 7.48 — “JPEG by at c40” | 7.48 | 7.4783 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.fig3-fig-flow.13` |
+| `R1.fig3-fig-flow.14` | 1.88 — “averaged over” | 1.88 | 1.8831 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.fig3-fig-flow.14` |
 
 ## R1.ga-graphical-abstract — Revision 1 — graphical abstract (graphical_abstract.pdf; not part of this release), graphical-abstract
 
@@ -311,38 +311,58 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores.
 | id | claim | paper prints | this release gives | artifact | command |
 |---|---|---|---|---|---|
 | `R1.main-tab-contrasts.1` | +0.0366 — “SpatialBase $-$ CAFRL as specified (s42) & $+0.0366$ & \ci{+0.020}{+0.054} & registered & ” | +0.0366 | 0.0366 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.1` |
-| `R1.main-tab-contrasts.2` | +0.0182 — “SpatialBase $-$ CAFRL as specified (s42) & $+0.0366$ & \ci{+0.020}{+0.054} & registered & ” | +0.0182 | 0.0182 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.2` |
-| `R1.main-tab-contrasts.3` | +0.0569 — “SpatialBase $-$ CAFRL as specified (s42) & $+0.0366$ & \ci{+0.020}{+0.054} & registered & ” | +0.0569 | 0.0569 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.3` |
-| `R1.main-tab-contrasts.4` | +0.0396 — “Fair-N $-$ CAFRL$-$adv (s42) & $+0.0396$ & \ci{+0.0231}{+0.0570} & pre-\zb specified & sig” | +0.0396 | 0.0396 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.4` |
-| `R1.main-tab-contrasts.5` | +0.0222 — “Fair-N $-$ CAFRL$-$adv (s42) & $+0.0396$ & \ci{+0.0231}{+0.0570} & pre-\zb specified & sig” | +0.0222 | 0.0222 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.5` |
-| `R1.main-tab-contrasts.6` | +0.0580 — “Fair-N $-$ CAFRL$-$adv (s42) & $+0.0396$ & \ci{+0.0231}{+0.0570} & pre-\zb specified & sig” | +0.0580 | 0.0580 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.6` |
-| `R1.main-tab-contrasts.7` | -0.0004 — “Fair-N $-$ SpatialBase (s42) & $-0.0004$ & \ci{-0.0092}{+0.0080} & pre-\zb specified & no ” | -0.0004 | -0.0004 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.7` |
-| `R1.main-tab-contrasts.8` | -0.0095 — “Fair-N $-$ SpatialBase (s42) & $-0.0004$ & \ci{-0.0092}{+0.0080} & pre-\zb specified & no ” | -0.0095 | -0.0095 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.8` |
-| `R1.main-tab-contrasts.9` | +0.0055 — “Fair-W $-$ SpatialBase (s42) & $+0.0055$ & \ci{-0.0022}{+0.0134} & pre-\zb specified & no ” | +0.0055 | 0.0055 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.9` |
-| `R1.main-tab-contrasts.10` | +0.0055 — “Fair-W $-$ SpatialBase (s42) & $+0.0055$ & \ci{-0.0022}{+0.0134} & pre-\zb specified & no ” | +0.0055 | 0.0055 | `verify/expected.json` +2 | `python verify/claim.py R1.main-tab-contrasts.10 --bootstrap` |
-| `R1.main-tab-contrasts.11` | -0.0026 — “Fair-W $-$ SpatialBase (s42) & $+0.0055$ & \ci{-0.0022}{+0.0134} & pre-\zb specified & no ” | -0.0026 | -0.0026 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.11` |
-| `R1.main-tab-contrasts.12` | +0.0137 — “Fair-W $-$ SpatialBase (s42) & $+0.0055$ & \ci{-0.0022}{+0.0134} & pre-\zb specified & no ” | +0.0137 | 0.0137 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.12` |
-| `R1.main-tab-contrasts.13` | -0.0009 — “\textbf{Fair-N pool $-$ SpatialBase pool (3 vs.\ 3)} & $\mathbf{-0.0009}$ & \ci{-0.0066}{+” | -0.0009 | -0.0009 | `verify/expected.json` +6 | `python verify/claim.py R1.main-tab-contrasts.13 --bootstrap` |
-| `R1.main-tab-contrasts.14` | -0.0002 — “\textbf{Fair-N pool $-$ SpatialBase pool (3 vs.\ 3)} & $\mathbf{-0.0009}$ & \ci{-0.0066}{+” | -0.0002 | -0.0002 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.14` |
-| `R1.main-tab-contrasts.15` | -0.0105 — “\textbf{Fair-N pool $-$ SpatialBase pool (3 vs.\ 3)} & $\mathbf{-0.0009}$ & \ci{-0.0066}{+” | -0.0105 | -0.0105 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.15` |
-| `R1.main-tab-contrasts.16` | +0.0112 — “\textbf{Fair-N pool $-$ SpatialBase pool (3 vs.\ 3)} & $\mathbf{-0.0009}$ & \ci{-0.0066}{+” | +0.0112 | 0.0112 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.16` |
-| `R1.main-tab-contrasts.17` | +0.0080 — “\textbf{Fair-W pool $-$ SpatialBase pool (3 vs.\ 3)} & $\mathbf{+0.0022}$ & \ci{-0.0035}{+” | +0.0080 | 0.0080 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.17` |
-| `R1.main-tab-contrasts.18` | +0.0053 — “\textbf{Fair-W pool $-$ SpatialBase pool (3 vs.\ 3)} & $\mathbf{+0.0022}$ & \ci{-0.0035}{+” | +0.0053 | 0.0053 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.18` |
-| `R1.main-tab-contrasts.19` | -0.0042 — “\textbf{Fair-W pool $-$ SpatialBase pool (3 vs.\ 3)} & $\mathbf{+0.0022}$ & \ci{-0.0035}{+” | -0.0042 | -0.0042 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.19` |
-| `R1.main-tab-contrasts.20` | +0.0171 — “\textbf{Fair-W pool $-$ SpatialBase pool (3 vs.\ 3)} & $\mathbf{+0.0022}$ & \ci{-0.0035}{+” | +0.0171 | 0.0171 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.20` |
-| `R1.main-tab-contrasts.21` | +0.0054 — “SpatialBase (s42) $-$ TrunkCtrl pool & $-0.0038$ & \ci{-0.0116}{+0.0039} & pre-\zb specifi” | +0.0054 | 0.0054 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.21` |
-| `R1.main-tab-contrasts.22` | -0.0040 — “SpatialBase (s42) $-$ TrunkCtrl pool & $-0.0038$ & \ci{-0.0116}{+0.0039} & pre-\zb specifi” | -0.0040 | -0.0040 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.22` |
-| `R1.main-tab-contrasts.23` | +0.0156 — “SpatialBase (s42) $-$ TrunkCtrl pool & $-0.0038$ & \ci{-0.0116}{+0.0039} & pre-\zb specifi” | +0.0156 | 0.0156 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.23` |
-| `R1.main-tab-contrasts.24` | +0.0489 — “TrunkCtrl pool $-$ spatial-residual (s42) & $+0.0489$ & \ci{+0.0294}{+0.0705} & pre-\zb sp” | +0.0489 | 0.0489 | `verify/expected.json` +4 | `python verify/claim.py R1.main-tab-contrasts.24 --bootstrap` |
-| `R1.main-tab-contrasts.25` | +0.0397 — “TrunkCtrl pool $-$ spatial-residual (s42) & $+0.0489$ & \ci{+0.0294}{+0.0705} & pre-\zb sp” | +0.0397 | 0.0397 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.25` |
-| `R1.main-tab-contrasts.26` | +0.0196 — “TrunkCtrl pool $-$ spatial-residual (s42) & $+0.0489$ & \ci{+0.0294}{+0.0705} & pre-\zb sp” | +0.0196 | 0.0196 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.26` |
-| `R1.main-tab-contrasts.27` | +0.0625 — “TrunkCtrl pool $-$ spatial-residual (s42) & $+0.0489$ & \ci{+0.0294}{+0.0705} & pre-\zb sp” | +0.0625 | 0.0625 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.27` |
-| `R1.main-tab-contrasts.28` | +0.0014 — “Fair-N pool $-$ TrunkCtrl pool (3 vs.\ 3) & $+0.0014$ & \ci{-0.0051}{+0.0078} & post hoc &” | +0.0014 | 0.0014 | `verify/expected.json` +6 | `python verify/claim.py R1.main-tab-contrasts.28 --bootstrap` |
-| `R1.main-tab-contrasts.29` | -0.0051 — “Fair-N pool $-$ TrunkCtrl pool (3 vs.\ 3) & $+0.0014$ & \ci{-0.0051}{+0.0078} & post hoc &” | -0.0051 | -0.0051 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.29` |
-| `R1.main-tab-contrasts.30` | +0.0078 — “Fair-N pool $-$ TrunkCtrl pool (3 vs.\ 3) & $+0.0014$ & \ci{-0.0051}{+0.0078} & post hoc &” | +0.0078 | 0.0078 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.30` |
-| `R1.main-tab-contrasts.31` | +0.0027 — “Fair-N pool $-$ TrunkCtrl pool (3 vs.\ 3) & $+0.0014$ & \ci{-0.0051}{+0.0078} & post hoc &” | +0.0027 | 0.0027 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.31` |
-| `R1.main-tab-contrasts.32` | -0.0080 — “Fair-N pool $-$ TrunkCtrl pool (3 vs.\ 3) & $+0.0014$ & \ci{-0.0051}{+0.0078} & post hoc &” | -0.0080 | -0.0080 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.32` |
-| `R1.main-tab-contrasts.33` | +0.0135 — “Fair-N pool $-$ TrunkCtrl pool (3 vs.\ 3) & $+0.0014$ & \ci{-0.0051}{+0.0078} & post hoc &” | +0.0135 | 0.0135 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.33` |
+| `R1.main-tab-contrasts.2` | +0.020 — “SpatialBase $-$ CAFRL as specified (s42) & $+0.0366$ & \ci{+0.020}{+0.054} & registered & ” | +0.020 | 0.0205 | `verify/expected.json` +2 | `python verify/claim.py R1.main-tab-contrasts.2 --bootstrap` |
+| `R1.main-tab-contrasts.3` | +0.054 — “SpatialBase $-$ CAFRL as specified (s42) & $+0.0366$ & \ci{+0.020}{+0.054} & registered & ” | +0.054 | 0.0540 | `verify/expected.json` +2 | `python verify/claim.py R1.main-tab-contrasts.3 --bootstrap` |
+| `R1.main-tab-contrasts.4` | +0.0366 — “SpatialBase $-$ CAFRL as specified (s42) & $+0.0366$ & \ci{+0.020}{+0.054} & registered & ” | +0.0366 | 0.0366 | `verify/expected.json` +2 | `python verify/claim.py R1.main-tab-contrasts.4 --bootstrap` |
+| `R1.main-tab-contrasts.5` | +0.0182 — “SpatialBase $-$ CAFRL as specified (s42) & $+0.0366$ & \ci{+0.020}{+0.054} & registered & ” | +0.0182 | 0.0182 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.5` |
+| `R1.main-tab-contrasts.6` | +0.0569 — “SpatialBase $-$ CAFRL as specified (s42) & $+0.0366$ & \ci{+0.020}{+0.054} & registered & ” | +0.0569 | 0.0569 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.6` |
+| `R1.main-tab-contrasts.7` | +0.0396 — “Fair-N $-$ CAFRL$-$adv (s42) & $+0.0396$ & \ci{+0.0231}{+0.0570} & pre-\zb specified & sig” | +0.0396 | 0.0396 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.7` |
+| `R1.main-tab-contrasts.8` | +0.0231 — “Fair-N $-$ CAFRL$-$adv (s42) & $+0.0396$ & \ci{+0.0231}{+0.0570} & pre-\zb specified & sig” | +0.0231 | 0.0231 | `verify/expected.json` +2 | `python verify/claim.py R1.main-tab-contrasts.8 --bootstrap` |
+| `R1.main-tab-contrasts.9` | +0.0570 — “Fair-N $-$ CAFRL$-$adv (s42) & $+0.0396$ & \ci{+0.0231}{+0.0570} & pre-\zb specified & sig” | +0.0570 | 0.0570 | `verify/expected.json` +2 | `python verify/claim.py R1.main-tab-contrasts.9 --bootstrap` |
+| `R1.main-tab-contrasts.10` | +0.0396 — “Fair-N $-$ CAFRL$-$adv (s42) & $+0.0396$ & \ci{+0.0231}{+0.0570} & pre-\zb specified & sig” | +0.0396 | 0.0396 | `verify/expected.json` +2 | `python verify/claim.py R1.main-tab-contrasts.10 --bootstrap` |
+| `R1.main-tab-contrasts.11` | +0.0222 — “Fair-N $-$ CAFRL$-$adv (s42) & $+0.0396$ & \ci{+0.0231}{+0.0570} & pre-\zb specified & sig” | +0.0222 | 0.0222 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.11` |
+| `R1.main-tab-contrasts.12` | +0.0580 — “Fair-N $-$ CAFRL$-$adv (s42) & $+0.0396$ & \ci{+0.0231}{+0.0570} & pre-\zb specified & sig” | +0.0580 | 0.0580 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.12` |
+| `R1.main-tab-contrasts.13` | -0.0004 — “Fair-N $-$ SpatialBase (s42) & $-0.0004$ & \ci{-0.0092}{+0.0080} & pre-\zb specified & no ” | -0.0004 | -0.0004 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.13` |
+| `R1.main-tab-contrasts.14` | -0.0092 — “Fair-N $-$ SpatialBase (s42) & $-0.0004$ & \ci{-0.0092}{+0.0080} & pre-\zb specified & no ” | -0.0092 | -0.0092 | `verify/expected.json` +2 | `python verify/claim.py R1.main-tab-contrasts.14 --bootstrap` |
+| `R1.main-tab-contrasts.15` | +0.0080 — “Fair-N $-$ SpatialBase (s42) & $-0.0004$ & \ci{-0.0092}{+0.0080} & pre-\zb specified & no ” | +0.0080 | 0.0080 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.15` |
+| `R1.main-tab-contrasts.16` | -0.0004 — “Fair-N $-$ SpatialBase (s42) & $-0.0004$ & \ci{-0.0092}{+0.0080} & pre-\zb specified & no ” | -0.0004 | -0.0004 | `verify/expected.json` +2 | `python verify/claim.py R1.main-tab-contrasts.16 --bootstrap` |
+| `R1.main-tab-contrasts.17` | -0.0095 — “Fair-N $-$ SpatialBase (s42) & $-0.0004$ & \ci{-0.0092}{+0.0080} & pre-\zb specified & no ” | -0.0095 | -0.0095 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.17` |
+| `R1.main-tab-contrasts.18` | +0.0055 — “Fair-W $-$ SpatialBase (s42) & $+0.0055$ & \ci{-0.0022}{+0.0134} & pre-\zb specified & no ” | +0.0055 | 0.0055 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.18` |
+| `R1.main-tab-contrasts.19` | -0.0022 — “Fair-W $-$ SpatialBase (s42) & $+0.0055$ & \ci{-0.0022}{+0.0134} & pre-\zb specified & no ” | -0.0022 | -0.0022 | `verify/expected.json` +2 | `python verify/claim.py R1.main-tab-contrasts.19 --bootstrap` |
+| `R1.main-tab-contrasts.20` | +0.0134 — “Fair-W $-$ SpatialBase (s42) & $+0.0055$ & \ci{-0.0022}{+0.0134} & pre-\zb specified & no ” | +0.0134 | 0.0134 | `verify/expected.json` +2 | `python verify/claim.py R1.main-tab-contrasts.20 --bootstrap` |
+| `R1.main-tab-contrasts.21` | 0.93 — “Fair-W $-$ SpatialBase (s42) & $+0.0055$ & \ci{-0.0022}{+0.0134} & pre-\zb specified & no ” | 0.93 | 0.9255 | `evaluation/analysis/cluster_bootstrap.json` | `python verify/claim.py R1.main-tab-contrasts.21` |
+| `R1.main-tab-contrasts.22` | +0.0055 — “Fair-W $-$ SpatialBase (s42) & $+0.0055$ & \ci{-0.0022}{+0.0134} & pre-\zb specified & no ” | +0.0055 | 0.0055 | `verify/expected.json` +2 | `python verify/claim.py R1.main-tab-contrasts.22 --bootstrap` |
+| `R1.main-tab-contrasts.23` | -0.0026 — “Fair-W $-$ SpatialBase (s42) & $+0.0055$ & \ci{-0.0022}{+0.0134} & pre-\zb specified & no ” | -0.0026 | -0.0026 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.23` |
+| `R1.main-tab-contrasts.24` | +0.0137 — “Fair-W $-$ SpatialBase (s42) & $+0.0055$ & \ci{-0.0022}{+0.0134} & pre-\zb specified & no ” | +0.0137 | 0.0137 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.24` |
+| `R1.main-tab-contrasts.25` | -0.0009 — “\textbf{Fair-N pool $-$ SpatialBase pool (3 vs.\ 3)} & $\mathbf{-0.0009}$ & \ci{-0.0066}{+” | -0.0009 | -0.0009 | `verify/expected.json` +6 | `python verify/claim.py R1.main-tab-contrasts.25 --bootstrap` |
+| `R1.main-tab-contrasts.26` | -0.0066 — “\textbf{Fair-N pool $-$ SpatialBase pool (3 vs.\ 3)} & $\mathbf{-0.0009}$ & \ci{-0.0066}{+” | -0.0066 | -0.0066 | `verify/expected.json` +6 | `python verify/claim.py R1.main-tab-contrasts.26 --bootstrap` |
+| `R1.main-tab-contrasts.27` | +0.0045 — “\textbf{Fair-N pool $-$ SpatialBase pool (3 vs.\ 3)} & $\mathbf{-0.0009}$ & \ci{-0.0066}{+” | +0.0045 | 0.0045 | `verify/expected.json` +6 | `python verify/claim.py R1.main-tab-contrasts.27 --bootstrap` |
+| `R1.main-tab-contrasts.28` | -0.0002 — “\textbf{Fair-N pool $-$ SpatialBase pool (3 vs.\ 3)} & $\mathbf{-0.0009}$ & \ci{-0.0066}{+” | -0.0002 | -0.0002 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.28` |
+| `R1.main-tab-contrasts.29` | -0.0105 — “\textbf{Fair-N pool $-$ SpatialBase pool (3 vs.\ 3)} & $\mathbf{-0.0009}$ & \ci{-0.0066}{+” | -0.0105 | -0.0105 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.29` |
+| `R1.main-tab-contrasts.30` | +0.0112 — “\textbf{Fair-N pool $-$ SpatialBase pool (3 vs.\ 3)} & $\mathbf{-0.0009}$ & \ci{-0.0066}{+” | +0.0112 | 0.0112 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.30` |
+| `R1.main-tab-contrasts.31` | +0.0022 — “\textbf{Fair-W pool $-$ SpatialBase pool (3 vs.\ 3)} & $\mathbf{+0.0022}$ & \ci{-0.0035}{+” | +0.0022 | 0.0022 | `verify/expected.json` +6 | `python verify/claim.py R1.main-tab-contrasts.31 --bootstrap` |
+| `R1.main-tab-contrasts.32` | -0.0035 — “\textbf{Fair-W pool $-$ SpatialBase pool (3 vs.\ 3)} & $\mathbf{+0.0022}$ & \ci{-0.0035}{+” | -0.0035 | -0.0035 | `verify/expected.json` +6 | `python verify/claim.py R1.main-tab-contrasts.32 --bootstrap` |
+| `R1.main-tab-contrasts.33` | +0.0053 — “\textbf{Fair-W pool $-$ SpatialBase pool (3 vs.\ 3)} & $\mathbf{+0.0022}$ & \ci{-0.0035}{+” | +0.0053 | 0.0053 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.33` |
+| `R1.main-tab-contrasts.34` | -0.0042 — “\textbf{Fair-W pool $-$ SpatialBase pool (3 vs.\ 3)} & $\mathbf{+0.0022}$ & \ci{-0.0035}{+” | -0.0042 | -0.0042 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.34` |
+| `R1.main-tab-contrasts.35` | +0.0171 — “\textbf{Fair-W pool $-$ SpatialBase pool (3 vs.\ 3)} & $\mathbf{+0.0022}$ & \ci{-0.0035}{+” | +0.0171 | 0.0171 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.35` |
+| `R1.main-tab-contrasts.36` | -0.0038 — “SpatialBase (s42) $-$ TrunkCtrl pool & $-0.0038$ & \ci{-0.0116}{+0.0039} & pre-\zb specifi” | -0.0038 | -0.0038 | `verify/expected.json` +4 | `python verify/claim.py R1.main-tab-contrasts.36 --bootstrap` |
+| `R1.main-tab-contrasts.37` | -0.0116 — “SpatialBase (s42) $-$ TrunkCtrl pool & $-0.0038$ & \ci{-0.0116}{+0.0039} & pre-\zb specifi” | -0.0116 | -0.0116 | `verify/expected.json` +4 | `python verify/claim.py R1.main-tab-contrasts.37 --bootstrap` |
+| `R1.main-tab-contrasts.38` | +0.0039 — “SpatialBase (s42) $-$ TrunkCtrl pool & $-0.0038$ & \ci{-0.0116}{+0.0039} & pre-\zb specifi” | +0.0039 | 0.0039 | `verify/expected.json` +4 | `python verify/claim.py R1.main-tab-contrasts.38 --bootstrap` |
+| `R1.main-tab-contrasts.39` | +0.0054 — “SpatialBase (s42) $-$ TrunkCtrl pool & $-0.0038$ & \ci{-0.0116}{+0.0039} & pre-\zb specifi” | +0.0054 | 0.0054 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.39` |
+| `R1.main-tab-contrasts.40` | -0.0040 — “SpatialBase (s42) $-$ TrunkCtrl pool & $-0.0038$ & \ci{-0.0116}{+0.0039} & pre-\zb specifi” | -0.0040 | -0.0040 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.40` |
+| `R1.main-tab-contrasts.41` | +0.0156 — “SpatialBase (s42) $-$ TrunkCtrl pool & $-0.0038$ & \ci{-0.0116}{+0.0039} & pre-\zb specifi” | +0.0156 | 0.0156 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.41` |
+| `R1.main-tab-contrasts.42` | +0.0489 — “TrunkCtrl pool $-$ spatial-residual (s42) & $+0.0489$ & \ci{+0.0294}{+0.0705} & pre-\zb sp” | +0.0489 | 0.0489 | `verify/expected.json` +4 | `python verify/claim.py R1.main-tab-contrasts.42 --bootstrap` |
+| `R1.main-tab-contrasts.43` | +0.0294 — “TrunkCtrl pool $-$ spatial-residual (s42) & $+0.0489$ & \ci{+0.0294}{+0.0705} & pre-\zb sp” | +0.0294 | 0.0294 | `verify/expected.json` +4 | `python verify/claim.py R1.main-tab-contrasts.43 --bootstrap` |
+| `R1.main-tab-contrasts.44` | +0.0705 — “TrunkCtrl pool $-$ spatial-residual (s42) & $+0.0489$ & \ci{+0.0294}{+0.0705} & pre-\zb sp” | +0.0705 | 0.0705 | `verify/expected.json` +4 | `python verify/claim.py R1.main-tab-contrasts.44 --bootstrap` |
+| `R1.main-tab-contrasts.45` | +0.0397 — “TrunkCtrl pool $-$ spatial-residual (s42) & $+0.0489$ & \ci{+0.0294}{+0.0705} & pre-\zb sp” | +0.0397 | 0.0397 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.45` |
+| `R1.main-tab-contrasts.46` | +0.0196 — “TrunkCtrl pool $-$ spatial-residual (s42) & $+0.0489$ & \ci{+0.0294}{+0.0705} & pre-\zb sp” | +0.0196 | 0.0196 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.46` |
+| `R1.main-tab-contrasts.47` | +0.0625 — “TrunkCtrl pool $-$ spatial-residual (s42) & $+0.0489$ & \ci{+0.0294}{+0.0705} & pre-\zb sp” | +0.0625 | 0.0625 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.47` |
+| `R1.main-tab-contrasts.48` | +0.0014 — “Fair-N pool $-$ TrunkCtrl pool (3 vs.\ 3) & $+0.0014$ & \ci{-0.0051}{+0.0078} & post hoc &” | +0.0014 | 0.0014 | `verify/expected.json` +6 | `python verify/claim.py R1.main-tab-contrasts.48 --bootstrap` |
+| `R1.main-tab-contrasts.49` | -0.0051 — “Fair-N pool $-$ TrunkCtrl pool (3 vs.\ 3) & $+0.0014$ & \ci{-0.0051}{+0.0078} & post hoc &” | -0.0051 | -0.0051 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.49` |
+| `R1.main-tab-contrasts.50` | +0.0078 — “Fair-N pool $-$ TrunkCtrl pool (3 vs.\ 3) & $+0.0014$ & \ci{-0.0051}{+0.0078} & post hoc &” | +0.0078 | 0.0078 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.50` |
+| `R1.main-tab-contrasts.51` | +0.0027 — “Fair-N pool $-$ TrunkCtrl pool (3 vs.\ 3) & $+0.0014$ & \ci{-0.0051}{+0.0078} & post hoc &” | +0.0027 | 0.0027 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.51` |
+| `R1.main-tab-contrasts.52` | -0.0080 — “Fair-N pool $-$ TrunkCtrl pool (3 vs.\ 3) & $+0.0014$ & \ci{-0.0051}{+0.0078} & post hoc &” | -0.0080 | -0.0080 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.52` |
+| `R1.main-tab-contrasts.53` | +0.0135 — “Fair-N pool $-$ TrunkCtrl pool (3 vs.\ 3) & $+0.0014$ & \ci{-0.0051}{+0.0078} & post hoc &” | +0.0135 | 0.0135 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-contrasts.53` |
 
 ## R1.main-sec-seeds — Revision 1 — main paper, sec:seeds
 
@@ -448,10 +468,10 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores.
 | `R1.main-sec-adversary.12` | 1.37 — “about 1.37\,pt with 80\,\% power at $\alpha = 0.01$ (1.10\,pt at” | 1.37 | 1.3698 | `revision-1/registered/mde.json` | `python verify/claim.py R1.main-sec-adversary.12` |
 | `R1.main-sec-adversary.13` | 1.10 — “about 1.37\,pt with 80\,\% power at $\alpha = 0.01$ (1.10\,pt at” | 1.10 | 1.1000 | `revision-1/registered/mde.json` | `python verify/claim.py R1.main-sec-adversary.13` |
 | `R1.main-sec-adversary.14` | 0.095 — “(calibrated sensitivity test: $p = 0.095$).” | 0.095 | 0.0954 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-adversary.14` |
-| `R1.main-sec-adversary.15` | 0.9531 — “est\_pm1 at the selected epoch was 0.9531 / 1.0000 / 1.0000 (Fair-N: 1.0000 /” | 0.9531 | 0.9531 | `revision-1/stats/secondaries.null.json` | `python verify/claim.py R1.main-sec-adversary.15` |
-| `R1.main-sec-adversary.16` | 1.0000 — “est\_pm1 at the selected epoch was 0.9531 / 1.0000 / 1.0000 (Fair-N: 1.0000 /” | 1.0000 | 1.0000 | `revision-1/stats/secondaries.null.json` | `python verify/claim.py R1.main-sec-adversary.16` |
-| `R1.main-sec-adversary.17` | 1.0000 — “est\_pm1 at the selected epoch was 0.9531 / 1.0000 / 1.0000 (Fair-N: 1.0000 /” | 1.0000 | 1.0000 | `revision-1/stats/secondaries.null.json` | `python verify/claim.py R1.main-sec-adversary.17` |
-| `R1.main-sec-adversary.18` | 1.0000 — “est\_pm1 at the selected epoch was 0.9531 / 1.0000 / 1.0000 (Fair-N: 1.0000 /” | 1.0000 | 1.0000 | `revision-1/stats/secondaries.null.json` | `python verify/claim.py R1.main-sec-adversary.18` |
+| `R1.main-sec-adversary.15` | 0.9531 — “the $\pm1$-level accuracy at the selected epoch was 0.9531 / 1.0000 / 1.0000 (Fair-N: 1.00” | 0.9531 | 0.9531 | `revision-1/stats/secondaries.null.json` | `python verify/claim.py R1.main-sec-adversary.15` |
+| `R1.main-sec-adversary.16` | 1.0000 — “the $\pm1$-level accuracy at the selected epoch was 0.9531 / 1.0000 / 1.0000 (Fair-N: 1.00” | 1.0000 | 1.0000 | `revision-1/stats/secondaries.null.json` | `python verify/claim.py R1.main-sec-adversary.16` |
+| `R1.main-sec-adversary.17` | 1.0000 — “the $\pm1$-level accuracy at the selected epoch was 0.9531 / 1.0000 / 1.0000 (Fair-N: 1.00” | 1.0000 | 1.0000 | `revision-1/stats/secondaries.null.json` | `python verify/claim.py R1.main-sec-adversary.17` |
+| `R1.main-sec-adversary.18` | 1.0000 — “the $\pm1$-level accuracy at the selected epoch was 0.9531 / 1.0000 / 1.0000 (Fair-N: 1.00” | 1.0000 | 1.0000 | `revision-1/stats/secondaries.null.json` | `python verify/claim.py R1.main-sec-adversary.18` |
 | `R1.main-sec-adversary.19` | 1.0000 — “1.0000 / 1.0000). Over its 30 epochs, E1's seed-2 run reached a lowest” | 1.0000 | 1.0000 | `revision-1/stats/secondaries.null.json` | `python verify/claim.py R1.main-sec-adversary.19` |
 | `R1.main-sec-adversary.20` | 1.0000 — “1.0000 / 1.0000). Over its 30 epochs, E1's seed-2 run reached a lowest” | 1.0000 | 1.0000 | `revision-1/stats/secondaries.null.json` | `python verify/claim.py R1.main-sec-adversary.20` |
 | `R1.main-sec-adversary.21` | 0.3672 — “accuracy of 0.3672 (epoch~2), below the registered reference of 0.7; the” | 0.3672 | 0.3672 | `revision-1/stats/secondaries.null.json` | `python verify/claim.py R1.main-sec-adversary.21` |
@@ -565,6 +585,20 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores.
 - `R1.main-Limitations.4` — Table S3 upper block, SpatialBase 3-seed mean
 - `R1.main-Limitations.5` — seed for seed (seed 42 vs. seed 42, sec:standing): the larger of the two Xception-mq c40 gaps to SpatialBase, standard policy 0.89 pt (the augmentation-matched one is 0.41 pt, 0.9631 vs. 0.9590); the printed bound rounds from it
 
+## R1.main-tab-appledger — Revision 1 — main paper, tab:appledger
+
+*main paper, tab:appledger; `\label{tab:appledger}`*
+
+| id | claim | paper prints | this release gives | artifact | command |
+|---|---|---|---|---|---|
+| `R1.main-tab-appledger.1` | 0.0397 — “the 0.0451 trunk gap (TrunkCtrl 0.0397 above the shipped-recipe arm, the” | 0.0397 | 0.0397 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-appledger.1` |
+| `R1.main-tab-appledger.2` | 0.0054 — “only difference whose interval excludes zero, and 0.0054 below” | 0.0054 | 0.0054 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` +3 | `python verify/claim.py R1.main-tab-appledger.2` |
+| `R1.main-tab-appledger.3` | +0.0054 — “$-0.0038$, CI \ci{-0.0116}{+0.0039}, and $+0.0054$ \ci{-0.0040}{+0.0156}” | +0.0054 | 0.0054 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-appledger.3` |
+| `R1.main-tab-appledger.4` | -0.0040 — “$-0.0038$, CI \ci{-0.0116}{+0.0039}, and $+0.0054$ \ci{-0.0040}{+0.0156}” | -0.0040 | -0.0040 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-appledger.4` |
+| `R1.main-tab-appledger.5` | +0.0156 — “$-0.0038$, CI \ci{-0.0116}{+0.0039}, and $+0.0054$ \ci{-0.0040}{+0.0156}” | +0.0156 | 0.0156 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-appledger.5` |
+| `R1.main-tab-appledger.6` | 4.0 — “differ in more than width (4.0\,M vs.\ 3.68\,M), so this does not isolate” | 4.0 | 4.0088 | `probes/param_counts_arms.json` | `python verify/claim.py R1.main-tab-appledger.6` |
+| `R1.main-tab-appledger.7` | 3.68 — “differ in more than width (4.0\,M vs.\ 3.68\,M), so this does not isolate” | 3.68 | 3.6778 | `probes/param_counts_arms.json` | `python verify/claim.py R1.main-tab-appledger.7` |
+
 ## R1.main-sec-conclusionfinal — Revision 1 — main paper, sec:conclusionfinal
 
 *main paper, sec:conclusionfinal; `\label{sec:conclusionfinal}`*
@@ -589,49 +623,42 @@ pinned in `verify/expected.json`; `verify.py` recomputes them from the scores.
 | `R1.main-sec-conclusionfinal.16` | +0.0171 — “\ci{-0.0042}{+0.0171}; the pre-specified contrasts, conditional on the three” | +0.0171 | 0.0171 | `revision-1/recompute.json` | `python verify/claim.py R1.main-sec-conclusionfinal.16` |
 | `R1.main-sec-conclusionfinal.17` | 85.27 — “85.27 AUC points at c40 at the selected checkpoints and 89.99 at epoch 30” | 85.27 | 85.27 | `revision-1/exploratory/e11.json` | `python verify/claim.py R1.main-sec-conclusionfinal.17` |
 | `R1.main-sec-conclusionfinal.18` | 89.99 — “85.27 AUC points at c40 at the selected checkpoints and 89.99 at epoch 30” | 89.99 | 89.99 | `revision-1/exploratory/e11.json` | `python verify/claim.py R1.main-sec-conclusionfinal.18` |
-| `R1.main-sec-conclusionfinal.19` | 0.919 — “detectable (CAFRL$-$adv 0.919 against the full model's 0.922 at c40) and” | 0.919 | 0.9190 | `predictions/ffpp/a1_none_s42.json` | `python verify/claim.py R1.main-sec-conclusionfinal.19` |
-| `R1.main-sec-conclusionfinal.20` | 0.922 — “detectable (CAFRL$-$adv 0.919 against the full model's 0.922 at c40) and” | 0.922 | 0.9224 | `predictions/ffpp/a0.json` | `python verify/claim.py R1.main-sec-conclusionfinal.20` |
-| `R1.main-sec-conclusionfinal.21` | 0.88 — “$0.88 \rightarrow {\approx}0.4$; D6). Restored at the fair recipe (E1,” | 0.88 | 0.8758 | `probes/p1_compression_estimator.json` | `python verify/claim.py R1.main-sec-conclusionfinal.21` |
-| `R1.main-sec-conclusionfinal.22` | 0.87 — “difference in detection: $\Delta = 0.87$\,pt at c40 (\ci{0.02}{1.88}, Holm” | 0.87 | 0.8678 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.22` |
-| `R1.main-sec-conclusionfinal.23` | 0.02 — “difference in detection: $\Delta = 0.87$\,pt at c40 (\ci{0.02}{1.88}, Holm” | 0.02 | 0.0221 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.23` |
-| `R1.main-sec-conclusionfinal.24` | 1.88 — “difference in detection: $\Delta = 0.87$\,pt at c40 (\ci{0.02}{1.88}, Holm” | 1.88 | 1.8767 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.24` |
-| `R1.main-sec-conclusionfinal.25` | 0.084 — “$p = 0.084$) and $0.73$\,pt on \auccomp{} (\ci{0.12}{1.45}, Holm” | 0.084 | 0.0842 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.25` |
-| `R1.main-sec-conclusionfinal.26` | 0.73 — “$p = 0.084$) and $0.73$\,pt on \auccomp{} (\ci{0.12}{1.45}, Holm” | 0.73 | 0.7302 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.26` |
-| `R1.main-sec-conclusionfinal.27` | 0.12 — “$p = 0.084$) and $0.73$\,pt on \auccomp{} (\ci{0.12}{1.45}, Holm” | 0.12 | 0.1175 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.27` |
-| `R1.main-sec-conclusionfinal.28` | 1.45 — “$p = 0.084$) and $0.73$\,pt on \auccomp{} (\ci{0.12}{1.45}, Holm” | 1.45 | 1.4503 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.28` |
-| `R1.main-sec-conclusionfinal.29` | 0.061 — “$p = 0.061$). Its estimator stayed accurate at the selected epochs ($\pm1$-level accuracy” | 0.061 | 0.0615 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.29` |
-| `R1.main-sec-conclusionfinal.30` | 0.9531 — “0.9531 / 1.0000 / 1.0000), although one seed fell below the registered” | 0.9531 | 0.9531 | `revision-1/stats/secondaries.null.json` | `python verify/claim.py R1.main-sec-conclusionfinal.30` |
-| `R1.main-sec-conclusionfinal.31` | 1.0000 — “0.9531 / 1.0000 / 1.0000), although one seed fell below the registered” | 1.0000 | 1.0000 | `revision-1/stats/secondaries.null.json` | `python verify/claim.py R1.main-sec-conclusionfinal.31` |
-| `R1.main-sec-conclusionfinal.32` | 1.0000 — “0.9531 / 1.0000 / 1.0000), although one seed fell below the registered” | 1.0000 | 1.0000 | `revision-1/stats/secondaries.null.json` | `python verify/claim.py R1.main-sec-conclusionfinal.32` |
-| `R1.main-sec-conclusionfinal.33` | 1.78 — “arm at one strength ($\lambda_{\max} = 0.5$); these tests detect about 1.78” | 1.78 | 1.7816 | `revision-1/registered/mde.json` | `python verify/claim.py R1.main-sec-conclusionfinal.33` |
-| `R1.main-sec-conclusionfinal.34` | 1.37 — “and 1.37\,pt at 80\% power and $\alpha = 0.01$, and smaller effects in either direction ar” | 1.37 | 1.3698 | `revision-1/registered/mde.json` | `python verify/claim.py R1.main-sec-conclusionfinal.34` |
-| `R1.main-sec-conclusionfinal.35` | 7.48 — “gave a higher mean single-model c40 AUC by 7.48\,pt averaged over c40” | 7.48 | 7.4783 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.35` |
-| `R1.main-sec-conclusionfinal.36` | 5.12 — “exposure (\ci{5.12}{9.94}, Holm $p = 0.00050$; T4), and including the” | 5.12 | 5.1229 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.36` |
-| `R1.main-sec-conclusionfinal.37` | 9.94 — “exposure (\ci{5.12}{9.94}, Holm $p = 0.00050$; T4), and including the” | 9.94 | 9.9443 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.37` |
-| `R1.main-sec-conclusionfinal.38` | 0.00050 — “exposure (\ci{5.12}{9.94}, Holm $p = 0.00050$; T4), and including the” | 0.00050 | 0.0005 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.38` |
-| `R1.main-sec-conclusionfinal.39` | 1.88 — “c40-level data raised it by 1.88\,pt averaged over codec (\ci{0.79}{2.98},” | 1.88 | 1.8831 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.39` |
-| `R1.main-sec-conclusionfinal.40` | 0.79 — “c40-level data raised it by 1.88\,pt averaged over codec (\ci{0.79}{2.98},” | 0.79 | 0.7927 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.40` |
-| `R1.main-sec-conclusionfinal.41` | 2.98 — “c40-level data raised it by 1.88\,pt averaged over codec (\ci{0.79}{2.98},” | 2.98 | 2.9786 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.41` |
-| `R1.main-sec-conclusionfinal.42` | 0.0020 — “Holm $p = 0.0020$; T5); both registered, paired, three seeds per arm” | 0.0020 | 0.0020 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.42` |
-| `R1.main-sec-conclusionfinal.43` | 0.88 — “kept $R = 0.88$ \ci{0.75}{1.03} of its c40 gain (T3), not detectably below 1,” | 0.88 | 0.8848 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.43` |
-| `R1.main-sec-conclusionfinal.44` | 0.75 — “kept $R = 0.88$ \ci{0.75}{1.03} of its c40 gain (T3), not detectably below 1,” | 0.75 | 0.7548 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.44` |
-| `R1.main-sec-conclusionfinal.45` | 1.03 — “kept $R = 0.88$ \ci{0.75}{1.03} of its c40 gain (T3), not detectably below 1,” | 1.03 | 1.0280 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.45` |
+| `R1.main-sec-conclusionfinal.19` | 4.0 — “of one 4.0\,M trunk, without a hyperparameter search of their own. Across seeds the design” | 4.0 | 4.0088 | `probes/param_counts_arms.json` | `python verify/claim.py R1.main-sec-conclusionfinal.19` |
+| `R1.main-sec-conclusionfinal.20` | 1.5 — “1.5--1.7\,pt, so a smaller gain, including one the size of the fairest” | 1.5 | 1.4859 | `evaluation/analysis/mde.json` | `python verify/claim.py R1.main-sec-conclusionfinal.20` |
+| `R1.main-sec-conclusionfinal.21` | 1.7 — “1.5--1.7\,pt, so a smaller gain, including one the size of the fairest” | 1.7 | 1.6500 | `evaluation/analysis/mde.json` | `python verify/claim.py R1.main-sec-conclusionfinal.21` |
+| `R1.main-sec-conclusionfinal.22` | 0.919 — “detectable (CAFRL$-$adv 0.919 against the full model's 0.922 at c40) and” | 0.919 | 0.9190 | `predictions/ffpp/a1_none_s42.json` | `python verify/claim.py R1.main-sec-conclusionfinal.22` |
+| `R1.main-sec-conclusionfinal.23` | 0.922 — “detectable (CAFRL$-$adv 0.919 against the full model's 0.922 at c40) and” | 0.922 | 0.9224 | `predictions/ffpp/a0.json` | `python verify/claim.py R1.main-sec-conclusionfinal.23` |
+| `R1.main-sec-conclusionfinal.24` | 0.88 — “$0.88 \rightarrow {\approx}0.4$; D6). Restored at the fair recipe (E1,” | 0.88 | 0.8758 | `probes/p1_compression_estimator.json` | `python verify/claim.py R1.main-sec-conclusionfinal.24` |
+| `R1.main-sec-conclusionfinal.25` | 0.87 — “difference in detection: $\Delta = 0.87$\,pt at c40 (\ci{0.02}{1.88}, Holm” | 0.87 | 0.8678 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.25` |
+| `R1.main-sec-conclusionfinal.26` | 0.02 — “difference in detection: $\Delta = 0.87$\,pt at c40 (\ci{0.02}{1.88}, Holm” | 0.02 | 0.0221 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.26` |
+| `R1.main-sec-conclusionfinal.27` | 1.88 — “difference in detection: $\Delta = 0.87$\,pt at c40 (\ci{0.02}{1.88}, Holm” | 1.88 | 1.8767 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.27` |
+| `R1.main-sec-conclusionfinal.28` | 0.084 — “$p = 0.084$) and $0.73$\,pt on \auccomp{} (\ci{0.12}{1.45}, Holm” | 0.084 | 0.0842 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.28` |
+| `R1.main-sec-conclusionfinal.29` | 0.73 — “$p = 0.084$) and $0.73$\,pt on \auccomp{} (\ci{0.12}{1.45}, Holm” | 0.73 | 0.7302 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.29` |
+| `R1.main-sec-conclusionfinal.30` | 0.12 — “$p = 0.084$) and $0.73$\,pt on \auccomp{} (\ci{0.12}{1.45}, Holm” | 0.12 | 0.1175 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.30` |
+| `R1.main-sec-conclusionfinal.31` | 1.45 — “$p = 0.084$) and $0.73$\,pt on \auccomp{} (\ci{0.12}{1.45}, Holm” | 1.45 | 1.4503 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.31` |
+| `R1.main-sec-conclusionfinal.32` | 0.061 — “$p = 0.061$). Its estimator stayed accurate at the selected epochs ($\pm1$-level accuracy” | 0.061 | 0.0615 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.32` |
+| `R1.main-sec-conclusionfinal.33` | 0.9531 — “0.9531 / 1.0000 / 1.0000), although one seed fell below the registered” | 0.9531 | 0.9531 | `revision-1/stats/secondaries.null.json` | `python verify/claim.py R1.main-sec-conclusionfinal.33` |
+| `R1.main-sec-conclusionfinal.34` | 1.0000 — “0.9531 / 1.0000 / 1.0000), although one seed fell below the registered” | 1.0000 | 1.0000 | `revision-1/stats/secondaries.null.json` | `python verify/claim.py R1.main-sec-conclusionfinal.34` |
+| `R1.main-sec-conclusionfinal.35` | 1.0000 — “0.9531 / 1.0000 / 1.0000), although one seed fell below the registered” | 1.0000 | 1.0000 | `revision-1/stats/secondaries.null.json` | `python verify/claim.py R1.main-sec-conclusionfinal.35` |
+| `R1.main-sec-conclusionfinal.36` | 1.78 — “arm at one strength ($\lambda_{\max} = 0.5$); these tests detect about 1.78” | 1.78 | 1.7816 | `revision-1/registered/mde.json` | `python verify/claim.py R1.main-sec-conclusionfinal.36` |
+| `R1.main-sec-conclusionfinal.37` | 1.37 — “and 1.37\,pt at 80\% power and $\alpha = 0.01$, and smaller effects in either direction ar” | 1.37 | 1.3698 | `revision-1/registered/mde.json` | `python verify/claim.py R1.main-sec-conclusionfinal.37` |
+| `R1.main-sec-conclusionfinal.38` | 7.48 — “gave a higher mean single-model c40 AUC by 7.48\,pt averaged over c40” | 7.48 | 7.4783 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.38` |
+| `R1.main-sec-conclusionfinal.39` | 5.12 — “exposure (\ci{5.12}{9.94}, Holm $p = 0.00050$; T4), and including the” | 5.12 | 5.1229 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.39` |
+| `R1.main-sec-conclusionfinal.40` | 9.94 — “exposure (\ci{5.12}{9.94}, Holm $p = 0.00050$; T4), and including the” | 9.94 | 9.9443 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.40` |
+| `R1.main-sec-conclusionfinal.41` | 0.00050 — “exposure (\ci{5.12}{9.94}, Holm $p = 0.00050$; T4), and including the” | 0.00050 | 0.0005 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.41` |
+| `R1.main-sec-conclusionfinal.42` | 1.88 — “c40-level data raised it by 1.88\,pt averaged over codec (\ci{0.79}{2.98},” | 1.88 | 1.8831 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.42` |
+| `R1.main-sec-conclusionfinal.43` | 0.79 — “c40-level data raised it by 1.88\,pt averaged over codec (\ci{0.79}{2.98},” | 0.79 | 0.7927 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.43` |
+| `R1.main-sec-conclusionfinal.44` | 2.98 — “c40-level data raised it by 1.88\,pt averaged over codec (\ci{0.79}{2.98},” | 2.98 | 2.9786 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.44` |
+| `R1.main-sec-conclusionfinal.45` | 0.0020 — “Holm $p = 0.0020$; T5); both registered, paired, three seeds per arm” | 0.0020 | 0.0020 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.45` |
+| `R1.main-sec-conclusionfinal.46` | 0.88 — “kept $R = 0.88$ \ci{0.75}{1.03} of its c40 gain (T3), not detectably below 1,” | 0.88 | 0.8848 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.46` |
+| `R1.main-sec-conclusionfinal.47` | 0.75 — “kept $R = 0.88$ \ci{0.75}{1.03} of its c40 gain (T3), not detectably below 1,” | 0.75 | 0.7548 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.47` |
+| `R1.main-sec-conclusionfinal.48` | 1.03 — “kept $R = 0.88$ \ci{0.75}{1.03} of its c40 gain (T3), not detectably below 1,” | 1.03 | 1.0280 | `revision-1/stats/confirmatory.json` | `python verify/claim.py R1.main-sec-conclusionfinal.48` |
+| `R1.main-sec-conclusionfinal.49` | 13 — “multi-level-trained arms drop 13--19 points across the same two levels on near-domain DFD,” | 13 | 13.24 | `predictions/cross_dataset/f1_none_fair_s42.json` +2 | `python verify/claim.py R1.main-sec-conclusionfinal.49` |
+| `R1.main-sec-conclusionfinal.50` | 19 — “multi-level-trained arms drop 13--19 points across the same two levels on near-domain DFD,” | 19 | 19.26 | `predictions/cross_dataset/b4_xception_mq.json` | `python verify/claim.py R1.main-sec-conclusionfinal.50` |
 
 - `R1.main-sec-conclusionfinal.4` — the larger of the two further shipped-CAFRL seeds' c40 deviations from a0 (a1_grl_s2: 0.0019; a1_grl_s1: 0.0002); the printed bound rounds from it
-
-## R1.main-tab-appledger — Revision 1 — main paper, tab:appledger
-
-*main paper, tab:appledger; `\label{tab:appledger}`*
-
-| id | claim | paper prints | this release gives | artifact | command |
-|---|---|---|---|---|---|
-| `R1.main-tab-appledger.1` | 0.0397 — “the 0.0451 trunk gap (TrunkCtrl 0.0397 above the shipped-recipe arm, the” | 0.0397 | 0.0397 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-appledger.1` |
-| `R1.main-tab-appledger.2` | 0.0054 — “only difference whose interval excludes zero, and 0.0054 below” | 0.0054 | 0.0054 | `predictions/ffpp/b7_effnet_b0_mq_fliponly.json` +3 | `python verify/claim.py R1.main-tab-appledger.2` |
-| `R1.main-tab-appledger.3` | +0.0054 — “$-0.0038$, CI \ci{-0.0116}{+0.0039}, and $+0.0054$ \ci{-0.0040}{+0.0156}” | +0.0054 | 0.0054 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-appledger.3` |
-| `R1.main-tab-appledger.4` | -0.0040 — “$-0.0038$, CI \ci{-0.0116}{+0.0039}, and $+0.0054$ \ci{-0.0040}{+0.0156}” | -0.0040 | -0.0040 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-appledger.4` |
-| `R1.main-tab-appledger.5` | +0.0156 — “$-0.0038$, CI \ci{-0.0116}{+0.0039}, and $+0.0054$ \ci{-0.0040}{+0.0156}” | +0.0156 | 0.0156 | `revision-1/recompute.json` | `python verify/claim.py R1.main-tab-appledger.5` |
-| `R1.main-tab-appledger.6` | 4.0 — “differ in more than width (4.0\,M vs.\ 3.68\,M), so this does not isolate” | 4.0 | 4.0088 | `probes/param_counts_arms.json` | `python verify/claim.py R1.main-tab-appledger.6` |
-| `R1.main-tab-appledger.7` | 3.68 — “differ in more than width (4.0\,M vs.\ 3.68\,M), so this does not isolate” | 3.68 | 3.6778 | `probes/param_counts_arms.json` | `python verify/claim.py R1.main-tab-appledger.7` |
+- `R1.main-sec-conclusionfinal.49` — the low end of the DFD c23 - c40 drop over the multi-level-trained arms of Table S3: Fair-N, 3-seed means 0.792 - 0.659 (stored statistics; no per-video scores)
+- `R1.main-sec-conclusionfinal.50` — the high end of the DFD c23 - c40 drop over the multi-level-trained arms of Table S3: Xception-mq, seed 42, 0.881 - 0.688 (stored statistics; no per-video scores)
 
 ## R1.supp-tab-appseeds — Revision 1 — Supplementary Material, tab:appseeds
 
